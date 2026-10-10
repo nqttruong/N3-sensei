@@ -22,3 +22,9 @@ fun NavController.navigateToTopLevel(destination: TopLevelDestination) {
 
 fun NavDestination?.isInTab(destination: TopLevelDestination): Boolean =
     this?.hierarchy?.any { it.hasRoute(destination.route::class) } == true
+
+/** Opens the lesson list inside the Learn tab, from any tab. */
+fun NavController.navigateToLessons() {
+    navigateToTopLevel(TopLevelDestination.LEARN)
+    navigate(LessonListRoute) { launchSingleTop = true }
+}

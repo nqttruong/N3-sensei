@@ -7,6 +7,8 @@ import androidx.room.Transaction
 import androidx.room.Upsert
 import com.n3sensei.app.data.local.entity.LearningProgressEntity
 import com.n3sensei.app.data.local.entity.ReviewRecordEntity
+import com.n3sensei.app.data.local.model.ProgressSummaryRow
+import com.n3sensei.app.data.local.model.RatingCountRow
 import com.n3sensei.app.domain.model.ItemType
 import kotlinx.coroutines.flow.Flow
 
@@ -56,6 +58,22 @@ abstract class ProgressDao {
         """,
     )
     abstract fun observeDueCount(now: Long): Flow<Int>
+
+    @Query(
+        """
+        SELECT
+            (SELECT COUNT(*) FROM learning_progress p WHERE $CONTENT_EXISTS) AS tracked_items,
+            (SELECT COUNT(*) FROM learning_progress p WHERE p.state = 'LEARNING' AND $CONTENT_EXISTS) AS learning,
+            (SELECT COUNT(*) FROM learning_progress p WHERE p.state = 'REVIEW' AND $CONTENT_EXISTS) AS in_review,
+            (SELECT COUNT(*) FROM learning_progress p
+                WHERE p.due_at IS NOT NULL AND p.due_at <= :now AND $CONTENT_EXISTS) AS due_now,
+            (SELECT COUNT(*) FROM review_records) AS total_reviews
+        """,
+    )
+    abstract fun observeSummary(now: Long): Flow<ProgressSummaryRow>
+
+    @Query("SELECT rating, COUNT(*) AS count FROM review_records GROUP BY rating")
+    abstract fun observeRatingCounts(): Flow<List<RatingCountRow>>
 
     @Query(
         """

@@ -2,6 +2,8 @@ package com.n3sensei.app.data.repository
 
 import com.n3sensei.app.data.local.SqlLike
 import com.n3sensei.app.data.local.dao.ContentDao
+import com.n3sensei.app.domain.model.ContentSource
+import com.n3sensei.app.domain.model.ContentTotals
 import com.n3sensei.app.domain.model.GrammarDetail
 import com.n3sensei.app.domain.model.GrammarPoint
 import com.n3sensei.app.domain.model.Kanji
@@ -21,14 +23,23 @@ class OfflineContentRepository(
     override fun observeLessons(): Flow<List<LessonSummary>> =
         contentDao.observeLessonSummaries().map { rows -> rows.map { it.toDomain() } }
 
-    override fun observeVocabulary(lessonId: String): Flow<List<Vocabulary>> =
-        contentDao.observeVocabularyByLesson(lessonId).map { rows -> rows.map { it.toDomain() } }
+    override fun observeLesson(id: String): Flow<LessonSummary?> =
+        contentDao.observeLessonSummary(id).map { it?.toDomain() }
 
-    override fun observeKanji(lessonId: String): Flow<List<Kanji>> =
-        contentDao.observeKanjiByLesson(lessonId).map { rows -> rows.map { it.toDomain() } }
+    override fun observeContentTotals(): Flow<ContentTotals> =
+        contentDao.observeContentTotals().map { ContentTotals(it.lessons, it.vocabulary, it.kanji, it.grammar) }
 
-    override fun observeGrammar(lessonId: String): Flow<List<GrammarPoint>> =
-        contentDao.observeGrammarByLesson(lessonId).map { rows -> rows.map { it.toDomain() } }
+    override fun observeSources(): Flow<List<ContentSource>> =
+        contentDao.observeSources().map { rows -> rows.map { it.toDomain() } }
+
+    override fun observeVocabulary(lessonId: String?): Flow<List<Vocabulary>> =
+        contentDao.observeVocabulary(lessonId).map { rows -> rows.map { it.toDomain() } }
+
+    override fun observeKanji(lessonId: String?): Flow<List<Kanji>> =
+        contentDao.observeKanji(lessonId).map { rows -> rows.map { it.toDomain() } }
+
+    override fun observeGrammar(lessonId: String?): Flow<List<GrammarPoint>> =
+        contentDao.observeGrammar(lessonId).map { rows -> rows.map { it.toDomain() } }
 
     override suspend fun getVocabularyDetail(id: String): VocabularyDetail? =
         contentDao.getVocabularyDetail(id)?.toDomain()
@@ -39,14 +50,20 @@ class OfflineContentRepository(
     override suspend fun getGrammarDetail(id: String): GrammarDetail? =
         contentDao.getGrammarDetail(id)?.toDomain()
 
-    override suspend fun searchVocabulary(query: String, limit: Int, offset: Int): List<Vocabulary> =
-        search(query, limit, offset) { q, pattern, l, o -> contentDao.searchVocabulary(q, pattern, l, o).map { it.toDomain() } }
+    override suspend fun searchVocabulary(query: String, lessonId: String?, limit: Int, offset: Int): List<Vocabulary> =
+        search(query, limit, offset) { q, pattern, l, o ->
+            contentDao.searchVocabulary(q, pattern, lessonId, l, o).map { it.toDomain() }
+        }
 
-    override suspend fun searchKanji(query: String, limit: Int, offset: Int): List<Kanji> =
-        search(query, limit, offset) { q, pattern, l, o -> contentDao.searchKanji(q, pattern, l, o).map { it.toDomain() } }
+    override suspend fun searchKanji(query: String, lessonId: String?, limit: Int, offset: Int): List<Kanji> =
+        search(query, limit, offset) { q, pattern, l, o ->
+            contentDao.searchKanji(q, pattern, lessonId, l, o).map { it.toDomain() }
+        }
 
-    override suspend fun searchGrammar(query: String, limit: Int, offset: Int): List<GrammarPoint> =
-        search(query, limit, offset) { q, pattern, l, o -> contentDao.searchGrammar(q, pattern, l, o).map { it.toDomain() } }
+    override suspend fun searchGrammar(query: String, lessonId: String?, limit: Int, offset: Int): List<GrammarPoint> =
+        search(query, limit, offset) { q, pattern, l, o ->
+            contentDao.searchGrammar(q, pattern, lessonId, l, o).map { it.toDomain() }
+        }
 
     private inline fun <T> search(
         query: String,

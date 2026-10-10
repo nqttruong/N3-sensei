@@ -1,6 +1,8 @@
 package com.n3sensei.app.app
 
 import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.consumeWindowInsets
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -54,7 +56,11 @@ fun N3SenseiApp(
     ) { innerPadding ->
         N3SenseiNavHost(
             navController = navController,
-            modifier = Modifier.padding(innerPadding),
+            // Keep search fields and lists above the keyboard.
+            modifier = Modifier
+                .padding(innerPadding)
+                .consumeWindowInsets(innerPadding)
+                .imePadding(),
         )
     }
 }

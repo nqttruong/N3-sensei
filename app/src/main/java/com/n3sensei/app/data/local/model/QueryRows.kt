@@ -9,6 +9,7 @@ import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.LessonEntity
 import com.n3sensei.app.data.local.entity.TagEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
+import com.n3sensei.app.domain.model.ReviewRating
 
 data class LessonSummaryRow(
     @Embedded val lesson: LessonEntity,
@@ -34,4 +35,24 @@ data class GrammarDetailRow(
     val grammar: GrammarEntity,
     val examples: List<ExampleSentenceEntity>,
     val source: ContentSourceEntity,
+)
+
+data class ContentTotalsRow(
+    val lessons: Int,
+    val vocabulary: Int,
+    val kanji: Int,
+    val grammar: Int,
+)
+
+data class ProgressSummaryRow(
+    @ColumnInfo(name = "tracked_items") val trackedItems: Int,
+    val learning: Int,
+    @ColumnInfo(name = "in_review") val inReview: Int,
+    @ColumnInfo(name = "due_now") val dueNow: Int,
+    @ColumnInfo(name = "total_reviews") val totalReviews: Int,
+)
+
+data class RatingCountRow(
+    val rating: ReviewRating,
+    val count: Int,
 )

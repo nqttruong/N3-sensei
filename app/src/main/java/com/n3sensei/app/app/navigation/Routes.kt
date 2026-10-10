@@ -12,11 +12,35 @@ import kotlinx.serialization.Serializable
 
 @Serializable data object LearnHubRoute
 
+@Serializable data object LessonListRoute
+
+@Serializable data class LessonDetailRoute(val lessonId: String)
+
 @Serializable data object VocabularyRoute
+
+@Serializable data class VocabularyDetailRoute(val vocabularyId: String)
 
 @Serializable data object KanjiRoute
 
+@Serializable data class KanjiDetailRoute(val kanjiId: String)
+
 @Serializable data object GrammarRoute
+
+@Serializable data class GrammarDetailRoute(val grammarId: String)
+
+@Serializable data class PracticeRoute(val lessonId: String)
+
+/** Session result travels as arguments: it is not persisted anywhere. */
+@Serializable
+data class PracticeResultRoute(
+    val lessonId: String,
+    val total: Int,
+    val again: Int,
+    val hard: Int,
+    val good: Int,
+    val easy: Int,
+    val durationSeconds: Long,
+)
 
 @Serializable data object ReviewRoute
 

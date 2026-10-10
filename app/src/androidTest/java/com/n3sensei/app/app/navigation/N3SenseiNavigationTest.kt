@@ -11,7 +11,9 @@ import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 import androidx.navigation.NavDestination
 import androidx.navigation.NavGraph
 import androidx.navigation.compose.ComposeNavigator
@@ -22,6 +24,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.n3sensei.app.R
 import com.n3sensei.app.app.N3SenseiApp
 import com.n3sensei.app.core.designsystem.theme.N3SenseiTheme
+import com.n3sensei.app.testing.AppTestState
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
@@ -42,6 +45,7 @@ class N3SenseiNavigationTest {
 
     @Before
     fun setUp() {
+        AppTestState.reset(seedContent = false)
         composeRule.setContent {
             navController = TestNavHostController(LocalContext.current).apply {
                 navigatorProvider.addNavigator(ComposeNavigator())
@@ -71,6 +75,7 @@ class N3SenseiNavigationTest {
     }
 
     private val learnSubScreens = listOf(
+        R.string.lessons_title to AppScreen.LESSONS,
         R.string.vocabulary_title to AppScreen.VOCABULARY,
         R.string.kanji_title to AppScreen.KANJI,
         R.string.grammar_title to AppScreen.GRAMMAR,
@@ -142,11 +147,22 @@ class N3SenseiNavigationTest {
 
     @Test
     fun homeShortcuts_openTheirTabs() {
-        composeRule.onNodeWithText(string(R.string.home_review_card_action)).performClick()
+        composeRule.onNodeWithText(string(R.string.home_open_review)).performClick()
         assertOn(AppScreen.REVIEW)
         pressBack()
-        composeRule.onNodeWithText(string(R.string.home_learn_card_action)).performClick()
+        composeRule.onNodeWithText(string(R.string.home_open_lessons)).performScrollTo().performClick()
+        assertOn(AppScreen.LESSONS)
+        pressBack()
         assertOn(AppScreen.LEARN_HUB)
+    }
+
+    @Test
+    fun detailRouteWithUnknownId_showsNotFound() {
+        composeRule.runOnIdle { navController.navigate(VocabularyDetailRoute("does-not-exist")) }
+        assertOn(AppScreen.VOCABULARY_DETAIL)
+        composeRule.waitUntil { composeRule.onAllNodesWithText(string(R.string.common_not_found)).fetchSemanticsNodes().isNotEmpty() }
+        clickUp()
+        assertOn(AppScreen.HOME)
     }
 
     @Test

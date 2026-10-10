@@ -2,29 +2,36 @@
 
 Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc thời gian build tăng đáng kể mới tách module; ranh giới package hiện tại đã được giữ bằng test (`ArchitectureRulesTest`) để việc tách sau này không phải sửa phụ thuộc.
 
-## Sơ đồ (trạng thái thực tế sau Prompt 03)
+## Sơ đồ (trạng thái thực tế sau Prompt 04)
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
-│ MainActivity ─▶ N3SenseiTheme ─▶ N3SenseiApp (Scaffold)          │
+│ MainActivity ─▶ N3SenseiRoot (MainViewModel: theme, onboarding,  │
+│                 furigana) ─▶ OnboardingScreen | N3SenseiApp      │
 │                                   ├─ N3TopAppBar  (title, Up)    │
 │                                   ├─ N3NavigationBar (5 tab)     │
 │                                   └─ N3SenseiNavHost             │
 │ app/navigation: Routes · AppScreen · TopLevelDestination ·       │
 │                 navigateToTopLevel                               │
 │ app/di: AppContainer (Application scope) · appViewModel { }      │
-│         └─ N3Database (lazy) · ContentRepository · ProgressRepo. │
+│         └─ N3Database (lazy) · Content/Progress/UserPreferences  │
+│            repositories · Clock                                  │
 └───────────────┬──────────────────────────────────────────────────┘
                 │ callback điều hướng (không truyền NavController)
 ┌───────────────▼──────────────────────────────────────────────────┐
-│ feature/  home · learn · vocabulary · kanji · grammar ·          │
-│           review · stats · settings          (Composable)        │
-│   └─ (sắp tới) XxxViewModel ─ StateFlow<UiState<T>>              │
+│ feature/  onboarding · home · learn · lessons · vocabulary ·     │
+│           kanji · grammar · practice · review · stats · settings │
+│   XxxScreen(viewModel, callbacks) ◀─ XxxViewModel                │
+│                                       StateFlow<UiState<T>>      │
 └───────────────┬──────────────────────────────────────────────────┘
                 │ dùng chung
 ┌───────────────▼──────────────────────────────────────────────────┐
-│ core/designsystem: theme · N3Icons · FeaturePendingContent       │
-│ core/ui/state:     UiState · asUiState() · UiStateContent        │
+│ core/designsystem: theme (+ japanese()) · N3Icons · FuriganaText │
+│                    SearchField · FilterChipRow · InfoBanner · …  │
+│ core/ui/content:   VocabularyCard · KanjiCard · GrammarCard ·    │
+│                    LessonCard · ProgressSummaryCard · …          │
+│ core/ui/state:     UiState · DetailViewModel ·                   │
+│                    LessonFilteredListViewModel · searchableItems │
 └──────────────────────────────────────────────────────────────────┘
 
 
@@ -34,10 +41,11 @@ Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc 
 │          LearningProgress · ReviewRecord · ItemRef · ...         │
 │   repository: ContentRepository · ProgressRepository (interface) │
 │   furigana: Furigana (định dạng {漢字|かんじ})                    │
+│   practice: PracticeSession (luyện tập, không ghi lịch ôn)       │
 └───────────────▲──────────────────────────────────────────────────┘
                 │ cài đặt interface
 ┌───────────────┴──────────────────────────────────────────────────┐
-│ data                                                             │
+│ data   (preferences: DataStoreUserPreferencesRepository)         │
 │   repository: OfflineContentRepository · OfflineProgressRepo.   │
 │               (entity ⇄ domain mapper)                           │
 │   local: N3Database · ContentDao · ContentPackDao · ProgressDao  │
@@ -45,20 +53,40 @@ Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc 
 └──────────────────────────────────────────────────────────────────┘
 ```
 
-Đồ thị điều hướng:
+Đồ thị điều hướng (OnboardingScreen nằm ngoài graph, hiện trước khi người dùng hoàn tất giới thiệu):
 
 ```
 NavHost (start = HomeRoute)
-├── HomeRoute                     tab Trang chủ
-├── LearnGraphRoute               tab Học (nested graph)
+├── HomeRoute                          tab Trang chủ
+├── LearnGraphRoute                    tab Học (nested graph)
 │   ├── LearnHubRoute   (start)
-│   ├── VocabularyRoute           Up/Back ─▶ LearnHub
-│   ├── KanjiRoute                Up/Back ─▶ LearnHub
-│   └── GrammarRoute              Up/Back ─▶ LearnHub
-├── ReviewRoute                   tab Ôn tập
-├── StatsRoute                    tab Thống kê
-└── SettingsRoute                 tab Cài đặt
+│   ├── LessonListRoute ─▶ LessonDetailRoute(lessonId)
+│   │                        ├─▶ Vocabulary/Kanji/GrammarDetailRoute(id)
+│   │                        └─▶ PracticeRoute(lessonId) ─▶ PracticeResultRoute(...)
+│   │                              (kết quả thay thế phiên; Back về chi tiết bài)
+│   ├── VocabularyRoute ─▶ VocabularyDetailRoute(id)
+│   ├── KanjiRoute      ─▶ KanjiDetailRoute(id)
+│   └── GrammarRoute    ─▶ GrammarDetailRoute(id)
+├── ReviewRoute                        tab Ôn tập
+├── StatsRoute                         tab Thống kê
+└── SettingsRoute                      tab Cài đặt
 ```
+
+## Màn hình và nguồn dữ liệu
+
+| Màn hình | Nguồn dữ liệu | Ghi chú |
+|---|---|---|
+| Giới thiệu | DataStore (`onboarding_completed`) | Bỏ qua được; xem lại từ Cài đặt |
+| Trang chủ | Room: tổng nội dung, tóm tắt tiến độ | Báo rõ khi chưa nạp gói nội dung |
+| Danh sách / chi tiết bài học | Room | Tab Từ vựng / Kanji / Ngữ pháp |
+| Từ vựng, Kanji, Ngữ pháp (danh sách) | Room: Flow theo bài, tìm kiếm LIMIT 100 | Tìm kiếm debounce 300 ms, lọc theo bài |
+| Thẻ từ, chi tiết Kanji, ngữ pháp | Room (đọc trong transaction) | Furigana, ví dụ, nguồn và giấy phép |
+| Luyện tập + kết quả | Room (nội dung bài) | Đánh giá chỉ dùng cho kết quả phiên, **không** ghi vào lịch ôn |
+| Ôn tập | Room: số mục đến hạn | Lịch ôn lặp lại cách quãng **chưa triển khai** (ghi rõ trên màn hình) |
+| Thống kê | Room: tổng nội dung, tiến độ, số lượt theo đánh giá | Dự báo **chưa triển khai** (ghi rõ) |
+| Cài đặt | DataStore (theme, furigana) + Room (nguồn nội dung) | Khoảng ôn, nhắc học, sao lưu: hiển thị "Chưa triển khai", không có hành động |
+
+Không màn hình nào dùng dữ liệu cứng. `PreviewContent` chỉ dùng cho `@Preview`; dữ liệu seed chỉ có trong mã test.
 
 ## Quy tắc phụ thuộc
 
@@ -85,7 +113,7 @@ Chi tiết database: [DATABASE.md](DATABASE.md).
 ## UI state
 
 ```kotlin
-sealed interface UiState<out T> { Loading; Empty; Success(data); Error(cause) }
+sealed interface UiState<out T> { Loading; Empty; NotFound; Success(data); Error(cause) }
 
 // ViewModel
 val state = repository.observeX().asListUiState()
@@ -97,7 +125,8 @@ UiStateContent(state, emptyMessage = stringResource(R.string.x_empty), onRetry =
 
 - `Empty` là kết quả thật "không có gì" (không mục đến hạn, không kết quả tìm kiếm), khác `Loading`.
 - `Error` chỉ hiện nút Thử lại khi có `onRetry`.
-- Màn hình chưa có chức năng dùng `FeaturePendingContent`: ghi rõ "Đang phát triển", không có nút giả.
+- Chức năng chưa triển khai được báo bằng `InfoBanner` hoặc mục "Chưa triển khai" không có hành động; không có nút giả.
+- Màn hình chi tiết dùng `UiState.NotFound` khi mục không tồn tại (vd. đã bị gỡ khi cập nhật nội dung).
 
 ## Dependency injection
 
@@ -118,6 +147,11 @@ Lý do: một module, ít dependency; tránh thêm Hilt (plugin Gradle, annotati
 - Màu: chỉ dùng `MaterialTheme.colorScheme`; giá trị màu khai báo ở `core/designsystem/theme/Color.kt`. `res/values/colors.xml` chỉ cho icon launcher.
 - Icon: lấy qua `N3Icons`; drawable đặt tên `ic_<tên>`.
 - Kích thước: bội số 4dp (4, 8, 12, 16, 24).
+
+### Hiển thị tiếng Nhật
+- Mọi `TextStyle` dùng cho chữ Nhật gọi `.japanese()` (locale `ja-JP`) để hiển thị đúng dạng chữ Kanji của Nhật.
+- Furigana: `FuriganaText(markup)`; bật/tắt bằng cài đặt qua `LocalShowFurigana`.
+- Thẻ luyện tập và màn hình chi tiết đã được kiểm tra trên màn hình 360×640dp với cỡ chữ hệ thống 130%.
 
 ### Accessibility
 - Tiêu đề màn hình đánh dấu `heading()`.

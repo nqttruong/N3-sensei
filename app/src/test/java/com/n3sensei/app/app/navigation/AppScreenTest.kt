@@ -34,8 +34,10 @@ class AppScreenTest {
     @Test
     fun requiredAreasAreRegistered() {
         val expected = setOf(
-            HomeRoute::class, LearnHubRoute::class, VocabularyRoute::class, KanjiRoute::class,
-            GrammarRoute::class, ReviewRoute::class, StatsRoute::class, SettingsRoute::class,
+            HomeRoute::class, LearnHubRoute::class, LessonListRoute::class, LessonDetailRoute::class,
+            VocabularyRoute::class, VocabularyDetailRoute::class, KanjiRoute::class, KanjiDetailRoute::class,
+            GrammarRoute::class, GrammarDetailRoute::class, PracticeRoute::class, PracticeResultRoute::class,
+            ReviewRoute::class, StatsRoute::class, SettingsRoute::class,
         )
         assertEquals(expected, AppScreen.entries.map { it.route }.toSet())
     }

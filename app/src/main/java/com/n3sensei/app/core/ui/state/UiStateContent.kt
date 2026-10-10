@@ -33,12 +33,14 @@ fun <T> UiStateContent(
     state: UiState<T>,
     modifier: Modifier = Modifier,
     emptyMessage: String = stringResource(R.string.common_empty_generic),
+    notFoundMessage: String = stringResource(R.string.common_not_found),
     onRetry: (() -> Unit)? = null,
     content: @Composable (T) -> Unit,
 ) {
     when (state) {
         UiState.Loading -> LoadingContent(modifier)
         UiState.Empty -> MessageContent(message = emptyMessage, modifier = modifier)
+        UiState.NotFound -> MessageContent(message = notFoundMessage, modifier = modifier)
         is UiState.Error -> ErrorContent(onRetry = onRetry, modifier = modifier)
         is UiState.Success -> content(state.data)
     }

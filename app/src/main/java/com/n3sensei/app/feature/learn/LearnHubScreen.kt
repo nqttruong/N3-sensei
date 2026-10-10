@@ -24,15 +24,19 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.theme.N3SenseiTheme
+import com.n3sensei.app.core.designsystem.theme.japanese
 
 @Composable
 fun LearnHubScreen(
+    onOpenLessons: () -> Unit,
     onOpenVocabulary: () -> Unit,
     onOpenKanji: () -> Unit,
     onOpenGrammar: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(modifier = modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
+        LearnSectionItem("課", R.string.lessons_title, R.string.learn_lessons_description, onOpenLessons)
+        HorizontalDivider()
         LearnSectionItem("語", R.string.vocabulary_title, R.string.learn_vocabulary_description, onOpenVocabulary)
         HorizontalDivider()
         LearnSectionItem("漢", R.string.kanji_title, R.string.learn_kanji_description, onOpenKanji)
@@ -59,7 +63,7 @@ private fun LearnSectionItem(
                 modifier = Modifier.size(48.dp).clearAndSetSemantics {},
             ) {
                 Box(contentAlignment = Alignment.Center) {
-                    Text(glyph, style = MaterialTheme.typography.titleLarge)
+                    Text(glyph, style = MaterialTheme.typography.titleLarge.japanese())
                 }
             }
         },
@@ -70,5 +74,5 @@ private fun LearnSectionItem(
 @Preview(showBackground = true)
 @Composable
 private fun LearnHubScreenPreview() {
-    N3SenseiTheme { LearnHubScreen(onOpenVocabulary = {}, onOpenKanji = {}, onOpenGrammar = {}) }
+    N3SenseiTheme { LearnHubScreen(onOpenLessons = {}, onOpenVocabulary = {}, onOpenKanji = {}, onOpenGrammar = {}) }
 }

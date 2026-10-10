@@ -2,7 +2,7 @@ package com.n3sensei.app.core.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 
-// Indigo (藍) primary with a vermilion (朱) accent.
+// Indigo (藍) primary, vermilion (朱) secondary, matcha (抹茶) tertiary.
 val Indigo10 = Color(0xFF00105C)
 val Indigo20 = Color(0xFF14257A)
 val Indigo30 = Color(0xFF2E3D91)
@@ -16,6 +16,13 @@ val Vermilion30 = Color(0xFF93000E)
 val Vermilion40 = Color(0xFFB71C1C)
 val Vermilion80 = Color(0xFFFFB4AA)
 val Vermilion90 = Color(0xFFFFDAD5)
+
+val Matcha10 = Color(0xFF0E2000)
+val Matcha20 = Color(0xFF1D3700)
+val Matcha30 = Color(0xFF2D5000)
+val Matcha40 = Color(0xFF3F6A12)
+val Matcha80 = Color(0xFFA4D57A)
+val Matcha90 = Color(0xFFC0F293)
 
 val Slate10 = Color(0xFF1A1B21)
 val Slate20 = Color(0xFF2F3036)

@@ -10,35 +10,71 @@ import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.TagEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.data.local.model.GrammarDetailRow
+import com.n3sensei.app.data.local.model.ContentTotalsRow
 import com.n3sensei.app.data.local.model.KanjiDetailRow
 import com.n3sensei.app.data.local.model.LessonSummaryRow
 import com.n3sensei.app.data.local.model.VocabularyDetailRow
 import kotlinx.coroutines.flow.Flow
 
+private const val LESSON_SUMMARY_SELECT = """
+    SELECT l.*,
+        (SELECT COUNT(*) FROM vocabulary v WHERE v.lesson_id = l.id) AS vocabulary_count,
+        (SELECT COUNT(*) FROM kanji k WHERE k.lesson_id = l.id) AS kanji_count,
+        (SELECT COUNT(*) FROM grammar g WHERE g.lesson_id = l.id) AS grammar_count
+    FROM lessons l
+"""
+
 /** Read queries over shared content. Writes go through [ContentPackDao]. */
 @Dao
 abstract class ContentDao {
 
-    @Query(
-        """
-        SELECT l.*,
-            (SELECT COUNT(*) FROM vocabulary v WHERE v.lesson_id = l.id) AS vocabulary_count,
-            (SELECT COUNT(*) FROM kanji k WHERE k.lesson_id = l.id) AS kanji_count,
-            (SELECT COUNT(*) FROM grammar g WHERE g.lesson_id = l.id) AS grammar_count
-        FROM lessons l
-        ORDER BY l.pack_id, l.number
-        """,
-    )
+    @Query("$LESSON_SUMMARY_SELECT ORDER BY l.pack_id, l.number")
     abstract fun observeLessonSummaries(): Flow<List<LessonSummaryRow>>
 
-    @Query("SELECT * FROM vocabulary WHERE lesson_id = :lessonId ORDER BY sort_order")
-    abstract fun observeVocabularyByLesson(lessonId: String): Flow<List<VocabularyEntity>>
+    @Query("$LESSON_SUMMARY_SELECT WHERE l.id = :id")
+    abstract fun observeLessonSummary(id: String): Flow<LessonSummaryRow?>
 
-    @Query("SELECT * FROM kanji WHERE lesson_id = :lessonId ORDER BY sort_order")
-    abstract fun observeKanjiByLesson(lessonId: String): Flow<List<KanjiEntity>>
+    @Query(
+        """
+        SELECT (SELECT COUNT(*) FROM lessons) AS lessons,
+            (SELECT COUNT(*) FROM vocabulary) AS vocabulary,
+            (SELECT COUNT(*) FROM kanji) AS kanji,
+            (SELECT COUNT(*) FROM grammar) AS grammar
+        """,
+    )
+    abstract fun observeContentTotals(): Flow<ContentTotalsRow>
 
-    @Query("SELECT * FROM grammar WHERE lesson_id = :lessonId ORDER BY sort_order")
-    abstract fun observeGrammarByLesson(lessonId: String): Flow<List<GrammarEntity>>
+    @Query("SELECT * FROM content_sources ORDER BY name")
+    abstract fun observeSources(): Flow<List<ContentSourceEntity>>
+
+    // Item lists: one lesson, or every lesson (null) in course order.
+
+    @Query(
+        """
+        SELECT v.* FROM vocabulary v JOIN lessons l ON l.id = v.lesson_id
+        WHERE :lessonId IS NULL OR v.lesson_id = :lessonId
+        ORDER BY l.pack_id, l.number, v.sort_order
+        """,
+    )
+    abstract fun observeVocabulary(lessonId: String?): Flow<List<VocabularyEntity>>
+
+    @Query(
+        """
+        SELECT k.* FROM kanji k JOIN lessons l ON l.id = k.lesson_id
+        WHERE :lessonId IS NULL OR k.lesson_id = :lessonId
+        ORDER BY l.pack_id, l.number, k.sort_order
+        """,
+    )
+    abstract fun observeKanji(lessonId: String?): Flow<List<KanjiEntity>>
+
+    @Query(
+        """
+        SELECT g.* FROM grammar g JOIN lessons l ON l.id = g.lesson_id
+        WHERE :lessonId IS NULL OR g.lesson_id = :lessonId
+        ORDER BY l.pack_id, l.number, g.sort_order
+        """,
+    )
+    abstract fun observeGrammar(lessonId: String?): Flow<List<GrammarEntity>>
 
     @Query("SELECT * FROM vocabulary WHERE id = :id")
     abstract suspend fun getVocabulary(id: String): VocabularyEntity?
@@ -117,34 +153,55 @@ abstract class ContentDao {
     @Query(
         """
         SELECT * FROM vocabulary
-        WHERE expression LIKE :pattern ESCAPE '\' OR reading LIKE :pattern ESCAPE '\'
-            OR meaning_vi LIKE :pattern ESCAPE '\'
+        WHERE (:lessonId IS NULL OR lesson_id = :lessonId)
+            AND (expression LIKE :pattern ESCAPE '\' OR reading LIKE :pattern ESCAPE '\'
+                OR meaning_vi LIKE :pattern ESCAPE '\')
         ORDER BY CASE WHEN expression = :query OR reading = :query THEN 0 ELSE 1 END,
             lesson_id, sort_order
         LIMIT :limit OFFSET :offset
         """,
     )
-    abstract suspend fun searchVocabulary(query: String, pattern: String, limit: Int, offset: Int): List<VocabularyEntity>
+    abstract suspend fun searchVocabulary(
+        query: String,
+        pattern: String,
+        lessonId: String?,
+        limit: Int,
+        offset: Int,
+    ): List<VocabularyEntity>
 
     @Query(
         """
         SELECT * FROM kanji
-        WHERE character LIKE :pattern ESCAPE '\' OR meaning_vi LIKE :pattern ESCAPE '\'
-            OR han_viet LIKE :pattern ESCAPE '\' OR on_readings LIKE :pattern ESCAPE '\'
-            OR kun_readings LIKE :pattern ESCAPE '\'
+        WHERE (:lessonId IS NULL OR lesson_id = :lessonId)
+            AND (character LIKE :pattern ESCAPE '\' OR meaning_vi LIKE :pattern ESCAPE '\'
+                OR han_viet LIKE :pattern ESCAPE '\' OR on_readings LIKE :pattern ESCAPE '\'
+                OR kun_readings LIKE :pattern ESCAPE '\')
         ORDER BY CASE WHEN character = :query THEN 0 ELSE 1 END, lesson_id, sort_order
         LIMIT :limit OFFSET :offset
         """,
     )
-    abstract suspend fun searchKanji(query: String, pattern: String, limit: Int, offset: Int): List<KanjiEntity>
+    abstract suspend fun searchKanji(
+        query: String,
+        pattern: String,
+        lessonId: String?,
+        limit: Int,
+        offset: Int,
+    ): List<KanjiEntity>
 
     @Query(
         """
         SELECT * FROM grammar
-        WHERE pattern LIKE :pattern ESCAPE '\' OR meaning_vi LIKE :pattern ESCAPE '\'
+        WHERE (:lessonId IS NULL OR lesson_id = :lessonId)
+            AND (pattern LIKE :pattern ESCAPE '\' OR meaning_vi LIKE :pattern ESCAPE '\')
         ORDER BY CASE WHEN pattern = :query THEN 0 ELSE 1 END, lesson_id, sort_order
         LIMIT :limit OFFSET :offset
         """,
     )
-    abstract suspend fun searchGrammar(query: String, pattern: String, limit: Int, offset: Int): List<GrammarEntity>
+    abstract suspend fun searchGrammar(
+        query: String,
+        pattern: String,
+        lessonId: String?,
+        limit: Int,
+        offset: Int,
+    ): List<GrammarEntity>
 }

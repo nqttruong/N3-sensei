@@ -2,7 +2,7 @@
 
 Ứng dụng Android native hỗ trợ học tiếng Nhật trình độ JLPT N3 (từ vựng, Kanji, ngữ pháp, ôn tập lặp lại cách quãng). Hoạt động offline-first.
 
-> Trạng thái: kiến trúc, điều hướng và database Room (Prompt 03). Chưa có giao diện học tập và chưa có nội dung N3 thật.
+> Trạng thái: giao diện đầy đủ đã nối Room/DataStore (Prompt 04). **Chưa có nội dung N3 thật** (app hiển thị trạng thái rỗng) và **chưa có lịch ôn tập lặp lại cách quãng**; luyện tập theo bài hoạt động nhưng không lưu kết quả vào lịch ôn.
 
 ## Yêu cầu môi trường
 

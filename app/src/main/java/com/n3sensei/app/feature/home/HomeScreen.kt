@@ -1,8 +1,8 @@
 package com.n3sensei.app.feature.home
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -13,75 +13,64 @@ import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
-import com.n3sensei.app.core.designsystem.theme.N3SenseiTheme
+import com.n3sensei.app.core.designsystem.component.InfoBanner
+import com.n3sensei.app.core.ui.content.ContentTotalsRow
+import com.n3sensei.app.core.ui.content.ProgressSummaryCard
+import com.n3sensei.app.core.ui.state.UiStateContent
 
-/**
- * Dashboard skeleton. Only real navigation shortcuts for now; progress numbers appear once
- * there is learning data to compute them from.
- */
 @Composable
 fun HomeScreen(
-    onOpenLearn: () -> Unit,
+    viewModel: HomeViewModel,
+    onOpenLessons: () -> Unit,
     onOpenReview: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val state by viewModel.state.collectAsStateWithLifecycle()
+    UiStateContent(state = state, modifier = modifier) { ui ->
+        HomeContent(ui, onOpenLessons, onOpenReview)
+    }
+}
+
+@Composable
+private fun HomeContent(ui: HomeUiState, onOpenLessons: () -> Unit, onOpenReview: () -> Unit) {
     Column(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
-        ShortcutCard(
-            titleRes = R.string.home_review_card_title,
-            bodyRes = R.string.home_review_card_body,
-            actionRes = R.string.home_review_card_action,
-            onAction = onOpenReview,
-        )
-        ShortcutCard(
-            titleRes = R.string.home_learn_card_title,
-            bodyRes = R.string.home_learn_card_body,
-            actionRes = R.string.home_learn_card_action,
-            onAction = onOpenLearn,
-        )
-        Text(
-            text = stringResource(R.string.home_progress_pending),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-    }
-}
+        if (ui.totals.isEmpty) InfoBanner(stringResource(R.string.common_no_content))
 
-@Composable
-private fun ShortcutCard(
-    @StringRes titleRes: Int,
-    @StringRes bodyRes: Int,
-    @StringRes actionRes: Int,
-    onAction: () -> Unit,
-) {
-    ElevatedCard(modifier = Modifier.fillMaxWidth()) {
-        Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            Text(text = stringResource(titleRes), style = MaterialTheme.typography.titleMedium)
-            Text(
-                text = stringResource(bodyRes),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-            FilledTonalButton(onClick = onAction) { Text(stringResource(actionRes)) }
+        ElevatedCard(modifier = Modifier.fillMaxWidth()) {
+            Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text(stringResource(R.string.home_due_title), style = MaterialTheme.typography.titleMedium)
+                Text(
+                    if (ui.progress.dueNow > 0) {
+                        stringResource(R.string.home_due_count, ui.progress.dueNow)
+                    } else {
+                        stringResource(R.string.home_due_none)
+                    },
+                    style = MaterialTheme.typography.bodyLarge,
+                )
+                FilledTonalButton(onClick = onOpenReview) { Text(stringResource(R.string.home_open_review)) }
+            }
+        }
+
+        ProgressSummaryCard(ui.progress)
+
+        ElevatedCard(modifier = Modifier.fillMaxWidth()) {
+            Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Text(stringResource(R.string.home_content_title), style = MaterialTheme.typography.titleMedium)
+                ContentTotalsRow(ui.totals)
+                FilledTonalButton(onClick = onOpenLessons) { Text(stringResource(R.string.home_open_lessons)) }
+            }
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-private fun HomeScreenPreview() {
-    N3SenseiTheme { HomeScreen(onOpenLearn = {}, onOpenReview = {}) }
 }

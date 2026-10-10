@@ -18,6 +18,9 @@ sealed interface UiState<out T> {
 
     data class Success<out T>(val data: T) : UiState<T>
 
+    /** The requested item does not exist (e.g. removed by a content update or bad link). */
+    data object NotFound : UiState<Nothing>
+
     data class Error(val cause: Throwable) : UiState<Nothing>
 }
 

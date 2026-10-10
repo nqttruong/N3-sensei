@@ -19,9 +19,16 @@ enum class AppScreen(
 ) {
     HOME(HomeRoute::class, R.string.app_name, TopLevelDestination.HOME, isTabRoot = true),
     LEARN_HUB(LearnHubRoute::class, R.string.learn_title, TopLevelDestination.LEARN, isTabRoot = true),
+    LESSONS(LessonListRoute::class, R.string.lessons_title, TopLevelDestination.LEARN, isTabRoot = false),
+    LESSON_DETAIL(LessonDetailRoute::class, R.string.lesson_detail_title, TopLevelDestination.LEARN, isTabRoot = false),
     VOCABULARY(VocabularyRoute::class, R.string.vocabulary_title, TopLevelDestination.LEARN, isTabRoot = false),
+    VOCABULARY_DETAIL(VocabularyDetailRoute::class, R.string.vocabulary_detail_title, TopLevelDestination.LEARN, isTabRoot = false),
     KANJI(KanjiRoute::class, R.string.kanji_title, TopLevelDestination.LEARN, isTabRoot = false),
+    KANJI_DETAIL(KanjiDetailRoute::class, R.string.kanji_detail_title, TopLevelDestination.LEARN, isTabRoot = false),
     GRAMMAR(GrammarRoute::class, R.string.grammar_title, TopLevelDestination.LEARN, isTabRoot = false),
+    GRAMMAR_DETAIL(GrammarDetailRoute::class, R.string.grammar_detail_title, TopLevelDestination.LEARN, isTabRoot = false),
+    PRACTICE(PracticeRoute::class, R.string.practice_title, TopLevelDestination.LEARN, isTabRoot = false),
+    PRACTICE_RESULT(PracticeResultRoute::class, R.string.practice_result_title, TopLevelDestination.LEARN, isTabRoot = false),
     REVIEW(ReviewRoute::class, R.string.review_title, TopLevelDestination.REVIEW, isTabRoot = true),
     STATS(StatsRoute::class, R.string.stats_title, TopLevelDestination.STATS, isTabRoot = true),
     SETTINGS(SettingsRoute::class, R.string.settings_title, TopLevelDestination.SETTINGS, isTabRoot = true);
