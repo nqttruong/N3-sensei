@@ -1,14 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Naming: <area>_<element>[_<variant>]
+      app_*    application-wide      nav_*     bottom navigation labels
+      common_* shared UI text        <feature>_* one feature (home, learn, vocabulary, ...)
+    All user-visible text lives here; never hardcode strings in Composables.
+-->
 <resources>
     <string name="app_name">N3 Sensei</string>
 
+    <!-- Bottom navigation -->
+    <string name="nav_home">Trang chủ</string>
     <string name="nav_learn">Học</string>
     <string name="nav_review">Ôn tập</string>
     <string name="nav_stats">Thống kê</string>
     <string name="nav_settings">Cài đặt</string>
 
-    <string name="learn_placeholder">Danh sách bài học (từ vựng, Kanji, ngữ pháp) sẽ được xây dựng ở giai đoạn tiếp theo.</string>
-    <string name="review_placeholder">Phiên ôn tập theo lịch lặp lại cách quãng sẽ được xây dựng ở giai đoạn tiếp theo.</string>
-    <string name="stats_placeholder">Thống kê tiến độ và dự báo khối lượng ôn tập sẽ được xây dựng ở giai đoạn tiếp theo.</string>
-    <string name="settings_placeholder">Cài đặt khoảng ôn, nhắc học, sao lưu và khôi phục sẽ được xây dựng ở giai đoạn tiếp theo.</string>
+    <!-- Common -->
+    <string name="common_navigate_up">Quay lại</string>
+    <string name="common_loading">Đang tải…</string>
+    <string name="common_retry">Thử lại</string>
+    <string name="common_error_generic">Đã xảy ra lỗi. Vui lòng thử lại.</string>
+    <string name="common_empty_generic">Chưa có dữ liệu.</string>
+    <string name="common_feature_pending_title">Đang phát triển</string>
+
+    <!-- Home / Dashboard -->
+    <string name="home_learn_card_title">Học</string>
+    <string name="home_learn_card_body">Học từ vựng, Kanji và mẫu ngữ pháp N3 theo từng bài.</string>
+    <string name="home_learn_card_action">Mở mục Học</string>
+    <string name="home_review_card_title">Ôn tập</string>
+    <string name="home_review_card_body">Số mục đến hạn ôn sẽ hiển thị ở đây khi lịch ôn tập được xây dựng.</string>
+    <string name="home_review_card_action">Mở mục Ôn tập</string>
+    <string name="home_progress_pending">Tổng quan tiến độ học sẽ hiển thị khi có dữ liệu học thật.</string>
+
+    <!-- Learn hub -->
+    <string name="learn_title">Học</string>
+    <string name="learn_vocabulary_description">Từ vựng N3: Kanji, cách đọc, nghĩa và ví dụ</string>
+    <string name="learn_kanji_description">Chữ Kanji: âm On, âm Kun, nghĩa và từ ghép</string>
+    <string name="learn_grammar_description">Mẫu ngữ pháp: cấu trúc, cách dùng và ví dụ</string>
+
+    <!-- Vocabulary -->
+    <string name="vocabulary_title">Từ vựng</string>
+    <string name="vocabulary_pending">Danh sách từ vựng theo bài sẽ được xây dựng sau khi có cơ sở dữ liệu nội dung.</string>
+
+    <!-- Kanji -->
+    <string name="kanji_title">Kanji</string>
+    <string name="kanji_pending">Danh sách Kanji theo bài sẽ được xây dựng sau khi có cơ sở dữ liệu nội dung.</string>
+
+    <!-- Grammar -->
+    <string name="grammar_title">Ngữ pháp</string>
+    <string name="grammar_pending">Danh sách mẫu ngữ pháp theo bài sẽ được xây dựng sau khi có cơ sở dữ liệu nội dung.</string>
+
+    <!-- Review -->
+    <string name="review_title">Ôn tập</string>
+    <string name="review_pending">Phiên ôn tập theo lịch lặp lại cách quãng sẽ được xây dựng ở giai đoạn sau.</string>
+
+    <!-- Stats -->
+    <string name="stats_title">Thống kê</string>
+    <string name="stats_pending">Thống kê tiến độ và dự báo khối lượng ôn tập sẽ được xây dựng ở giai đoạn sau.</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Cài đặt</string>
+    <string name="settings_pending">Cài đặt khoảng ôn, nhắc học, sao lưu và khôi phục sẽ được xây dựng ở giai đoạn sau.</string>
 </resources>

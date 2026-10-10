@@ -7,22 +7,28 @@ import org.junit.Test
 class TopLevelDestinationTest {
 
     @Test
-    fun routesAreUniqueAndNonBlank() {
-        val routes = TopLevelDestination.entries.map { it.route }
-        assertTrue(routes.all { it.isNotBlank() })
-        assertEquals(routes.size, routes.toSet().size)
-    }
-
-    @Test
-    fun startDestinationIsLearn() {
-        assertEquals(TopLevelDestination.LEARN, TopLevelDestination.START)
-    }
-
-    @Test
-    fun bottomBarHasFourTabsInOrder() {
+    fun bottomBarHasFiveTabsInOrder() {
         assertEquals(
-            listOf("learn", "review", "stats", "settings"),
+            listOf(HomeRoute, LearnGraphRoute, ReviewRoute, StatsRoute, SettingsRoute),
             TopLevelDestination.entries.map { it.route },
         )
+    }
+
+    @Test
+    fun phoneBottomBarHasAtMostFiveTabs() {
+        assertTrue(TopLevelDestination.entries.size <= 5)
+    }
+
+    @Test
+    fun routesAndTestTagsAreUnique() {
+        val routes = TopLevelDestination.entries.map { it.route }
+        assertEquals(routes.size, routes.toSet().size)
+        val tags = TopLevelDestination.entries.map { it.testTag }
+        assertEquals(tags.size, tags.toSet().size)
+    }
+
+    @Test
+    fun startDestinationIsHome() {
+        assertEquals(TopLevelDestination.HOME, TopLevelDestination.START)
     }
 }

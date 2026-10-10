@@ -5,11 +5,20 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.n3sensei.app.feature.learn.LearnScreen
+import androidx.navigation.navigation
+import com.n3sensei.app.feature.grammar.GrammarScreen
+import com.n3sensei.app.feature.home.HomeScreen
+import com.n3sensei.app.feature.kanji.KanjiScreen
+import com.n3sensei.app.feature.learn.LearnHubScreen
 import com.n3sensei.app.feature.review.ReviewScreen
 import com.n3sensei.app.feature.settings.SettingsScreen
 import com.n3sensei.app.feature.stats.StatsScreen
+import com.n3sensei.app.feature.vocabulary.VocabularyScreen
 
+/**
+ * The whole navigation graph. Feature screens receive navigation callbacks, never the
+ * NavController, so they stay previewable and testable in isolation.
+ */
 @Composable
 fun N3SenseiNavHost(
     navController: NavHostController,
@@ -20,9 +29,26 @@ fun N3SenseiNavHost(
         startDestination = TopLevelDestination.START.route,
         modifier = modifier,
     ) {
-        composable(TopLevelDestination.LEARN.route) { LearnScreen() }
-        composable(TopLevelDestination.REVIEW.route) { ReviewScreen() }
-        composable(TopLevelDestination.STATS.route) { StatsScreen() }
-        composable(TopLevelDestination.SETTINGS.route) { SettingsScreen() }
+        composable<HomeRoute> {
+            HomeScreen(
+                onOpenLearn = { navController.navigateToTopLevel(TopLevelDestination.LEARN) },
+                onOpenReview = { navController.navigateToTopLevel(TopLevelDestination.REVIEW) },
+            )
+        }
+        navigation<LearnGraphRoute>(startDestination = LearnHubRoute) {
+            composable<LearnHubRoute> {
+                LearnHubScreen(
+                    onOpenVocabulary = { navController.navigate(VocabularyRoute) },
+                    onOpenKanji = { navController.navigate(KanjiRoute) },
+                    onOpenGrammar = { navController.navigate(GrammarRoute) },
+                )
+            }
+            composable<VocabularyRoute> { VocabularyScreen() }
+            composable<KanjiRoute> { KanjiScreen() }
+            composable<GrammarRoute> { GrammarScreen() }
+        }
+        composable<ReviewRoute> { ReviewScreen() }
+        composable<StatsRoute> { StatsScreen() }
+        composable<SettingsRoute> { SettingsScreen() }
     }
 }

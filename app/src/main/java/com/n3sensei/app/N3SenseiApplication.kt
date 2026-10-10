@@ -1,8 +1,8 @@
 package com.n3sensei.app
 
 import android.app.Application
-import com.n3sensei.app.app.AppContainer
-import com.n3sensei.app.app.DefaultAppContainer
+import com.n3sensei.app.app.di.AppContainer
+import com.n3sensei.app.app.di.DefaultAppContainer
 
 class N3SenseiApplication : Application() {
 

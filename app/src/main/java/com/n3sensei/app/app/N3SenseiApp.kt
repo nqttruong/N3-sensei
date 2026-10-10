@@ -1,9 +1,11 @@
 package com.n3sensei.app.app
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
@@ -11,62 +13,91 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
-import androidx.navigation.NavDestination.Companion.hierarchy
-import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavDestination
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.n3sensei.app.R
+import com.n3sensei.app.app.navigation.AppScreen
 import com.n3sensei.app.app.navigation.N3SenseiNavHost
 import com.n3sensei.app.app.navigation.TopLevelDestination
+import com.n3sensei.app.app.navigation.isInTab
+import com.n3sensei.app.app.navigation.navigateToTopLevel
+import com.n3sensei.app.core.designsystem.icon.N3Icons
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun N3SenseiApp() {
-    val navController = rememberNavController()
+fun N3SenseiApp(
+    navController: NavHostController = rememberNavController(),
+) {
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = backStackEntry?.destination
+    val currentScreen = AppScreen.from(currentDestination)
 
     Scaffold(
         topBar = {
-            CenterAlignedTopAppBar(
-                title = {
-                    Text(
-                        text = stringResource(R.string.app_name),
-                        modifier = Modifier.semantics { heading() },
-                    )
-                },
+            N3TopAppBar(
+                titleRes = currentScreen?.titleRes ?: R.string.app_name,
+                showNavigateUp = currentScreen?.isTabRoot == false,
+                onNavigateUp = { navController.navigateUp() },
             )
         },
         bottomBar = {
-            NavigationBar {
-                TopLevelDestination.entries.forEach { destination ->
-                    val selected = currentDestination?.hierarchy?.any { it.route == destination.route } == true
-                    val label = stringResource(destination.labelRes)
-                    NavigationBarItem(
-                        selected = selected,
-                        onClick = {
-                            navController.navigate(destination.route) {
-                                popUpTo(navController.graph.findStartDestination().id) {
-                                    saveState = true
-                                }
-                                launchSingleTop = true
-                                restoreState = true
-                            }
-                        },
-                        // Label is announced by TalkBack, so the icon itself needs no description.
-                        icon = { Icon(destination.icon, contentDescription = null) },
-                        label = { Text(label) },
-                    )
-                }
-            }
+            N3NavigationBar(
+                currentDestination = currentDestination,
+                onSelect = navController::navigateToTopLevel,
+            )
         },
     ) { innerPadding ->
         N3SenseiNavHost(
             navController = navController,
             modifier = Modifier.padding(innerPadding),
         )
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun N3TopAppBar(
+    @StringRes titleRes: Int,
+    showNavigateUp: Boolean,
+    onNavigateUp: () -> Unit,
+) {
+    CenterAlignedTopAppBar(
+        title = {
+            Text(
+                text = stringResource(titleRes),
+                modifier = Modifier.semantics { heading() },
+            )
+        },
+        navigationIcon = {
+            if (showNavigateUp) {
+                IconButton(onClick = onNavigateUp) {
+                    Icon(N3Icons.NavigateUp, contentDescription = stringResource(R.string.common_navigate_up))
+                }
+            }
+        },
+    )
+}
+
+@Composable
+private fun N3NavigationBar(
+    currentDestination: NavDestination?,
+    onSelect: (TopLevelDestination) -> Unit,
+) {
+    NavigationBar {
+        TopLevelDestination.entries.forEach { destination ->
+            NavigationBarItem(
+                selected = currentDestination.isInTab(destination),
+                onClick = { onSelect(destination) },
+                // The label is announced by TalkBack, so the icon needs no description.
+                icon = { Icon(destination.icon, contentDescription = null) },
+                label = { Text(stringResource(destination.labelRes)) },
+                modifier = Modifier.testTag(destination.testTag),
+            )
+        }
     }
 }

@@ -2,7 +2,7 @@
 
 Ứng dụng Android native hỗ trợ học tiếng Nhật trình độ JLPT N3 (từ vựng, Kanji, ngữ pháp, ôn tập lặp lại cách quãng). Hoạt động offline-first.
 
-> Trạng thái: khung project (Prompt 01). Chưa có nghiệp vụ học tập.
+> Trạng thái: kiến trúc và điều hướng (Prompt 02). Chưa có nghiệp vụ học tập.
 
 ## Yêu cầu môi trường
 
@@ -40,29 +40,22 @@ sdk.dir=/đường/dẫn/tới/Android/Sdk
 
 Chưa cấu hình. Khi cần phát hành, tạo `keystore.properties` (đã nằm trong `.gitignore`) và file keystore **ngoài** repo; không commit mật khẩu hay keystore.
 
-## Cấu trúc package
+## Kiến trúc
+
+Xem [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): sơ đồ lớp, đồ thị điều hướng, quản lý UI state, dependency injection và quy ước đặt tên/resource.
 
 ```
 com.n3sensei.app
-├── MainActivity, N3SenseiApplication   điểm vào ứng dụng
-├── app/                                 AppContainer (DI thủ công), N3SenseiApp (Scaffold)
-│   └── navigation/                      TopLevelDestination, NavHost
-├── core/
-│   ├── designsystem/theme/              màu, typography, theme sáng/tối Material 3
-│   └── ui/                              composable dùng chung
-├── data/                                (Prompt 02+) Room entity, DAO, repository, DataStore
-├── domain/                              (Prompt 02+) model và logic thuần Kotlin, ví dụ lịch ôn tập
-└── feature/
-    ├── learn/  review/  stats/  settings/   mỗi tab một package
+├── MainActivity, N3SenseiApplication
+├── app/            Scaffold, navigation/ (route tập trung), di/ (AppContainer)
+├── core/           designsystem/ (theme, icon, component), ui/state/ (UiState)
+├── feature/        home, learn, vocabulary, kanji, grammar, review, stats, settings
+├── domain/         (Prompt 03+) model, logic thuần Kotlin
+└── data/           (Prompt 03+) Room, DataStore, repository
 ```
 
-Quy tắc phụ thuộc: `feature` → `domain` ← `data`; Composable không truy cập database trực tiếp mà qua ViewModel và Repository. Các package `data` và `domain` sẽ được tạo cùng code thật ở giai đoạn tiếp theo.
-
-Mã test:
-
-- `app/src/test/` — unit test JVM; `testing/` chứa tiện ích dùng chung (`MainDispatcherRule`).
-- `app/src/androidTest/` — UI test Compose chạy trên thiết bị.
+Mã test: `app/src/test/` (JVM, gồm test quy tắc kiến trúc) và `app/src/androidTest/` (Compose UI test, điều hướng).
 
 ## Thư viện chính
 
-Jetpack Compose (BOM 2024.11.00) + Material 3, Lifecycle/ViewModel 2.8.7, Navigation Compose 2.8.4, Room 2.6.1 (KSP), DataStore Preferences 1.1.1, Kotlin Coroutines 1.9.0. Test: JUnit 4, kotlinx-coroutines-test, AndroidX Test (Espresso 3.7.0), Compose UI Test.
+Jetpack Compose (BOM 2024.11.00) + Material 3, Lifecycle/ViewModel 2.8.7, Navigation Compose 2.8.4 (route type-safe, kotlinx-serialization 1.7.3), Room 2.6.1 (KSP), DataStore Preferences 1.1.1, Kotlin Coroutines 1.9.0. Test: JUnit 4, kotlinx-coroutines-test, AndroidX Test (Espresso 3.7.0), Compose UI Test, Navigation Testing.
