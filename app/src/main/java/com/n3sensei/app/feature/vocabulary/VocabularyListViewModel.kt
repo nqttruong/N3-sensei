@@ -1,16 +1,23 @@
 package com.n3sensei.app.feature.vocabulary
 
-import com.n3sensei.app.core.ui.state.LessonFilteredListViewModel
+import androidx.lifecycle.viewModelScope
+import com.n3sensei.app.core.ui.state.ItemBrowserViewModel
+import com.n3sensei.app.core.ui.state.STOP_TIMEOUT_MILLIS
 import com.n3sensei.app.domain.model.Vocabulary
+import com.n3sensei.app.domain.model.ItemQuery
+import com.n3sensei.app.domain.model.Tag
+import com.n3sensei.app.domain.model.TrackedItem
 import com.n3sensei.app.domain.repository.ContentRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.stateIn
 
 class VocabularyListViewModel(
     private val contentRepository: ContentRepository,
-) : LessonFilteredListViewModel<Vocabulary>(contentRepository) {
-    override fun observeAll(lessonId: String?): Flow<List<Vocabulary>> =
-        contentRepository.observeVocabulary(lessonId)
+) : ItemBrowserViewModel<Vocabulary>(contentRepository) {
+    override val tags: StateFlow<List<Tag>> = contentRepository.observeTags()
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), emptyList())
 
-    override suspend fun search(query: String, lessonId: String?): List<Vocabulary> =
-        contentRepository.searchVocabulary(query, lessonId, limit = ContentRepository.MAX_PAGE_SIZE)
+    override fun observe(query: ItemQuery): Flow<List<TrackedItem<Vocabulary>>> = contentRepository.observeVocabularyItems(query)
 }

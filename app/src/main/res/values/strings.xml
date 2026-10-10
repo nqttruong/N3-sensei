@@ -176,4 +176,76 @@
     <string name="settings_sources">Nguồn nội dung</string>
     <string name="settings_no_sources">Chưa có nguồn nội dung nào.</string>
     <string name="settings_about">Phiên bản %1$s</string>
+
+    <!-- Learner status, marks, filters -->
+    <string name="status_new">Chưa học</string>
+    <string name="status_learning">Đang học</string>
+    <string name="status_review">Đang ôn</string>
+    <string name="status_any">Mọi trạng thái</string>
+    <string name="filter_marked">Đã đánh dấu</string>
+    <string name="filter_all_topics">Mọi chủ đề</string>
+    <string name="mark_add">Đánh dấu cần chú ý</string>
+    <string name="mark_remove">Bỏ đánh dấu</string>
+    <string name="marked_label">Đã đánh dấu cần chú ý</string>
+    <string name="item_status">Trạng thái: %1$s</string>
+    <string name="practice_this_lesson">Luyện tập bài chứa mục này</string>
+    <string name="practice_marked">Luyện tập các mục đã đánh dấu</string>
+    <string name="practice_marked_count">Luyện tập %1$d mục đã đánh dấu</string>
+    <string name="practice_marked_empty">Chưa có mục nào được đánh dấu. Hãy đánh dấu từ, Kanji hoặc ngữ pháp cần chú ý ở màn hình chi tiết.</string>
+    <string name="list_empty_filtered">Không có mục nào khớp với bộ lọc.</string>
+
+    <!-- Kanji extras -->
+    <string name="kanji_stroke_order_unavailable">Thứ tự nét: chưa hỗ trợ vì chưa có nguồn dữ liệu thứ tự nét được phép sử dụng.</string>
+
+    <!-- Grammar exercises -->
+    <string name="grammar_exercises">Luyện tập ngắn</string>
+    <string name="grammar_exercise_correct">Chính xác!</string>
+    <string name="grammar_exercise_incorrect">Chưa đúng. Đáp án: %1$s</string>
+    <string name="grammar_exercise_retry">Làm lại</string>
+    <string name="grammar_exercise_source_note">Câu hỏi thuộc gói nội dung đã nạp, không phải đề thi JLPT chính thức.</string>
+
+    <!-- Content packs and import -->
+    <string name="settings_content">Nội dung học</string>
+    <string name="settings_no_packs">Chưa có gói nội dung nào.</string>
+    <string name="settings_pack_line">%1$s · phiên bản %2$d · %3$d bài</string>
+    <string name="settings_import">Nhập gói nội dung (JSON)</string>
+    <string name="settings_import_description">Chọn tệp .json theo định dạng n3sensei-content-pack. Tiến độ học không bị thay đổi.</string>
+    <string name="settings_importing">Đang nhập…</string>
+    <string name="import_report_title_success">Đã nhập gói nội dung</string>
+    <string name="import_report_title_failed">Không thể nhập gói nội dung</string>
+    <string name="import_report_title_up_to_date">Gói nội dung đã là bản mới nhất</string>
+    <string name="import_report_pack">%1$s (phiên bản %2$d)</string>
+    <string name="import_report_counts">Hợp lệ: %1$d · Bị bỏ qua: %2$d · Lỗi: %3$d · Cảnh báo: %4$d</string>
+    <string name="import_report_type_line">%1$s: %2$d hợp lệ, %3$d bỏ qua</string>
+    <string name="import_report_more">… và %1$d vấn đề khác</string>
+    <string name="import_report_close">Đóng</string>
+    <string name="import_type_lesson">Bài học</string>
+    <string name="import_type_vocabulary">Từ vựng</string>
+    <string name="import_type_kanji">Kanji</string>
+    <string name="import_type_grammar">Ngữ pháp</string>
+    <string name="import_type_example">Câu ví dụ</string>
+    <string name="import_type_exercise">Bài tập</string>
+    <string name="import_type_tag">Chủ đề</string>
+    <string name="import_severity_fatal">Lỗi nghiêm trọng</string>
+    <string name="import_severity_error">Bỏ qua</string>
+    <string name="import_severity_warning">Cảnh báo</string>
+    <string name="import_issue_INVALID_JSON">Tệp không phải JSON hợp lệ</string>
+    <string name="import_issue_READ_ERROR">Không đọc được tệp</string>
+    <string name="import_issue_UNSUPPORTED_FORMAT">Định dạng không được hỗ trợ</string>
+    <string name="import_issue_MISSING_FIELD">Thiếu trường bắt buộc</string>
+    <string name="import_issue_INVALID_VALUE">Giá trị không hợp lệ</string>
+    <string name="import_issue_DUPLICATE_ID">ID bị trùng</string>
+    <string name="import_issue_DUPLICATE_ENTRY">Mục bị trùng</string>
+    <string name="import_issue_DUPLICATE_LESSON_NUMBER">Số bài bị trùng</string>
+    <string name="import_issue_UNKNOWN_SOURCE">Nguồn không tồn tại</string>
+    <string name="import_issue_UNKNOWN_EXAMPLE">Câu ví dụ không tồn tại</string>
+    <string name="import_issue_UNKNOWN_TAG">Chủ đề không tồn tại</string>
+    <string name="import_issue_INVALID_FURIGANA">Furigana sai định dạng</string>
+    <string name="import_issue_FURIGANA_MISMATCH">Furigana không khớp với chữ hoặc cách đọc</string>
+    <string name="import_issue_INVALID_KANJI_CHARACTER">Không phải một chữ Kanji</string>
+    <string name="import_issue_INVALID_EXERCISE">Bài tập không hợp lệ</string>
+    <string name="import_issue_LESSON_SIZE_DIFFERS">Số mục khác mục tiêu (từ vựng/Kanji/ngữ pháp)</string>
+    <string name="import_issue_NO_LESSONS">Không có bài học hợp lệ</string>
+    <string name="import_issue_OLDER_VERSION">Phiên bản cũ hơn bản đã cài</string>
+    <string name="import_issue_DATABASE_ERROR">Lỗi ghi cơ sở dữ liệu; nội dung cũ được giữ nguyên</string>
 </resources>

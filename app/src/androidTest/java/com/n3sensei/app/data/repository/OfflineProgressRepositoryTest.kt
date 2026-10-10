@@ -4,6 +4,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.n3sensei.app.data.local.N3Database
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.model.ItemUserState
+import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.domain.model.LearningProgress
 import com.n3sensei.app.domain.model.ProgressState
 import com.n3sensei.app.domain.model.ReviewRating
@@ -22,8 +24,10 @@ import org.junit.Assert.assertThrows
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import java.time.Clock
 import java.time.Duration
 import java.time.Instant
+import java.time.ZoneOffset
 
 @RunWith(AndroidJUnit4::class)
 class OfflineProgressRepositoryTest {
@@ -38,7 +42,7 @@ class OfflineProgressRepositoryTest {
     fun setUp() = runBlocking {
         db = inMemoryDatabase()
         db.contentPackDao().replacePack(SeedData.bundle())
-        repository = OfflineProgressRepository(db.progressDao())
+        repository = OfflineProgressRepository(db.progressDao(), Clock.fixed(now, ZoneOffset.UTC))
     }
 
     @After
@@ -109,5 +113,36 @@ class OfflineProgressRepositoryTest {
         val unknown = ItemRef(ItemType.GRAMMAR, "unknown")
         assertNull(repository.observeProgress(unknown).first())
         assertEquals(emptyList<ReviewRecord>(), repository.getReviewHistory(unknown, 10))
+    }
+
+    @Test
+    fun setMarked_isIdempotent_andReflectedInStateAndCount() = runTest {
+        assertEquals(ItemUserState(LearningStatus.NEW, isMarked = false), repository.observeItemState(keiken).first())
+
+        repository.setMarked(keiken, true)
+        repository.setMarked(keiken, true)
+        assertEquals(ItemUserState(LearningStatus.NEW, isMarked = true), repository.observeItemState(keiken).first())
+        assertEquals(1, repository.observeMarkedCount().first())
+        assertEquals(1, db.countRows("item_marks"))
+
+        repository.setMarked(keiken, false)
+        assertEquals(0, repository.observeMarkedCount().first())
+    }
+
+    @Test
+    fun marks_survivePackReplacement_butRemovedContentIsNotCounted() = runTest {
+        repository.setMarked(keiken, true)
+        db.contentPackDao().replacePack(SeedData.bundle(version = 2))
+        assertEquals(1, repository.observeMarkedCount().first())
+
+        db.contentPackDao().deletePack(SeedData.PACK_ID)
+        assertEquals(0, repository.observeMarkedCount().first())
+        assertEquals(1, db.countRows("item_marks"))
+    }
+
+    @Test
+    fun itemState_reflectsProgressStatus() = runTest {
+        repository.recordReview(progress(keiken, dueAt = now), record(keiken, now))
+        assertEquals(LearningStatus.REVIEW, repository.observeItemState(keiken).first().status)
     }
 }

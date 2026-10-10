@@ -1,13 +1,17 @@
 package com.n3sensei.app.feature.grammar
 
-import com.n3sensei.app.core.ui.state.DetailViewModel
+import com.n3sensei.app.core.ui.state.TrackedDetailViewModel
 import com.n3sensei.app.domain.model.GrammarDetail
+import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.repository.ContentRepository
+import com.n3sensei.app.domain.repository.ProgressRepository
 
 class GrammarDetailViewModel(
     private val itemId: String,
     private val contentRepository: ContentRepository,
-) : DetailViewModel<GrammarDetail>() {
+    progressRepository: ProgressRepository,
+) : TrackedDetailViewModel<GrammarDetail>(ItemRef(ItemType.GRAMMAR, itemId), progressRepository) {
     init {
         refresh()
     }

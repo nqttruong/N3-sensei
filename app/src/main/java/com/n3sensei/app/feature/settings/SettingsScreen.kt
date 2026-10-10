@@ -1,6 +1,10 @@
 package com.n3sensei.app.feature.settings
 
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
@@ -8,6 +12,7 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
@@ -34,6 +39,12 @@ fun SettingsScreen(
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val importState by viewModel.importState.collectAsStateWithLifecycle()
+    val pickDocument = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        uri?.let { viewModel.importDocument(it.toString()) }
+    }
+    (importState as? ImportUiState.Finished)?.let { ImportReportDialog(it.report, viewModel::dismissImportReport) }
+
     UiStateContent(state = state, modifier = modifier) { ui ->
         val prefs = ui.preferences
         Column(
@@ -86,6 +97,31 @@ fun SettingsScreen(
                     supportingContent = { Text(stringResource(R.string.common_not_implemented)) },
                 )
             }
+            HorizontalDivider()
+
+            SectionHeader(stringResource(R.string.settings_content), Modifier.padding(horizontal = 16.dp))
+            Column(Modifier.padding(horizontal = 16.dp, vertical = 4.dp)) {
+                if (ui.packs.isEmpty()) {
+                    Text(stringResource(R.string.settings_no_packs), color = MaterialTheme.colorScheme.onSurfaceVariant)
+                }
+                ui.packs.forEach { pack ->
+                    Text(
+                        stringResource(R.string.settings_pack_line, pack.title, pack.version, pack.lessonCount),
+                        style = MaterialTheme.typography.bodyMedium,
+                        modifier = Modifier.padding(vertical = 2.dp),
+                    )
+                }
+            }
+            val importing = importState == ImportUiState.Running
+            ListItem(
+                headlineContent = { Text(stringResource(if (importing) R.string.settings_importing else R.string.settings_import)) },
+                supportingContent = { Text(stringResource(R.string.settings_import_description)) },
+                trailingContent = { if (importing) CircularProgressIndicator(Modifier.size(24.dp)) },
+                modifier = Modifier.clickable(enabled = !importing, role = Role.Button) {
+                    // Some providers report JSON as text/plain or octet-stream.
+                    pickDocument.launch(arrayOf("application/json", "text/plain", "application/octet-stream"))
+                },
+            )
             HorizontalDivider()
 
             SectionHeader(stringResource(R.string.settings_sources), Modifier.padding(horizontal = 16.dp))

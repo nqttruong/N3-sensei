@@ -5,7 +5,12 @@ import androidx.room.testing.MigrationTestHelper
 import androidx.sqlite.db.framework.FrameworkSQLiteOpenHelperFactory
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import com.n3sensei.app.data.local.entity.ItemMarkEntity
+import com.n3sensei.app.data.repository.OfflineContentRepository
+import com.n3sensei.app.domain.model.ItemQuery
 import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.model.LearningStatus
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -15,9 +20,8 @@ import org.junit.runner.RunWith
 
 /**
  * Verifies the upgrade path from every exported schema version to the current one, using the
- * real migration list and no destructive fallback. With only version 1 exported, this checks
- * that the v1 schema file matches the entities and that v1 data opens through Room; each new
- * version automatically adds its own path to the loop.
+ * real migration list and no destructive fallback, and checks that data written with the v1
+ * schema survives the 1 → 2 migration and is usable through the v2 features.
  */
 @RunWith(AndroidJUnit4::class)
 class N3DatabaseMigrationTest {
@@ -70,6 +74,11 @@ class N3DatabaseMigrationTest {
                     "VALUES ('v', 'l', 's', '経験', 'けいけん', '{経験|けいけん}', 'kinh nghiệm', NULL, 'N3', 1, NULL)",
             )
             execSQL(
+                "INSERT INTO kanji (id, lesson_id, source_id, character, on_readings, kun_readings, han_viet, " +
+                    "meaning_vi, stroke_count, sort_order, note) " +
+                    "VALUES ('k', 'l', 's', '経', 'ケイ\u001Fキョウ', 'へ.る', 'KINH', 'trải qua', 11, 1, NULL)",
+            )
+            execSQL(
                 "INSERT INTO learning_progress (item_type, item_id, state, step_index, interval_minutes, due_at, " +
                     "last_reviewed_at, review_count, lapse_count, created_at, updated_at) " +
                     "VALUES ('VOCABULARY', 'v', 'REVIEW', 2, 1440, 1000, 500, 3, 0, 1, 500)",
@@ -85,6 +94,15 @@ class N3DatabaseMigrationTest {
             val progress = db.progressDao().get(ItemType.VOCABULARY, "v")!!
             assertEquals(1440L, progress.intervalMinutes)
             assertEquals(3, progress.reviewCount)
+
+            // v2: search_text was back-filled, so accent-insensitive search finds old rows.
+            val repository = OfflineContentRepository(db.contentDao(), db.contentPackDao())
+            assertEquals(listOf("v"), repository.searchVocabulary("kinh nghiem").map { it.id })
+            assertEquals(listOf("k"), repository.searchKanji("きょう").map { it.id })
+            // v2: marks table exists and works with migrated items.
+            db.progressDao().insertMark(ItemMarkEntity(ItemType.VOCABULARY, "v", markedAt = 1))
+            assertEquals(1, db.progressDao().observeMarkedCount().first())
+            assertEquals(LearningStatus.REVIEW, repository.observeVocabularyItems(ItemQuery()).first().single().status)
         } finally {
             db.close()
             instrumentation.targetContext.deleteDatabase(name)

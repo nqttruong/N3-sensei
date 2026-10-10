@@ -10,6 +10,7 @@ import com.n3sensei.app.data.local.entity.ContentSourceEntity
 import com.n3sensei.app.data.local.entity.ExampleSentenceEntity
 import com.n3sensei.app.data.local.entity.GrammarEntity
 import com.n3sensei.app.data.local.entity.GrammarExampleCrossRef
+import com.n3sensei.app.data.local.entity.GrammarExerciseEntity
 import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.KanjiExampleCrossRef
 import com.n3sensei.app.data.local.entity.LessonEntity
@@ -18,6 +19,8 @@ import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.data.local.entity.VocabularyExampleCrossRef
 import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
 import com.n3sensei.app.data.local.model.ContentPackBundle
+import com.n3sensei.app.data.local.model.ContentPackRow
+import com.n3sensei.app.data.local.withSearchText
 import kotlinx.coroutines.flow.Flow
 
 /** Writes content packs. Inserts abort on conflict so malformed packs fail loudly. */
@@ -26,6 +29,14 @@ abstract class ContentPackDao {
 
     @Query("SELECT * FROM content_packs ORDER BY id")
     abstract fun observePacks(): Flow<List<ContentPackEntity>>
+
+    @Query(
+        """
+        SELECT p.*, (SELECT COUNT(*) FROM lessons l WHERE l.pack_id = p.id) AS lesson_count
+        FROM content_packs p ORDER BY p.title
+        """,
+    )
+    abstract fun observePackRows(): Flow<List<ContentPackRow>>
 
     @Query("SELECT * FROM content_packs WHERE id = :id")
     abstract suspend fun getPack(id: String): ContentPackEntity?
@@ -44,9 +55,10 @@ abstract class ContentPackDao {
         upsertSources(bundle.sources)
         insertPack(bundle.pack)
         insertLessons(bundle.lessons)
-        insertVocabulary(bundle.vocabulary)
-        insertKanji(bundle.kanji)
-        insertGrammar(bundle.grammar)
+        insertVocabulary(bundle.vocabulary.map { it.withSearchText() })
+        insertKanji(bundle.kanji.map { it.withSearchText() })
+        insertGrammar(bundle.grammar.map { it.withSearchText() })
+        insertGrammarExercises(bundle.grammarExercises)
         insertExamples(bundle.examples)
         insertVocabularyExamples(bundle.vocabularyExamples)
         insertKanjiExamples(bundle.kanjiExamples)
@@ -77,6 +89,9 @@ abstract class ContentPackDao {
 
     @Insert
     abstract suspend fun insertGrammar(items: List<GrammarEntity>)
+
+    @Insert
+    abstract suspend fun insertGrammarExercises(items: List<GrammarExerciseEntity>)
 
     @Insert
     abstract suspend fun insertExamples(items: List<ExampleSentenceEntity>)

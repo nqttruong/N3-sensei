@@ -13,6 +13,8 @@ import com.n3sensei.app.data.local.entity.ContentSourceEntity
 import com.n3sensei.app.data.local.entity.ExampleSentenceEntity
 import com.n3sensei.app.data.local.entity.GrammarEntity
 import com.n3sensei.app.data.local.entity.GrammarExampleCrossRef
+import com.n3sensei.app.data.local.entity.GrammarExerciseEntity
+import com.n3sensei.app.data.local.entity.ItemMarkEntity
 import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.KanjiExampleCrossRef
 import com.n3sensei.app.data.local.entity.LearningProgressEntity
@@ -31,6 +33,7 @@ import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
         VocabularyEntity::class,
         KanjiEntity::class,
         GrammarEntity::class,
+        GrammarExerciseEntity::class,
         ExampleSentenceEntity::class,
         VocabularyExampleCrossRef::class,
         KanjiExampleCrossRef::class,
@@ -39,6 +42,7 @@ import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
         VocabularyTagCrossRef::class,
         LearningProgressEntity::class,
         ReviewRecordEntity::class,
+        ItemMarkEntity::class,
     ],
     version = N3Database.VERSION,
     exportSchema = true,
@@ -50,7 +54,7 @@ abstract class N3Database : RoomDatabase() {
     abstract fun progressDao(): ProgressDao
 
     companion object {
-        const val VERSION = 1
+        const val VERSION = 2
         const val NAME = "n3sensei.db"
 
         /** The production database. Called once by the app container. */

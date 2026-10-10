@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import androidx.navigation.toRoute
+import com.n3sensei.app.R
 import com.n3sensei.app.app.di.appViewModel
 import com.n3sensei.app.domain.practice.PracticeResult
 import com.n3sensei.app.feature.grammar.GrammarDetailScreen
@@ -82,46 +83,59 @@ fun N3SenseiNavHost(
                     onOpenVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
                     onOpenKanji = { navController.navigate(KanjiDetailRoute(it)) },
                     onOpenGrammar = { navController.navigate(GrammarDetailRoute(it)) },
-                    onStartPractice = { navController.navigate(PracticeRoute(route.lessonId)) },
+                    onStartPractice = { navController.navigate(PracticeRoute(lessonId = route.lessonId)) },
                 )
             }
             composable<VocabularyRoute> {
                 VocabularyListScreen(
                     viewModel = appViewModel { VocabularyListViewModel(contentRepository) },
                     onOpenVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
+                    onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
                 )
             }
             composable<VocabularyDetailRoute> { entry ->
                 val id = entry.toRoute<VocabularyDetailRoute>().vocabularyId
-                VocabularyDetailScreen(viewModel = appViewModel { VocabularyDetailViewModel(id, contentRepository) })
+                VocabularyDetailScreen(
+                    viewModel = appViewModel { VocabularyDetailViewModel(id, contentRepository, progressRepository) },
+                    onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
+                )
             }
             composable<KanjiRoute> {
                 KanjiListScreen(
                     viewModel = appViewModel { KanjiListViewModel(contentRepository) },
                     onOpenKanji = { navController.navigate(KanjiDetailRoute(it)) },
+                    onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
                 )
             }
             composable<KanjiDetailRoute> { entry ->
                 val id = entry.toRoute<KanjiDetailRoute>().kanjiId
-                KanjiDetailScreen(viewModel = appViewModel { KanjiDetailViewModel(id, contentRepository) })
+                KanjiDetailScreen(
+                    viewModel = appViewModel { KanjiDetailViewModel(id, contentRepository, progressRepository) },
+                    onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
+                )
             }
             composable<GrammarRoute> {
                 GrammarListScreen(
                     viewModel = appViewModel { GrammarListViewModel(contentRepository) },
                     onOpenGrammar = { navController.navigate(GrammarDetailRoute(it)) },
+                    onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
                 )
             }
             composable<GrammarDetailRoute> { entry ->
                 val id = entry.toRoute<GrammarDetailRoute>().grammarId
-                GrammarDetailScreen(viewModel = appViewModel { GrammarDetailViewModel(id, contentRepository) })
+                GrammarDetailScreen(
+                    viewModel = appViewModel { GrammarDetailViewModel(id, contentRepository, progressRepository) },
+                    onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
+                )
             }
             composable<PracticeRoute> { entry ->
-                val lessonId = entry.toRoute<PracticeRoute>().lessonId
+                val route = entry.toRoute<PracticeRoute>()
                 PracticeScreen(
-                    viewModel = appViewModel { PracticeViewModel(lessonId, contentRepository, clock) },
+                    viewModel = appViewModel { PracticeViewModel(route.lessonId, route.markedOnly, contentRepository, clock) },
+                    markedOnly = route.markedOnly,
                     onFinished = { result ->
-                        // Replace the finished session so Back from the result returns to the lesson.
-                        navController.navigate(result.toRoute(lessonId)) {
+                        // Replace the finished session so Back from the result returns to where it started.
+                        navController.navigate(result.toRoute(route)) {
                             popUpTo<PracticeRoute> { inclusive = true }
                         }
                     },
@@ -132,11 +146,12 @@ fun N3SenseiNavHost(
                 PracticeResultScreen(
                     result = PracticeResult(route.total, route.again, route.hard, route.good, route.easy, route.durationSeconds),
                     onPracticeAgain = {
-                        navController.navigate(PracticeRoute(route.lessonId)) {
+                        navController.navigate(PracticeRoute(route.lessonId, route.markedOnly)) {
                             popUpTo<PracticeResultRoute> { inclusive = true }
                         }
                     },
                     onBackToLesson = { navController.popBackStack() },
+                    backLabelRes = if (route.markedOnly) R.string.common_navigate_up else R.string.practice_result_back,
                 )
             }
         }
@@ -144,16 +159,17 @@ fun N3SenseiNavHost(
             ReviewScreen(
                 viewModel = appViewModel { ReviewViewModel(progressRepository, clock) },
                 onOpenLessons = { navController.navigateToLessons() },
+                onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
             )
         }
         composable<StatsRoute> {
             StatsScreen(viewModel = appViewModel { StatsViewModel(contentRepository, progressRepository, clock) })
         }
         composable<SettingsRoute> {
-            SettingsScreen(viewModel = appViewModel { SettingsViewModel(userPreferencesRepository, contentRepository) })
+            SettingsScreen(viewModel = appViewModel { SettingsViewModel(userPreferencesRepository, contentRepository, contentImportRepository) })
         }
     }
 }
 
-private fun PracticeResult.toRoute(lessonId: String) =
-    PracticeResultRoute(lessonId, total, again, hard, good, easy, durationSeconds)
+private fun PracticeResult.toRoute(practice: PracticeRoute) =
+    PracticeResultRoute(practice.lessonId, practice.markedOnly, total, again, hard, good, easy, durationSeconds)

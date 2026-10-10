@@ -2,6 +2,12 @@ package com.n3sensei.app.data.repository
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.n3sensei.app.data.local.N3Database
+import com.n3sensei.app.data.local.entity.ItemMarkEntity
+import com.n3sensei.app.data.local.entity.LearningProgressEntity
+import com.n3sensei.app.domain.model.ItemQuery
+import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.model.LearningStatus
+import com.n3sensei.app.domain.model.ProgressState
 import com.n3sensei.app.domain.repository.ContentRepository
 import com.n3sensei.app.testing.SeedData
 import com.n3sensei.app.testing.inMemoryDatabase
@@ -27,7 +33,7 @@ class OfflineContentRepositoryTest {
     fun setUp() = runBlocking {
         db = inMemoryDatabase()
         db.contentPackDao().replacePack(SeedData.bundle())
-        repository = OfflineContentRepository(db.contentDao())
+        repository = OfflineContentRepository(db.contentDao(), db.contentPackDao())
     }
 
     @After
@@ -116,6 +122,15 @@ class OfflineContentRepositoryTest {
     }
 
     @Test
+    fun search_ignoresVietnameseDiacriticsAndCase_andMatchesKanaAcrossScripts() = runTest {
+        assertEquals(listOf(SeedData.V_KEIKEN), repository.searchVocabulary("Kinh Nghiem").map { it.id })
+        assertEquals(listOf(SeedData.K_ZOU), repository.searchKanji("tăng").map { it.id })
+        // Readings are stored in katakana (on) / hiragana (kun); either script finds them.
+        assertEquals(listOf(SeedData.K_KEI), repository.searchKanji("きょう").map { it.id })
+        assertEquals(listOf(SeedData.V_FUERU), repository.searchVocabulary("フエル").map { it.id })
+    }
+
+    @Test
     fun search_exactMatchRanksFirst() = runTest {
         // "増" is contained in 増える; exact kanji match must come first.
         assertEquals(SeedData.K_ZOU, repository.searchKanji("増").first().id)
@@ -158,5 +173,65 @@ class OfflineContentRepositoryTest {
         assertEquals(all.drop(2).take(2), page2)
         assertEquals(1, repository.searchVocabulary("n", limit = 0).size) // clamped to 1
         assertEquals(all, repository.searchVocabulary("n", limit = 100, offset = -5)) // clamped to 0
+    }
+
+    // --- Browse queries with learner state ---
+
+    private val progressDao get() = db.progressDao()
+
+    @Test
+    fun browse_blankQuery_returnsAllInCourseOrder_withoutLimit() = runTest {
+        val items = repository.observeVocabularyItems(ItemQuery()).first()
+        assertEquals(listOf(SeedData.V_KEIKEN, SeedData.V_FUERU, SeedData.V_TODOKERU, SeedData.V_SHIKKARI), items.map { it.item.id })
+        assertTrue(items.all { it.status == LearningStatus.NEW && !it.isMarked })
+    }
+
+    @Test
+    fun browse_filtersByLessonTagAndText() = runTest {
+        assertEquals(0, repository.observeVocabularyItems(ItemQuery(lessonId = SeedData.LESSON_EMPTY)).first().size)
+        assertEquals(
+            listOf(SeedData.V_KEIKEN),
+            repository.observeVocabularyItems(ItemQuery(tagId = "topic:work")).first().map { it.item.id },
+        )
+        assertEquals(
+            listOf(SeedData.V_TODOKERU),
+            repository.observeVocabularyItems(ItemQuery(text = "chuyen den")).first().map { it.item.id },
+        )
+        assertEquals(listOf(SeedData.K_ZOU), repository.observeKanjiItems(ItemQuery(text = "増")).first().map { it.item.id })
+        assertEquals(1, repository.observeGrammarItems(ItemQuery(text = "vua moi")).first().size)
+    }
+
+    @Test
+    fun browse_marksAndStatus_comeFromLearnerTables() = runTest {
+        progressDao.insertMark(ItemMarkEntity(ItemType.KANJI, SeedData.K_ZOU, markedAt = 1))
+        progressDao.upsert(
+            LearningProgressEntity(ItemType.KANJI, SeedData.K_KEI, ProgressState.REVIEW, 1, 60, 0, 0, 1, 0, 0, 0),
+        )
+
+        val all = repository.observeKanjiItems(ItemQuery()).first().associateBy { it.item.id }
+        assertEquals(LearningStatus.REVIEW, all.getValue(SeedData.K_KEI).status)
+        assertTrue(all.getValue(SeedData.K_ZOU).isMarked)
+
+        assertEquals(listOf(SeedData.K_ZOU), repository.observeKanjiItems(ItemQuery(markedOnly = true)).first().map { it.item.id })
+        assertEquals(listOf(SeedData.K_KEI), repository.observeKanjiItems(ItemQuery(status = LearningStatus.REVIEW)).first().map { it.item.id })
+        assertEquals(listOf(SeedData.K_ZOU), repository.observeKanjiItems(ItemQuery(status = LearningStatus.NEW)).first().map { it.item.id })
+        assertTrue(repository.observeKanjiItems(ItemQuery(status = LearningStatus.LEARNING)).first().isEmpty())
+    }
+
+    @Test
+    fun browseFlow_updatesWhenAnItemIsMarked() = runTest {
+        val flow = repository.observeVocabularyItems(ItemQuery(markedOnly = true))
+        assertTrue(flow.first().isEmpty())
+        progressDao.insertMark(ItemMarkEntity(ItemType.VOCABULARY, SeedData.V_SHIKKARI, markedAt = 1))
+        assertEquals(listOf(SeedData.V_SHIKKARI), flow.first().map { it.item.id })
+    }
+
+    @Test
+    fun tagsAndPacks_areListed() = runTest {
+        assertEquals(listOf("Công việc"), repository.observeTags().first().map { it.name })
+        val pack = repository.observePacks().first().single()
+        assertEquals(SeedData.PACK_ID, pack.id)
+        assertEquals(2, pack.lessonCount)
+        assertTrue(pack.isSeed)
     }
 }

@@ -32,14 +32,14 @@ class PracticeViewModelTest {
 
     @Test
     fun loadsLessonItemsInOrder_vocabularyKanjiGrammar() {
-        val items = PracticeViewModel("l1", repository, clock).ui().session.items
+        val items = PracticeViewModel("l1", markedOnly = false, repository, clock).ui().session.items
         assertEquals(listOf("v1", "k1", "g1"), items.map { it.ref.id })
         assertTrue(items[0] is PracticeItem.VocabularyItem)
     }
 
     @Test
     fun ratingEveryCard_producesResultWithDuration() {
-        val viewModel = PracticeViewModel("l1", repository, clock)
+        val viewModel = PracticeViewModel("l1", markedOnly = false, repository, clock)
         listOf(ReviewRating.GOOD, ReviewRating.AGAIN).forEach {
             viewModel.revealAnswer()
             viewModel.rate(it)
@@ -55,7 +55,20 @@ class PracticeViewModelTest {
 
     @Test
     fun emptyLesson_isEmpty_andUnknownLesson_isNotFound() {
-        assertEquals(UiState.Empty, PracticeViewModel("empty", repository, clock).state.value)
-        assertEquals(UiState.NotFound, PracticeViewModel("nope", repository, clock).state.value)
+        assertEquals(UiState.Empty, PracticeViewModel("empty", markedOnly = false, repository, clock).state.value)
+        assertEquals(UiState.NotFound, PracticeViewModel("nope", markedOnly = false, repository, clock).state.value)
+    }
+
+    @Test
+    fun markedOnly_practisesMarkedItemsAcrossLessons() {
+        repository.marked.value = setOf("k1", "other")
+        val ui = PracticeViewModel(lessonId = null, markedOnly = true, repository, clock).ui()
+        assertEquals(listOf("other", "k1"), ui.session.items.map { it.ref.id })
+        assertNull(ui.lessonTitle)
+    }
+
+    @Test
+    fun markedOnly_withNothingMarked_isEmpty() {
+        assertEquals(UiState.Empty, PracticeViewModel(null, markedOnly = true, repository, clock).state.value)
     }
 }

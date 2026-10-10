@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            N3SenseiRoot(viewModel = appViewModel { MainViewModel(userPreferencesRepository) })
+            N3SenseiRoot(viewModel = appViewModel { MainViewModel(userPreferencesRepository, contentImportRepository) })
         }
     }
 }

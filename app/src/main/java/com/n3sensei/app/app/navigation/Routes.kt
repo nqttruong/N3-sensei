@@ -28,12 +28,14 @@ import kotlinx.serialization.Serializable
 
 @Serializable data class GrammarDetailRoute(val grammarId: String)
 
-@Serializable data class PracticeRoute(val lessonId: String)
+/** Practice one lesson's items, or marked items (optionally within [lessonId]). */
+@Serializable data class PracticeRoute(val lessonId: String? = null, val markedOnly: Boolean = false)
 
 /** Session result travels as arguments: it is not persisted anywhere. */
 @Serializable
 data class PracticeResultRoute(
-    val lessonId: String,
+    val lessonId: String?,
+    val markedOnly: Boolean,
     val total: Int,
     val again: Int,
     val hard: Int,

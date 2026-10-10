@@ -1,19 +1,37 @@
 package com.n3sensei.app.data.repository
 
 import com.n3sensei.app.data.local.dao.ProgressDao
+import com.n3sensei.app.data.local.entity.ItemMarkEntity
 import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.ItemUserState
 import com.n3sensei.app.domain.model.LearningProgress
+import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.domain.model.ProgressSummary
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.model.ReviewRecord
 import com.n3sensei.app.domain.repository.ProgressRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import java.time.Clock
 import java.time.Instant
 
 class OfflineProgressRepository(
     private val progressDao: ProgressDao,
+    private val clock: Clock,
 ) : ProgressRepository {
+
+    override fun observeItemState(item: ItemRef): Flow<ItemUserState> =
+        progressDao.observeItemState(item.type, item.id).map { ItemUserState(LearningStatus.from(it.progressState), it.isMarked) }
+
+    override suspend fun setMarked(item: ItemRef, marked: Boolean) {
+        if (marked) {
+            progressDao.insertMark(ItemMarkEntity(item.type, item.id, clock.millis()))
+        } else {
+            progressDao.deleteMark(item.type, item.id)
+        }
+    }
+
+    override fun observeMarkedCount(): Flow<Int> = progressDao.observeMarkedCount()
 
     override fun observeProgress(item: ItemRef): Flow<LearningProgress?> =
         progressDao.observe(item.type, item.id).map { it?.toDomain() }

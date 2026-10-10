@@ -1,6 +1,7 @@
 package com.n3sensei.app.domain.repository
 
 import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.ItemUserState
 import com.n3sensei.app.domain.model.LearningProgress
 import com.n3sensei.app.domain.model.ProgressSummary
 import com.n3sensei.app.domain.model.ReviewRating
@@ -25,6 +26,14 @@ interface ProgressRepository {
 
     /** Number of review records per rating; ratings never used are absent. */
     fun observeRatingCounts(): Flow<Map<ReviewRating, Int>>
+
+    /** Status and "needs attention" mark of one item. */
+    fun observeItemState(item: ItemRef): Flow<ItemUserState>
+
+    /** Marks or unmarks an item as needing attention. Idempotent. */
+    suspend fun setMarked(item: ItemRef, marked: Boolean)
+
+    fun observeMarkedCount(): Flow<Int>
 
     /** Saves the updated progress and its review record atomically. */
     suspend fun recordReview(progress: LearningProgress, record: ReviewRecord)

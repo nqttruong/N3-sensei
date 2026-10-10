@@ -1,12 +1,16 @@
 package com.n3sensei.app.domain.repository
 
+import com.n3sensei.app.domain.model.ContentPackInfo
 import com.n3sensei.app.domain.model.ContentSource
 import com.n3sensei.app.domain.model.ContentTotals
 import com.n3sensei.app.domain.model.GrammarDetail
 import com.n3sensei.app.domain.model.GrammarPoint
+import com.n3sensei.app.domain.model.ItemQuery
 import com.n3sensei.app.domain.model.Kanji
 import com.n3sensei.app.domain.model.KanjiDetail
 import com.n3sensei.app.domain.model.LessonSummary
+import com.n3sensei.app.domain.model.Tag
+import com.n3sensei.app.domain.model.TrackedItem
 import com.n3sensei.app.domain.model.Vocabulary
 import com.n3sensei.app.domain.model.VocabularyDetail
 import kotlinx.coroutines.flow.Flow
@@ -21,6 +25,17 @@ interface ContentRepository {
     fun observeContentTotals(): Flow<ContentTotals>
 
     fun observeSources(): Flow<List<ContentSource>>
+
+    fun observePacks(): Flow<List<ContentPackInfo>>
+
+    fun observeTags(): Flow<List<Tag>>
+
+    // Browsing with filters and the learner's status/marks. Text search is accent- and
+    // case-insensitive for Vietnamese and treats hiragana and katakana alike. Results are
+    // capped at MAX_PAGE_SIZE while searching; unlimited otherwise.
+    fun observeVocabularyItems(query: ItemQuery): Flow<List<TrackedItem<Vocabulary>>>
+    fun observeKanjiItems(query: ItemQuery): Flow<List<TrackedItem<Kanji>>>
+    fun observeGrammarItems(query: ItemQuery): Flow<List<TrackedItem<GrammarPoint>>>
 
     /** Items of one lesson in lesson order, or of all lessons when [lessonId] is null. */
     fun observeVocabulary(lessonId: String? = null): Flow<List<Vocabulary>>

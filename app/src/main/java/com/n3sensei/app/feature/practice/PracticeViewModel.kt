@@ -3,6 +3,7 @@ package com.n3sensei.app.feature.practice
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.n3sensei.app.core.ui.state.UiState
+import com.n3sensei.app.domain.model.ItemQuery
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.practice.PracticeItem
 import com.n3sensei.app.domain.practice.PracticeResult
@@ -20,18 +21,21 @@ import java.time.Duration
 import java.time.Instant
 
 data class PracticeUiState(
-    val lessonTitle: String,
+    /** Null when practising marked items across lessons. */
+    val lessonTitle: String?,
     val session: PracticeSession,
     /** Set once the last card is rated; the screen then navigates to the result. */
     val result: PracticeResult? = null,
 )
 
 /**
- * Practice over one lesson's items in lesson order. Ratings are tallied for the session result
- * only and are not written to the review schedule.
+ * Practice over one lesson's items, or over items marked as needing attention (optionally
+ * within one lesson), in lesson order. Ratings are tallied for the session result only and
+ * are not written to the review schedule.
  */
 class PracticeViewModel(
-    private val lessonId: String,
+    private val lessonId: String?,
+    private val markedOnly: Boolean,
     private val contentRepository: ContentRepository,
     private val clock: Clock,
 ) : ViewModel() {
@@ -49,15 +53,16 @@ class PracticeViewModel(
         viewModelScope.launch {
             _state.value = UiState.Loading
             _state.value = try {
-                val lesson = contentRepository.observeLesson(lessonId).first()
-                if (lesson == null) {
+                val lesson = lessonId?.let { contentRepository.observeLesson(it).first() }
+                if (lessonId != null && lesson == null) {
                     UiState.NotFound
                 } else {
-                    val items = contentRepository.observeVocabulary(lessonId).first().map { PracticeItem.VocabularyItem(it) } +
-                        contentRepository.observeKanji(lessonId).first().map { PracticeItem.KanjiItem(it) } +
-                        contentRepository.observeGrammar(lessonId).first().map { PracticeItem.GrammarItem(it) }
+                    val query = ItemQuery(lessonId = lessonId, markedOnly = markedOnly)
+                    val items = contentRepository.observeVocabularyItems(query).first().map { PracticeItem.VocabularyItem(it.item) } +
+                        contentRepository.observeKanjiItems(query).first().map { PracticeItem.KanjiItem(it.item) } +
+                        contentRepository.observeGrammarItems(query).first().map { PracticeItem.GrammarItem(it.item) }
                     startedAt = clock.instant()
-                    if (items.isEmpty()) UiState.Empty else UiState.Success(PracticeUiState(lesson.title, PracticeSession(items)))
+                    if (items.isEmpty()) UiState.Empty else UiState.Success(PracticeUiState(lesson?.title, PracticeSession(items)))
                 }
             } catch (e: CancellationException) {
                 throw e

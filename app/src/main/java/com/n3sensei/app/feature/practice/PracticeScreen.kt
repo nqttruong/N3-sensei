@@ -41,13 +41,14 @@ import com.n3sensei.app.domain.practice.PracticeSession
 @Composable
 fun PracticeScreen(
     viewModel: PracticeViewModel,
+    markedOnly: Boolean,
     onFinished: (PracticeResult) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     UiStateContent(
         state = state,
-        emptyMessage = stringResource(R.string.practice_empty),
+        emptyMessage = stringResource(if (markedOnly) R.string.practice_marked_empty else R.string.practice_empty),
         notFoundMessage = stringResource(R.string.lesson_not_found),
         onRetry = viewModel::load,
         modifier = modifier,

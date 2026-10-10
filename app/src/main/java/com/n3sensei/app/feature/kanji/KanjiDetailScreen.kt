@@ -25,6 +25,7 @@ import com.n3sensei.app.core.designsystem.component.DetailSection
 import com.n3sensei.app.core.designsystem.component.DetailText
 import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.core.ui.content.ExampleSentenceItem
+import com.n3sensei.app.core.ui.content.ItemActions
 import com.n3sensei.app.core.ui.content.SourceNote
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.KanjiDetail
@@ -32,16 +33,20 @@ import com.n3sensei.app.domain.model.KanjiDetail
 @Composable
 fun KanjiDetailScreen(
     viewModel: KanjiDetailViewModel,
+    onPracticeLesson: (lessonId: String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val itemState by viewModel.itemState.collectAsStateWithLifecycle()
     UiStateContent(state = state, onRetry = viewModel::refresh, modifier = modifier) { detail ->
-        KanjiDetailContent(detail)
+        KanjiDetailContent(detail) {
+            ItemActions(itemState, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.kanji.lessonId) })
+        }
     }
 }
 
 @Composable
-private fun KanjiDetailContent(detail: KanjiDetail) {
+private fun KanjiDetailContent(detail: KanjiDetail, actions: @Composable () -> Unit) {
     val kanji = detail.kanji
     val none = stringResource(R.string.common_none)
     Column(
@@ -73,10 +78,16 @@ private fun KanjiDetailContent(detail: KanjiDetail) {
                 }
             }
         }
+        actions()
         val readingStyle = MaterialTheme.typography.titleMedium.japanese()
         DetailText(stringResource(R.string.kanji_on), kanji.onReadings.joinToString("、").ifEmpty { none }, style = readingStyle)
         DetailText(stringResource(R.string.kanji_kun), kanji.kunReadings.joinToString("、").ifEmpty { none }, style = readingStyle)
         kanji.note?.let { DetailText(stringResource(R.string.vocabulary_note), it) }
+        Text(
+            stringResource(R.string.kanji_stroke_order_unavailable),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
         DetailSection(stringResource(R.string.detail_examples)) {
             if (detail.examples.isEmpty()) {
                 Text(stringResource(R.string.detail_no_examples), color = MaterialTheme.colorScheme.onSurfaceVariant)

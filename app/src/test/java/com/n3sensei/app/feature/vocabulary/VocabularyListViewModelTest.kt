@@ -2,6 +2,7 @@ package com.n3sensei.app.feature.vocabulary
 
 import com.n3sensei.app.core.ui.state.SEARCH_DEBOUNCE_MILLIS
 import com.n3sensei.app.core.ui.state.UiState
+import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.testing.FakeContentRepository
 import com.n3sensei.app.testing.MainDispatcherRule
 import com.n3sensei.app.testing.TestContent
@@ -12,6 +13,7 @@ import kotlinx.coroutines.test.advanceTimeBy
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -35,10 +37,10 @@ class VocabularyListViewModelTest {
         viewModel = VocabularyListViewModel(repository)
     }
 
-    private fun ids() = (viewModel.items.value as UiState.Success).data.map { it.id }
+    private fun ids() = (viewModel.items.value as UiState.Success).data.map { it.item.id }
 
     @Test
-    fun blankQuery_showsAllItems_thenFiltersByLesson() = runTest {
+    fun blankQuery_showsAllItems_thenFiltersByLessonImmediately() = runTest {
         viewModel.items.launchIn(backgroundScope)
         runCurrent()
         assertEquals(listOf("v1", "v2", "v3"), ids())
@@ -49,19 +51,57 @@ class VocabularyListViewModelTest {
     }
 
     @Test
-    fun query_isDebouncedThenSearchedWithinSelectedLesson() = runTest {
+    fun typing_isDebouncedBeforeQuerying() = runTest {
         viewModel.items.launchIn(backgroundScope)
-        viewModel.onLessonSelected("l1")
+        runCurrent()
+        val queriesBefore = repository.browseQueries.size
+
         viewModel.onQueryChange("ふ")
         viewModel.onQueryChange("ふえ")
         advanceTimeBy(SEARCH_DEBOUNCE_MILLIS - 1)
         runCurrent()
-        assertEquals(emptyList<Pair<String, String?>>(), repository.searchCalls)
+        assertEquals(queriesBefore, repository.browseQueries.size)
 
         advanceTimeBy(2)
         runCurrent()
-        assertEquals(listOf("ふえ" to "l1"), repository.searchCalls)
+        assertEquals("ふえ", repository.browseQueries.last().text)
         assertEquals(listOf("v2"), ids())
+    }
+
+    @Test
+    fun clearingText_appliesWithoutDelay() = runTest {
+        viewModel.items.launchIn(backgroundScope)
+        viewModel.onQueryChange("ふえ")
+        advanceTimeBy(SEARCH_DEBOUNCE_MILLIS + 1)
+        runCurrent()
+        viewModel.onQueryChange("")
+        runCurrent()
+        assertEquals(listOf("v1", "v2", "v3"), ids())
+    }
+
+    @Test
+    fun markedOnly_showsMarkedItems_andListUpdatesWhenMarksChange() = runTest {
+        viewModel.items.launchIn(backgroundScope)
+        viewModel.onMarkedOnlyChange(true)
+        runCurrent()
+        assertEquals(UiState.Empty, viewModel.items.value)
+
+        repository.marked.value = setOf("v3")
+        runCurrent()
+        assertEquals(listOf("v3"), ids())
+        assertTrue((viewModel.items.value as UiState.Success).data.single().isMarked)
+    }
+
+    @Test
+    fun statusAndTagFilters_arePassedToRepository() = runTest {
+        viewModel.items.launchIn(backgroundScope)
+        viewModel.onStatusSelected(LearningStatus.REVIEW)
+        viewModel.onTagSelected("topic:work")
+        runCurrent()
+        val last = repository.browseQueries.last()
+        assertEquals(LearningStatus.REVIEW, last.status)
+        assertEquals("topic:work", last.tagId)
+        assertEquals(UiState.Empty, viewModel.items.value)
     }
 
     @Test
@@ -69,14 +109,6 @@ class VocabularyListViewModelTest {
         viewModel.items.launchIn(backgroundScope)
         viewModel.onQueryChange("zzz")
         advanceTimeBy(SEARCH_DEBOUNCE_MILLIS + 1)
-        runCurrent()
-        assertEquals(UiState.Empty, viewModel.items.value)
-    }
-
-    @Test
-    fun noContent_isEmptyState() = runTest {
-        repository.vocabulary.value = emptyList()
-        viewModel.items.launchIn(backgroundScope)
         runCurrent()
         assertEquals(UiState.Empty, viewModel.items.value)
     }

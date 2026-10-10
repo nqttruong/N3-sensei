@@ -5,6 +5,7 @@ import com.n3sensei.app.data.local.entity.ContentSourceEntity
 import com.n3sensei.app.data.local.entity.ExampleSentenceEntity
 import com.n3sensei.app.data.local.entity.GrammarEntity
 import com.n3sensei.app.data.local.entity.GrammarExampleCrossRef
+import com.n3sensei.app.data.local.entity.GrammarExerciseEntity
 import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.KanjiExampleCrossRef
 import com.n3sensei.app.data.local.entity.LessonEntity
@@ -25,6 +26,7 @@ data class ContentPackBundle(
     val vocabularyExamples: List<VocabularyExampleCrossRef> = emptyList(),
     val kanjiExamples: List<KanjiExampleCrossRef> = emptyList(),
     val grammarExamples: List<GrammarExampleCrossRef> = emptyList(),
+    val grammarExercises: List<GrammarExerciseEntity> = emptyList(),
     val tags: List<TagEntity> = emptyList(),
     val vocabularyTags: List<VocabularyTagCrossRef> = emptyList(),
 )

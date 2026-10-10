@@ -24,6 +24,7 @@ import com.n3sensei.app.core.designsystem.component.DetailText
 import com.n3sensei.app.core.designsystem.component.FuriganaText
 import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.core.ui.content.ExampleSentenceItem
+import com.n3sensei.app.core.ui.content.ItemActions
 import com.n3sensei.app.core.ui.content.SourceNote
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.VocabularyDetail
@@ -31,17 +32,21 @@ import com.n3sensei.app.domain.model.VocabularyDetail
 @Composable
 fun VocabularyDetailScreen(
     viewModel: VocabularyDetailViewModel,
+    onPracticeLesson: (lessonId: String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val itemState by viewModel.itemState.collectAsStateWithLifecycle()
     UiStateContent(state = state, onRetry = viewModel::refresh, modifier = modifier) { detail ->
-        VocabularyDetailContent(detail)
+        VocabularyDetailContent(detail) {
+            ItemActions(itemState, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.vocabulary.lessonId) })
+        }
     }
 }
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun VocabularyDetailContent(detail: VocabularyDetail) {
+private fun VocabularyDetailContent(detail: VocabularyDetail, actions: @Composable () -> Unit) {
     val vocabulary = detail.vocabulary
     Column(
         modifier = Modifier
@@ -55,6 +60,7 @@ private fun VocabularyDetailContent(detail: VocabularyDetail) {
         } else {
             Text(vocabulary.expression, style = MaterialTheme.typography.displaySmall.japanese())
         }
+        actions()
         DetailText(
             stringResource(R.string.vocabulary_reading),
             vocabulary.reading,

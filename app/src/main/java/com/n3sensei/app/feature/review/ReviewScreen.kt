@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,9 +25,11 @@ import com.n3sensei.app.core.ui.state.UiStateContent
 fun ReviewScreen(
     viewModel: ReviewViewModel,
     onOpenLessons: () -> Unit,
+    onPracticeMarked: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val dueCount by viewModel.dueCount.collectAsStateWithLifecycle()
+    val markedCount by viewModel.markedCount.collectAsStateWithLifecycle()
     UiStateContent(state = dueCount, modifier = modifier) { count ->
         Column(
             modifier = Modifier
@@ -39,6 +42,9 @@ fun ReviewScreen(
             InfoBanner(stringResource(R.string.review_scheduler_pending))
             Button(onClick = onOpenLessons, modifier = Modifier.fillMaxWidth()) {
                 Text(stringResource(R.string.review_open_practice))
+            }
+            FilledTonalButton(onClick = onPracticeMarked, enabled = markedCount > 0, modifier = Modifier.fillMaxWidth()) {
+                Text(stringResource(R.string.practice_marked_count, markedCount))
             }
         }
     }

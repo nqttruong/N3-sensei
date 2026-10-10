@@ -6,14 +6,18 @@ import androidx.room.Transaction
 import com.n3sensei.app.data.local.entity.ContentSourceEntity
 import com.n3sensei.app.data.local.entity.ExampleSentenceEntity
 import com.n3sensei.app.data.local.entity.GrammarEntity
+import com.n3sensei.app.data.local.entity.GrammarExerciseEntity
 import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.TagEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.data.local.model.GrammarDetailRow
+import com.n3sensei.app.data.local.model.GrammarItemRow
+import com.n3sensei.app.data.local.model.KanjiItemRow
 import com.n3sensei.app.data.local.model.ContentTotalsRow
 import com.n3sensei.app.data.local.model.KanjiDetailRow
 import com.n3sensei.app.data.local.model.LessonSummaryRow
 import com.n3sensei.app.data.local.model.VocabularyDetailRow
+import com.n3sensei.app.data.local.model.VocabularyItemRow
 import kotlinx.coroutines.flow.Flow
 
 private const val LESSON_SUMMARY_SELECT = """
@@ -115,6 +119,12 @@ abstract class ContentDao {
     )
     abstract suspend fun getGrammarExamples(grammarId: String): List<ExampleSentenceEntity>
 
+    @Query("SELECT * FROM grammar_exercises WHERE grammar_id = :grammarId ORDER BY sort_order")
+    abstract suspend fun getGrammarExercises(grammarId: String): List<GrammarExerciseEntity>
+
+    @Query("SELECT * FROM tags WHERE id IN (SELECT tag_id FROM vocabulary_tags) ORDER BY name")
+    abstract fun observeUsedTags(): Flow<List<TagEntity>>
+
     @Query(
         """
         SELECT t.* FROM tags t
@@ -145,17 +155,17 @@ abstract class ContentDao {
     open suspend fun getGrammarDetail(id: String): GrammarDetailRow? {
         val grammar = getGrammar(id) ?: return null
         val source = getSource(grammar.sourceId) ?: return null
-        return GrammarDetailRow(grammar, getGrammarExamples(id), source)
+        return GrammarDetailRow(grammar, getGrammarExamples(id), source, getGrammarExercises(id))
     }
 
-    // Search: `pattern` is built with SqlLike.contains; exact matches rank first.
+    // Search over normalized search_text: `pattern` = SqlLike.contains(SearchText.normalize(query));
+    // exact matches on the raw query rank first.
 
     @Query(
         """
         SELECT * FROM vocabulary
         WHERE (:lessonId IS NULL OR lesson_id = :lessonId)
-            AND (expression LIKE :pattern ESCAPE '\' OR reading LIKE :pattern ESCAPE '\'
-                OR meaning_vi LIKE :pattern ESCAPE '\')
+            AND search_text LIKE :pattern ESCAPE '\'
         ORDER BY CASE WHEN expression = :query OR reading = :query THEN 0 ELSE 1 END,
             lesson_id, sort_order
         LIMIT :limit OFFSET :offset
@@ -173,9 +183,7 @@ abstract class ContentDao {
         """
         SELECT * FROM kanji
         WHERE (:lessonId IS NULL OR lesson_id = :lessonId)
-            AND (character LIKE :pattern ESCAPE '\' OR meaning_vi LIKE :pattern ESCAPE '\'
-                OR han_viet LIKE :pattern ESCAPE '\' OR on_readings LIKE :pattern ESCAPE '\'
-                OR kun_readings LIKE :pattern ESCAPE '\')
+            AND search_text LIKE :pattern ESCAPE '\'
         ORDER BY CASE WHEN character = :query THEN 0 ELSE 1 END, lesson_id, sort_order
         LIMIT :limit OFFSET :offset
         """,
@@ -192,7 +200,7 @@ abstract class ContentDao {
         """
         SELECT * FROM grammar
         WHERE (:lessonId IS NULL OR lesson_id = :lessonId)
-            AND (pattern LIKE :pattern ESCAPE '\' OR meaning_vi LIKE :pattern ESCAPE '\')
+            AND search_text LIKE :pattern ESCAPE '\'
         ORDER BY CASE WHEN pattern = :query THEN 0 ELSE 1 END, lesson_id, sort_order
         LIMIT :limit OFFSET :offset
         """,
@@ -204,4 +212,90 @@ abstract class ContentDao {
         limit: Int,
         offset: Int,
     ): List<GrammarEntity>
+
+    // Browse queries: optional filters (null = any), learner state joined in. `pattern` is a
+    // LIKE pattern over normalized search_text; `query` is the raw text for exact-match ranking.
+    // A negative `limit` means no limit.
+
+    @Query(
+        """
+        SELECT v.*,
+            (m.item_id IS NOT NULL) AS is_marked,
+            p.state AS progress_state
+        FROM vocabulary v
+        JOIN lessons l ON l.id = v.lesson_id
+        LEFT JOIN learning_progress p ON p.item_type = 'VOCABULARY' AND p.item_id = v.id
+        LEFT JOIN item_marks m ON m.item_type = 'VOCABULARY' AND m.item_id = v.id
+        WHERE (:lessonId IS NULL OR v.lesson_id = :lessonId)
+            AND (:tagId IS NULL OR EXISTS (
+                SELECT 1 FROM vocabulary_tags t WHERE t.vocabulary_id = v.id AND t.tag_id = :tagId))
+            AND (:status IS NULL OR (:status = 'NEW' AND p.item_id IS NULL) OR p.state = :status)
+            AND (:markedOnly = 0 OR m.item_id IS NOT NULL)
+            AND (:pattern IS NULL OR v.search_text LIKE :pattern ESCAPE '\')
+        ORDER BY CASE WHEN v.expression = :query OR v.reading = :query THEN 0 ELSE 1 END,
+            l.pack_id, l.number, v.sort_order
+        LIMIT :limit
+        """,
+    )
+    abstract fun observeVocabularyItems(
+        lessonId: String?,
+        tagId: String?,
+        status: String?,
+        markedOnly: Boolean,
+        pattern: String?,
+        query: String?,
+        limit: Int,
+    ): Flow<List<VocabularyItemRow>>
+
+    @Query(
+        """
+        SELECT k.*,
+            (m.item_id IS NOT NULL) AS is_marked,
+            p.state AS progress_state
+        FROM kanji k
+        JOIN lessons l ON l.id = k.lesson_id
+        LEFT JOIN learning_progress p ON p.item_type = 'KANJI' AND p.item_id = k.id
+        LEFT JOIN item_marks m ON m.item_type = 'KANJI' AND m.item_id = k.id
+        WHERE (:lessonId IS NULL OR k.lesson_id = :lessonId)
+            AND (:status IS NULL OR (:status = 'NEW' AND p.item_id IS NULL) OR p.state = :status)
+            AND (:markedOnly = 0 OR m.item_id IS NOT NULL)
+            AND (:pattern IS NULL OR k.search_text LIKE :pattern ESCAPE '\')
+        ORDER BY CASE WHEN k.character = :query THEN 0 ELSE 1 END, l.pack_id, l.number, k.sort_order
+        LIMIT :limit
+        """,
+    )
+    abstract fun observeKanjiItems(
+        lessonId: String?,
+        status: String?,
+        markedOnly: Boolean,
+        pattern: String?,
+        query: String?,
+        limit: Int,
+    ): Flow<List<KanjiItemRow>>
+
+    @Query(
+        """
+        SELECT g.*,
+            (m.item_id IS NOT NULL) AS is_marked,
+            p.state AS progress_state
+        FROM grammar g
+        JOIN lessons l ON l.id = g.lesson_id
+        LEFT JOIN learning_progress p ON p.item_type = 'GRAMMAR' AND p.item_id = g.id
+        LEFT JOIN item_marks m ON m.item_type = 'GRAMMAR' AND m.item_id = g.id
+        WHERE (:lessonId IS NULL OR g.lesson_id = :lessonId)
+            AND (:status IS NULL OR (:status = 'NEW' AND p.item_id IS NULL) OR p.state = :status)
+            AND (:markedOnly = 0 OR m.item_id IS NOT NULL)
+            AND (:pattern IS NULL OR g.search_text LIKE :pattern ESCAPE '\')
+        ORDER BY CASE WHEN g.pattern = :query THEN 0 ELSE 1 END, l.pack_id, l.number, g.sort_order
+        LIMIT :limit
+        """,
+    )
+    abstract fun observeGrammarItems(
+        lessonId: String?,
+        status: String?,
+        markedOnly: Boolean,
+        pattern: String?,
+        query: String?,
+        limit: Int,
+    ): Flow<List<GrammarItemRow>>
 }

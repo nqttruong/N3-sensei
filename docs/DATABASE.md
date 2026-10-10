@@ -1,13 +1,13 @@
 # Database N3 Sensei
 
-Room 2.6.1, file `n3sensei.db`, schema version **1**. Schema export: `app/schemas/com.n3sensei.app.data.local.N3Database/<version>.json` (commit vào Git).
+Room 2.6.1, file `n3sensei.db`, schema version **2**. Schema export: `app/schemas/com.n3sensei.app.data.local.N3Database/<version>.json` (commit vào Git).
 
 ## Hai nhóm dữ liệu
 
 | Nhóm | Bảng | Ghi bởi | Khi cập nhật nội dung |
 |---|---|---|---|
-| **Nội dung chuẩn** (dùng chung) | `content_sources`, `content_packs`, `lessons`, `vocabulary`, `kanji`, `grammar`, `example_sentences`, `*_examples`, `tags`, `vocabulary_tags` | `ContentPackDao.replacePack` (một transaction) | Xóa và ghi lại cả gói |
-| **Dữ liệu người học** | `learning_progress`, `review_records` | `ProgressDao` | Giữ nguyên |
+| **Nội dung chuẩn** (dùng chung) | `content_sources`, `content_packs`, `lessons`, `vocabulary`, `kanji`, `grammar`, `grammar_exercises`, `example_sentences`, `*_examples`, `tags`, `vocabulary_tags` | `ContentPackDao.replacePack` (một transaction) | Xóa và ghi lại cả gói |
+| **Dữ liệu người học** | `learning_progress`, `review_records`, `item_marks` (đánh dấu cần chú ý) | `ProgressDao` | Giữ nguyên |
 
 Bản ghi nội dung không có cột tiến độ. Tiến độ tham chiếu nội dung bằng `(item_type, item_id)`, **không** dùng foreign key, vì nội dung được thay thế khi cập nhật gói. ID nội dung là chuỗi ổn định do gói cung cấp (vd. `n3-l01-v001`), nên tiến độ vẫn khớp sau khi import lại. Truy vấn mục đến hạn chỉ trả về tiến độ có nội dung tồn tại; tiến độ của mục đã bị gỡ được giữ lại (không mất lịch sử) nhưng không hiện ra.
 
@@ -29,6 +29,8 @@ vocabulary_tags     (vocabulary_id, tag_id)      nhiều mục                  
 tags (id, name UNIQUE)                                                           │
                                                                                  │
 learning_progress PK(item_type, item_id) ···· tham chiếu logic, không FK ········┘
+item_marks        PK(item_type, item_id) ···· (như trên)
+grammar_exercises (grammar_id ─CASCADE─▶ grammar), UNIQUE(grammar_id, sort_order)
 review_records    id AUTOINCREMENT, (item_type, item_id), reviewed_at
 ```
 
@@ -55,7 +57,7 @@ Các cột FK đều có index. Room bật `PRAGMA foreign_keys = ON` khi mở d
 |---|---|
 | Từ vựng | `expression` (cách viết), `reading` (kana), `furigana`, `meaning_vi`, `part_of_speech`, `jlpt_level`, bài, thẻ, câu ví dụ, nguồn |
 | Kanji | `character`, `on_readings`, `kun_readings` (danh sách), `han_viet` (âm Hán Việt), `meaning_vi`, `stroke_count`, ví dụ, bài, nguồn |
-| Ngữ pháp | `pattern`, `structure` (cách nối), `meaning_vi`, `usage`, `caution_note` (lưu ý dễ nhầm), ví dụ kèm bản dịch, nguồn |
+| Ngữ pháp | `pattern`, `structure` (cách nối), `meaning_vi`, `usage`, `caution_note` (lưu ý dễ nhầm), ví dụ kèm bản dịch, bài tập trắc nghiệm (`grammar_exercises`), nguồn |
 | Câu ví dụ | `japanese`, `furigana`, `translation_vi`, nguồn |
 | Nguồn | `name`, `url`, `license`, `attribution`, `license_verified` |
 
@@ -71,17 +73,29 @@ Các cột FK đều có index. Room bật `PRAGMA foreign_keys = ON` khi mở d
 - `ProgressDao.recordReview`: cập nhật tiến độ và ghi lịch sử ôn tập cùng thành công hoặc cùng thất bại.
 - `ContentDao.get*Detail`: đọc mục, câu ví dụ và nguồn trong một transaction để dữ liệu nhất quán.
 
+## Tìm kiếm
+
+`vocabulary`, `kanji`, `grammar` có cột `search_text` (do `SearchText` sinh ra khi ghi, không lấy từ gói): chữ thường, bỏ dấu tiếng Việt (kể cả đ → d), katakana → hiragana, **giữ nguyên dấu kana** (が ≠ か). Truy vấn được chuẩn hóa giống hệt rồi so khớp `LIKE '%…%'`. Nhờ vậy "kinh nghiem", "TĂNG", "きょう" (khớp キョウ) đều tìm được.
+
+## Duyệt danh sách
+
+`ContentDao.observe{Vocabulary,Kanji,Grammar}Items` kết hợp bộ lọc bài, chủ đề (từ vựng), trạng thái học (NEW = chưa có dòng `learning_progress`), "đã đánh dấu" và văn bản; trả về mục kèm trạng thái và cờ đánh dấu. Là `Flow` nên danh sách tự cập nhật khi người học đánh dấu.
+
 ## Giới hạn kết quả
 
-Danh sách theo bài (khoảng 30 mục) trả về đầy đủ qua `Flow`. Tìm kiếm dùng `LIMIT/OFFSET` (mặc định 30, tối đa 100); chuỗi rỗng thì trả về rỗng mà không truy vấn; ký tự `%` và `_` được escape. `LIKE` của SQLite chỉ bỏ phân biệt hoa thường với ký tự ASCII, nên tìm "Tăng" sẽ không khớp "TĂNG". Có thể bổ sung chuẩn hóa hoặc FTS khi xây dựng chức năng tìm kiếm.
+Danh sách không có văn bản tìm kiếm trả về đầy đủ. Có văn bản thì giới hạn 100 kết quả (giao diện báo khi chạm giới hạn); hàm `search*` một lần dùng `LIMIT/OFFSET` (mặc định 30, tối đa 100). Ký tự `%` và `_` được escape. `LIKE '%…%'` không dùng được index; với vài nghìn mục mỗi gói là đủ nhanh, khi cần có thể chuyển sang FTS.
 
 ## Migration
 
 - Không bao giờ dùng `fallbackToDestructiveMigration`.
 - Quy trình đổi schema: tăng `N3Database.VERSION`, build để export JSON mới, thêm `Migration` vào `N3Migrations.ALL`, rồi commit JSON.
 - `N3DatabaseMigrationTest` chạy thử migration từ **mọi** version đã export lên version hiện tại, kiểm tra khớp schema, và kiểm tra dữ liệu ghi bằng schema v1 vẫn đọc được qua Room.
-- Hiện chỉ có version 1, chưa có bước migration nào. Test hiện mới xác nhận schema v1 khớp với entity và dữ liệu v1 mở được; từng bước migration thật sẽ được kiểm tra khi có version 2.
-- Lưu ý: nếu sửa entity mà quên tăng version, Room sẽ ghi đè `1.json`. Khi review cần xem diff thư mục `app/schemas/`.
+- **1 → 2** (`N3Migrations.MIGRATION_1_2`): tạo `item_marks`, `grammar_exercises`; thêm cột `search_text` vào `vocabulary`, `kanji`, `grammar` và **tính lại cho mọi dòng đã có** bằng chính `SearchText` của app. Đã kiểm tra bằng test: dữ liệu ghi theo schema v1 (nội dung + tiến độ) còn nguyên sau migration, tìm kiếm không dấu tìm thấy dòng cũ, bảng đánh dấu dùng được; tắt bước tính lại thì test thất bại.
+- Lưu ý: nếu sửa entity mà quên tăng version, Room sẽ ghi đè JSON của version hiện tại. Khi review cần xem diff thư mục `app/schemas/`.
+
+## Nhập nội dung
+
+Xem [CONTENT_FORMAT.md](CONTENT_FORMAT.md). `ContentPackValidator` (Kotlin thuần) chuyển JSON thành các entity và báo cáo; `ContentPackImporter` ghi bằng `replacePack` (một transaction).
 
 ## Dữ liệu seed
 

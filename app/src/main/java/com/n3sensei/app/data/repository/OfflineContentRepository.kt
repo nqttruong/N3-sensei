@@ -1,14 +1,20 @@
 package com.n3sensei.app.data.repository
 
+import com.n3sensei.app.data.local.SearchText
 import com.n3sensei.app.data.local.SqlLike
 import com.n3sensei.app.data.local.dao.ContentDao
+import com.n3sensei.app.data.local.dao.ContentPackDao
+import com.n3sensei.app.domain.model.ContentPackInfo
 import com.n3sensei.app.domain.model.ContentSource
 import com.n3sensei.app.domain.model.ContentTotals
 import com.n3sensei.app.domain.model.GrammarDetail
 import com.n3sensei.app.domain.model.GrammarPoint
+import com.n3sensei.app.domain.model.ItemQuery
 import com.n3sensei.app.domain.model.Kanji
 import com.n3sensei.app.domain.model.KanjiDetail
 import com.n3sensei.app.domain.model.LessonSummary
+import com.n3sensei.app.domain.model.Tag
+import com.n3sensei.app.domain.model.TrackedItem
 import com.n3sensei.app.domain.model.Vocabulary
 import com.n3sensei.app.domain.model.VocabularyDetail
 import com.n3sensei.app.domain.repository.ContentRepository
@@ -18,6 +24,7 @@ import kotlinx.coroutines.flow.map
 
 class OfflineContentRepository(
     private val contentDao: ContentDao,
+    private val contentPackDao: ContentPackDao,
 ) : ContentRepository {
 
     override fun observeLessons(): Flow<List<LessonSummary>> =
@@ -31,6 +38,33 @@ class OfflineContentRepository(
 
     override fun observeSources(): Flow<List<ContentSource>> =
         contentDao.observeSources().map { rows -> rows.map { it.toDomain() } }
+
+    override fun observePacks(): Flow<List<ContentPackInfo>> =
+        contentPackDao.observePackRows().map { rows -> rows.map { it.toDomain() } }
+
+    override fun observeTags(): Flow<List<Tag>> =
+        contentDao.observeUsedTags().map { rows -> rows.map { it.toDomain() } }
+
+    override fun observeVocabularyItems(query: ItemQuery): Flow<List<TrackedItem<Vocabulary>>> {
+        val text = BrowseText.of(query)
+        return contentDao.observeVocabularyItems(
+            query.lessonId, query.tagId, query.status?.name, query.markedOnly, text.pattern, text.raw, text.limit,
+        ).map { rows -> rows.map { it.toDomain() } }
+    }
+
+    override fun observeKanjiItems(query: ItemQuery): Flow<List<TrackedItem<Kanji>>> {
+        val text = BrowseText.of(query)
+        return contentDao.observeKanjiItems(
+            query.lessonId, query.status?.name, query.markedOnly, text.pattern, text.raw, text.limit,
+        ).map { rows -> rows.map { it.toDomain() } }
+    }
+
+    override fun observeGrammarItems(query: ItemQuery): Flow<List<TrackedItem<GrammarPoint>>> {
+        val text = BrowseText.of(query)
+        return contentDao.observeGrammarItems(
+            query.lessonId, query.status?.name, query.markedOnly, text.pattern, text.raw, text.limit,
+        ).map { rows -> rows.map { it.toDomain() } }
+    }
 
     override fun observeVocabulary(lessonId: String?): Flow<List<Vocabulary>> =
         contentDao.observeVocabulary(lessonId).map { rows -> rows.map { it.toDomain() } }
@@ -73,6 +107,22 @@ class OfflineContentRepository(
     ): List<T> {
         val trimmed = query.trim()
         if (trimmed.isEmpty()) return emptyList()
-        return run(trimmed, SqlLike.contains(trimmed), limit.coerceIn(1, MAX_PAGE_SIZE), offset.coerceAtLeast(0))
+        return run(trimmed, SqlLike.contains(SearchText.normalize(trimmed)), limit.coerceIn(1, MAX_PAGE_SIZE), offset.coerceAtLeast(0))
+    }
+
+    /** Text part of a browse query: no pattern and no limit when the text is blank. */
+    private class BrowseText(val raw: String?, val pattern: String?, val limit: Int) {
+        companion object {
+            fun of(query: ItemQuery): BrowseText {
+                val trimmed = query.text.trim()
+                return if (trimmed.isEmpty()) {
+                    BrowseText(null, null, NO_LIMIT)
+                } else {
+                    BrowseText(trimmed, SqlLike.contains(SearchText.normalize(trimmed)), MAX_PAGE_SIZE)
+                }
+            }
+
+            private const val NO_LIMIT = -1
+        }
     }
 }

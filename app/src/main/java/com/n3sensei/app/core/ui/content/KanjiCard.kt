@@ -22,12 +22,15 @@ import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.theme.N3SenseiTheme
 import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.domain.model.Kanji
+import com.n3sensei.app.domain.model.LearningStatus
 
 @Composable
 fun KanjiCard(
     kanji: Kanji,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
+    status: LearningStatus = LearningStatus.NEW,
+    isMarked: Boolean = false,
 ) {
     OutlinedCard(onClick = onClick, modifier = modifier.fillMaxWidth()) {
         Row(
@@ -55,6 +58,7 @@ fun KanjiCard(
                     overflow = TextOverflow.Ellipsis,
                 )
             }
+            ItemStatusBadge(status, isMarked)
         }
     }
 }

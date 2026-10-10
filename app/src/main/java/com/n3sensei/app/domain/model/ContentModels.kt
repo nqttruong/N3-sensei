@@ -96,8 +96,27 @@ data class KanjiDetail(
     val source: ContentSource,
 )
 
+/** Multiple-choice question attached to a grammar point by the content pack. */
+data class GrammarExercise(
+    val id: String,
+    /** Question text; may contain furigana markup and a blank such as "＿＿＿". */
+    val prompt: String,
+    val options: List<String>,
+    val answerIndex: Int,
+    val explanationVi: String?,
+)
+
 data class GrammarDetail(
     val grammar: GrammarPoint,
     val examples: List<ExampleSentence>,
     val source: ContentSource,
+    val exercises: List<GrammarExercise> = emptyList(),
+)
+
+data class ContentPackInfo(
+    val id: String,
+    val title: String,
+    val version: Int,
+    val isSeed: Boolean,
+    val lessonCount: Int,
 )

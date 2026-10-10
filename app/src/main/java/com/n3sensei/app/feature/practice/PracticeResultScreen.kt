@@ -30,6 +30,7 @@ fun PracticeResultScreen(
     onPracticeAgain: () -> Unit,
     onBackToLesson: () -> Unit,
     modifier: Modifier = Modifier,
+    backLabelRes: Int = R.string.practice_result_back,
 ) {
     Column(
         modifier = modifier
@@ -55,7 +56,7 @@ fun PracticeResultScreen(
             Text(stringResource(R.string.practice_result_again))
         }
         OutlinedButton(onClick = onBackToLesson, modifier = Modifier.fillMaxWidth()) {
-            Text(stringResource(R.string.practice_result_back))
+            Text(stringResource(backLabelRes))
         }
     }
 }

@@ -47,3 +47,14 @@ data class ReviewRecordEntity(
     @ColumnInfo(name = "interval_after_minutes") val intervalAfterMinutes: Long,
     @ColumnInfo(name = "due_at_after") val dueAtAfter: Long,
 )
+
+/** Learner's "needs attention" mark on an item. Presence of the row means marked. */
+@Entity(
+    tableName = "item_marks",
+    primaryKeys = ["item_type", "item_id"],
+)
+data class ItemMarkEntity(
+    @ColumnInfo(name = "item_type") val itemType: ItemType,
+    @ColumnInfo(name = "item_id") val itemId: String,
+    @ColumnInfo(name = "marked_at") val markedAt: Long,
+)

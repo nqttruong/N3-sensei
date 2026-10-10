@@ -19,4 +19,8 @@ class ReviewViewModel(
     val dueCount: StateFlow<UiState<Int>> = progressRepository.observeDueCount(clock.instant())
         .asUiState()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), UiState.Loading)
+
+    /** Items marked as needing attention whose content still exists. */
+    val markedCount: StateFlow<Int> = progressRepository.observeMarkedCount()
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), 0)
 }

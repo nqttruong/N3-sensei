@@ -31,6 +31,16 @@ object N3Icons {
         materialIcon("BarChart", "M5,9.2h3V19H5V9.2zM10.6,5h2.8v14h-2.8V5zM16.2,13H19v6h-2.8V13z")
     }
 
+    /** Material "bookmark" (filled): item marked as needing attention. */
+    val Marked: ImageVector by lazy {
+        materialIcon("Bookmark", "M17,3H7c-1.1,0 -1.99,0.9 -1.99,2L5,21l7,-3 7,3V5c0,-1.1 -0.9,-2 -2,-2z")
+    }
+
+    /** Material "bookmark_border". */
+    val Unmarked: ImageVector by lazy {
+        materialIcon("BookmarkBorder", "M17,3H7c-1.1,0 -1.99,0.9 -1.99,2L5,21l7,-3 7,3V5c0,-1.1 -0.9,-2 -2,-2zM17,18l-5,-2.18L7,18V5h10v13z")
+    }
+
     private fun materialIcon(name: String, pathData: String): ImageVector =
         ImageVector.Builder(
             name = name,

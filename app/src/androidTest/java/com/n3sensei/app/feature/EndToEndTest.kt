@@ -45,8 +45,12 @@ class EndToEndTest {
     private val context = InstrumentationRegistry.getInstrumentation().targetContext
     private fun string(@StringRes id: Int, vararg args: Any) = context.getString(id, *args)
 
-    private fun launch(seedContent: Boolean = true, onboardingCompleted: Boolean = true): ActivityScenario<MainActivity> {
-        AppTestState.reset(seedContent, onboardingCompleted)
+    private fun launch(
+        seedContent: Boolean = true,
+        onboardingCompleted: Boolean = true,
+        bundledContent: Boolean = false,
+    ): ActivityScenario<MainActivity> {
+        AppTestState.reset(seedContent, onboardingCompleted, bundledContent)
         return ActivityScenario.launch(MainActivity::class.java)
     }
 
@@ -206,10 +210,88 @@ class EndToEndTest {
         }
     }
 
+    @Test
+    fun bundledIllustrationPack_isInstalledOnFirstLaunch_andReadFromRoom() {
+        launch(seedContent = false, bundledContent = true).use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.lessons_title)).performClick()
+            waitForText(ILLUSTRATION_LESSON)
+            composeRule.onNodeWithText(ILLUSTRATION_LESSON).performClick()
+            waitForText(string(R.string.lesson_counts, 30, 27, 7))
+        }
+    }
+
+    @Test
+    fun vocabularySearch_ignoresVietnameseDiacritics() {
+        launch().use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.vocabulary_title)).performClick()
+            waitForText("経験")
+            composeRule.onNode(hasSetTextAction()).performTextInput("gui den")
+            composeRule.waitUntil(5_000) { composeRule.onAllNodesWithTextExact("経験").isEmpty() }
+            composeRule.onNodeWithText("届ける").assertIsDisplayed()
+        }
+    }
+
+    @Test
+    fun markItem_filterMarked_thenPracticeMarkedItems() {
+        launch().use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.vocabulary_title)).performClick()
+            waitForText("増える")
+            composeRule.onNodeWithText("増える").performClick()
+            clickable(string(R.string.mark_add)).performClick()
+            waitForText(string(R.string.mark_remove))
+            Espresso.pressBack()
+
+            clickable(string(R.string.filter_marked)).performClick()
+            composeRule.waitUntil(5_000) { composeRule.onAllNodesWithTextExact("経験").isEmpty() }
+            composeRule.onNodeWithText("増える").assertIsDisplayed()
+
+            composeRule.onNodeWithText(string(R.string.practice_marked)).performClick()
+            waitForText(string(R.string.practice_progress, 1, 1))
+            composeRule.onNodeWithText(string(R.string.practice_reveal)).performClick()
+            clickable(string(R.string.rating_good)).performClick()
+            waitForText(string(R.string.practice_result_title))
+            composeRule.onNodeWithText("1 / 1", substring = true).assertIsDisplayed()
+
+            openTab(TopLevelDestination.REVIEW)
+            waitForText(string(R.string.practice_marked_count, 1))
+        }
+    }
+
+    @Test
+    fun grammarExercise_showsResultAndExplanation() {
+        launch(seedContent = false, bundledContent = true).use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.grammar_title)).performClick()
+            waitForText("〜たばかり")
+            composeRule.onNodeWithText("〜たばかり").performClick()
+            waitForText(string(R.string.grammar_exercises))
+            composeRule.onNodeWithText("来た").performScrollTo().performClick()
+            composeRule.onNodeWithText(string(R.string.grammar_exercise_correct)).performScrollTo().assertIsDisplayed()
+            composeRule.onNodeWithText(string(R.string.grammar_exercise_retry)).performScrollTo().performClick()
+            composeRule.onNodeWithText("来る").performScrollTo().performClick()
+            waitForText(string(R.string.grammar_exercise_incorrect, "来た"))
+        }
+    }
+
+    @Test
+    fun kanjiDetail_saysStrokeOrderIsNotAvailable() {
+        launch().use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.kanji_title)).performClick()
+            waitForText("増")
+            composeRule.onNodeWithText("増").performClick()
+            composeRule.onNodeWithText(string(R.string.kanji_stroke_order_unavailable)).performScrollTo().assertIsDisplayed()
+        }
+    }
+
     private fun androidx.compose.ui.test.junit4.ComposeTestRule.onAllNodesWithTextExact(text: String) =
         onAllNodes(hasText(text)).fetchSemanticsNodes()
 
     private companion object {
         const val SEED_SOURCE_NAME = "dữ liệu seed cho kiểm thử"
+        const val ILLUSTRATION_LESSON = "Bài minh họa 1: Công việc và đời sống"
     }
 }

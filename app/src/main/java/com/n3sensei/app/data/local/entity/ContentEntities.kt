@@ -102,6 +102,8 @@ data class VocabularyEntity(
     @ColumnInfo(name = "jlpt_level") val jlptLevel: String,
     @ColumnInfo(name = "sort_order") val sortOrder: Int,
     val note: String?,
+    /** Derived by [com.n3sensei.app.data.local.SearchText] on insert; never set by packs. */
+    @ColumnInfo(name = "search_text", defaultValue = "") val searchText: String = "",
 )
 
 @Entity(
@@ -139,6 +141,7 @@ data class KanjiEntity(
     @ColumnInfo(name = "stroke_count") val strokeCount: Int?,
     @ColumnInfo(name = "sort_order") val sortOrder: Int,
     val note: String?,
+    @ColumnInfo(name = "search_text", defaultValue = "") val searchText: String = "",
 )
 
 @Entity(
@@ -173,6 +176,30 @@ data class GrammarEntity(
     val usage: String,
     @ColumnInfo(name = "caution_note") val cautionNote: String?,
     @ColumnInfo(name = "sort_order") val sortOrder: Int,
+    @ColumnInfo(name = "search_text", defaultValue = "") val searchText: String = "",
+)
+
+/** Short multiple-choice exercise belonging to a grammar point (content, not learner data). */
+@Entity(
+    tableName = "grammar_exercises",
+    foreignKeys = [
+        ForeignKey(
+            entity = GrammarEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["grammar_id"],
+            onDelete = ForeignKey.CASCADE,
+        ),
+    ],
+    indices = [Index(value = ["grammar_id", "sort_order"], unique = true)],
+)
+data class GrammarExerciseEntity(
+    @PrimaryKey val id: String,
+    @ColumnInfo(name = "grammar_id") val grammarId: String,
+    @ColumnInfo(name = "sort_order") val sortOrder: Int,
+    val prompt: String,
+    val options: List<String>,
+    @ColumnInfo(name = "answer_index") val answerIndex: Int,
+    @ColumnInfo(name = "explanation_vi") val explanationVi: String?,
 )
 
 /** Example sentence or phrase; may be linked to several items through the *_examples tables. */

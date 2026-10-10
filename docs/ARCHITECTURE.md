@@ -2,7 +2,7 @@
 
 Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc thời gian build tăng đáng kể mới tách module; ranh giới package hiện tại đã được giữ bằng test (`ArchitectureRulesTest`) để việc tách sau này không phải sửa phụ thuộc.
 
-## Sơ đồ (trạng thái thực tế sau Prompt 04)
+## Sơ đồ (trạng thái thực tế sau Prompt 05)
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -31,7 +31,7 @@ Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc 
 │ core/ui/content:   VocabularyCard · KanjiCard · GrammarCard ·    │
 │                    LessonCard · ProgressSummaryCard · …          │
 │ core/ui/state:     UiState · DetailViewModel ·                   │
-│                    LessonFilteredListViewModel · searchableItems │
+│                    TrackedDetailViewModel · ItemBrowserViewModel │
 └──────────────────────────────────────────────────────────────────┘
 
 
@@ -39,17 +39,20 @@ Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc 
 │ domain (Kotlin thuần)                                            │
 │   model: Vocabulary · Kanji · GrammarPoint · LessonSummary ·     │
 │          LearningProgress · ReviewRecord · ItemRef · ...         │
-│   repository: ContentRepository · ProgressRepository (interface) │
+│   repository: Content · Progress · ContentImport · UserPrefs     │
+│   importing: ImportReport (mã lỗi, số bản ghi)                   │
 │   furigana: Furigana (định dạng {漢字|かんじ})                    │
 │   practice: PracticeSession (luyện tập, không ghi lịch ôn)       │
 └───────────────▲──────────────────────────────────────────────────┘
                 │ cài đặt interface
 ┌───────────────┴──────────────────────────────────────────────────┐
 │ data   (preferences: DataStoreUserPreferencesRepository)         │
+│   importing: ContentPackJson · ContentPackValidator ·            │
+│              ContentPackImporter · AndroidContentImportRepo.     │
 │   repository: OfflineContentRepository · OfflineProgressRepo.   │
 │               (entity ⇄ domain mapper)                           │
-│   local: N3Database · ContentDao · ContentPackDao · ProgressDao  │
-│          entity/ · N3Migrations · Converters                     │
+│   local: N3Database (v2) · ContentDao · ContentPackDao ·         │
+│          ProgressDao · entity/ · N3Migrations · SearchText       │
 └──────────────────────────────────────────────────────────────────┘
 ```
 
@@ -62,7 +65,7 @@ NavHost (start = HomeRoute)
 │   ├── LearnHubRoute   (start)
 │   ├── LessonListRoute ─▶ LessonDetailRoute(lessonId)
 │   │                        ├─▶ Vocabulary/Kanji/GrammarDetailRoute(id)
-│   │                        └─▶ PracticeRoute(lessonId) ─▶ PracticeResultRoute(...)
+│   │                        └─▶ PracticeRoute(lessonId?, markedOnly) ─▶ PracticeResultRoute(...)
 │   │                              (kết quả thay thế phiên; Back về chi tiết bài)
 │   ├── VocabularyRoute ─▶ VocabularyDetailRoute(id)
 │   ├── KanjiRoute      ─▶ KanjiDetailRoute(id)
@@ -79,12 +82,12 @@ NavHost (start = HomeRoute)
 | Giới thiệu | DataStore (`onboarding_completed`) | Bỏ qua được; xem lại từ Cài đặt |
 | Trang chủ | Room: tổng nội dung, tóm tắt tiến độ | Báo rõ khi chưa nạp gói nội dung |
 | Danh sách / chi tiết bài học | Room | Tab Từ vựng / Kanji / Ngữ pháp |
-| Từ vựng, Kanji, Ngữ pháp (danh sách) | Room: Flow theo bài, tìm kiếm LIMIT 100 | Tìm kiếm debounce 300 ms, lọc theo bài |
-| Thẻ từ, chi tiết Kanji, ngữ pháp | Room (đọc trong transaction) | Furigana, ví dụ, nguồn và giấy phép |
-| Luyện tập + kết quả | Room (nội dung bài) | Đánh giá chỉ dùng cho kết quả phiên, **không** ghi vào lịch ôn |
+| Từ vựng, Kanji, Ngữ pháp (danh sách) | Room: Flow kèm trạng thái học và đánh dấu | Tìm kiếm không dấu (debounce 300 ms, tối đa 100), lọc theo bài, trạng thái, đã đánh dấu, chủ đề (từ vựng); luyện tập mục đã đánh dấu |
+| Thẻ từ, chi tiết Kanji, ngữ pháp | Room (đọc trong transaction) + `item_marks` | Furigana, ví dụ, nguồn và giấy phép, trạng thái học, đánh dấu cần chú ý, luyện tập bài chứa mục; ngữ pháp có bài tập ngắn; Kanji ghi rõ chưa có thứ tự nét |
+| Luyện tập + kết quả | Room (nội dung bài hoặc mục đã đánh dấu) | Đánh giá chỉ dùng cho kết quả phiên, **không** ghi vào lịch ôn |
 | Ôn tập | Room: số mục đến hạn | Lịch ôn lặp lại cách quãng **chưa triển khai** (ghi rõ trên màn hình) |
 | Thống kê | Room: tổng nội dung, tiến độ, số lượt theo đánh giá | Dự báo **chưa triển khai** (ghi rõ) |
-| Cài đặt | DataStore (theme, furigana) + Room (nguồn nội dung) | Khoảng ôn, nhắc học, sao lưu: hiển thị "Chưa triển khai", không có hành động |
+| Cài đặt | DataStore (theme, furigana) + Room (gói, nguồn nội dung) + nhập JSON | Khoảng ôn, nhắc học, sao lưu: hiển thị "Chưa triển khai", không có hành động |
 
 Không màn hình nào dùng dữ liệu cứng. `PreviewContent` chỉ dùng cho `@Preview`; dữ liệu seed chỉ có trong mã test.
 

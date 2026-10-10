@@ -1,0 +1,1331 @@
+{
+  "format": "n3sensei-content-pack",
+  "formatVersion": 1,
+  "pack": {
+    "id": "n3sensei-illustration",
+    "title": "Gói minh họa N3 Sensei",
+    "version": 1,
+    "jlptLevel": "N3",
+    "defaultSourceId": "n3sensei-illustration-source"
+  },
+  "sources": [
+    {
+      "id": "n3sensei-illustration-source",
+      "name": "N3 Sensei – dữ liệu minh họa tự biên soạn",
+      "license": "Tự biên soạn để minh họa cách dùng ứng dụng; chưa qua kiểm duyệt chuyên môn, không phải giáo trình chính thức",
+      "licenseVerified": false
+    }
+  ],
+  "tags": [
+    {
+      "id": "topic:work",
+      "name": "Công việc"
+    },
+    {
+      "id": "topic:life",
+      "name": "Đời sống"
+    }
+  ],
+  "examples": [
+    {
+      "id": "illus-ex01",
+      "japanese": "日本で働いた経験があります。",
+      "furigana": "{日本|にほん}で{働|はたら}いた{経験|けいけん}があります。",
+      "translationVi": "Tôi có kinh nghiệm làm việc ở Nhật."
+    },
+    {
+      "id": "illus-ex02",
+      "japanese": "今月は給料が少し上がりました。",
+      "furigana": "{今月|こんげつ}は{給料|きゅうりょう}が{少|すこ}し{上|あ}がりました。",
+      "translationVi": "Tháng này lương đã tăng một chút."
+    },
+    {
+      "id": "illus-ex03",
+      "japanese": "昨日は十時まで残業しました。",
+      "furigana": "{昨日|きのう}は{十時|じゅうじ}まで{残業|ざんぎょう}しました。",
+      "translationVi": "Hôm qua tôi đã làm thêm đến 10 giờ."
+    },
+    {
+      "id": "illus-ex04",
+      "japanese": "午後三時から会議があります。",
+      "furigana": "{午後|ごご}{三時|さんじ}から{会議|かいぎ}があります。",
+      "translationVi": "Từ 3 giờ chiều có cuộc họp."
+    },
+    {
+      "id": "illus-ex05",
+      "japanese": "会議の資料をコピーしてください。",
+      "furigana": "{会議|かいぎ}の{資料|しりょう}をコピーしてください。",
+      "translationVi": "Hãy photo tài liệu cho cuộc họp."
+    },
+    {
+      "id": "illus-ex06",
+      "japanese": "レポートの締め切りは金曜日です。",
+      "furigana": "レポートの{締|し}め{切|き}りは{金曜日|きんようび}です。",
+      "translationVi": "Hạn chót nộp báo cáo là thứ Sáu."
+    },
+    {
+      "id": "illus-ex07",
+      "japanese": "この仕事は田中さんが担当しています。",
+      "furigana": "この{仕事|しごと}は{田中|たなか}さんが{担当|たんとう}しています。",
+      "translationVi": "Công việc này do anh Tanaka phụ trách."
+    },
+    {
+      "id": "illus-ex08",
+      "japanese": "この荷物を友達に届けます。",
+      "furigana": "この{荷物|にもつ}を{友達|ともだち}に{届|とど}けます。",
+      "translationVi": "Tôi sẽ mang gói hàng này đến cho bạn."
+    },
+    {
+      "id": "illus-ex09",
+      "japanese": "最近、外国人の観光客が増えています。",
+      "furigana": "{最近|さいきん}、{外国人|がいこくじん}の{観光客|かんこうきゃく}が{増|ふ}えています。",
+      "translationVi": "Gần đây khách du lịch nước ngoài đang tăng lên."
+    },
+    {
+      "id": "illus-ex10",
+      "japanese": "運動を始めてから、体重が三キロ減りました。",
+      "furigana": "{運動|うんどう}を{始|はじ}めてから、{体重|たいじゅう}が{三|さん}キロ{減|へ}りました。",
+      "translationVi": "Từ khi bắt đầu tập thể dục, cân nặng của tôi đã giảm 3 kg."
+    },
+    {
+      "id": "illus-ex11",
+      "japanese": "去年と比べて、今年は雨が多いです。",
+      "furigana": "{去年|きょねん}と{比|くら}べて、{今年|ことし}は{雨|あめ}が{多|おお}いです。",
+      "translationVi": "So với năm ngoái, năm nay mưa nhiều hơn."
+    },
+    {
+      "id": "illus-ex12",
+      "japanese": "毎日日本語の勉強を続けています。",
+      "furigana": "{毎日|まいにち}{日本語|にほんご}の{勉強|べんきょう}を{続|つづ}けています。",
+      "translationVi": "Tôi vẫn tiếp tục học tiếng Nhật mỗi ngày."
+    },
+    {
+      "id": "illus-ex13",
+      "japanese": "旅行の日にちを決めましょう。",
+      "furigana": "{旅行|りょこう}の{日|ひ}にちを{決|き}めましょう。",
+      "translationVi": "Chúng ta hãy quyết định ngày đi du lịch nhé."
+    },
+    {
+      "id": "illus-ex14",
+      "japanese": "古い切手を集めるのが趣味です。",
+      "furigana": "{古|ふる}い{切手|きって}を{集|あつ}めるのが{趣味|しゅみ}です。",
+      "translationVi": "Sở thích của tôi là sưu tầm tem cũ."
+    },
+    {
+      "id": "illus-ex15",
+      "japanese": "銀行にお金を預けました。",
+      "furigana": "{銀行|ぎんこう}にお{金|かね}を{預|あず}けました。",
+      "translationVi": "Tôi đã gửi tiền vào ngân hàng."
+    },
+    {
+      "id": "illus-ex16",
+      "japanese": "電車が遅れて、授業に間に合いませんでした。",
+      "furigana": "{電車|でんしゃ}が{遅|おく}れて、{授業|じゅぎょう}に{間|ま}に{合|あ}いませんでした。",
+      "translationVi": "Tàu bị trễ nên tôi không kịp giờ học."
+    },
+    {
+      "id": "illus-ex17",
+      "japanese": "日本の生活にもう慣れましたか。",
+      "furigana": "{日本|にほん}の{生活|せいかつ}にもう{慣|な}れましたか。",
+      "translationVi": "Bạn đã quen với cuộc sống ở Nhật chưa?"
+    },
+    {
+      "id": "illus-ex18",
+      "japanese": "明日の発表の準備をしています。",
+      "furigana": "{明日|あした}の{発表|はっぴょう}の{準備|じゅんび}をしています。",
+      "translationVi": "Tôi đang chuẩn bị cho bài thuyết trình ngày mai."
+    },
+    {
+      "id": "illus-ex19",
+      "japanese": "週末は何か予定がありますか。",
+      "furigana": "{週末|しゅうまつ}は{何|なに}か{予定|よてい}がありますか。",
+      "translationVi": "Cuối tuần bạn có dự định gì không?"
+    },
+    {
+      "id": "illus-ex20",
+      "japanese": "着いたら連絡してください。",
+      "furigana": "{着|つ}いたら{連絡|れんらく}してください。",
+      "translationVi": "Khi đến nơi thì hãy liên lạc với tôi."
+    },
+    {
+      "id": "illus-ex21",
+      "japanese": "困ったときは、先輩に相談します。",
+      "furigana": "{困|こま}ったときは、{先輩|せんぱい}に{相談|そうだん}します。",
+      "translationVi": "Khi gặp khó khăn, tôi bàn bạc với đàn anh (senpai)."
+    },
+    {
+      "id": "illus-ex22",
+      "japanese": "使い方をもう一度説明してください。",
+      "furigana": "{使|つか}い{方|かた}をもう{一度|いちど}{説明|せつめい}してください。",
+      "translationVi": "Hãy giải thích lại cách dùng một lần nữa."
+    },
+    {
+      "id": "illus-ex23",
+      "japanese": "一人の生活は自由ですが、少し寂しいです。",
+      "furigana": "{一人|ひとり}の{生活|せいかつ}は{自由|じゆう}ですが、{少|すこ}し{寂|さび}しいです。",
+      "translationVi": "Sống một mình thì tự do nhưng hơi cô đơn."
+    },
+    {
+      "id": "illus-ex24",
+      "japanese": "毎朝コーヒーを飲むのが習慣です。",
+      "furigana": "{毎朝|まいあさ}コーヒーを{飲|の}むのが{習慣|しゅうかん}です。",
+      "translationVi": "Uống cà phê mỗi sáng là thói quen của tôi."
+    },
+    {
+      "id": "illus-ex25",
+      "japanese": "この部屋の家賃は六万円です。",
+      "furigana": "この{部屋|へや}の{家賃|やちん}は{六万円|ろくまんえん}です。",
+      "translationVi": "Tiền thuê căn phòng này là 60.000 yên."
+    },
+    {
+      "id": "illus-ex26",
+      "japanese": "近所にスーパーがあるので便利です。",
+      "furigana": "{近所|きんじょ}にスーパーがあるので{便利|べんり}です。",
+      "translationVi": "Gần nhà có siêu thị nên rất tiện."
+    },
+    {
+      "id": "illus-ex27",
+      "japanese": "来月、大阪に引っ越します。",
+      "furigana": "{来月|らいげつ}、{大阪|おおさか}に{引|ひ}っ{越|こ}します。",
+      "translationVi": "Tháng sau tôi sẽ chuyển nhà đến Osaka."
+    },
+    {
+      "id": "illus-ex28",
+      "japanese": "出かける前に部屋を片付けなさい。",
+      "furigana": "{出|で}かける{前|まえ}に{部屋|へや}を{片付|かたづ}けなさい。",
+      "translationVi": "Hãy dọn phòng trước khi ra ngoài."
+    },
+    {
+      "id": "illus-ex29",
+      "japanese": "申し込みにはパスポートが必要です。",
+      "furigana": "{申|もう}し{込|こ}みにはパスポートが{必要|ひつよう}です。",
+      "translationVi": "Khi đăng ký cần có hộ chiếu."
+    },
+    {
+      "id": "illus-ex30",
+      "japanese": "健康はお金より大切です。",
+      "furigana": "{健康|けんこう}はお{金|かね}より{大切|たいせつ}です。",
+      "translationVi": "Sức khỏe quan trọng hơn tiền bạc."
+    },
+    {
+      "id": "illus-ex31",
+      "japanese": "日本に来たばかりなので、まだ友達がいません。",
+      "furigana": "{日本|にほん}に{来|き}たばかりなので、まだ{友達|ともだち}がいません。",
+      "translationVi": "Vì tôi vừa mới đến Nhật nên vẫn chưa có bạn."
+    },
+    {
+      "id": "illus-ex32",
+      "japanese": "さっき食べたばかりなのに、もうお腹が空いた。",
+      "furigana": "さっき{食|た}べたばかりなのに、もうお{腹|なか}が{空|す}いた。",
+      "translationVi": "Vừa mới ăn lúc nãy mà đã đói bụng rồi."
+    },
+    {
+      "id": "illus-ex33",
+      "japanese": "毎日野菜を食べるようにしています。",
+      "furigana": "{毎日|まいにち}{野菜|やさい}を{食|た}べるようにしています。",
+      "translationVi": "Tôi cố gắng ăn rau mỗi ngày."
+    },
+    {
+      "id": "illus-ex34",
+      "japanese": "夜遅くまでゲームをしないようにしています。",
+      "furigana": "{夜|よる}{遅|おそ}くまでゲームをしないようにしています。",
+      "translationVi": "Tôi cố gắng không chơi game đến khuya."
+    },
+    {
+      "id": "illus-ex35",
+      "japanese": "日本語で電話ができるようになりました。",
+      "furigana": "{日本語|にほんご}で{電話|でんわ}ができるようになりました。",
+      "translationVi": "Tôi đã có thể gọi điện thoại bằng tiếng Nhật."
+    },
+    {
+      "id": "illus-ex36",
+      "japanese": "子供が野菜を食べるようになった。",
+      "furigana": "{子供|こども}が{野菜|やさい}を{食|た}べるようになった。",
+      "translationVi": "Con tôi đã chịu ăn rau rồi."
+    },
+    {
+      "id": "illus-ex37",
+      "japanese": "来年、日本の大学を受けることにしました。",
+      "furigana": "{来年|らいねん}、{日本|にほん}の{大学|だいがく}を{受|う}けることにしました。",
+      "translationVi": "Tôi đã quyết định thi vào một trường đại học Nhật vào năm sau."
+    },
+    {
+      "id": "illus-ex38",
+      "japanese": "健康のために、タバコをやめることにした。",
+      "furigana": "{健康|けんこう}のために、タバコをやめることにした。",
+      "translationVi": "Vì sức khỏe, tôi đã quyết định bỏ thuốc lá."
+    },
+    {
+      "id": "illus-ex39",
+      "japanese": "来月から大阪支社で働くことになりました。",
+      "furigana": "{来月|らいげつ}から{大阪|おおさか}{支社|ししゃ}で{働|はたら}くことになりました。",
+      "translationVi": "Từ tháng sau tôi sẽ làm việc ở chi nhánh Osaka (theo quyết định của công ty)."
+    },
+    {
+      "id": "illus-ex40",
+      "japanese": "会議は来週の月曜日に行うことになった。",
+      "furigana": "{会議|かいぎ}は{来週|らいしゅう}の{月曜日|げつようび}に{行|おこな}うことになった。",
+      "translationVi": "Cuộc họp đã được quyết định tổ chức vào thứ Hai tuần sau."
+    },
+    {
+      "id": "illus-ex41",
+      "japanese": "田中さんは今日来るはずです。昨日そう言っていました。",
+      "furigana": "{田中|たなか}さんは{今日|きょう}{来|く}るはずです。{昨日|きのう}そう{言|い}っていました。",
+      "translationVi": "Anh Tanaka chắc chắn hôm nay sẽ đến. Hôm qua anh ấy đã nói vậy."
+    },
+    {
+      "id": "illus-ex42",
+      "japanese": "荷物は昨日送ったので、明日届くはずだ。",
+      "furigana": "{荷物|にもつ}は{昨日|きのう}{送|おく}ったので、{明日|あした}{届|とど}くはずだ。",
+      "translationVi": "Hàng đã gửi hôm qua nên ngày mai chắc chắn sẽ đến."
+    },
+    {
+      "id": "illus-ex43",
+      "japanese": "肉が嫌いなわけではありませんが、あまり食べません。",
+      "furigana": "{肉|にく}が{嫌|きら}いなわけではありませんが、あまり{食|た}べません。",
+      "translationVi": "Không phải tôi ghét thịt, nhưng tôi không ăn nhiều lắm."
+    },
+    {
+      "id": "illus-ex44",
+      "japanese": "高い物がいつも良いわけではない。",
+      "furigana": "{高|たか}い{物|もの}がいつも{良|よ}いわけではない。",
+      "translationVi": "Đồ đắt không phải lúc nào cũng tốt."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "illus-l01",
+      "number": 1,
+      "title": "Bài minh họa 1: Công việc và đời sống",
+      "description": "Dữ liệu minh họa tự biên soạn: 30 từ vựng, 27 Kanji, 7 mẫu ngữ pháp. Chưa qua kiểm duyệt chuyên môn.",
+      "vocabulary": [
+        {
+          "id": "illus-l01-v01",
+          "expression": "経験",
+          "reading": "けいけん",
+          "furigana": "{経|けい}{験|けん}",
+          "meaningVi": "kinh nghiệm",
+          "partOfSpeech": "danh từ, động từ する",
+          "examples": [
+            "illus-ex01"
+          ],
+          "tags": [
+            "topic:work"
+          ]
+        },
+        {
+          "id": "illus-l01-v02",
+          "expression": "給料",
+          "reading": "きゅうりょう",
+          "furigana": "{給|きゅう}{料|りょう}",
+          "meaningVi": "tiền lương",
+          "partOfSpeech": "danh từ",
+          "examples": [
+            "illus-ex02"
+          ],
+          "tags": [
+            "topic:work"
+          ]
+        },
+        {
+          "id": "illus-l01-v03",
+          "expression": "残業",
+          "reading": "ざんぎょう",
+          "furigana": "{残|ざん}{業|ぎょう}",
+          "meaningVi": "làm thêm giờ",
+          "partOfSpeech": "danh từ, động từ する",
+          "examples": [
+            "illus-ex03"
+          ],
+          "tags": [
+            "topic:work"
+          ]
+        },
+        {
+          "id": "illus-l01-v04",
+          "expression": "会議",
+          "reading": "かいぎ",
+          "furigana": "{会|かい}{議|ぎ}",
+          "meaningVi": "cuộc họp",
+          "partOfSpeech": "danh từ",
+          "examples": [
+            "illus-ex04"
+          ],
+          "tags": [
+            "topic:work"
+          ]
+        },
+        {
+          "id": "illus-l01-v05",
+          "expression": "資料",
+          "reading": "しりょう",
+          "furigana": "{資|し}{料|りょう}",
+          "meaningVi": "tài liệu",
+          "partOfSpeech": "danh từ",
+          "examples": [
+            "illus-ex05"
+          ],
+          "tags": [
+            "topic:work"
+          ]
+        },
+        {
+          "id": "illus-l01-v06",
+          "expression": "締め切り",
+          "reading": "しめきり",
+          "furigana": "{締|し}め{切|き}り",
+          "meaningVi": "hạn chót",
+          "partOfSpeech": "danh từ",
+          "examples": [
+            "illus-ex06"
+          ],
+          "tags": [
+            "topic:work"
+          ]
+        },
+        {
+          "id": "illus-l01-v07",
+          "expression": "担当",
+          "reading": "たんとう",
+          "furigana": "{担|たん}{当|とう}",
+          "meaningVi": "phụ trách, đảm nhận",
+          "partOfSpeech": "danh từ, động từ する",
+          "examples": [
+            "illus-ex07"
+          ],
+          "tags": [
+            "topic:work"
+          ]
+        },
+        {
+          "id": "illus-l01-v08",
+          "expression": "届ける",
+          "reading": "とどける",
+          "furigana": "{届|とど}ける",
+          "meaningVi": "gửi đến, mang đến",
+          "partOfSpeech": "động từ nhóm 2 (tha động từ)",
+          "examples": [
+            "illus-ex08"
+          ],
+          "tags": [
+            "topic:life"
+          ]
+        },
+        {
+          "id": "illus-l01-v09",
+          "expression": "増える",
+          "reading": "ふえる",
+          "furigana": "{増|ふ}える",
+          "meaningVi": "tăng lên",
+          "partOfSpeech": "động từ nhóm 2 (tự động từ)",
+          "examples": [
+            "illus-ex09"
+          ]
+        },
+        {
+          "id": "illus-l01-v10",
+          "expression": "減る",
+          "reading": "へる",
+          "furigana": "{減|へ}る",
+          "meaningVi": "giảm đi",
+          "partOfSpeech": "động từ nhóm 1 (tự động từ)",
+          "examples": [
+            "illus-ex10"
+          ]
+        },
+        {
+          "id": "illus-l01-v11",
+          "expression": "比べる",
+          "reading": "くらべる",
+          "furigana": "{比|くら}べる",
+          "meaningVi": "so sánh",
+          "partOfSpeech": "động từ nhóm 2 (tha động từ)",
+          "examples": [
+            "illus-ex11"
+          ]
+        },
+        {
+          "id": "illus-l01-v12",
+          "expression": "続ける",
+          "reading": "つづける",
+          "furigana": "{続|つづ}ける",
+          "meaningVi": "tiếp tục",
+          "partOfSpeech": "động từ nhóm 2 (tha động từ)",
+          "examples": [
+            "illus-ex12"
+          ]
+        },
+        {
+          "id": "illus-l01-v13",
+          "expression": "決める",
+          "reading": "きめる",
+          "furigana": "{決|き}める",
+          "meaningVi": "quyết định",
+          "partOfSpeech": "động từ nhóm 2 (tha động từ)",
+          "examples": [
+            "illus-ex13"
+          ]
+        },
+        {
+          "id": "illus-l01-v14",
+          "expression": "集める",
+          "reading": "あつめる",
+          "furigana": "{集|あつ}める",
+          "meaningVi": "thu thập, sưu tầm",
+          "partOfSpeech": "động từ nhóm 2 (tha động từ)",
+          "examples": [
+            "illus-ex14"
+          ]
+        },
+        {
+          "id": "illus-l01-v15",
+          "expression": "預ける",
+          "reading": "あずける",
+          "furigana": "{預|あず}ける",
+          "meaningVi": "gửi (nhờ giữ hộ)",
+          "partOfSpeech": "động từ nhóm 2 (tha động từ)",
+          "examples": [
+            "illus-ex15"
+          ],
+          "tags": [
+            "topic:life"
+          ]
+        },
+        {
+          "id": "illus-l01-v16",
+          "expression": "遅れる",
+          "reading": "おくれる",
+          "furigana": "{遅|おく}れる",
+          "meaningVi": "bị muộn, bị trễ",
+          "partOfSpeech": "động từ nhóm 2 (tự động từ)",
+          "examples": [
+            "illus-ex16"
+          ],
+          "tags": [
+            "topic:life"
+          ]
+        },
+        {
+          "id": "illus-l01-v17",
+          "expression": "慣れる",
+          "reading": "なれる",
+          "furigana": "{慣|な}れる",
+          "meaningVi": "quen với",
+          "partOfSpeech": "động từ nhóm 2 (tự động từ)",
+          "examples": [
+            "illus-ex17"
+          ],
+          "tags": [
+            "topic:life"
+          ]
+        },
+        {
+          "id": "illus-l01-v18",
+          "expression": "準備",
+          "reading": "じゅんび",
+          "furigana": "{準|じゅん}{備|び}",
+          "meaningVi": "sự chuẩn bị",
+          "partOfSpeech": "danh từ, động từ する",
+          "examples": [
+            "illus-ex18"
+          ],
+          "tags": [
+            "topic:work"
+          ]
+        },
+        {
+          "id": "illus-l01-v19",
+          "expression": "予定",
+          "reading": "よてい",
+          "furigana": "{予|よ}{定|てい}",
+          "meaningVi": "dự định, kế hoạch",
+          "partOfSpeech": "danh từ, động từ する",
+          "examples": [
+            "illus-ex19"
+          ],
+          "tags": [
+            "topic:work"
+          ]
+        },
+        {
+          "id": "illus-l01-v20",
+          "expression": "連絡",
+          "reading": "れんらく",
+          "furigana": "{連|れん}{絡|らく}",
+          "meaningVi": "liên lạc",
+          "partOfSpeech": "danh từ, động từ する",
+          "examples": [
+            "illus-ex20"
+          ],
+          "tags": [
+            "topic:work"
+          ]
+        },
+        {
+          "id": "illus-l01-v21",
+          "expression": "相談",
+          "reading": "そうだん",
+          "furigana": "{相|そう}{談|だん}",
+          "meaningVi": "trao đổi, bàn bạc",
+          "partOfSpeech": "danh từ, động từ する",
+          "examples": [
+            "illus-ex21"
+          ],
+          "tags": [
+            "topic:work"
+          ]
+        },
+        {
+          "id": "illus-l01-v22",
+          "expression": "説明",
+          "reading": "せつめい",
+          "furigana": "{説|せつ}{明|めい}",
+          "meaningVi": "giải thích",
+          "partOfSpeech": "danh từ, động từ する",
+          "examples": [
+            "illus-ex22"
+          ],
+          "tags": [
+            "topic:work"
+          ]
+        },
+        {
+          "id": "illus-l01-v23",
+          "expression": "生活",
+          "reading": "せいかつ",
+          "furigana": "{生|せい}{活|かつ}",
+          "meaningVi": "cuộc sống, sinh hoạt",
+          "partOfSpeech": "danh từ, động từ する",
+          "examples": [
+            "illus-ex23"
+          ],
+          "tags": [
+            "topic:life"
+          ]
+        },
+        {
+          "id": "illus-l01-v24",
+          "expression": "習慣",
+          "reading": "しゅうかん",
+          "furigana": "{習|しゅう}{慣|かん}",
+          "meaningVi": "thói quen, tập quán",
+          "partOfSpeech": "danh từ",
+          "examples": [
+            "illus-ex24"
+          ],
+          "tags": [
+            "topic:life"
+          ]
+        },
+        {
+          "id": "illus-l01-v25",
+          "expression": "家賃",
+          "reading": "やちん",
+          "furigana": "{家|や}{賃|ちん}",
+          "meaningVi": "tiền thuê nhà",
+          "partOfSpeech": "danh từ",
+          "examples": [
+            "illus-ex25"
+          ],
+          "tags": [
+            "topic:life"
+          ]
+        },
+        {
+          "id": "illus-l01-v26",
+          "expression": "近所",
+          "reading": "きんじょ",
+          "furigana": "{近|きん}{所|じょ}",
+          "meaningVi": "hàng xóm, khu lân cận",
+          "partOfSpeech": "danh từ",
+          "examples": [
+            "illus-ex26"
+          ],
+          "tags": [
+            "topic:life"
+          ]
+        },
+        {
+          "id": "illus-l01-v27",
+          "expression": "引っ越す",
+          "reading": "ひっこす",
+          "furigana": "{引|ひ}っ{越|こ}す",
+          "meaningVi": "chuyển nhà",
+          "partOfSpeech": "động từ nhóm 1 (tự động từ)",
+          "examples": [
+            "illus-ex27"
+          ],
+          "tags": [
+            "topic:life"
+          ]
+        },
+        {
+          "id": "illus-l01-v28",
+          "expression": "片付ける",
+          "reading": "かたづける",
+          "furigana": "{片|かた}{付|づ}ける",
+          "meaningVi": "dọn dẹp",
+          "partOfSpeech": "động từ nhóm 2 (tha động từ)",
+          "examples": [
+            "illus-ex28"
+          ],
+          "tags": [
+            "topic:life"
+          ]
+        },
+        {
+          "id": "illus-l01-v29",
+          "expression": "必要",
+          "reading": "ひつよう",
+          "furigana": "{必|ひつ}{要|よう}",
+          "meaningVi": "cần thiết",
+          "partOfSpeech": "tính từ đuôi な, danh từ",
+          "examples": [
+            "illus-ex29"
+          ]
+        },
+        {
+          "id": "illus-l01-v30",
+          "expression": "大切",
+          "reading": "たいせつ",
+          "furigana": "{大|たい}{切|せつ}",
+          "meaningVi": "quan trọng, quý giá",
+          "partOfSpeech": "tính từ đuôi な",
+          "examples": [
+            "illus-ex30"
+          ]
+        }
+      ],
+      "kanji": [
+        {
+          "id": "illus-l01-k01",
+          "character": "経",
+          "onReadings": [
+            "ケイ",
+            "キョウ"
+          ],
+          "kunReadings": [
+            "へ.る",
+            "た.つ"
+          ],
+          "hanViet": "KINH",
+          "meaningVi": "trải qua, kinh qua",
+          "strokeCount": 11,
+          "examples": [
+            "illus-ex01"
+          ]
+        },
+        {
+          "id": "illus-l01-k02",
+          "character": "験",
+          "onReadings": [
+            "ケン",
+            "ゲン"
+          ],
+          "kunReadings": [],
+          "hanViet": "NGHIỆM",
+          "meaningVi": "thử, kiểm nghiệm",
+          "strokeCount": 18,
+          "examples": [
+            "illus-ex01"
+          ]
+        },
+        {
+          "id": "illus-l01-k03",
+          "character": "給",
+          "onReadings": [
+            "キュウ"
+          ],
+          "kunReadings": [],
+          "hanViet": "CẤP",
+          "meaningVi": "cấp, cấp cho",
+          "strokeCount": 12,
+          "examples": [
+            "illus-ex02"
+          ]
+        },
+        {
+          "id": "illus-l01-k04",
+          "character": "料",
+          "onReadings": [
+            "リョウ"
+          ],
+          "kunReadings": [],
+          "hanViet": "LIỆU",
+          "meaningVi": "phí, nguyên liệu",
+          "strokeCount": 10,
+          "examples": [
+            "illus-ex05"
+          ]
+        },
+        {
+          "id": "illus-l01-k05",
+          "character": "残",
+          "onReadings": [
+            "ザン"
+          ],
+          "kunReadings": [
+            "のこ.る",
+            "のこ.す"
+          ],
+          "hanViet": "TÀN",
+          "meaningVi": "còn lại, sót lại",
+          "strokeCount": 10,
+          "examples": [
+            "illus-ex03"
+          ]
+        },
+        {
+          "id": "illus-l01-k06",
+          "character": "業",
+          "onReadings": [
+            "ギョウ",
+            "ゴウ"
+          ],
+          "kunReadings": [
+            "わざ"
+          ],
+          "hanViet": "NGHIỆP",
+          "meaningVi": "nghề nghiệp, công việc",
+          "strokeCount": 13,
+          "examples": [
+            "illus-ex03"
+          ]
+        },
+        {
+          "id": "illus-l01-k07",
+          "character": "議",
+          "onReadings": [
+            "ギ"
+          ],
+          "kunReadings": [],
+          "hanViet": "NGHỊ",
+          "meaningVi": "bàn bạc, thảo luận",
+          "strokeCount": 20,
+          "examples": [
+            "illus-ex04"
+          ]
+        },
+        {
+          "id": "illus-l01-k08",
+          "character": "資",
+          "onReadings": [
+            "シ"
+          ],
+          "kunReadings": [],
+          "hanViet": "TƯ",
+          "meaningVi": "tiền vốn, tư liệu",
+          "strokeCount": 13,
+          "examples": [
+            "illus-ex05"
+          ]
+        },
+        {
+          "id": "illus-l01-k09",
+          "character": "締",
+          "onReadings": [
+            "テイ"
+          ],
+          "kunReadings": [
+            "し.まる",
+            "し.める"
+          ],
+          "hanViet": "ĐẾ",
+          "meaningVi": "thắt chặt, kết thúc",
+          "strokeCount": 15,
+          "examples": [
+            "illus-ex06"
+          ]
+        },
+        {
+          "id": "illus-l01-k10",
+          "character": "担",
+          "onReadings": [
+            "タン"
+          ],
+          "kunReadings": [
+            "かつ.ぐ",
+            "にな.う"
+          ],
+          "hanViet": "ĐẢM",
+          "meaningVi": "gánh vác, đảm nhận",
+          "strokeCount": 8,
+          "examples": [
+            "illus-ex07"
+          ]
+        },
+        {
+          "id": "illus-l01-k11",
+          "character": "当",
+          "onReadings": [
+            "トウ"
+          ],
+          "kunReadings": [
+            "あ.たる",
+            "あ.てる"
+          ],
+          "hanViet": "ĐƯƠNG",
+          "meaningVi": "trúng, thích đáng, đảm đương",
+          "strokeCount": 6,
+          "examples": [
+            "illus-ex07"
+          ]
+        },
+        {
+          "id": "illus-l01-k12",
+          "character": "届",
+          "onReadings": [],
+          "kunReadings": [
+            "とど.く",
+            "とど.ける"
+          ],
+          "hanViet": "GIỚI",
+          "meaningVi": "đến nơi, gửi đến",
+          "strokeCount": 8,
+          "examples": [
+            "illus-ex08"
+          ]
+        },
+        {
+          "id": "illus-l01-k13",
+          "character": "増",
+          "onReadings": [
+            "ゾウ"
+          ],
+          "kunReadings": [
+            "ま.す",
+            "ふ.える",
+            "ふ.やす"
+          ],
+          "hanViet": "TĂNG",
+          "meaningVi": "tăng, thêm",
+          "strokeCount": 14,
+          "examples": [
+            "illus-ex09"
+          ]
+        },
+        {
+          "id": "illus-l01-k14",
+          "character": "減",
+          "onReadings": [
+            "ゲン"
+          ],
+          "kunReadings": [
+            "へ.る",
+            "へ.らす"
+          ],
+          "hanViet": "GIẢM",
+          "meaningVi": "giảm",
+          "strokeCount": 12,
+          "examples": [
+            "illus-ex10"
+          ]
+        },
+        {
+          "id": "illus-l01-k15",
+          "character": "比",
+          "onReadings": [
+            "ヒ"
+          ],
+          "kunReadings": [
+            "くら.べる"
+          ],
+          "hanViet": "TỶ",
+          "meaningVi": "so sánh",
+          "strokeCount": 4,
+          "examples": [
+            "illus-ex11"
+          ]
+        },
+        {
+          "id": "illus-l01-k16",
+          "character": "続",
+          "onReadings": [
+            "ゾク"
+          ],
+          "kunReadings": [
+            "つづ.く",
+            "つづ.ける"
+          ],
+          "hanViet": "TỤC",
+          "meaningVi": "tiếp tục",
+          "strokeCount": 13,
+          "examples": [
+            "illus-ex12"
+          ]
+        },
+        {
+          "id": "illus-l01-k17",
+          "character": "決",
+          "onReadings": [
+            "ケツ"
+          ],
+          "kunReadings": [
+            "き.める",
+            "き.まる"
+          ],
+          "hanViet": "QUYẾT",
+          "meaningVi": "quyết định",
+          "strokeCount": 7,
+          "examples": [
+            "illus-ex13"
+          ]
+        },
+        {
+          "id": "illus-l01-k18",
+          "character": "集",
+          "onReadings": [
+            "シュウ"
+          ],
+          "kunReadings": [
+            "あつ.まる",
+            "あつ.める",
+            "つど.う"
+          ],
+          "hanViet": "TẬP",
+          "meaningVi": "tập hợp, thu thập",
+          "strokeCount": 12,
+          "examples": [
+            "illus-ex14"
+          ]
+        },
+        {
+          "id": "illus-l01-k19",
+          "character": "預",
+          "onReadings": [
+            "ヨ"
+          ],
+          "kunReadings": [
+            "あず.ける",
+            "あず.かる"
+          ],
+          "hanViet": "DỰ",
+          "meaningVi": "gửi, giữ hộ",
+          "strokeCount": 13,
+          "examples": [
+            "illus-ex15"
+          ]
+        },
+        {
+          "id": "illus-l01-k20",
+          "character": "遅",
+          "onReadings": [
+            "チ"
+          ],
+          "kunReadings": [
+            "おく.れる",
+            "おく.らす",
+            "おそ.い"
+          ],
+          "hanViet": "TRÌ",
+          "meaningVi": "muộn, chậm",
+          "strokeCount": 12,
+          "examples": [
+            "illus-ex16"
+          ]
+        },
+        {
+          "id": "illus-l01-k21",
+          "character": "慣",
+          "onReadings": [
+            "カン"
+          ],
+          "kunReadings": [
+            "な.れる",
+            "な.らす"
+          ],
+          "hanViet": "QUÁN",
+          "meaningVi": "quen, tập quán",
+          "strokeCount": 14,
+          "examples": [
+            "illus-ex17"
+          ]
+        },
+        {
+          "id": "illus-l01-k22",
+          "character": "準",
+          "onReadings": [
+            "ジュン"
+          ],
+          "kunReadings": [],
+          "hanViet": "CHUẨN",
+          "meaningVi": "chuẩn, tiêu chuẩn",
+          "strokeCount": 13,
+          "examples": [
+            "illus-ex18"
+          ]
+        },
+        {
+          "id": "illus-l01-k23",
+          "character": "備",
+          "onReadings": [
+            "ビ"
+          ],
+          "kunReadings": [
+            "そな.える",
+            "そな.わる"
+          ],
+          "hanViet": "BỊ",
+          "meaningVi": "chuẩn bị, trang bị",
+          "strokeCount": 12,
+          "examples": [
+            "illus-ex18"
+          ]
+        },
+        {
+          "id": "illus-l01-k24",
+          "character": "予",
+          "onReadings": [
+            "ヨ"
+          ],
+          "kunReadings": [],
+          "hanViet": "DỰ",
+          "meaningVi": "trước, dự",
+          "strokeCount": 4,
+          "examples": [
+            "illus-ex19"
+          ]
+        },
+        {
+          "id": "illus-l01-k25",
+          "character": "定",
+          "onReadings": [
+            "テイ",
+            "ジョウ"
+          ],
+          "kunReadings": [
+            "さだ.める",
+            "さだ.まる",
+            "さだ.か"
+          ],
+          "hanViet": "ĐỊNH",
+          "meaningVi": "quyết định, cố định",
+          "strokeCount": 8,
+          "examples": [
+            "illus-ex19"
+          ]
+        },
+        {
+          "id": "illus-l01-k26",
+          "character": "連",
+          "onReadings": [
+            "レン"
+          ],
+          "kunReadings": [
+            "つら.なる",
+            "つら.ねる",
+            "つ.れる"
+          ],
+          "hanViet": "LIÊN",
+          "meaningVi": "liên kết, dẫn theo",
+          "strokeCount": 10,
+          "examples": [
+            "illus-ex20"
+          ]
+        },
+        {
+          "id": "illus-l01-k27",
+          "character": "絡",
+          "onReadings": [
+            "ラク"
+          ],
+          "kunReadings": [
+            "から.む",
+            "から.まる",
+            "から.める"
+          ],
+          "hanViet": "LẠC",
+          "meaningVi": "quấn, liên lạc",
+          "strokeCount": 12,
+          "examples": [
+            "illus-ex20"
+          ]
+        }
+      ],
+      "grammar": [
+        {
+          "id": "illus-l01-g1",
+          "pattern": "〜たばかり",
+          "structure": "V-た + ばかり",
+          "meaningVi": "vừa mới (làm gì)",
+          "usage": "Diễn tả một hành động vừa xảy ra chưa lâu theo cảm nhận của người nói; khoảng thời gian thực tế có thể là vài phút hoặc vài tháng.",
+          "cautionNote": "Khác 〜たところ: 〜たところ chỉ đúng thời điểm ngay sau khi hành động kết thúc, còn 〜たばかり nhấn mạnh cảm giác “chưa được bao lâu”.",
+          "examples": [
+            "illus-ex31",
+            "illus-ex32"
+          ],
+          "exercises": [
+            {
+              "id": "illus-l01-g1-q1",
+              "prompt": "{日本|にほん}に＿＿＿ばかりです。",
+              "options": [
+                "{来|く}る",
+                "{来|き}た",
+                "{来|き}て",
+                "{来|こ}ない"
+              ],
+              "answerIndex": 1,
+              "explanationVi": "〜ばかり (vừa mới) đi với thể た của động từ: 来た + ばかり."
+            }
+          ]
+        },
+        {
+          "id": "illus-l01-g2",
+          "pattern": "〜ようにする",
+          "structure": "V-る / V-ない + ようにする",
+          "meaningVi": "cố gắng (tạo thói quen) làm / không làm gì",
+          "usage": "Diễn tả nỗ lực có ý thức để duy trì một hành động hoặc thói quen; thường dùng ở dạng 〜ようにしている.",
+          "cautionNote": "Khác 〜ようになる: 〜ようになる diễn tả sự thay đổi (trở nên có thể / bắt đầu làm), không phải nỗ lực của bản thân.",
+          "examples": [
+            "illus-ex33",
+            "illus-ex34"
+          ],
+          "exercises": [
+            {
+              "id": "illus-l01-g2-q1",
+              "prompt": "{毎日|まいにち}{運動|うんどう}＿＿＿ようにしています。",
+              "options": [
+                "する",
+                "した",
+                "して",
+                "しよう"
+              ],
+              "answerIndex": 0,
+              "explanationVi": "ようにする đi với thể từ điển (る) hoặc thể ない: 運動する + ようにしています."
+            }
+          ]
+        },
+        {
+          "id": "illus-l01-g3",
+          "pattern": "〜ようになる",
+          "structure": "V-る / V (thể khả năng) + ようになる",
+          "meaningVi": "trở nên (có thể) làm gì",
+          "usage": "Diễn tả sự thay đổi dần dần về khả năng, thói quen hoặc trạng thái theo thời gian.",
+          "cautionNote": "Khác 〜ようにする (nỗ lực có chủ ý). Với danh từ và tính từ dùng 〜になる / 〜くなる, không dùng ようになる.",
+          "examples": [
+            "illus-ex35",
+            "illus-ex36"
+          ],
+          "exercises": [
+            {
+              "id": "illus-l01-g3-q1",
+              "prompt": "{漢字|かんじ}が{読|よ}める＿＿＿。",
+              "options": [
+                "ようにしました",
+                "ようになりました",
+                "ことにしました",
+                "はずです"
+              ],
+              "answerIndex": 1,
+              "explanationVi": "Diễn tả sự thay đổi về khả năng (đọc được kanji) → ようになりました."
+            }
+          ]
+        },
+        {
+          "id": "illus-l01-g4",
+          "pattern": "〜ことにする",
+          "structure": "V-る / V-ない + ことにする",
+          "meaningVi": "quyết định (làm / không làm gì) theo ý mình",
+          "usage": "Người nói tự đưa ra quyết định. Dạng 〜ことにしている diễn tả quy tắc hoặc thói quen do bản thân đặt ra.",
+          "cautionNote": "Khác 〜ことになる: 〜ことになる là quyết định do hoàn cảnh hoặc người khác đưa ra.",
+          "examples": [
+            "illus-ex37",
+            "illus-ex38"
+          ],
+          "exercises": [
+            {
+              "id": "illus-l01-g4-q1",
+              "prompt": "{来年|らいねん}、{留学|りゅうがく}する＿＿＿。（{自分|じぶん}で{決|き}めた）",
+              "options": [
+                "ことにしました",
+                "ことになりました",
+                "ようになりました",
+                "わけではありません"
+              ],
+              "answerIndex": 0,
+              "explanationVi": "Người nói tự quyết định → ことにしました."
+            }
+          ]
+        },
+        {
+          "id": "illus-l01-g5",
+          "pattern": "〜ことになる",
+          "structure": "V-る / V-ない + ことになる",
+          "meaningVi": "được quyết định là, rốt cuộc sẽ (làm gì)",
+          "usage": "Diễn tả một việc được quyết định bởi tổ chức, người khác hoặc hoàn cảnh, không phải ý chí riêng của người nói.",
+          "cautionNote": "Khác 〜ことにする (tự mình quyết định). Dạng 〜ことになっている diễn tả quy định, lịch đã định sẵn.",
+          "examples": [
+            "illus-ex39",
+            "illus-ex40"
+          ],
+          "exercises": [
+            {
+              "id": "illus-l01-g5-q1",
+              "prompt": "{会社|かいしゃ}の{決定|けってい}で、{来月|らいげつ}{転勤|てんきん}する＿＿＿。",
+              "options": [
+                "ことにしました",
+                "ことになりました",
+                "ようにしました",
+                "ばかりです"
+              ],
+              "answerIndex": 1,
+              "explanationVi": "Quyết định do công ty đưa ra → ことになりました."
+            }
+          ]
+        },
+        {
+          "id": "illus-l01-g6",
+          "pattern": "〜はずだ",
+          "structure": "V / Adj thể thường + はずだ;  Adj-な + な / N + の + はずだ",
+          "meaningVi": "chắc chắn là, lẽ ra là",
+          "usage": "Người nói phán đoán dựa trên căn cứ hoặc suy luận hợp lý. 〜はずなのに diễn tả kết quả trái với điều lẽ ra phải xảy ra.",
+          "cautionNote": "Khác 〜でしょう / 〜かもしれない (phỏng đoán ít căn cứ hơn). 〜はずがない nghĩa là “không thể nào”.",
+          "examples": [
+            "illus-ex41",
+            "illus-ex42"
+          ],
+          "exercises": [
+            {
+              "id": "illus-l01-g6-q1",
+              "prompt": "{鍵|かぎ}はかばんに{入|い}れた＿＿＿なのに、ない。",
+              "options": [
+                "はず",
+                "わけ",
+                "こと",
+                "よう"
+              ],
+              "answerIndex": 0,
+              "explanationVi": "はずなのに: lẽ ra là (đã cho vào túi) vậy mà lại không có."
+            }
+          ]
+        },
+        {
+          "id": "illus-l01-g7",
+          "pattern": "〜わけではない",
+          "structure": "Thể thường + わけではない;  Adj-な / N + な + わけではない",
+          "meaningVi": "không hẳn là, không có nghĩa là",
+          "usage": "Phủ định một phần hoặc phủ định một suy luận mà người nghe có thể nghĩ đến.",
+          "cautionNote": "Khác 〜わけがない (không thể nào): 〜わけではない chỉ phủ định một phần, không phủ định hoàn toàn.",
+          "examples": [
+            "illus-ex43",
+            "illus-ex44"
+          ],
+          "exercises": [
+            {
+              "id": "illus-l01-g7-q1",
+              "prompt": "{日本語|にほんご}が{全然|ぜんぜん}わからない＿＿＿が、{敬語|けいご}は{難|むずか}しい。",
+              "options": [
+                "わけではない",
+                "はずではない",
+                "ことではない",
+                "ようではない"
+              ],
+              "answerIndex": 0,
+              "explanationVi": "Phủ định một phần (không phải hoàn toàn không hiểu) → わけではない."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 Ứng dụng Android native hỗ trợ học tiếng Nhật trình độ JLPT N3 (từ vựng, Kanji, ngữ pháp, ôn tập lặp lại cách quãng). Hoạt động offline-first.
 
-> Trạng thái: giao diện đầy đủ đã nối Room/DataStore (Prompt 04). **Chưa có nội dung N3 thật** (app hiển thị trạng thái rỗng) và **chưa có lịch ôn tập lặp lại cách quãng**; luyện tập theo bài hoạt động nhưng không lưu kết quả vào lịch ôn.
+> Trạng thái: module từ vựng, Kanji, ngữ pháp và nhập nội dung JSON (Prompt 05). App kèm **một bài minh họa tự biên soạn** (30 từ, 27 Kanji, 7 ngữ pháp, chưa qua kiểm duyệt chuyên môn); nội dung N3 đầy đủ cần được nhập từ nguồn có giấy phép. **Chưa có lịch ôn tập lặp lại cách quãng**; luyện tập hoạt động nhưng không lưu kết quả vào lịch ôn.
 
 ## Yêu cầu môi trường
 
@@ -42,7 +42,7 @@ Chưa cấu hình. Khi cần phát hành, tạo `keystore.properties` (đã nằ
 
 ## Kiến trúc
 
-Xem [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) và [docs/DATABASE.md](docs/DATABASE.md): sơ đồ lớp, thiết kế database, đồ thị điều hướng, quản lý UI state, dependency injection và quy ước đặt tên/resource.
+Xem [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/DATABASE.md](docs/DATABASE.md) và [docs/CONTENT_FORMAT.md](docs/CONTENT_FORMAT.md) (định dạng gói nội dung JSON): sơ đồ lớp, thiết kế database, đồ thị điều hướng, quản lý UI state, dependency injection và quy ước đặt tên/resource.
 
 ```
 com.n3sensei.app
@@ -50,12 +50,12 @@ com.n3sensei.app
 ├── app/            Scaffold, navigation/ (route tập trung), di/ (AppContainer)
 ├── core/           designsystem/ (theme, icon, component), ui/state/ (UiState)
 ├── feature/        home, learn, vocabulary, kanji, grammar, review, stats, settings
-├── domain/         model, repository interface, furigana (Kotlin thuần)
-└── data/           Room (entity, DAO, migration), repository
+├── domain/         model, repository interface, furigana, báo cáo import (Kotlin thuần)
+└── data/           Room (entity, DAO, migration), DataStore, import JSON, repository
 ```
 
 Mã test: `app/src/test/` (JVM, gồm test quy tắc kiến trúc) và `app/src/androidTest/` (Compose UI test, điều hướng).
 
 ## Thư viện chính
 
-Jetpack Compose (BOM 2024.11.00) + Material 3, Lifecycle/ViewModel 2.8.7, Navigation Compose 2.8.4 (route type-safe, kotlinx-serialization 1.7.3), Room 2.6.1 (KSP), DataStore Preferences 1.1.1, Kotlin Coroutines 1.9.0. Test: JUnit 4, kotlinx-coroutines-test, AndroidX Test (Espresso 3.7.0), Compose UI Test, Navigation Testing, Room Testing.
+Jetpack Compose (BOM 2024.11.00) + Material 3, Lifecycle/ViewModel 2.8.7, Navigation Compose 2.8.4 (route type-safe), kotlinx-serialization 1.7.3 (route và gói nội dung JSON), Room 2.6.1 (KSP), DataStore Preferences 1.1.1, Kotlin Coroutines 1.9.0. Test: JUnit 4, kotlinx-coroutines-test, AndroidX Test (Espresso 3.7.0), Compose UI Test, Navigation Testing, Room Testing.

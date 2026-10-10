@@ -2,11 +2,14 @@ package com.n3sensei.app.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
+import com.n3sensei.app.data.local.entity.ItemMarkEntity
 import com.n3sensei.app.data.local.entity.LearningProgressEntity
 import com.n3sensei.app.data.local.entity.ReviewRecordEntity
+import com.n3sensei.app.data.local.model.ItemStateRow
 import com.n3sensei.app.data.local.model.ProgressSummaryRow
 import com.n3sensei.app.data.local.model.RatingCountRow
 import com.n3sensei.app.domain.model.ItemType
@@ -30,6 +33,26 @@ abstract class ProgressDao {
 
     @Upsert
     abstract suspend fun upsert(progress: LearningProgressEntity)
+
+    @Query(
+        """
+        SELECT
+            (SELECT state FROM learning_progress WHERE item_type = :type AND item_id = :id) AS progress_state,
+            EXISTS (SELECT 1 FROM item_marks WHERE item_type = :type AND item_id = :id) AS is_marked
+        """,
+    )
+    abstract fun observeItemState(type: ItemType, id: String): Flow<ItemStateRow>
+
+    /** Ignores an existing mark so the original marked_at is kept. */
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    abstract suspend fun insertMark(mark: ItemMarkEntity)
+
+    @Query("DELETE FROM item_marks WHERE item_type = :type AND item_id = :id")
+    abstract suspend fun deleteMark(type: ItemType, id: String)
+
+    /** Marks whose content still exists. */
+    @Query("SELECT COUNT(*) FROM item_marks p WHERE $CONTENT_EXISTS")
+    abstract fun observeMarkedCount(): Flow<Int>
 
     @Insert
     abstract suspend fun insertRecord(record: ReviewRecordEntity): Long
