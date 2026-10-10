@@ -25,6 +25,10 @@ class ArchitectureRulesTest {
     @Test
     fun sourceRootExists() {
         assertTrue("Unexpected working directory: ${File(".").absolutePath}", root.isDirectory)
+        // Guard against rules passing vacuously because a layer directory moved.
+        listOf("feature", "core/ui", "data", "domain").forEach {
+            assertTrue("Missing layer $it", kotlinFilesIn(it).isNotEmpty())
+        }
     }
 
     @Test
@@ -42,6 +46,13 @@ class ArchitectureRulesTest {
             violations("feature/${dir.name}", others + "androidx.navigation" + "com.n3sensei.app.app.")
         }
         assertTrue("Features must stay independent:\n${found.joinToString("\n")}", found.isEmpty())
+    }
+
+    @Test
+    fun dataLayerDoesNotDependOnUi() {
+        val forbidden = listOf("androidx.compose", "com.n3sensei.app.feature.", "com.n3sensei.app.core.ui", "com.n3sensei.app.app.")
+        val found = violations("data", forbidden)
+        assertTrue("Data must not depend on UI:\n${found.joinToString("\n")}", found.isEmpty())
     }
 
     @Test

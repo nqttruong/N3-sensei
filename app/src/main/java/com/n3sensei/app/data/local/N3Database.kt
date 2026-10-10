@@ -1,0 +1,62 @@
+package com.n3sensei.app.data.local
+
+import android.content.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.n3sensei.app.data.local.dao.ContentDao
+import com.n3sensei.app.data.local.dao.ContentPackDao
+import com.n3sensei.app.data.local.dao.ProgressDao
+import com.n3sensei.app.data.local.entity.ContentPackEntity
+import com.n3sensei.app.data.local.entity.ContentSourceEntity
+import com.n3sensei.app.data.local.entity.ExampleSentenceEntity
+import com.n3sensei.app.data.local.entity.GrammarEntity
+import com.n3sensei.app.data.local.entity.GrammarExampleCrossRef
+import com.n3sensei.app.data.local.entity.KanjiEntity
+import com.n3sensei.app.data.local.entity.KanjiExampleCrossRef
+import com.n3sensei.app.data.local.entity.LearningProgressEntity
+import com.n3sensei.app.data.local.entity.LessonEntity
+import com.n3sensei.app.data.local.entity.ReviewRecordEntity
+import com.n3sensei.app.data.local.entity.TagEntity
+import com.n3sensei.app.data.local.entity.VocabularyEntity
+import com.n3sensei.app.data.local.entity.VocabularyExampleCrossRef
+import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
+
+@Database(
+    entities = [
+        ContentSourceEntity::class,
+        ContentPackEntity::class,
+        LessonEntity::class,
+        VocabularyEntity::class,
+        KanjiEntity::class,
+        GrammarEntity::class,
+        ExampleSentenceEntity::class,
+        VocabularyExampleCrossRef::class,
+        KanjiExampleCrossRef::class,
+        GrammarExampleCrossRef::class,
+        TagEntity::class,
+        VocabularyTagCrossRef::class,
+        LearningProgressEntity::class,
+        ReviewRecordEntity::class,
+    ],
+    version = N3Database.VERSION,
+    exportSchema = true,
+)
+@TypeConverters(Converters::class)
+abstract class N3Database : RoomDatabase() {
+    abstract fun contentDao(): ContentDao
+    abstract fun contentPackDao(): ContentPackDao
+    abstract fun progressDao(): ProgressDao
+
+    companion object {
+        const val VERSION = 1
+        const val NAME = "n3sensei.db"
+
+        /** The production database. Called once by the app container. */
+        fun create(context: Context, name: String = NAME): N3Database =
+            Room.databaseBuilder(context.applicationContext, N3Database::class.java, name)
+                .addMigrations(*N3Migrations.ALL)
+                .build()
+    }
+}

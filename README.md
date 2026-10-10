@@ -2,7 +2,7 @@
 
 Ứng dụng Android native hỗ trợ học tiếng Nhật trình độ JLPT N3 (từ vựng, Kanji, ngữ pháp, ôn tập lặp lại cách quãng). Hoạt động offline-first.
 
-> Trạng thái: kiến trúc và điều hướng (Prompt 02). Chưa có nghiệp vụ học tập.
+> Trạng thái: kiến trúc, điều hướng và database Room (Prompt 03). Chưa có giao diện học tập và chưa có nội dung N3 thật.
 
 ## Yêu cầu môi trường
 
@@ -42,7 +42,7 @@ Chưa cấu hình. Khi cần phát hành, tạo `keystore.properties` (đã nằ
 
 ## Kiến trúc
 
-Xem [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md): sơ đồ lớp, đồ thị điều hướng, quản lý UI state, dependency injection và quy ước đặt tên/resource.
+Xem [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) và [docs/DATABASE.md](docs/DATABASE.md): sơ đồ lớp, thiết kế database, đồ thị điều hướng, quản lý UI state, dependency injection và quy ước đặt tên/resource.
 
 ```
 com.n3sensei.app
@@ -50,12 +50,12 @@ com.n3sensei.app
 ├── app/            Scaffold, navigation/ (route tập trung), di/ (AppContainer)
 ├── core/           designsystem/ (theme, icon, component), ui/state/ (UiState)
 ├── feature/        home, learn, vocabulary, kanji, grammar, review, stats, settings
-├── domain/         (Prompt 03+) model, logic thuần Kotlin
-└── data/           (Prompt 03+) Room, DataStore, repository
+├── domain/         model, repository interface, furigana (Kotlin thuần)
+└── data/           Room (entity, DAO, migration), repository
 ```
 
 Mã test: `app/src/test/` (JVM, gồm test quy tắc kiến trúc) và `app/src/androidTest/` (Compose UI test, điều hướng).
 
 ## Thư viện chính
 
-Jetpack Compose (BOM 2024.11.00) + Material 3, Lifecycle/ViewModel 2.8.7, Navigation Compose 2.8.4 (route type-safe, kotlinx-serialization 1.7.3), Room 2.6.1 (KSP), DataStore Preferences 1.1.1, Kotlin Coroutines 1.9.0. Test: JUnit 4, kotlinx-coroutines-test, AndroidX Test (Espresso 3.7.0), Compose UI Test, Navigation Testing.
+Jetpack Compose (BOM 2024.11.00) + Material 3, Lifecycle/ViewModel 2.8.7, Navigation Compose 2.8.4 (route type-safe, kotlinx-serialization 1.7.3), Room 2.6.1 (KSP), DataStore Preferences 1.1.1, Kotlin Coroutines 1.9.0. Test: JUnit 4, kotlinx-coroutines-test, AndroidX Test (Espresso 3.7.0), Compose UI Test, Navigation Testing, Room Testing.

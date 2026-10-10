@@ -2,7 +2,7 @@
 
 Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc thời gian build tăng đáng kể mới tách module; ranh giới package hiện tại đã được giữ bằng test (`ArchitectureRulesTest`) để việc tách sau này không phải sửa phụ thuộc.
 
-## Sơ đồ (trạng thái thực tế sau Prompt 02)
+## Sơ đồ (trạng thái thực tế sau Prompt 03)
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -13,12 +13,13 @@ Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc 
 │ app/navigation: Routes · AppScreen · TopLevelDestination ·       │
 │                 navigateToTopLevel                               │
 │ app/di: AppContainer (Application scope) · appViewModel { }      │
+│         └─ N3Database (lazy) · ContentRepository · ProgressRepo. │
 └───────────────┬──────────────────────────────────────────────────┘
                 │ callback điều hướng (không truyền NavController)
 ┌───────────────▼──────────────────────────────────────────────────┐
 │ feature/  home · learn · vocabulary · kanji · grammar ·          │
 │           review · stats · settings          (Composable)        │
-│   └─ (Prompt 03+) XxxViewModel ─ StateFlow<UiState<T>>           │
+│   └─ (sắp tới) XxxViewModel ─ StateFlow<UiState<T>>              │
 └───────────────┬──────────────────────────────────────────────────┘
                 │ dùng chung
 ┌───────────────▼──────────────────────────────────────────────────┐
@@ -26,10 +27,22 @@ Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc 
 │ core/ui/state:     UiState · asUiState() · UiStateContent        │
 └──────────────────────────────────────────────────────────────────┘
 
-(Prompt 03+, chưa tồn tại)
-  feature ─▶ ViewModel ─▶ domain (model, use case, repository interface; Kotlin thuần)
-                               ▲
-                         data (Room entity/DAO, DataStore, repository impl)
+
+┌──────────────────────────────────────────────────────────────────┐
+│ domain (Kotlin thuần)                                            │
+│   model: Vocabulary · Kanji · GrammarPoint · LessonSummary ·     │
+│          LearningProgress · ReviewRecord · ItemRef · ...         │
+│   repository: ContentRepository · ProgressRepository (interface) │
+│   furigana: Furigana (định dạng {漢字|かんじ})                    │
+└───────────────▲──────────────────────────────────────────────────┘
+                │ cài đặt interface
+┌───────────────┴──────────────────────────────────────────────────┐
+│ data                                                             │
+│   repository: OfflineContentRepository · OfflineProgressRepo.   │
+│               (entity ⇄ domain mapper)                           │
+│   local: N3Database · ContentDao · ContentPackDao · ProgressDao  │
+│          entity/ · N3Migrations · Converters                     │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
 Đồ thị điều hướng:
@@ -54,10 +67,12 @@ NavHost (start = HomeRoute)
 | `feature/*` | `core/*`, `domain` | `data`, Room, `androidx.navigation`, `app.*`, feature khác |
 | `core/ui`, `core/designsystem` | Compose, `R` | `data`, Room, `app.di` |
 | `domain` | Kotlin, Coroutines | `android.*`, `androidx.*`, `data`, `feature` |
-| `data` | `domain`, Room, DataStore | `feature`, Compose |
+| `data` | `domain`, Room, DataStore | `feature`, `core/ui`, `app`, Compose |
 | `app` | tất cả | — |
 
-Ba dòng đầu (`feature`, `core/ui`/`core/designsystem`, `domain`) được kiểm tra tự động bởi `ArchitectureRulesTest` bằng cách quét import; dòng `data` sẽ có test khi package này được tạo.
+Tất cả các dòng trên (trừ `app`) được kiểm tra tự động bởi `ArchitectureRulesTest` bằng cách quét import.
+
+Chi tiết database: [DATABASE.md](DATABASE.md).
 
 ## Điều hướng
 
