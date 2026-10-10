@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">N3 Sensei</string>
+
+    <string name="nav_learn">Học</string>
+    <string name="nav_review">Ôn tập</string>
+    <string name="nav_stats">Thống kê</string>
+    <string name="nav_settings">Cài đặt</string>
+
+    <string name="learn_placeholder">Danh sách bài học (từ vựng, Kanji, ngữ pháp) sẽ được xây dựng ở giai đoạn tiếp theo.</string>
+    <string name="review_placeholder">Phiên ôn tập theo lịch lặp lại cách quãng sẽ được xây dựng ở giai đoạn tiếp theo.</string>
+    <string name="stats_placeholder">Thống kê tiến độ và dự báo khối lượng ôn tập sẽ được xây dựng ở giai đoạn tiếp theo.</string>
+    <string name="settings_placeholder">Cài đặt khoảng ôn, nhắc học, sao lưu và khôi phục sẽ được xây dựng ở giai đoạn tiếp theo.</string>
+</resources>

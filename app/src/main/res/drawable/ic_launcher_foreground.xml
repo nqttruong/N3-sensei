@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Safe zone of an adaptive icon is the central 66dp of 108dp. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Card -->
+    <path
+        android:fillColor="@color/ic_launcher_foreground"
+        android:pathData="M36,32 h36 a4,4 0 0 1 4,4 v36 a4,4 0 0 1 -4,4 h-36 a4,4 0 0 1 -4,-4 v-36 a4,4 0 0 1 4,-4 z" />
+    <!-- Red circle -->
+    <path
+        android:fillColor="@color/ic_launcher_accent"
+        android:pathData="M54,54 m-11,0 a11,11 0 1 1 22,0 a11,11 0 1 1 -22,0" />
+</vector>
