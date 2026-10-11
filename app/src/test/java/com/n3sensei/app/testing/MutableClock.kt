@@ -6,10 +6,13 @@ import java.time.Instant
 import java.time.ZoneId
 import java.time.ZoneOffset
 
-/** Clock that only moves when the test advances it. */
-class MutableClock(var now: Instant = Instant.parse("2026-10-11T08:00:00Z")) : Clock() {
+/** Clock that only moves when the test advances it; [currentZone] can change like a device setting. */
+class MutableClock(
+    var now: Instant = Instant.parse("2026-10-11T08:00:00Z"),
+    var currentZone: ZoneId = ZoneOffset.UTC,
+) : Clock() {
     override fun instant(): Instant = now
-    override fun getZone(): ZoneId = ZoneOffset.UTC
+    override fun getZone(): ZoneId = currentZone
     override fun withZone(zone: ZoneId?): Clock = this
 
     fun advance(duration: Duration) {

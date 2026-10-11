@@ -6,9 +6,15 @@ import androidx.datastore.preferences.preferencesDataStoreFile
 import com.n3sensei.app.data.importing.AndroidContentImportRepository
 import com.n3sensei.app.data.importing.ContentPackImporter
 import com.n3sensei.app.data.local.N3Database
+import com.n3sensei.app.app.reminder.AndroidReminderNotifier
+import com.n3sensei.app.app.reminder.WorkManagerReminderScheduler
+import com.n3sensei.app.data.preferences.DataStoreReminderStateStore
 import com.n3sensei.app.data.preferences.DataStoreUserPreferencesRepository
 import com.n3sensei.app.data.repository.OfflineContentRepository
 import com.n3sensei.app.data.repository.OfflineProgressRepository
+import com.n3sensei.app.domain.reminder.ReminderNotifier
+import com.n3sensei.app.domain.reminder.ReminderRunner
+import com.n3sensei.app.domain.reminder.ReminderScheduler
 import com.n3sensei.app.domain.repository.ContentImportRepository
 import com.n3sensei.app.domain.repository.ContentRepository
 import com.n3sensei.app.domain.repository.ProgressRepository
@@ -24,12 +30,15 @@ interface AppContainer {
     val progressRepository: ProgressRepository
     val userPreferencesRepository: UserPreferencesRepository
     val contentImportRepository: ContentImportRepository
+    val reminderScheduler: ReminderScheduler
+    val reminderNotifier: ReminderNotifier
+    val reminderRunner: ReminderRunner
     val clock: Clock
 }
 
 class DefaultAppContainer(context: Context) : AppContainer {
 
-    override val clock: Clock = Clock.systemDefaultZone()
+    override val clock: Clock = DeviceClock
 
     private val appContext = context.applicationContext
 
@@ -45,9 +54,28 @@ class DefaultAppContainer(context: Context) : AppContainer {
     }
 
     // One DataStore instance per file per process, so it lives here and nowhere else.
+    private val preferencesDataStore by lazy {
+        PreferenceDataStoreFactory.create { appContext.preferencesDataStoreFile("user_preferences") }
+    }
+
     override val userPreferencesRepository: UserPreferencesRepository by lazy {
-        DataStoreUserPreferencesRepository(
-            PreferenceDataStoreFactory.create { appContext.preferencesDataStoreFile("user_preferences") },
+        DataStoreUserPreferencesRepository(preferencesDataStore)
+    }
+
+    override val reminderScheduler: ReminderScheduler by lazy { WorkManagerReminderScheduler(appContext) }
+
+    override val reminderNotifier: ReminderNotifier by lazy { AndroidReminderNotifier(appContext) }
+
+    internal val reminderStateStore by lazy { DataStoreReminderStateStore(preferencesDataStore) }
+
+    override val reminderRunner: ReminderRunner by lazy {
+        ReminderRunner(
+            userPreferencesRepository,
+            reminderStateStore,
+            contentRepository,
+            progressRepository,
+            reminderNotifier,
+            clock,
         )
     }
 

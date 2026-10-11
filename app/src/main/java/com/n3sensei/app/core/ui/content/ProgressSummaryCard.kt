@@ -33,7 +33,7 @@ fun ProgressSummaryCard(
                 StatItem(summary.dueNow.toString(), stringResource(R.string.progress_due_now), Modifier.weight(1f))
                 StatItem(summary.learning.toString(), stringResource(R.string.progress_learning), Modifier.weight(1f))
                 StatItem(summary.inReview.toString(), stringResource(R.string.progress_in_review), Modifier.weight(1f))
-                StatItem(summary.totalReviews.toString(), stringResource(R.string.progress_total_reviews), Modifier.weight(1f))
+                StatItem(summary.mastered.toString(), stringResource(R.string.progress_mastered), Modifier.weight(1f))
             }
         }
     }
@@ -59,5 +59,5 @@ fun StatItem(value: String, label: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 private fun ProgressSummaryCardPreview() = N3SenseiTheme {
-    ProgressSummaryCard(ProgressSummary(trackedItems = 0, learning = 0, inReview = 0, dueNow = 0, totalReviews = 0))
+    ProgressSummaryCard(ProgressSummary(trackedItems = 0, learning = 0, inReview = 0, mastered = 0, dueNow = 0, totalReviews = 0))
 }

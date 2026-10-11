@@ -1,6 +1,6 @@
 # Database N3 Sensei
 
-Room 2.6.1, file `n3sensei.db`, schema version **2**. Schema export: `app/schemas/com.n3sensei.app.data.local.N3Database/<version>.json` (commit vào Git).
+Room 2.6.1, file `n3sensei.db`, schema version **3**. Schema export: `app/schemas/com.n3sensei.app.data.local.N3Database/<version>.json` (commit vào Git).
 
 ## Hai nhóm dữ liệu
 
@@ -31,7 +31,7 @@ tags (id, name UNIQUE)                                                          
 learning_progress PK(item_type, item_id) ···· tham chiếu logic, không FK ········┘
 item_marks        PK(item_type, item_id) ···· (như trên)
 grammar_exercises (grammar_id ─CASCADE─▶ grammar), UNIQUE(grammar_id, sort_order)
-review_records    id AUTOINCREMENT, (item_type, item_id), reviewed_at
+review_records    id AUTOINCREMENT, (item_type, item_id), reviewed_at, request_id UNIQUE, was_new
 ```
 
 - **RESTRICT** ở `source_id`: không xóa được nguồn còn đang được tham chiếu, nên thông tin nguồn và giấy phép không bị mất.
@@ -47,7 +47,7 @@ review_records    id AUTOINCREMENT, (item_type, item_id), reviewed_at
 | `grammar` | `(lesson_id, sort_order)` | `pattern`, `source_id` |
 | `tags` | `name` | |
 | `learning_progress` | PK `(item_type, item_id)` | `due_at` |
-| `review_records` | | `(item_type, item_id)`, `reviewed_at` |
+| `review_records` | `request_id` | `(item_type, item_id)`, `reviewed_at` |
 
 Các cột FK đều có index. Room bật `PRAGMA foreign_keys = ON` khi mở database (đã có test xác nhận vi phạm FK bị từ chối).
 
@@ -70,7 +70,7 @@ Các cột FK đều có index. Room bật `PRAGMA foreign_keys = ON` khi mở d
 ## Transaction
 
 - `ContentPackDao.replacePack`: xóa gói cũ rồi ghi gói mới; một dòng lỗi thì toàn bộ thay đổi bị hủy và nội dung cũ được giữ nguyên.
-- `ProgressDao.recordReview`: cập nhật tiến độ và ghi lịch sử ôn tập cùng thành công hoặc cùng thất bại.
+- `ProgressDao.applyReview`: kiểm tra `request_id` → đọc tiến độ → scheduler (domain) tính → ghi lịch sử + tiến độ, trong một transaction; trả lời trùng không ghi gì. Xem [SRS.md](SRS.md).
 - `ContentDao.get*Detail`: đọc mục, câu ví dụ và nguồn trong một transaction để dữ liệu nhất quán.
 
 ## Tìm kiếm
@@ -91,6 +91,7 @@ Danh sách không có văn bản tìm kiếm trả về đầy đủ. Có văn b
 - Quy trình đổi schema: tăng `N3Database.VERSION`, build để export JSON mới, thêm `Migration` vào `N3Migrations.ALL`, rồi commit JSON.
 - `N3DatabaseMigrationTest` chạy thử migration từ **mọi** version đã export lên version hiện tại, kiểm tra khớp schema, và kiểm tra dữ liệu ghi bằng schema v1 vẫn đọc được qua Room.
 - **1 → 2** (`N3Migrations.MIGRATION_1_2`): tạo `item_marks`, `grammar_exercises`; thêm cột `search_text` vào `vocabulary`, `kanji`, `grammar` và **tính lại cho mọi dòng đã có** bằng chính `SearchText` của app. Đã kiểm tra bằng test: dữ liệu ghi theo schema v1 (nội dung + tiến độ) còn nguyên sau migration, tìm kiếm không dấu tìm thấy dòng cũ, bảng đánh dấu dùng được; tắt bước tính lại thì test thất bại.
+- **2 → 3** (`MIGRATION_2_3`): `review_records` thêm `request_id` (UNIQUE, NULL cho dòng cũ) và `was_new` (tính lại: bản ghi sớm nhất của mỗi mục = 1). Đã kiểm tra bằng test với lịch sử ghi theo schema v2.
 - Lưu ý: nếu sửa entity mà quên tăng version, Room sẽ ghi đè JSON của version hiện tại. Khi review cần xem diff thư mục `app/schemas/`.
 
 ## Nhập nội dung

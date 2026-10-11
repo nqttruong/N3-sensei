@@ -7,6 +7,8 @@ import com.n3sensei.app.testing.TestContent
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.testing.FakeProgressRepository
+import com.n3sensei.app.testing.FakeUserPreferencesRepository
+import com.n3sensei.app.testing.MutableClock
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.test.runCurrent
@@ -30,19 +32,19 @@ class VocabularyDetailViewModelTest {
 
     @Test
     fun existingItem_isSuccess() {
-        val state = VocabularyDetailViewModel("v1", repository, progress).state.value
+        val state = VocabularyDetailViewModel("v1", repository, progress, FakeUserPreferencesRepository(), MutableClock()).state.value
         assertEquals("経験", (state as UiState.Success).data.vocabulary.expression)
     }
 
     @Test
     fun missingItem_isNotFound() {
-        assertEquals(UiState.NotFound, VocabularyDetailViewModel("missing", repository, progress).state.value)
+        assertEquals(UiState.NotFound, VocabularyDetailViewModel("missing", repository, progress, FakeUserPreferencesRepository(), MutableClock()).state.value)
     }
 
     @Test
     fun failure_isError_andRefreshRecovers() {
         repository.failDetails = true
-        val viewModel = VocabularyDetailViewModel("v1", repository, progress)
+        val viewModel = VocabularyDetailViewModel("v1", repository, progress, FakeUserPreferencesRepository(), MutableClock())
         assertTrue(viewModel.state.value is UiState.Error)
 
         repository.failDetails = false
@@ -52,15 +54,15 @@ class VocabularyDetailViewModelTest {
 
     @Test
     fun toggleMark_marksAndUnmarksThroughRepository() = runTest {
-        val viewModel = VocabularyDetailViewModel("v1", repository, progress)
-        viewModel.itemState.launchIn(backgroundScope)
+        val viewModel = VocabularyDetailViewModel("v1", repository, progress, FakeUserPreferencesRepository(), MutableClock())
+        viewModel.scheduleInfo.launchIn(backgroundScope)
         runCurrent()
-        assertFalse(viewModel.itemState.value!!.isMarked)
+        assertFalse(viewModel.scheduleInfo.value!!.state.isMarked)
 
         viewModel.toggleMark()
         runCurrent()
         assertEquals(setOf(ItemRef(ItemType.VOCABULARY, "v1")), progress.marks.value)
-        assertTrue(viewModel.itemState.value!!.isMarked)
+        assertTrue(viewModel.scheduleInfo.value!!.state.isMarked)
 
         viewModel.toggleMark()
         runCurrent()

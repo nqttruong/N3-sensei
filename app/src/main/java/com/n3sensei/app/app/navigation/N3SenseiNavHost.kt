@@ -5,11 +5,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navDeepLink
 import androidx.navigation.navigation
 import androidx.navigation.toRoute
 import com.n3sensei.app.R
 import com.n3sensei.app.app.di.appViewModel
+import com.n3sensei.app.app.reminder.ReminderDeepLinks
 import com.n3sensei.app.domain.practice.PracticeResult
+import com.n3sensei.app.domain.srs.SubmitReviewUseCase
 import com.n3sensei.app.feature.grammar.GrammarDetailScreen
 import com.n3sensei.app.feature.grammar.GrammarDetailViewModel
 import com.n3sensei.app.feature.grammar.GrammarListScreen
@@ -30,6 +33,12 @@ import com.n3sensei.app.feature.practice.PracticeScreen
 import com.n3sensei.app.feature.practice.PracticeViewModel
 import com.n3sensei.app.feature.review.ReviewScreen
 import com.n3sensei.app.feature.review.ReviewViewModel
+import com.n3sensei.app.feature.reviewsession.ReviewSessionScreen
+import com.n3sensei.app.feature.reviewsession.ReviewSessionViewModel
+import com.n3sensei.app.feature.settings.ReminderSettingsScreen
+import com.n3sensei.app.feature.settings.ReminderSettingsViewModel
+import com.n3sensei.app.feature.settings.ReviewSettingsScreen
+import com.n3sensei.app.feature.settings.ReviewSettingsViewModel
 import com.n3sensei.app.feature.settings.SettingsScreen
 import com.n3sensei.app.feature.settings.SettingsViewModel
 import com.n3sensei.app.feature.stats.StatsScreen
@@ -93,10 +102,12 @@ fun N3SenseiNavHost(
                     onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
                 )
             }
-            composable<VocabularyDetailRoute> { entry ->
+            composable<VocabularyDetailRoute>(
+                deepLinks = listOf(navDeepLink<VocabularyDetailRoute>(basePath = ReminderDeepLinks.VOCABULARY_BASE)),
+            ) { entry ->
                 val id = entry.toRoute<VocabularyDetailRoute>().vocabularyId
                 VocabularyDetailScreen(
-                    viewModel = appViewModel { VocabularyDetailViewModel(id, contentRepository, progressRepository) },
+                    viewModel = appViewModel { VocabularyDetailViewModel(id, contentRepository, progressRepository, userPreferencesRepository, clock) },
                     onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
                 )
             }
@@ -110,7 +121,7 @@ fun N3SenseiNavHost(
             composable<KanjiDetailRoute> { entry ->
                 val id = entry.toRoute<KanjiDetailRoute>().kanjiId
                 KanjiDetailScreen(
-                    viewModel = appViewModel { KanjiDetailViewModel(id, contentRepository, progressRepository) },
+                    viewModel = appViewModel { KanjiDetailViewModel(id, contentRepository, progressRepository, userPreferencesRepository, clock) },
                     onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
                 )
             }
@@ -124,7 +135,7 @@ fun N3SenseiNavHost(
             composable<GrammarDetailRoute> { entry ->
                 val id = entry.toRoute<GrammarDetailRoute>().grammarId
                 GrammarDetailScreen(
-                    viewModel = appViewModel { GrammarDetailViewModel(id, contentRepository, progressRepository) },
+                    viewModel = appViewModel { GrammarDetailViewModel(id, contentRepository, progressRepository, userPreferencesRepository, clock) },
                     onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
                 )
             }
@@ -157,16 +168,59 @@ fun N3SenseiNavHost(
         }
         composable<ReviewRoute> {
             ReviewScreen(
-                viewModel = appViewModel { ReviewViewModel(progressRepository, clock) },
+                viewModel = appViewModel { ReviewViewModel(progressRepository, userPreferencesRepository, clock) },
+                onStartSession = { navController.navigate(ReviewSessionRoute) },
                 onOpenLessons = { navController.navigateToLessons() },
                 onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
+            )
+        }
+        composable<ReviewSessionRoute> {
+            ReviewSessionScreen(
+                viewModel = appViewModel {
+                    ReviewSessionViewModel(
+                        contentRepository, progressRepository, userPreferencesRepository,
+                        SubmitReviewUseCase(progressRepository), clock,
+                    )
+                },
+                onFinished = { result ->
+                    navController.navigate(
+                        ReviewResultRoute(result.total, result.again, result.hard, result.good, result.easy, result.durationSeconds),
+                    ) { popUpTo<ReviewSessionRoute> { inclusive = true } }
+                },
+            )
+        }
+        composable<ReviewResultRoute> { entry ->
+            val route = entry.toRoute<ReviewResultRoute>()
+            PracticeResultScreen(
+                result = PracticeResult(route.total, route.again, route.hard, route.good, route.easy, route.durationSeconds),
+                onPracticeAgain = {
+                    navController.navigate(ReviewSessionRoute) { popUpTo<ReviewResultRoute> { inclusive = true } }
+                },
+                onBackToLesson = { navController.popBackStack() },
+                backLabelRes = R.string.review_result_back,
+                againLabelRes = R.string.review_result_again,
+                saved = true,
             )
         }
         composable<StatsRoute> {
             StatsScreen(viewModel = appViewModel { StatsViewModel(contentRepository, progressRepository, clock) })
         }
         composable<SettingsRoute> {
-            SettingsScreen(viewModel = appViewModel { SettingsViewModel(userPreferencesRepository, contentRepository, contentImportRepository) })
+            SettingsScreen(
+                viewModel = appViewModel { SettingsViewModel(userPreferencesRepository, contentRepository, contentImportRepository) },
+                onOpenReviewSettings = { navController.navigate(ReviewSettingsRoute) },
+                onOpenReminderSettings = { navController.navigate(ReminderSettingsRoute) },
+            )
+        }
+        composable<ReminderSettingsRoute> {
+            ReminderSettingsScreen(
+                viewModel = appViewModel {
+                    ReminderSettingsViewModel(userPreferencesRepository, reminderScheduler, reminderNotifier, reminderRunner)
+                },
+            )
+        }
+        composable<ReviewSettingsRoute> {
+            ReviewSettingsScreen(viewModel = appViewModel { ReviewSettingsViewModel(userPreferencesRepository) })
         }
     }
 }

@@ -6,6 +6,7 @@ import com.n3sensei.app.domain.model.ContentTotals
 import com.n3sensei.app.domain.model.GrammarDetail
 import com.n3sensei.app.domain.model.GrammarPoint
 import com.n3sensei.app.domain.model.ItemQuery
+import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.Kanji
 import com.n3sensei.app.domain.model.KanjiDetail
 import com.n3sensei.app.domain.model.LessonSummary
@@ -13,6 +14,7 @@ import com.n3sensei.app.domain.model.Tag
 import com.n3sensei.app.domain.model.TrackedItem
 import com.n3sensei.app.domain.model.Vocabulary
 import com.n3sensei.app.domain.model.VocabularyDetail
+import com.n3sensei.app.domain.practice.PracticeItem
 import kotlinx.coroutines.flow.Flow
 
 /** Read access to shared learning content. */
@@ -41,6 +43,9 @@ interface ContentRepository {
     fun observeVocabulary(lessonId: String? = null): Flow<List<Vocabulary>>
     fun observeKanji(lessonId: String? = null): Flow<List<Kanji>>
     fun observeGrammar(lessonId: String? = null): Flow<List<GrammarPoint>>
+
+    /** The item as a flashcard, or null when it no longer exists. */
+    suspend fun getPracticeItem(ref: ItemRef): PracticeItem?
 
     /** Returns null when the item does not exist (e.g. removed by a content update). */
     suspend fun getVocabularyDetail(id: String): VocabularyDetail?

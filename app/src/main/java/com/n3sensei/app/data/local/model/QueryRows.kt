@@ -11,6 +11,7 @@ import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.LessonEntity
 import com.n3sensei.app.data.local.entity.TagEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ProgressState
 import com.n3sensei.app.domain.model.ReviewRating
 
@@ -64,6 +65,8 @@ data class GrammarItemRow(
 data class ItemStateRow(
     @ColumnInfo(name = "progress_state") val progressState: ProgressState?,
     @ColumnInfo(name = "is_marked") val isMarked: Boolean,
+    @ColumnInfo(name = "due_at") val dueAt: Long?,
+    @ColumnInfo(name = "step_index") val stepIndex: Int?,
 )
 
 data class ContentPackRow(
@@ -82,6 +85,7 @@ data class ProgressSummaryRow(
     @ColumnInfo(name = "tracked_items") val trackedItems: Int,
     val learning: Int,
     @ColumnInfo(name = "in_review") val inReview: Int,
+    val mastered: Int,
     @ColumnInfo(name = "due_now") val dueNow: Int,
     @ColumnInfo(name = "total_reviews") val totalReviews: Int,
 )
@@ -89,4 +93,19 @@ data class ProgressSummaryRow(
 data class RatingCountRow(
     val rating: ReviewRating,
     val count: Int,
+)
+
+data class ItemRefRow(
+    @ColumnInfo(name = "item_type") val itemType: ItemType,
+    @ColumnInfo(name = "item_id") val itemId: String,
+)
+
+data class TypeCountRow(
+    @ColumnInfo(name = "item_type") val itemType: ItemType,
+    val count: Int,
+)
+
+data class TodayCountsRow(
+    @ColumnInfo(name = "new_answered") val newAnswered: Int,
+    @ColumnInfo(name = "reviews_answered") val reviewsAnswered: Int,
 )

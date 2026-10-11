@@ -6,10 +6,12 @@ import androidx.sqlite.db.framework.FrameworkSQLiteOpenHelperFactory
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.n3sensei.app.data.local.entity.ItemMarkEntity
+import com.n3sensei.app.data.local.entity.ReviewRecordEntity
 import com.n3sensei.app.data.repository.OfflineContentRepository
 import com.n3sensei.app.domain.model.ItemQuery
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningStatus
+import com.n3sensei.app.domain.model.ReviewRating
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
@@ -105,6 +107,48 @@ class N3DatabaseMigrationTest {
             assertEquals(LearningStatus.REVIEW, repository.observeVocabularyItems(ItemQuery()).first().single().status)
         } finally {
             db.close()
+            instrumentation.targetContext.deleteDatabase(name)
+        }
+    }
+
+    @Test
+    fun reviewHistoryWrittenWithV2Schema_getsWasNewBackfilled_andAllowsNewIdempotentRecords() = runTest {
+        val name = "migration-test-data-v2"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 2).apply {
+            listOf(100L, 200L, 300L).forEach { at ->
+                execSQL(
+                    "INSERT INTO review_records (item_type, item_id, rating, reviewed_at, interval_before_minutes, " +
+                        "interval_after_minutes, due_at_after) VALUES ('KANJI', 'k', 'GOOD', $at, 0, 60, ${at + 3_600_000})",
+                )
+            }
+            execSQL(
+                "INSERT INTO review_records (item_type, item_id, rating, reviewed_at, interval_before_minutes, " +
+                    "interval_after_minutes, due_at_after) VALUES ('GRAMMAR', 'g', 'AGAIN', 150, 0, 20, 1200150)",
+            )
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 3, true, N3Migrations.MIGRATION_2_3).use { db ->
+            db.query("SELECT item_id, reviewed_at, was_new, request_id FROM review_records ORDER BY id").use { c ->
+                val rows = generateSequence { if (c.moveToNext()) Triple(c.getString(0), c.getLong(1), c.getInt(2)) to c.isNull(3) else null }.toList()
+                assertEquals(listOf(1, 0, 0, 1), rows.map { it.first.third })
+                assertTrue(rows.all { it.second }) // request_id is NULL for old rows
+            }
+        }
+        val room = Room.databaseBuilder(instrumentation.targetContext, N3Database::class.java, name)
+            .addMigrations(*N3Migrations.ALL)
+            .build()
+        try {
+            val dao = room.progressDao()
+            val record = ReviewRecordEntity(
+                itemType = ItemType.KANJI, itemId = "k", rating = ReviewRating.GOOD, reviewedAt = 400,
+                intervalBeforeMinutes = 60, intervalAfterMinutes = 1440, dueAtAfter = 86_400_400, requestId = "fresh",
+            )
+            dao.insertRecord(record)
+            assertEquals(1, dao.countRecordsWithRequest("fresh"))
+            assertEquals(4, dao.getHistory(ItemType.KANJI, "k", 10).size)
+        } finally {
+            room.close()
             instrumentation.targetContext.deleteDatabase(name)
         }
     }

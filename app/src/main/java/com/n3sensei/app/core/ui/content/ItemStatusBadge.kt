@@ -19,6 +19,7 @@ fun LearningStatus.labelRes(): Int = when (this) {
     LearningStatus.NEW -> R.string.status_new
     LearningStatus.LEARNING -> R.string.status_learning
     LearningStatus.REVIEW -> R.string.status_review
+    LearningStatus.MASTERED -> R.string.status_mastered
 }
 
 /** Trailing marker on list cards: bookmark when marked, status once learning has started. */

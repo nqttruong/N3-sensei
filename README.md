@@ -2,7 +2,7 @@
 
 Ứng dụng Android native hỗ trợ học tiếng Nhật trình độ JLPT N3 (từ vựng, Kanji, ngữ pháp, ôn tập lặp lại cách quãng). Hoạt động offline-first.
 
-> Trạng thái: module từ vựng, Kanji, ngữ pháp và nhập nội dung JSON (Prompt 05). App kèm **một bài minh họa tự biên soạn** (30 từ, 27 Kanji, 7 ngữ pháp, chưa qua kiểm duyệt chuyên môn); nội dung N3 đầy đủ cần được nhập từ nguồn có giấy phép. **Chưa có lịch ôn tập lặp lại cách quãng**; luyện tập hoạt động nhưng không lưu kết quả vào lịch ôn.
+> Trạng thái: module học, nhập nội dung JSON, engine ôn tập cách quãng (Prompt 06), nhắc học qua thông báo và widget màn hình chính (Prompt 07, xem [docs/REMINDERS.md](docs/REMINDERS.md)). App kèm **một bài minh họa tự biên soạn** (30 từ, 27 Kanji, 7 ngữ pháp, chưa qua kiểm duyệt chuyên môn); nội dung N3 đầy đủ cần được nhập từ nguồn có giấy phép. Ôn tập lặp lại cách quãng hoạt động (Prompt 06, xem [docs/SRS.md](docs/SRS.md)); chế độ luyện tập theo bài vẫn không ảnh hưởng lịch ôn.
 
 ## Yêu cầu môi trường
 
@@ -58,4 +58,4 @@ Mã test: `app/src/test/` (JVM, gồm test quy tắc kiến trúc) và `app/src/
 
 ## Thư viện chính
 
-Jetpack Compose (BOM 2024.11.00) + Material 3, Lifecycle/ViewModel 2.8.7, Navigation Compose 2.8.4 (route type-safe), kotlinx-serialization 1.7.3 (route và gói nội dung JSON), Room 2.6.1 (KSP), DataStore Preferences 1.1.1, Kotlin Coroutines 1.9.0. Test: JUnit 4, kotlinx-coroutines-test, AndroidX Test (Espresso 3.7.0), Compose UI Test, Navigation Testing, Room Testing.
+Jetpack Compose (BOM 2024.11.00) + Material 3, Lifecycle/ViewModel 2.8.7, Navigation Compose 2.8.4 (route type-safe), kotlinx-serialization 1.7.3 (route và gói nội dung JSON), Room 2.6.1 (KSP), DataStore Preferences 1.1.1, Kotlin Coroutines 1.9.0, WorkManager 2.10.0, Glance 1.1.1 (widget). Test: JUnit 4, kotlinx-coroutines-test, AndroidX Test (Espresso 3.7.0), Compose UI Test, Navigation Testing, Room Testing, WorkManager Testing.

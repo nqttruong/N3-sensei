@@ -287,6 +287,56 @@ class EndToEndTest {
         }
     }
 
+    @Test
+    fun reviewSession_savesEveryAnswer_andProgressSurvivesRestart() {
+        launch().use {
+            openTab(TopLevelDestination.REVIEW)
+            // 7 seed items are new; the default limit allows 20 new items a day.
+            waitForText(string(R.string.review_start, 7))
+            clickable(string(R.string.review_start, 7)).performClick()
+            waitForText(string(R.string.review_session_saved_note))
+            repeat(7) { index ->
+                waitForText(string(R.string.practice_progress, index + 1, 7))
+                composeRule.onNodeWithText(string(R.string.practice_reveal)).performClick()
+                // Button label includes the next interval, e.g. "Tốt\n1 giờ".
+                composeRule.onNode(hasText(string(R.string.rating_good), substring = true) and hasClickAction()).performClick()
+            }
+            waitForText(string(R.string.review_result_saved))
+            composeRule.onNodeWithText(string(R.string.review_result_back)).performClick()
+            waitForText(string(R.string.review_overview_today, 0, 200, 7, 20))
+            composeRule.onNodeWithText(string(R.string.review_start, 0)).assertIsNotEnabled()
+        }
+        // Relaunch: progress is read back from Room.
+        ActivityScenario.launch(MainActivity::class.java).use {
+            openTab(TopLevelDestination.STATS)
+            waitForText(string(R.string.stats_total_reviews, 7))
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.vocabulary_title)).performClick()
+            waitForText("経験")
+            composeRule.onNodeWithText("経験").performClick()
+            waitForText(string(R.string.item_memory_level, 2, 7))
+            composeRule.onNodeWithText(string(R.string.due_state_not_due), substring = true).assertIsDisplayed()
+        }
+    }
+
+    @Test
+    fun reviewSettings_validatesAndSaves() {
+        launch().use {
+            openTab(TopLevelDestination.SETTINGS)
+            clickable(string(R.string.review_settings_title)).performClick()
+            waitForText(string(R.string.review_settings_intervals))
+            val firstAmount = composeRule.onAllNodes(hasSetTextAction())[0]
+            firstAmount.performTextReplacement("")
+            composeRule.onNodeWithText(string(R.string.review_settings_save)).performScrollTo().performClick()
+            waitForText(string(R.string.review_settings_error_amount, 1))
+
+            firstAmount.performTextReplacement("10")
+            composeRule.onNodeWithText(string(R.string.review_settings_save)).performScrollTo().performClick()
+            waitForText(string(R.string.review_settings_saved))
+            assertEquals("10m,1h,1d,2d,1w,2w,1mo", runBlocking { AppTestState.preferences.first() }.reviewSettings.ladder.encode())
+        }
+    }
+
     private fun androidx.compose.ui.test.junit4.ComposeTestRule.onAllNodesWithTextExact(text: String) =
         onAllNodes(hasText(text)).fetchSemanticsNodes()
 

@@ -46,6 +46,7 @@ fun StatsScreen(
             }
 
             ProgressSummaryCard(ui.progress)
+            Text(stringResource(R.string.stats_total_reviews, ui.progress.totalReviews), style = MaterialTheme.typography.bodyMedium)
 
             SectionHeader(stringResource(R.string.stats_ratings))
             if (ui.ratingCounts.isEmpty()) {

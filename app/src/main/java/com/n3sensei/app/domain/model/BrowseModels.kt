@@ -6,6 +6,7 @@ enum class LearningStatus {
     NEW,
     LEARNING,
     REVIEW,
+    MASTERED,
     ;
 
     companion object {
@@ -13,6 +14,7 @@ enum class LearningStatus {
             null -> NEW
             ProgressState.LEARNING -> LEARNING
             ProgressState.REVIEW -> REVIEW
+            ProgressState.MASTERED -> MASTERED
         }
     }
 }
@@ -28,6 +30,10 @@ data class TrackedItem<out T>(
 data class ItemUserState(
     val status: LearningStatus,
     val isMarked: Boolean,
+    /** Next scheduled review; null for new items. */
+    val dueAt: java.time.Instant? = null,
+    /** Zero-based ladder step ("memory level"); null for new items. */
+    val stepIndex: Int? = null,
 )
 
 /**

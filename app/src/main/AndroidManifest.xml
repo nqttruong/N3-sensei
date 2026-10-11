@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Study reminders (runtime permission on Android 13+). -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:name=".N3SenseiApplication"
         android:allowBackup="true"
@@ -21,6 +24,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- "Cần học lại" action on a reminder; only reachable through our own PendingIntent. -->
+        <receiver
+            android:name=".app.reminder.ReminderActionReceiver"
+            android:exported="false" />
+
+        <receiver
+            android:name=".app.widget.StudyWordWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_title">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/study_word_widget_info" />
+        </receiver>
     </application>
 
 </manifest>

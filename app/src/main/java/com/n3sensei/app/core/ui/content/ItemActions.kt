@@ -15,24 +15,42 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.icon.N3Icons
-import com.n3sensei.app.domain.model.ItemUserState
+import com.n3sensei.app.core.ui.state.ItemScheduleInfo
+import com.n3sensei.app.domain.srs.DueState
+import java.time.format.DateTimeFormatter
 
 /** Status line, "needs attention" toggle and a shortcut to practise the item's lesson. */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ItemActions(
-    state: ItemUserState?,
+    info: ItemScheduleInfo?,
     onToggleMark: () -> Unit,
     onPracticeLesson: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
-        if (state != null) {
+        val state = info?.state
+        if (info != null && state != null) {
             Text(
                 stringResource(R.string.item_status, stringResource(state.status.labelRes())),
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
+            state.stepIndex?.let { step ->
+                Text(
+                    stringResource(R.string.item_memory_level, (step + 1).coerceAtMost(info.ladderSize), info.ladderSize),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+            val dueLabel = info.dueState.labelRes()
+            if (info.dueAt != null && dueLabel != null) {
+                Text(
+                    stringResource(R.string.item_next_review, info.dueAt.format(DUE_FORMAT), stringResource(dueLabel)),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = if (info.dueState == DueState.OVERDUE) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
         }
         FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             val marked = state?.isMarked == true
@@ -47,3 +65,5 @@ fun ItemActions(
         }
     }
 }
+
+private val DUE_FORMAT: DateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy")

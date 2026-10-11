@@ -46,7 +46,25 @@ object N3Migrations {
         }
     }
 
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2)
+    /**
+     * v3: idempotent answers and daily limits. `review_records` gets `request_id` (unique; NULL
+     * for older rows) and `was_new`, back-filled as true for each item's earliest record.
+     */
+    val MIGRATION_2_3 = object : Migration(2, 3) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `review_records` ADD COLUMN `request_id` TEXT")
+            db.execSQL("ALTER TABLE `review_records` ADD COLUMN `was_new` INTEGER NOT NULL DEFAULT 0")
+            db.execSQL(
+                "CREATE UNIQUE INDEX IF NOT EXISTS `index_review_records_request_id` ON `review_records` (`request_id`)",
+            )
+            db.execSQL(
+                "UPDATE `review_records` SET `was_new` = 1 WHERE `id` IN " +
+                    "(SELECT MIN(`id`) FROM `review_records` GROUP BY `item_type`, `item_id`)",
+            )
+        }
+    }
+
+    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3)
 
     private fun String.toReadings(): String = StringListCodec.decode(this).joinToString(" ")
 

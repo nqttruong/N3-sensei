@@ -1,0 +1,157 @@
+package com.n3sensei.app.feature.reviewsession
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.n3sensei.app.core.ui.state.UiState
+import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.LearningProgress
+import com.n3sensei.app.domain.model.ReviewRating
+import com.n3sensei.app.domain.practice.PracticeItem
+import com.n3sensei.app.domain.practice.PracticeResult
+import com.n3sensei.app.domain.repository.ContentRepository
+import com.n3sensei.app.domain.repository.ProgressRepository
+import com.n3sensei.app.domain.repository.UserPreferencesRepository
+import com.n3sensei.app.domain.srs.ReviewInterval
+import com.n3sensei.app.domain.srs.ReviewQueuePlanner
+import com.n3sensei.app.domain.srs.ReviewSettings
+import com.n3sensei.app.domain.srs.ReviewTime
+import com.n3sensei.app.domain.srs.SpacedRepetitionScheduler
+import com.n3sensei.app.domain.srs.SubmitReviewUseCase
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
+import java.time.Clock
+import java.time.Duration
+import java.util.UUID
+
+/** One card of the session. [requestId] is fixed per card, so a retry cannot double-record. */
+data class SessionCard(
+    val ref: ItemRef,
+    val item: PracticeItem,
+    val progress: LearningProgress?,
+    val requestId: String,
+    /** Interval each answer would give, for the button labels. */
+    val hints: Map<ReviewRating, ReviewInterval>,
+)
+
+data class ReviewSessionUiState(
+    val cards: List<SessionCard>,
+    val index: Int = 0,
+    val isAnswerRevealed: Boolean = false,
+    /** True while an answer is being written; further taps are ignored. */
+    val isSubmitting: Boolean = false,
+    val saveFailed: Boolean = false,
+    val ratings: List<ReviewRating> = emptyList(),
+    /** Due or new items that no longer exist in the content. */
+    val skippedMissing: Int = 0,
+    val result: PracticeResult? = null,
+) {
+    val current: SessionCard? get() = cards.getOrNull(index)
+}
+
+/**
+ * Scheduled review session. The queue is built once at the start (due items, then new items,
+ * within today's limits); every answer is saved immediately through [SubmitReviewUseCase].
+ */
+class ReviewSessionViewModel(
+    private val contentRepository: ContentRepository,
+    private val progressRepository: ProgressRepository,
+    private val preferencesRepository: UserPreferencesRepository,
+    private val submitReview: SubmitReviewUseCase,
+    private val clock: Clock,
+    private val newRequestId: () -> String = { UUID.randomUUID().toString() },
+) : ViewModel() {
+
+    private val _state = MutableStateFlow<UiState<ReviewSessionUiState>>(UiState.Loading)
+    val state: StateFlow<UiState<ReviewSessionUiState>> = _state.asStateFlow()
+
+    private var settings = ReviewSettings()
+    private var startedAt = clock.instant()
+
+    init {
+        load()
+    }
+
+    fun load() {
+        viewModelScope.launch {
+            _state.value = UiState.Loading
+            _state.value = try {
+                buildSession()
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                UiState.Error(e)
+            }
+        }
+    }
+
+    private suspend fun buildSession(): UiState<ReviewSessionUiState> {
+        settings = preferencesRepository.preferences.first().reviewSettings
+        val now = clock.instant()
+        val zone = clock.zone
+        startedAt = now
+        val overview = progressRepository
+            .observeReviewOverview(now, ReviewTime.startOfDay(now, zone), ReviewTime.startOfNextDay(now, zone))
+            .first()
+        val limits = settings.limits
+        val due = progressRepository.getDueItems(now, ReviewQueuePlanner.remainingReviews(limits, overview.today))
+        val newItems = progressRepository.getNewItems(ReviewQueuePlanner.remainingNew(limits, overview.today))
+        val queue = ReviewQueuePlanner.plan(due, newItems, limits, overview.today)
+
+        val scheduler = SpacedRepetitionScheduler(settings.ladder)
+        var missing = 0
+        val cards = queue.mapNotNull { ref ->
+            val item = contentRepository.getPracticeItem(ref) ?: run { missing++; return@mapNotNull null }
+            val progress = progressRepository.getProgress(ref)
+            SessionCard(ref, item, progress, newRequestId(), ReviewRating.entries.associateWith { scheduler.preview(progress, it) })
+        }
+        return if (cards.isEmpty()) UiState.Empty else UiState.Success(ReviewSessionUiState(cards, skippedMissing = missing))
+    }
+
+    fun revealAnswer() = _state.update { s ->
+        if (s is UiState.Success && s.data.result == null) UiState.Success(s.data.copy(isAnswerRevealed = true)) else s
+    }
+
+    fun rate(rating: ReviewRating) {
+        val ui = (_state.value as? UiState.Success)?.data ?: return
+        val card = ui.current ?: return
+        if (!ui.isAnswerRevealed || ui.isSubmitting || ui.result != null) return
+        _state.value = UiState.Success(ui.copy(isSubmitting = true, saveFailed = false))
+
+        viewModelScope.launch {
+            try {
+                // APPLIED or DUPLICATE: either way this answer is stored exactly once.
+                submitReview(card.ref, card.requestId, rating, settings, clock.instant(), clock.zone)
+                advance(rating)
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                _state.update { s -> if (s is UiState.Success) UiState.Success(s.data.copy(isSubmitting = false, saveFailed = true)) else s }
+            }
+        }
+    }
+
+    private fun advance(rating: ReviewRating) = _state.update { s ->
+        if (s !is UiState.Success) return@update s
+        val ui = s.data
+        val ratings = ui.ratings + rating
+        val next = ui.index + 1
+        val result = if (next >= ui.cards.size) {
+            PracticeResult(
+                total = ui.cards.size,
+                again = ratings.count { it == ReviewRating.AGAIN },
+                hard = ratings.count { it == ReviewRating.HARD },
+                good = ratings.count { it == ReviewRating.GOOD },
+                easy = ratings.count { it == ReviewRating.EASY },
+                durationSeconds = Duration.between(startedAt, clock.instant()).seconds.coerceAtLeast(0),
+            )
+        } else {
+            null
+        }
+        UiState.Success(ui.copy(index = next, isAnswerRevealed = false, isSubmitting = false, ratings = ratings, result = result))
+    }
+}

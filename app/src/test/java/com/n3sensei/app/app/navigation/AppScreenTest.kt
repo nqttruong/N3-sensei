@@ -37,14 +37,16 @@ class AppScreenTest {
             HomeRoute::class, LearnHubRoute::class, LessonListRoute::class, LessonDetailRoute::class,
             VocabularyRoute::class, VocabularyDetailRoute::class, KanjiRoute::class, KanjiDetailRoute::class,
             GrammarRoute::class, GrammarDetailRoute::class, PracticeRoute::class, PracticeResultRoute::class,
-            ReviewRoute::class, StatsRoute::class, SettingsRoute::class,
+            ReviewRoute::class, ReviewSessionRoute::class, ReviewResultRoute::class,
+            StatsRoute::class, SettingsRoute::class, ReviewSettingsRoute::class, ReminderSettingsRoute::class,
         )
         assertEquals(expected, AppScreen.entries.map { it.route }.toSet())
     }
 
     @Test
-    fun nonRootScreensBelongToLearnTab() {
-        val nonRoots = AppScreen.entries.filterNot { it.isTabRoot }
-        assertTrue(nonRoots.all { it.tab == TopLevelDestination.LEARN })
+    fun homeAndStatsHaveNoSubScreens() {
+        val nonRootTabs = AppScreen.entries.filterNot { it.isTabRoot }.map { it.tab }.toSet()
+        assertEquals(setOf(TopLevelDestination.LEARN, TopLevelDestination.REVIEW, TopLevelDestination.SETTINGS), nonRootTabs)
+        assertTrue(TopLevelDestination.HOME !in nonRootTabs)
     }
 }

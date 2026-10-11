@@ -37,10 +37,10 @@ fun KanjiDetailScreen(
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    val itemState by viewModel.itemState.collectAsStateWithLifecycle()
+    val scheduleInfo by viewModel.scheduleInfo.collectAsStateWithLifecycle()
     UiStateContent(state = state, onRetry = viewModel::refresh, modifier = modifier) { detail ->
         KanjiDetailContent(detail) {
-            ItemActions(itemState, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.kanji.lessonId) })
+            ItemActions(scheduleInfo, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.kanji.lessonId) })
         }
     }
 }

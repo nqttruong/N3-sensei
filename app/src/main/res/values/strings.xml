@@ -41,7 +41,7 @@
     <string name="onboarding_2_title">Học theo bài</string>
     <string name="onboarding_2_body">Mỗi bài gồm từ vựng, Kanji và mẫu ngữ pháp, có furigana, nghĩa tiếng Việt và câu ví dụ.</string>
     <string name="onboarding_3_title">Luyện tập và ôn tập</string>
-    <string name="onboarding_3_body">Luyện tập bằng thẻ ghi nhớ và tự đánh giá Quên, Khó, Tốt, Dễ. Lịch ôn tập lặp lại cách quãng đang được phát triển.</string>
+    <string name="onboarding_3_body">Ôn tập theo lịch lặp lại cách quãng: 20 phút, 1 giờ, 1 ngày… đến 1 tháng. Tự đánh giá Quên, Khó, Tốt, Dễ để app xếp lần ôn tiếp theo.</string>
 
     <!-- Home / Dashboard -->
     <string name="home_due_title">Ôn tập hôm nay</string>
@@ -62,7 +62,6 @@
     <string name="progress_due_now">Đến hạn</string>
     <string name="progress_learning">Đang học</string>
     <string name="progress_in_review">Đang ôn</string>
-    <string name="progress_total_reviews">Lượt ôn</string>
 
     <!-- Learn hub -->
     <string name="learn_title">Học</string>
@@ -124,7 +123,7 @@
 
     <!-- Practice session -->
     <string name="practice_title">Luyện tập</string>
-    <string name="practice_not_saved">Chế độ luyện tập: đánh giá chỉ dùng cho kết quả phiên này, chưa được lưu vào lịch ôn tập.</string>
+    <string name="practice_not_saved">Chế độ luyện tập: đánh giá chỉ dùng cho kết quả phiên này, không thay đổi lịch ôn tập. Dùng tab Ôn tập để ôn theo lịch.</string>
     <string name="practice_progress">Thẻ %1$d / %2$d</string>
     <string name="practice_empty">Bài này chưa có mục nào để luyện tập.</string>
     <string name="practice_reveal">Hiện đáp án</string>
@@ -147,8 +146,6 @@
 
     <!-- Review -->
     <string name="review_title">Ôn tập</string>
-    <string name="review_due_count">%1$d mục đến hạn ôn</string>
-    <string name="review_scheduler_pending">Lịch ôn tập lặp lại cách quãng (20 phút → 1 tháng) chưa được triển khai, nên hiện chưa có mục nào được lên lịch. Trong lúc chờ, bạn có thể luyện tập theo từng bài.</string>
     <string name="review_open_practice">Luyện tập theo bài</string>
 
     <!-- Stats -->
@@ -157,7 +154,7 @@
     <string name="stats_ratings">Đánh giá khi ôn tập</string>
     <string name="stats_no_reviews">Chưa có lượt ôn tập nào được ghi lại.</string>
     <string name="stats_forecast">Dự báo khối lượng ôn tập</string>
-    <string name="stats_forecast_pending">Dự báo sẽ có khi lịch ôn tập được triển khai. Mọi số liệu trên màn hình này được tính từ dữ liệu thật trong máy.</string>
+    <string name="stats_forecast_pending">Dự báo khối lượng ôn tập chưa được triển khai. Mọi số liệu trên màn hình này được tính từ dữ liệu thật trong máy.</string>
 
     <!-- Settings -->
     <string name="settings_title">Cài đặt</string>
@@ -170,8 +167,6 @@
     <string name="settings_show_furigana_description">Hiện cách đọc phía trên Kanji trong thẻ từ và câu ví dụ</string>
     <string name="settings_replay_onboarding">Xem lại phần giới thiệu</string>
     <string name="settings_upcoming">Sắp có</string>
-    <string name="settings_review_intervals">Khoảng ôn tập</string>
-    <string name="settings_reminders">Nhắc học</string>
     <string name="settings_backup">Sao lưu và khôi phục</string>
     <string name="settings_sources">Nguồn nội dung</string>
     <string name="settings_no_sources">Chưa có nguồn nội dung nào.</string>
@@ -248,4 +243,117 @@
     <string name="import_issue_NO_LESSONS">Không có bài học hợp lệ</string>
     <string name="import_issue_OLDER_VERSION">Phiên bản cũ hơn bản đã cài</string>
     <string name="import_issue_DATABASE_ERROR">Lỗi ghi cơ sở dữ liệu; nội dung cũ được giữ nguyên</string>
+    <!-- Spaced repetition -->
+    <string name="status_mastered">Thành thạo</string>
+    <string name="progress_mastered">Thành thạo</string>
+    <string name="due_state_due">Đến hạn</string>
+    <string name="due_state_overdue">Quá hạn</string>
+    <string name="due_state_not_due">Chưa đến hạn</string>
+    <string name="item_memory_level">Mức ghi nhớ: %1$d / %2$d</string>
+    <string name="item_next_review">Ôn tiếp: %1$s (%2$s)</string>
+    <string name="interval_minutes">%1$d phút</string>
+    <string name="interval_hours">%1$d giờ</string>
+    <string name="interval_days">%1$d ngày</string>
+    <string name="interval_weeks">%1$d tuần</string>
+    <string name="interval_months">%1$d tháng</string>
+    <string name="unit_minutes">phút</string>
+    <string name="unit_hours">giờ</string>
+    <string name="unit_days">ngày</string>
+    <string name="unit_weeks">tuần</string>
+    <string name="unit_months">tháng (theo lịch)</string>
+    <string name="rating_with_interval">%1$s\n%2$s</string>
+
+    <string name="review_overview_due">Đến hạn: %1$d</string>
+    <string name="review_overview_breakdown">Từ vựng %1$d · Kanji %2$d · Ngữ pháp %3$d</string>
+    <string name="review_overview_overdue">Trong đó quá hạn (từ trước hôm nay): %1$d</string>
+    <string name="review_overview_new">Mục mới có thể học hôm nay: %1$d (còn %2$d mục chưa học)</string>
+    <string name="review_overview_today">Hôm nay: đã ôn %1$d / %2$d, đã học mới %3$d / %4$d</string>
+    <string name="review_start">Bắt đầu ôn tập (%1$d)</string>
+    <string name="review_nothing_due">Hiện không có mục nào cần ôn. Mục tiếp theo sẽ xuất hiện khi đến hạn.</string>
+    <string name="review_limit_reached">Đã đạt giới hạn hôm nay. Có thể đổi giới hạn trong Cài đặt → Ôn tập.</string>
+    <string name="review_rules">Quên → về bậc 1 · Khó → giữ bậc · Tốt → lên 1 bậc · Dễ → lên 2 bậc. Mục đến hạn trong lúc đang ôn sẽ có ở phiên sau.</string>
+    <string name="review_session_title">Phiên ôn tập</string>
+    <string name="review_session_saved_note">Mỗi câu trả lời được lưu ngay vào lịch ôn tập.</string>
+    <string name="review_session_save_failed">Chưa lưu được câu trả lời. Thử lại sẽ không ghi trùng.</string>
+    <string name="review_session_empty">Không còn mục nào để ôn trong lúc này.</string>
+    <string name="review_session_skipped">Một số mục đã bị gỡ khỏi nội dung nên được bỏ qua.</string>
+    <string name="review_result_title">Kết quả ôn tập</string>
+    <string name="review_result_saved">Kết quả đã được lưu và lịch ôn đã được cập nhật.</string>
+    <string name="review_result_back">Về màn hình Ôn tập</string>
+    <string name="review_result_again">Ôn tiếp</string>
+
+    <string name="stats_total_reviews">Tổng số lượt ôn: %1$d</string>
+
+    <string name="settings_review">Ôn tập</string>
+    <string name="settings_review_summary">Khoảng ôn: %1$s · Mới %2$d/ngày · Ôn %3$d/ngày</string>
+    <string name="review_settings_title">Cài đặt ôn tập</string>
+    <string name="review_settings_intervals">Các bậc khoảng ôn</string>
+    <string name="review_settings_step">Bậc %1$d</string>
+    <string name="review_settings_amount">Số</string>
+    <string name="review_settings_add_step">Thêm bậc</string>
+    <string name="review_settings_remove_step">Xóa bậc %1$d</string>
+    <string name="review_settings_reset">Khôi phục mặc định</string>
+    <string name="review_settings_save">Lưu</string>
+    <string name="review_settings_saved">Đã lưu cài đặt ôn tập.</string>
+    <string name="review_settings_new_per_day">Số mục mới mỗi ngày (0–200)</string>
+    <string name="review_settings_reviews_per_day">Số lượt ôn mỗi ngày (1–2000)</string>
+    <string name="review_settings_rule_time">Phút và giờ tính theo thời gian trôi qua. Ngày, tuần và tháng tính theo lịch, theo múi giờ của máy: “1 ngày” là cùng giờ ngày hôm sau; “1 tháng” là cùng ngày tháng sau (31/1 + 1 tháng = 28 hoặc 29/2).</string>
+    <string name="review_settings_rule_change">Thay đổi chỉ áp dụng từ lần trả lời tiếp theo của mỗi mục; ngày đến hạn đã lên lịch được giữ nguyên. Nếu bớt bậc, mục đang ở bậc đã xóa sẽ dùng bậc cuối cùng.</string>
+    <string name="review_settings_rule_day">“Hôm nay” và giới hạn mỗi ngày tính theo nửa đêm giờ địa phương. Mỗi lần trả lời một mục đã học tính là một lượt ôn; lần trả lời đầu tiên của mục mới tính là một mục mới.</string>
+    <string name="review_settings_error_empty">Cần ít nhất một bậc.</string>
+    <string name="review_settings_error_too_many">Tối đa %1$d bậc.</string>
+    <string name="review_settings_error_order">Bậc %1$d phải dài hơn bậc trước.</string>
+    <string name="review_settings_error_too_long">Bậc %1$d dài quá 1 năm.</string>
+    <string name="review_settings_error_amount">Bậc %1$d: số phải từ 1 đến 999.</string>
+    <string name="review_settings_error_limits">Giới hạn mỗi ngày không hợp lệ.</string>
+    <!-- Study reminders -->
+    <string name="reminder_channel_name">Nhắc học</string>
+    <string name="reminder_channel_description">Thông báo một từ cần học theo khung giờ bạn chọn.</string>
+    <string name="reminder_tap_for_meaning">Bạn còn nhớ nghĩa không? Chạm để xem thẻ từ.</string>
+    <string name="reminder_reason_due">Đến hạn ôn</string>
+    <string name="reminder_reason_marked">Đã đánh dấu cần chú ý</string>
+    <string name="reminder_reason_new">Từ mới</string>
+    <string name="reminder_due_count">%1$d mục đang đến hạn ôn</string>
+    <string name="reminder_action_open">Mở thẻ</string>
+    <string name="reminder_action_mark">Cần học lại</string>
+    <string name="reminder_marked_title">Đã đánh dấu cần học lại</string>
+    <string name="reminder_marked_text">%1$s · lịch ôn không thay đổi</string>
+    <string name="widget_title">N3 Sensei · Từ cần học</string>
+    <string name="widget_description">Hiện một từ cần học từ dữ liệu của bạn.</string>
+    <string name="widget_empty">Chưa có từ cần học.</string>
+
+    <string name="settings_reminders_summary_off">Đang tắt</string>
+    <string name="settings_reminders_summary_on">%1$s · %2$02d:00–%3$02d:00</string>
+    <string name="reminder_settings_title">Nhắc học</string>
+    <string name="reminder_enable">Bật nhắc học</string>
+    <string name="reminder_enable_description">Thông báo một từ cần học, lấy từ dữ liệu của bạn.</string>
+    <string name="reminder_permission_denied">Ứng dụng chưa được phép gửi thông báo. Bật nhắc học để cấp quyền; nếu đã từ chối trước đó, hãy cho phép trong cài đặt hệ thống.</string>
+    <string name="reminder_blocked_while_enabled">Nhắc học đang bật nhưng ứng dụng không được phép gửi thông báo, nên sẽ không có nhắc nào. Hãy cho phép thông báo trong cài đặt hệ thống.</string>
+    <string name="reminder_open_system_settings">Mở cài đặt thông báo</string>
+    <string name="reminder_window">Khung giờ nhắc</string>
+    <string name="reminder_window_from">Từ</string>
+    <string name="reminder_window_to">Đến</string>
+    <string name="reminder_window_hint">Giờ bắt đầu sau giờ kết thúc nghĩa là khung giờ qua nửa đêm; hai giờ bằng nhau nghĩa là cả ngày.</string>
+    <string name="reminder_hour">%1$02d:00</string>
+    <string name="reminder_frequency">Tần suất</string>
+    <string name="reminder_frequency_hours">Mỗi %1$d giờ</string>
+    <string name="reminder_frequency_daily">Mỗi ngày một lần</string>
+    <string name="reminder_content">Nội dung thông báo</string>
+    <string name="reminder_show_reading">Hiện cách đọc</string>
+    <string name="reminder_show_meaning">Hiện nghĩa</string>
+    <string name="reminder_show_meaning_description">Tắt để nghĩa không bao giờ xuất hiện trong thông báo và widget.</string>
+    <string name="reminder_lock_screen">Trên màn hình khóa</string>
+    <string name="reminder_lock_show_all">Hiện đầy đủ</string>
+    <string name="reminder_lock_hide_meaning">Chỉ hiện từ, ẩn nghĩa</string>
+    <string name="reminder_lock_hide_meaning_description">Android dùng bản rút gọn này khi máy có khóa bảo mật (PIN, mật khẩu…) và cài đặt hệ thống đang ẩn nội dung nhạy cảm.</string>
+    <string name="reminder_lock_hide_all">Ẩn hoàn toàn</string>
+    <string name="reminder_lock_hide_all_description">Không hiện thông báo này trên màn hình khóa có bảo mật.</string>
+    <string name="reminder_send_test">Gửi thử thông báo</string>
+    <string name="reminder_test_shown">Đã gửi thông báo thử.</string>
+    <string name="reminder_test_blocked">Không gửi được: thông báo đang bị chặn.</string>
+    <string name="reminder_test_nothing">Chưa có từ nào để nhắc (chưa có nội dung từ vựng).</string>
+    <string name="reminder_word_rule">Từ được chọn: từ vựng đến hạn ôn lâu nhất; nếu không có thì từ đã đánh dấu cần chú ý; nếu không có thì từ mới tiếp theo. Nhắc học không thay đổi lịch ôn.</string>
+    <string name="reminder_limits">Android giới hạn việc chạy nền: nhắc học có thể đến muộn vài phút đến hơn một giờ khi máy tiết kiệm pin hoặc ít dùng ứng dụng, và không chạy khi pin yếu. Ứng dụng không dùng báo thức chính xác và không đánh thức máy riêng cho việc nhắc. Mỗi lần chỉ có một thông báo nhắc học; thông báo mới thay thế thông báo cũ.</string>
+    <string name="reminder_add_widget">Thêm widget “Từ cần học” vào màn hình chính</string>
+    <string name="reminder_lock_screen_widget_note">Widget “Từ cần học” dùng trên màn hình chính. Điện thoại Android nói chung không cho ứng dụng đặt widget lên màn hình khóa; trên màn hình khóa, hãy dùng thông báo nhắc học.</string>
 </resources>

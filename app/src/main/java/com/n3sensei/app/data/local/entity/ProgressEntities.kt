@@ -35,7 +35,12 @@ data class LearningProgressEntity(
 
 @Entity(
     tableName = "review_records",
-    indices = [Index(value = ["item_type", "item_id"]), Index("reviewed_at")],
+    indices = [
+        Index(value = ["item_type", "item_id"]),
+        Index("reviewed_at"),
+        // One row per answer: a repeated submit with the same request id is rejected.
+        Index(value = ["request_id"], unique = true),
+    ],
 )
 data class ReviewRecordEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
@@ -46,6 +51,9 @@ data class ReviewRecordEntity(
     @ColumnInfo(name = "interval_before_minutes") val intervalBeforeMinutes: Long,
     @ColumnInfo(name = "interval_after_minutes") val intervalAfterMinutes: Long,
     @ColumnInfo(name = "due_at_after") val dueAtAfter: Long,
+    /** Null for records written before v3 (SQLite allows many NULLs in a unique index). */
+    @ColumnInfo(name = "request_id") val requestId: String? = null,
+    @ColumnInfo(name = "was_new", defaultValue = "0") val wasNew: Boolean = false,
 )
 
 /** Learner's "needs attention" mark on an item. Presence of the row means marked. */

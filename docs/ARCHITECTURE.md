@@ -2,7 +2,7 @@
 
 Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc thời gian build tăng đáng kể mới tách module; ranh giới package hiện tại đã được giữ bằng test (`ArchitectureRulesTest`) để việc tách sau này không phải sửa phụ thuộc.
 
-## Sơ đồ (trạng thái thực tế sau Prompt 05)
+## Sơ đồ (trạng thái thực tế sau Prompt 07)
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -43,6 +43,9 @@ Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc 
 │   importing: ImportReport (mã lỗi, số bản ghi)                   │
 │   furigana: Furigana (định dạng {漢字|かんじ})                    │
 │   practice: PracticeSession (luyện tập, không ghi lịch ôn)       │
+│   reminder: ReminderRunner · ReminderPolicy (xem REMINDERS.md)   │
+│   srs: SpacedRepetitionScheduler · ReviewLadder · ReviewTime ·   │
+│        ReviewQueuePlanner · SubmitReviewUseCase  (xem SRS.md)    │
 └───────────────▲──────────────────────────────────────────────────┘
                 │ cài đặt interface
 ┌───────────────┴──────────────────────────────────────────────────┐
@@ -71,8 +74,11 @@ NavHost (start = HomeRoute)
 │   ├── KanjiRoute      ─▶ KanjiDetailRoute(id)
 │   └── GrammarRoute    ─▶ GrammarDetailRoute(id)
 ├── ReviewRoute                        tab Ôn tập
+│   └─▶ ReviewSessionRoute ─▶ ReviewResultRoute (thay thế phiên)
 ├── StatsRoute                         tab Thống kê
 └── SettingsRoute                      tab Cài đặt
+    ├─▶ ReviewSettingsRoute
+    └─▶ ReminderSettingsRoute
 ```
 
 ## Màn hình và nguồn dữ liệu
@@ -85,7 +91,10 @@ NavHost (start = HomeRoute)
 | Từ vựng, Kanji, Ngữ pháp (danh sách) | Room: Flow kèm trạng thái học và đánh dấu | Tìm kiếm không dấu (debounce 300 ms, tối đa 100), lọc theo bài, trạng thái, đã đánh dấu, chủ đề (từ vựng); luyện tập mục đã đánh dấu |
 | Thẻ từ, chi tiết Kanji, ngữ pháp | Room (đọc trong transaction) + `item_marks` | Furigana, ví dụ, nguồn và giấy phép, trạng thái học, đánh dấu cần chú ý, luyện tập bài chứa mục; ngữ pháp có bài tập ngắn; Kanji ghi rõ chưa có thứ tự nét |
 | Luyện tập + kết quả | Room (nội dung bài hoặc mục đã đánh dấu) | Đánh giá chỉ dùng cho kết quả phiên, **không** ghi vào lịch ôn |
-| Ôn tập | Room: số mục đến hạn | Lịch ôn lặp lại cách quãng **chưa triển khai** (ghi rõ trên màn hình) |
+| Ôn tập | Room: đến hạn theo loại, quá hạn, mục mới, số đã làm hôm nay; DataStore: giới hạn | Bắt đầu phiên ôn theo lịch; luyện tập theo bài / mục đã đánh dấu |
+| Phiên ôn + kết quả | Room (hàng đợi, tiến độ) | Mỗi câu trả lời lưu ngay (idempotent), nút hiện khoảng ôn kế tiếp |
+| Cài đặt nhắc học | DataStore + WorkManager | Bật/tắt (xin quyền), khung giờ, tần suất, nội dung, riêng tư màn hình khóa, gửi thử, ghim widget |
+| Cài đặt ôn tập | DataStore | Sửa dãy bậc, giới hạn mỗi ngày, giải thích quy tắc |
 | Thống kê | Room: tổng nội dung, tiến độ, số lượt theo đánh giá | Dự báo **chưa triển khai** (ghi rõ) |
 | Cài đặt | DataStore (theme, furigana) + Room (gói, nguồn nội dung) + nhập JSON | Khoảng ôn, nhắc học, sao lưu: hiển thị "Chưa triển khai", không có hành động |
 

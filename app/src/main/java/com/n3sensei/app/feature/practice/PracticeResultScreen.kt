@@ -31,6 +31,9 @@ fun PracticeResultScreen(
     onBackToLesson: () -> Unit,
     modifier: Modifier = Modifier,
     backLabelRes: Int = R.string.practice_result_back,
+    againLabelRes: Int = R.string.practice_result_again,
+    /** Whether the answers were saved to the schedule (review) or not (practice). */
+    saved: Boolean = false,
 ) {
     Column(
         modifier = modifier
@@ -51,9 +54,9 @@ fun PracticeResultScreen(
                 StatItem(result.easy.toString(), stringResource(R.string.rating_easy), Modifier.weight(1f))
             }
         }
-        InfoBanner(stringResource(R.string.practice_result_not_saved))
+        InfoBanner(stringResource(if (saved) R.string.review_result_saved else R.string.practice_result_not_saved))
         Button(onClick = onPracticeAgain, modifier = Modifier.fillMaxWidth()) {
-            Text(stringResource(R.string.practice_result_again))
+            Text(stringResource(againLabelRes))
         }
         OutlinedButton(onClick = onBackToLesson, modifier = Modifier.fillMaxWidth()) {
             Text(stringResource(backLabelRes))

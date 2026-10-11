@@ -22,7 +22,7 @@ class HomeViewModelTest {
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()
 
-    private val summary = ProgressSummary(trackedItems = 2, learning = 1, inReview = 1, dueNow = 1, totalReviews = 5)
+    private val summary = ProgressSummary(trackedItems = 2, learning = 1, inReview = 1, mastered = 0, dueNow = 1, totalReviews = 5)
     private val progress = FakeProgressRepository(summary)
 
     @Test

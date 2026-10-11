@@ -4,6 +4,8 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.n3sensei.app.N3SenseiApplication
 import com.n3sensei.app.app.di.DefaultAppContainer
 import com.n3sensei.app.domain.model.ThemeMode
+import com.n3sensei.app.domain.reminder.ReminderSettings
+import com.n3sensei.app.domain.srs.ReviewSettings
 import kotlinx.coroutines.runBlocking
 
 /**
@@ -29,8 +31,13 @@ object AppTestState {
             setOnboardingCompleted(onboardingCompleted)
             setThemeMode(ThemeMode.SYSTEM)
             setShowFurigana(true)
+            setReviewSettings(ReviewSettings())
+            setReminderSettings(ReminderSettings())
         }
+        container.reminderScheduler.apply(ReminderSettings())
     }
 
     val preferences get() = container.userPreferencesRepository.preferences
+
+    val appContainer: DefaultAppContainer get() = container
 }

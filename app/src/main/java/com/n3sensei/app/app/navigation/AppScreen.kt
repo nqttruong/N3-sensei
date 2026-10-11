@@ -30,8 +30,12 @@ enum class AppScreen(
     PRACTICE(PracticeRoute::class, R.string.practice_title, TopLevelDestination.LEARN, isTabRoot = false),
     PRACTICE_RESULT(PracticeResultRoute::class, R.string.practice_result_title, TopLevelDestination.LEARN, isTabRoot = false),
     REVIEW(ReviewRoute::class, R.string.review_title, TopLevelDestination.REVIEW, isTabRoot = true),
+    REVIEW_SESSION(ReviewSessionRoute::class, R.string.review_session_title, TopLevelDestination.REVIEW, isTabRoot = false),
+    REVIEW_RESULT(ReviewResultRoute::class, R.string.review_result_title, TopLevelDestination.REVIEW, isTabRoot = false),
     STATS(StatsRoute::class, R.string.stats_title, TopLevelDestination.STATS, isTabRoot = true),
-    SETTINGS(SettingsRoute::class, R.string.settings_title, TopLevelDestination.SETTINGS, isTabRoot = true);
+    SETTINGS(SettingsRoute::class, R.string.settings_title, TopLevelDestination.SETTINGS, isTabRoot = true),
+    REVIEW_SETTINGS(ReviewSettingsRoute::class, R.string.review_settings_title, TopLevelDestination.SETTINGS, isTabRoot = false),
+    REMINDER_SETTINGS(ReminderSettingsRoute::class, R.string.reminder_settings_title, TopLevelDestination.SETTINGS, isTabRoot = false);
 
     fun matches(destination: NavDestination): Boolean = destination.hasRoute(route)
 

@@ -10,6 +10,8 @@ import com.n3sensei.app.domain.model.ContentTotals
 import com.n3sensei.app.domain.model.GrammarDetail
 import com.n3sensei.app.domain.model.GrammarPoint
 import com.n3sensei.app.domain.model.ItemQuery
+import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.Kanji
 import com.n3sensei.app.domain.model.KanjiDetail
 import com.n3sensei.app.domain.model.LessonSummary
@@ -17,6 +19,7 @@ import com.n3sensei.app.domain.model.Tag
 import com.n3sensei.app.domain.model.TrackedItem
 import com.n3sensei.app.domain.model.Vocabulary
 import com.n3sensei.app.domain.model.VocabularyDetail
+import com.n3sensei.app.domain.practice.PracticeItem
 import com.n3sensei.app.domain.repository.ContentRepository
 import com.n3sensei.app.domain.repository.ContentRepository.Companion.MAX_PAGE_SIZE
 import kotlinx.coroutines.flow.Flow
@@ -74,6 +77,12 @@ class OfflineContentRepository(
 
     override fun observeGrammar(lessonId: String?): Flow<List<GrammarPoint>> =
         contentDao.observeGrammar(lessonId).map { rows -> rows.map { it.toDomain() } }
+
+    override suspend fun getPracticeItem(ref: ItemRef): PracticeItem? = when (ref.type) {
+        ItemType.VOCABULARY -> contentDao.getVocabulary(ref.id)?.let { PracticeItem.VocabularyItem(it.toDomain()) }
+        ItemType.KANJI -> contentDao.getKanji(ref.id)?.let { PracticeItem.KanjiItem(it.toDomain()) }
+        ItemType.GRAMMAR -> contentDao.getGrammar(ref.id)?.let { PracticeItem.GrammarItem(it.toDomain()) }
+    }
 
     override suspend fun getVocabularyDetail(id: String): VocabularyDetail? =
         contentDao.getVocabularyDetail(id)?.toDomain()

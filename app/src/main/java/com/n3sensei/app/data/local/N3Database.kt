@@ -54,7 +54,7 @@ abstract class N3Database : RoomDatabase() {
     abstract fun progressDao(): ProgressDao
 
     companion object {
-        const val VERSION = 2
+        const val VERSION = 3
         const val NAME = "n3sensei.db"
 
         /** The production database. Called once by the app container. */

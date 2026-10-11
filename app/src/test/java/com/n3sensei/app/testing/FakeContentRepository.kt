@@ -6,6 +6,8 @@ import com.n3sensei.app.domain.model.ContentTotals
 import com.n3sensei.app.domain.model.GrammarDetail
 import com.n3sensei.app.domain.model.GrammarPoint
 import com.n3sensei.app.domain.model.ItemQuery
+import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.Kanji
 import com.n3sensei.app.domain.model.KanjiDetail
 import com.n3sensei.app.domain.model.LearningStatus
@@ -14,6 +16,7 @@ import com.n3sensei.app.domain.model.Tag
 import com.n3sensei.app.domain.model.TrackedItem
 import com.n3sensei.app.domain.model.Vocabulary
 import com.n3sensei.app.domain.model.VocabularyDetail
+import com.n3sensei.app.domain.practice.PracticeItem
 import com.n3sensei.app.domain.repository.ContentRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -80,6 +83,12 @@ class FakeContentRepository : ContentRepository {
     override fun observeVocabulary(lessonId: String?) = vocabulary.map { it.inLesson(lessonId) { v -> v.lessonId } }
     override fun observeKanji(lessonId: String?) = kanji.map { it.inLesson(lessonId) { k -> k.lessonId } }
     override fun observeGrammar(lessonId: String?) = grammar.map { it.inLesson(lessonId) { g -> g.lessonId } }
+
+    override suspend fun getPracticeItem(ref: ItemRef): PracticeItem? = when (ref.type) {
+        ItemType.VOCABULARY -> vocabulary.value.firstOrNull { it.id == ref.id }?.let { PracticeItem.VocabularyItem(it) }
+        ItemType.KANJI -> kanji.value.firstOrNull { it.id == ref.id }?.let { PracticeItem.KanjiItem(it) }
+        ItemType.GRAMMAR -> grammar.value.firstOrNull { it.id == ref.id }?.let { PracticeItem.GrammarItem(it) }
+    }
 
     override suspend fun getVocabularyDetail(id: String): VocabularyDetail? {
         if (failDetails) error("database unavailable")

@@ -148,6 +148,8 @@ internal fun ReviewRecordEntity.toDomain() = ReviewRecord(
     intervalBeforeMinutes = intervalBeforeMinutes,
     intervalAfterMinutes = intervalAfterMinutes,
     dueAtAfter = dueAtAfter.toInstant(),
+    wasNew = wasNew,
+    requestId = requestId,
 )
 
 internal fun ReviewRecord.toEntity() = ReviewRecordEntity(
@@ -159,4 +161,6 @@ internal fun ReviewRecord.toEntity() = ReviewRecordEntity(
     intervalBeforeMinutes = intervalBeforeMinutes,
     intervalAfterMinutes = intervalAfterMinutes,
     dueAtAfter = dueAtAfter.toEpochMilli(),
+    requestId = requestId,
+    wasNew = wasNew,
 )

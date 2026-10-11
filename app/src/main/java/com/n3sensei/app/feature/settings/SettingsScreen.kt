@@ -30,12 +30,15 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.SectionHeader
 import com.n3sensei.app.core.ui.content.SourceNote
+import com.n3sensei.app.core.ui.content.intervalLabel
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.ThemeMode
 
 @Composable
 fun SettingsScreen(
     viewModel: SettingsViewModel,
+    onOpenReviewSettings: () -> Unit,
+    onOpenReminderSettings: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -89,9 +92,48 @@ fun SettingsScreen(
             )
             HorizontalDivider()
 
+            SectionHeader(stringResource(R.string.settings_review), Modifier.padding(horizontal = 16.dp))
+            val review = prefs.reviewSettings
+            ListItem(
+                headlineContent = { Text(stringResource(R.string.review_settings_title)) },
+                supportingContent = {
+                    Text(
+                        stringResource(
+                            R.string.settings_review_summary,
+                            review.ladder.intervals.map { intervalLabel(it) }.joinToString(" → "),
+                            review.limits.newPerDay,
+                            review.limits.reviewsPerDay,
+                        ),
+                    )
+                },
+                modifier = Modifier.clickable(role = Role.Button, onClick = onOpenReviewSettings),
+            )
+            HorizontalDivider()
+
+            val reminders = prefs.reminderSettings
+            ListItem(
+                headlineContent = { Text(stringResource(R.string.reminder_settings_title)) },
+                supportingContent = {
+                    Text(
+                        if (reminders.enabled) {
+                            stringResource(
+                                R.string.settings_reminders_summary_on,
+                                frequencyLabel(reminders.frequency),
+                                reminders.startHour,
+                                reminders.endHour,
+                            )
+                        } else {
+                            stringResource(R.string.settings_reminders_summary_off)
+                        },
+                    )
+                },
+                modifier = Modifier.clickable(role = Role.Button, onClick = onOpenReminderSettings),
+            )
+            HorizontalDivider()
+
             // Planned features: listed so users know they exist, but shown disabled.
             SectionHeader(stringResource(R.string.settings_upcoming), Modifier.padding(horizontal = 16.dp))
-            listOf(R.string.settings_review_intervals, R.string.settings_reminders, R.string.settings_backup).forEach {
+            listOf(R.string.settings_backup).forEach {
                 ListItem(
                     headlineContent = { Text(stringResource(it), color = MaterialTheme.colorScheme.onSurfaceVariant) },
                     supportingContent = { Text(stringResource(R.string.common_not_implemented)) },

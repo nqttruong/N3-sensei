@@ -6,12 +6,16 @@ import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.repository.ContentRepository
 import com.n3sensei.app.domain.repository.ProgressRepository
+import com.n3sensei.app.domain.repository.UserPreferencesRepository
+import java.time.Clock
 
 class VocabularyDetailViewModel(
     private val itemId: String,
     private val contentRepository: ContentRepository,
     progressRepository: ProgressRepository,
-) : TrackedDetailViewModel<VocabularyDetail>(ItemRef(ItemType.VOCABULARY, itemId), progressRepository) {
+    preferencesRepository: UserPreferencesRepository,
+    clock: Clock,
+) : TrackedDetailViewModel<VocabularyDetail>(ItemRef(ItemType.VOCABULARY, itemId), progressRepository, preferencesRepository, clock) {
     init {
         refresh()
     }

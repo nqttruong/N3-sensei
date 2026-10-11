@@ -46,6 +46,23 @@ data class PracticeResultRoute(
 
 @Serializable data object ReviewRoute
 
+/** Scheduled review session; answers are saved to the schedule. */
+@Serializable data object ReviewSessionRoute
+
+@Serializable
+data class ReviewResultRoute(
+    val total: Int,
+    val again: Int,
+    val hard: Int,
+    val good: Int,
+    val easy: Int,
+    val durationSeconds: Long,
+)
+
 @Serializable data object StatsRoute
 
 @Serializable data object SettingsRoute
+
+@Serializable data object ReviewSettingsRoute
+
+@Serializable data object ReminderSettingsRoute

@@ -8,9 +8,14 @@ import com.n3sensei.app.domain.model.LearningProgress
 import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.domain.model.ProgressSummary
 import com.n3sensei.app.domain.model.ReviewRating
+import com.n3sensei.app.domain.model.ReviewOverview
 import com.n3sensei.app.domain.model.ReviewRecord
+import com.n3sensei.app.domain.model.SubmitOutcome
+import com.n3sensei.app.domain.srs.ScheduledReview
+import com.n3sensei.app.domain.srs.TodayCounts
 import com.n3sensei.app.domain.repository.ProgressRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import java.time.Clock
 import java.time.Instant
@@ -21,7 +26,45 @@ class OfflineProgressRepository(
 ) : ProgressRepository {
 
     override fun observeItemState(item: ItemRef): Flow<ItemUserState> =
-        progressDao.observeItemState(item.type, item.id).map { ItemUserState(LearningStatus.from(it.progressState), it.isMarked) }
+        progressDao.observeItemState(item.type, item.id).map {
+            ItemUserState(LearningStatus.from(it.progressState), it.isMarked, it.dueAt?.let(Instant::ofEpochMilli), it.stepIndex)
+        }
+
+    override suspend fun submitReview(
+        item: ItemRef,
+        requestId: String,
+        compute: (current: LearningProgress?) -> ScheduledReview,
+    ): SubmitOutcome {
+        val applied = progressDao.applyReview(item.type, item.id, requestId) { current ->
+            val scheduled = compute(current?.toDomain())
+            require(scheduled.progress.item == item && scheduled.record.item == item) { "Scheduled review for another item" }
+            require(scheduled.record.requestId == requestId) { "Record must carry the request id" }
+            scheduled.progress.toEntity() to scheduled.record.toEntity()
+        }
+        return if (applied) SubmitOutcome.APPLIED else SubmitOutcome.DUPLICATE
+    }
+
+    override suspend fun getProgress(item: ItemRef): LearningProgress? = progressDao.get(item.type, item.id)?.toDomain()
+
+    override suspend fun getDueItems(now: Instant, limit: Int): List<ItemRef> =
+        progressDao.getDueRefs(now.toEpochMilli(), limit.coerceAtLeast(0)).map { ItemRef(it.itemType, it.itemId) }
+
+    override suspend fun getNewItems(limit: Int): List<ItemRef> =
+        progressDao.getNewRefs(limit.coerceAtLeast(0)).map { ItemRef(it.itemType, it.itemId) }
+
+    override fun observeReviewOverview(now: Instant, dayStart: Instant, dayEnd: Instant): Flow<ReviewOverview> = combine(
+        progressDao.observeDueByType(now.toEpochMilli()),
+        progressDao.observeOverdueCount(dayStart.toEpochMilli()),
+        progressDao.observeTodayCounts(dayStart.toEpochMilli(), dayEnd.toEpochMilli()),
+        progressDao.observeNewAvailable(),
+    ) { due, overdue, today, newAvailable ->
+        ReviewOverview(
+            dueByType = due.associate { it.itemType to it.count },
+            overdue = overdue,
+            today = TodayCounts(today.newAnswered, today.reviewsAnswered),
+            newAvailable = newAvailable,
+        )
+    }
 
     override suspend fun setMarked(item: ItemRef, marked: Boolean) {
         if (marked) {
@@ -44,7 +87,7 @@ class OfflineProgressRepository(
 
     override fun observeSummary(now: Instant): Flow<ProgressSummary> =
         progressDao.observeSummary(now.toEpochMilli()).map {
-            ProgressSummary(it.trackedItems, it.learning, it.inReview, it.dueNow, it.totalReviews)
+            ProgressSummary(it.trackedItems, it.learning, it.inReview, it.mastered, it.dueNow, it.totalReviews)
         }
 
     override fun observeRatingCounts(): Flow<Map<ReviewRating, Int>> =
