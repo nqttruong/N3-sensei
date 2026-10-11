@@ -66,3 +66,14 @@ data class ItemMarkEntity(
     @ColumnInfo(name = "item_id") val itemId: String,
     @ColumnInfo(name = "marked_at") val markedAt: Long,
 )
+
+/** One scheduled review session: how many cards were planned and how many were answered. */
+@Entity(tableName = "review_sessions", indices = [Index("started_at")])
+data class ReviewSessionEntity(
+    @PrimaryKey val id: String,
+    @ColumnInfo(name = "started_at") val startedAt: Long,
+    @ColumnInfo(name = "last_activity_at") val lastActivityAt: Long,
+    val planned: Int,
+    val answered: Int,
+    val finished: Boolean,
+)

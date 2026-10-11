@@ -13,12 +13,14 @@ import com.n3sensei.app.domain.srs.SubmitReviewUseCase
 import com.n3sensei.app.domain.srs.TodayCounts
 import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.testing.FakeContentRepository
+import com.n3sensei.app.testing.FakeReviewSessionRepository
 import com.n3sensei.app.testing.FakeProgressRepository
 import com.n3sensei.app.testing.FakeUserPreferencesRepository
 import com.n3sensei.app.testing.MainDispatcherRule
 import com.n3sensei.app.testing.MutableClock
 import com.n3sensei.app.testing.TestContent
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -40,8 +42,10 @@ class ReviewSessionViewModelTest {
     private val prefs = FakeUserPreferencesRepository(UserPreferences(onboardingCompleted = true))
     private var nextId = 0
 
+    private val sessions = FakeReviewSessionRepository()
+
     private fun viewModel() = ReviewSessionViewModel(
-        content, progress, prefs, SubmitReviewUseCase(progress), clock, newRequestId = { "req-${nextId++}" },
+        content, progress, prefs, SubmitReviewUseCase(progress), sessions, clock, newRequestId = { "req-${nextId++}" },
     )
 
     private fun ReviewSessionViewModel.ui() = (state.value as UiState.Success).data
@@ -88,6 +92,9 @@ class ReviewSessionViewModelTest {
 
         assertEquals(1, progress.records.size)
         assertEquals(1, vm.ui().index)
+        // An abandoned session keeps its partial completion.
+        assertEquals(1, sessions.sessions.value.single().answered)
+        assertFalse(sessions.sessions.value.single().finished)
     }
 
     @Test
@@ -132,6 +139,19 @@ class ReviewSessionViewModelTest {
     }
 
     @Test
+    fun sessionHistoryFailure_doesNotBlockTheReview() {
+        sessions.failWrites = true
+        progress.newItems = listOf(v("v1"))
+        val vm = viewModel()
+        vm.revealAnswer()
+        vm.rate(ReviewRating.GOOD)
+        assertEquals(1, progress.records.size)
+        assertNotNull(vm.ui().result)
+        assertFalse(vm.ui().saveFailed)
+        assertTrue(sessions.sessions.value.isEmpty())
+    }
+
+    @Test
     fun finishingAllCards_producesResult_andSavesEachAnswer() {
         progress.dueItems = listOf(ItemRef(ItemType.KANJI, "k1"))
         progress.newItems = listOf(v("v1"))
@@ -149,6 +169,11 @@ class ReviewSessionViewModelTest {
         assertEquals(30L, result.durationSeconds)
         assertEquals(2, progress.progress.size)
         assertEquals(0, progress.progress.getValue(ItemRef(ItemType.KANJI, "k1")).stepIndex)
+        // Session history: planned 2, answered 2, finished.
+        val session = sessions.sessions.value.single()
+        assertEquals(2, session.planned)
+        assertEquals(2, session.answered)
+        assertTrue(session.finished)
         assertEquals(2, progress.progress.getValue(v("v1")).stepIndex)
     }
 }

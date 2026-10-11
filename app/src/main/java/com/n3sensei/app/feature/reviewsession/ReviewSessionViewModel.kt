@@ -6,6 +6,7 @@ import com.n3sensei.app.core.ui.state.UiState
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.LearningProgress
 import com.n3sensei.app.domain.model.ReviewRating
+import com.n3sensei.app.domain.forecast.ReviewSessionRepository
 import com.n3sensei.app.domain.practice.PracticeItem
 import com.n3sensei.app.domain.practice.PracticeResult
 import com.n3sensei.app.domain.repository.ContentRepository
@@ -62,6 +63,7 @@ class ReviewSessionViewModel(
     private val progressRepository: ProgressRepository,
     private val preferencesRepository: UserPreferencesRepository,
     private val submitReview: SubmitReviewUseCase,
+    private val sessions: ReviewSessionRepository,
     private val clock: Clock,
     private val newRequestId: () -> String = { UUID.randomUUID().toString() },
 ) : ViewModel() {
@@ -70,6 +72,7 @@ class ReviewSessionViewModel(
     val state: StateFlow<UiState<ReviewSessionUiState>> = _state.asStateFlow()
 
     private var settings = ReviewSettings()
+    private var sessionId: String? = null
     private var startedAt = clock.instant()
 
     init {
@@ -109,7 +112,11 @@ class ReviewSessionViewModel(
             val progress = progressRepository.getProgress(ref)
             SessionCard(ref, item, progress, newRequestId(), ReviewRating.entries.associateWith { scheduler.preview(progress, it) })
         }
-        return if (cards.isEmpty()) UiState.Empty else UiState.Success(ReviewSessionUiState(cards, skippedMissing = missing))
+        if (cards.isEmpty()) return UiState.Empty
+        // Recorded for the dashboard's session history; a reload starts a new session.
+        val id = newRequestId()
+        sessionId = if (recordSafely { sessions.start(id, cards.size, now) }) id else null
+        return UiState.Success(ReviewSessionUiState(cards, skippedMissing = missing))
     }
 
     fun revealAnswer() = _state.update { s ->
@@ -127,6 +134,7 @@ class ReviewSessionViewModel(
                 // APPLIED or DUPLICATE: either way this answer is stored exactly once.
                 submitReview(card.ref, card.requestId, rating, settings, clock.instant(), clock.zone)
                 advance(rating)
+                recordSessionProgress()
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
@@ -134,6 +142,27 @@ class ReviewSessionViewModel(
             }
         }
     }
+
+    private suspend fun recordSessionProgress() {
+        val id = sessionId ?: return
+        val ui = (_state.value as? UiState.Success)?.data ?: return
+        val now = clock.instant()
+        recordSafely {
+            sessions.updateAnswered(id, ui.index, now)
+            if (ui.result != null) sessions.finish(id, now)
+        }
+    }
+
+    /** Session history is secondary: a failure here must not block the review itself. */
+    private suspend fun recordSafely(block: suspend () -> Unit): Boolean =
+        try {
+            block()
+            true
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            false
+        }
 
     private fun advance(rating: ReviewRating) = _state.update { s ->
         if (s !is UiState.Success) return@update s

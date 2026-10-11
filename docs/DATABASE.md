@@ -1,13 +1,13 @@
 # Database N3 Sensei
 
-Room 2.6.1, file `n3sensei.db`, schema version **3**. Schema export: `app/schemas/com.n3sensei.app.data.local.N3Database/<version>.json` (commit vào Git).
+Room 2.6.1, file `n3sensei.db`, schema version **4**. Schema export: `app/schemas/com.n3sensei.app.data.local.N3Database/<version>.json` (commit vào Git).
 
 ## Hai nhóm dữ liệu
 
 | Nhóm | Bảng | Ghi bởi | Khi cập nhật nội dung |
 |---|---|---|---|
 | **Nội dung chuẩn** (dùng chung) | `content_sources`, `content_packs`, `lessons`, `vocabulary`, `kanji`, `grammar`, `grammar_exercises`, `example_sentences`, `*_examples`, `tags`, `vocabulary_tags` | `ContentPackDao.replacePack` (một transaction) | Xóa và ghi lại cả gói |
-| **Dữ liệu người học** | `learning_progress`, `review_records`, `item_marks` (đánh dấu cần chú ý) | `ProgressDao` | Giữ nguyên |
+| **Dữ liệu người học** | `learning_progress`, `review_records`, `item_marks` (đánh dấu cần chú ý), `review_sessions` (lịch sử phiên ôn) | `ProgressDao`, `ReviewSessionDao` | Giữ nguyên |
 
 Bản ghi nội dung không có cột tiến độ. Tiến độ tham chiếu nội dung bằng `(item_type, item_id)`, **không** dùng foreign key, vì nội dung được thay thế khi cập nhật gói. ID nội dung là chuỗi ổn định do gói cung cấp (vd. `n3-l01-v001`), nên tiến độ vẫn khớp sau khi import lại. Truy vấn mục đến hạn chỉ trả về tiến độ có nội dung tồn tại; tiến độ của mục đã bị gỡ được giữ lại (không mất lịch sử) nhưng không hiện ra.
 
@@ -32,6 +32,7 @@ learning_progress PK(item_type, item_id) ···· tham chiếu logic, không FK 
 item_marks        PK(item_type, item_id) ···· (như trên)
 grammar_exercises (grammar_id ─CASCADE─▶ grammar), UNIQUE(grammar_id, sort_order)
 review_records    id AUTOINCREMENT, (item_type, item_id), reviewed_at, request_id UNIQUE, was_new
+review_sessions   id (UUID), started_at, last_activity_at, planned, answered, finished
 ```
 
 - **RESTRICT** ở `source_id`: không xóa được nguồn còn đang được tham chiếu, nên thông tin nguồn và giấy phép không bị mất.
@@ -48,6 +49,7 @@ review_records    id AUTOINCREMENT, (item_type, item_id), reviewed_at, request_i
 | `tags` | `name` | |
 | `learning_progress` | PK `(item_type, item_id)` | `due_at` |
 | `review_records` | `request_id` | `(item_type, item_id)`, `reviewed_at` |
+| `review_sessions` | PK `id` | `started_at` |
 
 Các cột FK đều có index. Room bật `PRAGMA foreign_keys = ON` khi mở database (đã có test xác nhận vi phạm FK bị từ chối).
 
@@ -92,6 +94,7 @@ Danh sách không có văn bản tìm kiếm trả về đầy đủ. Có văn b
 - `N3DatabaseMigrationTest` chạy thử migration từ **mọi** version đã export lên version hiện tại, kiểm tra khớp schema, và kiểm tra dữ liệu ghi bằng schema v1 vẫn đọc được qua Room.
 - **1 → 2** (`N3Migrations.MIGRATION_1_2`): tạo `item_marks`, `grammar_exercises`; thêm cột `search_text` vào `vocabulary`, `kanji`, `grammar` và **tính lại cho mọi dòng đã có** bằng chính `SearchText` của app. Đã kiểm tra bằng test: dữ liệu ghi theo schema v1 (nội dung + tiến độ) còn nguyên sau migration, tìm kiếm không dấu tìm thấy dòng cũ, bảng đánh dấu dùng được; tắt bước tính lại thì test thất bại.
 - **2 → 3** (`MIGRATION_2_3`): `review_records` thêm `request_id` (UNIQUE, NULL cho dòng cũ) và `was_new` (tính lại: bản ghi sớm nhất của mỗi mục = 1). Đã kiểm tra bằng test với lịch sử ghi theo schema v2.
+- **3 → 4** (`MIGRATION_3_4`): tạo bảng `review_sessions` (chỉ thêm, không đổi bảng cũ). Đã kiểm tra bằng test: tiến độ ghi theo schema v3 còn nguyên, ghi và đọc phiên qua Room được.
 - Lưu ý: nếu sửa entity mà quên tăng version, Room sẽ ghi đè JSON của version hiện tại. Khi review cần xem diff thư mục `app/schemas/`.
 
 ## Nhập nội dung

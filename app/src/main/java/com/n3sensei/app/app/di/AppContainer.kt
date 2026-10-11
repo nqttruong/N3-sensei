@@ -13,6 +13,8 @@ import com.n3sensei.app.data.preferences.DataStoreUserPreferencesRepository
 import com.n3sensei.app.data.repository.OfflineAnalyticsRepository
 import com.n3sensei.app.data.repository.OfflineContentRepository
 import com.n3sensei.app.data.repository.OfflineProgressRepository
+import com.n3sensei.app.data.repository.OfflineReviewSessionRepository
+import com.n3sensei.app.domain.forecast.ReviewSessionRepository
 import com.n3sensei.app.domain.reminder.ReminderNotifier
 import com.n3sensei.app.domain.reminder.ReminderRunner
 import com.n3sensei.app.domain.reminder.ReminderScheduler
@@ -31,6 +33,7 @@ interface AppContainer {
     val contentRepository: ContentRepository
     val progressRepository: ProgressRepository
     val analyticsRepository: AnalyticsRepository
+    val reviewSessionRepository: ReviewSessionRepository
     val userPreferencesRepository: UserPreferencesRepository
     val contentImportRepository: ContentImportRepository
     val reminderScheduler: ReminderScheduler
@@ -53,6 +56,8 @@ class DefaultAppContainer(context: Context) : AppContainer {
     }
 
     override val analyticsRepository: AnalyticsRepository by lazy { OfflineAnalyticsRepository(database.analyticsDao()) }
+
+    override val reviewSessionRepository: ReviewSessionRepository by lazy { OfflineReviewSessionRepository(database.reviewSessionDao()) }
 
     override val progressRepository: ProgressRepository by lazy {
         OfflineProgressRepository(database.progressDao(), clock)

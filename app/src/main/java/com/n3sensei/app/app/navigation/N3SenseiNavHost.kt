@@ -68,9 +68,11 @@ fun N3SenseiNavHost(
     ) {
         composable<HomeRoute> {
             HomeScreen(
-                viewModel = appViewModel { HomeViewModel(contentRepository, progressRepository, clock) },
-                onOpenLessons = { navController.navigateToLessons() },
+                viewModel = appViewModel { HomeViewModel(analyticsRepository, reviewSessionRepository, userPreferencesRepository, clock) },
                 onOpenReview = { navController.navigateToTopLevel(TopLevelDestination.REVIEW) },
+                onOpenLessons = { navController.navigateToLessons() },
+                onOpenItem = { navController.navigateToItem(it) },
+                onOpenStats = { navController.navigateToTopLevel(TopLevelDestination.STATS) },
             )
         }
         navigation<LearnGraphRoute>(startDestination = LearnHubRoute) {
@@ -185,7 +187,7 @@ fun N3SenseiNavHost(
                 viewModel = appViewModel {
                     ReviewSessionViewModel(
                         contentRepository, progressRepository, userPreferencesRepository,
-                        SubmitReviewUseCase(progressRepository), clock,
+                        SubmitReviewUseCase(progressRepository), reviewSessionRepository, clock,
                     )
                 },
                 onFinished = { result ->

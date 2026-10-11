@@ -2,10 +2,12 @@ package com.n3sensei.app.data.repository
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.n3sensei.app.data.local.N3Database
+import com.n3sensei.app.data.local.entity.LearningProgressEntity
 import com.n3sensei.app.domain.analytics.LearningAnalytics
 import com.n3sensei.app.domain.analytics.StatsPeriod
 import com.n3sensei.app.domain.analytics.StatusCounts
 import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.model.ProgressState
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.srs.ReviewTime
 import com.n3sensei.app.testing.AnalyticsFixture
@@ -135,5 +137,43 @@ class AnalyticsRepositoryTest {
         } finally {
             empty.close()
         }
+    }
+
+    @Test
+    fun answersByType_scheduleAndPriority() = runTest {
+        val (from, to) = range(StatsPeriod.TODAY)
+        // Today: 経験 ×2 + 増える (vocabulary), 経 (kanji), 〜たばかり (grammar); "gone" excluded.
+        assertEquals(mapOf(ItemType.VOCABULARY to 3, ItemType.KANJI to 1, ItemType.GRAMMAR to 1), repository.observeAnswersByType(from, to).first())
+
+        // Every fixture item is at step 1; "gone" is excluded.
+        val schedule = repository.observeSchedule().first()
+        assertEquals(4, schedule.size)
+        assertEquals(
+            listOf(fixture.at(-1, 20, 0), fixture.at(0, 0, 0, 1), fixture.at(1, 10, 0), fixture.at(5, 9, 0)),
+            schedule.map { it.dueAt }.sorted(),
+        )
+        assertTrue(schedule.all { it.stepIndex == 1 })
+
+        // Due at D 12:00: overdue 増える first, then 経験; future items are not listed.
+        val priority = repository.observePriorityItems(fixture.now, 5).first()
+        assertEquals(listOf("増える", "経験"), priority.map { it.label })
+        assertEquals(listOf(ItemType.VOCABULARY, ItemType.VOCABULARY), priority.map { it.ref.type })
+        assertEquals(1, repository.observePriorityItems(fixture.now, 1).first().size)
+    }
+
+    @Test
+    fun priority_sameDueTime_moreLapsesFirst() = runTest {
+        val due = fixture.at(-1, 20, 0).toEpochMilli()
+        db.progressDao().upsert(LearningProgressEntity(ItemType.VOCABULARY, SeedData.V_KEIKEN, ProgressState.REVIEW, 2, 1440, due, 0, 3, 2, 0, 0))
+        assertEquals(listOf("経験", "増える"), repository.observePriorityItems(fixture.now, 5).first().map { it.label })
+    }
+
+    @Test
+    fun seedContent_isExcludedFromDashboardQueries() = runTest {
+        db.openHelper.writableDatabase.execSQL("UPDATE content_packs SET is_seed = 1")
+        val (from, to) = range(StatsPeriod.ALL_TIME)
+        assertTrue(repository.observeAnswersByType(from, to).first().values.all { it == 0 })
+        assertTrue(repository.observeSchedule().first().isEmpty())
+        assertTrue(repository.observePriorityItems(fixture.now, 5).first().isEmpty())
     }
 }

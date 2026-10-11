@@ -8,6 +8,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.n3sensei.app.data.local.entity.ItemMarkEntity
 import com.n3sensei.app.data.local.entity.ReviewRecordEntity
 import com.n3sensei.app.data.repository.OfflineContentRepository
+import com.n3sensei.app.data.repository.OfflineReviewSessionRepository
 import com.n3sensei.app.domain.model.ItemQuery
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningStatus
@@ -19,6 +20,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import java.time.Instant
 
 /**
  * Verifies the upgrade path from every exported schema version to the current one, using the
@@ -147,6 +149,40 @@ class N3DatabaseMigrationTest {
             dao.insertRecord(record)
             assertEquals(1, dao.countRecordsWithRequest("fresh"))
             assertEquals(4, dao.getHistory(ItemType.KANJI, "k", 10).size)
+        } finally {
+            room.close()
+            instrumentation.targetContext.deleteDatabase(name)
+        }
+    }
+
+    @Test
+    fun progressWrittenWithV3Schema_survivesAndSessionsCanBeRecorded() = runTest {
+        val name = "migration-test-data-v3"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 3).apply {
+            execSQL(
+                "INSERT INTO learning_progress (item_type, item_id, state, step_index, interval_minutes, due_at, " +
+                    "last_reviewed_at, review_count, lapse_count, created_at, updated_at) " +
+                    "VALUES ('VOCABULARY', 'v', 'REVIEW', 3, 2880, 5000, 1000, 4, 1, 100, 1000)",
+            )
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 4, true, N3Migrations.MIGRATION_3_4).use { db ->
+            db.query("SELECT step_index, due_at FROM learning_progress").use { c ->
+                assertTrue(c.moveToFirst())
+                assertEquals(3, c.getInt(0))
+                assertEquals(5000L, c.getLong(1))
+            }
+            db.query("SELECT COUNT(*) FROM review_sessions").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+        }
+        val room = Room.databaseBuilder(instrumentation.targetContext, N3Database::class.java, name)
+            .addMigrations(*N3Migrations.ALL)
+            .build()
+        try {
+            val sessions = OfflineReviewSessionRepository(room.reviewSessionDao())
+            sessions.start("s", planned = 4, at = Instant.ofEpochMilli(10))
+            sessions.updateAnswered("s", 2, Instant.ofEpochMilli(20))
+            assertEquals(2, sessions.observeRecent(5).first().single().answered)
         } finally {
             room.close()
             instrumentation.targetContext.deleteDatabase(name)

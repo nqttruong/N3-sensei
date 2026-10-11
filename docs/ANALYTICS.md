@@ -1,6 +1,6 @@
 # Thống kê học tập
 
-Mã nguồn: `domain/analytics/` (quy tắc, Kotlin thuần), `data/local/dao/AnalyticsDao.kt` (đếm bằng SQL), `feature/stats/`.
+Mã nguồn: `domain/analytics/` (quy tắc, Kotlin thuần), `data/local/dao/AnalyticsDao.kt` (đếm bằng SQL), `feature/stats/`. Bảng điều khiển ở Trang chủ và các dự báo dùng cùng quy tắc: xem [FORECAST.md](FORECAST.md).
 
 ## Dữ liệu nguồn và loại trừ
 

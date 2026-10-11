@@ -44,12 +44,6 @@
     <string name="onboarding_3_body">Ôn tập theo lịch lặp lại cách quãng: 20 phút, 1 giờ, 1 ngày… đến 1 tháng. Tự đánh giá Quên, Khó, Tốt, Dễ để app xếp lần ôn tiếp theo.</string>
 
     <!-- Home / Dashboard -->
-    <string name="home_due_title">Ôn tập hôm nay</string>
-    <string name="home_due_count">%1$d mục đến hạn ôn</string>
-    <string name="home_due_none">Chưa có mục nào đến hạn ôn.</string>
-    <string name="home_open_review">Mở mục Ôn tập</string>
-    <string name="home_content_title">Nội dung</string>
-    <string name="home_open_lessons">Xem bài học</string>
 
     <!-- Content totals -->
     <string name="totals_lessons">Bài học</string>
@@ -397,4 +391,52 @@
     <string name="stats_trouble_empty">Chưa có mục nào bị quên hoặc đánh giá khó trong khoảng này.</string>
     <string name="stats_trouble_rule">Xếp theo số lượt Quên + Khó trong khoảng này (kể cả lần trả lời đầu tiên).</string>
     <string name="stats_excluded_note">Thống kê chỉ dùng dữ liệu trong máy; không tính dữ liệu kiểm thử và mục đã bị gỡ khỏi nội dung.</string>
+    <!-- Dashboard -->
+    <string name="badge_real">Thực tế</string>
+    <string name="badge_estimate">Ước tính</string>
+    <string name="dashboard_goal">Mục tiêu hôm nay</string>
+    <string name="dashboard_goal_new">Mục mới: %1$d / %2$d</string>
+    <string name="dashboard_goal_reviews">Lượt ôn: %1$d / %2$d</string>
+    <string name="dashboard_goal_reached">Đã đạt mục tiêu hôm nay.</string>
+    <string name="dashboard_goal_rule">Mục mới: theo giới hạn mỗi ngày nhưng không vượt số mục chưa học. Lượt ôn: đã ôn hôm nay + đang đến hạn, tối đa bằng giới hạn mỗi ngày; có thể tăng khi có thêm mục đến hạn trong ngày.</string>
+    <string name="dashboard_start_review">Bắt đầu ôn tập</string>
+    <string name="dashboard_open_lessons">Xem bài học</string>
+    <string name="dashboard_due">Cần ôn</string>
+    <string name="dashboard_priority">Ưu tiên ôn</string>
+    <string name="dashboard_priority_due">Đến hạn %1$s</string>
+    <string name="dashboard_priority_lapses">Đã quên %1$d lần</string>
+    <string name="dashboard_priority_empty">Không có mục nào đang đến hạn.</string>
+    <string name="dashboard_forecast">Dự báo khối lượng ôn</string>
+    <string name="dashboard_forecast_tomorrow">Ngày mai</string>
+    <string name="dashboard_forecast_days">%1$d ngày tới</string>
+    <string name="dashboard_forecast_scheduled">Đã lên lịch</string>
+    <string name="dashboard_forecast_reviews">Lượt ôn dự kiến</string>
+    <string name="dashboard_forecast_new">Mục mới dự kiến</string>
+    <string name="dashboard_forecast_rule_scheduled">“Đã lên lịch” (thực tế): số mục có ngày đến hạn đã lưu nằm trong khoảng, tính từ 0:00 ngày mai; không gồm %1$d mục đang đến hạn hôm nay.</string>
+    <string name="dashboard_forecast_rule_estimate">“Dự kiến” (ước tính) giả định: bạn ôn mọi mục đúng ngày đến hạn (mục quá hạn ôn ngay) và luôn chọn Tốt; học %1$d mục mới mỗi ngày cho tới khi hết %2$d mục chưa học; không tính giới hạn lượt ôn mỗi ngày.</string>
+    <string name="dashboard_trend">Xu hướng học</string>
+    <string name="dashboard_trend_day">Ngày</string>
+    <string name="dashboard_trend_week">Tuần</string>
+    <string name="dashboard_trend_month">Tháng</string>
+    <string name="dashboard_trend_description">Lượt trả lời theo %1$s: tổng %2$d, cao nhất %3$d.</string>
+    <string name="dashboard_trend_empty">Chưa có lượt trả lời nào trong khoảng này.</string>
+    <string name="dashboard_volume">Khối lượng 7 ngày qua</string>
+    <string name="dashboard_volume_rule">Lượt trả lời theo loại nội dung trong 7 ngày gần nhất.</string>
+    <string name="dashboard_progress">Dự báo tiến độ</string>
+    <string name="dashboard_progress_all_started">Bạn đã bắt đầu học tất cả các mục hiện có.</string>
+    <string name="dashboard_progress_estimate">Với tốc độ gần đây (%1$s mục mới/ngày), sẽ bắt đầu hết %2$d mục còn lại sau khoảng %3$d ngày (dao động %4$d–%5$s ngày).</string>
+    <string name="dashboard_progress_unbounded">không xác định</string>
+    <string name="dashboard_progress_confidence">Độ tin cậy: %1$s</string>
+    <string name="confidence_low">thấp</string>
+    <string name="confidence_medium">trung bình</string>
+    <string name="confidence_high">cao</string>
+    <string name="dashboard_progress_not_enough">Chưa đủ dữ liệu để ước tính theo tốc độ học: cần ít nhất %1$d ngày học và %2$d mục mới trong 4 tuần gần đây (hiện có %3$d ngày, %4$d mục).</string>
+    <string name="dashboard_progress_settings">Nếu học đủ %1$d mục mới mỗi ngày theo cài đặt: khoảng %2$d ngày cho %3$d mục còn lại.</string>
+    <string name="dashboard_progress_rule">Tốc độ = mục mới trung bình mỗi ngày trong 28 ngày gần nhất (kể cả ngày nghỉ); khoảng dao động lấy từ tuần nhanh nhất và chậm nhất. “Bắt đầu học” là trả lời lần đầu, chưa phải thành thạo. Đây không phải dự đoán kết quả thi JLPT N3.</string>
+    <string name="dashboard_sessions">Phiên ôn gần đây</string>
+    <string name="dashboard_session_line">%1$s · %2$d / %3$d thẻ (%4$d%%)</string>
+    <string name="dashboard_session_finished">Hoàn thành</string>
+    <string name="dashboard_session_unfinished">Dừng giữa chừng</string>
+    <string name="dashboard_sessions_empty">Chưa có phiên ôn nào.</string>
+    <string name="dashboard_open_stats">Xem thống kê chi tiết</string>
 </resources>

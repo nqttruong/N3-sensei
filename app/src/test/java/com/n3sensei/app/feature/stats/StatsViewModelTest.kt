@@ -54,6 +54,9 @@ class StatsViewModelTest {
         override fun observeDue(now: Instant, dayStart: Instant) = flowOf(DueCounts(3, 1))
         override fun observeDueBuckets(from: Instant, to: Instant) = flowOf(emptyList<TimeBucket>())
         override fun observeTroubleItems(from: Instant?, to: Instant, limit: Int) = flowOf(emptyList<TroubleItem>())
+        override fun observeAnswersByType(from: Instant?, to: Instant) = flowOf(ItemType.entries.associateWith { 0 })
+        override fun observePriorityItems(now: Instant, limit: Int) = flowOf(emptyList<com.n3sensei.app.domain.analytics.PriorityItem>())
+        override fun observeSchedule() = flowOf(emptyList<com.n3sensei.app.domain.forecast.ScheduledItem>())
     }
 
     private val analytics = FakeAnalytics()

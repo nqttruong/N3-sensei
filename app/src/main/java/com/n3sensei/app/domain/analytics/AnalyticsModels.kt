@@ -59,5 +59,8 @@ data class TroubleItem(
     val total: Int get() = again + hard
 }
 
+/** A due item to review first (REAL). */
+data class PriorityItem(val ref: ItemRef, val label: String, val dueAt: Instant, val lapses: Int)
+
 /** All status counts by type. */
 typealias StatusByType = Map<ItemType, StatusCounts>

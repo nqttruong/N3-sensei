@@ -64,7 +64,19 @@ object N3Migrations {
         }
     }
 
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3)
+    /** v4: `review_sessions` for the dashboard's session history (no existing data to convert). */
+    val MIGRATION_3_4 = object : Migration(3, 4) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `review_sessions` (`id` TEXT NOT NULL, `started_at` INTEGER NOT NULL, " +
+                    "`last_activity_at` INTEGER NOT NULL, `planned` INTEGER NOT NULL, `answered` INTEGER NOT NULL, " +
+                    "`finished` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_review_sessions_started_at` ON `review_sessions` (`started_at`)")
+        }
+    }
+
+    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
 
     private fun String.toReadings(): String = StringListCodec.decode(this).joinToString(" ")
 

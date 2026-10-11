@@ -147,13 +147,16 @@ class N3SenseiNavigationTest {
 
     @Test
     fun homeShortcuts_openTheirTabs() {
-        composeRule.onNodeWithText(string(R.string.home_open_review)).performClick()
+        composeRule.onNodeWithText(string(R.string.dashboard_start_review)).performScrollTo().performClick()
         assertOn(AppScreen.REVIEW)
         pressBack()
-        composeRule.onNodeWithText(string(R.string.home_open_lessons)).performScrollTo().performClick()
+        composeRule.onNodeWithText(string(R.string.dashboard_open_lessons)).performScrollTo().performClick()
         assertOn(AppScreen.LESSONS)
         pressBack()
         assertOn(AppScreen.LEARN_HUB)
+        clickTab(TopLevelDestination.HOME)
+        composeRule.onNodeWithText(string(R.string.dashboard_open_stats)).performScrollTo().performClick()
+        assertOn(AppScreen.STATS)
     }
 
     @Test

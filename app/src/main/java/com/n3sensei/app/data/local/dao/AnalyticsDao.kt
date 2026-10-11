@@ -62,6 +62,24 @@ data class StatusRow(
     val mastered: Int,
 )
 
+data class AnalyticsTypeCountRow(
+    @ColumnInfo(name = "item_type") val itemType: ItemType,
+    val count: Int,
+)
+
+data class PriorityRow(
+    @ColumnInfo(name = "item_type") val itemType: ItemType,
+    @ColumnInfo(name = "item_id") val itemId: String,
+    @ColumnInfo(name = "due_at") val dueAt: Long,
+    @ColumnInfo(name = "lapse_count") val lapseCount: Int,
+    val label: String?,
+)
+
+data class ScheduleRow(
+    @ColumnInfo(name = "step_index") val stepIndex: Int,
+    @ColumnInfo(name = "due_at") val dueAt: Long,
+)
+
 data class TroubleRow(
     @ColumnInfo(name = "item_type") val itemType: ItemType,
     @ColumnInfo(name = "item_id") val itemId: String,
@@ -124,6 +142,39 @@ interface AnalyticsDao {
         """,
     )
     fun observeDueBuckets(from: Long, to: Long): Flow<List<BucketRow>>
+
+    @Query(
+        """
+        SELECT r.item_type, COUNT(*) AS count FROM review_records r
+        WHERE $IN_PERIOD AND $VALID_RECORD
+        GROUP BY r.item_type
+        """,
+    )
+    fun observeAnswersByType(from: Long?, to: Long): Flow<List<AnalyticsTypeCountRow>>
+
+    /**
+     * Due items to review first: overdue before due, the longest-waiting first, then the most
+     * often forgotten.
+     */
+    @Query(
+        """
+        SELECT p.item_type, p.item_id, p.due_at, p.lapse_count,
+            COALESCE(
+                (SELECT expression FROM vocabulary WHERE p.item_type = 'VOCABULARY' AND id = p.item_id),
+                (SELECT character FROM kanji WHERE p.item_type = 'KANJI' AND id = p.item_id),
+                (SELECT pattern FROM grammar WHERE p.item_type = 'GRAMMAR' AND id = p.item_id)
+            ) AS label
+        FROM learning_progress p
+        WHERE p.due_at IS NOT NULL AND p.due_at <= :now AND $VALID_PROGRESS
+        ORDER BY p.due_at ASC, p.lapse_count DESC, p.item_id
+        LIMIT :limit
+        """,
+    )
+    fun observePriorityItems(now: Long, limit: Int): Flow<List<PriorityRow>>
+
+    /** Step and due time of every scheduled item (bounded by the content size, two columns). */
+    @Query("SELECT p.step_index, p.due_at FROM learning_progress p WHERE p.due_at IS NOT NULL AND $VALID_PROGRESS")
+    fun observeSchedule(): Flow<List<ScheduleRow>>
 
     @Query("SELECT DISTINCT $BUCKET AS bucket_start FROM review_records r WHERE $VALID_RECORD ORDER BY bucket_start")
     fun observeStudyBuckets(): Flow<List<Long>>

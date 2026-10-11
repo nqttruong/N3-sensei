@@ -85,13 +85,12 @@ class EndToEndTest {
     }
 
     @Test
-    fun dashboard_showsCountsFromDatabase() {
+    fun dashboard_seedPackIsTestData_andNotCounted() {
         launch().use {
-            waitForText(string(R.string.home_content_title))
-            composeRule.onNodeWithText(string(R.string.home_due_none)).assertIsDisplayed()
-            // 2 lessons, 4 vocabulary, 2 kanji, 1 grammar from the seed pack.
-            composeRule.onNode(hasText("4") and hasText(string(R.string.totals_vocabulary)), useUnmergedTree = false)
-                .performScrollTo().assertIsDisplayed()
+            // The seed pack is marked is_seed = 1, so statistics treat the app as having no content.
+            waitForText(string(R.string.dashboard_goal))
+            composeRule.onNodeWithText(string(R.string.common_no_content)).assertIsDisplayed()
+            composeRule.onNodeWithText(string(R.string.dashboard_priority_empty)).performScrollTo().assertIsDisplayed()
         }
     }
 
@@ -183,11 +182,11 @@ class EndToEndTest {
         launch(onboardingCompleted = false).use {
             waitForText(string(R.string.onboarding_1_title))
             composeRule.onNodeWithText(string(R.string.onboarding_skip)).performClick()
-            waitForText(string(R.string.home_content_title))
+            waitForText(string(R.string.dashboard_goal))
             assertTrue(runBlocking { AppTestState.preferences.first().onboardingCompleted })
         }
         ActivityScenario.launch(MainActivity::class.java).use {
-            waitForText(string(R.string.home_content_title))
+            waitForText(string(R.string.dashboard_goal))
             openTab(TopLevelDestination.SETTINGS)
             clickable(string(R.string.settings_replay_onboarding)).performScrollTo().performClick()
             waitForText(string(R.string.onboarding_1_title))

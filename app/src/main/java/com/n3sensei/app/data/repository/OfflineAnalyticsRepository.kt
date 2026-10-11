@@ -3,10 +3,12 @@ package com.n3sensei.app.data.repository
 import com.n3sensei.app.data.local.dao.AnalyticsDao
 import com.n3sensei.app.domain.analytics.ActivityTotals
 import com.n3sensei.app.domain.analytics.DueCounts
+import com.n3sensei.app.domain.analytics.PriorityItem
 import com.n3sensei.app.domain.analytics.StatusByType
 import com.n3sensei.app.domain.analytics.StatusCounts
 import com.n3sensei.app.domain.analytics.TimeBucket
 import com.n3sensei.app.domain.analytics.TroubleItem
+import com.n3sensei.app.domain.forecast.ScheduledItem
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ReviewRating
@@ -55,6 +57,20 @@ class OfflineAnalyticsRepository(private val dao: AnalyticsDao) : AnalyticsRepos
         dao.observeDueBuckets(from.toEpochMilli(), to.toEpochMilli()).map { rows ->
             rows.map { TimeBucket(Instant.ofEpochMilli(it.bucketStart), it.answers, 0) }
         }
+
+    override fun observeAnswersByType(from: Instant?, to: Instant): Flow<Map<ItemType, Int>> =
+        dao.observeAnswersByType(from?.toEpochMilli(), to.toEpochMilli()).map { rows ->
+            val counts = rows.associate { it.itemType to it.count }
+            ItemType.entries.associateWith { counts[it] ?: 0 }
+        }
+
+    override fun observePriorityItems(now: Instant, limit: Int): Flow<List<PriorityItem>> =
+        dao.observePriorityItems(now.toEpochMilli(), limit).map { rows ->
+            rows.mapNotNull { r -> r.label?.let { PriorityItem(ItemRef(r.itemType, r.itemId), it, Instant.ofEpochMilli(r.dueAt), r.lapseCount) } }
+        }
+
+    override fun observeSchedule(): Flow<List<ScheduledItem>> =
+        dao.observeSchedule().map { rows -> rows.map { ScheduledItem(it.stepIndex, Instant.ofEpochMilli(it.dueAt)) } }
 
     override fun observeTroubleItems(from: Instant?, to: Instant, limit: Int): Flow<List<TroubleItem>> =
         dao.observeTroubleItems(from?.toEpochMilli(), to.toEpochMilli(), limit).map { rows ->

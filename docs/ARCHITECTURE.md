@@ -2,7 +2,7 @@
 
 Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc thời gian build tăng đáng kể mới tách module; ranh giới package hiện tại đã được giữ bằng test (`ArchitectureRulesTest`) để việc tách sau này không phải sửa phụ thuộc.
 
-## Sơ đồ (trạng thái thực tế sau Prompt 08)
+## Sơ đồ (trạng thái thực tế sau Prompt 09)
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -87,7 +87,7 @@ NavHost (start = HomeRoute)
 | Màn hình | Nguồn dữ liệu | Ghi chú |
 |---|---|---|
 | Giới thiệu | DataStore (`onboarding_completed`) | Bỏ qua được; xem lại từ Cài đặt |
-| Trang chủ | Room: tổng nội dung, tóm tắt tiến độ | Báo rõ khi chưa nạp gói nội dung |
+| Trang chủ (bảng điều khiển) | Room (`AnalyticsDao`, `review_sessions`) + DataStore (giới hạn, dãy bậc) | Mục tiêu hôm nay, cần ôn và ưu tiên, dự báo khối lượng 1/7/14/30 ngày, xu hướng ngày/tuần/tháng, khối lượng theo loại, dự báo tiến độ, phiên ôn gần đây; mỗi thẻ ghi rõ Thực tế / Ước tính. Xem [FORECAST.md](FORECAST.md) |
 | Danh sách / chi tiết bài học | Room | Tab Từ vựng / Kanji / Ngữ pháp |
 | Từ vựng, Kanji, Ngữ pháp (danh sách) | Room: Flow kèm trạng thái học và đánh dấu | Tìm kiếm không dấu (debounce 300 ms, tối đa 100), lọc theo bài, trạng thái, đã đánh dấu, chủ đề (từ vựng); luyện tập mục đã đánh dấu |
 | Thẻ từ, chi tiết Kanji, ngữ pháp | Room (đọc trong transaction) + `item_marks` | Furigana, ví dụ, nguồn và giấy phép, trạng thái học, đánh dấu cần chú ý, luyện tập bài chứa mục; ngữ pháp có bài tập ngắn; Kanji ghi rõ chưa có thứ tự nét |
@@ -156,7 +156,7 @@ Lý do: một module, ít dependency; tránh thêm Hilt (plugin Gradle, annotati
 - Test: `ClassUnderTestTest`; tên hàm mô tả hành vi (`systemBack_fromAnyTabRoot_returnsToHome`).
 
 ### Resource
-- Chuỗi: tất cả text hiển thị ở `res/values/strings.xml`, tên `<khu vực>_<phần tử>`: `app_*`, `nav_*`, `common_*`, `<feature>_*` (vd. `kanji_title`, `home_review_card_action`). Không hardcode chuỗi trong Composable.
+- Chuỗi: tất cả text hiển thị ở `res/values/strings.xml`, tên `<khu vực>_<phần tử>`: `app_*`, `nav_*`, `common_*`, `<feature>_*` (vd. `kanji_title`, `dashboard_start_review`). Không hardcode chuỗi trong Composable.
 - Màu: chỉ dùng `MaterialTheme.colorScheme`; giá trị màu khai báo ở `core/designsystem/theme/Color.kt`. `res/values/colors.xml` chỉ cho icon launcher.
 - Icon: lấy qua `N3Icons`; drawable đặt tên `ic_<tên>`.
 - Kích thước: bội số 4dp (4, 8, 12, 16, 24).

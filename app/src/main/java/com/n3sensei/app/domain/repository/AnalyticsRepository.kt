@@ -2,9 +2,12 @@ package com.n3sensei.app.domain.repository
 
 import com.n3sensei.app.domain.analytics.ActivityTotals
 import com.n3sensei.app.domain.analytics.DueCounts
+import com.n3sensei.app.domain.analytics.PriorityItem
 import com.n3sensei.app.domain.analytics.StatusByType
 import com.n3sensei.app.domain.analytics.TimeBucket
 import com.n3sensei.app.domain.analytics.TroubleItem
+import com.n3sensei.app.domain.forecast.ScheduledItem
+import com.n3sensei.app.domain.model.ItemType
 import kotlinx.coroutines.flow.Flow
 import java.time.Instant
 
@@ -27,6 +30,14 @@ interface AnalyticsRepository {
 
     /** Scheduled due times in [from, to), in 15-minute blocks ([TimeBucket.answers] = items). */
     fun observeDueBuckets(from: Instant, to: Instant): Flow<List<TimeBucket>>
+
+    /** Answers per content type in [from, to). */
+    fun observeAnswersByType(from: Instant?, to: Instant): Flow<Map<ItemType, Int>>
+
+    fun observePriorityItems(now: Instant, limit: Int): Flow<List<PriorityItem>>
+
+    /** The stored schedule (step + due time) of every scheduled item. */
+    fun observeSchedule(): Flow<List<ScheduledItem>>
 
     /** Items with the most "Quên" + "Khó" answers in the period, most first. */
     fun observeTroubleItems(from: Instant?, to: Instant, limit: Int): Flow<List<TroubleItem>>

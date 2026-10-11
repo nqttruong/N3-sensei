@@ -9,6 +9,7 @@ import com.n3sensei.app.data.local.dao.AnalyticsDao
 import com.n3sensei.app.data.local.dao.ContentDao
 import com.n3sensei.app.data.local.dao.ContentPackDao
 import com.n3sensei.app.data.local.dao.ProgressDao
+import com.n3sensei.app.data.local.dao.ReviewSessionDao
 import com.n3sensei.app.data.local.entity.ContentPackEntity
 import com.n3sensei.app.data.local.entity.ContentSourceEntity
 import com.n3sensei.app.data.local.entity.ExampleSentenceEntity
@@ -21,6 +22,7 @@ import com.n3sensei.app.data.local.entity.KanjiExampleCrossRef
 import com.n3sensei.app.data.local.entity.LearningProgressEntity
 import com.n3sensei.app.data.local.entity.LessonEntity
 import com.n3sensei.app.data.local.entity.ReviewRecordEntity
+import com.n3sensei.app.data.local.entity.ReviewSessionEntity
 import com.n3sensei.app.data.local.entity.TagEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.data.local.entity.VocabularyExampleCrossRef
@@ -44,6 +46,7 @@ import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
         LearningProgressEntity::class,
         ReviewRecordEntity::class,
         ItemMarkEntity::class,
+        ReviewSessionEntity::class,
     ],
     version = N3Database.VERSION,
     exportSchema = true,
@@ -54,9 +57,10 @@ abstract class N3Database : RoomDatabase() {
     abstract fun contentPackDao(): ContentPackDao
     abstract fun progressDao(): ProgressDao
     abstract fun analyticsDao(): AnalyticsDao
+    abstract fun reviewSessionDao(): ReviewSessionDao
 
     companion object {
-        const val VERSION = 3
+        const val VERSION = 4
         const val NAME = "n3sensei.db"
 
         /** The production database. Called once by the app container. */
