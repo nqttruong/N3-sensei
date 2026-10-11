@@ -10,11 +10,13 @@ import com.n3sensei.app.app.reminder.AndroidReminderNotifier
 import com.n3sensei.app.app.reminder.WorkManagerReminderScheduler
 import com.n3sensei.app.data.preferences.DataStoreReminderStateStore
 import com.n3sensei.app.data.preferences.DataStoreUserPreferencesRepository
+import com.n3sensei.app.data.repository.OfflineAnalyticsRepository
 import com.n3sensei.app.data.repository.OfflineContentRepository
 import com.n3sensei.app.data.repository.OfflineProgressRepository
 import com.n3sensei.app.domain.reminder.ReminderNotifier
 import com.n3sensei.app.domain.reminder.ReminderRunner
 import com.n3sensei.app.domain.reminder.ReminderScheduler
+import com.n3sensei.app.domain.repository.AnalyticsRepository
 import com.n3sensei.app.domain.repository.ContentImportRepository
 import com.n3sensei.app.domain.repository.ContentRepository
 import com.n3sensei.app.domain.repository.ProgressRepository
@@ -28,6 +30,7 @@ import java.time.Clock
 interface AppContainer {
     val contentRepository: ContentRepository
     val progressRepository: ProgressRepository
+    val analyticsRepository: AnalyticsRepository
     val userPreferencesRepository: UserPreferencesRepository
     val contentImportRepository: ContentImportRepository
     val reminderScheduler: ReminderScheduler
@@ -48,6 +51,8 @@ class DefaultAppContainer(context: Context) : AppContainer {
     override val contentRepository: ContentRepository by lazy {
         OfflineContentRepository(database.contentDao(), database.contentPackDao())
     }
+
+    override val analyticsRepository: AnalyticsRepository by lazy { OfflineAnalyticsRepository(database.analyticsDao()) }
 
     override val progressRepository: ProgressRepository by lazy {
         OfflineProgressRepository(database.progressDao(), clock)

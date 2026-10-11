@@ -2,7 +2,7 @@
 
 Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc thời gian build tăng đáng kể mới tách module; ranh giới package hiện tại đã được giữ bằng test (`ArchitectureRulesTest`) để việc tách sau này không phải sửa phụ thuộc.
 
-## Sơ đồ (trạng thái thực tế sau Prompt 07)
+## Sơ đồ (trạng thái thực tế sau Prompt 08)
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -44,6 +44,7 @@ Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc 
 │   furigana: Furigana (định dạng {漢字|かんじ})                    │
 │   practice: PracticeSession (luyện tập, không ghi lịch ôn)       │
 │   reminder: ReminderRunner · ReminderPolicy (xem REMINDERS.md)   │
+│   analytics: LearningAnalytics · StatsPeriod (xem ANALYTICS.md)  │
 │   srs: SpacedRepetitionScheduler · ReviewLadder · ReviewTime ·   │
 │        ReviewQueuePlanner · SubmitReviewUseCase  (xem SRS.md)    │
 └───────────────▲──────────────────────────────────────────────────┘
@@ -95,7 +96,7 @@ NavHost (start = HomeRoute)
 | Phiên ôn + kết quả | Room (hàng đợi, tiến độ) | Mỗi câu trả lời lưu ngay (idempotent), nút hiện khoảng ôn kế tiếp |
 | Cài đặt nhắc học | DataStore + WorkManager | Bật/tắt (xin quyền), khung giờ, tần suất, nội dung, riêng tư màn hình khóa, gửi thử, ghim widget |
 | Cài đặt ôn tập | DataStore | Sửa dãy bậc, giới hạn mỗi ngày, giải thích quy tắc |
-| Thống kê | Room: tổng nội dung, tiến độ, số lượt theo đánh giá | Dự báo **chưa triển khai** (ghi rõ) |
+| Thống kê | Room (`AnalyticsDao`, loại seed/test và mục đã gỡ) | Lượt vs mục, tỷ lệ nhớ, theo ngày, dự báo (ước tính), chuỗi ngày học, trạng thái theo loại, hay quên; bộ lọc thời gian; liên kết sang danh sách/chi tiết |
 | Cài đặt | DataStore (theme, furigana) + Room (gói, nguồn nội dung) + nhập JSON | Khoảng ôn, nhắc học, sao lưu: hiển thị "Chưa triển khai", không có hành động |
 
 Không màn hình nào dùng dữ liệu cứng. `PreviewContent` chỉ dùng cho `@Preview`; dữ liệu seed chỉ có trong mã test.

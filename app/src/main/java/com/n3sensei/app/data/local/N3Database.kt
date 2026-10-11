@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.n3sensei.app.data.local.dao.AnalyticsDao
 import com.n3sensei.app.data.local.dao.ContentDao
 import com.n3sensei.app.data.local.dao.ContentPackDao
 import com.n3sensei.app.data.local.dao.ProgressDao
@@ -52,6 +53,7 @@ abstract class N3Database : RoomDatabase() {
     abstract fun contentDao(): ContentDao
     abstract fun contentPackDao(): ContentPackDao
     abstract fun progressDao(): ProgressDao
+    abstract fun analyticsDao(): AnalyticsDao
 
     companion object {
         const val VERSION = 3

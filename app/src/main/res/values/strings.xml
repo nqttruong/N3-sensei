@@ -150,11 +150,6 @@
 
     <!-- Stats -->
     <string name="stats_title">Thống kê</string>
-    <string name="stats_content">Nội dung đã nạp</string>
-    <string name="stats_ratings">Đánh giá khi ôn tập</string>
-    <string name="stats_no_reviews">Chưa có lượt ôn tập nào được ghi lại.</string>
-    <string name="stats_forecast">Dự báo khối lượng ôn tập</string>
-    <string name="stats_forecast_pending">Dự báo khối lượng ôn tập chưa được triển khai. Mọi số liệu trên màn hình này được tính từ dữ liệu thật trong máy.</string>
 
     <!-- Settings -->
     <string name="settings_title">Cài đặt</string>
@@ -282,7 +277,6 @@
     <string name="review_result_back">Về màn hình Ôn tập</string>
     <string name="review_result_again">Ôn tiếp</string>
 
-    <string name="stats_total_reviews">Tổng số lượt ôn: %1$d</string>
 
     <string name="settings_review">Ôn tập</string>
     <string name="settings_review_summary">Khoảng ôn: %1$s · Mới %2$d/ngày · Ôn %3$d/ngày</string>
@@ -356,4 +350,51 @@
     <string name="reminder_limits">Android giới hạn việc chạy nền: nhắc học có thể đến muộn vài phút đến hơn một giờ khi máy tiết kiệm pin hoặc ít dùng ứng dụng, và không chạy khi pin yếu. Ứng dụng không dùng báo thức chính xác và không đánh thức máy riêng cho việc nhắc. Mỗi lần chỉ có một thông báo nhắc học; thông báo mới thay thế thông báo cũ.</string>
     <string name="reminder_add_widget">Thêm widget “Từ cần học” vào màn hình chính</string>
     <string name="reminder_lock_screen_widget_note">Widget “Từ cần học” dùng trên màn hình chính. Điện thoại Android nói chung không cho ứng dụng đặt widget lên màn hình khóa; trên màn hình khóa, hãy dùng thông báo nhắc học.</string>
+    <!-- Statistics -->
+    <string name="stats_period_today">Hôm nay</string>
+    <string name="stats_period_7">7 ngày</string>
+    <string name="stats_period_30">30 ngày</string>
+    <string name="stats_period_all">Tất cả</string>
+    <string name="stats_activity">Hoạt động</string>
+    <string name="stats_items_studied">Mục đã học</string>
+    <string name="stats_new_items">Mục mới</string>
+    <string name="stats_review_answers">Lượt ôn</string>
+    <string name="stats_items_reviewed">Mục được ôn</string>
+    <string name="stats_total_answers">Tổng lượt trả lời: %1$d</string>
+    <string name="stats_activity_rule">“Mục” đếm mỗi từ, Kanji hay mẫu ngữ pháp một lần; “lượt” đếm mỗi lần trả lời. Mục mới = trả lời lần đầu trong khoảng này; mục được ôn = đã có tiến độ từ trước. Chỉ tính câu trả lời trong phiên ôn tập; xem chi tiết hay luyện tập không được ghi lại nên không tính.</string>
+    <string name="stats_no_activity">Chưa có lượt trả lời nào trong khoảng này.</string>
+    <string name="stats_due_now">Cần ôn bây giờ</string>
+    <string name="stats_due">Đến hạn</string>
+    <string name="stats_overdue">Quá hạn</string>
+    <string name="stats_open_review">Ôn ngay</string>
+    <string name="stats_recall">Tỷ lệ nhớ</string>
+    <string name="stats_recall_value">%1$d%%</string>
+    <string name="stats_recall_none">—</string>
+    <string name="stats_recall_rule">= lượt ôn được đánh giá Khó, Tốt hoặc Dễ ÷ tổng lượt ôn trong khoảng này. Không tính lần trả lời đầu tiên của mục mới. “—” khi chưa có lượt ôn.</string>
+    <string name="stats_recall_detail">%1$d / %2$d lượt ôn</string>
+    <string name="stats_rating_line">Quên %1$d · Khó %2$d · Tốt %3$d · Dễ %4$d</string>
+    <string name="stats_daily">Lượt trả lời mỗi ngày (%1$d ngày)</string>
+    <string name="stats_daily_legend">Cột: tổng lượt trả lời; phần màu xanh lá: mục mới.</string>
+    <string name="stats_daily_description">Biểu đồ lượt trả lời %1$d ngày qua: tổng %2$d lượt, nhiều nhất %3$d lượt trong một ngày.</string>
+    <string name="stats_chart_max">Cao nhất: %1$d</string>
+    <string name="stats_chart_empty">Chưa có dữ liệu trong %1$d ngày qua.</string>
+    <string name="stats_forecast">Dự báo đến hạn (7 ngày tới, ước tính)</string>
+    <string name="stats_forecast_rule">Số mục sẽ đến hạn mỗi ngày theo lịch hiện tại; hôm nay gồm cả mục đang đến hạn. Đây là ước tính: mỗi lần ôn sẽ đổi lịch của mục đó.</string>
+    <string name="stats_forecast_description">Dự báo 7 ngày tới: tổng %1$d mục, nhiều nhất %2$d mục trong một ngày.</string>
+    <string name="stats_forecast_empty">Chưa có mục nào được lên lịch.</string>
+    <string name="stats_streak">Chuỗi ngày học</string>
+    <string name="stats_streak_current">%1$d ngày liên tiếp</string>
+    <string name="stats_streak_longest">Dài nhất: %1$d ngày</string>
+    <string name="stats_streak_today_pending">Hôm nay chưa học; học trước nửa đêm để giữ chuỗi.</string>
+    <string name="stats_streak_rule">Ngày học là ngày (theo giờ máy, tính từ 0:00) có ít nhất một lượt trả lời.</string>
+    <string name="stats_progress">Tiến độ theo loại</string>
+    <string name="stats_type_total">%1$s · %2$d mục</string>
+    <string name="stats_status_count">%1$s %2$d</string>
+    <string name="stats_progress_description">%1$s: mới %2$d, đang học %3$d, đang ôn %4$d, thành thạo %5$d.</string>
+    <string name="stats_progress_rule">Mới = chưa trả lời lần nào; Đang học = khoảng ôn dưới 1 ngày; Đang ôn = từ 1 ngày trở lên; Thành thạo = bậc cuối. Chạm để mở danh sách tương ứng.</string>
+    <string name="stats_trouble">Hay quên hoặc thấy khó</string>
+    <string name="stats_trouble_line">Quên %1$d · Khó %2$d</string>
+    <string name="stats_trouble_empty">Chưa có mục nào bị quên hoặc đánh giá khó trong khoảng này.</string>
+    <string name="stats_trouble_rule">Xếp theo số lượt Quên + Khó trong khoảng này (kể cả lần trả lời đầu tiên).</string>
+    <string name="stats_excluded_note">Thống kê chỉ dùng dữ liệu trong máy; không tính dữ liệu kiểm thử và mục đã bị gỡ khỏi nội dung.</string>
 </resources>

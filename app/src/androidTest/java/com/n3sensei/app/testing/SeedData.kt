@@ -48,9 +48,10 @@ object SeedData {
     private fun example(id: String, japanese: String, furigana: String, vi: String) =
         ExampleSentenceEntity(id, PACK_ID, SOURCE_ID, japanese, furigana, vi)
 
-    fun bundle(version: Int = 1, importedAt: Long = 1_700_000_000_000) = ContentPackBundle(
+    /** [isSeed] false makes the same data count as real content (needed by statistics tests). */
+    fun bundle(version: Int = 1, importedAt: Long = 1_700_000_000_000, isSeed: Boolean = true) = ContentPackBundle(
         sources = listOf(source),
-        pack = ContentPackEntity(PACK_ID, "Gói seed kiểm thử", version, SOURCE_ID, isSeed = true, importedAt = importedAt),
+        pack = ContentPackEntity(PACK_ID, "Gói seed kiểm thử", version, SOURCE_ID, isSeed = isSeed, importedAt = importedAt),
         lessons = listOf(
             LessonEntity(LESSON_1, PACK_ID, 1, "Bài seed 1", "N3", "Dữ liệu kiểm thử"),
             LessonEntity(LESSON_EMPTY, PACK_ID, 2, "Bài seed 2 (rỗng)", "N3", null),

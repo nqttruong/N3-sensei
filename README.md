@@ -2,7 +2,7 @@
 
 Ứng dụng Android native hỗ trợ học tiếng Nhật trình độ JLPT N3 (từ vựng, Kanji, ngữ pháp, ôn tập lặp lại cách quãng). Hoạt động offline-first.
 
-> Trạng thái: module học, nhập nội dung JSON, engine ôn tập cách quãng (Prompt 06), nhắc học qua thông báo và widget màn hình chính (Prompt 07, xem [docs/REMINDERS.md](docs/REMINDERS.md)). App kèm **một bài minh họa tự biên soạn** (30 từ, 27 Kanji, 7 ngữ pháp, chưa qua kiểm duyệt chuyên môn); nội dung N3 đầy đủ cần được nhập từ nguồn có giấy phép. Ôn tập lặp lại cách quãng hoạt động (Prompt 06, xem [docs/SRS.md](docs/SRS.md)); chế độ luyện tập theo bài vẫn không ảnh hưởng lịch ôn.
+> Trạng thái: module học, nhập nội dung JSON, engine ôn tập cách quãng (Prompt 06), nhắc học qua thông báo và widget màn hình chính (Prompt 07, xem [docs/REMINDERS.md](docs/REMINDERS.md)), thống kê học tập (Prompt 08, xem [docs/ANALYTICS.md](docs/ANALYTICS.md)). App kèm **một bài minh họa tự biên soạn** (30 từ, 27 Kanji, 7 ngữ pháp, chưa qua kiểm duyệt chuyên môn); nội dung N3 đầy đủ cần được nhập từ nguồn có giấy phép. Ôn tập lặp lại cách quãng hoạt động (Prompt 06, xem [docs/SRS.md](docs/SRS.md)); chế độ luyện tập theo bài vẫn không ảnh hưởng lịch ôn.
 
 ## Yêu cầu môi trường
 

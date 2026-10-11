@@ -35,9 +35,10 @@ const val STOP_TIMEOUT_MILLIS = 5_000L
  */
 abstract class ItemBrowserViewModel<T>(
     contentRepository: ContentRepository,
+    initialStatus: LearningStatus? = null,
 ) : ViewModel() {
 
-    private val _filters = MutableStateFlow(ItemQuery())
+    private val _filters = MutableStateFlow(ItemQuery(status = initialStatus))
 
     /** Current filters; [ItemQuery.text] is what the user typed (not yet debounced). */
     val filters: StateFlow<ItemQuery> = _filters.asStateFlow()

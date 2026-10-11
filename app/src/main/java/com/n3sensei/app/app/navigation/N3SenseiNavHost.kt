@@ -11,6 +11,9 @@ import androidx.navigation.toRoute
 import com.n3sensei.app.R
 import com.n3sensei.app.app.di.appViewModel
 import com.n3sensei.app.app.reminder.ReminderDeepLinks
+import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.domain.practice.PracticeResult
 import com.n3sensei.app.domain.srs.SubmitReviewUseCase
 import com.n3sensei.app.feature.grammar.GrammarDetailScreen
@@ -74,9 +77,9 @@ fun N3SenseiNavHost(
             composable<LearnHubRoute> {
                 LearnHubScreen(
                     onOpenLessons = { navController.navigate(LessonListRoute) },
-                    onOpenVocabulary = { navController.navigate(VocabularyRoute) },
-                    onOpenKanji = { navController.navigate(KanjiRoute) },
-                    onOpenGrammar = { navController.navigate(GrammarRoute) },
+                    onOpenVocabulary = { navController.navigate(VocabularyRoute()) },
+                    onOpenKanji = { navController.navigate(KanjiRoute()) },
+                    onOpenGrammar = { navController.navigate(GrammarRoute()) },
                 )
             }
             composable<LessonListRoute> {
@@ -95,9 +98,10 @@ fun N3SenseiNavHost(
                     onStartPractice = { navController.navigate(PracticeRoute(lessonId = route.lessonId)) },
                 )
             }
-            composable<VocabularyRoute> {
+            composable<VocabularyRoute> { entry ->
+                val status = entry.toRoute<VocabularyRoute>().status.toLearningStatus()
                 VocabularyListScreen(
-                    viewModel = appViewModel { VocabularyListViewModel(contentRepository) },
+                    viewModel = appViewModel { VocabularyListViewModel(contentRepository, status) },
                     onOpenVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
                     onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
                 )
@@ -111,9 +115,10 @@ fun N3SenseiNavHost(
                     onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
                 )
             }
-            composable<KanjiRoute> {
+            composable<KanjiRoute> { entry ->
+                val status = entry.toRoute<KanjiRoute>().status.toLearningStatus()
                 KanjiListScreen(
-                    viewModel = appViewModel { KanjiListViewModel(contentRepository) },
+                    viewModel = appViewModel { KanjiListViewModel(contentRepository, status) },
                     onOpenKanji = { navController.navigate(KanjiDetailRoute(it)) },
                     onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
                 )
@@ -125,9 +130,10 @@ fun N3SenseiNavHost(
                     onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
                 )
             }
-            composable<GrammarRoute> {
+            composable<GrammarRoute> { entry ->
+                val status = entry.toRoute<GrammarRoute>().status.toLearningStatus()
                 GrammarListScreen(
-                    viewModel = appViewModel { GrammarListViewModel(contentRepository) },
+                    viewModel = appViewModel { GrammarListViewModel(contentRepository, status) },
                     onOpenGrammar = { navController.navigate(GrammarDetailRoute(it)) },
                     onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
                 )
@@ -203,7 +209,12 @@ fun N3SenseiNavHost(
             )
         }
         composable<StatsRoute> {
-            StatsScreen(viewModel = appViewModel { StatsViewModel(contentRepository, progressRepository, clock) })
+            StatsScreen(
+                viewModel = appViewModel { StatsViewModel(analyticsRepository, clock) },
+                onOpenReview = { navController.navigateToTopLevel(TopLevelDestination.REVIEW) },
+                onOpenList = { type, status -> navController.navigateToItemList(type, status) },
+                onOpenItem = { ref -> navController.navigateToItem(ref) },
+            )
         }
         composable<SettingsRoute> {
             SettingsScreen(
@@ -227,3 +238,24 @@ fun N3SenseiNavHost(
 
 private fun PracticeResult.toRoute(practice: PracticeRoute) =
     PracticeResultRoute(practice.lessonId, practice.markedOnly, total, again, hard, good, easy, durationSeconds)
+
+private fun String?.toLearningStatus(): LearningStatus? = LearningStatus.entries.firstOrNull { it.name == this }
+
+/** Opens a vocabulary / kanji / grammar list in the Learn tab, optionally filtered by status. */
+private fun NavHostController.navigateToItemList(type: ItemType, status: LearningStatus?) {
+    navigateToTopLevel(TopLevelDestination.LEARN)
+    when (type) {
+        ItemType.VOCABULARY -> navigate(VocabularyRoute(status?.name))
+        ItemType.KANJI -> navigate(KanjiRoute(status?.name))
+        ItemType.GRAMMAR -> navigate(GrammarRoute(status?.name))
+    }
+}
+
+private fun NavHostController.navigateToItem(ref: ItemRef) {
+    navigateToTopLevel(TopLevelDestination.LEARN)
+    when (ref.type) {
+        ItemType.VOCABULARY -> navigate(VocabularyDetailRoute(ref.id))
+        ItemType.KANJI -> navigate(KanjiDetailRoute(ref.id))
+        ItemType.GRAMMAR -> navigate(GrammarDetailRoute(ref.id))
+    }
+}

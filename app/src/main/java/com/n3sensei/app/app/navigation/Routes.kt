@@ -16,15 +16,18 @@ import kotlinx.serialization.Serializable
 
 @Serializable data class LessonDetailRoute(val lessonId: String)
 
-@Serializable data object VocabularyRoute
+/** [status] pre-selects the learning-status filter (a LearningStatus name). */
+@Serializable data class VocabularyRoute(val status: String? = null)
 
 @Serializable data class VocabularyDetailRoute(val vocabularyId: String)
 
-@Serializable data object KanjiRoute
+/** [status] pre-selects the learning-status filter (a LearningStatus name). */
+@Serializable data class KanjiRoute(val status: String? = null)
 
 @Serializable data class KanjiDetailRoute(val kanjiId: String)
 
-@Serializable data object GrammarRoute
+/** [status] pre-selects the learning-status filter (a LearningStatus name). */
+@Serializable data class GrammarRoute(val status: String? = null)
 
 @Serializable data class GrammarDetailRoute(val grammarId: String)
 

@@ -173,8 +173,8 @@ class EndToEndTest {
             waitForText(string(R.string.lesson_counts, 4, 2, 1))
 
             // Practice results are not saved to the review schedule.
-            openTab(TopLevelDestination.STATS)
-            waitForText(string(R.string.stats_no_reviews))
+            openTab(TopLevelDestination.REVIEW)
+            waitForText(string(R.string.review_overview_today, 0, 200, 0, 20))
         }
     }
 
@@ -308,8 +308,8 @@ class EndToEndTest {
         }
         // Relaunch: progress is read back from Room.
         ActivityScenario.launch(MainActivity::class.java).use {
-            openTab(TopLevelDestination.STATS)
-            waitForText(string(R.string.stats_total_reviews, 7))
+            openTab(TopLevelDestination.REVIEW)
+            waitForText(string(R.string.review_overview_today, 0, 200, 7, 20))
             openTab(TopLevelDestination.LEARN)
             clickable(string(R.string.vocabulary_title)).performClick()
             waitForText("経験")

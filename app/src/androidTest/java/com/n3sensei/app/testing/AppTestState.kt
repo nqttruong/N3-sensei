@@ -23,10 +23,15 @@ object AppTestState {
      * @param bundledContent whether MainActivity may install the illustration pack; off by
      *   default so tests see only the data they set up.
      */
-    fun reset(seedContent: Boolean, onboardingCompleted: Boolean = true, bundledContent: Boolean = false) = runBlocking {
+    fun reset(
+        seedContent: Boolean,
+        onboardingCompleted: Boolean = true,
+        bundledContent: Boolean = false,
+        seedCountsAsRealContent: Boolean = false,
+    ) = runBlocking {
         container.androidContentImportRepository.bundledContentEnabled = bundledContent
         container.database.clearAllTables()
-        if (seedContent) container.database.contentPackDao().replacePack(SeedData.bundle())
+        if (seedContent) container.database.contentPackDao().replacePack(SeedData.bundle(isSeed = !seedCountsAsRealContent))
         with(container.userPreferencesRepository) {
             setOnboardingCompleted(onboardingCompleted)
             setThemeMode(ThemeMode.SYSTEM)
