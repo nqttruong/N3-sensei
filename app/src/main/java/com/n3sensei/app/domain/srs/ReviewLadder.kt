@@ -66,6 +66,12 @@ class ReviewLadder private constructor(val intervals: List<ReviewInterval>) {
             return ReviewLadder(intervals.toList())
         }
 
+        /** Null when [text] does not parse or is not a valid ladder. */
+        fun decodeOrNull(text: String): ReviewLadder? {
+            val intervals = ReviewInterval.parseList(text) ?: return null
+            return if (validate(intervals).isEmpty()) ReviewLadder(intervals) else null
+        }
+
         /** Stored settings that fail to parse or validate fall back to [DEFAULT]. */
         fun decodeOrDefault(text: String?): ReviewLadder {
             val intervals = text?.let { ReviewInterval.parseList(it) } ?: return DEFAULT

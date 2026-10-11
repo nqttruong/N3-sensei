@@ -37,6 +37,7 @@ import com.n3sensei.app.domain.model.ThemeMode
 @Composable
 fun SettingsScreen(
     viewModel: SettingsViewModel,
+    backupViewModel: BackupViewModel,
     onOpenReviewSettings: () -> Unit,
     onOpenReminderSettings: () -> Unit,
     modifier: Modifier = Modifier,
@@ -48,12 +49,23 @@ fun SettingsScreen(
     }
     (importState as? ImportUiState.Finished)?.let { ImportReportDialog(it.report, viewModel::dismissImportReport) }
 
+    val backupState by backupViewModel.state.collectAsStateWithLifecycle()
+    val createBackup = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri ->
+        uri?.let { backupViewModel.export(it.toString()) }
+    }
+    val openBackup = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        uri?.let { backupViewModel.inspect(it.toString()) }
+    }
+    BackupDialogs(backupState, backupViewModel::setRestoreSettings, backupViewModel::confirmRestore, backupViewModel::dismiss)
+
+    // Hoisted so the position survives a reload, e.g. after returning from the file picker.
+    val scrollState = rememberScrollState()
     UiStateContent(state = state, modifier = modifier) { ui ->
         val prefs = ui.preferences
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .verticalScroll(rememberScrollState()),
+                .verticalScroll(scrollState),
         ) {
             SectionHeader(stringResource(R.string.settings_appearance), Modifier.padding(horizontal = 16.dp))
             Column(Modifier.selectableGroup()) {
@@ -131,14 +143,12 @@ fun SettingsScreen(
             )
             HorizontalDivider()
 
-            // Planned features: listed so users know they exist, but shown disabled.
-            SectionHeader(stringResource(R.string.settings_upcoming), Modifier.padding(horizontal = 16.dp))
-            listOf(R.string.settings_backup).forEach {
-                ListItem(
-                    headlineContent = { Text(stringResource(it), color = MaterialTheme.colorScheme.onSurfaceVariant) },
-                    supportingContent = { Text(stringResource(R.string.common_not_implemented)) },
-                )
-            }
+            BackupSettingsSection(
+                state = backupState,
+                onExport = { createBackup.launch(backupViewModel.suggestedFileName()) },
+                // Some providers report JSON as text/plain or octet-stream.
+                onRestore = { openBackup.launch(arrayOf("application/json", "text/plain", "application/octet-stream")) },
+            )
             HorizontalDivider()
 
             SectionHeader(stringResource(R.string.settings_content), Modifier.padding(horizontal = 16.dp))

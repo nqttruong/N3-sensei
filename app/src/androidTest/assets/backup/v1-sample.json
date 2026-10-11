@@ -1,0 +1,62 @@
+{
+  "format": "n3sensei-backup",
+  "formatVersion": 1,
+  "createdAt": 1788400000000,
+  "appVersion": "0.1.0",
+  "includesContent": false,
+  "note": "FROZEN TEST FILE: format v1 as first released. Never edit; newer apps must keep restoring it.",
+  "settings": {
+    "themeMode": "DARK",
+    "showFurigana": false,
+    "review": { "intervals": "10m,1d,3d", "newPerDay": 5, "reviewsPerDay": 50 },
+    "reminder": {
+      "startHour": 7, "endHour": 22, "frequency": "EVERY_2_HOURS",
+      "showReading": true, "showMeaning": false, "lockScreen": "HIDE_ALL"
+    }
+  },
+  "progress": [
+    {
+      "itemType": "VOCABULARY", "itemId": "seed-l01-v01", "state": "REVIEW", "stepIndex": 3,
+      "intervalMinutes": 2880, "dueAt": 1788483900000, "lastReviewedAt": 1788311100000,
+      "reviewCount": 3, "lapseCount": 0, "createdAt": 1788224400000, "updatedAt": 1788311100000
+    },
+    {
+      "itemType": "KANJI", "itemId": "seed-l01-k01", "state": "LEARNING", "stepIndex": 0,
+      "intervalMinutes": 20, "dueAt": 1788232800000, "lastReviewedAt": 1788231600000,
+      "reviewCount": 1, "lapseCount": 0, "createdAt": 1788231600000, "updatedAt": 1788231600000
+    },
+    {
+      "itemType": "GRAMMAR", "itemId": "removed-g99", "state": "LEARNING", "stepIndex": 1,
+      "intervalMinutes": 60, "dueAt": 1788228000000, "lastReviewedAt": 1788224400000,
+      "reviewCount": 1, "lapseCount": 0, "createdAt": 1788224400000, "updatedAt": 1788224400000
+    }
+  ],
+  "reviewRecords": [
+    {
+      "itemType": "VOCABULARY", "itemId": "seed-l01-v01", "rating": "GOOD", "reviewedAt": 1788224400000,
+      "intervalBeforeMinutes": 0, "intervalAfterMinutes": 60, "dueAtAfter": 1788228000000, "requestId": null, "wasNew": true
+    },
+    {
+      "itemType": "VOCABULARY", "itemId": "seed-l01-v01", "rating": "GOOD", "reviewedAt": 1788228000000,
+      "intervalBeforeMinutes": 60, "intervalAfterMinutes": 1440, "dueAtAfter": 1788314400000, "requestId": "gold-r2", "wasNew": false
+    },
+    {
+      "itemType": "VOCABULARY", "itemId": "seed-l01-v01", "rating": "GOOD", "reviewedAt": 1788311100000,
+      "intervalBeforeMinutes": 1440, "intervalAfterMinutes": 2880, "dueAtAfter": 1788483900000, "requestId": "gold-r3", "wasNew": false
+    },
+    {
+      "itemType": "KANJI", "itemId": "seed-l01-k01", "rating": "AGAIN", "reviewedAt": 1788231600000,
+      "intervalBeforeMinutes": 0, "intervalAfterMinutes": 20, "dueAtAfter": 1788232800000, "requestId": "gold-r4", "wasNew": true
+    },
+    {
+      "itemType": "GRAMMAR", "itemId": "removed-g99", "rating": "GOOD", "reviewedAt": 1788224400000,
+      "intervalBeforeMinutes": 0, "intervalAfterMinutes": 60, "dueAtAfter": 1788228000000, "requestId": "gold-r5", "wasNew": true
+    }
+  ],
+  "marks": [
+    { "itemType": "VOCABULARY", "itemId": "seed-l01-v02", "markedAt": 1788224400000 }
+  ],
+  "reviewSessions": [
+    { "id": "gold-s1", "startedAt": 1788228000000, "lastActivityAt": 1788228600000, "planned": 3, "answered": 2, "finished": false }
+  ]
+}

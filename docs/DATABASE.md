@@ -74,6 +74,7 @@ Các cột FK đều có index. Room bật `PRAGMA foreign_keys = ON` khi mở d
 - `ContentPackDao.replacePack`: xóa gói cũ rồi ghi gói mới; một dòng lỗi thì toàn bộ thay đổi bị hủy và nội dung cũ được giữ nguyên.
 - `ProgressDao.applyReview`: kiểm tra `request_id` → đọc tiến độ → scheduler (domain) tính → ghi lịch sử + tiến độ, trong một transaction; trả lời trùng không ghi gì. Xem [SRS.md](SRS.md).
 - `ContentDao.get*Detail`: đọc mục, câu ví dụ và nguồn trong một transaction để dữ liệu nhất quán.
+- `BackupDao.snapshot` đọc toàn bộ dữ liệu người học trong một transaction (bản sao lưu nhất quán); `BackupDao.merge` gộp tệp sao lưu trong một transaction, không xóa gì, lỗi thì rollback. Xem [BACKUP.md](BACKUP.md).
 
 ## Tìm kiếm
 

@@ -81,6 +81,12 @@ fun ReviewSettingsScreen(
             TextButton(onClick = viewModel::addStep) { Text(stringResource(R.string.review_settings_add_step)) }
         }
 
+        SectionHeader(stringResource(R.string.review_settings_daily_goal))
+        Text(
+            stringResource(R.string.review_settings_daily_goal_description),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
         OutlinedTextField(
             value = current.newPerDay,
             onValueChange = viewModel::setNewPerDay,

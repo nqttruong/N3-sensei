@@ -2,7 +2,7 @@
 
 Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc thời gian build tăng đáng kể mới tách module; ranh giới package hiện tại đã được giữ bằng test (`ArchitectureRulesTest`) để việc tách sau này không phải sửa phụ thuộc.
 
-## Sơ đồ (trạng thái thực tế sau Prompt 09)
+## Sơ đồ (trạng thái thực tế sau Prompt 10)
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -95,9 +95,9 @@ NavHost (start = HomeRoute)
 | Ôn tập | Room: đến hạn theo loại, quá hạn, mục mới, số đã làm hôm nay; DataStore: giới hạn | Bắt đầu phiên ôn theo lịch; luyện tập theo bài / mục đã đánh dấu |
 | Phiên ôn + kết quả | Room (hàng đợi, tiến độ) | Mỗi câu trả lời lưu ngay (idempotent), nút hiện khoảng ôn kế tiếp |
 | Cài đặt nhắc học | DataStore + WorkManager | Bật/tắt (xin quyền), khung giờ, tần suất, nội dung, riêng tư màn hình khóa, gửi thử, ghim widget |
-| Cài đặt ôn tập | DataStore | Sửa dãy bậc, giới hạn mỗi ngày, giải thích quy tắc |
+| Cài đặt ôn tập | DataStore | Sửa dãy bậc, mục tiêu hằng ngày (giới hạn mục mới / lượt ôn), giải thích quy tắc |
 | Thống kê | Room (`AnalyticsDao`, loại seed/test và mục đã gỡ) | Lượt vs mục, tỷ lệ nhớ, theo ngày, dự báo (ước tính), chuỗi ngày học, trạng thái theo loại, hay quên; bộ lọc thời gian; liên kết sang danh sách/chi tiết |
-| Cài đặt | DataStore (theme, furigana) + Room (gói, nguồn nội dung) + nhập JSON | Khoảng ôn, nhắc học, sao lưu: hiển thị "Chưa triển khai", không có hành động |
+| Cài đặt | DataStore (theme, furigana) + Room (gói, nguồn nội dung) + nhập JSON | Giao diện, furigana, lối vào Ôn tập / Nhắc học, sao lưu và khôi phục qua Storage Access Framework (xem [BACKUP.md](BACKUP.md)), nhập gói nội dung, nguồn |
 
 Không màn hình nào dùng dữ liệu cứng. `PreviewContent` chỉ dùng cho `@Preview`; dữ liệu seed chỉ có trong mã test.
 

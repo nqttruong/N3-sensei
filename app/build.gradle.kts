@@ -88,6 +88,7 @@ dependencies {
     androidTestImplementation(libs.androidx.test.runner)
     // Espresso pulled in by ui-test (3.5.0) crashes on API 36 (InputManager.getInstance removed).
     androidTestImplementation(libs.androidx.test.espresso.core)
+    androidTestImplementation(libs.androidx.test.espresso.intents)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.navigation.testing)

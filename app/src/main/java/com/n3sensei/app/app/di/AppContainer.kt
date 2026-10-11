@@ -1,6 +1,8 @@
 package com.n3sensei.app.app.di
 
 import android.content.Context
+import com.n3sensei.app.data.backup.AndroidBackupRepository
+import com.n3sensei.app.domain.backup.BackupRepository
 import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.preferencesDataStoreFile
 import com.n3sensei.app.data.importing.AndroidContentImportRepository
@@ -36,6 +38,7 @@ interface AppContainer {
     val reviewSessionRepository: ReviewSessionRepository
     val userPreferencesRepository: UserPreferencesRepository
     val contentImportRepository: ContentImportRepository
+    val backupRepository: BackupRepository
     val reminderScheduler: ReminderScheduler
     val reminderNotifier: ReminderNotifier
     val reminderRunner: ReminderRunner
@@ -95,4 +98,9 @@ class DefaultAppContainer(context: Context) : AppContainer {
     }
 
     override val contentImportRepository: ContentImportRepository get() = androidContentImportRepository
+
+    override val backupRepository: BackupRepository by lazy {
+        val versionName = runCatching { appContext.packageManager.getPackageInfo(appContext.packageName, 0).versionName }.getOrNull()
+        AndroidBackupRepository(appContext, database.backupDao(), userPreferencesRepository, reminderScheduler, clock, versionName)
+    }
 }
