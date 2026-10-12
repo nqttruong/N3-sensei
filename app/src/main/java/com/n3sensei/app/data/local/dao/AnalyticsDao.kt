@@ -7,30 +7,30 @@ import com.n3sensei.app.domain.model.ItemType
 import kotlinx.coroutines.flow.Flow
 
 /**
- * A review record counts only when its item still exists in a non-seed content pack: answers
- * to seed/test data and to items removed by a content update (or a failed import) are left
- * out of every statistic.
+ * Keys (`TYPE:id`) of items that exist in a non-seed content pack. A review record or progress
+ * row counts only when its item is in this set: answers to seed/test data and to items removed
+ * by a content update (or a failed import) are left out of every statistic.
+ *
+ * Written as one `IN (subquery)` on purpose: SQLite evaluates the set once, so the period filter
+ * on `reviewed_at` keeps using its index. The former per-type `OR … EXISTS` form made SQLite scan
+ * the whole history through the `item_type` index, even for "today" (see docs/QA.md).
  */
-private const val VALID_RECORD = """
-    ((r.item_type = 'VOCABULARY' AND EXISTS (SELECT 1 FROM vocabulary v JOIN lessons l ON l.id = v.lesson_id
-        JOIN content_packs cp ON cp.id = l.pack_id WHERE v.id = r.item_id AND cp.is_seed = 0))
-    OR (r.item_type = 'KANJI' AND EXISTS (SELECT 1 FROM kanji k JOIN lessons l ON l.id = k.lesson_id
-        JOIN content_packs cp ON cp.id = l.pack_id WHERE k.id = r.item_id AND cp.is_seed = 0))
-    OR (r.item_type = 'GRAMMAR' AND EXISTS (SELECT 1 FROM grammar g JOIN lessons l ON l.id = g.lesson_id
-        JOIN content_packs cp ON cp.id = l.pack_id WHERE g.id = r.item_id AND cp.is_seed = 0)))
+internal const val VALID_KEYS = """
+    SELECT 'VOCABULARY:' || v.id FROM vocabulary v JOIN lessons l ON l.id = v.lesson_id
+        JOIN content_packs cp ON cp.id = l.pack_id WHERE cp.is_seed = 0
+    UNION ALL SELECT 'KANJI:' || k.id FROM kanji k JOIN lessons l ON l.id = k.lesson_id
+        JOIN content_packs cp ON cp.id = l.pack_id WHERE cp.is_seed = 0
+    UNION ALL SELECT 'GRAMMAR:' || g.id FROM grammar g JOIN lessons l ON l.id = g.lesson_id
+        JOIN content_packs cp ON cp.id = l.pack_id WHERE cp.is_seed = 0
 """
+
+internal const val VALID_RECORD = "(r.item_type || ':' || r.item_id IN ($VALID_KEYS))"
 
 /** Same rule as [VALID_RECORD] for a progress row aliased `p`. */
-private const val VALID_PROGRESS = """
-    ((p.item_type = 'VOCABULARY' AND EXISTS (SELECT 1 FROM vocabulary v JOIN lessons l ON l.id = v.lesson_id
-        JOIN content_packs cp ON cp.id = l.pack_id WHERE v.id = p.item_id AND cp.is_seed = 0))
-    OR (p.item_type = 'KANJI' AND EXISTS (SELECT 1 FROM kanji k JOIN lessons l ON l.id = k.lesson_id
-        JOIN content_packs cp ON cp.id = l.pack_id WHERE k.id = p.item_id AND cp.is_seed = 0))
-    OR (p.item_type = 'GRAMMAR' AND EXISTS (SELECT 1 FROM grammar g JOIN lessons l ON l.id = g.lesson_id
-        JOIN content_packs cp ON cp.id = l.pack_id WHERE g.id = p.item_id AND cp.is_seed = 0)))
-"""
+internal const val VALID_PROGRESS = "(p.item_type || ':' || p.item_id IN ($VALID_KEYS))"
 
-private const val IN_PERIOD = "(:from IS NULL OR r.reviewed_at >= :from) AND r.reviewed_at < :to"
+/** [from] is never null: "all time" passes [Long.MIN_VALUE], so the bound stays index-friendly. */
+internal const val IN_PERIOD = "r.reviewed_at >= :from AND r.reviewed_at < :to"
 
 private const val BUCKET = "(r.reviewed_at / 900000) * 900000"
 
@@ -108,7 +108,7 @@ interface AnalyticsDao {
         WHERE $IN_PERIOD AND $VALID_RECORD
         """,
     )
-    fun observeActivity(from: Long?, to: Long): Flow<ActivityRow>
+    fun observeActivity(from: Long, to: Long): Flow<ActivityRow>
 
     /** Items due now, and the part already due before [dayStart] (local midnight). */
     @Query(
@@ -150,7 +150,7 @@ interface AnalyticsDao {
         GROUP BY r.item_type
         """,
     )
-    fun observeAnswersByType(from: Long?, to: Long): Flow<List<AnalyticsTypeCountRow>>
+    fun observeAnswersByType(from: Long, to: Long): Flow<List<AnalyticsTypeCountRow>>
 
     /**
      * Due items to review first: overdue before due, the longest-waiting first, then the most
@@ -229,5 +229,5 @@ interface AnalyticsDao {
         LIMIT :limit
         """,
     )
-    fun observeTroubleItems(from: Long?, to: Long, limit: Int): Flow<List<TroubleRow>>
+    fun observeTroubleItems(from: Long, to: Long, limit: Int): Flow<List<TroubleRow>>
 }

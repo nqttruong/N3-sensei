@@ -1,11 +1,10 @@
 package com.n3sensei.app.data.backup
 
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.JsonElement
 
-// Wire format of a backup file (see docs/BACKUP.md). Sections are kept as raw JSON elements so
-// that one malformed entry is reported and skipped instead of failing the whole file. Never
-// rename a field: older files must keep loading.
+// Wire format of a backup file (see docs/BACKUP.md). Entries are read one by one as raw JSON
+// elements so that one malformed entry is reported and skipped instead of failing the whole
+// file. Never rename a field: older files must keep loading.
 
 const val BACKUP_FORMAT = "n3sensei-backup"
 
@@ -13,21 +12,9 @@ const val BACKUP_FORMAT = "n3sensei-backup"
 val SUPPORTED_BACKUP_VERSIONS = 1..1
 val BACKUP_FORMAT_VERSION = SUPPORTED_BACKUP_VERSIONS.last
 
-@Serializable
-data class BackupDto(
-    val format: String? = null,
-    val formatVersion: Int? = null,
-    /** Epoch millis. */
-    val createdAt: Long? = null,
-    val appVersion: String? = null,
-    /** Always false: lessons and words come from content packs, not from backups. */
-    val includesContent: Boolean = false,
-    val settings: JsonElement? = null,
-    val progress: List<JsonElement>? = null,
-    val reviewRecords: List<JsonElement>? = null,
-    val marks: List<JsonElement>? = null,
-    val reviewSessions: List<JsonElement>? = null,
-)
+// Top level (read and written by BackupCodec, entry by entry): format, formatVersion,
+// createdAt (epoch millis), appVersion, includesContent (always false), settings (SettingsDto),
+// progress, marks, reviewSessions, reviewRecords (arrays of the DTOs below).
 
 @Serializable
 data class ProgressDto(

@@ -60,7 +60,7 @@ class BackupMergeTest {
 
     @Test
     fun sameTimeDifferentRating_isADifferentAnswer() {
-        val local = LocalKeys(recordKeys = setOf(RecordKey(a, 50, ReviewRating.AGAIN)))
+        val local = LocalKeys(recordKeys = setOf(RecordKey(a, 50, ReviewRating.AGAIN)), itemsWithHistory = setOf(a))
         val plan = BackupMerge.plan(data.copy(reviewRecords = listOf(record(a, 50, null))), local)
         assertEquals(1, plan.recordsToAdd.size)
         // a now has answers from both sides: its first answer is recomputed.
@@ -72,7 +72,8 @@ class BackupMergeTest {
         val afterFirst = LocalKeys(
             progressUpdatedAt = data.progress.associate { it.ref to it.updatedAt },
             requestIds = data.reviewRecords.mapNotNull { it.requestId }.toSet(),
-            recordKeys = data.reviewRecords.map { RecordKey(it.ref, it.reviewedAt, it.rating) }.toSet(),
+            recordKeys = data.reviewRecords.filter { it.requestId == null }.map { RecordKey(it.ref, it.reviewedAt, it.rating) }.toSet(),
+            itemsWithHistory = data.reviewRecords.map { it.ref }.toSet(),
             marks = data.marks.map { it.ref }.toSet(),
             sessionIds = data.sessions.map { it.id }.toSet(),
         )

@@ -20,6 +20,7 @@ import com.n3sensei.app.domain.backup.BackupSection
 import com.n3sensei.app.domain.backup.LocalKeys
 import com.n3sensei.app.domain.backup.MergeCount
 import com.n3sensei.app.domain.backup.RecordKey
+import com.n3sensei.app.domain.backup.ReviewRecordBackup
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ReviewRating
@@ -45,8 +46,8 @@ abstract class BackupDao {
     @Query("SELECT * FROM learning_progress ORDER BY item_type, item_id")
     protected abstract suspend fun allProgress(): List<LearningProgressEntity>
 
-    @Query("SELECT * FROM review_records ORDER BY reviewed_at, id")
-    protected abstract suspend fun allRecords(): List<ReviewRecordEntity>
+    @Query("SELECT * FROM review_records WHERE id > :afterId ORDER BY id LIMIT :limit")
+    protected abstract suspend fun recordPage(afterId: Long, limit: Int): List<ReviewRecordEntity>
 
     @Query("SELECT * FROM item_marks ORDER BY item_type, item_id")
     protected abstract suspend fun allMarks(): List<ItemMarkEntity>
@@ -54,20 +55,41 @@ abstract class BackupDao {
     @Query("SELECT * FROM review_sessions ORDER BY started_at, id")
     protected abstract suspend fun allSessions(): List<ReviewSessionEntity>
 
-    /** Consistent copy of all learner data (settings are added by the caller). */
+    /**
+     * Consistent copy of all learner data in one read transaction. Progress, marks and sessions
+     * (bounded by the content size) come at once through [onBase]; the review history, which
+     * grows without bound, comes in pages through [onRecords] so it is never all in memory.
+     */
     @Transaction
-    open suspend fun snapshot(): BackupData = BackupData(
-        progress = allProgress().map { it.toBackup() },
-        reviewRecords = allRecords().map { it.toBackup() },
-        marks = allMarks().map { it.toBackup() },
-        sessions = allSessions().map { it.toBackup() },
-    )
+    open suspend fun export(onBase: suspend (BackupData) -> Unit, onRecords: suspend (List<ReviewRecordBackup>) -> Unit) {
+        onBase(
+            BackupData(
+                progress = allProgress().map { it.toBackup() },
+                marks = allMarks().map { it.toBackup() },
+                sessions = allSessions().map { it.toBackup() },
+            ),
+        )
+        var after = 0L
+        while (true) {
+            val page = recordPage(after, PAGE_SIZE)
+            if (page.isEmpty()) break
+            onRecords(page.map { it.toBackup() })
+            after = page.last().id
+        }
+    }
 
     @Query("SELECT item_type, item_id, updated_at FROM learning_progress")
     protected abstract suspend fun progressKeys(): List<ProgressKeyRow>
 
-    @Query("SELECT item_type, item_id, reviewed_at, rating, request_id FROM review_records")
-    protected abstract suspend fun recordKeys(): List<RecordKeyRow>
+    @Query("SELECT request_id FROM review_records WHERE request_id IS NOT NULL")
+    protected abstract suspend fun requestIds(): List<String>
+
+    /** Answers recorded before database v3 have no request id: they are matched by item, time and rating. */
+    @Query("SELECT item_type, item_id, reviewed_at, rating, request_id FROM review_records WHERE request_id IS NULL")
+    protected abstract suspend fun legacyRecordKeys(): List<RecordKeyRow>
+
+    @Query("SELECT DISTINCT item_type, item_id FROM review_records")
+    protected abstract suspend fun itemsWithHistory(): List<ItemRefRow>
 
     @Query("SELECT item_type, item_id FROM item_marks")
     protected abstract suspend fun markKeys(): List<ItemRefRow>
@@ -77,11 +99,11 @@ abstract class BackupDao {
 
     @Transaction
     open suspend fun localKeys(): LocalKeys {
-        val records = recordKeys()
         return LocalKeys(
             progressUpdatedAt = progressKeys().associate { ItemRef(it.itemType, it.itemId) to it.updatedAt },
-            requestIds = records.mapNotNullTo(HashSet()) { it.requestId },
-            recordKeys = records.mapTo(HashSet()) { RecordKey(ItemRef(it.itemType, it.itemId), it.reviewedAt, it.rating) },
+            requestIds = requestIds().toHashSet(),
+            recordKeys = legacyRecordKeys().mapTo(HashSet()) { RecordKey(ItemRef(it.itemType, it.itemId), it.reviewedAt, it.rating) },
+            itemsWithHistory = itemsWithHistory().mapTo(HashSet()) { ItemRef(it.itemType, it.itemId) },
             marks = markKeys().mapTo(HashSet()) { ItemRef(it.itemType, it.itemId) },
             sessionIds = sessionIds().toHashSet(),
         )
@@ -130,10 +152,15 @@ abstract class BackupDao {
     open suspend fun merge(data: BackupData): Map<BackupSection, MergeCount> {
         val plan = BackupMerge.plan(data, localKeys())
         upsertProgress(plan.progressToWrite.map { it.toEntity() })
-        insertRecords(plan.recordsToAdd.map { it.toEntity() })
+        // In chunks: a long history is converted a page at a time, not all at once.
+        plan.recordsToAdd.chunked(PAGE_SIZE).forEach { chunk -> insertRecords(chunk.map { it.toEntity() }) }
         plan.itemsToRecompute.forEach { recomputeFirstAnswer(it.type, it.id) }
         insertMarks(plan.marksToAdd.map { it.toEntity() })
         insertSessions(plan.sessionsToAdd.map { it.toEntity() })
         return plan.counts
+    }
+
+    private companion object {
+        const val PAGE_SIZE = 1_000
     }
 }

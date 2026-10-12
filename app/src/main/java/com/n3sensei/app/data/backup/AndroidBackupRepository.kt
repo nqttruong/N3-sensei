@@ -1,6 +1,7 @@
 package com.n3sensei.app.data.backup
 
 import android.content.Context
+import android.provider.DocumentsContract
 import androidx.core.net.toUri
 import com.n3sensei.app.data.local.dao.BackupDao
 import com.n3sensei.app.domain.backup.BackupData
@@ -22,7 +23,7 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
-import java.io.ByteArrayOutputStream
+import java.io.FilterInputStream
 import java.io.IOException
 import java.io.InputStream
 import java.time.Clock
@@ -43,41 +44,67 @@ class AndroidBackupRepository(
 
     override suspend fun export(documentUri: String): ExportResult {
         val prefs = preferences.preferences.first()
-        val data = dao.snapshot().copy(
-            settings = SettingsBackup(prefs.themeMode, prefs.showFurigana, prefs.reviewSettings, ReminderBackup.from(prefs.reminderSettings)),
-        )
-        val text = BackupCodec.encode(data, clock.millis(), appVersion)
-        val written = withContext(Dispatchers.IO) {
-            try {
+        val settings = SettingsBackup(prefs.themeMode, prefs.showFurigana, prefs.reviewSettings, ReminderBackup.from(prefs.reminderSettings))
+        val counts = mutableMapOf<BackupSection, Int>()
+        val failure: BackupIssueCode? = try {
+            withContext(Dispatchers.IO) {
                 // "wt": truncate, so overwriting a longer existing file leaves no trailing bytes.
-                context.contentResolver.openOutputStream(documentUri.toUri(), "wt")?.use { it.write(text.toByteArray(Charsets.UTF_8)) } != null
-            } catch (e: IOException) {
-                false
-            } catch (e: SecurityException) {
-                false
+                val stream = context.contentResolver.openOutputStream(documentUri.toUri(), "wt") ?: return@withContext BackupIssueCode.WRITE_ERROR
+                stream.bufferedWriter(Charsets.UTF_8).use { out ->
+                    val writer = BackupCodec.Writer(out, clock.millis(), appVersion)
+                    var records = 0
+                    dao.export(
+                        onBase = { base ->
+                            writer.begin(settings, base.progress, base.marks, base.sessions)
+                            BackupSection.entries.forEach { counts[it] = base.count(it) }
+                        },
+                        onRecords = { page ->
+                            page.forEach(writer::record)
+                            records += page.size
+                        },
+                    )
+                    writer.end()
+                    counts[BackupSection.REVIEW_RECORDS] = records
+                }
+                null
             }
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: IOException) {
+            BackupIssueCode.WRITE_ERROR
+        } catch (e: SecurityException) {
+            BackupIssueCode.WRITE_ERROR
+        } catch (e: Exception) {
+            BackupIssueCode.DATABASE_ERROR
         }
-        if (!written) return ExportResult(false, issues = listOf(BackupIssue(IssueSeverity.FATAL, BackupIssueCode.WRITE_ERROR)))
-        return ExportResult(true, counts = BackupSection.entries.associateWith { data.count(it) })
+        if (failure != null) {
+            // The file may be incomplete; it is not a backup anyone should restore later.
+            withContext(Dispatchers.IO) { runCatching { DocumentsContract.deleteDocument(context.contentResolver, documentUri.toUri()) } }
+            return ExportResult(false, issues = listOf(BackupIssue(IssueSeverity.FATAL, failure)))
+        }
+        return ExportResult(true, counts = counts)
     }
 
     override suspend fun inspect(documentUri: String): InspectResult {
-        val bytes = withContext(Dispatchers.IO) {
-            try {
-                context.contentResolver.openInputStream(documentUri.toUri())?.use { it.readUpTo(MAX_BYTES + 1) }
-            } catch (e: IOException) {
-                null
-            } catch (e: SecurityException) {
-                null
+        val decoded = try {
+            withContext(Dispatchers.IO) {
+                val stream = context.contentResolver.openInputStream(documentUri.toUri()) ?: return@withContext null
+                LimitedInputStream(stream, MAX_BYTES).use { BackupCodec.decode(it) }
             }
+        } catch (e: TooLargeException) {
+            return rejected(BackupIssueCode.TOO_LARGE, "${MAX_BYTES / (1024 * 1024)} MB")
+        } catch (e: IOException) {
+            null
+        } catch (e: SecurityException) {
+            null
         } ?: return rejected(BackupIssueCode.READ_ERROR)
-        if (bytes.size > MAX_BYTES) return rejected(BackupIssueCode.TOO_LARGE, "${MAX_BYTES / (1024 * 1024)} MB")
-        return inspectText(bytes.toString(Charsets.UTF_8))
+        return preview(decoded)
     }
 
     /** Checks [text] and plans the merge against the current database. */
-    suspend fun inspectText(text: String): InspectResult {
-        val decoded = withContext(Dispatchers.Default) { BackupCodec.decode(text) }
+    suspend fun inspectText(text: String): InspectResult = preview(withContext(Dispatchers.Default) { BackupCodec.decode(text) })
+
+    private suspend fun preview(decoded: BackupCodec.Decoded): InspectResult {
         val ok = when (decoded) {
             is BackupCodec.Decoded.Rejected -> return InspectResult.Rejected(decoded.issues)
             is BackupCodec.Decoded.Ok -> decoded
@@ -145,19 +172,27 @@ class AndroidBackupRepository(
     private fun rejected(code: BackupIssueCode, detail: String? = null) =
         InspectResult.Rejected(listOf(BackupIssue(IssueSeverity.FATAL, code, detail = detail)))
 
-    private fun InputStream.readUpTo(limit: Int): ByteArray {
-        val buffer = ByteArrayOutputStream()
-        val chunk = ByteArray(DEFAULT_BUFFER_SIZE)
-        while (buffer.size() < limit) {
-            val read = read(chunk, 0, minOf(chunk.size, limit - buffer.size()))
-            if (read < 0) break
-            buffer.write(chunk, 0, read)
-        }
-        return buffer.toByteArray()
-    }
-
     companion object {
-        /** About 300 000 answers; far above years of daily study. */
-        const val MAX_BYTES = 64 * 1024 * 1024
+        /**
+         * Files are read as a stream, so this only guards against picking a wrong, huge file.
+         * 300 000 answers (about two years at 400 a day) take roughly 75 MB.
+         */
+        const val MAX_BYTES = 256L * 1024 * 1024
+    }
+}
+
+private class TooLargeException : IOException()
+
+/** Fails with [TooLargeException] once more than [limit] bytes have been read. */
+private class LimitedInputStream(input: InputStream, private val limit: Long) : FilterInputStream(input) {
+    private var count = 0L
+
+    override fun read(): Int = super.read().also { if (it >= 0) add(1) }
+
+    override fun read(b: ByteArray, off: Int, len: Int): Int = super.read(b, off, len).also { if (it > 0) add(it.toLong()) }
+
+    private fun add(n: Long) {
+        count += n
+        if (count > limit) throw TooLargeException()
     }
 }

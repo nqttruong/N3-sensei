@@ -20,7 +20,7 @@ import java.time.Instant
 class OfflineAnalyticsRepository(private val dao: AnalyticsDao) : AnalyticsRepository {
 
     override fun observeActivity(from: Instant?, to: Instant): Flow<ActivityTotals> =
-        dao.observeActivity(from?.toEpochMilli(), to.toEpochMilli()).map { r ->
+        dao.observeActivity(from.orAllTime(), to.toEpochMilli()).map { r ->
             ActivityTotals(
                 answers = r.answers,
                 distinctItems = r.distinctItems,
@@ -59,7 +59,7 @@ class OfflineAnalyticsRepository(private val dao: AnalyticsDao) : AnalyticsRepos
         }
 
     override fun observeAnswersByType(from: Instant?, to: Instant): Flow<Map<ItemType, Int>> =
-        dao.observeAnswersByType(from?.toEpochMilli(), to.toEpochMilli()).map { rows ->
+        dao.observeAnswersByType(from.orAllTime(), to.toEpochMilli()).map { rows ->
             val counts = rows.associate { it.itemType to it.count }
             ItemType.entries.associateWith { counts[it] ?: 0 }
         }
@@ -73,9 +73,12 @@ class OfflineAnalyticsRepository(private val dao: AnalyticsDao) : AnalyticsRepos
         dao.observeSchedule().map { rows -> rows.map { ScheduledItem(it.stepIndex, Instant.ofEpochMilli(it.dueAt)) } }
 
     override fun observeTroubleItems(from: Instant?, to: Instant, limit: Int): Flow<List<TroubleItem>> =
-        dao.observeTroubleItems(from?.toEpochMilli(), to.toEpochMilli(), limit).map { rows ->
+        dao.observeTroubleItems(from.orAllTime(), to.toEpochMilli(), limit).map { rows ->
             rows.mapNotNull { r ->
                 r.label?.let { TroubleItem(ItemRef(r.itemType, r.itemId), it, r.again, r.hard, Instant.ofEpochMilli(r.lastAt)) }
             }
         }
 }
+
+/** "No lower bound" as a value, so the SQL keeps a plain indexed range. */
+private fun Instant?.orAllTime(): Long = this?.toEpochMilli() ?: Long.MIN_VALUE

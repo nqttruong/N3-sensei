@@ -55,7 +55,7 @@ Người dùng chọn nơi lưu và tệp để khôi phục bằng **Storage Ac
 
 ## Khôi phục
 
-1. **Đọc**: tối đa 64 MB; không đọc được → "Không đọc được tệp".
+1. **Đọc**: dạng stream, từng phần tử một (bộ nhớ tăng theo số bản ghi, không theo kích thước văn bản); tệp tối đa 256 MB (300 000 lượt ôn ≈ 62–75 MB); không đọc được → "Không đọc được tệp". Xuất cũng ghi tuần tự, đọc lịch sử theo trang trong một transaction; lỗi khi xuất thì app thử xóa tệp dở dang.
 2. **Kiểm tra toàn tệp** (lỗi thì từ chối cả tệp, không ghi gì): rỗng, JSON hỏng/cắt cụt, không phải `n3sensei-backup`, thiếu/không hỗ trợ `formatVersion`, thiếu `createdAt` hoặc một trong 4 danh sách.
 3. **Kiểm tra từng bản ghi** (lỗi thì bỏ bản ghi đó, báo vị trí như `progress[3]` và trường lỗi): loại mục, ID (không rỗng, ≤ 200 ký tự), trạng thái, đánh giá, bậc (0–11), số không âm, thời điểm, `answered ≤ planned`. **ID trùng trong tệp** (cùng mục, cùng `requestId`, cùng phiên) → giữ bản đầu tiên. Cài đặt không hợp lệ → không khôi phục cài đặt, dữ liệu vẫn khôi phục.
 4. **Xem trước**: app tính trước sẽ thêm / cập nhật / giữ nguyên bao nhiêu bản ghi mỗi loại, liệt kê lỗi và cảnh báo (vd. mục không có trong nội dung hiện tại). Người dùng chọn có khôi phục cài đặt không, rồi xác nhận hoặc hủy.
@@ -76,6 +76,7 @@ Khôi phục cùng một tệp hai lần không đổi gì. Tiến độ của m
 | Vòng tròn mã hóa/giải mã, database rỗng, tệp rỗng/trắng, JSON hỏng/cắt cụt, không phải sao lưu, phiên bản mới hơn/không hỗ trợ, thiếu trường, bản ghi lỗi bị bỏ kèm vị trí, ID trùng, cài đặt lỗi, giá trị ngoài miền, **tệp v1 cố định** | `BackupCodecTest` (JVM) |
 | Thêm / cập nhật / giữ nguyên, tiến độ mới hơn thắng, trùng theo `requestId` và theo mục+thời điểm+đánh giá, khôi phục hai lần không đổi gì, khi nào tính lại `was_new` | `BackupMergeTest` (JVM) |
 | Luồng xuất / kiểm tra / xem trước / xác nhận / hủy, không làm hai việc cùng lúc | `BackupViewModelTest` (JVM) |
+| 300 000 lượt ôn: xuất, kiểm tra, khôi phục không hết bộ nhớ | `LargeDataPerformanceTest` (emulator) |
 | Room thật + tệp thật: vòng tròn **khớp từng dòng** (tiến độ, lịch sử gồm `was_new`, đánh dấu, phiên) và cài đặt; không chọn cài đặt; khôi phục hai lần; xung đột giữa hai máy; **lỗi giữa transaction** (trigger SQLite) → rollback; tệp hỏng/rỗng/không tồn tại; ghi tệp lỗi; tệp v1 cố định; database rỗng | `BackupRepositoryTest` (emulator) |
 | Giao diện: xuất → xóa dữ liệu → khôi phục qua màn hình Cài đặt (trình chọn tệp được giả lập bằng Espresso-Intents), hủy xem trước, tệp hỏng | `BackupEndToEndTest` (emulator) |
 

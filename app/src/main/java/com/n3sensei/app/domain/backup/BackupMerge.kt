@@ -10,7 +10,10 @@ data class RecordKey(val ref: ItemRef, val reviewedAt: Long, val rating: ReviewR
 data class LocalKeys(
     val progressUpdatedAt: Map<ItemRef, Long> = emptyMap(),
     val requestIds: Set<String> = emptySet(),
+    /** Answers stored without a request id (recorded before database v3). */
     val recordKeys: Set<RecordKey> = emptySet(),
+    /** Items with at least one stored answer. */
+    val itemsWithHistory: Set<ItemRef> = emptySet(),
     val marks: Set<ItemRef> = emptySet(),
     val sessionIds: Set<String> = emptySet(),
 )
@@ -53,7 +56,6 @@ object BackupMerge {
             val present = (r.requestId != null && r.requestId in local.requestIds) || RecordKey(r.ref, r.reviewedAt, r.rating) in local.recordKeys
             !present
         }
-        val localHistory = local.recordKeys.mapTo(HashSet()) { it.ref }
         val marks = data.marks.filter { it.ref !in local.marks }
         val sessions = data.sessions.filter { it.id !in local.sessionIds }
         return MergePlan(
@@ -61,7 +63,7 @@ object BackupMerge {
             recordsToAdd = records,
             marksToAdd = marks,
             sessionsToAdd = sessions,
-            itemsToRecompute = records.mapTo(HashSet()) { it.ref }.filterTo(HashSet()) { it in localHistory },
+            itemsToRecompute = records.mapTo(HashSet()) { it.ref }.filterTo(HashSet()) { it in local.itemsWithHistory },
             counts = mapOf(
                 BackupSection.PROGRESS to MergeCount(added, updated, data.progress.size - added - updated),
                 BackupSection.REVIEW_RECORDS to MergeCount(records.size, 0, data.reviewRecords.size - records.size),

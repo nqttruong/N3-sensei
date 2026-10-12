@@ -33,7 +33,7 @@ Mã nguồn: `domain/analytics/` (quy tắc, Kotlin thuần), `data/local/dao/An
 
 ## Hiệu năng
 
-Mọi phép đếm chạy trong SQLite (`COUNT`, `COUNT(DISTINCT …)`, `SUM(CASE …)`, `GROUP BY`) trên chỉ mục `review_records(reviewed_at)`; không tải lịch sử lên bộ nhớ. Theo ngày và chuỗi ngày: SQL gom câu trả lời theo **khối 15 phút căn theo UTC** (`reviewed_at / 900000`), Kotlin quy các khối ra ngày địa phương. Vì mọi độ lệch múi giờ thực tế là bội số của 15 phút (kể cả +05:30, +05:45), một khối không bao giờ vắt qua nửa đêm địa phương. Số dòng trả về tối đa 96 mỗi ngày có học, thay vì một dòng mỗi câu trả lời.
+Mọi phép đếm chạy trong SQLite (`COUNT`, `COUNT(DISTINCT …)`, `SUM(CASE …)`, `GROUP BY`) trên chỉ mục `review_records(reviewed_at)`; không tải lịch sử lên bộ nhớ. Điều kiện "mục còn trong nội dung" là một tập `item_type:item_id IN (…)` để SQLite giữ dùng chỉ mục thời gian, và khoảng thời gian luôn có cận dưới ("Tất cả" = `Long.MIN_VALUE`); xem [QA.md](QA.md) cho số đo với 300 000 lượt. Theo ngày và chuỗi ngày: SQL gom câu trả lời theo **khối 15 phút căn theo UTC** (`reviewed_at / 900000`), Kotlin quy các khối ra ngày địa phương. Vì mọi độ lệch múi giờ thực tế là bội số của 15 phút (kể cả +05:30, +05:45), một khối không bao giờ vắt qua nửa đêm địa phương. Số dòng trả về tối đa 96 mỗi ngày có học, thay vì một dòng mỗi câu trả lời.
 
 ## Liên kết
 
