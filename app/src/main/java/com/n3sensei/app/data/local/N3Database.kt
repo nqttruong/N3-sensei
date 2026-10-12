@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import androidx.sqlite.db.framework.FrameworkSQLiteOpenHelperFactory
 import com.n3sensei.app.data.local.dao.AnalyticsDao
 import com.n3sensei.app.data.local.dao.BackupDao
 import com.n3sensei.app.data.local.dao.ContentDao
@@ -65,10 +66,15 @@ abstract class N3Database : RoomDatabase() {
         const val VERSION = 4
         const val NAME = "n3sensei.db"
 
-        /** The production database. Called once by the app container. */
-        fun create(context: Context, name: String = NAME): N3Database =
+        /**
+         * The production database. Called once by the app container.
+         *
+         * @param onCorruption runs before a corrupt file is deleted and recreated (see [CorruptionAwareOpenHelperFactory]).
+         */
+        fun create(context: Context, name: String = NAME, onCorruption: (path: String?) -> Unit = {}): N3Database =
             Room.databaseBuilder(context.applicationContext, N3Database::class.java, name)
                 .addMigrations(*N3Migrations.ALL)
+                .openHelperFactory(CorruptionAwareOpenHelperFactory(FrameworkSQLiteOpenHelperFactory(), onCorruption))
                 .build()
     }
 }

@@ -2,13 +2,15 @@ package com.n3sensei.app.app
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.n3sensei.app.domain.integrity.DatabaseRecoveryRepository
+import com.n3sensei.app.domain.integrity.DatabaseResetNotice
 import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.domain.reminder.ReminderScheduler
 import com.n3sensei.app.domain.repository.ContentImportRepository
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
 import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
@@ -17,7 +19,13 @@ class MainViewModel(
     private val preferencesRepository: UserPreferencesRepository,
     contentImportRepository: ContentImportRepository,
     reminderScheduler: ReminderScheduler,
+    private val databaseRecovery: DatabaseRecoveryRepository,
 ) : ViewModel() {
+
+    /** Shown once after a corrupt database had to be recreated; see [DatabaseRecoveryRepository]. */
+    val databaseResetNotice: StateFlow<DatabaseResetNotice?> = databaseRecovery.notice
+
+    fun dismissDatabaseResetNotice() = databaseRecovery.dismiss()
 
     init {
         // Installs or upgrades the pack shipped with the app; a no-op when already current.

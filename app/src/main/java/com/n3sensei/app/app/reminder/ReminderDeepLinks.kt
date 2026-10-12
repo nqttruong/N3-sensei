@@ -7,8 +7,11 @@ import androidx.core.net.toUri
 import com.n3sensei.app.MainActivity
 
 /**
- * Deep links into the app. They are only matched by the navigation graph of our own activity
- * (explicit intents); no intent filter is exported, so other apps cannot use them.
+ * Deep links into the app, matched by the navigation graph of [MainActivity]. There is no
+ * intent filter for them, so they never appear as links in other apps or the browser; but
+ * MainActivity is exported (it is the launcher), so another app *can* send an explicit intent
+ * with such a link. That only opens the read-only word card; unknown or malformed ids show
+ * "not found" (checked with adb, see docs/SECURITY.md).
  */
 object ReminderDeepLinks {
     const val VOCABULARY_BASE = "n3sensei://vocabulary"

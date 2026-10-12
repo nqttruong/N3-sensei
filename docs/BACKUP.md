@@ -73,7 +73,7 @@ Khôi phục cùng một tệp hai lần không đổi gì. Tiến độ của m
 
 | Nội dung | Test |
 |---|---|
-| Vòng tròn mã hóa/giải mã, database rỗng, tệp rỗng/trắng, JSON hỏng/cắt cụt, không phải sao lưu, phiên bản mới hơn/không hỗ trợ, thiếu trường, bản ghi lỗi bị bỏ kèm vị trí, ID trùng, cài đặt lỗi, giá trị ngoài miền, **tệp v1 cố định** | `BackupCodecTest` (JVM) |
+| Vòng tròn ghi/đọc định dạng (encode/decode), database rỗng, tệp rỗng/trắng, JSON hỏng/cắt cụt, không phải sao lưu, phiên bản mới hơn/không hỗ trợ, thiếu trường, bản ghi lỗi bị bỏ kèm vị trí, ID trùng, cài đặt lỗi, giá trị ngoài miền, **tệp v1 cố định** | `BackupCodecTest` (JVM) |
 | Thêm / cập nhật / giữ nguyên, tiến độ mới hơn thắng, trùng theo `requestId` và theo mục+thời điểm+đánh giá, khôi phục hai lần không đổi gì, khi nào tính lại `was_new` | `BackupMergeTest` (JVM) |
 | Luồng xuất / kiểm tra / xem trước / xác nhận / hủy, không làm hai việc cùng lúc | `BackupViewModelTest` (JVM) |
 | 300 000 lượt ôn: xuất, kiểm tra, khôi phục không hết bộ nhớ | `LargeDataPerformanceTest` (emulator) |

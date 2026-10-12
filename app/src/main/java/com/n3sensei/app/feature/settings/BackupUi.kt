@@ -49,6 +49,12 @@ fun BackupSettingsSection(state: BackupUiState, onExport: () -> Unit, onRestore:
         color = MaterialTheme.colorScheme.onSurfaceVariant,
         modifier = Modifier.padding(horizontal = 16.dp),
     )
+    Text(
+        stringResource(R.string.privacy_data_on_device),
+        style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+    )
     val working = (state as? BackupUiState.Working)?.action
     BackupAction(R.string.backup_export, R.string.backup_export_description, working == BackupAction.EXPORT, working == null, onExport)
     BackupAction(

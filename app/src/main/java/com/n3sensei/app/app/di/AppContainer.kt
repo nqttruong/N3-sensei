@@ -1,22 +1,24 @@
 package com.n3sensei.app.app.di
 
 import android.content.Context
-import com.n3sensei.app.data.backup.AndroidBackupRepository
-import com.n3sensei.app.domain.backup.BackupRepository
 import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.preferencesDataStoreFile
-import com.n3sensei.app.data.importing.AndroidContentImportRepository
-import com.n3sensei.app.data.importing.ContentPackImporter
-import com.n3sensei.app.data.local.N3Database
 import com.n3sensei.app.app.reminder.AndroidReminderNotifier
 import com.n3sensei.app.app.reminder.WorkManagerReminderScheduler
+import com.n3sensei.app.data.backup.AndroidBackupRepository
+import com.n3sensei.app.data.importing.AndroidContentImportRepository
+import com.n3sensei.app.data.importing.ContentPackImporter
+import com.n3sensei.app.data.local.DatabaseCorruptionRecorder
+import com.n3sensei.app.data.local.N3Database
 import com.n3sensei.app.data.preferences.DataStoreReminderStateStore
 import com.n3sensei.app.data.preferences.DataStoreUserPreferencesRepository
 import com.n3sensei.app.data.repository.OfflineAnalyticsRepository
 import com.n3sensei.app.data.repository.OfflineContentRepository
 import com.n3sensei.app.data.repository.OfflineProgressRepository
 import com.n3sensei.app.data.repository.OfflineReviewSessionRepository
+import com.n3sensei.app.domain.backup.BackupRepository
 import com.n3sensei.app.domain.forecast.ReviewSessionRepository
+import com.n3sensei.app.domain.integrity.DatabaseRecoveryRepository
 import com.n3sensei.app.domain.reminder.ReminderNotifier
 import com.n3sensei.app.domain.reminder.ReminderRunner
 import com.n3sensei.app.domain.reminder.ReminderScheduler
@@ -25,6 +27,7 @@ import com.n3sensei.app.domain.repository.ContentImportRepository
 import com.n3sensei.app.domain.repository.ContentRepository
 import com.n3sensei.app.domain.repository.ProgressRepository
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
+import java.io.File
 import java.time.Clock
 
 /**
@@ -39,6 +42,7 @@ interface AppContainer {
     val userPreferencesRepository: UserPreferencesRepository
     val contentImportRepository: ContentImportRepository
     val backupRepository: BackupRepository
+    val databaseRecoveryRepository: DatabaseRecoveryRepository
     val reminderScheduler: ReminderScheduler
     val reminderNotifier: ReminderNotifier
     val reminderRunner: ReminderRunner
@@ -52,7 +56,11 @@ class DefaultAppContainer(context: Context) : AppContainer {
     private val appContext = context.applicationContext
 
     /** Opened lazily: Room only touches the disk on the first query. Internal for tests. */
-    internal val database: N3Database by lazy { N3Database.create(appContext) }
+    internal val databaseRecovery by lazy { DatabaseCorruptionRecorder(File(appContext.noBackupFilesDir, "database-recovery")) }
+
+    override val databaseRecoveryRepository: DatabaseRecoveryRepository get() = databaseRecovery
+
+    internal val database: N3Database by lazy { N3Database.create(appContext, onCorruption = databaseRecovery::record) }
 
     override val contentRepository: ContentRepository by lazy {
         OfflineContentRepository(database.contentDao(), database.contentPackDao())

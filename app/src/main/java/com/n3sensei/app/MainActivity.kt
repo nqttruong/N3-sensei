@@ -17,7 +17,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            N3SenseiRoot(viewModel = appViewModel { MainViewModel(userPreferencesRepository, contentImportRepository, reminderScheduler) })
+            N3SenseiRoot(viewModel = appViewModel { MainViewModel(userPreferencesRepository, contentImportRepository, reminderScheduler, databaseRecoveryRepository) })
         }
     }
 

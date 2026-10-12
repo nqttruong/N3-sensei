@@ -31,6 +31,8 @@ object AppTestState {
     ) = runBlocking {
         container.androidContentImportRepository.bundledContentEnabled = bundledContent
         container.database.clearAllTables()
+        // A notice left by an earlier corrupt-database run would cover every screen.
+        container.databaseRecovery.dismiss()
         if (seedContent) container.database.contentPackDao().replacePack(SeedData.bundle(isSeed = !seedCountsAsRealContent))
         with(container.userPreferencesRepository) {
             setOnboardingCompleted(onboardingCompleted)

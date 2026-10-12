@@ -36,6 +36,7 @@ import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonNull
 import kotlinx.serialization.json.decodeFromStream
 import java.io.BufferedInputStream
+import java.io.FilterInputStream
 import java.io.InputStream
 
 /** Backup file ⇄ [BackupData], with every check needed before anything is written. */
@@ -122,10 +123,11 @@ object BackupCodec {
      */
     @OptIn(ExperimentalSerializationApi::class)
     fun decode(input: InputStream): Decoded {
-        val stream = BufferedInputStream(input)
-        if (isBlank(stream)) return reject(BackupIssueCode.EMPTY_FILE)
+        val stream = BufferedInputStream(NestingLimitedInputStream(input, MAX_NESTING))
         val reader = Reader()
         val raw = try {
+            // Reading ahead for the blank check may already hit the nesting limit.
+            if (isBlank(stream)) return reject(BackupIssueCode.EMPTY_FILE)
             json.decodeFromStream(RawBackupDeserializer(reader), stream)
         } catch (e: SerializationException) {
             return reject(BackupIssueCode.INVALID_JSON, detail = e.message?.take(MAX_DETAIL))
@@ -418,4 +420,39 @@ object BackupCodec {
 
     private const val MAX_DETAIL = 300
     private const val MAX_LEADING_BLANK = 4096
+
+    /** A real backup nests 4 levels deep; anything far deeper is hostile or broken. */
+    const val MAX_NESTING = 32
+}
+
+/**
+ * Rejects JSON nested deeper than [maxDepth] while it is read. Entries are parsed into JSON
+ * trees recursively, so a file with thousands of nested brackets would otherwise overflow the
+ * stack (a StackOverflowError, which the import code cannot catch) instead of being reported.
+ * Brackets inside strings are ignored; UTF-8 multi-byte sequences never contain ASCII bytes.
+ */
+internal class NestingLimitedInputStream(input: InputStream, private val maxDepth: Int) : FilterInputStream(input) {
+    private var depth = 0
+    private var inString = false
+    private var escaped = false
+
+    override fun read(): Int = super.read().also { if (it >= 0) track(it) }
+
+    override fun read(b: ByteArray, off: Int, len: Int): Int = super.read(b, off, len).also { n ->
+        for (i in off until off + maxOf(n, 0)) track(b[i].toInt() and 0xFF)
+    }
+
+    // mark/reset are not supported, so every byte is seen exactly once.
+    override fun markSupported(): Boolean = false
+
+    private fun track(byte: Int) {
+        when {
+            escaped -> escaped = false
+            inString && byte == '\\'.code -> escaped = true
+            byte == '"'.code -> inString = !inString
+            inString -> Unit
+            byte == '['.code || byte == '{'.code -> if (++depth > maxDepth) throw SerializationException("JSON nested deeper than $maxDepth levels")
+            byte == ']'.code || byte == '}'.code -> depth--
+        }
+    }
 }
