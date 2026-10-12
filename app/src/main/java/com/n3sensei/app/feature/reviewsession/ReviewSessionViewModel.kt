@@ -3,10 +3,10 @@ package com.n3sensei.app.feature.reviewsession
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.n3sensei.app.core.ui.state.UiState
+import com.n3sensei.app.domain.forecast.ReviewSessionRepository
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.LearningProgress
 import com.n3sensei.app.domain.model.ReviewRating
-import com.n3sensei.app.domain.forecast.ReviewSessionRepository
 import com.n3sensei.app.domain.practice.PracticeItem
 import com.n3sensei.app.domain.practice.PracticeResult
 import com.n3sensei.app.domain.repository.ContentRepository
@@ -27,6 +27,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import java.time.Clock
 import java.time.Duration
+import java.time.Instant
 import java.util.UUID
 
 /** One card of the session. [requestId] is fixed per card, so a retry cannot double-record. */
@@ -37,7 +38,30 @@ data class SessionCard(
     val requestId: String,
     /** Interval each answer would give, for the button labels. */
     val hints: Map<ReviewRating, ReviewInterval>,
+    /** Why this card is in the session, shown above the card. */
+    val reason: CardReason,
 )
+
+/** Why a card is in today's session. */
+sealed interface CardReason {
+    /** Never answered; part of today's new-item limit. */
+    data object New : CardReason
+
+    /**
+     * Its stored due time has passed.
+     *
+     * @param step 1-based ladder step, of [steps].
+     * @param overdue due before local midnight today.
+     */
+    data class Due(val dueAt: Instant, val step: Int, val steps: Int, val lapses: Int, val overdue: Boolean) : CardReason
+
+    companion object {
+        fun of(progress: LearningProgress?, steps: Int, startOfToday: Instant): CardReason {
+            val due = progress?.dueAt ?: return New
+            return Due(due, minOf(progress.stepIndex, steps - 1) + 1, steps, progress.lapseCount, due.isBefore(startOfToday))
+        }
+    }
+}
 
 data class ReviewSessionUiState(
     val cards: List<SessionCard>,
@@ -110,7 +134,11 @@ class ReviewSessionViewModel(
         val cards = queue.mapNotNull { ref ->
             val item = contentRepository.getPracticeItem(ref) ?: run { missing++; return@mapNotNull null }
             val progress = progressRepository.getProgress(ref)
-            SessionCard(ref, item, progress, newRequestId(), ReviewRating.entries.associateWith { scheduler.preview(progress, it) })
+            SessionCard(
+                ref, item, progress, newRequestId(),
+                hints = ReviewRating.entries.associateWith { scheduler.preview(progress, it) },
+                reason = CardReason.of(progress, settings.ladder.size, ReviewTime.startOfDay(now, zone)),
+            )
         }
         if (cards.isEmpty()) return UiState.Empty
         // Recorded for the dashboard's session history; a reload starts a new session.

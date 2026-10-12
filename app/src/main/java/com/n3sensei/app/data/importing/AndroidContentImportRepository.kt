@@ -3,7 +3,9 @@ package com.n3sensei.app.data.importing
 import android.content.Context
 import android.util.Log
 import androidx.core.net.toUri
+import com.n3sensei.app.domain.importing.ImportCheck
 import com.n3sensei.app.domain.importing.ImportOutcome
+import com.n3sensei.app.domain.importing.ImportPreview
 import com.n3sensei.app.domain.importing.ImportReport
 import com.n3sensei.app.domain.importing.IssueCode
 import com.n3sensei.app.domain.repository.ContentImportRepository
@@ -23,7 +25,7 @@ class AndroidContentImportRepository(
     @Volatile
     internal var bundledContentEnabled: Boolean = true
 
-    override suspend fun importDocument(documentUri: String): ImportReport {
+    override suspend fun checkDocument(documentUri: String): ImportCheck {
         val bytes = withContext(Dispatchers.IO) {
             try {
                 context.contentResolver.openInputStream(documentUri.toUri())?.use { it.readUpTo(MAX_BYTES + 1) }
@@ -32,12 +34,14 @@ class AndroidContentImportRepository(
             } catch (e: SecurityException) {
                 null
             }
-        } ?: return ContentPackImporter.failed(IssueCode.READ_ERROR, documentUri)
+        } ?: return ImportCheck.Failed(ContentPackImporter.failed(IssueCode.READ_ERROR, documentUri))
         if (bytes.size > MAX_BYTES) {
-            return ContentPackImporter.failed(IssueCode.READ_ERROR, documentUri, "> ${MAX_BYTES / (1024 * 1024)} MB")
+            return ImportCheck.Failed(ContentPackImporter.failed(IssueCode.READ_ERROR, documentUri, "> ${MAX_BYTES / (1024 * 1024)} MB"))
         }
-        return importer.import(bytes.toString(Charsets.UTF_8))
+        return importer.check(bytes.toString(Charsets.UTF_8))
     }
+
+    override suspend fun importChecked(preview: ImportPreview): ImportReport = importer.import(preview.source)
 
     override suspend fun installBundledContent(): ImportReport {
         if (!bundledContentEnabled) return ImportReport(ImportOutcome.UP_TO_DATE)

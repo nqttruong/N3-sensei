@@ -66,7 +66,7 @@ Thứ tự trong mảng là thứ tự hiển thị. Trường không có trong 
 
 - ID là khóa ổn định: tiến độ học và đánh dấu của người học gắn với `(loại, id)`. **Không đổi ID** của một mục khi cập nhật gói, nếu không tiến độ của mục đó sẽ không còn khớp.
 - Nhập lại một gói có cùng `pack.id` sẽ **thay thế toàn bộ** nội dung của gói đó trong một transaction. Tiến độ và đánh dấu không bị đụng tới.
-- Gói đi kèm app chỉ được cài khi chưa có hoặc `version` lớn hơn bản đã cài. Tệp người dùng chọn luôn được nhập; nếu phiên bản cũ hơn bản đã cài, báo cáo có cảnh báo.
+- Gói đi kèm app chỉ được cài khi chưa có hoặc `version` lớn hơn bản đã cài. Tệp người dùng chọn được **kiểm tra trước** (không ghi gì): gói mới thì nhập ngay; gói **thay thế** bản đang cài thì app hiện phiên bản cũ → mới, số mục mỗi loại, số mục sẽ bị gỡ (và bao nhiêu trong đó người học đã học), lỗi/cảnh báo, và chỉ nhập khi người dùng bấm "Thay thế". Phiên bản cũ hơn bản đã cài có cảnh báo.
 
 ## Kiểm tra khi nhập
 

@@ -3,11 +3,8 @@ package com.n3sensei.app.feature.stats
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -15,7 +12,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.ElevatedCard
@@ -28,6 +27,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -43,6 +43,7 @@ import com.n3sensei.app.core.designsystem.component.SectionHeader
 import com.n3sensei.app.core.designsystem.component.StackSegment
 import com.n3sensei.app.core.designsystem.component.StackedBar
 import com.n3sensei.app.core.designsystem.theme.japanese
+import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.content.StatItem
 import com.n3sensei.app.core.ui.content.labelRes
 import com.n3sensei.app.core.ui.state.UiStateContent
@@ -53,8 +54,8 @@ import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.domain.model.ReviewRating
-import java.time.format.DateTimeFormatter
 import kotlin.math.roundToInt
+import java.time.format.DateTimeFormatter
 
 @Composable
 fun StatsScreen(
@@ -300,7 +301,7 @@ private fun TroubleCard(ui: StatsUiState, onOpenItem: (ItemRef) -> Unit) {
         }
         ui.troubleItems.forEach { item ->
             ListItem(
-                headlineContent = { Text(item.label, style = MaterialTheme.typography.titleMedium.japanese()) },
+                headlineContent = { Text(japaneseText(item.label), style = MaterialTheme.typography.titleMedium.japanese()) },
                 supportingContent = { Text(stringResource(R.string.stats_trouble_line, item.again, item.hard)) },
                 modifier = Modifier.clickable(role = Role.Button) { onOpenItem(item.ref) },
             )

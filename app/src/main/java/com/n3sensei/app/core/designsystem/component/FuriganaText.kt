@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.isSpecified
 import com.n3sensei.app.core.designsystem.theme.N3SenseiTheme
 import com.n3sensei.app.core.designsystem.theme.japanese
+import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.domain.furigana.Furigana
 
 /** User setting: whether readings are drawn above kanji. Provided at the app root. */
@@ -64,7 +65,7 @@ fun FuriganaText(
         color = MaterialTheme.colorScheme.onSurfaceVariant,
     )
     FlowRow(
-        modifier = modifier.clearAndSetSemantics { text = AnnotatedString(baseText) },
+        modifier = modifier.clearAndSetSemantics { text = japaneseText(baseText) },
         horizontalArrangement = Arrangement.Start,
     ) {
         segments.forEach { segment ->
@@ -77,12 +78,17 @@ fun FuriganaText(
     }
 }
 
+/**
+ * One ruby group (or plain character). Groups normally fit on a line; one wider than the whole
+ * line (a long word given a single reading, large font scale) wraps inside its cell instead
+ * of being cut off at the screen edge.
+ */
 @Composable
 private fun RubyCell(base: String, reading: String?, baseStyle: TextStyle, rubyStyle: TextStyle, color: Color) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         // A blank ruby line keeps plain characters on the same baseline as ruby groups.
-        Text(text = reading ?: " ", style = rubyStyle, maxLines = 1, softWrap = false, textAlign = TextAlign.Center)
-        Text(text = base, style = baseStyle, color = color, maxLines = 1, softWrap = false)
+        Text(text = reading ?: " ", style = rubyStyle, textAlign = TextAlign.Center)
+        Text(text = base, style = baseStyle, color = color, textAlign = TextAlign.Center)
     }
 }
 

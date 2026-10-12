@@ -48,6 +48,7 @@ fun SettingsScreen(
         uri?.let { viewModel.importDocument(it.toString()) }
     }
     (importState as? ImportUiState.Finished)?.let { ImportReportDialog(it.report, viewModel::dismissImportReport) }
+    (importState as? ImportUiState.Confirm)?.let { ReplacePackDialog(it.preview, viewModel::confirmImport, viewModel::dismissImportReport) }
 
     val backupState by backupViewModel.state.collectAsStateWithLifecycle()
     val createBackup = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri ->

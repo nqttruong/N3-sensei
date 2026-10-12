@@ -6,10 +6,14 @@ import com.n3sensei.app.domain.srs.DailyLimits
 data class GoalPart(val done: Int, val target: Int) {
     val fraction: Float get() = if (target == 0) 1f else (done.toFloat() / target).coerceIn(0f, 1f)
     val reached: Boolean get() = done >= target
+    val remaining: Int get() = (target - done).coerceAtLeast(0)
 }
 
 data class DailyGoal(val newItems: GoalPart, val reviews: GoalPart) {
     val reached: Boolean get() = newItems.reached && reviews.reached
+
+    /** Cards a review session started now would hold (same rule as the session queue). */
+    val sessionSize: Int get() = newItems.remaining + reviews.remaining
 }
 
 /**

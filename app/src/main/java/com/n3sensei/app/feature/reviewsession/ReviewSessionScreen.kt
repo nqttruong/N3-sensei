@@ -16,6 +16,8 @@ import com.n3sensei.app.core.ui.content.FlashcardSession
 import com.n3sensei.app.core.ui.content.intervalLabel
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.practice.PracticeResult
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 
 @Composable
 fun ReviewSessionScreen(
@@ -37,7 +39,8 @@ fun ReviewSessionScreen(
         } else if (card != null) {
             val hints = card.hints.mapValues { (_, interval) -> intervalLabel(interval) }
             FlashcardSession(
-                banner = stringResource(R.string.review_session_saved_note),
+                // Said once, on the first card; repeating it on every card only takes room.
+                banner = if (ui.index == 0) stringResource(R.string.review_session_saved_note) else null,
                 position = ui.index,
                 total = ui.cards.size,
                 item = card.item,
@@ -46,6 +49,7 @@ fun ReviewSessionScreen(
                 onRate = viewModel::rate,
                 ratingHints = hints,
                 ratingEnabled = !ui.isSubmitting,
+                subtitle = reasonText(card.reason),
                 footer = {
                     if (ui.saveFailed) {
                         Text(
@@ -59,5 +63,17 @@ fun ReviewSessionScreen(
                 },
             )
         }
+    }
+}
+
+private val dueFormat = DateTimeFormatter.ofPattern("HH:mm dd/MM")
+
+@Composable
+private fun reasonText(reason: CardReason): String = when (reason) {
+    CardReason.New -> stringResource(R.string.review_reason_new)
+    is CardReason.Due -> {
+        val time = reason.dueAt.atZone(ZoneId.systemDefault()).format(dueFormat)
+        val base = stringResource(if (reason.overdue) R.string.review_reason_overdue else R.string.review_reason_due, time, reason.step, reason.steps)
+        if (reason.lapses > 0) stringResource(R.string.review_reason_with_lapses, base, reason.lapses) else base
     }
 }

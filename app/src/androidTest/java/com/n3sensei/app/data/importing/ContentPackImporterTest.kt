@@ -6,6 +6,7 @@ import com.n3sensei.app.data.local.N3Database
 import com.n3sensei.app.data.local.entity.ItemMarkEntity
 import com.n3sensei.app.data.local.entity.LearningProgressEntity
 import com.n3sensei.app.data.repository.OfflineContentRepository
+import com.n3sensei.app.domain.importing.ImportCheck
 import com.n3sensei.app.domain.importing.ImportOutcome
 import com.n3sensei.app.domain.importing.ImportRecordType
 import com.n3sensei.app.domain.importing.IssueCode
@@ -16,9 +17,11 @@ import com.n3sensei.app.testing.countRows
 import com.n3sensei.app.testing.inMemoryDatabase
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
+import org.json.JSONObject
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
@@ -95,6 +98,34 @@ class ContentPackImporterTest {
         assertEquals(3, progress.get(ItemType.KANJI, "illus-l01-k01")!!.reviewCount)
         val marked = content.observeVocabularyItems(ItemQuery(markedOnly = true)).first()
         assertEquals(listOf("illus-l01-v01"), marked.map { it.item.id })
+    }
+
+    @Test
+    fun check_comparesWithInstalledVersion_andWritesNothing() = runTest {
+        // New pack: nothing installed, nothing removed.
+        val fresh = (importer.check(bundledJson) as ImportCheck.Ready).preview
+        assertNull(fresh.installedVersion)
+        assertEquals(0, fresh.removedItems)
+        assertTrue(content.observeVocabularyItems(ItemQuery()).first().isEmpty())
+
+        importer.import(bundledJson)
+        db.progressDao().upsert(LearningProgressEntity(ItemType.VOCABULARY, "illus-l01-v01", ProgressState.REVIEW, 2, 1440, 5, 4, 3, 0, 1, 4))
+        // Version 2 drops the first two words.
+        val json = JSONObject(bumped(bundledJson, 2))
+        val words = json.getJSONArray("lessons").getJSONObject(0).getJSONArray("vocabulary")
+        repeat(2) { words.remove(0) }
+        val preview = (importer.check(json.toString()) as ImportCheck.Ready).preview
+        assertEquals(1, preview.installedVersion)
+        assertTrue(preview.replacesInstalled)
+        assertEquals(2, preview.removedItems)
+        assertEquals(1, preview.removedWithProgress)
+        // Checking wrote nothing: both words are still installed.
+        assertEquals(30, content.observeVocabularyItems(ItemQuery()).first().size)
+    }
+
+    @Test
+    fun check_ofInvalidPack_fails() = runTest {
+        assertTrue(importer.check("{ not json") is ImportCheck.Failed)
     }
 
     @Test

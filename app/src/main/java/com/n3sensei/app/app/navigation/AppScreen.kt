@@ -16,6 +16,8 @@ enum class AppScreen(
     @StringRes val titleRes: Int,
     val tab: TopLevelDestination,
     val isTabRoot: Boolean,
+    /** A study session: the bottom bar is hidden so the card has the room and the attention. */
+    val isFocusSession: Boolean = false,
 ) {
     HOME(HomeRoute::class, R.string.app_name, TopLevelDestination.HOME, isTabRoot = true),
     LEARN_HUB(LearnHubRoute::class, R.string.learn_title, TopLevelDestination.LEARN, isTabRoot = true),
@@ -27,10 +29,10 @@ enum class AppScreen(
     KANJI_DETAIL(KanjiDetailRoute::class, R.string.kanji_detail_title, TopLevelDestination.LEARN, isTabRoot = false),
     GRAMMAR(GrammarRoute::class, R.string.grammar_title, TopLevelDestination.LEARN, isTabRoot = false),
     GRAMMAR_DETAIL(GrammarDetailRoute::class, R.string.grammar_detail_title, TopLevelDestination.LEARN, isTabRoot = false),
-    PRACTICE(PracticeRoute::class, R.string.practice_title, TopLevelDestination.LEARN, isTabRoot = false),
+    PRACTICE(PracticeRoute::class, R.string.practice_title, TopLevelDestination.LEARN, isTabRoot = false, isFocusSession = true),
     PRACTICE_RESULT(PracticeResultRoute::class, R.string.practice_result_title, TopLevelDestination.LEARN, isTabRoot = false),
     REVIEW(ReviewRoute::class, R.string.review_title, TopLevelDestination.REVIEW, isTabRoot = true),
-    REVIEW_SESSION(ReviewSessionRoute::class, R.string.review_session_title, TopLevelDestination.REVIEW, isTabRoot = false),
+    REVIEW_SESSION(ReviewSessionRoute::class, R.string.review_session_title, TopLevelDestination.REVIEW, isTabRoot = false, isFocusSession = true),
     REVIEW_RESULT(ReviewResultRoute::class, R.string.review_result_title, TopLevelDestination.REVIEW, isTabRoot = false),
     STATS(StatsRoute::class, R.string.stats_title, TopLevelDestination.STATS, isTabRoot = true),
     SETTINGS(SettingsRoute::class, R.string.settings_title, TopLevelDestination.SETTINGS, isTabRoot = true),

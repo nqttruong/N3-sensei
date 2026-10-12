@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.theme.N3SenseiTheme
 import com.n3sensei.app.core.designsystem.theme.japanese
+import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.domain.model.Kanji
 import com.n3sensei.app.domain.model.LearningStatus
 
@@ -44,7 +45,7 @@ fun KanjiCard(
                 modifier = Modifier.size(64.dp),
             ) {
                 Box(contentAlignment = Alignment.Center) {
-                    Text(kanji.character, style = MaterialTheme.typography.displaySmall.japanese())
+                    Text(japaneseText(kanji.character), style = MaterialTheme.typography.displaySmall.japanese())
                 }
             }
             Column(modifier = Modifier.weight(1f)) {

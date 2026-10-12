@@ -73,3 +73,30 @@ data class ImportReport(
     val errorCount: Int get() = issues.count { it.severity != IssueSeverity.WARNING }
     val warningCount: Int get() = issues.count { it.severity == IssueSeverity.WARNING }
 }
+
+/**
+ * A valid pack, checked but not written yet.
+ *
+ * @property installedVersion version currently installed with the same pack id; null for a new pack.
+ * @property removedItems items of the installed version missing from this one: they disappear
+ *   from lessons and lists; progress for them is kept (and shown again if they come back).
+ * @property removedWithProgress how many of [removedItems] the learner has already studied.
+ * @property source the pack text, imported as is on confirmation.
+ */
+data class ImportPreview(
+    val report: ImportReport,
+    val installedVersion: Int?,
+    val removedItems: Int,
+    val removedWithProgress: Int,
+    val source: String,
+) {
+    /** Replacing a pack that is installed: needs an explicit confirmation. */
+    val replacesInstalled: Boolean get() = installedVersion != null
+}
+
+sealed interface ImportCheck {
+    data class Ready(val preview: ImportPreview) : ImportCheck
+
+    /** The pack cannot be imported; [report] says why. Nothing was written. */
+    data class Failed(val report: ImportReport) : ImportCheck
+}

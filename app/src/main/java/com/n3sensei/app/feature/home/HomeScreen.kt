@@ -37,6 +37,7 @@ import com.n3sensei.app.core.designsystem.component.FilterChipRow
 import com.n3sensei.app.core.designsystem.component.FilterOption
 import com.n3sensei.app.core.designsystem.component.InfoBanner
 import com.n3sensei.app.core.designsystem.theme.japanese
+import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.content.StatItem
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.forecast.Confidence
@@ -47,16 +48,17 @@ import com.n3sensei.app.domain.forecast.ProgressEstimator
 import com.n3sensei.app.domain.forecast.TrendUnit
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
+import kotlin.math.roundToInt
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.Locale
-import kotlin.math.roundToInt
 
 /** Dashboard: today's goal, due work, forecasts, trend, progress estimate, sessions. */
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel,
     onOpenReview: () -> Unit,
+    onStartSession: () -> Unit,
     onOpenLessons: () -> Unit,
     onOpenItem: (ItemRef) -> Unit,
     onOpenStats: () -> Unit,
@@ -75,7 +77,7 @@ fun HomeScreen(
                 InfoBanner(stringResource(R.string.common_no_content))
                 OutlinedButton(onClick = onOpenLessons) { Text(stringResource(R.string.dashboard_open_lessons)) }
             }
-            GoalCard(ui, onOpenReview)
+            GoalCard(ui, onStartSession, onOpenReview)
             DueCard(ui, onOpenItem)
             ForecastCard(ui)
             TrendCard(ui, viewModel::selectTrendUnit)
@@ -138,12 +140,18 @@ private fun GoalBar(label: String, part: GoalPart) {
 }
 
 @Composable
-private fun GoalCard(ui: HomeUiState, onOpenReview: () -> Unit) {
+private fun GoalCard(ui: HomeUiState, onStartSession: () -> Unit, onOpenReview: () -> Unit) {
     DashboardCard(R.string.dashboard_goal, estimate = false) {
         GoalBar(stringResource(R.string.dashboard_goal_new, ui.goal.newItems.done, ui.goal.newItems.target), ui.goal.newItems)
         GoalBar(stringResource(R.string.dashboard_goal_reviews, ui.goal.reviews.done, ui.goal.reviews.target), ui.goal.reviews)
         if (ui.goal.reached) Text(stringResource(R.string.dashboard_goal_reached), color = MaterialTheme.colorScheme.tertiary)
-        Button(onClick = onOpenReview, modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.dashboard_start_review)) }
+        // One tap from the home screen into the session when there is something to study.
+        val size = ui.goal.sessionSize
+        if (size > 0) {
+            Button(onClick = onStartSession, modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.review_start, size)) }
+        } else {
+            OutlinedButton(onClick = onOpenReview, modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.dashboard_start_review)) }
+        }
         Note(stringResource(R.string.dashboard_goal_rule))
     }
 }
@@ -162,7 +170,7 @@ private fun DueCard(ui: HomeUiState, onOpenItem: (ItemRef) -> Unit) {
         val zone = ZoneId.systemDefault()
         ui.priority.forEach { item ->
             ListItem(
-                headlineContent = { Text(item.label, style = MaterialTheme.typography.titleMedium.japanese()) },
+                headlineContent = { Text(japaneseText(item.label), style = MaterialTheme.typography.titleMedium.japanese()) },
                 supportingContent = {
                     val due = stringResource(R.string.dashboard_priority_due, item.dueAt.atZone(zone).format(dueFormat))
                     Text(if (item.lapses > 0) "$due · ${stringResource(R.string.dashboard_priority_lapses, item.lapses)}" else due)

@@ -1,8 +1,10 @@
 package com.n3sensei.app.data.importing
 
 import com.n3sensei.app.data.local.dao.ContentPackDao
+import com.n3sensei.app.domain.importing.ImportCheck
 import com.n3sensei.app.domain.importing.ImportIssue
 import com.n3sensei.app.domain.importing.ImportOutcome
+import com.n3sensei.app.domain.importing.ImportPreview
 import com.n3sensei.app.domain.importing.ImportReport
 import com.n3sensei.app.domain.importing.IssueCode
 import com.n3sensei.app.domain.importing.IssueSeverity
@@ -57,8 +59,41 @@ class ContentPackImporter(
         }
     }
 
+    /**
+     * Validates [text] and compares it with the installed pack of the same id, without writing.
+     * The same checks run again in [import] when the user confirms.
+     */
+    suspend fun check(text: String): ImportCheck {
+        val dto = when (val parsed = ContentPackJsonParser.parse(text)) {
+            is ContentPackJsonParser.Result.Parsed -> parsed.dto
+            is ContentPackJsonParser.Result.Invalid -> return ImportCheck.Failed(parsed.report)
+        }
+        val result = ContentPackValidator(importedAt = clock.millis()).validate(dto)
+        val bundle = result.bundle ?: return ImportCheck.Failed(result.report)
+        val installed = packDao.getPack(bundle.pack.id)
+        val versionWarning = installed?.takeIf { it.version > bundle.pack.version }?.let {
+            ImportIssue(IssueSeverity.WARNING, IssueCode.OLDER_VERSION, "pack.version", "${bundle.pack.version} < ${it.version}")
+        }
+        val removed = if (installed == null) {
+            emptyList()
+        } else {
+            val incoming = bundle.vocabulary.map { "VOCABULARY:${it.id}" } + bundle.kanji.map { "KANJI:${it.id}" } + bundle.grammar.map { "GRAMMAR:${it.id}" }
+            packDao.getItemKeys(installed.id) - incoming.toSet()
+        }
+        return ImportCheck.Ready(
+            ImportPreview(
+                report = result.report.copy(issues = result.report.issues + listOfNotNull(versionWarning)),
+                installedVersion = installed?.version,
+                removedItems = removed.size,
+                removedWithProgress = removed.chunked(MAX_SQL_ARGS).sumOf { packDao.countWithProgress(it) },
+                source = text,
+            ),
+        )
+    }
+
     companion object {
         internal const val MAX_DETAIL = 300
+        private const val MAX_SQL_ARGS = 500
 
         fun failed(code: IssueCode, location: String, detail: String? = null) = ImportReport(
             outcome = ImportOutcome.FAILED,

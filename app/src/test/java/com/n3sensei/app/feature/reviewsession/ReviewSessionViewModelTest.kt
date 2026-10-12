@@ -5,16 +5,17 @@ import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ReviewOverview
 import com.n3sensei.app.domain.model.ReviewRating
+import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.domain.srs.DailyLimits
 import com.n3sensei.app.domain.srs.IntervalUnit
 import com.n3sensei.app.domain.srs.ReviewInterval
 import com.n3sensei.app.domain.srs.ReviewSettings
+import com.n3sensei.app.domain.srs.ReviewTime
 import com.n3sensei.app.domain.srs.SubmitReviewUseCase
 import com.n3sensei.app.domain.srs.TodayCounts
-import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.testing.FakeContentRepository
-import com.n3sensei.app.testing.FakeReviewSessionRepository
 import com.n3sensei.app.testing.FakeProgressRepository
+import com.n3sensei.app.testing.FakeReviewSessionRepository
 import com.n3sensei.app.testing.FakeUserPreferencesRepository
 import com.n3sensei.app.testing.MainDispatcherRule
 import com.n3sensei.app.testing.MutableClock
@@ -64,6 +65,22 @@ class ReviewSessionViewModelTest {
         assertEquals(ReviewInterval(20, IntervalUnit.MINUTES), hints[ReviewRating.AGAIN])
         assertEquals(ReviewInterval(1, IntervalUnit.HOURS), hints[ReviewRating.GOOD])
         assertEquals(ReviewInterval(1, IntervalUnit.DAYS), hints[ReviewRating.EASY])
+    }
+
+    @Test
+    fun eachCard_saysWhyItIsInTheSession() {
+        val zone = clock.zone
+        val today = ReviewTime.startOfDay(clock.instant(), zone)
+        val k1 = ItemRef(ItemType.KANJI, "k1")
+        progress.dueItems = listOf(k1, v("v2"))
+        progress.newItems = listOf(v("v1"))
+        progress.progress[k1] = TestContent.progress(k1, stepIndex = 3, dueAt = today.minusSeconds(3_600), lapses = 2) // due yesterday
+        progress.progress[v("v2")] = TestContent.progress(v("v2"), stepIndex = 1, dueAt = today.plusSeconds(60))
+
+        val reasons = viewModel().ui().cards.associate { it.ref.id to it.reason }
+        assertEquals(CardReason.Due(today.minusSeconds(3_600), step = 4, steps = 7, lapses = 2, overdue = true), reasons["k1"])
+        assertEquals(CardReason.Due(today.plusSeconds(60), step = 2, steps = 7, lapses = 0, overdue = false), reasons["v2"])
+        assertEquals(CardReason.New, reasons["v1"])
     }
 
     @Test

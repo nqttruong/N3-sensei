@@ -100,5 +100,14 @@ class ProgressAndTrendTest {
         val done = DailyGoalCalculator.goal(limits, 0, 0, 4, 0)
         assertTrue(done.reached)
         assertEquals(1f, done.newItems.fraction)
+        assertEquals(0, done.sessionSize)
+    }
+
+    @Test
+    fun dailyGoal_sessionSize_isWhatAReviewSessionWouldHoldNow() {
+        val limits = DailyLimits(newPerDay = 20, reviewsPerDay = 50)
+        // 3 new left + min(60 due, 50 − 10 done) = 43, the same rule as the session queue.
+        assertEquals(43, DailyGoalCalculator.goal(limits, newDoneToday = 5, newAvailable = 3, reviewsDoneToday = 10, dueNow = 60).sessionSize)
+        assertEquals(0, DailyGoalCalculator.goal(limits, newDoneToday = 20, newAvailable = 9, reviewsDoneToday = 50, dueNow = 9).sessionSize)
     }
 }

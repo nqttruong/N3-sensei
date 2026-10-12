@@ -11,6 +11,7 @@ import androidx.compose.ui.unit.dp
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.FuriganaText
 import com.n3sensei.app.core.designsystem.theme.japanese
+import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.domain.model.ContentSource
 import com.n3sensei.app.domain.model.ExampleSentence
 
@@ -20,7 +21,7 @@ fun ExampleSentenceItem(example: ExampleSentence, modifier: Modifier = Modifier)
         if (example.furigana != null) {
             FuriganaText(example.furigana, style = MaterialTheme.typography.bodyLarge)
         } else {
-            Text(example.japanese, style = MaterialTheme.typography.bodyLarge.japanese())
+            Text(japaneseText(example.japanese), style = MaterialTheme.typography.bodyLarge.japanese())
         }
         Text(
             example.translationVi,

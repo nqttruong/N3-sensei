@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.theme.N3SenseiTheme
 import com.n3sensei.app.core.designsystem.theme.japanese
+import com.n3sensei.app.core.designsystem.theme.japaneseText
 
 @Composable
 fun LearnHubScreen(
@@ -63,7 +64,7 @@ private fun LearnSectionItem(
                 modifier = Modifier.size(48.dp).clearAndSetSemantics {},
             ) {
                 Box(contentAlignment = Alignment.Center) {
-                    Text(glyph, style = MaterialTheme.typography.titleLarge.japanese())
+                    Text(japaneseText(glyph), style = MaterialTheme.typography.titleLarge.japanese())
                 }
             }
         },

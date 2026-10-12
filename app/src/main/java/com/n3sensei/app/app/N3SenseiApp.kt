@@ -8,6 +8,7 @@ import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
@@ -15,10 +16,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -48,10 +51,12 @@ fun N3SenseiApp(
             )
         },
         bottomBar = {
-            N3NavigationBar(
-                currentDestination = currentDestination,
-                onSelect = navController::navigateToTopLevel,
-            )
+            if (currentScreen?.isFocusSession != true) {
+                N3NavigationBar(
+                    currentDestination = currentDestination,
+                    onSelect = navController::navigateToTopLevel,
+                )
+            }
         },
     ) { innerPadding ->
         N3SenseiNavHost(
@@ -101,9 +106,24 @@ private fun N3NavigationBar(
                 onClick = { onSelect(destination) },
                 // The label is announced by TalkBack, so the icon needs no description.
                 icon = { Icon(destination.icon, contentDescription = null) },
-                label = { Text(stringResource(destination.labelRes)) },
+                label = { NavigationLabel(stringResource(destination.labelRes)) },
                 modifier = Modifier.testTag(destination.testTag),
             )
         }
     }
 }
+
+/**
+ * Five labels share the bar width. At large font scales they used to wrap inside words
+ * ("Tran / g chủ") and the bar grew to a quarter of a small screen. The label grows with the
+ * user's font scale up to [MAX_LABEL_SCALE], stays on one line, and TalkBack reads it in full.
+ */
+@Composable
+private fun NavigationLabel(text: String) {
+    val style = MaterialTheme.typography.labelMedium
+    val fontScale = LocalDensity.current.fontScale
+    val size = if (fontScale > MAX_LABEL_SCALE) style.fontSize * (MAX_LABEL_SCALE / fontScale) else style.fontSize
+    Text(text, style = style.copy(fontSize = size), maxLines = 1, overflow = TextOverflow.Ellipsis)
+}
+
+private const val MAX_LABEL_SCALE = 1.3f

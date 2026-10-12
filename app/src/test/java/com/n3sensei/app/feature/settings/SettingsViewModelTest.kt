@@ -1,5 +1,7 @@
 package com.n3sensei.app.feature.settings
 
+import com.n3sensei.app.domain.importing.ImportOutcome
+import com.n3sensei.app.domain.importing.ImportReport
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.testing.FakeContentImportRepository
@@ -7,6 +9,7 @@ import com.n3sensei.app.testing.FakeContentRepository
 import com.n3sensei.app.testing.FakeUserPreferencesRepository
 import com.n3sensei.app.testing.MainDispatcherRule
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 
@@ -33,13 +36,46 @@ class SettingsViewModelTest {
     }
 
     @Test
-    fun importDocument_showsReportUntilDismissed() {
+    fun newPack_isImportedWithoutConfirmation_reportShownUntilDismissed() {
         viewModel.importDocument("content://pack.json")
 
-        assertEquals(listOf("content://pack.json"), importRepository.importedUris)
+        assertEquals(listOf("content://pack.json"), importRepository.checkedUris)
+        assertEquals(1, importRepository.imported.size)
         assertEquals(ImportUiState.Finished(importRepository.nextReport), viewModel.importState.value)
 
         viewModel.dismissImportReport()
         assertEquals(ImportUiState.Idle, viewModel.importState.value)
+    }
+
+    @Test
+    fun replacingInstalledPack_waitsForConfirmation() {
+        importRepository.installedVersion = 1
+        viewModel.importDocument("content://pack-v2.json")
+        val confirm = viewModel.importState.value as ImportUiState.Confirm
+        assertEquals(2, confirm.preview.removedItems)
+        assertTrue(importRepository.imported.isEmpty())
+
+        viewModel.confirmImport()
+        assertEquals(1, importRepository.imported.size)
+        assertEquals(ImportUiState.Finished(importRepository.nextReport), viewModel.importState.value)
+    }
+
+    @Test
+    fun cancellingReplacement_writesNothing() {
+        importRepository.installedVersion = 1
+        viewModel.importDocument("content://pack-v2.json")
+        viewModel.dismissImportReport()
+        assertEquals(ImportUiState.Idle, viewModel.importState.value)
+        viewModel.confirmImport()
+        assertTrue(importRepository.imported.isEmpty())
+    }
+
+    @Test
+    fun invalidPack_showsReport_andImportsNothing() {
+        val failed = ImportReport(ImportOutcome.FAILED)
+        importRepository.failCheck = failed
+        viewModel.importDocument("content://broken.json")
+        assertEquals(ImportUiState.Finished(failed), viewModel.importState.value)
+        assertTrue(importRepository.imported.isEmpty())
     }
 }

@@ -28,6 +28,7 @@
     <string name="common_none">—</string>
     <string name="common_no_content">Chưa có nội dung học. Ứng dụng chưa nạp gói nội dung N3 nào.</string>
     <string name="common_no_results">Không tìm thấy kết quả cho “%1$s”.</string>
+    <string name="common_results_count">Tìm thấy %1$d kết quả.</string>
     <string name="common_results_capped">Chỉ hiển thị %1$d kết quả đầu tiên. Hãy nhập từ khóa cụ thể hơn.</string>
 
     <!-- Onboarding -->
@@ -235,7 +236,7 @@
     <string name="due_state_due">Đến hạn</string>
     <string name="due_state_overdue">Quá hạn</string>
     <string name="due_state_not_due">Chưa đến hạn</string>
-    <string name="item_memory_level">Mức ghi nhớ: %1$d / %2$d</string>
+    <string name="item_memory_level">Bậc ôn: %1$d / %2$d</string>
     <string name="item_next_review">Ôn tiếp: %1$s (%2$s)</string>
     <string name="interval_minutes">%1$d phút</string>
     <string name="interval_hours">%1$d giờ</string>
@@ -398,7 +399,7 @@
     <string name="dashboard_goal_reviews">Lượt ôn: %1$d / %2$d</string>
     <string name="dashboard_goal_reached">Đã đạt mục tiêu hôm nay.</string>
     <string name="dashboard_goal_rule">Mục mới: theo giới hạn mỗi ngày nhưng không vượt số mục chưa học. Lượt ôn: đã ôn hôm nay + đang đến hạn, tối đa bằng giới hạn mỗi ngày; có thể tăng khi có thêm mục đến hạn trong ngày.</string>
-    <string name="dashboard_start_review">Bắt đầu ôn tập</string>
+    <string name="dashboard_start_review">Xem mục Ôn tập</string>
     <string name="dashboard_open_lessons">Xem bài học</string>
     <string name="dashboard_due">Cần ôn</string>
     <string name="dashboard_priority">Ưu tiên ôn</string>
@@ -486,4 +487,15 @@
     <string name="backup_issue_UNKNOWN_ITEMS">%1$d mục không có trong nội dung hiện tại; dữ liệu vẫn được giữ và sẽ hiện lại khi nhập gói nội dung chứa các mục đó</string>
     <string name="backup_issue_DATABASE_ERROR">Lỗi cơ sở dữ liệu; mọi thay đổi đã được hủy</string>
     <string name="backup_issue_SETTINGS_ERROR">Không lưu được cài đặt (dữ liệu học đã được khôi phục)</string>
+    <!-- Why a card is in the review session -->
+    <string name="review_reason_new">Mục mới: lần đầu học mục này</string>
+    <string name="review_reason_due">Đến hạn lúc %1$s · bậc %2$d/%3$d</string>
+    <string name="review_reason_overdue">Quá hạn từ %1$s · bậc %2$d/%3$d</string>
+    <string name="review_reason_with_lapses">%1$s · đã quên %2$d lần</string>
+    <!-- Replacing an installed content pack -->
+    <string name="import_replace_title">Thay thế gói nội dung?</string>
+    <string name="import_replace_versions">%1$s: phiên bản đang cài %2$d → phiên bản trong tệp %3$d</string>
+    <string name="import_replace_removed">%1$d mục của bản đang cài không có trong tệp và sẽ bị gỡ khỏi bài học (%2$d mục trong số đó bạn đã học).</string>
+    <string name="import_replace_rule">Tiến độ, lịch sử ôn và đánh dấu không bị xóa: mục bị gỡ sẽ hiện lại cùng tiến độ nếu được nhập lại sau này.</string>
+    <string name="import_replace_confirm">Thay thế</string>
 </resources>

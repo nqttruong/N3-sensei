@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.n3sensei.app.core.ui.state.STOP_TIMEOUT_MILLIS
 import com.n3sensei.app.core.ui.state.UiState
+import com.n3sensei.app.domain.importing.ImportCheck
+import com.n3sensei.app.domain.importing.ImportPreview
 import com.n3sensei.app.domain.importing.ImportReport
 import com.n3sensei.app.domain.model.ContentPackInfo
 import com.n3sensei.app.domain.model.ContentSource
@@ -31,6 +33,9 @@ data class SettingsUiState(
 sealed interface ImportUiState {
     data object Idle : ImportUiState
     data object Running : ImportUiState
+
+    /** A valid pack that would replace the installed version: waits for the user's confirmation. */
+    data class Confirm(val preview: ImportPreview) : ImportUiState
     data class Finished(val report: ImportReport) : ImportUiState
 }
 
@@ -59,17 +64,36 @@ class SettingsViewModel(
     private val _importState = MutableStateFlow<ImportUiState>(ImportUiState.Idle)
     val importState: StateFlow<ImportUiState> = _importState.asStateFlow()
 
-    /** Imports the document the user picked; the report stays until [dismissImportReport]. */
+    /**
+     * Checks the document the user picked. A new pack is imported straight away; a pack that
+     * replaces the installed version (and may remove items) waits for [confirmImport].
+     * The report stays until [dismissImportReport].
+     */
     fun importDocument(documentUri: String) {
         if (_importState.value == ImportUiState.Running) return
         _importState.value = ImportUiState.Running
         viewModelScope.launch {
-            _importState.value = ImportUiState.Finished(importRepository.importDocument(documentUri))
+            _importState.value = when (val check = importRepository.checkDocument(documentUri)) {
+                is ImportCheck.Failed -> ImportUiState.Finished(check.report)
+                is ImportCheck.Ready ->
+                    if (check.preview.replacesInstalled) {
+                        ImportUiState.Confirm(check.preview)
+                    } else {
+                        ImportUiState.Finished(importRepository.importChecked(check.preview))
+                    }
+            }
         }
     }
 
+    fun confirmImport() {
+        val confirm = _importState.value as? ImportUiState.Confirm ?: return
+        _importState.value = ImportUiState.Running
+        viewModelScope.launch { _importState.value = ImportUiState.Finished(importRepository.importChecked(confirm.preview)) }
+    }
+
+    /** Closes the report, or cancels a pending replacement (nothing is written). */
     fun dismissImportReport() {
-        _importState.value = ImportUiState.Idle
+        if (_importState.value != ImportUiState.Running) _importState.value = ImportUiState.Idle
     }
 
     /** The app root shows onboarding again as soon as this is saved. */

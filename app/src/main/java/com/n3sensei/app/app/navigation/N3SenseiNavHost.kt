@@ -71,6 +71,7 @@ fun N3SenseiNavHost(
             HomeScreen(
                 viewModel = appViewModel { HomeViewModel(analyticsRepository, reviewSessionRepository, userPreferencesRepository, clock) },
                 onOpenReview = { navController.navigateToTopLevel(TopLevelDestination.REVIEW) },
+                onStartSession = { navController.navigate(ReviewSessionRoute) },
                 onOpenLessons = { navController.navigateToLessons() },
                 onOpenItem = { navController.navigateToItem(it) },
                 onOpenStats = { navController.navigateToTopLevel(TopLevelDestination.STATS) },

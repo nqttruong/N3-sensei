@@ -41,6 +41,20 @@ abstract class ContentPackDao {
     @Query("SELECT * FROM content_packs WHERE id = :id")
     abstract suspend fun getPack(id: String): ContentPackEntity?
 
+    /** `TYPE:id` of every item in a pack. */
+    @Query(
+        """
+        SELECT 'VOCABULARY:' || v.id FROM vocabulary v JOIN lessons l ON l.id = v.lesson_id WHERE l.pack_id = :packId
+        UNION ALL SELECT 'KANJI:' || k.id FROM kanji k JOIN lessons l ON l.id = k.lesson_id WHERE l.pack_id = :packId
+        UNION ALL SELECT 'GRAMMAR:' || g.id FROM grammar g JOIN lessons l ON l.id = g.lesson_id WHERE l.pack_id = :packId
+        """,
+    )
+    abstract suspend fun getItemKeys(packId: String): List<String>
+
+    /** How many of [keys] (`TYPE:id`) have learner progress. */
+    @Query("SELECT COUNT(*) FROM learning_progress WHERE item_type || ':' || item_id IN (:keys)")
+    abstract suspend fun countWithProgress(keys: List<String>): Int
+
     /** Deletes the pack and, via cascades, its lessons, items, examples and links. */
     @Query("DELETE FROM content_packs WHERE id = :id")
     abstract suspend fun deletePack(id: String): Int

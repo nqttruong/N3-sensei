@@ -23,6 +23,7 @@ import com.n3sensei.app.core.designsystem.component.DetailSection
 import com.n3sensei.app.core.designsystem.component.DetailText
 import com.n3sensei.app.core.designsystem.component.FuriganaText
 import com.n3sensei.app.core.designsystem.theme.japanese
+import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.content.ExampleSentenceItem
 import com.n3sensei.app.core.ui.content.ItemActions
 import com.n3sensei.app.core.ui.content.SourceNote
@@ -58,7 +59,7 @@ private fun VocabularyDetailContent(detail: VocabularyDetail, actions: @Composab
         if (vocabulary.furigana != null) {
             FuriganaText(vocabulary.furigana, style = MaterialTheme.typography.displaySmall)
         } else {
-            Text(vocabulary.expression, style = MaterialTheme.typography.displaySmall.japanese())
+            Text(japaneseText(vocabulary.expression), style = MaterialTheme.typography.displaySmall.japanese())
         }
         actions()
         DetailText(

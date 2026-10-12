@@ -24,6 +24,7 @@ import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.DetailSection
 import com.n3sensei.app.core.designsystem.component.DetailText
 import com.n3sensei.app.core.designsystem.theme.japanese
+import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.content.ExampleSentenceItem
 import com.n3sensei.app.core.ui.content.ItemActions
 import com.n3sensei.app.core.ui.content.SourceNote
@@ -63,7 +64,7 @@ private fun KanjiDetailContent(detail: KanjiDetail, actions: @Composable () -> U
                 modifier = Modifier.size(112.dp),
             ) {
                 Box(contentAlignment = Alignment.Center) {
-                    Text(kanji.character, style = MaterialTheme.typography.displayLarge.japanese())
+                    Text(japaneseText(kanji.character), style = MaterialTheme.typography.displayLarge.japanese())
                 }
             }
             Column {

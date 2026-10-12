@@ -33,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.theme.N3SenseiTheme
 import com.n3sensei.app.core.designsystem.theme.japanese
+import com.n3sensei.app.core.designsystem.theme.japaneseText
 import kotlinx.coroutines.launch
 
 private data class OnboardingPage(val glyph: String, val titleRes: Int, val bodyRes: Int)
@@ -66,7 +67,7 @@ fun OnboardingScreen(
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Text(
-                        page.glyph,
+                        japaneseText(page.glyph),
                         style = MaterialTheme.typography.displayLarge.japanese(),
                         color = MaterialTheme.colorScheme.primary,
                         modifier = Modifier.clearAndSetSemantics {},

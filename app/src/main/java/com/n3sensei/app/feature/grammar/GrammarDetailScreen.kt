@@ -21,6 +21,7 @@ import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.DetailSection
 import com.n3sensei.app.core.designsystem.component.DetailText
 import com.n3sensei.app.core.designsystem.theme.japanese
+import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.content.ExampleSentenceItem
 import com.n3sensei.app.core.ui.content.ItemActions
 import com.n3sensei.app.core.ui.content.SourceNote
@@ -52,7 +53,7 @@ private fun GrammarDetailContent(detail: GrammarDetail, actions: @Composable () 
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
-        Text(grammar.pattern, style = MaterialTheme.typography.headlineMedium.japanese())
+        Text(japaneseText(grammar.pattern), style = MaterialTheme.typography.headlineMedium.japanese())
         actions()
         DetailText(
             stringResource(R.string.grammar_structure),

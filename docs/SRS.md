@@ -41,7 +41,7 @@ Cấu hình trong **Cài đặt → Ôn tập**: 1–12 bậc, tăng dần, mỗ
 - Bậc không vượt quá bậc cuối.
 - Hạn ôn = khoảng của bậc mới cộng vào thời điểm trả lời.
 - Trạng thái: bậc cuối → **Thành thạo**; từ bậc đầu tiên ≥ 1 ngày → **Đang ôn**; còn lại → **Đang học**. Mục chưa có tiến độ → **Mới**.
-- "Mức ghi nhớ" hiển thị là số thứ tự bậc (vd. 3/7).
+- "Bậc ôn" hiển thị là số thứ tự bậc (vd. 3/7). Đây là vị trí trên dãy khoảng ôn, không phải phép đo trí nhớ, nên app không gọi nó là "mức ghi nhớ".
 - Mục Thành thạo vẫn được ôn khi đến hạn; trả lời Quên sẽ đưa về bậc 1.
 
 Nút đánh giá trong phiên ôn hiển thị trước khoảng ôn sẽ nhận (vd. "Tốt · 1 ngày"), dùng cùng hàm của scheduler.

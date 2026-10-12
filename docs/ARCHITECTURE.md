@@ -2,7 +2,7 @@
 
 Một module Gradle (`:app`), phân lớp theo package. Khi số feature hoặc thời gian build tăng đáng kể mới tách module; ranh giới package hiện tại đã được giữ bằng test (`ArchitectureRulesTest`) để việc tách sau này không phải sửa phụ thuộc.
 
-## Sơ đồ (trạng thái thực tế sau Prompt 10)
+## Sơ đồ (trạng thái thực tế sau Prompt 12)
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -120,6 +120,7 @@ Chi tiết database: [DATABASE.md](DATABASE.md).
 - Route type-safe (`@Serializable data object`) khai báo **duy nhất** trong `app/navigation/Routes.kt`.
 - `AppScreen` đăng ký mọi màn hình lá: route, tiêu đề top bar, tab sở hữu, có phải gốc tab hay không. Test bảo đảm graph và registry khớp 1-1.
 - `TopLevelDestination`: 5 tab (tối đa theo Material cho điện thoại). Từ vựng/Kanji/Ngữ pháp nằm trong tab Học vì 7 khu vực không vừa thanh điều hướng.
+- Trong phiên ôn và phiên luyện tập (`AppScreen.isFocusSession`) thanh tab bị ẩn để thẻ học có chỗ và người học không bị phân tâm; nút Back/Up vẫn thoát phiên.
 - Chuyển tab qua `navigateToTopLevel`: mỗi tab một bản trên back stack, giữ trạng thái stack con, Back ở gốc tab về Trang chủ, Back ở Trang chủ thoát app.
 - Màn hình feature nhận callback (`onOpenKanji`), không nhận `NavController`.
 

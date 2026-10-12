@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.n3sensei.app.R
 import com.n3sensei.app.domain.importing.ImportIssue
 import com.n3sensei.app.domain.importing.ImportOutcome
+import com.n3sensei.app.domain.importing.ImportPreview
 import com.n3sensei.app.domain.importing.ImportRecordType
 import com.n3sensei.app.domain.importing.ImportReport
 import com.n3sensei.app.domain.importing.IssueCode
@@ -63,6 +64,49 @@ fun ImportReportDialog(report: ImportReport, onDismiss: () -> Unit) {
                         style = MaterialTheme.typography.bodySmall,
                     )
                 }
+                if (report.issues.isNotEmpty()) HorizontalDivider()
+                report.issues.take(MAX_ISSUES_SHOWN).forEach { IssueLine(it) }
+                if (report.issues.size > MAX_ISSUES_SHOWN) {
+                    Text(stringResource(R.string.import_report_more, report.issues.size - MAX_ISSUES_SHOWN), style = MaterialTheme.typography.bodySmall)
+                }
+            }
+        },
+    )
+}
+
+/** Confirmation before a pack replaces the installed version of the same pack. */
+@Composable
+fun ReplacePackDialog(preview: ImportPreview, onConfirm: () -> Unit, onDismiss: () -> Unit) {
+    val report = preview.report
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.import_replace_title)) },
+        confirmButton = { TextButton(onClick = onConfirm) { Text(stringResource(R.string.import_replace_confirm)) } },
+        dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.backup_cancel)) } },
+        text = {
+            Column(
+                modifier = Modifier.heightIn(max = 420.dp).verticalScroll(rememberScrollState()),
+                verticalArrangement = Arrangement.spacedBy(6.dp),
+            ) {
+                if (report.packTitle != null && report.packVersion != null) {
+                    Text(
+                        stringResource(R.string.import_replace_versions, report.packTitle, preview.installedVersion ?: 0, report.packVersion),
+                        style = MaterialTheme.typography.titleSmall,
+                    )
+                }
+                report.counts.forEach { (type, count) ->
+                    Text(
+                        stringResource(R.string.import_report_type_line, stringResource(type.labelRes()), count.valid, count.skipped),
+                        style = MaterialTheme.typography.bodySmall,
+                    )
+                }
+                if (preview.removedItems > 0) {
+                    Text(
+                        stringResource(R.string.import_replace_removed, preview.removedItems, preview.removedWithProgress),
+                        color = MaterialTheme.colorScheme.error,
+                    )
+                }
+                Text(stringResource(R.string.import_replace_rule), style = MaterialTheme.typography.bodySmall)
                 if (report.issues.isNotEmpty()) HorizontalDivider()
                 report.issues.take(MAX_ISSUES_SHOWN).forEach { IssueLine(it) }
                 if (report.issues.size > MAX_ISSUES_SHOWN) {

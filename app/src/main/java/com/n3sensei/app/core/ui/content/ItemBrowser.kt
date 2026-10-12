@@ -18,6 +18,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.LiveRegionMode
+import androidx.compose.ui.semantics.liveRegion
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
@@ -101,12 +104,18 @@ fun <T> ItemBrowser(
                         }
                     }
                 }
-                if (searching && items.size >= ContentRepository.MAX_PAGE_SIZE) {
-                    item(key = "capped") {
+                if (searching) {
+                    item(key = "result-count") {
+                        // Announced by TalkBack as the results change, without moving focus.
                         Text(
-                            stringResource(R.string.common_results_capped, ContentRepository.MAX_PAGE_SIZE),
+                            if (items.size >= ContentRepository.MAX_PAGE_SIZE) {
+                                stringResource(R.string.common_results_capped, ContentRepository.MAX_PAGE_SIZE)
+                            } else {
+                                stringResource(R.string.common_results_count, items.size)
+                            },
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite },
                         )
                     }
                 }
