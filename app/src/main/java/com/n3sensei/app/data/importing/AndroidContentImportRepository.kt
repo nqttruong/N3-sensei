@@ -74,9 +74,10 @@ class AndroidContentImportRepository(
     companion object {
         const val BUNDLED_PACK_ASSET = "content/n3sensei-illustration.json"
         const val MIMIKARA_PACK_ASSET = "content/mimikara-n3-vocab.json"
+        const val N3_GRAMMAR_PACK_ASSET = "content/n3-grammar.json"
 
         /** Packs shipped with the app, installed in this order (see docs/CONTENT_FORMAT.md). */
-        val BUNDLED_PACK_ASSETS = listOf(BUNDLED_PACK_ASSET, MIMIKARA_PACK_ASSET)
+        val BUNDLED_PACK_ASSETS = listOf(BUNDLED_PACK_ASSET, MIMIKARA_PACK_ASSET, N3_GRAMMAR_PACK_ASSET)
         private const val TAG = "ContentImport"
         private const val MAX_BYTES = 10 * 1024 * 1024
     }

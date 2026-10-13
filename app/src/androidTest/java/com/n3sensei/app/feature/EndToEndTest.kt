@@ -150,8 +150,10 @@ class EndToEndTest {
 
             field.performTextReplacement("")
             waitForText("経験")
-            composeRule.onNodeWithText(string(R.string.lesson_number, 2, "N3")).performClick()
-            waitForText(string(R.string.lesson_empty_vocabulary))
+            // Lesson 2 has no vocabulary, so it gets no chip; lesson 1 filters the list.
+            assertTrue(composeRule.onAllNodesWithTextExact(string(R.string.lesson_number, 2, "N3")).isEmpty())
+            composeRule.onNodeWithText(string(R.string.lesson_number, 1, "N3")).performClick()
+            waitForText("経験")
         }
     }
 
@@ -240,6 +242,20 @@ class EndToEndTest {
     }
 
     @Test
+    fun bundledGrammarPack_isInstalledOnFirstLaunch_andShownInGrammarList() {
+        launch(seedContent = false, bundledContent = true).use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.grammar_title)).performClick()
+            waitForText("〜ことにしている")
+            composeRule.onNodeWithText("〜ことにしている").performClick()
+            waitForText("健康のために、毎朝三十分歩くことにしている。")
+            waitForText("Vì sức khỏe, tôi có thói quen đi bộ ba mươi phút mỗi sáng.")
+        }
+        // 7 grammar points of the illustration pack + 110.
+        assertEquals(7 + 110, AppTestState.appContainer.database.countRows("grammar"))
+    }
+
+    @Test
     fun vocabularySearch_ignoresVietnameseDiacritics() {
         launch().use {
             openTab(TopLevelDestination.LEARN)
@@ -283,6 +299,8 @@ class EndToEndTest {
         launch(seedContent = false, bundledContent = true).use {
             openTab(TopLevelDestination.LEARN)
             clickable(string(R.string.grammar_title)).performClick()
+            // With the bundled N3 grammar pack the list is long: search instead of scrolling.
+            composeRule.onNode(hasSetTextAction()).performTextInput("たばかり")
             waitForText("〜たばかり")
             composeRule.onNodeWithText("〜たばかり").performClick()
             waitForText(string(R.string.grammar_exercises))

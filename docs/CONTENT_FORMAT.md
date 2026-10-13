@@ -2,7 +2,7 @@
 
 Nội dung học (bài, từ vựng, Kanji, ngữ pháp, câu ví dụ, bài tập) được nạp vào Room từ tệp JSON UTF-8 theo định dạng dưới đây. App dùng cùng bộ kiểm tra và bộ nhập cho:
 
-- các gói đi kèm app (`AndroidContentImportRepository.BUNDLED_PACK_ASSETS`), tự cài ở lần chạy đầu và khi có phiên bản mới hơn: gói minh họa `content/n3sensei-illustration.json` và gói từ vựng Mimikara N3 `content/mimikara-n3-vocab.json` (xem [MIMIKARA_N3.md](MIMIKARA_N3.md));
+- các gói đi kèm app (`AndroidContentImportRepository.BUNDLED_PACK_ASSETS`), tự cài ở lần chạy đầu và khi có phiên bản mới hơn: gói minh họa `content/n3sensei-illustration.json`, gói từ vựng Mimikara N3 `content/mimikara-n3-vocab.json` (xem [MIMIKARA_N3.md](MIMIKARA_N3.md)) và gói ngữ pháp N3 tự soạn `content/n3-grammar.json` (xem [N3_GRAMMAR.md](N3_GRAMMAR.md));
 - tệp người dùng chọn trong **Cài đặt → Nhập gói nội dung (JSON)**.
 
 ## Cấu trúc

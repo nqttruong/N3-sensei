@@ -1,0 +1,4095 @@
+{
+ "format": "n3sensei-content-pack",
+ "formatVersion": 1,
+ "pack": {
+  "id": "n3-grammar",
+  "title": "Ngữ pháp N3 (tự soạn, theo danh mục Mimikara N3)",
+  "version": 1,
+  "jlptLevel": "N3",
+  "defaultSourceId": "n3sensei-grammar"
+ },
+ "sources": [
+  {
+   "id": "n3sensei-grammar",
+   "name": "N3 Sensei tự soạn · danh mục theo VNJPCLUB \"Mimikara N3 ngữ pháp\"",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-001",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 1 \"～ことにしています\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-1.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-002",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 2 \"～ことになっています\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-2.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-003",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 3 \"～ようになっている\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-3.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-004",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 4 \"～ような／ように\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-4.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-005",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 5 \"～みたいだ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-5.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-006",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 6 \"～らしい\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-6.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-007",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 7 \"～つもり\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-7.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-008",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 8 \"～てくる\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-8.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-009",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 9 \"～てほしい／もらいたい\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-9.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-010",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 10 \"～ば／たら／と・・・たい／のに／よかった など\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-10.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-011",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 11 \"使役形を使った表現 – Sử dụng thể sai khiến\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-11.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-012",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 12 \"自動詞を使った表現 – Sử dụng tự động từ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-12.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-013",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 13 \"～み\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-13.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-014",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 14 \"のではないだろうか／ないかと思う\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-14.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-015",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 15 \"縮約形 – Dạng rút gọn\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-15.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-016",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 16 \"～から～にかけて\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-16.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-017",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 17 \"～だらけ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-17.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-018",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 18 \"～おかげ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-18.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-019",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 19 \"～せい\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-19.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-020",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 20 \"～とおり（に）／どおり（に）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-20.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-021",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 21 \"～について／つき\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-21.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-022",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 22 \"～に関し（て）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-22.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-023",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 23 \"～に比べ（て）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-23.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-024",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 24 \"～に加え（て）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-24.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-025",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 25 \"～に対し（て）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-25.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-026",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 26 \"～たびに\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-26.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-027",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 27 \"たとえ～ても\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-27.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-028",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 28 \"～って\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-28.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-029",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 29 \"～くらい／ぐらい\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-29.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-030",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 30 \"～くらいなら／ぐらいなら\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-30.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-031",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 31 \"～うちに\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-31.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-032",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 32 \"～を中心に／を中心として／を中心にして\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-32.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-033",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 33 \"～をはじめ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-33.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-034",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 34 \"～に対し（て）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-34.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-035",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 35 \"～において\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-35.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-036",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 36 \"～にわたって／わたり\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-36.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-037",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 37 \"～にとって\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-37.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-038",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 38 \"～による／より／よって／よっては\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-38.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-039",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 39 \"～に違いない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-39.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-040",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 40 \"～とは／というのは\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-40.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-041",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 41 \"～たとたん（に）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-41.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-042",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 42 \"～につれ（て）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-42.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-043",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 43 \"にしたがって／したがい\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-43.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-044",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 44 \"～最中\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-44.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-045",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 45 \"～てからでないと／なければ・・・ない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-45.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-046",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 46 \"～て以来\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-46.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-047",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 47 \"～一方だ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-47.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-048",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 48 \"～しかない／ほかない／よりない／よりほかない／ほかしかたがない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-48.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-049",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 49 \"はもちろん／もとより\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-49.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-050",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 50 \"～ついでに\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-50.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-051",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 51 \"～ということだ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-51.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-052",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 52 \"～ことはない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-52.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-053",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 53 \"こと\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-53.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-054",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 54 \"～ないことはない／もない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-54.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-055",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 55 \"～もの （もん）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-55.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-056",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 56 \"～ものだから／もので\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-56.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-057",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 57 \"～ものか\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-57.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-058",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 58 \"～たところ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-58.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-059",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 59 \"～ところに／へ／を／で\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-59.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-060",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 60 \"～ところだった\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-60.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-061",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 61 \"～ほど\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-61.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-062",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 62 \"～ば～ほど\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-62.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-063",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 63 \"～ほど\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-63.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-064",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 64 \"など／なんか／なんて (なんか, なんて dùng trong văn nói)\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-64.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-065",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 65 \"～などと（なんて）言う／思う など\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-65.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-066",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 66 \"～からには\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-66.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-067",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 67 \"きる\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-67.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-068",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 68 \"～ぎみ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-68.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-069",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 69 \"～がち\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-69.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-070",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 70 \"～向き\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-70.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-071",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 71 \"～向け\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-71.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-072",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 72 \"～を通じ（て）／通し（て）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-72.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-073",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 73 \"～っぱい\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-73.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-074",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 74 \"～とともに\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-74.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-075",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 75 \"～にともなって／ともない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-75.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-076",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 76 \"～に決まっている\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-76.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-077",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 77 \"～っけ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-77.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-078",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 78 \"～ように\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-78.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-079",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 79 \"～ようがない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-79.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-080",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 80 \"～はずだ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-80.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-081",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 81 \"～わけだ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-81.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-082",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 82 \"～わけがない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-82.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-083",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 83 \"～わけではない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-83.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-084",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 84 \"～わけにはいかない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-84.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-085",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 85 \"～ないわけにはいかない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-85.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-086",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 86 \"～かわり （に）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-86.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-087",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 87 \"～にかわって／かわり\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-87.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-088",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 88 \"～こそ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-88.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-089",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 89 \"～さえ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-89.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-090",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 90 \"～として\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-90.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-091",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 91 \"～からといって\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-91.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-092",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 92 \"～に返し （て）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-92.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-093",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 93 \"～にもとづいて／もとづき\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-93.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-094",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 94 \"～をもとに （して）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-94.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-095",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 95 \"～反面／半面\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-95.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-096",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 96 \"～れる／られる\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-96.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-097",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 97 \"～てたまらない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-97.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-098",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 98 \"～てならない\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-98.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-099",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 99 \"～とか\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-99.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-100",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 100 \"～だけ\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-100.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-101",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 101 \"～ばかりでなく\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-101.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-102",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 102 \"～かけ／かける\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-102.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-103",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 103 \"～をこめて\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-103.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-104",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 104 \"～わりに （は）\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-104.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-105",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 105 \"～くせに\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-105.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-106",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 106 \"～てみせる\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-106.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-107",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 107 \"～をきっかけに／にして／として\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-107.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-108",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 108 \"～とする\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-108.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-109",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 109 \"～際に／際（に）は\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-109.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "vnjp-np-110",
+   "name": "N3 Sensei tự soạn · đối chiếu mục 110 \"～おそれがある\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
+   "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-110.html",
+   "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  }
+ ],
+ "examples": [
+  {
+   "id": "n3g-g001-ex1",
+   "japanese": "健康のために、毎朝三十分歩くことにしている。",
+   "furigana": null,
+   "translationVi": "Vì sức khỏe, tôi có thói quen đi bộ ba mươi phút mỗi sáng.",
+   "sourceId": "vnjp-np-001"
+  },
+  {
+   "id": "n3g-g001-ex2",
+   "japanese": "夜十一時以降はスマホを見ないことにしている。",
+   "furigana": null,
+   "translationVi": "Tôi tự đặt nguyên tắc không xem điện thoại sau mười một giờ đêm.",
+   "sourceId": "vnjp-np-001"
+  },
+  {
+   "id": "n3g-g002-ex1",
+   "japanese": "この寮では、夜十時以降は外出できないことになっている。",
+   "furigana": null,
+   "translationVi": "Ở ký túc xá này, theo quy định sau mười giờ tối không được ra ngoài.",
+   "sourceId": "vnjp-np-002"
+  },
+  {
+   "id": "n3g-g002-ex2",
+   "japanese": "会議は来週の月曜日に開かれることになっている。",
+   "furigana": null,
+   "translationVi": "Cuộc họp đã được định là sẽ tổ chức vào thứ Hai tuần sau.",
+   "sourceId": "vnjp-np-002"
+  },
+  {
+   "id": "n3g-g003-ex1",
+   "japanese": "このドアは、人が近づくと自動で開くようになっている。",
+   "furigana": null,
+   "translationVi": "Cánh cửa này được làm để tự mở khi có người đến gần.",
+   "sourceId": "vnjp-np-003"
+  },
+  {
+   "id": "n3g-g003-ex2",
+   "japanese": "お湯が沸くと、音で知らせるようになっている。",
+   "furigana": null,
+   "translationVi": "Khi nước sôi, máy được thiết kế để báo bằng âm thanh.",
+   "sourceId": "vnjp-np-003"
+  },
+  {
+   "id": "n3g-g004-ex1",
+   "japanese": "彼女は花のような笑顔で迎えてくれた。",
+   "furigana": null,
+   "translationVi": "Cô ấy đón tôi với nụ cười như một bông hoa.",
+   "sourceId": "vnjp-np-004"
+  },
+  {
+   "id": "n3g-g004-ex2",
+   "japanese": "先生が説明したように、この問題は難しくない。",
+   "furigana": null,
+   "translationVi": "Như thầy đã giải thích, bài này không khó.",
+   "sourceId": "vnjp-np-004"
+  },
+  {
+   "id": "n3g-g005-ex1",
+   "japanese": "外は雨が降っているみたいだ。",
+   "furigana": null,
+   "translationVi": "Hình như bên ngoài trời đang mưa.",
+   "sourceId": "vnjp-np-005"
+  },
+  {
+   "id": "n3g-g005-ex2",
+   "japanese": "この部屋はホテルみたいにきれいだ。",
+   "furigana": null,
+   "translationVi": "Căn phòng này sạch đẹp như khách sạn.",
+   "sourceId": "vnjp-np-005"
+  },
+  {
+   "id": "n3g-g006-ex1",
+   "japanese": "天気予報によると、明日は雪が降るらしい。",
+   "furigana": null,
+   "translationVi": "Theo dự báo thời tiết thì nghe nói ngày mai có tuyết.",
+   "sourceId": "vnjp-np-006"
+  },
+  {
+   "id": "n3g-g006-ex2",
+   "japanese": "今日は春らしい暖かい日だ。",
+   "furigana": null,
+   "translationVi": "Hôm nay là một ngày ấm áp đúng chất mùa xuân.",
+   "sourceId": "vnjp-np-006"
+  },
+  {
+   "id": "n3g-g007-ex1",
+   "japanese": "来年、日本の大学院に進むつもりだ。",
+   "furigana": null,
+   "translationVi": "Năm sau tôi định học lên cao học ở Nhật.",
+   "sourceId": "vnjp-np-007"
+  },
+  {
+   "id": "n3g-g007-ex2",
+   "japanese": "旅行に行ったつもりで、そのお金を貯金した。",
+   "furigana": null,
+   "translationVi": "Coi như đã đi du lịch, tôi để dành số tiền đó.",
+   "sourceId": "vnjp-np-007"
+  },
+  {
+   "id": "n3g-g008-ex1",
+   "japanese": "最近、だんだん寒くなってきた。",
+   "furigana": null,
+   "translationVi": "Gần đây trời dần trở lạnh.",
+   "sourceId": "vnjp-np-008"
+  },
+  {
+   "id": "n3g-g008-ex2",
+   "japanese": "ちょっとコンビニで飲み物を買ってくる。",
+   "furigana": null,
+   "translationVi": "Mình đi mua đồ uống ở cửa hàng tiện lợi rồi về.",
+   "sourceId": "vnjp-np-008"
+  },
+  {
+   "id": "n3g-g009-ex1",
+   "japanese": "子どもには、自分の好きな道を選んでほしい。",
+   "furigana": null,
+   "translationVi": "Tôi muốn con mình chọn con đường mình thích.",
+   "sourceId": "vnjp-np-009"
+  },
+  {
+   "id": "n3g-g009-ex2",
+   "japanese": "この件は、まだ誰にも言わないでもらいたい。",
+   "furigana": null,
+   "translationVi": "Tôi mong anh đừng nói chuyện này với ai.",
+   "sourceId": "vnjp-np-009"
+  },
+  {
+   "id": "n3g-g010-ex1",
+   "japanese": "もっと早く家を出ればよかった。",
+   "furigana": null,
+   "translationVi": "Giá mà tôi ra khỏi nhà sớm hơn.",
+   "sourceId": "vnjp-np-010"
+  },
+  {
+   "id": "n3g-g010-ex2",
+   "japanese": "お金があったら、世界中を旅行したいのに。",
+   "furigana": null,
+   "translationVi": "Phải chi có tiền thì tôi đã muốn đi du lịch khắp thế giới.",
+   "sourceId": "vnjp-np-010"
+  },
+  {
+   "id": "n3g-g011-ex1",
+   "japanese": "体調が悪いので、今日は早く帰らせてください。",
+   "furigana": null,
+   "translationVi": "Vì không khỏe, xin cho tôi về sớm hôm nay.",
+   "sourceId": "vnjp-np-011"
+  },
+  {
+   "id": "n3g-g011-ex2",
+   "japanese": "子どものころ、毎日ピアノを練習させられた。",
+   "furigana": null,
+   "translationVi": "Hồi nhỏ ngày nào tôi cũng bị bắt luyện đàn piano.",
+   "sourceId": "vnjp-np-011"
+  },
+  {
+   "id": "n3g-g012-ex1",
+   "japanese": "すみません、お皿が割れてしまいました。",
+   "furigana": null,
+   "translationVi": "Xin lỗi, cái đĩa bị vỡ mất rồi.",
+   "sourceId": "vnjp-np-012"
+  },
+  {
+   "id": "n3g-g012-ex2",
+   "japanese": "窓が開いているので、部屋が寒い。",
+   "furigana": null,
+   "translationVi": "Vì cửa sổ đang mở nên phòng lạnh.",
+   "sourceId": "vnjp-np-012"
+  },
+  {
+   "id": "n3g-g013-ex1",
+   "japanese": "夏休みの旅行を楽しみにしている。",
+   "furigana": null,
+   "translationVi": "Tôi đang mong chờ chuyến du lịch nghỉ hè.",
+   "sourceId": "vnjp-np-013"
+  },
+  {
+   "id": "n3g-g013-ex2",
+   "japanese": "この料理は甘みが足りない。",
+   "furigana": null,
+   "translationVi": "Món này thiếu vị ngọt.",
+   "sourceId": "vnjp-np-013"
+  },
+  {
+   "id": "n3g-g014-ex1",
+   "japanese": "この計画は少し無理があるのではないだろうか。",
+   "furigana": null,
+   "translationVi": "Chẳng phải kế hoạch này hơi quá sức sao.",
+   "sourceId": "vnjp-np-014"
+  },
+  {
+   "id": "n3g-g014-ex2",
+   "japanese": "彼はもう帰ってしまったのではないかと思う。",
+   "furigana": null,
+   "translationVi": "Tôi nghĩ có lẽ anh ấy đã về mất rồi.",
+   "sourceId": "vnjp-np-014"
+  },
+  {
+   "id": "n3g-g015-ex1",
+   "japanese": "宿題、もうやっちゃった。",
+   "furigana": null,
+   "translationVi": "Bài tập, mình làm xong mất rồi.",
+   "sourceId": "vnjp-np-015"
+  },
+  {
+   "id": "n3g-g015-ex2",
+   "japanese": "早く行かなきゃ、遅れるよ。",
+   "furigana": null,
+   "translationVi": "Phải đi nhanh không thì trễ đó.",
+   "sourceId": "vnjp-np-015"
+  },
+  {
+   "id": "n3g-g016-ex1",
+   "japanese": "今夜から明日の朝にかけて、強い雨が降るでしょう。",
+   "furigana": null,
+   "translationVi": "Từ đêm nay đến sáng mai có lẽ sẽ mưa to.",
+   "sourceId": "vnjp-np-016"
+  },
+  {
+   "id": "n3g-g016-ex2",
+   "japanese": "関東から東北にかけて、地震による揺れがあった。",
+   "furigana": null,
+   "translationVi": "Từ vùng Kanto đến Tohoku đã có rung lắc do động đất.",
+   "sourceId": "vnjp-np-016"
+  },
+  {
+   "id": "n3g-g017-ex1",
+   "japanese": "子どもたちは泥だらけになって遊んでいる。",
+   "furigana": null,
+   "translationVi": "Bọn trẻ chơi đến mức người lấm lem bùn đất.",
+   "sourceId": "vnjp-np-017"
+  },
+  {
+   "id": "n3g-g017-ex2",
+   "japanese": "この作文は間違いだらけだ。",
+   "furigana": null,
+   "translationVi": "Bài văn này toàn là lỗi.",
+   "sourceId": "vnjp-np-017"
+  },
+  {
+   "id": "n3g-g018-ex1",
+   "japanese": "先生のおかげで、試験に合格できました。",
+   "furigana": null,
+   "translationVi": "Nhờ thầy mà em đã thi đỗ.",
+   "sourceId": "vnjp-np-018"
+  },
+  {
+   "id": "n3g-g018-ex2",
+   "japanese": "薬を飲んだおかげで、熱が下がった。",
+   "furigana": null,
+   "translationVi": "Nhờ uống thuốc nên đã hạ sốt.",
+   "sourceId": "vnjp-np-018"
+  },
+  {
+   "id": "n3g-g019-ex1",
+   "japanese": "寝不足のせいで、頭が痛い。",
+   "furigana": null,
+   "translationVi": "Do thiếu ngủ nên tôi đau đầu.",
+   "sourceId": "vnjp-np-019"
+  },
+  {
+   "id": "n3g-g019-ex2",
+   "japanese": "電車が遅れたせいで、会議に間に合わなかった。",
+   "furigana": null,
+   "translationVi": "Tại tàu trễ mà tôi không kịp cuộc họp.",
+   "sourceId": "vnjp-np-019"
+  },
+  {
+   "id": "n3g-g020-ex1",
+   "japanese": "説明書に書いてあるとおりに組み立ててください。",
+   "furigana": null,
+   "translationVi": "Hãy lắp ráp đúng như ghi trong sách hướng dẫn.",
+   "sourceId": "vnjp-np-020"
+  },
+  {
+   "id": "n3g-g020-ex2",
+   "japanese": "工事は予定どおり来月終わる。",
+   "furigana": null,
+   "translationVi": "Công trình sẽ xong vào tháng sau đúng như dự kiến.",
+   "sourceId": "vnjp-np-020"
+  },
+  {
+   "id": "n3g-g021-ex1",
+   "japanese": "日本の文化について、レポートを書いた。",
+   "furigana": null,
+   "translationVi": "Tôi đã viết báo cáo về văn hóa Nhật Bản.",
+   "sourceId": "vnjp-np-021"
+  },
+  {
+   "id": "n3g-g021-ex2",
+   "japanese": "参加費は一人につき千円です。",
+   "furigana": null,
+   "translationVi": "Phí tham gia là một nghìn yên mỗi người.",
+   "sourceId": "vnjp-np-021"
+  },
+  {
+   "id": "n3g-g022-ex1",
+   "japanese": "この件に関して、何かご質問はありますか。",
+   "furigana": null,
+   "translationVi": "Về việc này, quý vị có câu hỏi nào không?",
+   "sourceId": "vnjp-np-022"
+  },
+  {
+   "id": "n3g-g022-ex2",
+   "japanese": "環境問題に関する本を読んでいる。",
+   "furigana": null,
+   "translationVi": "Tôi đang đọc sách về vấn đề môi trường.",
+   "sourceId": "vnjp-np-022"
+  },
+  {
+   "id": "n3g-g023-ex1",
+   "japanese": "去年に比べて、今年は雨が少ない。",
+   "furigana": null,
+   "translationVi": "So với năm ngoái, năm nay ít mưa.",
+   "sourceId": "vnjp-np-023"
+  },
+  {
+   "id": "n3g-g023-ex2",
+   "japanese": "都会に比べ、田舎は物価が安い。",
+   "furigana": null,
+   "translationVi": "So với thành phố, ở quê vật giá rẻ hơn.",
+   "sourceId": "vnjp-np-023"
+  },
+  {
+   "id": "n3g-g024-ex1",
+   "japanese": "強い風に加えて、雨も降り出した。",
+   "furigana": null,
+   "translationVi": "Ngoài gió mạnh ra, trời còn bắt đầu mưa.",
+   "sourceId": "vnjp-np-024"
+  },
+  {
+   "id": "n3g-g024-ex2",
+   "japanese": "彼は英語に加え、中国語も話せる。",
+   "furigana": null,
+   "translationVi": "Ngoài tiếng Anh, anh ấy còn nói được tiếng Trung.",
+   "sourceId": "vnjp-np-024"
+  },
+  {
+   "id": "n3g-g025-ex1",
+   "japanese": "お客様に対して、失礼なことを言ってはいけない。",
+   "furigana": null,
+   "translationVi": "Không được nói điều thất lễ đối với khách hàng.",
+   "sourceId": "vnjp-np-025"
+  },
+  {
+   "id": "n3g-g025-ex2",
+   "japanese": "政府の発表に対する意見が多く寄せられた。",
+   "furigana": null,
+   "translationVi": "Có nhiều ý kiến gửi đến về thông báo của chính phủ.",
+   "sourceId": "vnjp-np-025"
+  },
+  {
+   "id": "n3g-g026-ex1",
+   "japanese": "この写真を見るたびに、高校時代を思い出す。",
+   "furigana": null,
+   "translationVi": "Mỗi lần xem bức ảnh này tôi lại nhớ thời cấp ba.",
+   "sourceId": "vnjp-np-026"
+  },
+  {
+   "id": "n3g-g026-ex2",
+   "japanese": "出張のたびに、お土産を買ってくる。",
+   "furigana": null,
+   "translationVi": "Mỗi lần đi công tác, anh ấy đều mua quà về.",
+   "sourceId": "vnjp-np-026"
+  },
+  {
+   "id": "n3g-g027-ex1",
+   "japanese": "たとえ反対されても、私はこの仕事を続けたい。",
+   "furigana": null,
+   "translationVi": "Cho dù bị phản đối, tôi vẫn muốn tiếp tục công việc này.",
+   "sourceId": "vnjp-np-027"
+  },
+  {
+   "id": "n3g-g027-ex2",
+   "japanese": "たとえ雨でも、試合は行われる。",
+   "furigana": null,
+   "translationVi": "Cho dù trời mưa, trận đấu vẫn diễn ra.",
+   "sourceId": "vnjp-np-027"
+  },
+  {
+   "id": "n3g-g028-ex1",
+   "japanese": "田中さん、明日は来ないって。",
+   "furigana": null,
+   "translationVi": "Nghe nói anh Tanaka mai không đến.",
+   "sourceId": "vnjp-np-028"
+  },
+  {
+   "id": "n3g-g028-ex2",
+   "japanese": "「さくら」って、どういう意味ですか。",
+   "furigana": null,
+   "translationVi": "\"Sakura\" nghĩa là gì vậy?",
+   "sourceId": "vnjp-np-028"
+  },
+  {
+   "id": "n3g-g029-ex1",
+   "japanese": "疲れて、もう一歩も歩けないくらいだ。",
+   "furigana": null,
+   "translationVi": "Mệt đến mức không đi nổi thêm một bước nào nữa.",
+   "sourceId": "vnjp-np-029"
+  },
+  {
+   "id": "n3g-g029-ex2",
+   "japanese": "忙しくても、電話ぐらいしてほしい。",
+   "furigana": null,
+   "translationVi": "Dù bận thì ít nhất cũng gọi điện cho tôi chứ.",
+   "sourceId": "vnjp-np-029"
+  },
+  {
+   "id": "n3g-g030-ex1",
+   "japanese": "あんな会社で働くくらいなら、自分で店を始めたほうがいい。",
+   "furigana": null,
+   "translationVi": "Nếu phải làm ở công ty như thế thì thà tự mở cửa hàng còn hơn.",
+   "sourceId": "vnjp-np-030"
+  },
+  {
+   "id": "n3g-g030-ex2",
+   "japanese": "途中でやめるぐらいなら、最初からやらないほうがいい。",
+   "furigana": null,
+   "translationVi": "Nếu bỏ giữa chừng thì ngay từ đầu đừng làm còn hơn.",
+   "sourceId": "vnjp-np-030"
+  },
+  {
+   "id": "n3g-g031-ex1",
+   "japanese": "温かいうちに、どうぞ召し上がってください。",
+   "furigana": null,
+   "translationVi": "Xin mời dùng trong lúc còn nóng.",
+   "sourceId": "vnjp-np-031"
+  },
+  {
+   "id": "n3g-g031-ex2",
+   "japanese": "話しているうちに、二人は仲良くなった。",
+   "furigana": null,
+   "translationVi": "Trong lúc nói chuyện, hai người đã trở nên thân thiết.",
+   "sourceId": "vnjp-np-031"
+  },
+  {
+   "id": "n3g-g032-ex1",
+   "japanese": "この祭りは駅前を中心に行われる。",
+   "furigana": null,
+   "translationVi": "Lễ hội này được tổ chức chủ yếu quanh khu trước ga.",
+   "sourceId": "vnjp-np-032"
+  },
+  {
+   "id": "n3g-g032-ex2",
+   "japanese": "若者を中心として、この歌が人気になった。",
+   "furigana": null,
+   "translationVi": "Bài hát này trở nên nổi tiếng, chủ yếu trong giới trẻ.",
+   "sourceId": "vnjp-np-032"
+  },
+  {
+   "id": "n3g-g033-ex1",
+   "japanese": "社長をはじめ、社員全員がパーティーに参加した。",
+   "furigana": null,
+   "translationVi": "Tất cả nhân viên, đứng đầu là giám đốc, đã dự tiệc.",
+   "sourceId": "vnjp-np-033"
+  },
+  {
+   "id": "n3g-g033-ex2",
+   "japanese": "日本には富士山をはじめ、美しい山がたくさんある。",
+   "furigana": null,
+   "translationVi": "Ở Nhật có nhiều ngọn núi đẹp, tiêu biểu là núi Phú Sĩ.",
+   "sourceId": "vnjp-np-033"
+  },
+  {
+   "id": "n3g-g034-ex1",
+   "japanese": "兄が明るい性格なのに対して、弟はおとなしい。",
+   "furigana": null,
+   "translationVi": "Trái với người anh có tính cách vui vẻ, người em thì trầm lặng.",
+   "sourceId": "vnjp-np-034"
+  },
+  {
+   "id": "n3g-g034-ex2",
+   "japanese": "東京は晴れたのに対し、大阪は一日中雨だった。",
+   "furigana": null,
+   "translationVi": "Trái với Tokyo trời nắng, Osaka mưa suốt cả ngày.",
+   "sourceId": "vnjp-np-034"
+  },
+  {
+   "id": "n3g-g035-ex1",
+   "japanese": "卒業式は大ホールにおいて行われます。",
+   "furigana": null,
+   "translationVi": "Lễ tốt nghiệp được tổ chức tại hội trường lớn.",
+   "sourceId": "vnjp-np-035"
+  },
+  {
+   "id": "n3g-g035-ex2",
+   "japanese": "医学における研究は、年々進んでいる。",
+   "furigana": null,
+   "translationVi": "Nghiên cứu trong lĩnh vực y học tiến bộ từng năm.",
+   "sourceId": "vnjp-np-035"
+  },
+  {
+   "id": "n3g-g036-ex1",
+   "japanese": "会議は三日間にわたって行われた。",
+   "furigana": null,
+   "translationVi": "Cuộc họp kéo dài suốt ba ngày.",
+   "sourceId": "vnjp-np-036"
+  },
+  {
+   "id": "n3g-g036-ex2",
+   "japanese": "台風の被害は広い地域にわたった。",
+   "furigana": null,
+   "translationVi": "Thiệt hại do bão trải rộng trên một vùng lớn.",
+   "sourceId": "vnjp-np-036"
+  },
+  {
+   "id": "n3g-g037-ex1",
+   "japanese": "私にとって、家族が一番大切だ。",
+   "furigana": null,
+   "translationVi": "Đối với tôi, gia đình là quan trọng nhất.",
+   "sourceId": "vnjp-np-037"
+  },
+  {
+   "id": "n3g-g037-ex2",
+   "japanese": "この問題は、子どもにとって難しすぎる。",
+   "furigana": null,
+   "translationVi": "Bài này quá khó đối với trẻ em.",
+   "sourceId": "vnjp-np-037"
+  },
+  {
+   "id": "n3g-g038-ex1",
+   "japanese": "この建物は有名な建築家によって設計された。",
+   "furigana": null,
+   "translationVi": "Tòa nhà này được thiết kế bởi một kiến trúc sư nổi tiếng.",
+   "sourceId": "vnjp-np-038"
+  },
+  {
+   "id": "n3g-g038-ex2",
+   "japanese": "人によっては、この薬が合わないこともある。",
+   "furigana": null,
+   "translationVi": "Tùy người, có khi thuốc này không hợp.",
+   "sourceId": "vnjp-np-038"
+  },
+  {
+   "id": "n3g-g039-ex1",
+   "japanese": "電気が消えている。彼はもう寝たに違いない。",
+   "furigana": null,
+   "translationVi": "Đèn đã tắt. Chắc chắn anh ấy đã ngủ rồi.",
+   "sourceId": "vnjp-np-039"
+  },
+  {
+   "id": "n3g-g039-ex2",
+   "japanese": "あんなに練習したのだから、優勝するに違いない。",
+   "furigana": null,
+   "translationVi": "Đã luyện tập nhiều như vậy thì nhất định sẽ vô địch.",
+   "sourceId": "vnjp-np-039"
+  },
+  {
+   "id": "n3g-g040-ex1",
+   "japanese": "「積読」とは、本を買っても読まずに積んでおくことだ。",
+   "furigana": null,
+   "translationVi": "\"Tsundoku\" là việc mua sách về rồi để chồng chất không đọc.",
+   "sourceId": "vnjp-np-040"
+  },
+  {
+   "id": "n3g-g040-ex2",
+   "japanese": "ATMというのは、現金自動預け払い機のことです。",
+   "furigana": null,
+   "translationVi": "ATM nghĩa là máy gửi rút tiền tự động.",
+   "sourceId": "vnjp-np-040"
+  },
+  {
+   "id": "n3g-g041-ex1",
+   "japanese": "立ち上がったとたんに、めまいがした。",
+   "furigana": null,
+   "translationVi": "Vừa đứng dậy thì tôi thấy chóng mặt.",
+   "sourceId": "vnjp-np-041"
+  },
+  {
+   "id": "n3g-g041-ex2",
+   "japanese": "ドアを開けたとたん、猫が飛び出してきた。",
+   "furigana": null,
+   "translationVi": "Vừa mở cửa thì con mèo lao ra.",
+   "sourceId": "vnjp-np-041"
+  },
+  {
+   "id": "n3g-g042-ex1",
+   "japanese": "年をとるにつれて、体力が落ちてきた。",
+   "furigana": null,
+   "translationVi": "Càng có tuổi thì thể lực càng giảm.",
+   "sourceId": "vnjp-np-042"
+  },
+  {
+   "id": "n3g-g042-ex2",
+   "japanese": "時間がたつにつれ、悲しみも少しずつ薄れていった。",
+   "furigana": null,
+   "translationVi": "Thời gian trôi qua, nỗi buồn cũng dần phai nhạt.",
+   "sourceId": "vnjp-np-042"
+  },
+  {
+   "id": "n3g-g043-ex1",
+   "japanese": "山を登るにしたがって、気温が下がっていく。",
+   "furigana": null,
+   "translationVi": "Càng leo lên núi thì nhiệt độ càng giảm.",
+   "sourceId": "vnjp-np-043"
+  },
+  {
+   "id": "n3g-g043-ex2",
+   "japanese": "係員の指示にしたがって、避難してください。",
+   "furigana": null,
+   "translationVi": "Hãy sơ tán theo chỉ dẫn của nhân viên.",
+   "sourceId": "vnjp-np-043"
+  },
+  {
+   "id": "n3g-g044-ex1",
+   "japanese": "食事の最中に、電話が鳴った。",
+   "furigana": null,
+   "translationVi": "Đúng lúc đang ăn thì điện thoại reo.",
+   "sourceId": "vnjp-np-044"
+  },
+  {
+   "id": "n3g-g044-ex2",
+   "japanese": "今、会議をしている最中なので、後でかけ直します。",
+   "furigana": null,
+   "translationVi": "Bây giờ tôi đang họp nên sẽ gọi lại sau.",
+   "sourceId": "vnjp-np-044"
+  },
+  {
+   "id": "n3g-g045-ex1",
+   "japanese": "この薬は、医者に相談してからでないと飲めない。",
+   "furigana": null,
+   "translationVi": "Thuốc này phải hỏi bác sĩ rồi mới được uống.",
+   "sourceId": "vnjp-np-045"
+  },
+  {
+   "id": "n3g-g045-ex2",
+   "japanese": "全員そろってからでなければ、出発しません。",
+   "furigana": null,
+   "translationVi": "Chưa đủ mặt mọi người thì sẽ không khởi hành.",
+   "sourceId": "vnjp-np-045"
+  },
+  {
+   "id": "n3g-g046-ex1",
+   "japanese": "日本に来て以来、ずっと同じアパートに住んでいる。",
+   "furigana": null,
+   "translationVi": "Kể từ khi đến Nhật, tôi sống mãi ở cùng một căn hộ.",
+   "sourceId": "vnjp-np-046"
+  },
+  {
+   "id": "n3g-g046-ex2",
+   "japanese": "卒業以来、彼とは一度も会っていない。",
+   "furigana": null,
+   "translationVi": "Từ khi tốt nghiệp, tôi chưa gặp lại anh ấy lần nào.",
+   "sourceId": "vnjp-np-046"
+  },
+  {
+   "id": "n3g-g047-ex1",
+   "japanese": "物価は上がる一方だ。",
+   "furigana": null,
+   "translationVi": "Vật giá ngày càng tăng.",
+   "sourceId": "vnjp-np-047"
+  },
+  {
+   "id": "n3g-g047-ex2",
+   "japanese": "仕事が増える一方で、休む時間がない。",
+   "furigana": null,
+   "translationVi": "Công việc cứ tăng lên, không có thời gian nghỉ.",
+   "sourceId": "vnjp-np-047"
+  },
+  {
+   "id": "n3g-g048-ex1",
+   "japanese": "終電に乗り遅れたので、タクシーで帰るしかない。",
+   "furigana": null,
+   "translationVi": "Lỡ chuyến tàu cuối nên đành phải về bằng taxi.",
+   "sourceId": "vnjp-np-048"
+  },
+  {
+   "id": "n3g-g048-ex2",
+   "japanese": "誰も手伝ってくれないなら、自分でやるほかない。",
+   "furigana": null,
+   "translationVi": "Nếu không ai giúp thì chỉ còn cách tự làm.",
+   "sourceId": "vnjp-np-048"
+  },
+  {
+   "id": "n3g-g049-ex1",
+   "japanese": "この店は、味はもちろん、サービスもいい。",
+   "furigana": null,
+   "translationVi": "Quán này vị ngon là đương nhiên, phục vụ cũng tốt.",
+   "sourceId": "vnjp-np-049"
+  },
+  {
+   "id": "n3g-g049-ex2",
+   "japanese": "この大会には、国内はもとより海外からも選手が集まる。",
+   "furigana": null,
+   "translationVi": "Giải đấu này quy tụ vận động viên không chỉ trong nước mà cả nước ngoài.",
+   "sourceId": "vnjp-np-049"
+  },
+  {
+   "id": "n3g-g050-ex1",
+   "japanese": "郵便局へ行くついでに、パンを買ってきて。",
+   "furigana": null,
+   "translationVi": "Tiện đi bưu điện thì mua giúp bánh mì nhé.",
+   "sourceId": "vnjp-np-050"
+  },
+  {
+   "id": "n3g-g050-ex2",
+   "japanese": "散歩のついでに、図書館に寄った。",
+   "furigana": null,
+   "translationVi": "Nhân tiện đi dạo, tôi ghé thư viện.",
+   "sourceId": "vnjp-np-050"
+  },
+  {
+   "id": "n3g-g051-ex1",
+   "japanese": "ニュースによると、来月から電気代が上がるということだ。",
+   "furigana": null,
+   "translationVi": "Theo tin tức, nghe nói từ tháng sau tiền điện sẽ tăng.",
+   "sourceId": "vnjp-np-051"
+  },
+  {
+   "id": "n3g-g051-ex2",
+   "japanese": "返事がないということは、まだ決まっていないということだ。",
+   "furigana": null,
+   "translationVi": "Không có trả lời tức là vẫn chưa quyết định.",
+   "sourceId": "vnjp-np-051"
+  },
+  {
+   "id": "n3g-g052-ex1",
+   "japanese": "簡単な手術だから、心配することはない。",
+   "furigana": null,
+   "translationVi": "Là ca mổ đơn giản nên không cần phải lo lắng.",
+   "sourceId": "vnjp-np-052"
+  },
+  {
+   "id": "n3g-g052-ex2",
+   "japanese": "わざわざ迎えに来ることはないよ。",
+   "furigana": null,
+   "translationVi": "Không cần cất công đến đón đâu.",
+   "sourceId": "vnjp-np-052"
+  },
+  {
+   "id": "n3g-g053-ex1",
+   "japanese": "レポートは金曜日までに提出すること。",
+   "furigana": null,
+   "translationVi": "Phải nộp báo cáo trước thứ Sáu.",
+   "sourceId": "vnjp-np-053"
+  },
+  {
+   "id": "n3g-g053-ex2",
+   "japanese": "まあ、なんてきれいな景色だこと。",
+   "furigana": null,
+   "translationVi": "Ôi, phong cảnh đẹp làm sao.",
+   "sourceId": "vnjp-np-053"
+  },
+  {
+   "id": "n3g-g054-ex1",
+   "japanese": "急げば、間に合わないことはない。",
+   "furigana": null,
+   "translationVi": "Nếu nhanh lên thì không phải là không kịp.",
+   "sourceId": "vnjp-np-054"
+  },
+  {
+   "id": "n3g-g054-ex2",
+   "japanese": "辛い料理も、食べられないこともない。",
+   "furigana": null,
+   "translationVi": "Món cay thì tôi cũng ăn được.",
+   "sourceId": "vnjp-np-054"
+  },
+  {
+   "id": "n3g-g055-ex1",
+   "japanese": "だって、知らなかったんだもの。",
+   "furigana": null,
+   "translationVi": "Thì tại vì tôi không biết mà.",
+   "sourceId": "vnjp-np-055"
+  },
+  {
+   "id": "n3g-g055-ex2",
+   "japanese": "一人で行くのは嫌だ。怖いもん。",
+   "furigana": null,
+   "translationVi": "Không muốn đi một mình đâu. Sợ lắm.",
+   "sourceId": "vnjp-np-055"
+  },
+  {
+   "id": "n3g-g056-ex1",
+   "japanese": "道が混んでいたものだから、遅れてしまいました。",
+   "furigana": null,
+   "translationVi": "Vì đường đông quá nên tôi đến trễ.",
+   "sourceId": "vnjp-np-056"
+  },
+  {
+   "id": "n3g-g056-ex2",
+   "japanese": "急いでいたもので、連絡するのを忘れました。",
+   "furigana": null,
+   "translationVi": "Vì vội quá nên tôi quên liên lạc.",
+   "sourceId": "vnjp-np-056"
+  },
+  {
+   "id": "n3g-g057-ex1",
+   "japanese": "あんな店、二度と行くものか。",
+   "furigana": null,
+   "translationVi": "Cái quán như thế, đời nào tôi đến lần nữa.",
+   "sourceId": "vnjp-np-057"
+  },
+  {
+   "id": "n3g-g057-ex2",
+   "japanese": "負けるもんか。最後まで頑張るぞ。",
+   "furigana": null,
+   "translationVi": "Còn lâu mới thua. Cố gắng đến cùng thôi.",
+   "sourceId": "vnjp-np-057"
+  },
+  {
+   "id": "n3g-g058-ex1",
+   "japanese": "先生に相談したところ、いいアドバイスをもらえた。",
+   "furigana": null,
+   "translationVi": "Sau khi hỏi ý thầy, tôi nhận được lời khuyên hay.",
+   "sourceId": "vnjp-np-058"
+  },
+  {
+   "id": "n3g-g058-ex2",
+   "japanese": "店に電話したところ、今日は休みだと言われた。",
+   "furigana": null,
+   "translationVi": "Gọi điện cho cửa hàng thì được bảo hôm nay nghỉ.",
+   "sourceId": "vnjp-np-058"
+  },
+  {
+   "id": "n3g-g059-ex1",
+   "japanese": "出かけようとしているところに、友達が来た。",
+   "furigana": null,
+   "translationVi": "Đúng lúc đang định ra ngoài thì bạn đến.",
+   "sourceId": "vnjp-np-059"
+  },
+  {
+   "id": "n3g-g059-ex2",
+   "japanese": "こっそりお菓子を食べているところを、母に見られた。",
+   "furigana": null,
+   "translationVi": "Lúc đang lén ăn bánh kẹo thì bị mẹ nhìn thấy.",
+   "sourceId": "vnjp-np-059"
+  },
+  {
+   "id": "n3g-g060-ex1",
+   "japanese": "寝坊して、もう少しで飛行機に乗り遅れるところだった。",
+   "furigana": null,
+   "translationVi": "Ngủ quên, suýt nữa thì lỡ chuyến bay.",
+   "sourceId": "vnjp-np-060"
+  },
+  {
+   "id": "n3g-g060-ex2",
+   "japanese": "危ない！車にひかれるところだったよ。",
+   "furigana": null,
+   "translationVi": "Nguy hiểm quá! Suýt nữa thì bị xe tông rồi.",
+   "sourceId": "vnjp-np-060"
+  },
+  {
+   "id": "n3g-g061-ex1",
+   "japanese": "お腹が痛くて、立てないほどだった。",
+   "furigana": null,
+   "translationVi": "Đau bụng đến mức không đứng dậy được.",
+   "sourceId": "vnjp-np-061"
+  },
+  {
+   "id": "n3g-g061-ex2",
+   "japanese": "今日は死ぬほど忙しかった。",
+   "furigana": null,
+   "translationVi": "Hôm nay bận muốn chết.",
+   "sourceId": "vnjp-np-061"
+  },
+  {
+   "id": "n3g-g062-ex1",
+   "japanese": "日本語は勉強すればするほど面白くなる。",
+   "furigana": null,
+   "translationVi": "Tiếng Nhật càng học càng thấy thú vị.",
+   "sourceId": "vnjp-np-062"
+  },
+  {
+   "id": "n3g-g062-ex2",
+   "japanese": "部屋は広ければ広いほどいい。",
+   "furigana": null,
+   "translationVi": "Phòng càng rộng càng tốt.",
+   "sourceId": "vnjp-np-062"
+  },
+  {
+   "id": "n3g-g063-ex1",
+   "japanese": "今年の夏は、去年ほど暑くない。",
+   "furigana": null,
+   "translationVi": "Mùa hè năm nay không nóng bằng năm ngoái.",
+   "sourceId": "vnjp-np-063"
+  },
+  {
+   "id": "n3g-g063-ex2",
+   "japanese": "家族ほど大切なものはない。",
+   "furigana": null,
+   "translationVi": "Không có gì quan trọng bằng gia đình.",
+   "sourceId": "vnjp-np-063"
+  },
+  {
+   "id": "n3g-g064-ex1",
+   "japanese": "私なんか、まだまだ下手です。",
+   "furigana": null,
+   "translationVi": "Tôi thì còn kém lắm.",
+   "sourceId": "vnjp-np-064"
+  },
+  {
+   "id": "n3g-g064-ex2",
+   "japanese": "幽霊なんて、いるわけがないよ。",
+   "furigana": null,
+   "translationVi": "Ma quỷ gì đó làm gì có thật.",
+   "sourceId": "vnjp-np-064"
+  },
+  {
+   "id": "n3g-g065-ex1",
+   "japanese": "彼が会社を辞めるなんて、思ってもみなかった。",
+   "furigana": null,
+   "translationVi": "Tôi không ngờ là anh ấy lại nghỉ việc.",
+   "sourceId": "vnjp-np-065"
+  },
+  {
+   "id": "n3g-g065-ex2",
+   "japanese": "もう勉強したくないなどと言ってはいけない。",
+   "furigana": null,
+   "translationVi": "Không được nói những câu như là không muốn học nữa.",
+   "sourceId": "vnjp-np-065"
+  },
+  {
+   "id": "n3g-g066-ex1",
+   "japanese": "引き受けたからには、最後まで責任を持ってやります。",
+   "furigana": null,
+   "translationVi": "Một khi đã nhận thì tôi sẽ làm có trách nhiệm đến cùng.",
+   "sourceId": "vnjp-np-066"
+  },
+  {
+   "id": "n3g-g066-ex2",
+   "japanese": "日本に留学するからには、日本語をしっかり勉強したい。",
+   "furigana": null,
+   "translationVi": "Đã đi du học Nhật thì tôi muốn học tiếng Nhật thật nghiêm túc.",
+   "sourceId": "vnjp-np-066"
+  },
+  {
+   "id": "n3g-g067-ex1",
+   "japanese": "マラソンを最後まで走りきった。",
+   "furigana": null,
+   "translationVi": "Tôi đã chạy hết quãng đường marathon.",
+   "sourceId": "vnjp-np-067"
+  },
+  {
+   "id": "n3g-g067-ex2",
+   "japanese": "こんなにたくさんの料理は、一人では食べきれない。",
+   "furigana": null,
+   "translationVi": "Nhiều món thế này, một mình không thể ăn hết.",
+   "sourceId": "vnjp-np-067"
+  },
+  {
+   "id": "n3g-g068-ex1",
+   "japanese": "最近、ちょっと風邪ぎみだ。",
+   "furigana": null,
+   "translationVi": "Dạo này tôi hơi bị cảm.",
+   "sourceId": "vnjp-np-068"
+  },
+  {
+   "id": "n3g-g068-ex2",
+   "japanese": "忙しくて、疲れぎみの毎日が続いている。",
+   "furigana": null,
+   "translationVi": "Bận rộn nên những ngày hơi mệt mỏi cứ kéo dài.",
+   "sourceId": "vnjp-np-068"
+  },
+  {
+   "id": "n3g-g069-ex1",
+   "japanese": "冬は運動不足になりがちだ。",
+   "furigana": null,
+   "translationVi": "Mùa đông người ta hay bị thiếu vận động.",
+   "sourceId": "vnjp-np-069"
+  },
+  {
+   "id": "n3g-g069-ex2",
+   "japanese": "彼は病気がちで、よく学校を休む。",
+   "furigana": null,
+   "translationVi": "Cậu ấy hay ốm nên thường nghỉ học.",
+   "sourceId": "vnjp-np-069"
+  },
+  {
+   "id": "n3g-g070-ex1",
+   "japanese": "この料理は辛くないので、子ども向きだ。",
+   "furigana": null,
+   "translationVi": "Món này không cay nên hợp với trẻ em.",
+   "sourceId": "vnjp-np-070"
+  },
+  {
+   "id": "n3g-g070-ex2",
+   "japanese": "この仕事は、人と話すのが好きな人向きだ。",
+   "furigana": null,
+   "translationVi": "Công việc này hợp với người thích nói chuyện.",
+   "sourceId": "vnjp-np-070"
+  },
+  {
+   "id": "n3g-g071-ex1",
+   "japanese": "これは外国人向けの日本語教科書だ。",
+   "furigana": null,
+   "translationVi": "Đây là sách giáo khoa tiếng Nhật dành cho người nước ngoài.",
+   "sourceId": "vnjp-np-071"
+  },
+  {
+   "id": "n3g-g071-ex2",
+   "japanese": "高齢者向けのスマホが売られている。",
+   "furigana": null,
+   "translationVi": "Điện thoại dành cho người cao tuổi đang được bán.",
+   "sourceId": "vnjp-np-071"
+  },
+  {
+   "id": "n3g-g072-ex1",
+   "japanese": "友人を通じて、今の妻と知り合った。",
+   "furigana": null,
+   "translationVi": "Tôi quen vợ hiện tại thông qua một người bạn.",
+   "sourceId": "vnjp-np-072"
+  },
+  {
+   "id": "n3g-g072-ex2",
+   "japanese": "この地域は一年を通して暖かい。",
+   "furigana": null,
+   "translationVi": "Vùng này ấm áp suốt cả năm.",
+   "sourceId": "vnjp-np-072"
+  },
+  {
+   "id": "n3g-g073-ex1",
+   "japanese": "年をとって、忘れっぽくなった。",
+   "furigana": null,
+   "translationVi": "Có tuổi rồi nên tôi hay quên.",
+   "sourceId": "vnjp-np-073"
+  },
+  {
+   "id": "n3g-g073-ex2",
+   "japanese": "この服は少し子どもっぽい。",
+   "furigana": null,
+   "translationVi": "Bộ đồ này trông hơi trẻ con.",
+   "sourceId": "vnjp-np-073"
+  },
+  {
+   "id": "n3g-g074-ex1",
+   "japanese": "家族とともに、新しい年を迎えた。",
+   "furigana": null,
+   "translationVi": "Tôi đón năm mới cùng gia đình.",
+   "sourceId": "vnjp-np-074"
+  },
+  {
+   "id": "n3g-g074-ex2",
+   "japanese": "経済の発展とともに、人々の生活も変わった。",
+   "furigana": null,
+   "translationVi": "Cùng với sự phát triển kinh tế, đời sống người dân cũng thay đổi.",
+   "sourceId": "vnjp-np-074"
+  },
+  {
+   "id": "n3g-g075-ex1",
+   "japanese": "人口の増加にともなって、住宅が不足している。",
+   "furigana": null,
+   "translationVi": "Cùng với sự gia tăng dân số, nhà ở đang thiếu.",
+   "sourceId": "vnjp-np-075"
+  },
+  {
+   "id": "n3g-g075-ex2",
+   "japanese": "台風の接近にともない、電車が運休した。",
+   "furigana": null,
+   "translationVi": "Do bão đến gần, tàu điện đã ngừng chạy.",
+   "sourceId": "vnjp-np-075"
+  },
+  {
+   "id": "n3g-g076-ex1",
+   "japanese": "そんなに食べたら、お腹をこわすに決まっている。",
+   "furigana": null,
+   "translationVi": "Ăn nhiều như thế chắc chắn sẽ đau bụng.",
+   "sourceId": "vnjp-np-076"
+  },
+  {
+   "id": "n3g-g076-ex2",
+   "japanese": "一人で行くより、みんなで行ったほうが楽しいに決まっている。",
+   "furigana": null,
+   "translationVi": "Đi cùng mọi người chắc chắn vui hơn đi một mình.",
+   "sourceId": "vnjp-np-076"
+  },
+  {
+   "id": "n3g-g077-ex1",
+   "japanese": "会議は何時からだっけ。",
+   "furigana": null,
+   "translationVi": "Cuộc họp bắt đầu lúc mấy giờ nhỉ?",
+   "sourceId": "vnjp-np-077"
+  },
+  {
+   "id": "n3g-g077-ex2",
+   "japanese": "子どものころ、よくこの公園で遊んだっけ。",
+   "furigana": null,
+   "translationVi": "Hồi nhỏ mình hay chơi ở công viên này nhỉ.",
+   "sourceId": "vnjp-np-077"
+  },
+  {
+   "id": "n3g-g078-ex1",
+   "japanese": "忘れないように、メモしておこう。",
+   "furigana": null,
+   "translationVi": "Ghi chú lại để không quên.",
+   "sourceId": "vnjp-np-078"
+  },
+  {
+   "id": "n3g-g078-ex2",
+   "japanese": "医者に、たばこを吸わないように言われた。",
+   "furigana": null,
+   "translationVi": "Tôi bị bác sĩ dặn là đừng hút thuốc.",
+   "sourceId": "vnjp-np-078"
+  },
+  {
+   "id": "n3g-g079-ex1",
+   "japanese": "住所がわからないので、連絡しようがない。",
+   "furigana": null,
+   "translationVi": "Không biết địa chỉ nên không có cách nào liên lạc.",
+   "sourceId": "vnjp-np-079"
+  },
+  {
+   "id": "n3g-g079-ex2",
+   "japanese": "こんなに壊れていては、直しようがない。",
+   "furigana": null,
+   "translationVi": "Hỏng đến mức này thì không có cách nào sửa.",
+   "sourceId": "vnjp-np-079"
+  },
+  {
+   "id": "n3g-g080-ex1",
+   "japanese": "荷物は昨日送ったので、今日届くはずだ。",
+   "furigana": null,
+   "translationVi": "Hàng đã gửi hôm qua nên chắc chắn hôm nay sẽ đến.",
+   "sourceId": "vnjp-np-080"
+  },
+  {
+   "id": "n3g-g080-ex2",
+   "japanese": "エアコンが止まっている。暑いはずだ。",
+   "furigana": null,
+   "translationVi": "Máy lạnh đã tắt. Thảo nào nóng thế.",
+   "sourceId": "vnjp-np-080"
+  },
+  {
+   "id": "n3g-g081-ex1",
+   "japanese": "十年もアメリカに住んでいたのか。英語が上手なわけだ。",
+   "furigana": null,
+   "translationVi": "Sống ở Mỹ những mười năm à. Thảo nào giỏi tiếng Anh.",
+   "sourceId": "vnjp-np-081"
+  },
+  {
+   "id": "n3g-g081-ex2",
+   "japanese": "一日八時間、週五日働くから、週四十時間働くわけだ。",
+   "furigana": null,
+   "translationVi": "Mỗi ngày tám tiếng, tuần năm ngày, tức là làm bốn mươi tiếng một tuần.",
+   "sourceId": "vnjp-np-081"
+  },
+  {
+   "id": "n3g-g082-ex1",
+   "japanese": "あんなに練習した彼が、負けるわけがない。",
+   "furigana": null,
+   "translationVi": "Người đã luyện tập nhiều như anh ấy không lẽ nào lại thua.",
+   "sourceId": "vnjp-np-082"
+  },
+  {
+   "id": "n3g-g082-ex2",
+   "japanese": "こんな難しい問題、子どもに解けるわけがない。",
+   "furigana": null,
+   "translationVi": "Bài khó thế này trẻ con không đời nào giải được.",
+   "sourceId": "vnjp-np-082"
+  },
+  {
+   "id": "n3g-g083-ex1",
+   "japanese": "料理が嫌いなわけではないが、時間がない。",
+   "furigana": null,
+   "translationVi": "Không hẳn là tôi ghét nấu ăn, nhưng không có thời gian.",
+   "sourceId": "vnjp-np-083"
+  },
+  {
+   "id": "n3g-g083-ex2",
+   "japanese": "高い物がいつも良いわけではない。",
+   "furigana": null,
+   "translationVi": "Đồ đắt không phải lúc nào cũng tốt.",
+   "sourceId": "vnjp-np-083"
+  },
+  {
+   "id": "n3g-g084-ex1",
+   "japanese": "明日は試験だから、遊びに行くわけにはいかない。",
+   "furigana": null,
+   "translationVi": "Mai có thi nên không thể đi chơi được.",
+   "sourceId": "vnjp-np-084"
+  },
+  {
+   "id": "n3g-g084-ex2",
+   "japanese": "大事な会議なので、休むわけにはいかない。",
+   "furigana": null,
+   "translationVi": "Cuộc họp quan trọng nên không thể nghỉ.",
+   "sourceId": "vnjp-np-084"
+  },
+  {
+   "id": "n3g-g085-ex1",
+   "japanese": "お世話になった先生の頼みだから、引き受けないわけにはいかない。",
+   "furigana": null,
+   "translationVi": "Là nhờ vả của thầy đã giúp đỡ mình nên không thể không nhận.",
+   "sourceId": "vnjp-np-085"
+  },
+  {
+   "id": "n3g-g085-ex2",
+   "japanese": "明日は大事な試験なので、勉強しないわけにはいかない。",
+   "furigana": null,
+   "translationVi": "Mai thi quan trọng nên không thể không học.",
+   "sourceId": "vnjp-np-085"
+  },
+  {
+   "id": "n3g-g086-ex1",
+   "japanese": "今日は料理を作るかわりに、外で食べよう。",
+   "furigana": null,
+   "translationVi": "Hôm nay thay vì nấu ăn thì mình ăn ngoài đi.",
+   "sourceId": "vnjp-np-086"
+  },
+  {
+   "id": "n3g-g086-ex2",
+   "japanese": "英語を教えてもらうかわりに、日本語を教えてあげた。",
+   "furigana": null,
+   "translationVi": "Đổi lại việc được dạy tiếng Anh, tôi dạy lại tiếng Nhật.",
+   "sourceId": "vnjp-np-086"
+  },
+  {
+   "id": "n3g-g087-ex1",
+   "japanese": "社長にかわって、部長が挨拶をした。",
+   "furigana": null,
+   "translationVi": "Trưởng phòng phát biểu thay giám đốc.",
+   "sourceId": "vnjp-np-087"
+  },
+  {
+   "id": "n3g-g087-ex2",
+   "japanese": "手紙にかわり、メールで連絡することが多くなった。",
+   "furigana": null,
+   "translationVi": "Thay cho thư tay, việc liên lạc bằng email đã nhiều lên.",
+   "sourceId": "vnjp-np-087"
+  },
+  {
+   "id": "n3g-g088-ex1",
+   "japanese": "今年こそ、日本語能力試験に合格したい。",
+   "furigana": null,
+   "translationVi": "Chính năm nay tôi muốn đỗ kỳ thi năng lực tiếng Nhật.",
+   "sourceId": "vnjp-np-088"
+  },
+  {
+   "id": "n3g-g088-ex2",
+   "japanese": "あなたのことを思うからこそ、厳しく言うのです。",
+   "furigana": null,
+   "translationVi": "Chính vì nghĩ cho bạn nên tôi mới nói nghiêm khắc.",
+   "sourceId": "vnjp-np-088"
+  },
+  {
+   "id": "n3g-g089-ex1",
+   "japanese": "忙しくて、昼ご飯を食べる時間さえない。",
+   "furigana": null,
+   "translationVi": "Bận đến mức ngay cả thời gian ăn trưa cũng không có.",
+   "sourceId": "vnjp-np-089"
+  },
+  {
+   "id": "n3g-g089-ex2",
+   "japanese": "この薬さえ飲めば、すぐ治りますよ。",
+   "furigana": null,
+   "translationVi": "Chỉ cần uống thuốc này là sẽ khỏi ngay.",
+   "sourceId": "vnjp-np-089"
+  },
+  {
+   "id": "n3g-g090-ex1",
+   "japanese": "彼は通訳として、会議に参加した。",
+   "furigana": null,
+   "translationVi": "Anh ấy tham gia cuộc họp với tư cách thông dịch viên.",
+   "sourceId": "vnjp-np-090"
+  },
+  {
+   "id": "n3g-g090-ex2",
+   "japanese": "この町は温泉地として有名だ。",
+   "furigana": null,
+   "translationVi": "Thị trấn này nổi tiếng là khu suối nước nóng.",
+   "sourceId": "vnjp-np-090"
+  },
+  {
+   "id": "n3g-g091-ex1",
+   "japanese": "お金があるからといって、幸せだとは限らない。",
+   "furigana": null,
+   "translationVi": "Không phải cứ có tiền là hạnh phúc.",
+   "sourceId": "vnjp-np-091"
+  },
+  {
+   "id": "n3g-g091-ex2",
+   "japanese": "日本人だからといって、敬語が上手なわけではない。",
+   "furigana": null,
+   "translationVi": "Không phải cứ là người Nhật thì giỏi kính ngữ.",
+   "sourceId": "vnjp-np-091"
+  },
+  {
+   "id": "n3g-g092-ex1",
+   "japanese": "予想に反して、試合は日本チームが勝った。",
+   "furigana": null,
+   "translationVi": "Trái với dự đoán, đội Nhật đã thắng trận đấu.",
+   "sourceId": "vnjp-np-092"
+  },
+  {
+   "id": "n3g-g092-ex2",
+   "japanese": "規則に反する行為は許されない。",
+   "furigana": null,
+   "translationVi": "Hành vi trái với quy định không được chấp nhận.",
+   "sourceId": "vnjp-np-092"
+  },
+  {
+   "id": "n3g-g093-ex1",
+   "japanese": "この映画は、実際の事件にもとづいて作られた。",
+   "furigana": null,
+   "translationVi": "Bộ phim này được làm dựa trên một vụ việc có thật.",
+   "sourceId": "vnjp-np-093"
+  },
+  {
+   "id": "n3g-g093-ex2",
+   "japanese": "調査の結果にもとづき、計画を見直した。",
+   "furigana": null,
+   "translationVi": "Căn cứ vào kết quả điều tra, chúng tôi đã xem lại kế hoạch.",
+   "sourceId": "vnjp-np-093"
+  },
+  {
+   "id": "n3g-g094-ex1",
+   "japanese": "祖母の話をもとに、小説を書いた。",
+   "furigana": null,
+   "translationVi": "Tôi viết tiểu thuyết dựa trên chuyện kể của bà.",
+   "sourceId": "vnjp-np-094"
+  },
+  {
+   "id": "n3g-g094-ex2",
+   "japanese": "アンケートの結果をもとにして、新しい商品を開発した。",
+   "furigana": null,
+   "translationVi": "Dựa vào kết quả khảo sát, chúng tôi đã phát triển sản phẩm mới.",
+   "sourceId": "vnjp-np-094"
+  },
+  {
+   "id": "n3g-g095-ex1",
+   "japanese": "都会の生活は便利な反面、ストレスも多い。",
+   "furigana": null,
+   "translationVi": "Cuộc sống thành thị tiện lợi nhưng mặt khác cũng nhiều căng thẳng.",
+   "sourceId": "vnjp-np-095"
+  },
+  {
+   "id": "n3g-g095-ex2",
+   "japanese": "一人暮らしは自由な半面、寂しいこともある。",
+   "furigana": null,
+   "translationVi": "Sống một mình tự do nhưng mặt khác cũng có lúc cô đơn.",
+   "sourceId": "vnjp-np-095"
+  },
+  {
+   "id": "n3g-g096-ex1",
+   "japanese": "この写真を見ると、昔のことが思い出される。",
+   "furigana": null,
+   "translationVi": "Nhìn bức ảnh này, chuyện ngày xưa tự nhiên hiện về.",
+   "sourceId": "vnjp-np-096"
+  },
+  {
+   "id": "n3g-g096-ex2",
+   "japanese": "最近、少しずつ春の気配が感じられる。",
+   "furigana": null,
+   "translationVi": "Gần đây có thể cảm nhận được dần dần hơi thở của mùa xuân.",
+   "sourceId": "vnjp-np-096"
+  },
+  {
+   "id": "n3g-g097-ex1",
+   "japanese": "試験に合格して、うれしくてたまらない。",
+   "furigana": null,
+   "translationVi": "Thi đỗ nên vui không tả được.",
+   "sourceId": "vnjp-np-097"
+  },
+  {
+   "id": "n3g-g097-ex2",
+   "japanese": "のどがかわいてたまらない。",
+   "furigana": null,
+   "translationVi": "Khát nước không chịu nổi.",
+   "sourceId": "vnjp-np-097"
+  },
+  {
+   "id": "n3g-g098-ex1",
+   "japanese": "一人で旅行している娘のことが心配でならない。",
+   "furigana": null,
+   "translationVi": "Tôi lo lắng vô cùng cho đứa con gái đang đi du lịch một mình.",
+   "sourceId": "vnjp-np-098"
+  },
+  {
+   "id": "n3g-g098-ex2",
+   "japanese": "あの日のことが悔やまれてならない。",
+   "furigana": null,
+   "translationVi": "Tôi hối tiếc khôn nguôi về ngày hôm đó.",
+   "sourceId": "vnjp-np-098"
+  },
+  {
+   "id": "n3g-g099-ex1",
+   "japanese": "田中さん、来月結婚するとか。",
+   "furigana": null,
+   "translationVi": "Nghe nói anh Tanaka tháng sau lấy vợ thì phải.",
+   "sourceId": "vnjp-np-099"
+  },
+  {
+   "id": "n3g-g099-ex2",
+   "japanese": "あの店は明日から休みだとか聞いた。",
+   "furigana": null,
+   "translationVi": "Tôi nghe nói quán đó từ mai nghỉ.",
+   "sourceId": "vnjp-np-099"
+  },
+  {
+   "id": "n3g-g100-ex1",
+   "japanese": "食べ放題だから、食べたいだけ食べてください。",
+   "furigana": null,
+   "translationVi": "Là buffet nên muốn ăn bao nhiêu thì cứ ăn.",
+   "sourceId": "vnjp-np-100"
+  },
+  {
+   "id": "n3g-g100-ex2",
+   "japanese": "やれるだけやったので、結果は気にしない。",
+   "furigana": null,
+   "translationVi": "Đã làm hết sức có thể nên tôi không bận tâm kết quả.",
+   "sourceId": "vnjp-np-100"
+  },
+  {
+   "id": "n3g-g101-ex1",
+   "japanese": "彼は英語ばかりでなく、フランス語も話せる。",
+   "furigana": null,
+   "translationVi": "Anh ấy không chỉ nói được tiếng Anh mà còn cả tiếng Pháp.",
+   "sourceId": "vnjp-np-101"
+  },
+  {
+   "id": "n3g-g101-ex2",
+   "japanese": "この本は子どもばかりでなく、大人にも人気がある。",
+   "furigana": null,
+   "translationVi": "Cuốn sách này không chỉ được trẻ em mà cả người lớn yêu thích.",
+   "sourceId": "vnjp-np-101"
+  },
+  {
+   "id": "n3g-g102-ex1",
+   "japanese": "机の上に読みかけの本が置いてある。",
+   "furigana": null,
+   "translationVi": "Trên bàn có cuốn sách đang đọc dở.",
+   "sourceId": "vnjp-np-102"
+  },
+  {
+   "id": "n3g-g102-ex2",
+   "japanese": "言いかけてやめると、気になるよ。",
+   "furigana": null,
+   "translationVi": "Nói dở rồi thôi thì làm người ta tò mò đấy.",
+   "sourceId": "vnjp-np-102"
+  },
+  {
+   "id": "n3g-g103-ex1",
+   "japanese": "母のために、心をこめて料理を作った。",
+   "furigana": null,
+   "translationVi": "Tôi đã nấu ăn với tất cả tấm lòng cho mẹ.",
+   "sourceId": "vnjp-np-103"
+  },
+  {
+   "id": "n3g-g103-ex2",
+   "japanese": "感謝の気持ちをこめて、手紙を書きました。",
+   "furigana": null,
+   "translationVi": "Tôi viết lá thư với tất cả lòng biết ơn.",
+   "sourceId": "vnjp-np-103"
+  },
+  {
+   "id": "n3g-g104-ex1",
+   "japanese": "この店は値段のわりに、料理がおいしい。",
+   "furigana": null,
+   "translationVi": "Quán này so với giá thì đồ ăn lại ngon.",
+   "sourceId": "vnjp-np-104"
+  },
+  {
+   "id": "n3g-g104-ex2",
+   "japanese": "彼はよく食べるわりには太らない。",
+   "furigana": null,
+   "translationVi": "Anh ấy ăn nhiều mà lại không béo.",
+   "sourceId": "vnjp-np-104"
+  },
+  {
+   "id": "n3g-g105-ex1",
+   "japanese": "知っているくせに、教えてくれない。",
+   "furigana": null,
+   "translationVi": "Biết rõ vậy mà không chịu nói cho tôi.",
+   "sourceId": "vnjp-np-105"
+  },
+  {
+   "id": "n3g-g105-ex2",
+   "japanese": "子どものくせに、生意気なことを言うな。",
+   "furigana": null,
+   "translationVi": "Trẻ con mà lại nói giọng ra vẻ người lớn.",
+   "sourceId": "vnjp-np-105"
+  },
+  {
+   "id": "n3g-g106-ex1",
+   "japanese": "先生が新しい技を実際にやってみせた。",
+   "furigana": null,
+   "translationVi": "Thầy giáo đã làm mẫu kỹ thuật mới cho xem.",
+   "sourceId": "vnjp-np-106"
+  },
+  {
+   "id": "n3g-g106-ex2",
+   "japanese": "次の試合では、必ず勝ってみせる。",
+   "furigana": null,
+   "translationVi": "Trận tới tôi nhất định sẽ thắng cho xem.",
+   "sourceId": "vnjp-np-106"
+  },
+  {
+   "id": "n3g-g107-ex1",
+   "japanese": "留学をきっかけに、料理を始めた。",
+   "furigana": null,
+   "translationVi": "Nhân dịp đi du học, tôi bắt đầu nấu ăn.",
+   "sourceId": "vnjp-np-107"
+  },
+  {
+   "id": "n3g-g107-ex2",
+   "japanese": "病気をきっかけとして、生活を見直した。",
+   "furigana": null,
+   "translationVi": "Nhân lần bị ốm, tôi đã xem lại cách sống của mình.",
+   "sourceId": "vnjp-np-107"
+  },
+  {
+   "id": "n3g-g108-ex1",
+   "japanese": "家を出ようとしたとき、雨が降り始めた。",
+   "furigana": null,
+   "translationVi": "Lúc định ra khỏi nhà thì trời bắt đầu mưa.",
+   "sourceId": "vnjp-np-108"
+  },
+  {
+   "id": "n3g-g108-ex2",
+   "japanese": "宝くじで一億円当たったとしたら、何をしますか。",
+   "furigana": null,
+   "translationVi": "Giả sử trúng xổ số một trăm triệu yên, bạn sẽ làm gì?",
+   "sourceId": "vnjp-np-108"
+  },
+  {
+   "id": "n3g-g109-ex1",
+   "japanese": "お降りの際は、お忘れ物のないようご注意ください。",
+   "furigana": null,
+   "translationVi": "Khi xuống tàu, xin chú ý đừng để quên đồ.",
+   "sourceId": "vnjp-np-109"
+  },
+  {
+   "id": "n3g-g109-ex2",
+   "japanese": "パスポートを申請する際に、写真が必要です。",
+   "furigana": null,
+   "translationVi": "Khi xin cấp hộ chiếu cần có ảnh.",
+   "sourceId": "vnjp-np-109"
+  },
+  {
+   "id": "n3g-g110-ex1",
+   "japanese": "大雨で川があふれるおそれがある。",
+   "furigana": null,
+   "translationVi": "Do mưa lớn, có nguy cơ sông bị tràn.",
+   "sourceId": "vnjp-np-110"
+  },
+  {
+   "id": "n3g-g110-ex2",
+   "japanese": "この薬は、眠くなるおそれがあります。",
+   "furigana": null,
+   "translationVi": "Thuốc này có thể gây buồn ngủ.",
+   "sourceId": "vnjp-np-110"
+  }
+ ],
+ "lessons": [
+  {
+   "id": "n3g-l01",
+   "number": 1,
+   "title": "Ngữ pháp N3 · mục 1–10",
+   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g001",
+     "pattern": "〜ことにしている",
+     "structure": "Vる／Vない ＋ ことにしている",
+     "meaningVi": "(tôi) có thói quen/nguyên tắc là…",
+     "usage": "Nói về thói quen hay quy tắc mà chính người nói đã tự quyết định và duy trì.",
+     "cautionNote": "Khác 〜ことになっている: quy định do người khác, tổ chức đặt ra.",
+     "examples": [
+      "n3g-g001-ex1",
+      "n3g-g001-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-001"
+    },
+    {
+     "id": "n3g-g002",
+     "pattern": "〜ことになっている",
+     "structure": "Vる／Vない ＋ ことになっている",
+     "meaningVi": "theo quy định thì…, đã được định sẵn là…",
+     "usage": "Diễn tả quy định, luật lệ hay lịch đã được quyết định (thường không do người nói quyết định).",
+     "cautionNote": "Khác 〜ことにしている (tự mình quyết định).",
+     "examples": [
+      "n3g-g002-ex1",
+      "n3g-g002-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-002"
+    },
+    {
+     "id": "n3g-g003",
+     "pattern": "〜ようになっている",
+     "structure": "Vる／Vない ＋ ようになっている",
+     "meaningVi": "được thiết kế/được làm sao cho…",
+     "usage": "Nói về cơ chế, cách bố trí của máy móc, hệ thống được làm ra để hoạt động theo một cách nhất định.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g003-ex1",
+      "n3g-g003-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-003"
+    },
+    {
+     "id": "n3g-g004",
+     "pattern": "〜ような／〜ように",
+     "structure": "N の／V（thể thường） ＋ ような N／ように V",
+     "meaningVi": "giống như…, như là…",
+     "usage": "So sánh, ví von hoặc nêu ví dụ tiêu biểu; ような bổ nghĩa cho danh từ, ように bổ nghĩa cho động từ/tính từ.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g004-ex1",
+      "n3g-g004-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-004"
+    },
+    {
+     "id": "n3g-g005",
+     "pattern": "〜みたいだ",
+     "structure": "N／Vthường／Aい／Aな（bỏ な） ＋ みたいだ",
+     "meaningVi": "hình như…, giống như…",
+     "usage": "Cách nói thân mật của ようだ: phỏng đoán dựa trên cảm nhận, hoặc so sánh ví von.",
+     "cautionNote": "Dùng chủ yếu trong văn nói; văn viết trang trọng dùng ようだ.",
+     "examples": [
+      "n3g-g005-ex1",
+      "n3g-g005-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-005"
+    },
+    {
+     "id": "n3g-g006",
+     "pattern": "〜らしい",
+     "structure": "N／Vthường／Aい／Aな（bỏ な） ＋ らしい ／ N ＋ らしい（đúng chất N）",
+     "meaningVi": "nghe nói…, có vẻ…; đúng chất…",
+     "usage": "(1) Phỏng đoán dựa trên thông tin nghe được hoặc căn cứ khách quan. (2) N らしい: mang đúng đặc trưng của N.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g006-ex1",
+      "n3g-g006-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-006"
+    },
+    {
+     "id": "n3g-g007",
+     "pattern": "〜つもり",
+     "structure": "Vる／Vない ＋ つもり ／ Vた・Aい・Aな・N の ＋ つもり",
+     "meaningVi": "định…, có ý định…; cứ tưởng là/coi như là…",
+     "usage": "(1) Ý định của người nói. (2) Vた／N のつもり: tự cho là, coi như là (khác với thực tế).",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g007-ex1",
+      "n3g-g007-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-007"
+    },
+    {
+     "id": "n3g-g008",
+     "pattern": "〜てくる",
+     "structure": "Vて ＋ くる",
+     "meaningVi": "…dần lên (đến hiện tại); bắt đầu…; …rồi quay lại",
+     "usage": "Diễn tả sự thay đổi diễn ra dần dần cho tới hiện tại, sự xuất hiện của một trạng thái, hoặc hành động hướng về phía người nói.",
+     "cautionNote": "〜ていく: thay đổi từ hiện tại hướng về tương lai.",
+     "examples": [
+      "n3g-g008-ex1",
+      "n3g-g008-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-008"
+    },
+    {
+     "id": "n3g-g009",
+     "pattern": "〜てほしい／〜てもらいたい",
+     "structure": "（人に）Vて ＋ ほしい／もらいたい",
+     "meaningVi": "muốn (ai đó) làm…",
+     "usage": "Bày tỏ mong muốn người khác làm gì; ないでほしい: mong ai đó đừng làm.",
+     "cautionNote": "Không dùng 〜たい cho hành động của người khác.",
+     "examples": [
+      "n3g-g009-ex1",
+      "n3g-g009-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-009"
+    },
+    {
+     "id": "n3g-g010",
+     "pattern": "〜ば／〜たら／〜と…たい／のに／よかった",
+     "structure": "Vば・Vたら ＋ よかった／いいのに；Vば・Vたら・Vと ＋ …たい",
+     "meaningVi": "giá mà…, phải chi… (tiếc nuối, mong ước)",
+     "usage": "Dùng điều kiện để bày tỏ tiếc nuối về việc đã không xảy ra (よかった・のに) hoặc mong ước trái với hiện thực.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g010-ex1",
+      "n3g-g010-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-010"
+    }
+   ]
+  },
+  {
+   "id": "n3g-l02",
+   "number": 2,
+   "title": "Ngữ pháp N3 · mục 11–20",
+   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g011",
+     "pattern": "使役形を使った表現（〜させてください／〜させられる）",
+     "structure": "Vさせてください／Vさせてもらう／Vさせられる",
+     "meaningVi": "cách nói dùng thể sai khiến: xin được làm…, bị bắt làm…",
+     "usage": "Vさせてください／させてもらう: xin phép được làm. Vさせられる (sai khiến bị động): bị bắt phải làm điều mình không muốn.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g011-ex1",
+      "n3g-g011-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-011"
+    },
+    {
+     "id": "n3g-g012",
+     "pattern": "自動詞を使った表現",
+     "structure": "N が ＋ tự động từ／tự động từ ＋ ている",
+     "meaningVi": "cách nói dùng tự động từ: sự việc tự xảy ra, trạng thái còn lại",
+     "usage": "Dùng tự động từ để nói kết quả hay trạng thái mà không nhấn mạnh người làm; thường dùng khi xin lỗi hoặc tránh quy trách nhiệm.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g012-ex1",
+      "n3g-g012-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-012"
+    },
+    {
+     "id": "n3g-g013",
+     "pattern": "〜み",
+     "structure": "Aい（bỏ い）／Aな（bỏ な） ＋ み",
+     "meaningVi": "(danh từ hóa tính từ) độ…, cảm giác…",
+     "usage": "Biến tính từ thành danh từ chỉ cảm nhận, tính chất cảm thấy được (khác 〜さ chỉ mức độ đo được).",
+     "cautionNote": "Chỉ dùng với một số tính từ: 楽しみ, 痛み, 甘み, 重み, 深み, 弱み…",
+     "examples": [
+      "n3g-g013-ex1",
+      "n3g-g013-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-013"
+    },
+    {
+     "id": "n3g-g014",
+     "pattern": "〜のではないだろうか／〜ないかと思う",
+     "structure": "Vthường・Aい・Aな／N な ＋ のではないだろうか；Vない ＋ かと思う",
+     "meaningVi": "chẳng phải là… sao, tôi nghĩ có lẽ…",
+     "usage": "Nêu ý kiến, phỏng đoán một cách nhẹ nhàng, dè dặt.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g014-ex1",
+      "n3g-g014-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-014"
+    },
+    {
+     "id": "n3g-g015",
+     "pattern": "縮約形（〜ちゃう・〜とく・〜なきゃ など）",
+     "structure": "ている→てる、ておく→とく、てしまう→ちゃう、ければ→きゃ、では→じゃ…",
+     "meaningVi": "dạng rút gọn thường gặp trong văn nói",
+     "usage": "Trong hội thoại thân mật, nhiều dạng ngữ pháp được nói gọn lại; cần nhận ra để nghe hiểu.",
+     "cautionNote": "Không dùng trong văn viết trang trọng.",
+     "examples": [
+      "n3g-g015-ex1",
+      "n3g-g015-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-015"
+    },
+    {
+     "id": "n3g-g016",
+     "pattern": "〜から〜にかけて",
+     "structure": "N（thời gian／địa điểm） ＋ から ＋ N ＋ にかけて",
+     "meaningVi": "từ… đến… (trong khoảng)",
+     "usage": "Chỉ một khoảng thời gian hay phạm vi không gian một cách khái quát, không xác định ranh giới rõ ràng.",
+     "cautionNote": "Khác 〜から〜まで: chỉ điểm đầu, điểm cuối rõ ràng.",
+     "examples": [
+      "n3g-g016-ex1",
+      "n3g-g016-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-016"
+    },
+    {
+     "id": "n3g-g017",
+     "pattern": "〜だらけ",
+     "structure": "N ＋ だらけ",
+     "meaningVi": "đầy…, toàn là… (đánh giá tiêu cực)",
+     "usage": "Diễn tả có quá nhiều thứ không mong muốn (bụi, lỗi, máu, rác…).",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g017-ex1",
+      "n3g-g017-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-017"
+    },
+    {
+     "id": "n3g-g018",
+     "pattern": "〜おかげ",
+     "structure": "N の／Vthường・Aい・Aな ＋ おかげで／おかげだ",
+     "meaningVi": "nhờ…, nhờ có…",
+     "usage": "Nêu nguyên nhân dẫn đến kết quả tốt, kèm cảm giác biết ơn.",
+     "cautionNote": "Kết quả xấu dùng 〜せい.",
+     "examples": [
+      "n3g-g018-ex1",
+      "n3g-g018-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-018"
+    },
+    {
+     "id": "n3g-g019",
+     "pattern": "〜せい",
+     "structure": "N の／Vthường・Aい・Aな ＋ せいで／せいだ",
+     "meaningVi": "tại…, do… (kết quả xấu)",
+     "usage": "Nêu nguyên nhân dẫn đến kết quả không mong muốn, thường mang ý trách móc.",
+     "cautionNote": "Kết quả tốt dùng 〜おかげ.",
+     "examples": [
+      "n3g-g019-ex1",
+      "n3g-g019-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-019"
+    },
+    {
+     "id": "n3g-g020",
+     "pattern": "〜とおり（に）／〜どおり（に）",
+     "structure": "Vる・Vた ＋ とおり（に）；N の ＋ とおり（に）；N ＋ どおり（に）",
+     "meaningVi": "đúng như…, theo như…",
+     "usage": "Làm hoặc xảy ra đúng như điều đã nói, đã thấy, đã dự định.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g020-ex1",
+      "n3g-g020-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-020"
+    }
+   ]
+  },
+  {
+   "id": "n3g-l03",
+   "number": 3,
+   "title": "Ngữ pháp N3 · mục 21–30",
+   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g021",
+     "pattern": "〜について／〜につき",
+     "structure": "N ＋ について／につき",
+     "meaningVi": "về…, liên quan đến…; (につき) mỗi…, vì…",
+     "usage": "について: nêu đề tài được nói, nghĩ, điều tra. につき là cách nói trang trọng; còn có nghĩa \"mỗi\" (1人につき) hoặc \"vì\" (thông báo).",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g021-ex1",
+      "n3g-g021-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-021"
+    },
+    {
+     "id": "n3g-g022",
+     "pattern": "〜に関し（て）",
+     "structure": "N ＋ に関して／に関する N",
+     "meaningVi": "liên quan đến…, về…",
+     "usage": "Giống について nhưng trang trọng hơn, hay dùng trong văn viết, thông báo, nghiên cứu.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g022-ex1",
+      "n3g-g022-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-022"
+    },
+    {
+     "id": "n3g-g023",
+     "pattern": "〜に比べ（て）",
+     "structure": "N ＋ に比べ（て）",
+     "meaningVi": "so với…",
+     "usage": "Đưa ra đối tượng làm chuẩn để so sánh.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g023-ex1",
+      "n3g-g023-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-023"
+    },
+    {
+     "id": "n3g-g024",
+     "pattern": "〜に加え（て）",
+     "structure": "N ＋ に加え（て）",
+     "meaningVi": "thêm vào…, ngoài… ra còn…",
+     "usage": "Nêu thêm một điều nữa bên cạnh điều đã có.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g024-ex1",
+      "n3g-g024-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-024"
+    },
+    {
+     "id": "n3g-g025",
+     "pattern": "〜に対し（て）",
+     "structure": "N ＋ に対して／に対する N",
+     "meaningVi": "đối với…, hướng tới…",
+     "usage": "Chỉ đối tượng mà hành động, thái độ, cảm xúc hướng tới.",
+     "cautionNote": "Mục 34 trong danh mục nguồn cũng là 〜に対し（て）, dùng với nghĩa đối lập \"trái lại\".",
+     "examples": [
+      "n3g-g025-ex1",
+      "n3g-g025-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-025"
+    },
+    {
+     "id": "n3g-g026",
+     "pattern": "〜たびに",
+     "structure": "Vる ＋ たびに；N の ＋ たびに",
+     "meaningVi": "mỗi lần…, cứ mỗi khi… là…",
+     "usage": "Mỗi lần sự việc trước xảy ra thì sự việc sau cũng xảy ra.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g026-ex1",
+      "n3g-g026-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-026"
+    },
+    {
+     "id": "n3g-g027",
+     "pattern": "たとえ〜ても",
+     "structure": "たとえ ＋ Vて・Aくて・Aで・N で ＋ も",
+     "meaningVi": "cho dù…, dẫu cho… thì cũng…",
+     "usage": "Giả định một điều kiện (kể cả cực đoan) nhưng kết quả hay ý chí vẫn không thay đổi.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g027-ex1",
+      "n3g-g027-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-027"
+    },
+    {
+     "id": "n3g-g028",
+     "pattern": "〜って",
+     "structure": "N・câu（thể thường） ＋ って",
+     "meaningVi": "(văn nói) nghe nói…, …thì là…, là…",
+     "usage": "Dạng nói của と (trích dẫn), という, というのは, は: truyền đạt lời nghe được hoặc nêu chủ đề.",
+     "cautionNote": "Chỉ dùng trong hội thoại thân mật.",
+     "examples": [
+      "n3g-g028-ex1",
+      "n3g-g028-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-028"
+    },
+    {
+     "id": "n3g-g029",
+     "pattern": "〜くらい／〜ぐらい",
+     "structure": "Vthường・Aい・Aな・N ＋ くらい／ぐらい",
+     "meaningVi": "khoảng…; đến mức…; ít nhất thì…",
+     "usage": "Chỉ mức độ (đến mức…), lượng ước chừng, hoặc mức tối thiểu (ít nhất cũng…).",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g029-ex1",
+      "n3g-g029-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-029"
+    },
+    {
+     "id": "n3g-g030",
+     "pattern": "〜くらいなら／〜ぐらいなら",
+     "structure": "Vる ＋ くらいなら／ぐらいなら",
+     "meaningVi": "nếu phải… thì thà… còn hơn",
+     "usage": "Vế trước là điều rất không muốn; vế sau nêu lựa chọn được cho là tốt hơn (thường đi với ほうがいい, ほうがましだ).",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g030-ex1",
+      "n3g-g030-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-030"
+    }
+   ]
+  },
+  {
+   "id": "n3g-l04",
+   "number": 4,
+   "title": "Ngữ pháp N3 · mục 31–40",
+   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g031",
+     "pattern": "〜うちに",
+     "structure": "Vる・Vている・Vない・Aい・Aな・N の ＋ うちに",
+     "meaningVi": "trong lúc…, trước khi… (hãy làm…); trong lúc… thì (đã)…",
+     "usage": "(1) Làm trong lúc trạng thái còn kéo dài, trước khi nó thay đổi. (2) Trong lúc đang làm gì thì một thay đổi tự nhiên xảy ra.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g031-ex1",
+      "n3g-g031-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-031"
+    },
+    {
+     "id": "n3g-g032",
+     "pattern": "〜を中心に／〜を中心として／〜を中心にして",
+     "structure": "N ＋ を中心に（して）／を中心として",
+     "meaningVi": "lấy… làm trung tâm, chủ yếu là…",
+     "usage": "Chỉ trung tâm, trọng tâm của một phạm vi hay một hoạt động.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g032-ex1",
+      "n3g-g032-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-032"
+    },
+    {
+     "id": "n3g-g033",
+     "pattern": "〜をはじめ",
+     "structure": "N ＋ をはじめ（として）／をはじめとする N",
+     "meaningVi": "tiêu biểu là…, trước tiên là…, kể cả…",
+     "usage": "Nêu một ví dụ tiêu biểu rồi ngụ ý còn nhiều đối tượng khác cùng loại.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g033-ex1",
+      "n3g-g033-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-033"
+    },
+    {
+     "id": "n3g-g034",
+     "pattern": "〜に対し（て）",
+     "structure": "N／Vthường・Aい・Aな（bỏ な→である） の ＋ に対して",
+     "meaningVi": "trái với…, ngược lại với…",
+     "usage": "Đặt hai sự việc cạnh nhau để làm nổi bật sự đối lập.",
+     "cautionNote": "Mục 25 trong danh mục nguồn cũng là 〜に対し（て）, dùng với nghĩa \"đối với\".",
+     "examples": [
+      "n3g-g034-ex1",
+      "n3g-g034-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-034"
+    },
+    {
+     "id": "n3g-g035",
+     "pattern": "〜において",
+     "structure": "N ＋ において／における N",
+     "meaningVi": "tại…, ở…, trong (lĩnh vực)…",
+     "usage": "Chỉ nơi chốn, thời điểm hay lĩnh vực xảy ra sự việc; trang trọng hơn で.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g035-ex1",
+      "n3g-g035-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-035"
+    },
+    {
+     "id": "n3g-g036",
+     "pattern": "〜にわたって／〜にわたり",
+     "structure": "N（thời gian・phạm vi） ＋ にわたって／にわたる N",
+     "meaningVi": "suốt…, trải dài…, trên khắp…",
+     "usage": "Nhấn mạnh phạm vi rộng hoặc thời gian dài của một sự việc.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g036-ex1",
+      "n3g-g036-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-036"
+    },
+    {
+     "id": "n3g-g037",
+     "pattern": "〜にとって",
+     "structure": "N ＋ にとって",
+     "meaningVi": "đối với… (từ lập trường của…)",
+     "usage": "Nêu đánh giá, nhận định từ góc nhìn của một người hay một đối tượng.",
+     "cautionNote": "Khác 〜に対して: đối tượng hướng tới của hành động/thái độ.",
+     "examples": [
+      "n3g-g037-ex1",
+      "n3g-g037-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-037"
+    },
+    {
+     "id": "n3g-g038",
+     "pattern": "〜による／〜により／〜によって／〜によっては",
+     "structure": "N ＋ による N／により／によって／によっては",
+     "meaningVi": "do…, bởi…, bằng…; tùy theo…; tùy… mà có khi…",
+     "usage": "Chỉ nguyên nhân, tác nhân (câu bị động), phương tiện, hoặc sự khác biệt tùy theo đối tượng; によっては: có trường hợp…",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g038-ex1",
+      "n3g-g038-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-038"
+    },
+    {
+     "id": "n3g-g039",
+     "pattern": "〜に違いない",
+     "structure": "Vthường・Aい／Aな・N（bỏ だ） ＋ に違いない",
+     "meaningVi": "chắc chắn là…, nhất định là…",
+     "usage": "Phỏng đoán với độ tin chắc cao dựa trên căn cứ của người nói.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g039-ex1",
+      "n3g-g039-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-039"
+    },
+    {
+     "id": "n3g-g040",
+     "pattern": "〜とは／〜というのは",
+     "structure": "N ＋ とは／というのは ＋ …（という意味）だ",
+     "meaningVi": "… nghĩa là…, … là…",
+     "usage": "Nêu một từ, khái niệm rồi định nghĩa hoặc giải thích nó.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g040-ex1",
+      "n3g-g040-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-040"
+    }
+   ]
+  },
+  {
+   "id": "n3g-l05",
+   "number": 5,
+   "title": "Ngữ pháp N3 · mục 41–50",
+   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g041",
+     "pattern": "〜たとたん（に）",
+     "structure": "Vた ＋ とたん（に）",
+     "meaningVi": "vừa… thì ngay lập tức…",
+     "usage": "Ngay sau khi sự việc trước xảy ra thì sự việc sau (thường bất ngờ) xảy ra.",
+     "cautionNote": "Vế sau không dùng ý chí hay mệnh lệnh của người nói.",
+     "examples": [
+      "n3g-g041-ex1",
+      "n3g-g041-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-041"
+    },
+    {
+     "id": "n3g-g042",
+     "pattern": "〜につれ（て）",
+     "structure": "Vる・N ＋ につれ（て）",
+     "meaningVi": "càng… thì càng…, cùng với…",
+     "usage": "Một thay đổi kéo theo một thay đổi khác theo cùng chiều.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g042-ex1",
+      "n3g-g042-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-042"
+    },
+    {
+     "id": "n3g-g043",
+     "pattern": "〜にしたがって／〜にしたがい",
+     "structure": "Vる・N ＋ にしたがって／にしたがい",
+     "meaningVi": "(1) càng… thì càng…; (2) theo…, tuân theo…",
+     "usage": "(1) Thay đổi song song như につれて. (2) Làm theo chỉ dẫn, quy tắc.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g043-ex1",
+      "n3g-g043-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-043"
+    },
+    {
+     "id": "n3g-g044",
+     "pattern": "〜最中",
+     "structure": "Vている・N の ＋ 最中（に／だ）",
+     "meaningVi": "đúng lúc đang…, giữa lúc…",
+     "usage": "Nhấn mạnh hành động đang ở cao điểm thì có chuyện khác xen vào.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g044-ex1",
+      "n3g-g044-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-044"
+    },
+    {
+     "id": "n3g-g045",
+     "pattern": "〜てからでないと／〜てからでなければ…ない",
+     "structure": "Vて ＋ からでないと／からでなければ ＋ …ない",
+     "meaningVi": "nếu chưa… thì không thể…",
+     "usage": "Điều kiện trước tiên phải được thực hiện thì mới làm được việc sau.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g045-ex1",
+      "n3g-g045-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-045"
+    },
+    {
+     "id": "n3g-g046",
+     "pattern": "〜て以来",
+     "structure": "Vて ＋ 以来；N ＋ 以来",
+     "meaningVi": "kể từ khi…",
+     "usage": "Từ một thời điểm trong quá khứ đến nay, trạng thái vẫn tiếp diễn.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g046-ex1",
+      "n3g-g046-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-046"
+    },
+    {
+     "id": "n3g-g047",
+     "pattern": "〜一方だ",
+     "structure": "Vる ＋ 一方だ",
+     "meaningVi": "ngày càng…, cứ thế mà…",
+     "usage": "Một xu hướng (thường không tốt) cứ tiến triển theo một chiều.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g047-ex1",
+      "n3g-g047-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-047"
+    },
+    {
+     "id": "n3g-g048",
+     "pattern": "〜しかない／〜ほかない／〜よりない／〜よりほかない／〜ほかしかたがない",
+     "structure": "Vる ＋ しかない／ほかない／よりない／よりほかない／ほかしかたがない",
+     "meaningVi": "chỉ còn cách…, đành phải…",
+     "usage": "Không có lựa chọn nào khác ngoài việc làm điều đó.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g048-ex1",
+      "n3g-g048-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-048"
+    },
+    {
+     "id": "n3g-g049",
+     "pattern": "〜はもちろん／〜はもとより",
+     "structure": "N ＋ はもちろん／はもとより",
+     "meaningVi": "… là đương nhiên, … thì không cần phải nói",
+     "usage": "Nêu điều hiển nhiên rồi nhấn mạnh rằng cả điều sau cũng vậy; もとより trang trọng hơn.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g049-ex1",
+      "n3g-g049-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-049"
+    },
+    {
+     "id": "n3g-g050",
+     "pattern": "〜ついでに",
+     "structure": "Vる・Vた ＋ ついでに；N の ＋ ついでに",
+     "meaningVi": "nhân tiện…, tiện thể…",
+     "usage": "Nhân dịp làm việc chính thì làm thêm việc khác.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g050-ex1",
+      "n3g-g050-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-050"
+    }
+   ]
+  },
+  {
+   "id": "n3g-l06",
+   "number": 6,
+   "title": "Ngữ pháp N3 · mục 51–60",
+   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g051",
+     "pattern": "〜ということだ",
+     "structure": "câu（thể thường） ＋ ということだ",
+     "meaningVi": "nghe nói là…; tức là…, có nghĩa là…",
+     "usage": "(1) Truyền đạt thông tin nghe được. (2) Rút ra kết luận, diễn giải lại ý.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g051-ex1",
+      "n3g-g051-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-051"
+    },
+    {
+     "id": "n3g-g052",
+     "pattern": "〜ことはない",
+     "structure": "Vる ＋ ことはない",
+     "meaningVi": "không cần phải…, không đến mức phải…",
+     "usage": "Khuyên nhủ, trấn an rằng việc đó không cần thiết.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g052-ex1",
+      "n3g-g052-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-052"
+    },
+    {
+     "id": "n3g-g053",
+     "pattern": "〜こと",
+     "structure": "Vる・Vない ＋ こと；Aい・Aな ＋ こと（cảm thán）",
+     "meaningVi": "phải…, hãy… (quy định); …biết bao (cảm thán)",
+     "usage": "(1) Cuối câu nêu quy định, chỉ thị (văn bản, nội quy). (2) Biểu lộ cảm xúc ngạc nhiên, cảm thán.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g053-ex1",
+      "n3g-g053-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-053"
+    },
+    {
+     "id": "n3g-g054",
+     "pattern": "〜ないことはない／〜ないこともない",
+     "structure": "Vない・Aくない・Aでない ＋ ことはない／こともない",
+     "meaningVi": "không phải là không…, cũng có thể…",
+     "usage": "Khẳng định một cách dè dặt, không hoàn toàn chắc chắn.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g054-ex1",
+      "n3g-g054-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-054"
+    },
+    {
+     "id": "n3g-g055",
+     "pattern": "〜もの（〜もん）",
+     "structure": "câu（thể thường） ＋ もの／もん",
+     "meaningVi": "vì… mà (biện minh, nũng nịu)",
+     "usage": "Đưa ra lý do để biện hộ, thường trong văn nói thân mật, hay đi với だって.",
+     "cautionNote": "もん là dạng thân mật hơn.",
+     "examples": [
+      "n3g-g055-ex1",
+      "n3g-g055-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-055"
+    },
+    {
+     "id": "n3g-g056",
+     "pattern": "〜ものだから／〜もので",
+     "structure": "Vthường・Aい・Aな／N な ＋ ものだから／もので",
+     "meaningVi": "vì… (nên) (giải thích lý do)",
+     "usage": "Giải thích lý do một cách phân trần, thường khi xin lỗi hay thanh minh.",
+     "cautionNote": "Vế sau không dùng mệnh lệnh, nhờ vả.",
+     "examples": [
+      "n3g-g056-ex1",
+      "n3g-g056-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-056"
+    },
+    {
+     "id": "n3g-g057",
+     "pattern": "〜ものか",
+     "structure": "Vる・Aい・Aな／N な ＋ ものか（もんか）",
+     "meaningVi": "làm gì có chuyện…, nhất định không…",
+     "usage": "Phủ định mạnh mẽ bằng câu hỏi tu từ; thể hiện quyết tâm không làm hoặc phản bác.",
+     "cautionNote": "Văn nói; dạng lịch sự hơn: ものですか.",
+     "examples": [
+      "n3g-g057-ex1",
+      "n3g-g057-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-057"
+    },
+    {
+     "id": "n3g-g058",
+     "pattern": "〜たところ",
+     "structure": "Vた ＋ ところ",
+     "meaningVi": "sau khi thử… thì (phát hiện ra)…",
+     "usage": "Làm một việc rồi nhận được kết quả hay phát hiện điều gì (thường ngoài dự đoán).",
+     "cautionNote": "Khác 〜たところだ (vừa mới…).",
+     "examples": [
+      "n3g-g058-ex1",
+      "n3g-g058-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-058"
+    },
+    {
+     "id": "n3g-g059",
+     "pattern": "〜ところに／〜ところへ／〜ところを／〜ところで",
+     "structure": "Vる・Vている・Vた ＋ ところに／へ／を／で",
+     "meaningVi": "đúng lúc…, vào lúc… (thì có chuyện xảy ra)",
+     "usage": "ところに／へ: đúng lúc đó có người đến, có việc xảy ra. ところを: lúc đang… thì bị (thấy, bắt gặp…). ところで: tới lúc… thì (dừng lại).",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g059-ex1",
+      "n3g-g059-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-059"
+    },
+    {
+     "id": "n3g-g060",
+     "pattern": "〜ところだった",
+     "structure": "Vる ＋ ところだった",
+     "meaningVi": "suýt nữa thì…",
+     "usage": "Một việc (thường không tốt) đã gần xảy ra nhưng may mà không.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g060-ex1",
+      "n3g-g060-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-060"
+    }
+   ]
+  },
+  {
+   "id": "n3g-l07",
+   "number": 7,
+   "title": "Ngữ pháp N3 · mục 61–70",
+   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g061",
+     "pattern": "〜ほど",
+     "structure": "Vる・Vない・Aい・Aな・N ＋ ほど",
+     "meaningVi": "đến mức…, tới độ…",
+     "usage": "Diễn tả mức độ bằng một ví dụ cụ thể hoặc cường điệu.",
+     "cautionNote": "Mục 63 trong danh mục nguồn cũng là 〜ほど, dùng trong so sánh (〜ほど…ない).",
+     "examples": [
+      "n3g-g061-ex1",
+      "n3g-g061-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-061"
+    },
+    {
+     "id": "n3g-g062",
+     "pattern": "〜ば〜ほど",
+     "structure": "Vば ＋ Vる ほど；Aければ ＋ Aい ほど；Aなら ＋ Aな ほど",
+     "meaningVi": "càng… càng…",
+     "usage": "Khi mức độ của vế trước tăng thì mức độ của vế sau cũng tăng theo.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g062-ex1",
+      "n3g-g062-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-062"
+    },
+    {
+     "id": "n3g-g063",
+     "pattern": "〜ほど…ない／〜ほど…はない",
+     "structure": "N ＋ ほど …ない；N ＋ ほど …はない",
+     "meaningVi": "không… bằng…; không có gì… bằng…",
+     "usage": "〜ほど…ない: so sánh kém. 〜ほど…はない: không có gì hơn (so sánh nhất).",
+     "cautionNote": "Mục 61 trong danh mục nguồn cũng là 〜ほど, dùng với nghĩa \"đến mức\".",
+     "examples": [
+      "n3g-g063-ex1",
+      "n3g-g063-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-063"
+    },
+    {
+     "id": "n3g-g064",
+     "pattern": "〜など／〜なんか／〜なんて",
+     "structure": "N ＋ など／なんか／なんて",
+     "meaningVi": "như là…, chẳng hạn như…; (coi nhẹ) … như…",
+     "usage": "Nêu ví dụ, hoặc nói giảm, coi nhẹ, ngạc nhiên về đối tượng; なんか, なんて dùng trong văn nói.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g064-ex1",
+      "n3g-g064-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-064"
+    },
+    {
+     "id": "n3g-g065",
+     "pattern": "〜などと（なんて）言う／思う",
+     "structure": "câu（thể thường） ＋ などと／なんて ＋ 言う・思う",
+     "meaningVi": "nói/nghĩ (một điều) như là…",
+     "usage": "Trích dẫn lời nói hay suy nghĩ kèm thái độ ngạc nhiên, coi nhẹ hoặc không tán thành.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g065-ex1",
+      "n3g-g065-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-065"
+    },
+    {
+     "id": "n3g-g066",
+     "pattern": "〜からには",
+     "structure": "Vthường ＋ からには",
+     "meaningVi": "một khi đã… thì phải…",
+     "usage": "Đã ở hoàn cảnh hay đã quyết định như vậy thì đương nhiên phải làm đến cùng; vế sau là ý chí, nghĩa vụ.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g066-ex1",
+      "n3g-g066-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-066"
+    },
+    {
+     "id": "n3g-g067",
+     "pattern": "〜きる",
+     "structure": "Vます（bỏ ます） ＋ きる／きれる／きれない",
+     "meaningVi": "làm hết, làm xong hoàn toàn…; không thể… hết",
+     "usage": "Hoàn thành trọn vẹn một việc; きれない: không thể làm hết, làm xuể.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g067-ex1",
+      "n3g-g067-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-067"
+    },
+    {
+     "id": "n3g-g068",
+     "pattern": "〜ぎみ",
+     "structure": "Vます（bỏ ます）・N ＋ ぎみ",
+     "meaningVi": "hơi có vẻ…, có chiều hướng…",
+     "usage": "Có một chút dấu hiệu, khuynh hướng (thường không tốt) như mệt, cảm, béo…",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g068-ex1",
+      "n3g-g068-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-068"
+    },
+    {
+     "id": "n3g-g069",
+     "pattern": "〜がち",
+     "structure": "Vます（bỏ ます）・N ＋ がち",
+     "meaningVi": "hay…, thường hay… (khuynh hướng)",
+     "usage": "Có khuynh hướng dễ xảy ra một việc (thường không tốt), lặp đi lặp lại.",
+     "cautionNote": "Khác 〜ぎみ: chỉ một chút dấu hiệu ở thời điểm hiện tại.",
+     "examples": [
+      "n3g-g069-ex1",
+      "n3g-g069-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-069"
+    },
+    {
+     "id": "n3g-g070",
+     "pattern": "〜向き",
+     "structure": "N ＋ 向き（だ／の N）",
+     "meaningVi": "phù hợp với…, hợp với…",
+     "usage": "Đối tượng tự nhiên phù hợp với ai/cái gì (không nhất thiết được làm ra cho họ).",
+     "cautionNote": "Khác 〜向け: được làm ra dành riêng cho đối tượng.",
+     "examples": [
+      "n3g-g070-ex1",
+      "n3g-g070-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-070"
+    }
+   ]
+  },
+  {
+   "id": "n3g-l08",
+   "number": 8,
+   "title": "Ngữ pháp N3 · mục 71–80",
+   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g071",
+     "pattern": "〜向け",
+     "structure": "N ＋ 向け（だ／の N／に）",
+     "meaningVi": "dành cho…, hướng tới…",
+     "usage": "Được làm ra, thiết kế với mục đích dành cho đối tượng đó.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g071-ex1",
+      "n3g-g071-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-071"
+    },
+    {
+     "id": "n3g-g072",
+     "pattern": "〜を通じ（て）／〜を通し（て）",
+     "structure": "N ＋ を通じて／を通して",
+     "meaningVi": "thông qua…; suốt…",
+     "usage": "(1) Phương tiện, trung gian. (2) Trong suốt một khoảng thời gian.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g072-ex1",
+      "n3g-g072-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-072"
+    },
+    {
+     "id": "n3g-g073",
+     "pattern": "〜っぽい",
+     "structure": "Vます（bỏ ます）・Aい（bỏ い）・N ＋ っぽい",
+     "meaningVi": "có vẻ…, giống như…; hay…, dễ…",
+     "usage": "Mang tính chất, cảm giác giống như…; với động từ: hay, dễ (忘れっぽい, 怒りっぽい). Thường dùng trong văn nói.",
+     "cautionNote": "Danh mục nguồn ghi \"〜っぱい\"; nội dung trong app theo mẫu 〜っぽい (cần đối chiếu lại).",
+     "examples": [
+      "n3g-g073-ex1",
+      "n3g-g073-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-073"
+    },
+    {
+     "id": "n3g-g074",
+     "pattern": "〜とともに",
+     "structure": "N・Vる ＋ とともに",
+     "meaningVi": "cùng với…; đồng thời với…; cùng với sự… thì…",
+     "usage": "Cùng với người/vật; đồng thời; hoặc một thay đổi kéo theo thay đổi khác. Trang trọng.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g074-ex1",
+      "n3g-g074-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-074"
+    },
+    {
+     "id": "n3g-g075",
+     "pattern": "〜にともなって／〜にともない",
+     "structure": "N・Vる ＋ にともなって／にともない／にともなう N",
+     "meaningVi": "cùng với…, kéo theo…",
+     "usage": "Một thay đổi lớn kéo theo thay đổi khác; văn viết trang trọng.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g075-ex1",
+      "n3g-g075-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-075"
+    },
+    {
+     "id": "n3g-g076",
+     "pattern": "〜に決まっている",
+     "structure": "Vthường・Aい／Aな・N（bỏ だ） ＋ に決まっている",
+     "meaningVi": "chắc chắn là…, nhất định…",
+     "usage": "Khẳng định chắc chắn theo cảm nhận chủ quan của người nói (văn nói).",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g076-ex1",
+      "n3g-g076-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-076"
+    },
+    {
+     "id": "n3g-g077",
+     "pattern": "〜っけ",
+     "structure": "câu（thể thường・thể quá khứ） ＋ っけ",
+     "meaningVi": "…nhỉ? (nhớ lại, xác nhận)",
+     "usage": "Hỏi lại để xác nhận điều mình không nhớ rõ, hoặc tự nhớ lại chuyện cũ; văn nói.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g077-ex1",
+      "n3g-g077-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-077"
+    },
+    {
+     "id": "n3g-g078",
+     "pattern": "〜ように",
+     "structure": "Vる・Vない・V khả năng ＋ ように",
+     "meaningVi": "để…, sao cho…; mong sao…; hãy (dặn dò)…",
+     "usage": "(1) Mục đích với động từ không ý chí. (2) Cầu mong: 〜ますように. (3) Truyền đạt lời dặn: 〜ように言う・頼む.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g078-ex1",
+      "n3g-g078-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-078"
+    },
+    {
+     "id": "n3g-g079",
+     "pattern": "〜ようがない",
+     "structure": "Vます（bỏ ます） ＋ ようがない",
+     "meaningVi": "không có cách nào…, không thể…",
+     "usage": "Muốn làm nhưng không có phương pháp, phương tiện để làm.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g079-ex1",
+      "n3g-g079-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-079"
+    },
+    {
+     "id": "n3g-g080",
+     "pattern": "〜はずだ",
+     "structure": "Vthường・Aい・Aな・N の ＋ はずだ",
+     "meaningVi": "chắc chắn là…, lẽ ra…; thảo nào…",
+     "usage": "Phán đoán dựa trên căn cứ, lý lẽ; cũng dùng khi hiểu ra lý do (thảo nào).",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g080-ex1",
+      "n3g-g080-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-080"
+    }
+   ]
+  },
+  {
+   "id": "n3g-l09",
+   "number": 9,
+   "title": "Ngữ pháp N3 · mục 81–90",
+   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g081",
+     "pattern": "〜わけだ",
+     "structure": "Vthường・Aい・Aな・N な／である ＋ わけだ",
+     "meaningVi": "thảo nào…, hèn chi…; tức là…",
+     "usage": "Rút ra kết luận hợp lý từ sự thật đã biết, hoặc hiểu ra lý do.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g081-ex1",
+      "n3g-g081-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-081"
+    },
+    {
+     "id": "n3g-g082",
+     "pattern": "〜わけがない",
+     "structure": "Vthường・Aい・Aな・N な／である ＋ わけがない",
+     "meaningVi": "không lẽ nào…, không đời nào…",
+     "usage": "Phủ định mạnh khả năng xảy ra dựa trên lý lẽ.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g082-ex1",
+      "n3g-g082-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-082"
+    },
+    {
+     "id": "n3g-g083",
+     "pattern": "〜わけではない",
+     "structure": "Vthường・Aい・Aな・N な／である ＋ わけではない",
+     "meaningVi": "không hẳn là…, không có nghĩa là…",
+     "usage": "Phủ định một phần, điều chỉnh suy luận mà người nghe có thể nghĩ.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g083-ex1",
+      "n3g-g083-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-083"
+    },
+    {
+     "id": "n3g-g084",
+     "pattern": "〜わけにはいかない",
+     "structure": "Vる ＋ わけにはいかない",
+     "meaningVi": "không thể… (vì lý do xã hội, đạo lý)",
+     "usage": "Muốn làm hoặc có thể làm, nhưng vì hoàn cảnh, trách nhiệm, lẽ thường nên không thể làm.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g084-ex1",
+      "n3g-g084-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-084"
+    },
+    {
+     "id": "n3g-g085",
+     "pattern": "〜ないわけにはいかない",
+     "structure": "Vない ＋ わけにはいかない",
+     "meaningVi": "không thể không…, buộc phải…",
+     "usage": "Vì trách nhiệm, đạo lý hay hoàn cảnh nên bắt buộc phải làm.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g085-ex1",
+      "n3g-g085-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-085"
+    },
+    {
+     "id": "n3g-g086",
+     "pattern": "〜かわり（に）",
+     "structure": "Vる・Vた・Aい・Aな・N の ＋ かわり（に）",
+     "meaningVi": "thay vì…; bù lại…; đổi lại…",
+     "usage": "(1) Thay thế bằng việc khác. (2) Có mặt tốt bù cho mặt xấu. (3) Đổi lại, để đáp lại.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g086-ex1",
+      "n3g-g086-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-086"
+    },
+    {
+     "id": "n3g-g087",
+     "pattern": "〜にかわって／〜にかわり",
+     "structure": "N ＋ にかわって／にかわり",
+     "meaningVi": "thay cho…, thay mặt…",
+     "usage": "Làm thay người khác, hoặc một thứ mới thay thế thứ cũ.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g087-ex1",
+      "n3g-g087-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-087"
+    },
+    {
+     "id": "n3g-g088",
+     "pattern": "〜こそ",
+     "structure": "N ＋ こそ；Vて・〜から ＋ こそ",
+     "meaningVi": "chính…, chính vì…",
+     "usage": "Nhấn mạnh mạnh mẽ đối tượng hay lý do.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g088-ex1",
+      "n3g-g088-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-088"
+    },
+    {
+     "id": "n3g-g089",
+     "pattern": "〜さえ",
+     "structure": "N ＋ さえ；Vます（bỏ ます）・Vて ＋ さえ ＋ すれば・いれば；N ＋ さえ ＋ あれば",
+     "meaningVi": "ngay cả…; chỉ cần… (là)…",
+     "usage": "(1) Nêu trường hợp cực đoan: ngay cả… cũng. (2) さえ〜ば: chỉ cần điều kiện tối thiểu đó là đủ.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g089-ex1",
+      "n3g-g089-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-089"
+    },
+    {
+     "id": "n3g-g090",
+     "pattern": "〜として",
+     "structure": "N ＋ として（は／も／の）",
+     "meaningVi": "với tư cách là…, như là…",
+     "usage": "Nêu tư cách, vai trò, lập trường hoặc danh nghĩa.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g090-ex1",
+      "n3g-g090-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-090"
+    }
+   ]
+  },
+  {
+   "id": "n3g-l10",
+   "number": 10,
+   "title": "Ngữ pháp N3 · mục 91–100",
+   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g091",
+     "pattern": "〜からといって",
+     "structure": "câu（thể thường） ＋ からといって ＋ …（phủ định）",
+     "meaningVi": "không phải cứ vì… mà…",
+     "usage": "Phủ nhận việc chỉ dựa vào một lý do để kết luận hay hành động.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g091-ex1",
+      "n3g-g091-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-091"
+    },
+    {
+     "id": "n3g-g092",
+     "pattern": "〜に反し（て）",
+     "structure": "N ＋ に反して／に反する N",
+     "meaningVi": "trái với…, ngược với…",
+     "usage": "Kết quả trái với dự đoán, mong đợi, hoặc vi phạm quy định.",
+     "cautionNote": "Danh mục nguồn ghi \"〜に返し（て）\"; nội dung trong app theo mẫu 〜に反して (cần đối chiếu lại).",
+     "examples": [
+      "n3g-g092-ex1",
+      "n3g-g092-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-092"
+    },
+    {
+     "id": "n3g-g093",
+     "pattern": "〜にもとづいて／〜にもとづき",
+     "structure": "N ＋ にもとづいて／にもとづき／にもとづく N",
+     "meaningVi": "dựa trên…, căn cứ vào…",
+     "usage": "Lấy một thứ làm căn cứ, nền tảng cho hành động hay phán đoán.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g093-ex1",
+      "n3g-g093-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-093"
+    },
+    {
+     "id": "n3g-g094",
+     "pattern": "〜をもとに（して）",
+     "structure": "N ＋ をもとに（して）／をもとにした N",
+     "meaningVi": "dựa vào… (làm chất liệu, gốc)",
+     "usage": "Lấy một thứ làm chất liệu, gợi ý để tạo ra cái mới.",
+     "cautionNote": "Khác 〜にもとづいて: làm đúng theo căn cứ, không lệch khỏi nó.",
+     "examples": [
+      "n3g-g094-ex1",
+      "n3g-g094-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-094"
+    },
+    {
+     "id": "n3g-g095",
+     "pattern": "〜反面／〜半面",
+     "structure": "Vthường・Aい・Aな（である）・N である ＋ 反面",
+     "meaningVi": "mặt khác thì…, trái lại…",
+     "usage": "Một sự việc có hai mặt trái ngược nhau.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g095-ex1",
+      "n3g-g095-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-095"
+    },
+    {
+     "id": "n3g-g096",
+     "pattern": "〜れる／〜られる（自発）",
+     "structure": "V（思う・感じる・偲ぶ・案じる…） ＋ れる／られる",
+     "meaningVi": "(tự nhiên) cảm thấy…, thấy như…",
+     "usage": "Thể tự phát: cảm xúc, suy nghĩ tự nhiên nảy sinh, không do chủ ý; hay dùng trong văn viết để nêu ý kiến khách quan.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g096-ex1",
+      "n3g-g096-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-096"
+    },
+    {
+     "id": "n3g-g097",
+     "pattern": "〜てたまらない",
+     "structure": "Vて・Aくて・Aで ＋ たまらない",
+     "meaningVi": "… không chịu được, vô cùng…",
+     "usage": "Cảm xúc hay cảm giác cơ thể mạnh đến mức không kìm được.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g097-ex1",
+      "n3g-g097-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-097"
+    },
+    {
+     "id": "n3g-g098",
+     "pattern": "〜てならない",
+     "structure": "Vて・Aくて・Aで ＋ ならない",
+     "meaningVi": "… vô cùng, không sao kìm được (cảm giác tự nhiên)",
+     "usage": "Cảm xúc, suy nghĩ tự nhiên trào lên mà không kìm được; hay đi với 気がする, 思える, 心配だ.",
+     "cautionNote": "Ít dùng với cảm giác cơ thể như đau, khát (dùng てたまらない).",
+     "examples": [
+      "n3g-g098-ex1",
+      "n3g-g098-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-098"
+    },
+    {
+     "id": "n3g-g099",
+     "pattern": "〜とか",
+     "structure": "câu（thể thường） ＋ とか",
+     "meaningVi": "nghe nói là… (thì phải)",
+     "usage": "Truyền đạt điều nghe được một cách không chắc chắn lắm.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g099-ex1",
+      "n3g-g099-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-099"
+    },
+    {
+     "id": "n3g-g100",
+     "pattern": "〜だけ",
+     "structure": "Vる・Vたい・Vられる ＋ だけ（V）",
+     "meaningVi": "… hết mức có thể, … bao nhiêu tùy thích",
+     "usage": "Làm trong toàn bộ phạm vi có thể: できるだけ, 好きなだけ, 食べたいだけ…",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g100-ex1",
+      "n3g-g100-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-100"
+    }
+   ]
+  },
+  {
+   "id": "n3g-l11",
+   "number": 11,
+   "title": "Ngữ pháp N3 · mục 101–110",
+   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g101",
+     "pattern": "〜ばかりでなく",
+     "structure": "Vthường・Aい・Aな・N ＋ ばかりでなく ＋ …も",
+     "meaningVi": "không chỉ… mà còn…",
+     "usage": "Thêm một điều nữa (thường ở mức cao hơn) vào điều đã nêu.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g101-ex1",
+      "n3g-g101-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-101"
+    },
+    {
+     "id": "n3g-g102",
+     "pattern": "〜かけ／〜かける",
+     "structure": "Vます（bỏ ます） ＋ かけ（の N）／かける",
+     "meaningVi": "đang… dở, làm… giữa chừng; suýt…",
+     "usage": "Hành động đã bắt đầu nhưng chưa xong, hoặc sắp xảy ra.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g102-ex1",
+      "n3g-g102-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-102"
+    },
+    {
+     "id": "n3g-g103",
+     "pattern": "〜をこめて",
+     "structure": "N ＋ をこめて",
+     "meaningVi": "gửi gắm…, chứa chan…",
+     "usage": "Đặt tình cảm, tâm huyết vào một việc làm hay vật.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g103-ex1",
+      "n3g-g103-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-103"
+    },
+    {
+     "id": "n3g-g104",
+     "pattern": "〜わりに（は）",
+     "structure": "Vthường・Aい・Aな・N の ＋ わりに（は）",
+     "meaningVi": "so với… thì (lại)…",
+     "usage": "Kết quả hay mức độ không tương xứng với điều thông thường suy ra từ vế trước.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g104-ex1",
+      "n3g-g104-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-104"
+    },
+    {
+     "id": "n3g-g105",
+     "pattern": "〜くせに",
+     "structure": "Vthường・Aい・Aな・N の ＋ くせに",
+     "meaningVi": "dù… vậy mà… (trách móc, coi thường)",
+     "usage": "Giống のに nhưng mang sắc thái bực bội, chê trách đối với người khác.",
+     "cautionNote": "Không dùng cho bản thân người nói.",
+     "examples": [
+      "n3g-g105-ex1",
+      "n3g-g105-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-105"
+    },
+    {
+     "id": "n3g-g106",
+     "pattern": "〜てみせる",
+     "structure": "Vて ＋ みせる",
+     "meaningVi": "(1) làm cho xem; (2) nhất định sẽ… (quyết tâm)",
+     "usage": "(1) Làm mẫu cho người khác xem. (2) Thể hiện quyết tâm mạnh mẽ sẽ làm được.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g106-ex1",
+      "n3g-g106-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-106"
+    },
+    {
+     "id": "n3g-g107",
+     "pattern": "〜をきっかけに／〜をきっかけにして／〜をきっかけとして",
+     "structure": "N・Vた の ＋ をきっかけに（して）／をきっかけとして",
+     "meaningVi": "nhân dịp…, nhờ… mà bắt đầu…",
+     "usage": "Một sự việc trở thành động cơ, cơ hội để bắt đầu hoặc thay đổi điều gì.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g107-ex1",
+      "n3g-g107-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-107"
+    },
+    {
+     "id": "n3g-g108",
+     "pattern": "〜とする",
+     "structure": "Vよう（thể ý chí） ＋ とする；câu ＋ とする（giả định）",
+     "meaningVi": "định…, sắp sửa…; giả sử…",
+     "usage": "(1) Vようとする: định làm, sắp làm thì… (2) 〜とする・〜としたら: giả định một tình huống.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g108-ex1",
+      "n3g-g108-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-108"
+    },
+    {
+     "id": "n3g-g109",
+     "pattern": "〜際に／〜際（に）は",
+     "structure": "Vる・Vた・N の ＋ 際（に／は）",
+     "meaningVi": "khi…, lúc… (trang trọng)",
+     "usage": "Cách nói trang trọng của とき, hay dùng trong thông báo, hướng dẫn.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g109-ex1",
+      "n3g-g109-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-109"
+    },
+    {
+     "id": "n3g-g110",
+     "pattern": "〜おそれがある",
+     "structure": "Vる・N の ＋ おそれがある",
+     "meaningVi": "e là…, có nguy cơ…",
+     "usage": "Cảnh báo khả năng một điều xấu có thể xảy ra; hay dùng trong tin tức, thông báo.",
+     "cautionNote": null,
+     "examples": [
+      "n3g-g110-ex1",
+      "n3g-g110-ex2"
+     ],
+     "exercises": [],
+     "sourceId": "vnjp-np-110"
+    }
+   ]
+  }
+ ]
+}

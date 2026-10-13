@@ -3,6 +3,7 @@ package com.n3sensei.app.core.ui.state
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.n3sensei.app.domain.model.ItemQuery
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.domain.model.LessonSummary
 import com.n3sensei.app.domain.model.Tag
@@ -35,6 +36,8 @@ const val STOP_TIMEOUT_MILLIS = 5_000L
  */
 abstract class ItemBrowserViewModel<T>(
     contentRepository: ContentRepository,
+    /** The kind of item listed; lesson chips only offer lessons that contain some. */
+    itemType: ItemType,
     initialStatus: LearningStatus? = null,
 ) : ViewModel() {
 
@@ -44,6 +47,7 @@ abstract class ItemBrowserViewModel<T>(
     val filters: StateFlow<ItemQuery> = _filters.asStateFlow()
 
     val lessons: StateFlow<List<LessonSummary>> = contentRepository.observeLessons()
+        .map { all -> all.filter { it.countOf(itemType) > 0 } }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), emptyList())
 
     /** Topics available for filtering; empty for item types without topics. */
@@ -89,3 +93,9 @@ private fun Flow<ItemQuery>.debounceTextChanges(): Flow<ItemQuery> =
             if (typing) SEARCH_DEBOUNCE_MILLIS else 0L
         }
         .map { it.second }
+
+private fun LessonSummary.countOf(type: ItemType): Int = when (type) {
+    ItemType.VOCABULARY -> vocabularyCount
+    ItemType.KANJI -> kanjiCount
+    ItemType.GRAMMAR -> grammarCount
+}
