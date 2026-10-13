@@ -6,7 +6,7 @@
 
 ## Giới hạn và chưa hoàn thành
 
-- **Nội dung**: chỉ có một bài minh họa tự biên soạn (30 từ, 27 Kanji, 7 ngữ pháp), chưa qua kiểm duyệt chuyên môn. Giáo trình N3 đầy đủ phải được nhập từ nguồn có giấy phép (xem [docs/CONTENT_FORMAT.md](docs/CONTENT_FORMAT.md)).
+- **Nội dung**: một bài minh họa tự biên soạn (30 từ, 27 Kanji, 7 ngữ pháp, chưa qua kiểm duyệt chuyên môn) và **880 từ vựng Mimikara N3** (12 bài, chỉ từ vựng; nhập từ bảng do chủ dự án cung cấp, **giấy phép chưa xác minh**, xem [docs/MIMIKARA_N3.md](docs/MIMIKARA_N3.md)). Chưa có Kanji và ngữ pháp ngoài bài minh họa.
 - **Chưa có**: thứ tự nét Kanji; đồng bộ đám mây, tài khoản, AI (chỉ có đề xuất trong [docs/EXTENSIBILITY.md](docs/EXTENSIBILITY.md)); sao lưu định kỳ tự động; nút "Thử lại" ở các màn hình dạng danh sách khi lỗi đọc dữ liệu.
 - **Chưa kiểm thử**: thiết bị thật, bản release (chưa cấu hình ký, R8 tắt), Android 8–11, TalkBack với giọng đọc thật, nhắc học định kỳ qua nhiều giờ thực tế.
 - **Kết quả nghiệm thu, lỗi đã sửa và lỗi còn theo dõi**: xem [docs/ACCEPTANCE.md](docs/ACCEPTANCE.md).

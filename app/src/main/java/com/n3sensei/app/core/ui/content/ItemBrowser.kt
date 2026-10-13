@@ -67,8 +67,12 @@ fun <T> ItemBrowser(
                 .padding(horizontal = 16.dp, vertical = 8.dp),
         )
         if (lessons.isNotEmpty()) {
+            // "Bài 1 · N3" is ambiguous once several packs are installed: use the lesson title then.
+            val severalPacks = lessons.map { it.packId }.distinct().size > 1
             val options = listOf(FilterOption<String?>(null, stringResource(R.string.common_all))) +
-                lessons.map { FilterOption<String?>(it.id, stringResource(R.string.lesson_number, it.number, it.jlptLevel)) }
+                lessons.map {
+                    FilterOption<String?>(it.id, if (severalPacks) it.title else stringResource(R.string.lesson_number, it.number, it.jlptLevel))
+                }
             FilterChipRow(options = options, selected = filters.lessonId, onSelect = viewModel::onLessonSelected)
         }
         StatusFilterRow(

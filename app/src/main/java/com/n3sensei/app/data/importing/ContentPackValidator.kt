@@ -225,8 +225,10 @@ class ContentPackValidator(
                 checkFurigana(furigana, base = expression, reading = reading)?.let { return@forEachIndexed skip(it, furigana) }
             }
             if (id in itemIds.vocabulary) return@forEachIndexed skip(IssueCode.DUPLICATE_ID, id)
-            if (!itemIds.vocabularyEntries.add(expression to reading)) {
-                return@forEachIndexed skip(IssueCode.DUPLICATE_ENTRY, "$expression ($reading)")
+            // Same word and reading with another meaning is a different sense (e.g. しっかり
+            // in two lessons of a textbook), not a duplicate.
+            if (!itemIds.vocabularyEntries.add(Triple(expression, reading, meaning))) {
+                return@forEachIndexed skip(IssueCode.DUPLICATE_ENTRY, "$expression ($reading): $meaning")
             }
             val sourceId = resolveSource(v.sourceId, loc) ?: return@forEachIndexed skipped(ImportRecordType.VOCABULARY)
             itemIds.vocabulary += id
@@ -362,7 +364,8 @@ class ContentPackValidator(
 
     private class ItemIds {
         val vocabulary = mutableSetOf<String>()
-        val vocabularyEntries = mutableSetOf<Pair<String, String>>()
+        /** expression, reading, meaning */
+        val vocabularyEntries = mutableSetOf<Triple<String, String, String>>()
         val kanji = mutableSetOf<String>()
         val grammar = mutableSetOf<String>()
         val exercises = mutableSetOf<String>()

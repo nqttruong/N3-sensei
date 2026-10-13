@@ -7,6 +7,9 @@ import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.hasClickAction
 import androidx.compose.ui.test.hasSetTextAction
 import androidx.compose.ui.test.hasText
+import com.n3sensei.app.testing.countRows
+import androidx.compose.ui.test.performScrollToNode
+import androidx.compose.ui.test.hasScrollToIndexAction
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
@@ -214,10 +217,26 @@ class EndToEndTest {
         launch(seedContent = false, bundledContent = true).use {
             openTab(TopLevelDestination.LEARN)
             clickable(string(R.string.lessons_title)).performClick()
-            waitForText(ILLUSTRATION_LESSON)
+            // Both bundled packs are installed; the Mimikara lessons come first (pack id order).
+            waitForText("Mimikara N3 · 名詞")
+            composeRule.onNode(hasScrollToIndexAction()).performScrollToNode(hasText(ILLUSTRATION_LESSON))
             composeRule.onNodeWithText(ILLUSTRATION_LESSON).performClick()
             waitForText(string(R.string.lesson_counts, 30, 27, 7))
         }
+    }
+
+    @Test
+    fun bundledMimikaraPack_isInstalledOnFirstLaunch_withAll880Words() {
+        launch(seedContent = false, bundledContent = true).use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.lessons_title)).performClick()
+            waitForText("Mimikara N3 · 名詞")
+            composeRule.onNodeWithText("Mimikara N3 · 名詞").performClick()
+            waitForText(string(R.string.lesson_counts, 120, 0, 0))
+            waitForText("男性")
+        }
+        val vocabulary = AppTestState.appContainer.database.countRows("vocabulary")
+        assertEquals(30 + 880, vocabulary)
     }
 
     @Test

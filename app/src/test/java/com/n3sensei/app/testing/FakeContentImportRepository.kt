@@ -28,8 +28,8 @@ class FakeContentImportRepository(
         return nextReport
     }
 
-    override suspend fun installBundledContent(): ImportReport {
+    override suspend fun installBundledContent(): List<ImportReport> {
         bundledInstalls++
-        return ImportReport(ImportOutcome.UP_TO_DATE)
+        return listOf(ImportReport(ImportOutcome.UP_TO_DATE))
     }
 }

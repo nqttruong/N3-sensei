@@ -12,6 +12,6 @@ interface ContentImportRepository {
     /** Imports a pack checked by [checkDocument], after the user confirmed. */
     suspend fun importChecked(preview: ImportPreview): ImportReport
 
-    /** Installs the pack bundled with the app if it is missing or older than the bundled one. */
-    suspend fun installBundledContent(): ImportReport
+    /** Installs each pack bundled with the app that is missing or older than the bundled one; one report per pack. */
+    suspend fun installBundledContent(): List<ImportReport>
 }

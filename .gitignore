@@ -14,3 +14,7 @@
 *.keystore
 *.jks
 keystore.properties
+
+# Intermediate content data and source documents (see docs/MIMIKARA_N3.md); not committed.
+/local-content/
+/*.pdf

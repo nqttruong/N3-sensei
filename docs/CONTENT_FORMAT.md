@@ -2,7 +2,7 @@
 
 Nội dung học (bài, từ vựng, Kanji, ngữ pháp, câu ví dụ, bài tập) được nạp vào Room từ tệp JSON UTF-8 theo định dạng dưới đây. App dùng cùng bộ kiểm tra và bộ nhập cho:
 
-- gói minh họa đi kèm app: `app/src/main/assets/content/n3sensei-illustration.json`, tự cài ở lần chạy đầu và khi có phiên bản mới hơn;
+- các gói đi kèm app (`AndroidContentImportRepository.BUNDLED_PACK_ASSETS`), tự cài ở lần chạy đầu và khi có phiên bản mới hơn: gói minh họa `content/n3sensei-illustration.json` và gói từ vựng Mimikara N3 `content/mimikara-n3-vocab.json` (xem [MIMIKARA_N3.md](MIMIKARA_N3.md));
 - tệp người dùng chọn trong **Cài đặt → Nhập gói nội dung (JSON)**.
 
 ## Cấu trúc
@@ -73,7 +73,7 @@ Thứ tự trong mảng là thứ tự hiển thị. Trường không có trong 
 | Mức | Khi nào | Kết quả |
 |---|---|---|
 | **Nghiêm trọng** | JSON sai cú pháp/kiểu, sai `format`/`formatVersion`, thiếu `pack.id`/`title`/`version`, không có nguồn hợp lệ, `defaultSourceId` không tồn tại, không còn bài hợp lệ, lỗi ghi database | Không ghi gì; nội dung cũ giữ nguyên |
-| **Bỏ qua bản ghi** | Thiếu trường bắt buộc, ID trùng (cùng loại), từ trùng `expression`+`reading`, Kanji trùng trong một bài, Kanji không phải đúng 1 chữ Hán, furigana sai hoặc không khớp, nguồn không tồn tại, bài trùng `id`/`number`, bài tập không hợp lệ (< 2 đáp án, đáp án trùng, `answerIndex` ngoài phạm vi) | Bản ghi đó bị bỏ qua (bỏ bài thì bỏ cả mục trong bài); phần còn lại được nhập |
+| **Bỏ qua bản ghi** | Thiếu trường bắt buộc, ID trùng (cùng loại), từ trùng `expression`+`reading`+`meaningVi` (cùng từ và cách đọc nhưng khác nghĩa là hai mục), Kanji trùng trong một bài, Kanji không phải đúng 1 chữ Hán, furigana sai hoặc không khớp, nguồn không tồn tại, bài trùng `id`/`number`, bài tập không hợp lệ (< 2 đáp án, đáp án trùng, `answerIndex` ngoài phạm vi) | Bản ghi đó bị bỏ qua (bỏ bài thì bỏ cả mục trong bài); phần còn lại được nhập |
 | **Cảnh báo** | Tham chiếu câu ví dụ/chủ đề không tồn tại (bị lược bỏ), số nét ngoài 1–40 (bị bỏ trống), cùng một Kanji ở nhiều bài, số mục của bài khác mục tiêu 30/27/7 | Vẫn nhập |
 
 Báo cáo hiển thị số bản ghi hợp lệ / bị bỏ qua theo từng loại và danh sách vấn đề kèm vị trí (vd. `lessons[0].vocabulary[3] (id=…)`). Tệp tối đa 10 MB.

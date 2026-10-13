@@ -18,7 +18,7 @@ import java.io.InputStream
 class AndroidContentImportRepository(
     private val context: Context,
     private val importer: ContentPackImporter,
-    private val bundledAssetPath: String = BUNDLED_PACK_ASSET,
+    private val bundledAssetPaths: List<String> = BUNDLED_PACK_ASSETS,
 ) : ContentImportRepository {
 
     /** Switched off by instrumented tests that need a database with only their own data. */
@@ -43,13 +43,16 @@ class AndroidContentImportRepository(
 
     override suspend fun importChecked(preview: ImportPreview): ImportReport = importer.import(preview.source)
 
-    override suspend fun installBundledContent(): ImportReport {
-        if (!bundledContentEnabled) return ImportReport(ImportOutcome.UP_TO_DATE)
-        val text = withContext(Dispatchers.IO) {
-            context.assets.open(bundledAssetPath).use { it.readBytes().toString(Charsets.UTF_8) }
-        }
-        return importer.import(text, onlyIfNewer = true).also { report ->
-            if (report.outcome == ImportOutcome.FAILED) Log.e(TAG, "Bundled content failed to install: ${report.issues}")
+    override suspend fun installBundledContent(): List<ImportReport> {
+        if (!bundledContentEnabled) return emptyList()
+        // Each pack on its own: one that fails does not stop the others.
+        return bundledAssetPaths.map { path ->
+            val text = withContext(Dispatchers.IO) {
+                context.assets.open(path).use { it.readBytes().toString(Charsets.UTF_8) }
+            }
+            importer.import(text, onlyIfNewer = true).also { report ->
+                if (report.outcome == ImportOutcome.FAILED) Log.e(TAG, "Bundled content $path failed to install: ${report.issues}")
+            }
         }
     }
 
@@ -67,6 +70,10 @@ class AndroidContentImportRepository(
 
     companion object {
         const val BUNDLED_PACK_ASSET = "content/n3sensei-illustration.json"
+        const val MIMIKARA_PACK_ASSET = "content/mimikara-n3-vocab.json"
+
+        /** Packs shipped with the app, installed in this order (see docs/CONTENT_FORMAT.md). */
+        val BUNDLED_PACK_ASSETS = listOf(BUNDLED_PACK_ASSET, MIMIKARA_PACK_ASSET)
         private const val TAG = "ContentImport"
         private const val MAX_BYTES = 10 * 1024 * 1024
     }

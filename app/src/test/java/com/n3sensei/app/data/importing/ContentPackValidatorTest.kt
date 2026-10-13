@@ -105,8 +105,27 @@ class ContentPackValidatorTest {
         assertEquals(listOf("v1"), bundle.vocabulary.map { it.id })
         val errors = result.report.codes(IssueSeverity.ERROR)
         assertTrue(IssueCode.DUPLICATE_ID in errors)
-        assertTrue(IssueCode.DUPLICATE_ENTRY in errors) // v9 repeats 経験 (けいけん)
+        assertTrue(IssueCode.DUPLICATE_ENTRY in errors) // v9 repeats 経験 (けいけん) with the same meaning
         assertTrue(IssueCode.DUPLICATE_LESSON_NUMBER in errors)
+    }
+
+    @Test
+    fun sameWordAndReading_withAnotherMeaning_isASeparateEntry() {
+        val result = validate(
+            pack(
+                lessons = listOf(
+                    LessonDto(id = "l1", number = 1, title = "Bài 1", vocabulary = listOf(vocab("v1").copy(meaningVi = "toàn bộ"))),
+                    LessonDto(
+                        id = "l2", number = 2, title = "Bài 2",
+                        vocabulary = listOf(vocab("v2").copy(meaningVi = "chắc chắn"), vocab("v3").copy(meaningVi = "chắc chắn")),
+                    ),
+                ),
+            ),
+        )
+        val bundle = assertNotNullBundle(result)
+        // v2 is another sense of the same word: kept. v3 repeats v2 exactly: skipped.
+        assertEquals(listOf("v1", "v2"), bundle.vocabulary.map { it.id })
+        assertEquals(listOf(IssueCode.DUPLICATE_ENTRY), result.report.codes(IssueSeverity.ERROR))
     }
 
     @Test
