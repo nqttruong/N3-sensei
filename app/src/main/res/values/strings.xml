@@ -504,4 +504,6 @@
     <string name="database_reset_copy">Bản dữ liệu hỏng được giữ lại trong bộ nhớ riêng của app (%1$s) để có thể cứu dữ liệu sau này.</string>
     <string name="database_reset_ok">Đã hiểu</string>
     <string name="privacy_data_on_device">Dữ liệu và quyền riêng tư: tiến độ, lịch sử ôn và cài đặt chỉ lưu trên máy này. App không có tài khoản, không có quyền truy cập Internet và không gửi dữ liệu đi đâu. App không tự mã hóa dữ liệu; việc mã hóa bộ nhớ là của Android (bắt buộc trên máy ra mắt từ Android 10, gắn với khóa màn hình). Sao lưu tự động lên đám mây đã tắt; khi đổi máy, hãy chuyển dữ liệu trực tiếp giữa hai máy hoặc xuất tệp sao lưu. Tệp sao lưu không được mã hóa: hãy cất giữ cẩn thận.</string>
+    <string name="bundled_failed_title">Không cài được nội dung đi kèm</string>
+    <string name="bundled_failed_body">Gói nội dung sau chưa được cài: %1$s. Tiến độ và dữ liệu học của bạn không bị ảnh hưởng. Hãy thử lại; nếu vẫn lỗi, hãy cài lại ứng dụng.</string>
 </resources>

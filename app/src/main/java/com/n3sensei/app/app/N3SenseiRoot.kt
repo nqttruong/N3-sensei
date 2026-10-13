@@ -40,6 +40,10 @@ fun N3SenseiRoot(viewModel: MainViewModel) {
         }
         val resetNotice by viewModel.databaseResetNotice.collectAsStateWithLifecycle()
         resetNotice?.let { DatabaseResetDialog(it, viewModel::dismissDatabaseResetNotice) }
+        val failedPacks by viewModel.bundledContentFailures.collectAsStateWithLifecycle()
+        if (failedPacks.isNotEmpty() && resetNotice == null) {
+            BundledContentFailedDialog(failedPacks, onRetry = viewModel::installBundledContent, onDismiss = viewModel::dismissBundledContentFailures)
+        }
     }
 }
 
@@ -56,5 +60,17 @@ private fun DatabaseResetDialog(notice: DatabaseResetNotice, onDismiss: () -> Un
             )
         },
         confirmButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.database_reset_ok)) } },
+    )
+}
+
+/** A pack shipped with the app could not be installed: say which, offer a retry. */
+@Composable
+private fun BundledContentFailedDialog(packs: List<String>, onRetry: () -> Unit, onDismiss: () -> Unit) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.bundled_failed_title)) },
+        text = { Text(stringResource(R.string.bundled_failed_body, packs.joinToString(", "))) },
+        confirmButton = { TextButton(onClick = onRetry) { Text(stringResource(R.string.common_retry)) } },
+        dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.import_report_close)) } },
     )
 }

@@ -57,8 +57,38 @@ Số lượng ghi trên hàng tiêu đề của bảng (tổng 869) ít hơn s�
 
 Các hiệu chỉnh nằm trong `CORRECTIONS` của `tools/content/mimikara_to_pack.py`; script dừng nếu ô gốc không còn đúng như ghi nhận.
 
+## Phương án nhập
+
+**Bộ dữ liệu đi kèm app** (phương án ưu tiên): nội dung cố định, cần dùng ngay sau khi cài, không cần mạng. Không dùng callback tạo database: các gói được cài **ở nền** khi app mở (`MainViewModel.installBundledContent`), mỗi gói một transaction (`ContentPackDao.replacePack`).
+
+- **Phiên bản**: `pack.version` (hiện 1) so với bản đã cài trong bảng `content_packs`; cùng hoặc cũ hơn → không ghi gì. Mở app lần sau không nạp lại (đã kiểm: `imported_at` không đổi). Muốn cập nhật nội dung: tăng `version`.
+- **Thời gian**: cài cả 2 gói (910 từ) ≈ 0,4 s trên emulator, trong lúc người dùng còn ở màn giới thiệu; các màn hình đọc Room qua `Flow` nên tự hiện dữ liệu khi cài xong.
+- **Lỗi**: tệp asset thiếu/hỏng hoặc gói không hợp lệ → báo cáo FAILED cho gói đó (gói khác vẫn cài), hộp thoại "Không cài được nội dung đi kèm" nêu tên gói, nút **Thử lại**; dữ liệu học không bị đụng tới (transaction rollback).
+- Người dùng vẫn có thể nhập một phiên bản khác qua **Cài đặt → Nhập gói nội dung** (kiểm tra trước, xác nhận khi thay gói đang cài).
+
+## Quy tắc trùng và nhập lại
+
+- Khóa ổn định của mục: `id` (`mimikara-n3-vNNN`, từ STT). Nhập lại cùng gói **thay thế** nội dung của gói `mimikara-n3-vocab` trong một transaction; không bao giờ tạo bản sao.
+- Trong một gói: cùng `id` → bỏ bản sau; cùng từ + cách đọc + nghĩa → bỏ bản sau; cùng từ + cách đọc nhưng **khác nghĩa** → hai mục (không dựa riêng vào nghĩa).
+- Tiến độ, lịch ôn và đánh dấu nằm ở bảng riêng, gắn với `(VOCABULARY, id)`: không bị ghi đè khi cập nhật nội dung.
+
+## Cách kiểm tra dữ liệu đã nhập
+
+- Trong app: **Học → Bài học** (12 bài "Mimikara N3 · …", bài 1 có 120 từ) hoặc **Học → Từ vựng** (chip lọc theo bài, tìm "tac gia" → 作者 · さくしゃ).
+- Trên emulator/thiết bị debug: `adb exec-out run-as com.n3sensei.app cat databases/n3sensei.db > n3.db` (cùng tệp `-wal`), rồi `sqlite3 n3.db "SELECT COUNT(*) FROM vocabulary v JOIN lessons l ON l.id = v.lesson_id WHERE l.pack_id = 'mimikara-n3-vocab'"` → 880.
+
 ## Trong app
 
 - Cùng tồn tại với gói minh họa (15 từ có ở cả hai gói, hiện cả hai). Khi có nhiều gói, chip lọc theo bài dùng tiêu đề bài.
 - Danh sách, tìm kiếm (không dấu, kana), chi tiết, luyện tập theo bài, đánh dấu, lịch ôn, thống kê dùng dữ liệu này như mọi gói (tiến độ không nằm trong bản ghi nội dung).
-- Kiểm thử: `MimikaraPackTest` (JVM: 880 từ, 12 bài, thứ tự, giữ nguyên chữ, các hiệu chỉnh, nguồn), `ContentPackValidatorTest.sameWordAndReading_withAnotherMeaning_isASeparateEntry`, `EndToEndTest.bundledMimikaraPack_isInstalledOnFirstLaunch_withAll880Words` (emulator).
+- Danh sách tải toàn bộ mục của bộ lọc qua `LazyColumn` (chỉ dựng phần đang hiện); truy vấn 3 000 từ ≈ 36 ms (xem [QA.md](QA.md)); tìm kiếm giới hạn 100 kết quả.
+
+## Kiểm thử
+
+| Test | Nội dung |
+|---|---|
+| `MimikaraPackTest` (JVM) | 880 từ, 12 bài, số từ mỗi bài, thứ tự, giữ nguyên chữ, các hiệu chỉnh, không bịa trường, nguồn và `licenseVerified = false` |
+| `ContentPackValidatorTest` (JVM) | cùng từ + cách đọc khác nghĩa là hai mục; trùng hoàn toàn bị bỏ; thiếu trường, sai định dạng, ID trùng (có sẵn) |
+| `MainViewModelTest` (JVM) | gói cài lỗi được nêu tên, Thử lại, exception không làm crash |
+| `MimikaraImportTest` (Room, tệp database thật) | nhập 880 từ, tiếng Nhật/Việt nguyên vẹn; danh sách, tìm kiếm (không dấu, kana), lọc theo bài; nhập lại không tạo bản sao và giữ tiến độ/đánh dấu; lỗi giữa chừng (trigger ở từ thứ 500) giữ nguyên bản cũ và tiến độ; tệp rỗng/cắt cụt/sai định dạng không ghi gì; đóng mở lại database; asset thiếu được báo, gói kia vẫn cài |
+| `EndToEndTest` (emulator) | mở app lần đầu: cả hai gói được cài, bài Mimikara 1 có 120 từ, tổng 910 từ |

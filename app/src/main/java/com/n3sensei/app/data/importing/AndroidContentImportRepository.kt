@@ -48,11 +48,14 @@ class AndroidContentImportRepository(
         // Each pack on its own: one that fails does not stop the others.
         return bundledAssetPaths.map { path ->
             val text = withContext(Dispatchers.IO) {
-                context.assets.open(path).use { it.readBytes().toString(Charsets.UTF_8) }
+                try {
+                    context.assets.open(path).use { it.readBytes().toString(Charsets.UTF_8) }
+                } catch (e: IOException) {
+                    null // missing or unreadable asset: reported, never a crash
+                }
             }
-            importer.import(text, onlyIfNewer = true).also { report ->
-                if (report.outcome == ImportOutcome.FAILED) Log.e(TAG, "Bundled content $path failed to install: ${report.issues}")
-            }
+            val report = if (text == null) ContentPackImporter.failed(IssueCode.READ_ERROR, path) else importer.import(text, onlyIfNewer = true)
+            report.also { if (it.outcome == ImportOutcome.FAILED) Log.e(TAG, "Bundled content $path failed to install: ${it.issues}") }
         }
     }
 

@@ -28,8 +28,13 @@ class FakeContentImportRepository(
         return nextReport
     }
 
+    /** What the next bundled install returns; an exception is thrown instead when set. */
+    var bundledReports: List<ImportReport> = listOf(ImportReport(ImportOutcome.UP_TO_DATE))
+    var bundledError: Exception? = null
+
     override suspend fun installBundledContent(): List<ImportReport> {
         bundledInstalls++
-        return listOf(ImportReport(ImportOutcome.UP_TO_DATE))
+        bundledError?.let { throw it }
+        return bundledReports
     }
 }
