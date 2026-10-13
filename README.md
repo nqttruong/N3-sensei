@@ -4,6 +4,13 @@
 
 > Trạng thái: module học, nhập nội dung JSON, engine ôn tập cách quãng (Prompt 06), nhắc học qua thông báo và widget màn hình chính (Prompt 07, xem [docs/REMINDERS.md](docs/REMINDERS.md)), thống kê học tập (Prompt 08, xem [docs/ANALYTICS.md](docs/ANALYTICS.md)), bảng điều khiển ở Trang chủ với dự báo khối lượng ôn và tiến độ (Prompt 09, xem [docs/FORECAST.md](docs/FORECAST.md); dự báo là ước tính theo giả định ghi rõ, không dự đoán kết quả thi), sao lưu và khôi phục dữ liệu học ra tệp JSON (Prompt 10, xem [docs/BACKUP.md](docs/BACKUP.md)). Kết quả QA, lỗi đã sửa và số đo hiệu năng: [docs/QA.md](docs/QA.md). UX và trợ năng: [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md). Bảo mật, quyền riêng tư, toàn vẹn dữ liệu: [docs/SECURITY.md](docs/SECURITY.md); điểm mở rộng tương lai: [docs/EXTENSIBILITY.md](docs/EXTENSIBILITY.md). App kèm **một bài minh họa tự biên soạn** (30 từ, 27 Kanji, 7 ngữ pháp, chưa qua kiểm duyệt chuyên môn); nội dung N3 đầy đủ cần được nhập từ nguồn có giấy phép. Ôn tập lặp lại cách quãng hoạt động (Prompt 06, xem [docs/SRS.md](docs/SRS.md)); chế độ luyện tập theo bài vẫn không ảnh hưởng lịch ôn.
 
+## Giới hạn và chưa hoàn thành
+
+- **Nội dung**: chỉ có một bài minh họa tự biên soạn (30 từ, 27 Kanji, 7 ngữ pháp), chưa qua kiểm duyệt chuyên môn. Giáo trình N3 đầy đủ phải được nhập từ nguồn có giấy phép (xem [docs/CONTENT_FORMAT.md](docs/CONTENT_FORMAT.md)).
+- **Chưa có**: thứ tự nét Kanji; đồng bộ đám mây, tài khoản, AI (chỉ có đề xuất trong [docs/EXTENSIBILITY.md](docs/EXTENSIBILITY.md)); sao lưu định kỳ tự động; nút "Thử lại" ở các màn hình dạng danh sách khi lỗi đọc dữ liệu.
+- **Chưa kiểm thử**: thiết bị thật, bản release (chưa cấu hình ký, R8 tắt), Android 8–11, TalkBack với giọng đọc thật, nhắc học định kỳ qua nhiều giờ thực tế.
+- **Kết quả nghiệm thu, lỗi đã sửa và lỗi còn theo dõi**: xem [docs/ACCEPTANCE.md](docs/ACCEPTANCE.md).
+
 ## Yêu cầu môi trường
 
 | Thành phần | Phiên bản |
@@ -26,7 +33,7 @@ sdk.dir=/đường/dẫn/tới/Android/Sdk
 ./gradlew testDebugUnitTest          # unit test (JVM)
 ./gradlew lintDebug                  # lint: app/build/reports/lint-results-debug.html
 ./gradlew connectedDebugAndroidTest  # UI test, cần emulator/thiết bị đang kết nối
-./gradlew installDebug               # cài lên thiết bị đang kết nối
+./gradlew installDebug               # cài lên thiết bị đang kết nối, rồi mở "N3 Sensei"
 ```
 
 ## Cấu hình chính

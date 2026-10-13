@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
@@ -205,7 +206,14 @@ private fun HourPicker(hour: Int, onSelect: (Int) -> Unit) {
     var expanded by remember { mutableStateOf(false) }
     Box {
         OutlinedButton(onClick = { expanded = true }) { Text(stringResource(R.string.reminder_hour, hour)) }
-        DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+        // Bounded height: unbounded, the menu was laid out for the whole edge-to-edge window,
+        // the system clamped it between the status and navigation bars, and the last hours
+        // (23:00) stayed below the screen edge, unreachable by scrolling.
+        DropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false },
+            modifier = Modifier.heightIn(max = 320.dp),
+        ) {
             (0..23).forEach { h ->
                 DropdownMenuItem(text = { Text(stringResource(R.string.reminder_hour, h)) }, onClick = { onSelect(h); expanded = false })
             }

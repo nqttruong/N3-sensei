@@ -145,6 +145,19 @@ class N3SenseiNavigationTest {
         assertOn(AppScreen.KANJI)
     }
 
+    /** Regression (acceptance L1): tapping the tab you are in did nothing on a sub-screen. */
+    @Test
+    fun reselectingCurrentTab_returnsToItsFirstScreen() {
+        clickTab(TopLevelDestination.LEARN)
+        composeRule.onNodeWithText(string(R.string.kanji_title)).performClick()
+        assertOn(AppScreen.KANJI)
+        clickTab(TopLevelDestination.LEARN)
+        assertOn(AppScreen.LEARN_HUB)
+        // Back from the tab root still goes to Home, as before.
+        pressBack()
+        assertOn(AppScreen.HOME)
+    }
+
     @Test
     fun homeShortcuts_openTheirTabs() {
         composeRule.onNodeWithText(string(R.string.dashboard_start_review)).performScrollTo().performClick()

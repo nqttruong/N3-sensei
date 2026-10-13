@@ -31,7 +31,7 @@ import com.n3sensei.app.app.navigation.AppScreen
 import com.n3sensei.app.app.navigation.N3SenseiNavHost
 import com.n3sensei.app.app.navigation.TopLevelDestination
 import com.n3sensei.app.app.navigation.isInTab
-import com.n3sensei.app.app.navigation.navigateToTopLevel
+import com.n3sensei.app.app.navigation.selectTab
 import com.n3sensei.app.core.designsystem.icon.N3Icons
 
 @Composable
@@ -54,7 +54,7 @@ fun N3SenseiApp(
             if (currentScreen?.isFocusSession != true) {
                 N3NavigationBar(
                     currentDestination = currentDestination,
-                    onSelect = navController::navigateToTopLevel,
+                    onSelect = navController::selectTab,
                 )
             }
         },
