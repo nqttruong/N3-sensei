@@ -76,7 +76,21 @@ object N3Migrations {
         }
     }
 
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
+    /**
+     * v5: `user_content_edits`, the learner's changes to pack items (Part F). A new empty
+     * table: no existing row is read or changed.
+     */
+    val MIGRATION_4_5 = object : Migration(4, 5) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `user_content_edits` (`item_type` TEXT NOT NULL, `item_id` TEXT NOT NULL, " +
+                    "`field` TEXT NOT NULL, `value` TEXT NOT NULL, `base_value` TEXT NOT NULL, `created_at` INTEGER NOT NULL, " +
+                    "`updated_at` INTEGER NOT NULL, PRIMARY KEY(`item_type`, `item_id`, `field`))",
+            )
+        }
+    }
+
+    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
 
     private fun String.toReadings(): String = StringListCodec.decode(this).joinToString(" ")
 

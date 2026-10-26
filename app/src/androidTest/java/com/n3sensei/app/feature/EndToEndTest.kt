@@ -11,6 +11,8 @@ import com.n3sensei.app.testing.countRows
 import androidx.compose.ui.test.performScrollToNode
 import androidx.compose.ui.test.hasScrollToIndexAction
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
+import androidx.compose.ui.test.onFirst
+import androidx.compose.ui.test.onLast
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -63,6 +65,12 @@ class EndToEndTest {
 
     private fun clickable(text: String): SemanticsNodeInteraction =
         composeRule.onNode(hasText(text) and hasClickAction())
+
+    /** Waits until a clickable node with [text] is on screen (after a navigation or reload). */
+    private fun awaitClickable(text: String): SemanticsNodeInteraction {
+        composeRule.waitUntil(5_000) { composeRule.onAllNodes(hasText(text) and hasClickAction()).fetchSemanticsNodes().isNotEmpty() }
+        return clickable(text)
+    }
 
     private fun openTab(tab: TopLevelDestination) = composeRule.onNodeWithTag(tab.testTag).performClick()
 
@@ -238,6 +246,7 @@ class EndToEndTest {
             waitForText("男性")
         }
         val vocabulary = AppTestState.appContainer.database.countRows("vocabulary")
+        // Illustration 30 + Mimikara 880; the kanji pack adds no vocabulary.
         assertEquals(30 + 880, vocabulary)
     }
 
@@ -251,8 +260,72 @@ class EndToEndTest {
             waitForText("健康のために、毎朝三十分歩くことにしている。")
             waitForText("Vì sức khỏe, tôi có thói quen đi bộ ba mươi phút mỗi sáng.")
         }
-        // 7 grammar points of the illustration pack + 110.
-        assertEquals(7 + 110, AppTestState.appContainer.database.countRows("grammar"))
+        // 7 grammar points of the illustration pack + 110 + 64 from N3.pdf.
+        assertEquals(7 + 174, AppTestState.appContainer.database.countRows("grammar"))
+    }
+
+    @Test
+    fun bundledKanjiPack_kanjiDetailShowsItsPdfGroupWords() {
+        launch(seedContent = false, bundledContent = true).use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.kanji_title)).performClick()
+            // The kanji pack comes first in curriculum order: its lesson 1 starts with 意.
+            waitForText("意")
+            composeRule.onAllNodes(hasText("意") and hasClickAction()).onFirst().performClick()
+            waitForText("Ý, ý nghĩ, tâm ý")
+            composeRule.onNodeWithText(string(R.string.kanji_example_words)).performScrollTo()
+            waitForText("Chú ý")
+            waitForText("Quyết tâm")
+        }
+        // 27 kanji of the illustration pack + 392; the kanji words are kanji examples.
+        assertEquals(27 + 392, AppTestState.appContainer.database.countRows("kanji"))
+        assertEquals(30 + 880, AppTestState.appContainer.database.countRows("vocabulary"))
+    }
+
+    @Test
+    fun editingAKanjiMeaning_isShownOnItsDetail_andCanBeReverted() {
+        launch().use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.kanji_title)).performClick()
+            waitForText("経")
+            composeRule.onAllNodes(hasText("経") and hasClickAction()).onFirst().performClick()
+            awaitClickable(string(R.string.edit_action)).performScrollTo().performClick()
+            waitForText(string(R.string.edit_field_meaning) + " *")
+            composeRule.onNode(hasSetTextAction() and hasText("trải qua, kinh qua")).performTextReplacement("kinh qua (đã sửa)")
+            awaitClickable(string(R.string.edit_save)).performScrollTo().performClick()
+            // Back on the detail, the saved meaning is shown.
+            waitForText("kinh qua (đã sửa)")
+            awaitClickable(string(R.string.edit_action)).performScrollTo().performClick()
+            waitForText(string(R.string.edit_field_original, "trải qua, kinh qua"))
+            awaitClickable(string(R.string.edit_revert)).performScrollTo().performClick()
+            // The dialog's button (the form's button is still behind it).
+            composeRule.onAllNodes(hasText(string(R.string.edit_revert)) and hasClickAction()).onLast().performClick()
+            waitForText("trải qua, kinh qua")
+        }
+    }
+
+    @Test
+    fun addingAWord_putsItInMyWords_andRejectsADuplicate() {
+        launch().use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.vocabulary_title)).performClick()
+            waitForText("経験")
+            awaitClickable(string(R.string.add_word_action)).performClick()
+            waitForText(string(R.string.edit_new_word_hint))
+            composeRule.onNode(hasSetTextAction() and hasText(string(R.string.edit_field_expression) + " *")).performTextInput("経験")
+            composeRule.onNode(hasSetTextAction() and hasText(string(R.string.edit_field_reading) + " *")).performTextInput("けいけん")
+            composeRule.onNode(hasSetTextAction() and hasText(string(R.string.edit_field_meaning) + " *")).performTextInput("kinh nghiệm")
+            clickable(string(R.string.edit_add_word)).performScrollTo().performClick()
+            waitForText(string(R.string.edit_duplicate_word, "Gói seed kiểm thử"), substring = true)
+            composeRule.onNode(hasSetTextAction() and hasText("経験")).performTextReplacement("経由")
+            composeRule.onNode(hasSetTextAction() and hasText("けいけん")).performTextReplacement("けいゆ")
+            composeRule.onNode(hasSetTextAction() and hasText("kinh nghiệm")).performTextReplacement("đi qua, quá cảnh")
+            clickable(string(R.string.edit_add_word)).performScrollTo().performClick()
+            waitForText("経験")
+            composeRule.onNode(hasSetTextAction()).performTextInput("けいゆ")
+            waitForText("đi qua, quá cảnh")
+        }
+        assertEquals(1, AppTestState.appContainer.database.countRows("content_packs WHERE id = 'user-words'"))
     }
 
     @Test

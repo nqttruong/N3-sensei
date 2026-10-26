@@ -10,6 +10,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.SuggestionChip
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,6 +18,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.DetailSection
@@ -34,13 +36,20 @@ import com.n3sensei.app.domain.model.VocabularyDetail
 fun VocabularyDetailScreen(
     viewModel: VocabularyDetailViewModel,
     onPracticeLesson: (lessonId: String) -> Unit,
+    onEdit: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    // Back from the edit screen: show the saved values.
+    LifecycleResumeEffect(Unit) {
+        viewModel.reload()
+        onPauseOrDispose {}
+    }
     val scheduleInfo by viewModel.scheduleInfo.collectAsStateWithLifecycle()
     UiStateContent(state = state, onRetry = viewModel::refresh, modifier = modifier) { detail ->
         VocabularyDetailContent(detail) {
             ItemActions(scheduleInfo, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.vocabulary.lessonId) })
+            OutlinedButton(onClick = onEdit) { Text(stringResource(R.string.edit_action)) }
         }
     }
 }

@@ -18,6 +18,19 @@ abstract class DetailViewModel<T : Any> : ViewModel() {
 
     protected abstract suspend fun load(): T?
 
+    /** Loads again without showing Loading (e.g. back from the edit screen). */
+    fun reload() {
+        viewModelScope.launch {
+            try {
+                _state.value = load()?.let { UiState.Success(it) } ?: UiState.NotFound
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                _state.value = UiState.Error(e)
+            }
+        }
+    }
+
     fun refresh() {
         viewModelScope.launch {
             _state.value = UiState.Loading

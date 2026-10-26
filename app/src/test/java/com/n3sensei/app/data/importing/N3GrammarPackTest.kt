@@ -10,7 +10,8 @@ import java.io.File
 
 /**
  * The bundled N3 grammar pack (built by tools/content/n3_grammar from the VNJPCLUB index
- * metadata and self-authored content, see docs/N3_GRAMMAR.md).
+ * metadata and self-authored content, then the points of the user's N3.pdf the 110 lack;
+ * see docs/N3_GRAMMAR.md).
  */
 class N3GrammarPackTest {
 
@@ -24,24 +25,50 @@ class N3GrammarPackTest {
         .sortedBy { it.sortOrder }.map { ref -> bundle.examples.single { it.id == ref.exampleId } }
 
     @Test
-    fun all110Patterns_in11Lessons_withTwoExamplesEach_importWithoutErrors() {
+    fun the110Patterns_plus64FromThePdf_in25Lessons_importWithoutErrors() {
         val counts = result.report.counts
-        assertEquals(11, counts.getValue(ImportRecordType.LESSON).valid)
-        assertEquals(110, counts.getValue(ImportRecordType.GRAMMAR).valid)
+        assertEquals(25, counts.getValue(ImportRecordType.LESSON).valid)
+        assertEquals(110 + 64, counts.getValue(ImportRecordType.GRAMMAR).valid)
         assertEquals(220, counts.getValue(ImportRecordType.EXAMPLE).valid)
         assertEquals(0, result.report.skippedRecords)
         assertEquals(setOf(IssueCode.LESSON_SIZE_DIFFERS), result.report.issues.map { it.code }.toSet())
         assertTrue((1..110).all { examplesOf(it).size == 2 })
+        // The PDF points bring no examples: the cards' sentences are not bundled.
+        assertTrue((111..174).all { examplesOf(it).isEmpty() })
     }
 
     @Test
-    fun orderFollowsTheSourceIndex_tenPerLesson() {
-        assertEquals((1..11).toList(), bundle.lessons.map { it.number })
-        assertEquals("Ngữ pháp N3 · mục 1–10", bundle.lessons.first().title)
-        assertEquals("Ngữ pháp N3 · mục 101–110", bundle.lessons.last().title)
-        val first = bundle.grammar.filter { it.lessonId == "n3g-l01" }.sortedBy { it.sortOrder }
-        assertEquals("〜ことにしている", first.first().pattern)
+    fun sevenPerLesson_lastLessonHoldsTheRest_inListOrder() {
+        assertEquals((1..25).toList(), bundle.lessons.map { it.number })
+        val sizes = bundle.lessons.map { lesson -> bundle.grammar.count { it.lessonId == lesson.id } }
+        assertEquals(List(24) { 7 } + 6, sizes)
+        assertEquals("Ngữ pháp N3 · mục 1–7", bundle.lessons.first().title)
+        assertEquals("Ngữ pháp N3 · mục 169–174", bundle.lessons.last().title)
+        val ordered = bundle.lessons.flatMap { lesson -> bundle.grammar.filter { it.lessonId == lesson.id }.sortedBy { it.sortOrder } }
+        assertEquals((1..174).map { "n3g-g%03d".format(it) }, ordered.map { it.id })
+    }
+
+    @Test
+    fun the110KeepTheirIds_soProgressStillMatches() {
+        // Same id → same point as in version 1 of the pack.
+        assertEquals("〜ことにしている", grammar(1).pattern)
+        assertEquals("〜に対し（て）", grammar(25).pattern)
+        assertEquals("〜わりに（は）", grammar(104).pattern)
         assertEquals("〜おそれがある", grammar(110).pattern)
+        assertEquals("〜ため（に）", grammar(111).pattern)
+        assertEquals("〜ことがある", grammar(174).pattern)
+    }
+
+    @Test
+    fun aPdfPointWithTheFormOfAnExistingOne_isToldApart() {
+        assertEquals("〜とか", grammar(99).pattern)
+        val listing = bundle.grammar.single { it.pattern == "〜とか〜とか" }
+        assertTrue(listing.cautionNote!!.contains("〜とか (nghe nói là…)"))
+        assertTrue(bundle.grammar.single { it.pattern == "〜たところだ" }.cautionNote!!.contains("〜たところ (thử… thì…)"))
+        // Hearsay and appearance そうだ are two points with distinct names.
+        assertTrue(bundle.grammar.any { it.pattern == "〜そうだ（伝聞）" } && bundle.grammar.any { it.pattern == "〜そうだ（様態）" })
+        val names = bundle.grammar.map { it.pattern }
+        assertEquals(setOf("〜に対し（て）"), names.groupBy { it }.filterValues { it.size > 1 }.keys)
     }
 
     @Test
@@ -68,14 +95,20 @@ class N3GrammarPackTest {
     }
 
     @Test
-    fun everyItemNamesItsSourcePage_andIsLabelledSelfAuthored() {
-        assertEquals(111, bundle.sources.size) // one per pattern + the pack default
-        bundle.grammar.forEach { g ->
+    fun everyItemNamesItsSource_selfAuthoredOrPdfCard() {
+        assertEquals(1 + 110 + 64, bundle.sources.size) // pack default + one per pattern
+        bundle.grammar.filter { it.id <= "n3g-g110" }.forEach { g ->
             val source = bundle.sources.single { it.id == g.sourceId }
             assertTrue(source.url!!.startsWith("https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-"))
             assertTrue(source.name.startsWith("N3 Sensei tự soạn"))
             assertFalse(source.licenseVerified)
         }
         assertEquals("https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-1.html", bundle.sources.single { it.id == grammar(1).sourceId }.url)
+        bundle.grammar.filter { it.id > "n3g-g110" }.forEach { g ->
+            val source = bundle.sources.single { it.id == g.sourceId }
+            assertTrue(source.name, source.name.startsWith("N3.pdf · Ngữ pháp, nhóm "))
+            assertFalse(source.licenseVerified)
+        }
+        assertEquals("N3.pdf · Ngữ pháp, nhóm 01 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)", bundle.sources.single { it.id == grammar(111).sourceId }.name)
     }
 }

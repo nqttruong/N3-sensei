@@ -14,6 +14,7 @@ import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.data.local.entity.VocabularyExampleCrossRef
 import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
 import com.n3sensei.app.data.local.model.ContentPackBundle
+import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.furigana.Furigana
 import com.n3sensei.app.domain.importing.ImportCount
 import com.n3sensei.app.domain.importing.ImportIssue
@@ -73,6 +74,8 @@ class ContentPackValidator(
         }
         val pack = dto.pack ?: return fail(null, IssueCode.MISSING_FIELD, "pack")
         val packId = pack.id.clean() ?: return fail(pack, IssueCode.MISSING_FIELD, "pack.id")
+        // Reserved for the learner's own words, which a pack must never replace.
+        if (packId == UserWords.PACK_ID) return fail(pack, IssueCode.INVALID_VALUE, "pack.id", packId)
         val packTitle = pack.title.clean() ?: return fail(pack, IssueCode.MISSING_FIELD, "pack.title")
         val packVersion = pack.version ?: return fail(pack, IssueCode.MISSING_FIELD, "pack.version")
         if (packVersion < 1) return fail(pack, IssueCode.INVALID_VALUE, "pack.version", packVersion.toString())
@@ -225,6 +228,7 @@ class ContentPackValidator(
                 checkFurigana(furigana, base = expression, reading = reading)?.let { return@forEachIndexed skip(it, furigana) }
             }
             if (id in itemIds.vocabulary) return@forEachIndexed skip(IssueCode.DUPLICATE_ID, id)
+            if (id.startsWith(UserWords.ID_PREFIX)) return@forEachIndexed skip(IssueCode.INVALID_VALUE, id)
             // Same word and reading with another meaning is a different sense (e.g. しっかり
             // in two lessons of a textbook), not a duplicate.
             if (!itemIds.vocabularyEntries.add(Triple(expression, reading, meaning))) {

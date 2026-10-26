@@ -2,7 +2,7 @@
 
 Nội dung học (bài, từ vựng, Kanji, ngữ pháp, câu ví dụ, bài tập) được nạp vào Room từ tệp JSON UTF-8 theo định dạng dưới đây. App dùng cùng bộ kiểm tra và bộ nhập cho:
 
-- các gói đi kèm app (`AndroidContentImportRepository.BUNDLED_PACK_ASSETS`), tự cài ở lần chạy đầu và khi có phiên bản mới hơn: gói minh họa `content/n3sensei-illustration.json`, gói từ vựng Mimikara N3 `content/mimikara-n3-vocab.json` (xem [MIMIKARA_N3.md](MIMIKARA_N3.md)) và gói ngữ pháp N3 tự soạn `content/n3-grammar.json` (xem [N3_GRAMMAR.md](N3_GRAMMAR.md));
+- các gói đi kèm app (`AndroidContentImportRepository.BUNDLED_PACK_ASSETS`), tự cài ở lần chạy đầu và khi có phiên bản mới hơn: gói minh họa `content/n3sensei-illustration.json`, gói từ vựng Mimikara N3 `content/mimikara-n3-vocab.json` (xem [MIMIKARA_N3.md](MIMIKARA_N3.md)) gói ngữ pháp N3 `content/n3-grammar.json` (xem [N3_GRAMMAR.md](N3_GRAMMAR.md)) và gói Kanji N3 `content/n3-kanji.json` (xem [N3_KANJI.md](N3_KANJI.md));
 - tệp người dùng chọn trong **Cài đặt → Nhập gói nội dung (JSON)**.
 
 ## Cấu trúc
@@ -63,6 +63,9 @@ Thứ tự trong mảng là thứ tự hiển thị. Trường không có trong 
 **Furigana**: `{chữ gốc|cách đọc}` xen văn bản thường. Với từ vựng, phần chữ gốc ghép lại phải bằng `expression` và phần đọc ghép lại phải bằng `reading`; với câu ví dụ, chữ gốc phải bằng `japanese`.
 
 ## ID và cập nhật
+
+- `pack.id = "user-words"` và ID từ vựng bắt đầu bằng `user-w-` được dành cho "Từ của tôi": gói dùng `pack.id` này bị từ chối, từ dùng tiền tố này bị bỏ qua.
+- Chỉnh sửa của người dùng (bảng `user_content_edits`) được áp lại sau mỗi lần cài gói; xem [USER_CONTENT.md](USER_CONTENT.md).
 
 - ID là khóa ổn định: tiến độ học và đánh dấu của người học gắn với `(loại, id)`. **Không đổi ID** của một mục khi cập nhật gói, nếu không tiến độ của mục đó sẽ không còn khớp.
 - Nhập lại một gói có cùng `pack.id` sẽ **thay thế toàn bộ** nội dung của gói đó trong một transaction. Tiến độ và đánh dấu không bị đụng tới.

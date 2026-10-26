@@ -1,0 +1,1273 @@
+lesson	kanji	pdf_deck	pdf_card	pdf_pages	expression	reading	meaning_vi	han_viet	example_id	flags
+n3k-l01	意	第01	2	122	注意	ちゅうい	Chú ý		n3k-x-01-002	
+n3k-l01	意	第01	3	122	意味	いみ	Ý nghĩa		n3k-x-01-003	
+n3k-l01	意	第01	4	122	決意	けつい	Quyết tâm		n3k-x-01-004	
+n3k-l01	億	第01	6	122	一億円	いちおくえん	Một trăm triệu yên Nhật		n3k-x-01-006	
+n3k-l01	憶	第01	8	122	記憶力	きおくりょく	Khả năng ghi nhớ		n3k-x-01-008	
+n3k-l01	憶	第01	9	122	記憶	きおく	Ký ức, trí nhớ		n3k-x-01-009	text-before-reading
+n3k-l01	皮	第01	11	123	皮	かわ	Da, vỏ		n3k-x-01-011	
+n3k-l01	皮	第01	12	123	皮肉	ひにく	Mỉa mai, châm biếm, chế giễu	BÌ NHỤC	n3k-x-01-012	
+n3k-l01	彼	第01	14	123	彼女	かのじょ	Phụ nữ	BỈ NỮ	n3k-x-01-014	
+n3k-l01	彼	第01	15	123	彼氏	かれし	Bạn trai	BỈ THỊ	n3k-x-01-015	
+n3k-l01	波	第01	17	123	波	なみ	Sóng		n3k-x-01-017	
+n3k-l01	波	第01	18	123	津波	つなみ	Sóng thần	TÂN BA	n3k-x-01-018	
+n3k-l01	波	第01	19	123	電波	でんぱ	Sóng vô tuyến, Sóng điện, tín hiệu radio	ĐIỆN BA	n3k-x-01-019	
+n3k-l01	支	第01	21	123	支配人	しはいにん	Quản lý, giám đốc điều hành	CHI PHỐI NHÂN	n3k-x-01-021	
+n3k-l01	支	第01	22	123	支出	ししゅつ	Chi phí,mức chi ra, khoản chi tiêu	CHI XUẤT	n3k-x-01-022	
+n3k-l01	支	第01	23	124	支持	しじ	Sự ủng hộ, hỗ trợ, tán thành	CHI TRÌ	n3k-x-01-023	
+n3k-l01	支	第01	24	124	支える	ささえる	Chống đỡ, nâng đỡ		n3k-x-01-024	
+n3k-l01	技	第01	26	124	得意技	とくいわざ	Kỹ năng đặc biệt, sở trường	ĐẮC Ý KỸ	n3k-x-01-026	
+n3k-l01	技	第01	27	124	演技	えんぎ	Diễn xuất, biểu diễn	DIỄN KỸ	n3k-x-01-027	
+n3k-l01	技	第01	28	124	技術	ぎじゅつ	Kỹ thuật, công nghệ	KỸ THUẬT	n3k-x-01-028	
+n3k-l01	枝	第01	30	124	枝	えだ	Cành cây, nhánh cây		n3k-x-01-030	
+n3k-l01	枝	第01	31	124	枝豆	えだまめ	Đậu nành non	CHI ĐẬU	n3k-x-01-031	
+n3k-l01	求	第01	33	124	求める	もとめる	Yêu cầu, mong muốn		n3k-x-01-033	
+n3k-l01	求	第01	34	124	請求	せいきゅう	Sự thỉnh cầu; sự yêu cầu; lời thỉnh cầu	THỈNH CẦU	n3k-x-01-034	
+n3k-l01	求	第01	35	125	求職中	きゅうしょくちゅう	Đang tìm việc làm	CẦU CHỨC TRUNG	n3k-x-01-035	
+n3k-l01	求	第01	36	125	求人	きゅうじん	Tuyển dụng, thông báo tìm người làm	CẦU NHÂN	n3k-x-01-036	
+n3k-l01	求	第01	37	125	追求	ついきゅう	Sự theo đuổi, sự tìm kiếm (lý tưởng, mục tiêu, hạnh phúc, chân lý...)	TRUY CẦU	n3k-x-01-037	
+n3k-l01	球	第01	39	125	球技	きゅうぎ	Môn thể thao dùng bóng (bóng đá, bóng rổ, bóng chuyền, bóng bàn, bóng chày...)	CẦU KỸ	n3k-x-01-039	
+n3k-l01	球	第01	40	125	地球儀	ちきゅうぎ	Quả địa cầu, mô hình hình cầu của Trái Đất	ĐỊA CẦU NGHI	n3k-x-01-040	
+n3k-l01	球	第01	41	125	野球	やきゅう	Bóng chày	DÃ CẦU	n3k-x-01-041	
+n3k-l01	救	第01	43	126	救う	すくう	Cứu, giúp đỡ		n3k-x-01-043	
+n3k-l01	救	第01	44	126	救急車	きゅうきゅうしゃ	Xe cứu thương, xe cấp cứu	CỨU CẤP XA	n3k-x-01-044	
+n3k-l01	救	第01	45	126	救助	きゅうじょ	Cứu trợ, cứu giúp	CỨU TRỢ	n3k-x-01-045	
+n3k-l01	救	第01	46	126	救援	きゅうえん	Cứu viện, cứu trợ (thường trong thiên tai, thảm họa, tình huống khẩn cấp)	CỨU VIÊN	n3k-x-01-046	
+n3k-l01	及	第01	48	126	普及	ふきゅう	Sự phổ biến, sự lan rộng, sự thịnh hành	PHỔ CẬP	n3k-x-01-048	
+n3k-l01	及	第01	49	126	言及	げんきゅう	Sự đề cập, nhắc đến (trong phát biểu, văn bản, bài viết)	NGÔN CẬP	n3k-x-01-049	
+n3k-l01	級	第01	51	127	高級車	こうきゅうしゃ	Ô tô cao cấp; ô tô xịn	CAO CẤP XA	n3k-x-01-051	
+n3k-l01	級	第01	52	127	初級	しょきゅう	Cấp độ sơ cấp, dành cho người mới bắt đầu học hoặc luyện tập	SƠ CẤP	n3k-x-01-052	
+n3k-l01	級	第01	53	127	中級	ちゅうきゅう	Trình độ trung cấp, cấp độ vừa phải	TRUNG CẤP	n3k-x-01-053	
+n3k-l01	級	第01	54	127	同級生	どうきゅうせい	Bạn học cùng lớp hoặc cùng năm học	ĐỒNG CẤP SINH	n3k-x-01-054	
+n3k-l01	吸	第01	56	127	吸う	すう	Hít vào, hút (khói, không khí, chất lỏng)		n3k-x-01-056	
+n3k-l01	吸	第01	57	128	深呼吸	しんこきゅう	Hít thở sâu	THÂM HÔ HẤP	n3k-x-01-057	
+n3k-l01	吸	第01	58	128	吸い取る	すいとる	Hút, thấm hút (chất lỏng, bụi bẩn); Rút lấy, lấy đi (tiền bạc, sức lực, năng lượng); Bóc lột	HẤP THỦ	n3k-x-01-058	several-senses dropped-lines gloss-fixed-by-hand
+n3k-l01	吸	第01	59	128	吸い込む	すいこむ	Hít vào (không khí, khói, bụi); Hút vào bên trong	HẤP NHẬP	n3k-x-01-059	dropped-lines gloss-fixed-by-hand
+n3k-l01	良	第01	61	128	良く	よく	Thường xuyên, hay: chỉ tần suất hành động; Tốt, giỏi: chỉ mức độ, chất lượng; Khá, nhiều: chỉ mức độ cao		n3k-x-01-061	several-senses
+n3k-l01	良	第01	62	128	良心的	りょうしんてき	Hợp lý, công bằng, có lương tâm	LƯƠNG TÂM ĐÍCH	n3k-x-01-062	
+n3k-l01	娘	第01	64	128	娘	むすめ	Con gái		n3k-x-01-064	
+n3k-l01	狼	第01	65	129	狼	おおかみ	Sói, loài động vật hoang dã	LANG - CON SÓI	n3k-x-01-065	kanji-card-with-reading
+n3k-l01	狼	第01	66	129	狼狽	ろうばい	Hoảng loạn, bối rối	LANG BÁI	n3k-x-01-066	
+n3k-l01	易	第01	67	129	易しい	やさしい	Dễ dàng, đơn giản; Hiền lành, tử tế, dịu dàng		n3k-x-01-067	embedded-in-kanji-card
+n3k-l01	易	第01	68	129	安易	あんい	Dễ dãi, đơn giản , hời hợt, thiếu suy nghĩ	AN DỊCH	n3k-x-01-068	
+n3k-l01	易	第01	69	129	貿易	ぼうえき	Thương mại, ngoại thương	MẬU DỊCH	n3k-x-01-069	
+n3k-l01	湯	第01	70	129	お湯	おゆ	Nước nóng, nước sôi		n3k-x-01-070	embedded-in-kanji-card
+n3k-l01	湯	第01	71	130	熱湯	ねっとう	Nước sôi, nước nóng	NHIỆT THANG	n3k-x-01-071	
+n3k-l01	陽	第01	73	130	太陽	たいよう	Mặt trời	THÁI DƯƠNG	n3k-x-01-073	
+n3k-l01	陽	第01	74	130	陽気	ようき	Tính cách vui vẻ, hoạt bát, lạc quan; Không khí, thời tiết ấm áp, dễ chịu	DƯƠNG KHÍ	n3k-x-01-074	several-senses
+n3k-l01	予	第01	76	130	予定	よてい	Kế hoạch, dự định đã được sắp xếp; Lịch trình, thời gian biểu	DỰ ĐỊNH	n3k-x-01-076	several-senses
+n3k-l01	予	第01	77	130	予報	よほう	Dự báo, thường dùng nhất là dự báo thời tiết	DỰ BÁO	n3k-x-01-077	
+n3k-l01	予	第01	78	131	予習	よしゅう	Ôn tập trước, chuẩn bị bài học trước khi đến lớp	DỰ TẬP	n3k-x-01-078	
+n3k-l01	予	第01	79	131	予備校	よびこう	Các trường/lò luyện thi	DỰ BỊ HIỆU	n3k-x-01-079	
+n3k-l01	序	第01	81	131	順序	じゅんじょ	Thứ tự, trật tự, trình tự của sự việc	THUẬN TỰ	n3k-x-01-081	
+n3k-l01	序	第01	82	131	序章	じょしょう	Chương đầu , lời nói đầu	TỰ CHƯƠNG	n3k-x-01-082	
+n3k-l01	序	第01	83	131	序列	じょれつ	Thứ tự, trật tự, chuỗi sắp xếp	TỰ LIỆT	n3k-x-01-083	
+n3k-l01	預	第01	85	131	預けている	あずけている	Gửi, giao cho ai đó giữ hộ, ký gửi		n3k-x-01-085	
+n3k-l01	預	第01	86	131	預金	よきん	Tiền gửi ngân hàng (deposit)	DỰ KIM	n3k-x-01-086	dropped-lines text-before-reading
+n3k-l01	預	第01	87	132	預かっている	あずかっている	Nhận giữ, trông hộ, chịu trách nhiệm giữ gì đó cho người khác		n3k-x-01-087	
+n3k-l01	巨	第01	89	132	巨大	きょだい	Kích thước, quy mô rất lớn	CỰ ĐẠI	n3k-x-01-089	
+n3k-l01	巨	第01	90	132	巨人	きょじん	Người khổng lồ	CỰ NHÂN	n3k-x-01-090	
+n3k-l01	巨	第01	91	132	巨額	きょがく	Khoản tiền khổng lồ	CỰ NGẠCH	n3k-x-01-091	
+n3k-l01	拒	第01	93	132	拒む	こばむ	Từ chối lời đề nghị, yêu cầu; Ngăn cản, chống lại một hành động		n3k-x-01-093	several-senses dropped-lines
+n3k-l01	拒	第01	94	132	拒否	きょひ	Từ chối, phủ nhận một yêu cầu, đề nghị, hoặc hành động	CỰ PHỦ	n3k-x-01-094	
+n3k-l01	拒	第01	95	132	拒絶	きょぜつ	Từ chối một cách mạnh mẽ, tuyệt đối	CỰ TUYỆT	n3k-x-01-095	
+n3k-l01	距	第01	97	132	距離	きょり	Khoảng cách	CỰ LI	n3k-x-01-097	
+n3k-l01	距	第01	98	132	長距離	ちょうきょり	Khoảng cách dài, cự ly xa	TRƯỜNG CỰ LI	n3k-x-01-098	
+n3k-l02	則	第02	2	133	原則	げんそく	Nguyên tắc, quy tắc cơ bản	NGUYÊN TẮC	n3k-x-02-002	
+n3k-l02	則	第02	3	133	規則	きそく	Quy tắc, nội quy, điều lệ	QUY TẮC	n3k-x-02-003	
+n3k-l02	側	第02	5	133	側	がわ	Phía, bên cạnh, phía bên		n3k-x-02-005	
+n3k-l02	側	第02	6	133	側面	そくめん	Mặt bên, phía bên của một vật thể	TRẮC DIỆN	n3k-x-02-006	
+n3k-l02	測	第02	8	133	測する	そくする	Đo lường, đo đạc, ước lượng		n3k-x-02-008	
+n3k-l02	測	第02	9	133	測量する	そくりょうする	Đo đạc	TRẮC LƯỢNG	n3k-x-02-009	
+n3k-l02	測	第02	10	133	計測	けいそく	Đo lường chính xác bằng thiết bị, máy móc	KẾ TRẮC	n3k-x-02-010	
+n3k-l02	官	第02	12	134	官邸	かんてい	Dinh thự chính thức của Thủ tướng Nhật Bản	QUAN ĐỆ	n3k-x-02-012	
+n3k-l02	官	第02	13	134	外交官	がいこうかん	Nhà ngoại giao, quan chức làm việc trong Bộ Ngoại giao	NGOẠI GIAO QUAN	n3k-x-02-013	
+n3k-l02	官	第02	14	134	官民	かんみん	Chính quyền (quan chức, cơ quan nhà nước) và người dân	QUAN DÂN	n3k-x-02-014	
+n3k-l02	管	第02	16	134	水道管	すいどうかん	Đường ống dẫn nước	THỦY ĐẠO QUẢN	n3k-x-02-016	
+n3k-l02	管	第02	17	134	管理職	かんりしょく	Chức vụ quản lý	QUẢN LÝ CHỨC	n3k-x-02-017	
+n3k-l02	管	第02	18	134	保管	ほかん	Giữ gìn, lưu trữ, bảo quản đồ vật	BẢO QUẢN	n3k-x-02-018	
+n3k-l02	館	第02	20	135	美術館	びじゅつかん	Bảo tàng nghệ thuật	MỸ THUẬT QUÁN	n3k-x-02-020	
+n3k-l02	館	第02	21	135	図書館	としょかん	Thư viện	ĐỒ THƯ QUÁN	n3k-x-02-021	
+n3k-l02	館	第02	22	135	館	やかた	Dinh thự, nhà lớn, biệt phủ		n3k-x-02-022	
+n3k-l02	追	第02	24	135	追求する	ついきゅうする	Theo đuổi một mục tiêu, lý tưởng, giá trị	TRUY CẦU	n3k-x-02-024	
+n3k-l02	追	第02	25	135	追いかける	おいかける	Đuổi theo, chạy theo, bám theo		n3k-x-02-025	
+n3k-l02	追	第02	26	135	追突	ついとつ	Đâm vào xe phía trước từ phía sau	TRUY ĐỘT	n3k-x-02-026	
+n3k-l02	師	第02	28	135	恩師	おんし	Người thầy đã dạy dỗ	ÂN SƯ	n3k-x-02-028	
+n3k-l02	師	第02	29	136	教師	きょうし	Giáo viên	GIÁO SƯ	n3k-x-02-029	
+n3k-l02	師	第02	30	136	調理師	ちょうりし	Đầu bếp	ĐIỀU LÝ SƯ	n3k-x-02-030	
+n3k-l02	曲	第02	32	136	曲げる	まげる	Bẻ cong, uốn cong, làm sai lệch		n3k-x-02-032	
+n3k-l02	曲	第02	33	136	曲がる	まがる	Rẽ		n3k-x-02-033	
+n3k-l02	曲	第02	34	136	一曲	いっきょく	Một bài hát, một bản nhạc	NHẤT KHÚC	n3k-x-02-034	
+n3k-l02	農	第02	36	136	農家	のうか	Hộ gia đình làm nông nghiệp	NÔNG GIA	n3k-x-02-036	
+n3k-l02	農	第02	37	136	農業	のうぎょう	Ngành nông nghiệp	NÔNG NGHIỆP	n3k-x-02-037	
+n3k-l02	豊	第02	39	136	豊富	ほうふ	Phong phú, dồi dào, đa dạng	PHONG PHÚ	n3k-x-02-039	
+n3k-l02	豆	第02	41	136	豆腐	とうふ	Đậu phụ, đậu hũ	ĐẬU HỦ	n3k-x-02-041	
+n3k-l02	豆	第02	42	136	大豆	だいず	Đậu nành/đậu tương	ĐẠI ĐẬU	n3k-x-02-042	
+n3k-l02	豆	第02	43	137	コーヒー豆	コーヒーまめ	Hạt cà phê		n3k-x-02-043	
+n3k-l02	登	第02	45	137	登る	のぼる	Leo		n3k-x-02-045	
+n3k-l02	登	第02	46	137	登録	とうろく	Đăng ký, ghi danh, lưu thông tin	ĐĂNG LỤC	n3k-x-02-046	
+n3k-l02	登	第02	47	138	登山道	とざんどう	Con đường dành cho người leo núi	ĐĂNG SƠN ĐẠO	n3k-x-02-047	
+n3k-l02	喜	第02	49	138	喜ぶ	よろこぶ	Cảm thấy vui mừng, hạnh phúc, hoan hỉ		n3k-x-02-049	
+n3k-l02	喜	第02	50	138	喜び	よろこび	Niềm vui, sự sung sướng		n3k-x-02-050	
+n3k-l02	角	第02	52	139	角	かど	Góc, chỗ rẽ, góc cạnh		n3k-x-02-052	second-reading
+n3k-l02	角	第02	53	139	角度	かくど	Độ của góc, quan điểm, góc nhìn	GIÁC ĐỘ	n3k-x-02-053	
+n3k-l02	解	第02	55	139	解く	とく	Giải quyết,Tháo gỡ, cởi bỏ		n3k-x-02-055	
+n3k-l02	解	第02	56	139	解説する	かいせつする	Giải thích, thuyết minh, diễn giải	GIẢI THUYẾT	n3k-x-02-056	
+n3k-l02	解	第02	57	140	理解	りかい	Hiểu, sự hiểu biết, thấu hiểu	LÝ GIẢI	n3k-x-02-057	dropped-lines
+n3k-l02	触	第02	59	140	触れる	ふれる	Chạm vào, tiếp xúc; Đề cập đến, nhắc tới; Vi phạm, trái với; Cảm nhận, tiếp xúc với		n3k-x-02-059	several-senses dropped-lines gloss-fixed-by-hand
+n3k-l02	触	第02	60	140	触られる	さわられる	Bị chạm vào, bị sờ vào		n3k-x-02-060	
+n3k-l02	触	第02	61	141	感触	かんしょく	Cảm giác khi tiếp xúc bằng tay hoặc cơ thể	CẢM XÚC	n3k-x-02-061	
+n3k-l02	旧	第02	63	141	旧姓	きゅうせい	Họ gốc của một người phụ nữ trước khi kết hôn	CỰU TÍNH	n3k-x-02-063	
+n3k-l02	旧	第02	64	141	旧式	きゅうしき	Kiểu cũ, dạng cũ, loại cũ	CỰU THỨC	n3k-x-02-064	
+n3k-l02	旧	第02	65	141	旧友	きゅうゆう	Bạn cũ, bạn từ ngày xưa	CỰU HỮU	n3k-x-02-065	
+n3k-l02	旧	第02	66	142	旧正月	きゅうしょうがつ	Tết Nguyên Đán	CỰU CHÍNH NGUYỆT	n3k-x-02-066	
+n3k-l02	児	第02	68	142	児童	じどう	Nhi đồng, trẻ em trong độ tuổi tiểu học	NHI ĐỒNG	n3k-x-02-068	
+n3k-l02	児	第02	69	143	育児	いくじ	Việc nuôi dưỡng, chăm sóc trẻ nhỏ	DỤC NHI	n3k-x-02-069	
+n3k-l02	児	第02	70	143	小児科	しょうにか	Khoa nhi trong bệnh viện	TIỂU NHI KHOA	n3k-x-02-070	
+n3k-l02	陥	第02	72	143	陥没	かんぼつ	Sụt lún, chìm xuống	HÃM MỘT	n3k-x-02-072	
+n3k-l02	陥	第02	73	143	欠陥	けっかん	Sự thiếu sót, lỗi, khuyết điểm	KHIẾM HÃM	n3k-x-02-073	
+n3k-l02	陥	第02	74	143	陥れる	おとしいれる	Gài bẫy, Dụ dỗ , lừa để hãm hại, đẩy ai đó vào tình thế bất lợi		n3k-x-02-074	
+n3k-l02	戸	第02	76	143	井戸水	いどみず	Nước giếng	TỈNH HỘ THỦY	n3k-x-02-076	
+n3k-l02	戸	第02	77	144	一戸建	いっこだて	Nhà riêng biệt	NHẤT HỘ KIẾN	n3k-x-02-077	dropped-lines
+n3k-l02	戸	第02	78	144	戸	と	Cửa		n3k-x-02-078	
+n3k-l02	戻	第02	80	144	戻る	もどる	Quay lại; trở lại; hồi lại		n3k-x-02-080	
+n3k-l02	戻	第02	81	144	払い戻す	はらいもどす	Hoàn trả tiền	PHẤT LỆ	n3k-x-02-081	
+n3k-l02	涙	第02	83	144	涙声	なみだごえ	Giọng nói nghẹn ngào	LỆ THANH	n3k-x-02-083	
+n3k-l02	涙	第02	84	144	涙	なみだ	Nước mắt		n3k-x-02-084	
+n3k-l02	涙	第02	85	144	涙腺	るいせん	Tuyến lệ trong mắt	LỆ TUYẾN	n3k-x-02-085	
+n3k-l02	非	第02	87	144	非常勤	ひじょうきん	Làm việc không toàn thời gian	PHI THƯỜNG CẦN	n3k-x-02-087	
+n3k-l02	非	第02	88	144	非常口	ひじょうぐち	Cửa thoát hiểm	PHI THƯỜNG KHẨU	n3k-x-02-088	
+n3k-l02	非	第02	89	144	非難	ひなん	Chỉ trích, phê phán	PHI NAN	n3k-x-02-089	text-before-reading
+n3k-l02	非	第02	90	145	非常	ひじょう	Đặc biệt, cực kỳ,rất tình trạng khẩn cấp, bất thường	PHI THƯỜNG	n3k-x-02-090	
+n3k-l02	悲	第02	92	145	悲しむ	かなしむ	Cảm thấy buồn, đau khổ, thương tiếc		n3k-x-02-092	
+n3k-l02	悲	第02	93	145	悲劇	ひげき	Sự việc đau thương, thảm kịch	BI KỊCH	n3k-x-02-093	
+n3k-l02	罪	第02	95	145	罪	つみ	Tội lỗi, lỗi lầm, hành vi sai trái		n3k-x-02-095	
+n3k-l02	罪	第02	96	145	有罪	ゆうざい	Có tội, phạm tội, bị kết tội	HỮU TỘI	n3k-x-02-096	
+n3k-l02	罪	第02	97	145	犯罪	はんざい	Tội phạm, hành vi phạm pháp	PHẠM TỘI	n3k-x-02-097	
+n3k-l03	責	第03	2	145	責務	せきむ	Trách nhiệm, nghĩa vụ	TRÁCH VỤ	n3k-x-03-002	
+n3k-l03	責	第03	3	145	責任	せきにん	Trách nhiệm	TRÁCH NHIỆM	n3k-x-03-003	
+n3k-l03	責	第03	4	145	無責任	むせきにん	Vô trách nhiệm, thiếu tinh thần trách nhiệm	VÔ TRÁCH NHIỆM	n3k-x-03-004	
+n3k-l03	責	第03	5	145	責任感	せきにんかん	Tinh thần trách nhiệm, ý thức trách nhiệm	TRÁCH NHIỆM CẢM	n3k-x-03-005	
+n3k-l03	責	第03	6	146	責めて	せめて	Trách móc, chỉ trích, công kích		n3k-x-03-006	
+n3k-l03	績	第03	8	146	成績	せいせき	Thành tích, kết quả đạt được	THÀNH TÍCH	n3k-x-03-008	
+n3k-l03	績	第03	9	146	業績	ぎょうせき	Thành tích, kết quả công việc hoặc kinh doanh	NGHIỆP TÍCH	n3k-x-03-009	
+n3k-l03	績	第03	10	146	実績	じっせき	Thành tích thực tế, kết quả đã đạt được	THỰC TÍCH	n3k-x-03-010	
+n3k-l03	積	第03	12	146	積もる	つもる	Tích tụ, chất đống, chồng chất		n3k-x-03-012	
+n3k-l03	積	第03	13	146	積んだ	つんだ	Đã chất, đã xếp, đã tích lũy		n3k-x-03-013	
+n3k-l03	積	第03	14	146	面積	めんせき	Diện tích, bề mặt được đo lường	DIỆN TÍCH	n3k-x-03-014	
+n3k-l03	積	第03	15	146	見積	みつもり	Báo giá, ước tính, dự toán	KIẾN TÍCH	n3k-x-03-015	
+n3k-l03	列	第03	17	146	行列	ぎょうれつ	Hàng người, hàng xe, sự xếp hàng nối tiếp nhau	HÀNH LIỆT	n3k-x-03-017	
+n3k-l03	列	第03	18	146	列島	れっとう	Quần đảo, chuỗi đảo nối tiếp nhau	LIỆT ĐẢO	n3k-x-03-018	
+n3k-l03	列	第03	19	147	列車	れっしゃ	Đoàn tàu, xe nối thành dãy	LIỆT XA	n3k-x-03-019	
+n3k-l03	例	第03	21	147	例年通り	れいねんどおり	Như mọi năm, theo thông lệ hàng năm	LỆ NIÊN THÔNG LỆ	n3k-x-03-021	
+n3k-l03	例	第03	22	147	例外	れいがい	Ngoại lệ, trường hợp khác biệt	LỆ NGOẠI	n3k-x-03-022	
+n3k-l03	例	第03	23	147	例えば	たとえば	Ví dụ như, chẳng hạn như		n3k-x-03-023	
+n3k-l03	死	第03	25	147	死亡者	しぼうしゃ	Người tử vong, người đã chết	TỬ VONG GIẢ	n3k-x-03-025	
+n3k-l03	死	第03	26	147	死んで	しんで	Đã chết / đang chết / chết rồi		n3k-x-03-026	
+n3k-l03	可	第03	28	147	可能	かのう	Có thể, khả năng	KHẢ NĂNG	n3k-x-03-028	
+n3k-l03	可	第03	29	147	可能性	かのうせい	Khả năng xảy ra, tính khả thi, triển vọng	KHẢ NĂNG TÍNH	n3k-x-03-029	
+n3k-l03	可	第03	30	147	不可能	ふかのう	Hông thể, bất khả thi	BẤT KHẢ NĂNG	n3k-x-03-030	
+n3k-l03	河	第03	32	147	氷河	ひょうが	Sông băng	BĂNG HÀ	n3k-x-03-032	
+n3k-l03	河	第03	33	147	河	かわ	Sông lớn		n3k-x-03-033	
+n3k-l03	局	第03	35	148	郵便局	ゆうびんきょく	Bưu điện, cơ quan bưu chính	BƯU TIỆN CỤC	n3k-x-03-035	
+n3k-l03	局	第03	36	148	薬局	やっきょく	Hiệu thuốc, nhà thuốc	DƯỢC CỤC	n3k-x-03-036	
+n3k-l03	局	第03	37	148	結局	けっきょく	Kết cục, rốt cuộc, cuối cùng thì	KẾT CỤC	n3k-x-03-037	
+n3k-l03	取	第03	39	148	取る	とる	Lấy, cầm, nắm, giành		n3k-x-03-039	
+n3k-l03	取	第03	40	148	取り消す	とりけす	Hủy bỏ, xóa bỏ, thu hồi	THỦ TIÊU	n3k-x-03-040	
+n3k-l03	取	第03	41	148	取材	しゅざい	Thu thập tư liệu, phỏng vấn, lấy tin	THỦ TÀI	n3k-x-03-041	
+n3k-l03	最	第03	43	148	最短	さいたん	Ngắn nhất, tối thiểu, ít nhất	TỐI ĐOẢN	n3k-x-03-043	
+n3k-l03	趣	第03	45	148	趣味	しゅみ	Sở thích, thú vui	THÚ VỊ	n3k-x-03-045	
+n3k-l03	趣	第03	46	148	趣旨	しゅし	Mục đích, ý nghĩa	THÚ CHỈ	n3k-x-03-046	
+n3k-l03	干	第03	48	148	干す	ほす	Phơi khô, làm khô		n3k-x-03-048	
+n3k-l03	干	第03	49	149	干物	ひもの	Đồ khô, thực phẩm phơi khô	CAN VẬT	n3k-x-03-049	
+n3k-l03	汗	第03	51	149	汗	あせ	Mồ hôi		n3k-x-03-051	
+n3k-l03	汗	第03	52	149	発汗する	はっかんする	Toát mồ hôi, tiết mồ hôi	PHÁT HÃN	n3k-x-03-052	
+n3k-l03	汗	第03	53	149	汗臭	あせくさい	Mồ hôi	HÃN XÚ	n3k-x-03-053	
+n3k-l03	岸	第03	55	149	海岸	かいがん	Bờ biển, ven biển	HẢI NGẠN	n3k-x-03-055	
+n3k-l03	岸	第03	56	149	川岸	かわぎし	Bờ sông, ven sông	XUYÊN NGẠN	n3k-x-03-056	
+n3k-l03	岸	第03	57	149	岸	きし	Bờ, bờ đất, bờ sông, bờ biển		n3k-x-03-057	
+n3k-l03	示	第03	59	149	指示	しじ	Chỉ dẫn, chỉ thị, mệnh lệnh, hướng dẫn hành động	CHỈ THỊ	n3k-x-03-059	
+n3k-l03	示	第03	60	149	示せない	しめせない	Không thể đưa ra bằng chứng		n3k-x-03-060	
+n3k-l03	示	第03	61	149	暗示	あんじ	Ám thị, gợi ý ngầm, ẩn ý, ra hiệu ngầm	ÁM THỊ	n3k-x-03-061	
+n3k-l03	祭	第03	63	149	祭る	まつる	Thờ cúng, tế lễ		n3k-x-03-063	
+n3k-l03	祭	第03	64	150	祭日	さいじつ	Ngày lễ	TẾ NHẬT	n3k-x-03-064	
+n3k-l03	祭	第03	65	150	祭り	まつり	Lễ hội		n3k-x-03-065	
+n3k-l03	禁	第03	67	150	禁止	きんし	Cấm đoán, ngăn cấm, không cho phép làm điều gì đó	CẤM CHỈ	n3k-x-03-067	
+n3k-l03	禁	第03	68	150	禁じる	きんじる	Cấm, ngăn cản, không cho phép		n3k-x-03-068	
+n3k-l03	忘	第03	71	150	忘れ物	わすれもの	Đồ để quên, đồ thất lạc	VONG VẬT	n3k-x-03-071	
+n3k-l03	忘	第03	72	150	忘年会	ぼうねんかい	Tiệc cuối năm	VONG NIÊN HỘI	n3k-x-03-072	
+n3k-l03	望	第03	74	150	失望	しつぼう	Mất hy vọng, thất vọng	THẤT VỌNG	n3k-x-03-074	
+n3k-l03	望	第03	75	150	望みます	のぞみます	Mong muốn, hy vọng		n3k-x-03-075	
+n3k-l03	望	第03	76	150	希望	きぼう	Hy vọng, nguyện vọng, mong muốn	HY VỌNG	n3k-x-03-076	
+n3k-l03	受	第03	78	150	受ける	うける	Nhận, tiếp nhận, chịu, dự thi		n3k-x-03-078	
+n3k-l03	受	第03	79	151	受験する	じゅけんする	Tham gia kỳ thi, đi thi	THỤ NGHIỆM	n3k-x-03-079	
+n3k-l03	受	第03	80	151	受賞	じゅしょう	Nhận giải thưởng, được trao giải	THỤ THƯỞNG	n3k-x-03-080	
+n3k-l03	授	第03	82	151	授かる	さずかる	Được ban cho, được trao tặng; Được phú cho, được hưởng		n3k-x-03-082	dropped-lines text-before-reading gloss-fixed-by-hand
+n3k-l03	授	第03	83	151	授業	じゅぎょう	Giờ học, tiết học	THỤ NGHIỆP	n3k-x-03-083	
+n3k-l03	授	第03	84	151	学教授	がくきょうじゅ	Giáo sư học thuật, giáo sư đại học	HỌC GIÁO THỤ	n3k-x-03-084	
+n3k-l03	暖	第03	86	151	暖める	あたためる	Làm ấm, hâm nóng, sưởi ấm		n3k-x-03-086	
+n3k-l03	暖	第03	87	151	地球温暖化	ちきゅうおんだんか	Hiện tượng trái đất nóng lên	ĐỊA CẦU ÔN NOÃN HÓA	n3k-x-03-087	
+n3k-l03	暖	第03	88	151	暖冬	だんとう	Mùa đông ấm áp	NOÃN ĐÔNG	n3k-x-03-088	
+n3k-l03	巾	第03	90	151	雑巾	ぞうきん	Giẻ lau, khăn lau	TẠP CÂN	n3k-x-03-090	
+n3k-l03	巾	第03	91	151	布巾	ふきん	Khăn vải, khăn lau	BỐ CÂN	n3k-x-03-091	
+n3k-l03	布	第03	93	152	毛布	もうふ	Chăn lông, chăn bông, blanket	MAO BỐ	n3k-x-03-093	
+n3k-l03	布	第03	94	152	配布	はいふ	Phân phát, phân phối, phát hành	PHỐI BỐ	n3k-x-03-094	
+n3k-l03	布	第03	95	152	散布	さんぷ	Phân tán, rải rác, gieo rắc hoặc lan truyền	TẢN BỐ	n3k-x-03-095	
+n3k-l04	束	第04	2	152	花束	はなたば	Bó hoa	HOA THÚC	n3k-x-04-002	
+n3k-l04	束	第04	3	152	約束	やくそく	Lời hứa, sự hẹn ước	ƯỚC THÚC	n3k-x-04-003	
+n3k-l04	頼	第04	5	152	信頼	しんらい	Tín nhiệm, Tin cậy	TÍN LẠI	n3k-x-04-005	
+n3k-l04	頼	第04	6	152	頼もしい	たのもしい	Đáng tin; đáng trông cậy; đáng hy vọng		n3k-x-04-006	
+n3k-l04	頼	第04	7	152	頼る	たよる	Dựa vào, nương tựa, trông cậy		n3k-x-04-007	
+n3k-l04	速	第04	9	153	速い	はやい	Nhanh, mau lẹ		n3k-x-04-009	
+n3k-l04	速	第04	10	153	時速	じそく	Tốc độ theo giờ, thường dùng để chỉ đơn vị km/h hoặc mph	THÌ TỐC	n3k-x-04-010	
+n3k-l04	士	第04	12	153	武士	ぶし	Võ sĩ, chỉ tầng lớp samurai	VŨ SĨ	n3k-x-04-012	
+n3k-l04	士	第04	13	153	弁護士	べんごし	Người biện hộ; luật sư	BIỆN HỘ SĨ	n3k-x-04-013	
+n3k-l04	仕	第04	15	153	お仕事	しごと	Công việc, nghề nghiệp	SĨ SỰ	n3k-x-04-015	reading-does-not-match-spelling
+n3k-l04	仕	第04	16	153	仕方	しかた	Cách làm; phương pháp	SĨ PHƯƠNG	n3k-x-04-016	
+n3k-l04	仕	第04	17	153	仕送り	しおくり	Tiền chu cấp, tiền gửi để nuôi sống ai đó	SĨ TỐNG	n3k-x-04-017	
+n3k-l04	志	第04	19	154	志望	しぼう	Nguyện vọng, ý muốn, ước nguyện	CHÍ VỌNG	n3k-x-04-019	
+n3k-l04	志	第04	20	154	意志	いし	Ý chí, nghị lực	Ý CHÍ	n3k-x-04-020	
+n3k-l04	相	第04	22	154	相談	そうだん	Bàn bạc, thảo luận	TƯƠNG ĐÀM	n3k-x-04-022	
+n3k-l04	相	第04	23	154	真相	しんそう	Chân tướng, sự thật, bản chất	CHÂN TƯƠNG	n3k-x-04-023	text-before-reading
+n3k-l04	相	第04	24	154	相手	あいて	Đối phương	TƯƠNG THỦ	n3k-x-04-024	
+n3k-l04	相	第04	25	154	首相	しゅしょう	Thủ tướng, người đứng đầu chính phủ	THỦ TƯỚNG	n3k-x-04-025	
+n3k-l04	箱	第04	27	154	空き箱	あきばこ	Cái hộp rỗng	KHÔNG TƯƠNG	n3k-x-04-027	
+n3k-l04	箱	第04	28	154	ゴミ箱	ごみばこ	Thùng rác		n3k-x-04-028	
+n3k-l04	想	第04	30	155	愛想	あいそう	Thái độ dễ mến, sự thân thiện, hòa nhã trong giao tiếp	ÁI TƯỞNG	n3k-x-04-030	
+n3k-l04	想	第04	31	155	予想	よそう	Dự đoán , dự báo	DỰ TƯỞNG	n3k-x-04-031	text-before-reading
+n3k-l04	想	第04	32	155	理想	りそう	Ý tưởng, điều mong muốn	LÍ TƯỞNG	n3k-x-04-032	
+n3k-l04	想	第04	33	155	空想	くうそう	Sự tưởng tượng, mơ mộng, viễn tưởng	KHÔNG TƯỞNG	n3k-x-04-033	
+n3k-l04	富	第04	35	155	富	とみ	Sự giàu có, thịnh vượng, phong phú		n3k-x-04-035	
+n3k-l04	富	第04	36	155	豊富	ほうふ	Phong phú, dồi dào, giàu có	PHONG PHÚ	n3k-x-04-036	
+n3k-l04	富	第04	37	155	富士山	ふじさん	Núi Phú Sĩ	PHÚ SĨ SƠN	n3k-x-04-037	
+n3k-l04	富	第04	38	155	貧富	ひんぷ	Sự giàu nghèo	BẦN PHÚ	n3k-x-04-038	
+n3k-l04	副	第04	40	156	副作用	ふくさよう	Tác dụng phụ, ảnh hưởng không mong muốn	PHÓ TÁC DỤNG	n3k-x-04-040	
+n3k-l04	副	第04	41	156	副賞	ふくしょう	Phần thưởng phụ, giải thưởng đi kèm	PHÓ THƯỞNG	n3k-x-04-041	
+n3k-l04	副	第04	42	156	副社長	ふくしゃちょう	Phó giám đốc, phó chủ tịch công ty	PHÓ XÃ TRƯỞNG	n3k-x-04-042	
+n3k-l04	福	第04	44	156	福来たる	ふくきたる	Phúc đến, may mắn sẽ đến	PHÚC LAI	n3k-x-04-044	
+n3k-l04	福	第04	45	156	幸福	こうふく	Hạnh phúc, sự may mắn	HẠNH PHÚC	n3k-x-04-045	
+n3k-l04	衣	第04	47	156	衣服	いふく	Quần áo, trang phục		n3k-x-04-047	text-before-reading
+n3k-l04	表	第04	49	156	表す	あらわす	Biểu hiện, bày tỏ, thể hiện, diễn đạt		n3k-x-04-049	
+n3k-l04	表	第04	50	157	表示	ひょうじ	Biểu thị, hiển thị	BIỂU THỊ	n3k-x-04-050	
+n3k-l04	袋	第04	52	157	手袋	てぶくろ	Găng tay, bao tay		n3k-x-04-052	text-before-reading
+n3k-l04	袋	第04	53	157	紙袋	かみぶくろ	Túi giấy		n3k-x-04-053	text-before-reading
+n3k-l04	袋	第04	54	157	袋	ふくろ	Túi, bao, vật chứa		n3k-x-04-054	
+n3k-l04	由	第04	56	157	経由	けいゆ	Đi qua, quá cảnh, thông qua	KINH DO	n3k-x-04-056	
+n3k-l04	由	第04	57	157	理由	りゆう	Lý do, nguyên nhân		n3k-x-04-057	text-before-reading
+n3k-l04	由	第04	58	157	由来	ゆらい	Nguồn gốc, xuất xứ	DO LAI	n3k-x-04-058	
+n3k-l04	演	第04	60	157	演説	えんぜつ	Diễn thuyết, phát biểu	DIỄN THUYẾT	n3k-x-04-060	
+n3k-l04	演	第04	61	158	演劇	えんげき	Kịch nghệ, nghệ thuật sân khấu	DIỄN KỊCH	n3k-x-04-061	
+n3k-l04	横	第04	63	158	横転する	おうてんする	Lật ngã, lật nhào, bị lật	HOÀNH CHUYỂN	n3k-x-04-063	
+n3k-l04	横	第04	64	158	横顔	よこがお	Khuôn mặt nhìn từ bên cạnh , góc nghiêng	HOÀNH NHAN	n3k-x-04-064	
+n3k-l04	横	第04	65	158	横書き	よこがき	Viết ngang, viết theo chiều ngang	HOÀNH THƯ	n3k-x-04-065	
+n3k-l04	横	第04	66	158	横断	おうだん	Băng ngang, vượt qua theo chiều ngang	HOÀNH ĐOẠN	n3k-x-04-066	
+n3k-l04	平	第04	68	158	平日	へいじつ	Ngày thường	BÌNH NHẬT	n3k-x-04-068	
+n3k-l04	平	第04	69	158	平和	へいわ	Hòa bình, sự yên ổn	BÌNH HÒA	n3k-x-04-069	
+n3k-l04	平	第04	70	158	平社員	ひらしゃいん	Nhân viên bình thường, nhân viên cấp thấp	BÌNH XÃ VIÊN	n3k-x-04-070	
+n3k-l04	評	第04	72	159	評判	ひょうばん	Danh tiếng, tiếng tăm, dư luận	BÌNH PHÁN	n3k-x-04-072	
+n3k-l04	評	第04	73	159	評価	ひょうか	Đánh giá, nhận xét, thẩm định	BÌNH GIÁ	n3k-x-04-073	text-before-reading
+n3k-l04	評	第04	74	159	評論家	ひょうろんか	Nhà phê bình	BÌNH LUẬN GIA	n3k-x-04-074	
+n3k-l04	呼	第04	76	159	呼んで	よんで	Gọi, mời, kêu		n3k-x-04-076	
+n3k-l04	呼	第04	77	159	深呼吸	しんこきゅう	Hít thở sâu	THÂM HÔ HẤP	n3k-x-04-077	
+n3k-l04	呼	第04	78	159	呼びかける	よびかける	Kêu gọi, hô hào, mời gọi		n3k-x-04-078	
+n3k-l04	央	第04	80	159	中央	ちゅうおう	Trung ương, trung tâm, chính giữa	TRUNG ƯƠNG	n3k-x-04-080	
+n3k-l04	決	第04	82	159	決める	きめる	Quyết định, chọn lựa, định đoạt		n3k-x-04-082	
+n3k-l04	決	第04	83	160	決意	けつい	Quyết tâm, sự quyết định	QUYẾT Ý	n3k-x-04-083	
+n3k-l04	決	第04	84	160	決心	けっしん	Quyết tâm, sự quyết chí, lòng kiên định	QUYẾT TÂM	n3k-x-04-084	
+n3k-l04	決	第04	85	160	決まった	きまった	Quy tắc định ra		n3k-x-04-085	
+n3k-l04	快	第04	87	160	快く	こころよく	Vui vẻ, phấn khởi		n3k-x-04-087	
+n3k-l04	快	第04	88	160	快適	かいてき	Sảng khoái; dễ chịu	KHOÁI THÍCH	n3k-x-04-088	text-before-reading
+n3k-l05	与	第05	2	160	与える	あたえる	Ban cho, trao cho		n3k-x-05-002	text-before-reading
+n3k-l05	与	第05	3	160	授与式	じゅよしき	Lễ trao giải	THỤ DỮ THỨC	n3k-x-05-003	
+n3k-l05	与	第05	4	160	関与	かんよ	Dính líu, liên quan, tham gia vào một sự việc	QUAN DỮ	n3k-x-05-004	
+n3k-l05	与	第05	5	160	与党	よとう	Đảng cầm quyền	DỮ ĐẢNG	n3k-x-05-005	
+n3k-l05	写	第05	7	161	写真	しゃしん	Ảnh chụp	TẢ CHÂN	n3k-x-05-007	
+n3k-l05	写	第05	8	161	写真写り	しゃしんうつり	Ăn ảnh	TẢ CHÂN TẢ	n3k-x-05-008	
+n3k-l05	汚	第05	10	161	汚す	よごす	Làm bẩn, làm ô uế, làm nhơ nhuốc		n3k-x-05-010	
+n3k-l05	汚	第05	11	161	汚職	おしょく	Tham nhũng, sự ô uế trong chức vụ	Ô CHỨC	n3k-x-05-011	
+n3k-l05	汚	第05	12	161	汚染	おせん	Ô nhiễm, sự nhiễm bẩn	Ô NHIỄM	n3k-x-05-012	
+n3k-l05	頭	第05	14	161	頭	あたま	Cái đầu		n3k-x-05-014	
+n3k-l05	頭	第05	15	161	頭痛	ずつう	Đau đầu, chứng nhức đầu	ĐẦU THỐNG	n3k-x-05-015	
+n3k-l05	頭	第05	16	161	頭文字	かしらもじ	Chữ cái đầu tiên	ĐẦU VĂN TỰ	n3k-x-05-016	
+n3k-l05	頭	第05	17	162	口頭	こうとう	Bằng miệng, lời nói	KHẨU ĐẦU	n3k-x-05-017	
+n3k-l05	願	第05	19	162	願う	ねがう	Cầu mong, ước nguyện		n3k-x-05-019	
+n3k-l05	願	第05	20	162	願書	がんしょ	Đơn đăng ký, hồ sơ đăng ký	NGUYỆN THƯ	n3k-x-05-020	text-before-reading
+n3k-l05	願	第05	21	162	願い事	ねがいごと	Điều ước, nguyện vọng, mong muốn	NGUYỆN SỰ	n3k-x-05-021	
+n3k-l05	順	第05	23	162	順位	じゅんい	Thứ hạng, xếp hạng, vị trí trong bảng xếp hạng	THỨ Vị	n3k-x-05-023	
+n3k-l05	順	第05	24	162	書き順	かきじゅん	Thứ tự viết, cách viết các nét	THƯ THUẬN	n3k-x-05-024	
+n3k-l05	順	第05	25	162	順調	じゅんちょう	Thuận lợi, suôn sẻ, tiến triển tốt	THUẬN ĐIỀU	n3k-x-05-025	
+n3k-l05	識	第05	27	163	常識	じょうしき	Lẽ thường, kiến thức phổ thông, điều hiển nhiên	THƯỜNG THỨC	n3k-x-05-027	
+n3k-l05	識	第05	28	163	面識	めんしき	Sự quen biết, đã từng gặp mặt	DIỆN THỨC	n3k-x-05-028	
+n3k-l05	識	第05	29	163	意識	いしき	Ý thức, nhận thức, sự tỉnh táo	Ý THỨC	n3k-x-05-029	
+n3k-l05	識	第05	30	163	知識	ちしき	Kiến thức, tri thức, sự hiểu biết	TRI THỨC	n3k-x-05-030	
+n3k-l05	職	第05	32	163	営業職	えいぎょうしょく	Nhân viên bán hàng	DOANH NGHIỆP CHỨC	n3k-x-05-032	
+n3k-l05	職	第05	33	163	就職	しゅうしょく	Tìm việc, xin việc	TỰU CHỨC	n3k-x-05-033	
+n3k-l05	職	第05	34	163	職業	しょくぎょう	Nghề nghiệp, công việc	CHỨC NGHIỆP	n3k-x-05-034	
+n3k-l05	職	第05	35	163	転職	てんしょく	Chuyển việc, đổi nghề	CHUYỂN CHỨC	n3k-x-05-035	
+n3k-l05	織	第05	37	163	組織	そしき	Tổ chức, cơ cấu, hệ thống	TỔ CHỨC	n3k-x-05-037	
+n3k-l05	性	第05	39	164	気性	きしょう	Tính khí, tính cách, tâm tính	KHÍ TÍNH	n3k-x-05-039	
+n3k-l05	性	第05	40	164	個性	こせい	Cá tính, đặc điểm riêng, nét riêng biệt	CÁ TÍNH	n3k-x-05-040	
+n3k-l05	性	第05	41	164	性質	せいしつ	Tính chất, đặc điểm vốn có, bản chất	TÍNH CHẤT	n3k-x-05-041	
+n3k-l05	姓	第05	43	164	姓	せい	Họ của một người		n3k-x-05-043	
+n3k-l05	姓	第05	44	164	同姓同名	どうせいどうめ	Trùng cả họ lẫn tên	ĐỒNG TÍNH ĐỒNG DANH	n3k-x-05-044	
+n3k-l05	姓	第05	45	164	旧姓	きゅうせい	Họ cũ, họ trước khi thay đổi	CỰU TÍNH	n3k-x-05-045	
+n3k-l05	姓	第05	46	164	別の姓	べつのせい	Khác họ tên	BIỆT TÍNH	n3k-x-05-046	
+n3k-l05	産	第05	48	164	産む	うむ	Sinh ra, đẻ ra, tạo ra		n3k-x-05-048	
+n3k-l05	産	第05	49	164	財産	ざいさん	Tài sản, của cải	TÀI SẢN	n3k-x-05-049	
+n3k-l05	産	第05	50	164	倒産	とうさん	Phá sản, sụp đổ về mặt kinh doanh	ĐẢO SẢN	n3k-x-05-050	
+n3k-l05	徒	第05	52	165	生徒	せいと	Học sinh tiểu học, cấp 2, cấp 3	SINH ĐỒ	n3k-x-05-052	
+n3k-l05	徒	第05	53	165	徒歩	とほ	Đi bộ, di chuyển bằng cách đi bộ	ĐỒ BỘ	n3k-x-05-053	
+n3k-l05	徒	第05	54	165	教徒	きょうと	Tín đồ, người theo một tôn giáo	GIÁO ĐỒ	n3k-x-05-054	
+n3k-l05	起	第05	56	165	早起き	はやおき	Dậy sớm, thói quen thức dậy	TẢO KHỞI	n3k-x-05-056	
+n3k-l05	起	第05	57	165	再起動	さいきどう	Khởi động lại	TÁI KHỞI ĐỘNG	n3k-x-05-057	
+n3k-l05	超	第05	59	165	超える	こえる	Vượt qua, vượt quá, đi qua		n3k-x-05-059	
+n3k-l05	超	第05	60	165	超満員	ちょうまんいん	Chật cứng người, quá tải, đông nghẹt	SIÊU MÃN VIÊN	n3k-x-05-060	
+n3k-l05	超	第05	61	165	超過	ちょうか	Vượt quá, quá mức, quá giới hạn cho phép	SIÊU QUÁ	n3k-x-05-061	
+n3k-l05	粉	第05	63	166	花粉	かふん	Phấn hoa, hạt nhỏ li ti do hoa phát tán	HOA PHẤN	n3k-x-05-063	
+n3k-l05	粉	第05	64	166	麦粉	むぎこ	Bột mì, bột lúa mạch	MẠCH PHẤN	n3k-x-05-064	text-before-reading
+n3k-l05	粉	第05	65	166	粉薬	こなぐすり	Thuốc dạng bột	PHẤN DƯỢC	n3k-x-05-065	text-before-reading
+n3k-l05	紛	第05	67	166	紛争	ふんそう	Tranh chấp, xung đột, mâu thuẫn	PHÂN TRANH	n3k-x-05-067	
+n3k-l05	紛	第05	68	166	紛失	ふんしつ	Thất lạc, làm mất, mất mát	PHÂN THẤT	n3k-x-05-068	
+n3k-l05	貧	第05	70	166	貧しい	まずしい	Nghèo khó, túng thiếu, thiếu thốn		n3k-x-05-070	
+n3k-l05	貧	第05	71	166	貧富	ひんぷ	Giàu nghèo, sự chênh lệch giữa người giàu và người nghèo		n3k-x-05-071	
+n3k-l05	貧	第05	72	166	貧乏	びんぼう	Bần cùng, nghèo túng, khốn khó	BẦN PHẠP	n3k-x-05-072	
+n3k-l05	覚	第05	74	167	覚める	さめる	Tỉnh dậy; tỉnh giấc		n3k-x-05-074	
+n3k-l05	覚	第05	75	167	感覚	かんかく	Cảm giác	CẢM GIÁC	n3k-x-05-075	
+n3k-l05	覚	第05	76	167	視覚	しかく	Thị giác, thị lực	THỊ GIÁC	n3k-x-05-076	no-meaning meaning-jmdict-1312010
+n3k-l05	規	第05	78	167	規律	きりつ	Luật, quy luật	QUY LUẬT	n3k-x-05-078	
+n3k-l05	規	第05	79	167	規模	きぼ	Quy mô	QUY MÔ	n3k-x-05-079	
+n3k-l05	規	第05	80	167	規則	きそく	Quy tắc; nội quy ,Kỷ luật	QUY TẮC	n3k-x-05-080	
+n3k-l05	現	第05	82	167	現在	げんざい	Bây giờ, ngày nay	HIỆN TẠI	n3k-x-05-082	
+n3k-l05	現	第05	83	167	実現	じつげん	Thực hiện	THỰC HIỆN	n3k-x-05-083	
+n3k-l05	現	第05	84	167	現実	げんじつ	Hiện thực; sự thật; thực tại	HIỆN THỰC	n3k-x-05-084	
+n3k-l05	現	第05	85	168	表現	ひょうげん	Sự biểu hiện; sự diễn tả; sự thể hiện	BIỂU HIỆN	n3k-x-05-085	
+n3k-l05	連	第05	87	168	連続	れんぞく	Liên tục , liên tiếp	LIÊN TỤC	n3k-x-05-087	
+n3k-l05	連	第05	88	168	連れる	つれる	Dẫn; dắt; dẫn dắt		n3k-x-05-088	
+n3k-l05	連	第05	89	168	連絡	れんらく	Giữ liên lạc	LIÊN LẠC	n3k-x-05-089	
+n3k-l05	軍	第05	91	168	軍隊	ぐんたい	Quân đội, Binh ngũ	QUÂN ĐỘI	n3k-x-05-091	
+n3k-l05	軍	第05	92	168	空軍	くうぐん	Không quân	KHÔNG QUÂN	n3k-x-05-092	
+n3k-l05	庫	第05	94	168	金庫	きんこ	Két sắt , Kho bạc	KIM KHỐ	n3k-x-05-094	
+n3k-l05	庫	第05	95	168	車庫	しゃこ	Nhà để xe; ga ra	XA KHỐ	n3k-x-05-095	
+n3k-l06	度	第06	2	168	温度	おんど	Nhiệt độ	ÔN ĐỘ	n3k-x-06-002	
+n3k-l06	度	第06	3	168	度	たんび	Mỗi lần, hễ lần nào cũng	ĐỘ	n3k-x-06-003	
+n3k-l06	度	第06	4	169	支度	したく	Sự chuẩn bị; sự sửa soạn	CHI ĐỘ	n3k-x-06-004	
+n3k-l06	席	第06	6	169	席	せき	Chỗ ngồi		n3k-x-06-006	
+n3k-l06	席	第06	7	169	欠席	けっせき	Sự vắng mặt; sự không tham dự; vắng mặt; nghỉ (học)	KHIẾM TỊCH	n3k-x-06-007	
+n3k-l06	席	第06	8	169	出席	しゅっせき	Sự có mặt; sự tham dự	XUẤT TỊCH	n3k-x-06-008	
+n3k-l06	席	第06	9	169	指定席	していせき	Ghế chỉ định, chỗ ngồi đã đặt trước	CHỈ ĐỊNH TỊCH	n3k-x-06-009	
+n3k-l06	席	第06	10	169	座席	ざせき	Chỗ ngồi	TỌA TỊCH	n3k-x-06-010	
+n3k-l06	底	第06	12	169	底	そこ	Đáy, đế		n3k-x-06-012	
+n3k-l06	底	第06	13	169	徹底	てってい	Triệt để, thấu đáo, hoàn toàn, kỹ lưỡng	TRIỆT ĐỂ	n3k-x-06-013	
+n3k-l06	回	第06	15	169	回数券	かいすうけん	Vé nhiều lượt, vé tháng/vé coupon dùng nhiều lần	HỒI SỔ KHOÁN	n3k-x-06-015	text-before-reading
+n3k-l06	回	第06	16	169	回っている	まわっている	Đang trong trạng thái quay/chạy/vận hành/vòng quanh		n3k-x-06-016	
+n3k-l06	回	第06	17	169	回す	まわす	Quay		n3k-x-06-017	
+n3k-l06	回	第06	18	170	回収	かいしゅう	Sự thu hồi; sự thu lại; thu hồi	HỒI THU	n3k-x-06-018	
+n3k-l06	回	第06	19	170	第一回目	だいいっかいめ	Lần đầu tiên		n3k-x-06-019	text-before-reading
+n3k-l06	困	第06	21	170	困った	こまった	Khó khăn		n3k-x-06-021	
+n3k-l06	困	第06	22	170	困難	こんなん	Khó khăn, trở ngại, tình thế gian nan	KHỐN NAN	n3k-x-06-022	
+n3k-l06	団	第06	24	170	布団	ふとん	Nệm; chăn	BỐ ĐOÀN	n3k-x-06-024	
+n3k-l06	団	第06	25	170	団体	だんたい	Đoàn thể; tập thể	ĐOÀN THỂ	n3k-x-06-025	
+n3k-l06	団	第06	26	170	団結	だんけつ	Đoàn kết	ĐOÀN KẾT	n3k-x-06-026	
+n3k-l06	常	第06	28	170	常に	つねに	Luôn luôn, thường xuyên, lúc nào cũng		n3k-x-06-028	text-before-reading
+n3k-l06	常	第06	29	170	常識	じょうしき	Kiến thức thông thường; sự bình thường	THƯỜNG THỨC	n3k-x-06-029	
+n3k-l06	常	第06	30	170	日常	にちじょう	Ngày thường	NHẬT THƯỜNG	n3k-x-06-030	
+n3k-l06	党	第06	32	171	政党	せいとう	Chính đảng	CHÁNH ĐẢNG	n3k-x-06-032	
+n3k-l06	党	第06	33	171	党	とう	Đảng (chính trị)		n3k-x-06-033	
+n3k-l06	党	第06	34	171	野党	やとう	Đảng đối lập	DÃ ĐẢNG	n3k-x-06-034	
+n3k-l06	党	第06	35	171	与党	よとう	Đảng cầm quyền	DỮ ĐẢNG	n3k-x-06-035	
+n3k-l06	党	第06	36	171	離党	りとう	Sự rời khỏi đảng	LI ĐẢNG	n3k-x-06-036	
+n3k-l06	営	第06	38	171	営む	いとなむ	Điều hành, kinh doanh, quản lý		n3k-x-06-038	dropped-lines
+n3k-l06	営	第06	39	171	営業中	えいぎょうちゅう	Đang giờ mở cửa, đang giờ kinh doanh	DOANH NGHIỆP TRUNG	n3k-x-06-039	
+n3k-l06	営	第06	40	171	営業所	えいぎょうしょ	Nơi kinh doanh; địa điểm kinh doanh	DOANH NGHIỆP SỞ	n3k-x-06-040	
+n3k-l06	営	第06	41	171	運営	うんえい	Sự quản lý; điều hành, vận hành	VẬN DOANH	n3k-x-06-041	
+n3k-l06	全	第06	43	171	全然	ぜんぜん	Hoàn toàn	TOÀN NHIÊN	n3k-x-06-043	
+n3k-l06	全	第06	44	172	全部	ぜんぶ	Tất cả	TOÀN BỘ	n3k-x-06-044	
+n3k-l06	全	第06	45	172	全て	すべて	Toàn bộ; tất cả; hoàn toàn		n3k-x-06-045	
+n3k-l06	全	第06	46	172	全く	まったく	Thực sự là , tất cả; hoàn toàn		n3k-x-06-046	text-before-reading
+n3k-l06	全	第06	47	172	安全	あんぜん	An toàn	AN TOÀN	n3k-x-06-047	no-meaning meaning-jmdict-1153930
+n3k-l06	程	第06	49	172	日程	にってい	Lịch Trình	NHẬT TRÌNH	n3k-x-06-049	
+n3k-l06	程	第06	50	172	程	ほど	Khoảng		n3k-x-06-050	
+n3k-l06	程	第06	51	172	程度	ていど	Mức độ; trình độ , Mức	TRÌNH ĐỘ	n3k-x-06-051	
+n3k-l06	宝	第06	53	172	宝物	たからもの	Bảo vật, vật quý giá, kho báu	BẢO VẬT	n3k-x-06-053	
+n3k-l06	宝	第06	54	172	宝くじ	たからくじ	Vé số; xổ số		n3k-x-06-054	
+n3k-l06	宝	第06	55	172	宝石	ほうせき	Đá quý	BẢO THẠCH	n3k-x-06-055	
+n3k-l06	欲	第06	57	173	欲しい	ほしい	Muốn; mong muốn		n3k-x-06-057	
+n3k-l06	欲	第06	58	173	食欲	しょくよく	Sự ngon miệng; sự thèm ăn	THỰC DỤC	n3k-x-06-058	
+n3k-l06	浴	第06	60	173	浴びる	あびる	Tắm, Rơi vào; ngập chìm		n3k-x-06-060	
+n3k-l06	浴	第06	61	173	海水浴	かいすいよく	Sự tắm biển	HẢI THỦY DỤC	n3k-x-06-061	
+n3k-l06	容	第06	63	173	容量	ようりょう	Dung lượng , Công suất	DUNG LƯỢNG	n3k-x-06-063	
+n3k-l06	容	第06	64	173	容疑者	ようぎしゃ	Người khả nghi; người bị tình nghi	DUNG NGHI GIẢ	n3k-x-06-064	
+n3k-l06	容	第06	65	173	美容院	びよういん	Thẩm mỹ viện, nơi làm đẹp	MĨ DUNG VIỆN	n3k-x-06-065	
+n3k-l06	容	第06	66	173	容器	ようき	Dụng cụ chứa, vật chứa, container	DUNG KHÍ	n3k-x-06-066	
+n3k-l06	拾	第06	68	173	拾得物	しゅうとくぶつ	Vật nhặt được; của rơi	THẬP ĐẮC VẬT	n3k-x-06-068	
+n3k-l06	拾	第06	69	173	拾う	ひろう	Nhặt; lượm, Chọn lựa		n3k-x-06-069	
+n3k-l06	捨	第06	71	174	捨てる	すてる	Vứt bỏ, bỏ đi, từ bỏ		n3k-x-06-071	
+n3k-l06	給	第06	73	174	給料日	きゅうりょうび	Ngày trả lương	CẤP LIÊU NHẬT	n3k-x-06-073	
+n3k-l06	給	第06	74	174	時給	じきゅう	Tiền lương trả theo giờ	THÌ CẤP	n3k-x-06-074	
+n3k-l06	給	第06	75	174	自給自足	じきゅうじそく	Tự cung tự cấp	TỰ CẤP TỰ TÚC	n3k-x-06-075	
+n3k-l06	恋	第06	77	174	恋愛	れんあい	Tình yêu	LUYẾN ÁI	n3k-x-06-077	
+n3k-l06	恋	第06	78	174	恋人	こいびと	Người yêu	LUYẾN NHÂN	n3k-x-06-078	
+n3k-l06	恋	第06	79	174	恋しく	こいしく	Nhớ nhung		n3k-x-06-079	
+n3k-l06	変	第06	81	174	変な	へんな	Kỳ lạ		n3k-x-06-081	
+n3k-l06	変	第06	82	174	変化	へんか	Sự cải biến; sự thay đổi	BIẾN HÓA	n3k-x-06-082	
+n3k-l06	変	第06	83	175	変更	へんこう	Sự biến đổi; sự cải biến; sự thay đổi	BIẾN CANH	n3k-x-06-083	
+n3k-l06	跡	第06	85	175	足跡	あしあと	Vết chân; dấu chân	TÚC TÍCH	n3k-x-06-085	
+n3k-l06	跡	第06	86	175	傷跡	きずあと	Vết sẹo	THƯƠNG TÍCH	n3k-x-06-086	
+n3k-l06	跡	第06	87	175	形跡	けいせき	Dấu vết, dấu tích, bằng chứng	HÌNH TÍCH	n3k-x-06-087	
+n3k-l06	跡	第06	88	175	追跡	ついせき	Sự truy đuổi	TRUY TÍCH	n3k-x-06-088	
+n3k-l06	筆	第06	90	175	鉛筆	えんぴつ	Bút chì	DUYÊN BÚT	n3k-x-06-090	
+n3k-l06	筆	第06	91	175	筆者	ひっしゃ	Phóng viên; kí giả	BÚT GIẢ	n3k-x-06-091	
+n3k-l06	筆	第06	92	175	万年筆	まんねんぴつ	Bút máy	VẠN NIÊN BÚT	n3k-x-06-092	
+n3k-l06	律	第06	94	175	法律	ほうりつ	Đạo luật, Pháp luật	PHÁP LUẬT	n3k-x-06-094	
+n3k-l06	律	第06	95	175	律儀	りちぎ	Người ngay thẳng, thành thật, trung thực, giữ chữ tín	LUẬT NGHI	n3k-x-06-095	
+n3k-l06	建	第06	97	176	建てる	たてる	Gây dựng, Sáng lập		n3k-x-06-097	
+n3k-l06	建	第06	98	176	建築家	けんちくか	Nhà kiến trúc; kiến trúc sư	KIẾN TRÚC GIA	n3k-x-06-098	
+n3k-l06	建	第06	99	176	建造物	けんぞうもの	Công trình kiến trúc, công trình xây dựng	KIẾN TẠO VẬT	n3k-x-06-099	
+n3k-l07	的	第07	2	176	目的地	もくてきち	Đích đến, điểm đến, nơi đến, mục tiêu chuyến đi	MỤC ĐÍCH ĐỊA	n3k-x-07-002	
+n3k-l07	的	第07	3	176	全国的	ぜんこくてき	Tính toàn quốc	TOÀN QUỐC ĐÍCH	n3k-x-07-003	
+n3k-l07	的	第07	4	176	的	まと	Cái đích, tiêu điểm		n3k-x-07-004	
+n3k-l07	約	第07	6	176	約	やく	Khoảng		n3k-x-07-006	
+n3k-l07	約	第07	7	176	予約	よやく	Hẹn trước, đặt trước	DƯ ƯỚC	n3k-x-07-007	
+n3k-l07	約	第07	8	176	契約	けいやく	Hợp đồng	KHẾ ƯỚC	n3k-x-07-008	
+n3k-l07	約	第07	9	176	婚約	こんやく	Đính hôn	HÔN ƯỚC	n3k-x-07-009	
+n3k-l07	均	第07	11	177	平均点	へいきんてん	Điểm trung bình	BÌNH QUÂN ĐIỂM	n3k-x-07-011	
+n3k-l07	均	第07	12	177	平均	へいきん	Trung bình	BÌNH QUÂN	n3k-x-07-012	
+n3k-l07	復	第07	14	177	往復	おうふく	Sự khứ hồi; việc cả đi cả về	VÃNG PHỤC	n3k-x-07-014	
+n3k-l07	復	第07	15	177	回復	かいふく	Hồi phục	HỒI PHỤC	n3k-x-07-015	
+n3k-l07	復	第07	16	177	復習	ふくしゅう	Ôn tập	PHỤC TẬP	n3k-x-07-016	
+n3k-l07	複	第07	18	177	複数	ふくすう	Nhiều, số phức	PHỨC SỔ	n3k-x-07-018	
+n3k-l07	複	第07	19	177	複雑	ふくざつ	Phức tạp	PHỨC TẠP	n3k-x-07-019	
+n3k-l07	腹	第07	21	177	腹がたつ	はらがたつ	Bực mình, tức giận		n3k-x-07-021	
+n3k-l07	腹	第07	22	177	お腹	おなか	Bụng		n3k-x-07-022	
+n3k-l07	腹	第07	23	178	空腹	くうふく	Đói bụng	KHÔNG PHÚC	n3k-x-07-023	
+n3k-l07	件	第07	25	178	事件	じけん	Vụ án, sự kiện	SỰ KIỆN	n3k-x-07-025	
+n3k-l07	件	第07	26	178	条件	じょうけん	Điều kiện	ĐIỀU KIỆN	n3k-x-07-026	
+n3k-l07	件	第07	27	178	物件	ぶっけん	Nhà, chung cư, đất nói chung trong BĐS	VẬT KIỆN	n3k-x-07-027	
+n3k-l07	件	第07	28	178	用件	ようけん	Lời nhắn, công chuyện, việc bận, nội dung công việc	DỤNG KIỆN	n3k-x-07-028	
+n3k-l07	件	第07	29	178	件数	けんすう	Số vụ	KIỆN SỔ	n3k-x-07-029	
+n3k-l07	許	第07	31	178	免許	めんきょ	Bằng lái xe, giấy phép	MIỄN HỨA	n3k-x-07-031	
+n3k-l07	許	第07	32	178	許す	ゆるす	Tha thứ		n3k-x-07-032	
+n3k-l07	許	第07	33	178	許可	きょか	Sự cho phép	HỨA KHẢ	n3k-x-07-033	
+n3k-l07	缶	第07	35	178	缶	かん	Lon		n3k-x-07-035	
+n3k-l07	缶	第07	36	179	缶コーヒー	かんこーひー	Cà phê lon		n3k-x-07-036	
+n3k-l07	缶	第07	37	179	缶詰	かんづめ	Đồ hộp; đồ đóng hộp; lon	PHỮU CẬT	n3k-x-07-037	
+n3k-l07	優	第07	39	179	優れた	すぐれた	Tài giỏi, ưu tú		n3k-x-07-039	
+n3k-l07	優	第07	40	179	優しい	やさしい	Hiền lành, dịu dàng, tử tế, tốt bụng		n3k-x-07-040	
+n3k-l07	優	第07	41	179	優先	ゆうせん	Sự ưu tiên	ƯU TIÊN	n3k-x-07-041	
+n3k-l07	優	第07	42	179	優勝	ゆうしょう	Chiến thắng, Vô địch	ƯU THẮNG	n3k-x-07-042	
+n3k-l07	仲	第07	44	179	仲良し	なかよし	Mối quan hệ tốt	TRỌNG LƯƠNG	n3k-x-07-044	
+n3k-l07	仲	第07	45	179	仲がいい	なかがいい	Quan hệ tốt		n3k-x-07-045	
+n3k-l07	仲	第07	46	179	仲間	なかま	Bạn bè, đồng nghiệp	TRỌNG GIAN	n3k-x-07-046	
+n3k-l07	仏	第07	48	179	仏教	ぶっきょう	Phật giáo	PHẬT GIÁO	n3k-x-07-048	
+n3k-l07	仏	第07	49	180	仏様	ふつさま	Đức phật	PHẬT DẠNG	n3k-x-07-049	
+n3k-l07	仏	第07	50	180	大仏	だいぶつ	Bức tượng phật lớn	ĐẠI PHẬT	n3k-x-07-050	
+n3k-l07	仏	第07	51	180	念仏	ねんぶつ	Tụng , niệm Phật	NIỆM PHẬT	n3k-x-07-051	
+n3k-l07	芸	第07	53	180	芸術	げいじゅつ	Nghệ thuật	VÂN THUẬT	n3k-x-07-053	
+n3k-l07	芸	第07	54	180	伝統芸能	でんとうげいのう	Nghệ thuật truyền thống	TRUYỀN THỐNG VÂN NĂNG	n3k-x-07-054	
+n3k-l07	伝	第07	56	180	伝える	つたえる	Truyền đạt		n3k-x-07-056	
+n3k-l07	伝	第07	57	180	伝言	でんごん	Lời nhắn		n3k-x-07-057	
+n3k-l07	伝	第07	58	180	伝統的	でんとうてき	Mang tính truyền thống	TRUYỀN THỐNG ĐÍCH	n3k-x-07-058	
+n3k-l07	転	第07	60	180	転がる	ころがる	Lăn		n3k-x-07-060	
+n3k-l07	転	第07	61	180	自転車	じてんしゃ	Xe đạp	TỰ CHUYỂN XA	n3k-x-07-061	
+n3k-l07	転	第07	62	180	転ぶ	ころぶ	Ngã		n3k-x-07-062	
+n3k-l07	式	第07	64	181	株式会社	かぶしきかいしゃ	Công ty cổ phần	CHU THỨC HỘI XÃ	n3k-x-07-064	
+n3k-l07	式	第07	65	181	正式	せいしき	Chính thức	CHÁNH THỨC	n3k-x-07-065	
+n3k-l07	式	第07	66	181	結婚式	けっこんしき	Đám cưới	KẾT HÔN THỨC	n3k-x-07-066	
+n3k-l07	戦	第07	68	181	戦う	たたかう	Đánh nhau; giao chiến; chiến đấu chống lại		n3k-x-07-068	
+n3k-l07	戦	第07	69	181	決勝戦	けっしょうせん	Trận chung kết	QUYẾT THẮNG CHIẾN	n3k-x-07-069	
+n3k-l07	戦	第07	70	181	作戦	さくせん	Tác chiến	TÁC CHIẾN	n3k-x-07-070	
+n3k-l07	成	第07	72	181	成功	せいこう	Thành công	THÀNH CÔNG	n3k-x-07-072	
+n3k-l07	成	第07	73	181	完成	かんせい	Hoàn thành	HOÀN THÀNH	n3k-x-07-073	
+n3k-l07	成	第07	74	181	成績	せいせき	Thành tích	THÀNH TÍCH	n3k-x-07-074	
+n3k-l07	成	第07	75	182	成長	せいちょう	Trưởng thành	THÀNH TRƯỜNG	n3k-x-07-075	
+n3k-l07	身	第07	77	182	独身	どくしん	Độc thân	ĐỘC THÂN	n3k-x-07-077	
+n3k-l07	身	第07	78	182	身長	しんちょう	Chiều cao	THÂN TRƯỜNG	n3k-x-07-078	
+n3k-l07	身	第07	79	182	出身	しゅっしん	Xuất thân	XUẤT THÂN	n3k-x-07-079	
+n3k-l07	身	第07	80	182	身分	みぶん	Thân phận ,thân phận, địa vị xã hội, tư cách	THÂN PHÂN	n3k-x-07-080	
+n3k-l07	息	第07	82	182	息苦しい	いきぐるしい	Khó thở ,ngột ngạt, bức bối		n3k-x-07-082	
+n3k-l07	息	第07	83	182	休息	きゅうそく	Nghỉ ngơi	HƯU TỨC	n3k-x-07-083	
+n3k-l07	鼻	第07	85	182	鼻	はな	Mũi		n3k-x-07-085	
+n3k-l07	鼻	第07	86	182	鼻水	はなみず	Nước mũi	TỊ THỦY	n3k-x-07-086	
+n3k-l07	鼻	第07	87	182	耳鼻科	じびか	Khoa tai mũi họng	NHĨ TỊ KHOA	n3k-x-07-087	
+n3k-l07	守	第07	89	182	守る	まもる	Bảo vệ		n3k-x-07-089	
+n3k-l07	守	第07	90	183	厳守	げんしゅ	Tuân thủ nghiêm ngặt	NGHIÊM THỦ	n3k-x-07-090	
+n3k-l07	守	第07	91	183	留守	るす	Vắng nhà	LƯU THỦ	n3k-x-07-091	
+n3k-l07	付	第07	93	183	片付ける	かたづける	Dọn dẹp	PHIẾN PHÓ	n3k-x-07-093	
+n3k-l07	付	第07	94	183	付いて	ついて	Dính, đính kèm		n3k-x-07-094	
+n3k-l07	付	第07	95	183	身に付ける	みにつける	Tiếp thu, học được, nắm vững	THÂN PHÓ	n3k-x-07-095	
+n3k-l07	討	第07	97	183	討論会	とうろんかい	Hội thảo luận	THẢO LUẬN HỘI	n3k-x-07-097	
+n3k-l07	討	第07	98	183	検討	けんとう	Xem xét, cân nhắc	KIỂM THẢO	n3k-x-07-098	
+n3k-l07	討	第07	99	183	討つ	うつ	Chinh phạt, tấn công		n3k-x-07-099	
+n3k-l08	事	第08	2	183	用事	ようじ	Việc bận	DỤNG SỰ	n3k-x-08-002	dropped-lines
+n3k-l08	事	第08	3	184	大事	だいじ	Quan trọng	ĐẠI SỰ	n3k-x-08-003	
+n3k-l08	事	第08	4	184	工事	こうじ	Công trường/Công trình	CÔNG SỰ	n3k-x-08-004	
+n3k-l08	事	第08	5	184	食事	しょくじ	Bữa ăn	THỰC SỰ	n3k-x-08-005	
+n3k-l08	争	第08	7	184	争う	あらそう	Tranh giành/Cạnh tranh		n3k-x-08-007	
+n3k-l08	争	第08	8	184	争い	あらそい	Cuộc tranh đấu		n3k-x-08-008	
+n3k-l08	争	第08	9	184	戦争	せんそう	Chiến tranh	CHIẾN TRANH	n3k-x-08-009	no-meaning meaning-jmdict-1390360
+n3k-l08	浄	第08	11	184	浄化	じょうか	Làm sạch/Thanh lọc	TỊNH HÓA	n3k-x-08-011	
+n3k-l08	浄	第08	12	184	洗浄	せんじょう	Rửa sạch/Tẩy rửa	TẨY TỊNH	n3k-x-08-012	
+n3k-l08	迎	第08	14	184	迎え	むかえ	Việc đi đón		n3k-x-08-014	
+n3k-l08	迎	第08	15	184	歓迎会	かんげいかい	Tiệc chào mừng	HOAN NGHÊNH HỘI	n3k-x-08-015	
+n3k-l08	逆	第08	17	184	逆	ぎゃく	Ngược lại		n3k-x-08-017	
+n3k-l08	逆	第08	18	185	逆らった	さからった	Chống đối/Làm ngược lại; Chống lại, cãi lại, phản kháng		n3k-x-08-018	several-senses
+n3k-l08	選	第08	20	185	選手	せんしゅ	Tuyển thủ/Vận động viên	TUYỂN THỦ	n3k-x-08-020	
+n3k-l08	選	第08	21	185	選択	せんたく	Lựa chọn	TUYỂN TRẠCH	n3k-x-08-021	
+n3k-l08	選	第08	22	185	選ぶ	えらぶ	Chọn lựa		n3k-x-08-022	
+n3k-l08	選	第08	23	185	選挙	せんきょ	Bầu cử	TUYỂN CỬ	n3k-x-08-023	
+n3k-l08	員	第08	25	185	社員	しゃいん	Nhân viên công ty	XÃ VIÊN	n3k-x-08-025	
+n3k-l08	員	第08	26	185	全員	ぜんいん	Tất cả mọi người	TOÀN VIÊN	n3k-x-08-026	
+n3k-l08	員	第08	27	185	満員	まんいん	Đầy người	MÃN VIÊN	n3k-x-08-027	
+n3k-l08	員	第08	28	185	会員	かいいん	Thành viên	HỘI VIÊN	n3k-x-08-028	
+n3k-l08	損	第08	30	185	損なう	そこなう	Gây hại/Làm tổn thương		n3k-x-08-030	
+n3k-l08	損	第08	31	185	損ねる	そこねる	Làm hỏng, làm tổn hại, làm mất đi	TỔN	n3k-x-08-031	
+n3k-l08	損	第08	32	186	損傷	そんしょう	Thiệt hại/Hư hại	TỔN THƯƠNG	n3k-x-08-032	
+n3k-l08	賞	第08	34	186	賞状	しょうじょう	Bằng khen	THƯỞNG TRẠNG	n3k-x-08-034	text-before-reading
+n3k-l08	賞	第08	35	186	受賞者	じゅしょうしゃ	Người nhận thưởng	THỤ THƯỞNG GIẢ	n3k-x-08-035	
+n3k-l08	賞	第08	36	186	賞金	しょうきん	Tiền thưởng	THƯỞNG KIM	n3k-x-08-036	
+n3k-l08	賞	第08	37	186	最優秀賞	さいゆうしゅうしょう	Giải xuất sắc nhất	TỐI ƯU TÚ THƯỞNG	n3k-x-08-037	
+n3k-l08	負	第08	39	186	背負う	せおう	Cõng/Gánh vác	BỐI PHỤ	n3k-x-08-039	
+n3k-l08	負	第08	40	186	負担	ふたん	Gánh nặng, sự chịu đựng, trách nhiệm, chi phí phải gánh	PHỤ ĐẢM	n3k-x-08-040	
+n3k-l08	負	第08	41	186	負ける	まける	Thua		n3k-x-08-041	
+n3k-l08	敗	第08	43	186	敗れる	やぶれる	Bị đánh bại		n3k-x-08-043	
+n3k-l08	敗	第08	44	186	勝敗	しょうはい	Thắng bại, kết quả (trận đấu)	THẮNG BẠI	n3k-x-08-044	no-meaning meaning-jmdict-1346220
+n3k-l08	敗	第08	45	187	大敗	たいはい	Thất bại nặng nề	ĐẠI BẠI	n3k-x-08-045	dropped-lines
+n3k-l08	敗	第08	46	187	敗戦	はいせん	Thất bại trong chiến tranh	BẠI CHIẾN	n3k-x-08-046	
+n3k-l08	賛	第08	48	187	自画自賛	じがじさん	Tự mình khen mình	TỰ HỌA TỰ TÁN	n3k-x-08-048	
+n3k-l08	賛	第08	49	187	賛成	さんせい	Tán thành/Đồng ý	TÁN THÀNH	n3k-x-08-049	
+n3k-l08	賛	第08	50	187	賛同	さんどう	Tán thành, đồng ý, ủng hộ	TÁN ĐỒNG	n3k-x-08-050	
+n3k-l08	貸	第08	52	187	貸して	かして	Cho vay mượn		n3k-x-08-052	
+n3k-l08	貸	第08	53	187	貸し借り	かしかり	Vay mượn	THẢI TÁ	n3k-x-08-053	
+n3k-l08	貸	第08	54	187	賃貸	ちんたい	Cho thuê	NHẪM THẢI	n3k-x-08-054	
+n3k-l08	費	第08	56	187	年会費	ねんかいひ	Phí hội viên hàng năm	NIÊN HỘI PHÍ	n3k-x-08-056	
+n3k-l08	費	第08	57	187	消費者	しょうひしゃ	Người tiêu dùng	TIÊU PHÍ GIẢ	n3k-x-08-057	
+n3k-l08	費	第08	58	188	食費	しょくひ	Tiền ăn	THỰC PHÍ	n3k-x-08-058	
+n3k-l08	費	第08	59	188	学費	がくひ	Học phí	HỌC PHÍ	n3k-x-08-059	
+n3k-l08	費	第08	60	188	費やす	ついやす	Tiêu tốn		n3k-x-08-060	
+n3k-l08	貿	第08	62	188	貿易	ぼうえき	Thương mại	MẬU DỊCH	n3k-x-08-062	
+n3k-l08	結	第08	64	188	結ぶ	むすぶ	Kết nối/Buộc		n3k-x-08-064	
+n3k-l08	結	第08	65	188	結婚	けっこん	Kết hôn	KẾT HÔN	n3k-x-08-065	no-meaning meaning-jmdict-1254790
+n3k-l08	結	第08	66	188	結末	けつまつ	Kết thúc/Kết cục	KẾT MẠT	n3k-x-08-066	
+n3k-l08	結	第08	67	188	結わえる	ゆわえる	Buộc lại, thắt lại		n3k-x-08-067	
+n3k-l08	絵	第08	69	188	絵画展	かいがてん	Triển lãm tranh	HỘI HỌA TRIỂN	n3k-x-08-069	
+n3k-l08	絵	第08	70	188	油絵	あぶらえ	Tranh sơn dầu	DU HỘI	n3k-x-08-070	
+n3k-l08	絵	第08	71	189	絵本	えほん	Sách tranh/Truyện tranh	HỘI BẢN	n3k-x-08-071	
+n3k-l08	組	第08	73	189	組	くみ	Tổ/Lớp/Nhóm		n3k-x-08-073	
+n3k-l08	組	第08	74	189	番組	ばんぐみ	Chương trình truyền hình	PHIÊN TỔ	n3k-x-08-074	
+n3k-l08	組	第08	75	189	組み立てる	くみたてる	Lắp ráp	TỔ LẬP	n3k-x-08-075	
+n3k-l08	組	第08	76	189	組む	くむ	Khoanh (tay/chân) kết hợp, hợp tác, lắp ghép		n3k-x-08-076	
+n3k-l08	係	第08	78	189	係員	かかりいん	Người phụ trách, nhân viên quản lý	HỆ VIÊN	n3k-x-08-078	
+n3k-l08	係	第08	79	189	関係	かんけい	Quan hệ, liên quan	QUAN HỆ	n3k-x-08-079	no-meaning meaning-jmdict-1215810
+n3k-l08	編	第08	81	189	編集	へんしゅう	Biên tập/Chỉnh sửa	BIÊN TẬP	n3k-x-08-081	
+n3k-l08	編	第08	82	189	編み物	あみもの	Đồ đan	BIÊN VẬT	n3k-x-08-082	
+n3k-l08	編	第08	83	189	編んで	あんで	Đan		n3k-x-08-083	
+n3k-l08	編	第08	84	189	手編み	てあみ	Đan bằng tay	THỦ BIÊN	n3k-x-08-084	
+n3k-l08	続	第08	86	190	継続	けいぞく	Tiếp tục/Kế thừa, duy trì	KẾ TỤC	n3k-x-08-086	
+n3k-l08	続	第08	87	190	連続	れんぞく	Liên tiếp/Liên tục	LIÊN TỤC	n3k-x-08-087	
+n3k-l08	続	第08	88	190	降り続く	ふりつづく	Rơi liên tục (mưa/tuyết)	GIÁNG TỤC	n3k-x-08-088	
+n3k-l08	続	第08	89	190	続ける	つづける	Làm tiếp tục		n3k-x-08-089	
+n3k-l08	紹	第08	91	190	紹介	しょうかい	Giới thiệu	THIỆU GIỚI	n3k-x-08-091	
+n3k-l08	紹	第08	92	190	自己紹介	じこしょうかい	Tự giới thiệu bản thân	TỰ KỶ THIỆU GIỚI	n3k-x-08-092	
+n3k-l08	綿	第08	94	190	綿	わた	Bông	MIÊN	n3k-x-08-094	
+n3k-l08	綿	第08	95	190	綿入り	わたいり	Nhồi bông	MIÊN NHẬP	n3k-x-08-095	
+n3k-l08	線	第08	97	190	線	せん	Tuyến/Đường kẻ		n3k-x-08-097	
+n3k-l08	線	第08	98	190	直線	ちょくせん	Đường thẳng	TRỰC TUYẾN	n3k-x-08-098	
+n3k-l08	線	第08	99	190	線路	せんろ	Đường ray	TUYẾN LỘ	n3k-x-08-099	
+n3k-l09	矢	第09	2	191	矢印	やじるし	Mũi tên, dấu mũi tên	THỈ ẤN	n3k-x-09-002	
+n3k-l09	候	第09	4	191	気候	きこう	Khí hậu	KHÍ HẬU	n3k-x-09-004	
+n3k-l09	候	第09	5	191	天候	てんこう	Thời tiết	THIÊN HẬU	n3k-x-09-005	
+n3k-l09	候	第09	6	191	候補者	こうほしゃ	Ứng cử viên	HẬU BỔ GIẢ	n3k-x-09-006	
+n3k-l09	失	第09	8	191	失う	うしなう	Mất, đánh mất		n3k-x-09-008	
+n3k-l09	失	第09	9	191	失礼	しつれい	Thất lễ, xin lỗi	THẤT LỄ	n3k-x-09-009	
+n3k-l09	失	第09	10	191	失業	しつぎょう	Thất nghiệp	THẤT NGHIỆP	n3k-x-09-010	
+n3k-l09	秩	第09	12	191	秩序	ちつじょ	Trật tự	TRẬT TỰ	n3k-x-09-012	
+n3k-l09	税	第09	14	192	税金	ぜいきん	Tiền thuế	THUẾ KIM	n3k-x-09-014	
+n3k-l09	税	第09	15	192	増税	ぞうぜい	Tăng thuế	TĂNG THUẾ	n3k-x-09-015	
+n3k-l09	税	第09	16	192	減税	げんぜい	Giảm thuế	GIẢM THUẾ	n3k-x-09-016	
+n3k-l09	説	第09	18	192	説く	とく	Giải thích, thuyết giáo	THUYẾT	n3k-x-09-018	
+n3k-l09	説	第09	19	192	説明	せつめい	Giải thích	THUYẾT MINH	n3k-x-09-019	
+n3k-l09	説	第09	20	192	演説	えんぜつ	Diễn thuyết, diễn thuyết, bài phát biểu trước công chúng	DIỄN THUYẾT	n3k-x-09-020	
+n3k-l09	脱	第09	22	192	脱いで	ぬいで	Cởi (quần áo, giày dép)		n3k-x-09-022	
+n3k-l09	脱	第09	23	192	脱衣所	だついじょ	Phòng thay đồ	THOÁT Y SỞ	n3k-x-09-023	
+n3k-l09	脱	第09	24	192	脱退	だったい	Rút lui, rời khỏi, thoát ra	THOÁT THOÁI	n3k-x-09-024	text-before-reading
+n3k-l09	脱	第09	25	192	脱税	だつぜい	Trốn thuế	THOÁT THUẾ	n3k-x-09-025	
+n3k-l09	材	第09	27	193	材料	ざいりょう	Nguyên liệu , vật liệu, tài liệu	TÀI LIÊU	n3k-x-09-027	
+n3k-l09	材	第09	28	193	木材	もくざい	Gỗ, vật liệu gỗ	MỘC TÀI	n3k-x-09-028	
+n3k-l09	材	第09	29	193	素材	そざい	Nguyên liệu; vật chất	TỐ TÀI	n3k-x-09-029	text-before-reading
+n3k-l09	材	第09	30	193	人材	じんざい	Nhân lực, nhân tài	NHÂN TÀI	n3k-x-09-030	
+n3k-l09	杯	第09	32	193	精一杯	せいいっぱい	Hết sức, dốc toàn lực, làm hết khả năng của mình	TINH NHẤT BÔI	n3k-x-09-032	
+n3k-l09	杯	第09	33	193	乾杯	かんぱい	Cạn chén, nâng ly	CAN BÔI	n3k-x-09-033	
+n3k-l09	枚	第09	35	193	枚数	まいすう	Số tờ, số tấm	MAI SỐ	n3k-x-09-035	
+n3k-l09	枚	第09	36	193	二枚	にまい	2 tờ, 2 tấm	NHỊ MAI	n3k-x-09-036	
+n3k-l09	保	第09	38	193	保護	ほご	Bảo hộ, bảo vệ	BẢO HỘ	n3k-x-09-038	
+n3k-l09	保	第09	39	193	保つ	たもつ	Giữ gìn, bảo vệ; duy trì		n3k-x-09-039	
+n3k-l09	保	第09	40	194	保留	ほりゅう	Bảo lưu, hoãn lại	BẢO LƯU	n3k-x-09-040	
+n3k-l09	保	第09	41	194	保育園	ほいくえん	Nhà trẻ	BẢO DỤC VIÊN	n3k-x-09-041	
+n3k-l09	葉	第09	43	194	葉っぱ	はっぱ	Lá cây		n3k-x-09-043	
+n3k-l09	葉	第09	44	194	言葉	ことば	Từ vựng, lời nói	NGÔN DIỆP	n3k-x-09-044	
+n3k-l09	葉	第09	45	194	落ち葉	おちば	Lá rụng	LẠC DIỆP	n3k-x-09-045	
+n3k-l09	葉	第09	46	194	紅葉	こうよう	Lá đỏ (mùa thu), lá chuyển màu	HỒNG DIỆP	n3k-x-09-046	no-meaning second-reading meaning-jmdict-1578780
+n3k-l09	査	第09	48	194	調査	ちょうさ	Điều tra, khảo sát	ĐIỀU TRA	n3k-x-09-048	no-meaning meaning-jmdict-1429120
+n3k-l09	査	第09	49	194	検査	けんさ	Kiểm tra, xét nghiệm	KIỂM TRA	n3k-x-09-049	no-meaning meaning-jmdict-1257890
+n3k-l09	棒	第09	51	194	鉄棒	てつぼう	Xà đơn	THIẾT BỔNG	n3k-x-09-051	
+n3k-l09	機	第09	53	194	機会	きかい	Cơ hội, dịp	CƠ HỘI	n3k-x-09-053	no-meaning meaning-jmdict-1220800
+n3k-l09	機	第09	54	194	交通機関	こうつうきかん	Phương tiện giao thông	GIAO THÔNG CƠ QUAN	n3k-x-09-054	
+n3k-l09	機	第09	55	195	危機	きき	Khủng hoảng, nguy cơ ,mối đe dọa, tình thế hiểm nghèo	NGUY CƠ	n3k-x-09-055	
+n3k-l09	機	第09	56	195	新機能	しんきのう	Tính năng mới	TÂN CƠ NĂNG	n3k-x-09-056	
+n3k-l09	械	第09	58	195	機械	きかい	Máy móc	CƠ GIỚI	n3k-x-09-058	
+n3k-l09	氷	第09	60	195	かき氷	かきごおり	Đá bào		n3k-x-09-060	
+n3k-l09	氷	第09	61	195	氷	こおり	Đá, nước đá, băng		n3k-x-09-061	
+n3k-l09	氷	第09	62	195	氷山	ひょうざん	Núi băng	BĂNG SƠN	n3k-x-09-062	
+n3k-l09	永	第09	64	195	永住	えいじゅう	Vĩnh trú, định cư lâu dài	VĨNH TRÚ	n3k-x-09-064	
+n3k-l09	永	第09	65	195	永久	えいきゅう	Vĩnh cửu	VĨNH CỬU	n3k-x-09-065	
+n3k-l09	永	第09	66	195	永遠	えいえん	Vĩnh viễn	VĨNH VIỄN	n3k-x-09-066	
+n3k-l09	泳	第09	68	196	泳ぐ	およぐ	Bơi		n3k-x-09-068	
+n3k-l09	泳	第09	69	196	水泳	すいえい	Môn bơi lội	THỦY VỊNH	n3k-x-09-069	
+n3k-l09	各	第09	71	196	各国	かっこく	Các nước	CÁC QUỐC	n3k-x-09-071	
+n3k-l09	各	第09	72	196	各自	かくじ	Mỗi người, mỗi cá nhân	CÁC TỰ	n3k-x-09-072	
+n3k-l09	絡	第09	74	196	絡まる	からまる	Bị vướng, bị rối		n3k-x-09-074	
+n3k-l09	絡	第09	75	196	連絡	れんらく	Liên lạc	LIÊN LẠC	n3k-x-09-075	
+n3k-l09	絡	第09	76	196	絡める	からめる	Kết hợp, lồng ghép; Trộn đều, quyện vào nhau	LẠC	n3k-x-09-076	several-senses
+n3k-l09	格	第09	78	196	性格	せいかく	Tính cách	TÍNH CÁCH	n3k-x-09-078	no-meaning meaning-jmdict-1375290
+n3k-l09	格	第09	79	196	人格	じんかく	Nhân cách, tư cách con người, phẩm giá	NHÂN CÁCH	n3k-x-09-079	
+n3k-l09	格	第09	80	196	合格	ごうかく	Đỗ, trúng tuyển	HỢP CÁCH	n3k-x-09-080	
+n3k-l09	落	第09	82	197	落ちた	おちた	Đã rơi, đã rụng, đã thi trượt		n3k-x-09-082	
+n3k-l09	落	第09	83	197	落書き	らくがき	Viết bậy, vẽ bậy	LẠC THƯ	n3k-x-09-083	
+n3k-l09	落	第09	84	197	落とした	おとした	Đã làm rơi, đã đánh mất, đã làm mất		n3k-x-09-084	
+n3k-l09	落	第09	85	197	落語	らくご	Tấu hài Nhật Bản	LẠC NGÔN	n3k-x-09-085	
+n3k-l09	路	第09	87	197	道路	どうろ	Đường xá	ĐẠO LỘ	n3k-x-09-087	
+n3k-l09	路	第09	88	197	線路	せんろ	Đường ray	TUYẾN LỘ	n3k-x-09-088	
+n3k-l09	路	第09	89	197	進路	しんろ	Lối đi, hướng đi (tương lai); Tuyến đường, lộ trình, hướng tiến lên	TIẾN LỘ	n3k-x-09-089	several-senses
+n3k-l10	伸	第10	2	197	身長	しんちょう	Chiều cao	THÂN TRƯỜNG	n3k-x-10-002	word-without-its-kanji
+n3k-l10	伸	第10	3	197	追伸	ついしん	Tái bút	TRUY THÂN	n3k-x-10-003	
+n3k-l10	伸	第10	4	197	伸びる	のびる	Kéo dài, giãn ra, phát triển, vươn ra		n3k-x-10-004	
+n3k-l10	神	第10	6	198	神社	じんじゃ	Đền thờ	THẦN XÃ	n3k-x-10-006	
+n3k-l10	神	第10	7	198	神経質	しんけいしつ	Nhạy cảm, dễ lo lắng	THẦN KINH CHẤT	n3k-x-10-007	
+n3k-l10	神	第10	8	198	神様	かみさま	Thần thánh		n3k-x-10-008	
+n3k-l10	神	第10	9	198	神	かみ	Thần, thần linh, thần thánh		n3k-x-10-009	
+n3k-l10	押	第10	11	198	押	おす	Ấn, đẩy, giữ		n3k-x-10-011	
+n3k-l10	押	第10	12	198	押印	おういん	Đóng dấu	ÁP ẤN	n3k-x-10-012	
+n3k-l10	押	第10	13	198	押さえる	おさえる	Giữ, chế ngự, che (miệng).Kìm nén, kiềm chế		n3k-x-10-013	
+n3k-l10	訳	第10	15	198	訳す	やくす	Dịch		n3k-x-10-015	
+n3k-l10	訳	第10	16	198	通訳者	つうやくしゃ	Thông dịch viên	THÔNG DỊCH GIẢ	n3k-x-10-016	
+n3k-l10	訳	第10	17	198	言い訳	いいわけ	Lời biện minh, lời phân trần, lời bào chữa	NGÔN DỊCH	n3k-x-10-017	
+n3k-l10	記	第10	19	198	記事	きじ	Bài báo, bài phóng sự	KÍ SỰ	n3k-x-10-019	
+n3k-l10	記	第10	20	199	暗記	あんき	Học thuộc lòng	ÁM KÍ	n3k-x-10-020	
+n3k-l10	記	第10	21	199	日記	にっき	Nhật ký	NHẬT KÍ	n3k-x-10-021	
+n3k-l10	記	第10	22	199	記入	きにゅう	Ghi vào, điền vào	KÍ NHẬP	n3k-x-10-022	
+n3k-l10	記	第10	23	199	記す	しるす	Đánh dấu , Ghi lại, viết lại		n3k-x-10-023	
+n3k-l10	設	第10	25	199	設ける	もうける	Thiết lập, chuẩn bị		n3k-x-10-025	
+n3k-l10	設	第10	26	199	建設	けんせつ	Xây dựng	KIẾN THIẾT	n3k-x-10-026	
+n3k-l10	設	第10	27	199	設定	せってい	Cài đặt, thiết lập	THIẾT ĐỊNH	n3k-x-10-027	
+n3k-l10	設	第10	28	199	設計	せっけい	Thiết kế	THIẾT KẾ	n3k-x-10-028	
+n3k-l10	信	第10	30	199	信じる	しんじる	Tin tưởng, tin vào		n3k-x-10-030	
+n3k-l10	信	第10	31	199	信号	しんごう	Đèn giao thông, tín hiệu	TÍN HIỆU	n3k-x-10-031	
+n3k-l10	信	第10	32	199	信用	しんよう	Sự tín nhiệm, uy tín, niềm tin	TÍN DỤNG	n3k-x-10-032	
+n3k-l10	信	第10	33	199	信頼	しんらい	Tin cậy, tín nhiệm	TÍN LẠI	n3k-x-10-033	
+n3k-l10	認	第10	35	200	認める	みとめる	Công nhận, thừa nhận, cho phép		n3k-x-10-035	
+n3k-l10	認	第10	36	200	認定書	にんていしょ	Giấy chứng nhận	NHẬN ĐỊNH THƯ	n3k-x-10-036	
+n3k-l10	認	第10	37	200	認識	にんしき	Nhận thức	NHẬN THỨC	n3k-x-10-037	
+n3k-l10	認	第10	38	200	確認	かくにん	Xác nhận	XÁC NHẬN	n3k-x-10-038	
+n3k-l10	調	第10	40	200	調べる	しらべる	Điều tra, tra cứu, tìm hiểu		n3k-x-10-040	
+n3k-l10	調	第10	41	200	調査	ちょうさ	Điều tra	ĐIỀU TRA	n3k-x-10-041	
+n3k-l10	調	第10	42	200	調子	ちょうし	Tình trạng	ĐIỀU TỬ	n3k-x-10-042	
+n3k-l10	引	第10	44	200	万引き	まんびき	Ăn cắp vặt ở cửa hàng	VẠN DẪN	n3k-x-10-044	
+n3k-l10	引	第10	45	200	強引	ごういん	Cưỡng ép, khiên cưỡng, thô bạo, ép buộc	CƯỜNG DẪN	n3k-x-10-045	
+n3k-l10	引	第10	46	200	引っ張られる	ひっぱられる	Bị kéo, bị lôi đi	DẪN TRƯƠNG	n3k-x-10-046	
+n3k-l10	第	第10	48	200	第一回	だいいっかい	Lần thứ nhất	ĐỆ NHẤT HỒI	n3k-x-10-048	
+n3k-l10	第	第10	49	201	次第	しだい	Dần dần, ngay sau khi; Tùy theo; tùy thuộc; Tình hình; hoàn cảnh	THỨ ĐỆ	n3k-x-10-049	several-senses
+n3k-l10	湾	第10	51	201	東京湾	とうきょうわん	Vịnh Tokyo	ĐÔNG KINH LOAN	n3k-x-10-051	
+n3k-l10	湾	第10	52	201	湾内	わんない	Trong vịnh	LOAN NỘI	n3k-x-10-052	
+n3k-l10	湾	第10	53	201	湾岸	わんがん	Ven biển, ven vịnh	LOAN NGẠN	n3k-x-10-053	
+n3k-l10	炎	第10	55	201	炎上	えんじょう	Bùng cháy	VIÊM THƯỢNG	n3k-x-10-055	
+n3k-l10	炎	第10	56	201	炎症	えんしょう	Viêm nhiễm	VIÊM CHỨNG	n3k-x-10-056	
+n3k-l10	談	第10	58	201	冗談	じょうだん	Lời nói đùa	NHŨNG ĐÀM	n3k-x-10-058	
+n3k-l10	談	第10	59	201	相談会	そうだんかい	Buổi thảo luận, tư vấn	TƯƠNG ĐÀM HỘI	n3k-x-10-059	
+n3k-l10	談	第10	60	201	雑談	ざつだん	Tán gẫu	TẠP ĐÀM	n3k-x-10-060	
+n3k-l10	焼	第10	62	202	日焼け	ひやけ	Cháy nắng	NHẬT THIÊU	n3k-x-10-062	
+n3k-l10	焼	第10	63	202	焼く	やく	Nướng		n3k-x-10-063	
+n3k-l10	焼	第10	64	202	延焼	えんしょう	Cháy lan, hỏa hoạn	DUYÊN THIÊU	n3k-x-10-064	
+n3k-l10	穴	第10	66	202	落とし穴	おとしあな	Bẫy, hố thụt; cạm bẫy	LẠC HUYỆT	n3k-x-10-066	
+n3k-l10	突	第10	68	202	衝突	しょうとつ	Va chạm, xung đột	XUNG ĐỘT	n3k-x-10-068	
+n3k-l10	突	第10	69	202	追突	ついとつ	Đâm từ phía sau	TRUY ĐỘT	n3k-x-10-069	
+n3k-l10	突	第10	70	202	突然	とつぜん	Đột nhiên	ĐỘT NHIÊN	n3k-x-10-070	
+n3k-l10	突	第10	71	202	突く	つく	Đâm, chọc, húc		n3k-x-10-071	
+n3k-l10	突	第10	72	202	突進	とっしん	Lao tới, đâm vào	ĐỘT TIẾN	n3k-x-10-072	
+n3k-l10	深	第10	74	203	深夜	しんや	Đêm khuya	THÂM DẠ	n3k-x-10-074	
+n3k-l10	深	第10	75	203	深い	ふかい	Sâu, sâu sắc		n3k-x-10-075	
+n3k-l10	深	第10	76	203	深刻	しんこく	Nghiêm trọng	THÂM KHẮC	n3k-x-10-076	
+n3k-l10	探	第10	78	203	探る	さぐる	Thăm dò, dò xét		n3k-x-10-078	dropped-lines
+n3k-l10	探	第10	79	203	探検	たんけん	Thám hiểm	THÁM KIỂM	n3k-x-10-079	
+n3k-l10	探	第10	80	203	探し物	さがしもの	Đồ vật đang tìm kiếm, món đồ bị thất lạc	THÁM VẬT	n3k-x-10-080	
+n3k-l10	君	第10	82	203	君	きみ	Bạn, cậu		n3k-x-10-082	
+n3k-l10	商	第10	84	203	商店街	しょうてんがい	Khu phố mua sắm	THƯƠNG ĐIẾM NHAI	n3k-x-10-084	
+n3k-l10	商	第10	85	203	商売	しょうばい	Buôn bán	THƯƠNG MẠI	n3k-x-10-085	
+n3k-l10	商	第10	86	203	商業	しょうぎょう	Thương nghiệp , buôn bán, kinh doanh	THƯƠNG NGHIỆP	n3k-x-10-086	
+n3k-l10	否	第10	88	204	否定	ひてい	Phủ định	PHỦ ĐỊNH	n3k-x-10-088	
+n3k-l10	否	第10	89	204	拒否	きょひ	Từ chối, cự tuyệt	CỰ PHỦ	n3k-x-10-089	
+n3k-l10	向	第10	91	204	向こう	むこう	Phía bên kia, đối diện		n3k-x-10-091	dropped-lines
+n3k-l10	向	第10	92	204	向上	こうじょう	Tiến bộ, nâng cao		n3k-x-10-092	
+n3k-l10	向	第10	93	204	対向	たいこう	Đối diện, đối đầu	ĐỐI HƯỚNG	n3k-x-10-093	
+n3k-l10	向	第10	94	204	方向	ほうこう	Phương hướng	PHƯƠNG HƯỚNG	n3k-x-10-094	
+n3k-l11	反	第11	2	204	反らす	そらす	Uốn cong		n3k-x-11-002	
+n3k-l11	反	第11	3	204	反対	はんたい	Đối lập, phản đối	PHẢN ĐỐI	n3k-x-11-003	
+n3k-l11	反	第11	4	204	反省	はんせい	Kiểm điểm, nhìn nhận lại bản thân	PHẢN TỈNH	n3k-x-11-004	
+n3k-l11	反	第11	5	204	反応	はんのう	Phản ứng	PHẢN ỨNG	n3k-x-11-005	
+n3k-l11	返	第11	7	205	振り返る	ふりかえる	Nhìn lại	CHẤN PHẢN	n3k-x-11-007	
+n3k-l11	返	第11	8	205	返信	へんしん	Hồi âm, trả lời tin nhắn	PHẢN TÍN	n3k-x-11-008	
+n3k-l11	返	第11	9	205	返事	へんじ	Trả lời, hồi đáp	PHẢN SỰ	n3k-x-11-009	
+n3k-l11	返	第11	10	205	返却	へんきゃく	Trả lại (đồ đã mượn)	PHẢN KHƯỚC	n3k-x-11-010	dropped-lines
+n3k-l11	坂	第11	12	205	木の板	きのいた	Tấm ván gỗ		n3k-x-11-012	word-without-its-kanji
+n3k-l11	坂	第11	13	205	黒板	こくばん	Bảng đen	HẮC BẢN	n3k-x-11-013	word-without-its-kanji
+n3k-l11	坂	第11	14	205	板書	ばんしょ	Viết lên bảng	BẢN THƯ	n3k-x-11-014	word-without-its-kanji
+n3k-l11	坂	第11	15	205	板前	いたまえ	Đầu bếp (đứng trước thớt)	BẢN TIỀN	n3k-x-11-015	word-without-its-kanji
+n3k-l11	坂	第11	16	205	看板	かんばん	Biển báo, Biển hiệu, bảng quảng cáo, bảng thông báo	KHÁN BẢN	n3k-x-11-016	word-without-its-kanji
+n3k-l11	乳	第11	18	205	乳歯	にゅうし	Răng sữa	NHŨ XỈ	n3k-x-11-018	
+n3k-l11	乳	第11	19	206	乳しぼり	ちちしぼり	Vắt sữa (bò)		n3k-x-11-019	
+n3k-l11	乳	第11	20	206	牛乳	ぎゅうにゅう	Sữa bò	NGƯU NHŨ	n3k-x-11-020	
+n3k-l11	乳	第11	21	206	乳製品	にゅうせいひん	Sản phẩm từ sữa	NHŨ CHẾ PHẨM	n3k-x-11-021	
+n3k-l11	存	第11	23	206	存続	そんぞく	Tiếp tục tồn tại	TỒN TỤC	n3k-x-11-023	
+n3k-l11	存	第11	24	206	保存	ほぞん	Lưu (file), bảo tồn	BẢO TỒN	n3k-x-11-024	
+n3k-l11	存	第11	25	206	存在	そんざい	Sự tồn tại	TỒN TẠI	n3k-x-11-025	
+n3k-l11	存	第11	26	206	ご存じ	ごぞんじ	Biết (khiêm nhường ngữ)		n3k-x-11-026	
+n3k-l11	季	第11	28	206	四季	しき	Bốn mùa	TỨ QUÝ	n3k-x-11-028	
+n3k-l11	季	第11	29	206	季節	きせつ	Mùa, thời vụ	QUÝ TIẾT	n3k-x-11-029	
+n3k-l11	季	第11	30	206	雨季	うき	Mùa mưa	VŨ QUÝ	n3k-x-11-030	
+n3k-l11	季	第11	31	206	冬季	とうき	Khoảng thời gian mùa đông	ĐÔNG QUÝ	n3k-x-11-031	
+n3k-l11	厚	第11	33	206	厚い	あつい	Dày (miếng bít tết dày)		n3k-x-11-033	
+n3k-l11	厚	第11	34	207	温厚	おんこう	Hiền hậu, hòa nhã , điềm đạm	ÔN HẬU	n3k-x-11-034	
+n3k-l11	厚	第11	35	207	濃厚	のうこう	Đậm đà (hương vị)	NỒNG HẬU	n3k-x-11-035	
+n3k-l11	厚	第11	36	207	厚紙	あつがみ	Giấy bồi, giấy dày	HẬU CHỈ	n3k-x-11-036	
+n3k-l11	無	第11	38	207	無休	むきゅう	Không nghỉ	VÔ HƯU	n3k-x-11-038	
+n3k-l11	無	第11	39	207	無事	ぶじ	Bình an vô sự	VÔ SỰ	n3k-x-11-039	
+n3k-l11	無	第11	40	207	無口	むくち	Ít nói	VÔ KHẨU	n3k-x-11-040	
+n3k-l11	無	第11	41	207	無理	むり	Quá sức, vô lý	VÔ LÝ	n3k-x-11-041	
+n3k-l11	無	第11	42	207	無料	むりょう	Miễn phí	VÔ LIÊU	n3k-x-11-042	
+n3k-l11	点	第11	44	207	同点	どうてん	Bằng điểm	ĐỒNG ĐIỂM	n3k-x-11-044	
+n3k-l11	点	第11	45	207	点数	てんすう	Điểm số	ĐIỂM SỐ	n3k-x-11-045	
+n3k-l11	点	第11	46	207	利点	りてん	Ưu điểm, điểm lợi	LỢI ĐIỂM	n3k-x-11-046	
+n3k-l11	点	第11	47	207	欠点	けってん	Khuyết điểm	KHIẾM ĐIỂM	n3k-x-11-047	
+n3k-l11	燃	第11	49	208	燃える	もえる	Cháy		n3k-x-11-049	
+n3k-l11	燃	第11	50	208	燃料	ねんりょう	Nhiên liệu	NHIÊN LIÊU	n3k-x-11-050	
+n3k-l11	燃	第11	51	208	燃焼	ねんしょう	Sự đốt cháy	NHIÊN THIÊU	n3k-x-11-051	
+n3k-l11	熱	第11	53	208	熱い	あつい	Nóng		n3k-x-11-053	
+n3k-l11	熱	第11	54	208	熱心	ねっしん	Nhiệt tình	NHIỆT TÂM	n3k-x-11-054	
+n3k-l11	熱	第11	55	208	熱中	ねっちゅう	Say mê	NHIỆT TRUNG	n3k-x-11-055	
+n3k-l11	羊	第11	57	208	羊	ひつじ	Con cừu		n3k-x-11-057	
+n3k-l11	羊	第11	58	208	羊毛	ようもう	Lông cừu	DƯƠNG MAO	n3k-x-11-058	
+n3k-l11	羊	第11	59	208	山羊	やぎ	Con dê	SƠN DƯƠNG	n3k-x-11-059	
+n3k-l11	差	第11	61	208	差	さ	Sự khác biệt		n3k-x-11-061	
+n3k-l11	差	第11	62	208	日差し	ひざし	Ánh nắng mặt trời	NHẬT SAI	n3k-x-11-062	
+n3k-l11	差	第11	63	209	差別	さべつ	Phân biệt đối xử	SAI BIỆT	n3k-x-11-063	
+n3k-l11	差	第11	64	209	時差	じさ	Chênh lệch múi giờ	THỜI SAI	n3k-x-11-064	
+n3k-l11	差	第11	65	209	交差点	こうさてん	Ngã tư	GIAO SAI ĐIỂM	n3k-x-11-065	
+n3k-l11	着	第11	67	209	着物	きもの	Áo Kimono	TRƯỚC VẬT	n3k-x-11-067	
+n3k-l11	着	第11	68	209	下着	したぎ	Quần áo lót	HẠ TRƯỚC	n3k-x-11-068	
+n3k-l11	着	第11	69	209	着く	つく	Đến nơi		n3k-x-11-069	
+n3k-l11	着	第11	70	209	上着	うわぎ	Áo khoác	THƯỢNG TRƯỚC	n3k-x-11-070	
+n3k-l11	着	第11	71	209	落ち着く	おちつく	Bình tĩnh		n3k-x-11-071	
+n3k-l11	議	第11	73	209	会議中	かいぎちゅう	Đang họp	HỘI NGHỊ TRUNG	n3k-x-11-073	
+n3k-l11	議	第11	74	209	会議室	かいぎしつ	Phòng họp	HỘI NGHỊ THẤT	n3k-x-11-074	
+n3k-l11	議	第11	75	209	議員	ぎいん	Đại biểu quốc hội, nghị viên	NGHỊ VIÊN	n3k-x-11-075	
+n3k-l11	議	第11	76	209	不思議	ふしぎ	Kỳ lạ, huyền bí	BẤT TƯ NGHỊ	n3k-x-11-076	
+n3k-l11	直	第11	78	210	正直	しょうじき	Thành thật, chính trực	CHÍNH TRỰC	n3k-x-11-078	
+n3k-l11	直	第11	79	210	直ちに	ただちに	Ngay lập tức		n3k-x-11-079	
+n3k-l11	直	第11	80	210	直接	ちょくせつ	Trực tiếp	TRỰC TIẾP	n3k-x-11-080	
+n3k-l11	直	第11	81	210	直す	なおす	Sửa chữa		n3k-x-11-081	
+n3k-l11	直	第11	82	210	直線	ちょくせん	Đường thẳng	TRỰC TUYẾN	n3k-x-11-082	
+n3k-l11	植	第11	84	210	植える	うえる	Trồng (hoa)		n3k-x-11-084	
+n3k-l11	植	第11	85	210	植物	しょくぶつ	Thực vật	THỰC VẬT	n3k-x-11-085	
+n3k-l11	植	第11	86	210	移植	いしょく	Cấy ghép (phẫu thuật)	DI THỰC	n3k-x-11-086	
+n3k-l11	植	第11	87	210	植木	うえき	Cây trồng trong chậu	THỰC MỘC	n3k-x-11-087	
+n3k-l11	値	第11	89	210	値しない	あたいしない	Không đáng (tranh luận)		n3k-x-11-089	
+n3k-l11	値	第11	90	210	値段	ねだん	Giá cả	TRỊ ĐOẠN	n3k-x-11-090	
+n3k-l11	値	第11	91	210	価値観	かちかん	Giá trị quan, hệ giá trị, quan niệm sống	GIÁ TRỊ QUAN	n3k-x-11-091	
+n3k-l11	値	第11	92	211	数値	すうち	Giá trị số	SỐ TRỊ	n3k-x-11-092	
+n3k-l11	置	第11	94	211	位置	いち	Vị trí	VỊ TRÍ	n3k-x-11-094	
+n3k-l11	置	第11	95	211	置いた	おいた	Đã đặt, để		n3k-x-11-095	
+n3k-l11	置	第11	96	211	設置	せっち	Sự thành lập; sự thiết lập , lắp đặt	THIẾT TRÍ	n3k-x-11-096	
+n3k-l11	置	第11	97	211	置き時計	おきどけい	Đồng hồ để bàn	TRÍ THỜI KẾ	n3k-x-11-097	
+n3k-l11	欠	第12	2	211	欠ける	かける	Thiếu, sứt mẻ		n3k-x-12-002	
+n3k-l11	欠	第12	3	211	欠点	けってん	Khuyết điểm	KHIẾM ĐIỂM	n3k-x-12-003	
+n3k-l11	欠	第12	4	211	欠席	けっせき	Vắng mặt	KHIẾM TỊCH	n3k-x-12-004	
+n3k-l11	次	第12	6	211	取り次ぐ	とりつぐ	Chuyển (điện thoại); Chuyển lời, chuyển giao, kết nối điện thoại		n3k-x-12-006	several-senses
+n3k-l11	次	第12	7	211	次回	じかい	Lần tới	THỨ HỒI	n3k-x-12-007	
+n3k-l11	次	第12	8	211	次第	しだい	Tùy vào, ngay sau khi	THỨ ĐỆ	n3k-x-12-008	
+n3k-l11	次	第12	9	212	次	つぎ	Tiếp theo		n3k-x-12-009	
+n3k-l11	欧	第12	11	212	欧州	おうしゅう	Châu Âu	ÂU CHÂU	n3k-x-12-011	
+n3k-l11	欧	第12	12	212	欧米	おうべい	Âu Mỹ	ÂU MỄ	n3k-x-12-012	
+n3k-l11	吹	第12	14	212	吹く	ふく	Thổi (gió thổi)		n3k-x-12-014	
+n3k-l11	位	第12	16	212	地位	ちい	Địa vị	ĐỊA VỊ	n3k-x-12-016	
+n3k-l11	位	第12	17	212	位置	いち	Vị trí	VỊ TRÍ	n3k-x-12-017	
+n3k-l11	位	第12	18	212	上位	じょうい	Vị trí cao, lớp trên	THƯỢNG VỊ	n3k-x-12-018	
+n3k-l11	倍	第12	20	212	三倍	さんばい	Gấp 3 lần	TAM BỘI	n3k-x-12-020	
+n3k-l11	倍	第12	21	212	人一倍	ひといちばい	Gấp đôi người thường, hơn người khác	NHÂN NHẤT BỘI	n3k-x-12-021	
+n3k-l11	倍	第12	22	212	倍にする	ばいにする	Làm gấp đôi lên		n3k-x-12-022	
+n3k-l12	泣	第12	24	212	泣く	なく	Khóc		n3k-x-12-024	
+n3k-l12	泣	第12	25	213	号泣	ごうきゅう	Khóc nức nở	HIỆU KHẤP	n3k-x-12-025	
+n3k-l12	泣	第12	26	213	泣き虫	なきむし	Người hay khóc nhè	KHẤP TRÙNG	n3k-x-12-026	
+n3k-l12	翌	第12	28	213	翌朝	よくあさ	Sáng ngày hôm sau	DỰC TRIÊU	n3k-x-12-028	
+n3k-l12	翌	第12	29	213	翌年	よくねん	Năm sau	DỰC NIÊN	n3k-x-12-029	
+n3k-l12	翌	第12	30	213	翌日	よくじつ	Ngày hôm sau	DỰC NHẬT	n3k-x-12-030	
+n3k-l12	殺	第12	32	213	殺す	ころす	Giết		n3k-x-12-032	
+n3k-l12	殺	第12	33	213	自殺者	じさつしゃ	Người tự sát	TỰ SÁT GIẢ	n3k-x-12-033	
+n3k-l12	殺	第12	34	213	殺到	さっとう	Sự dồn dập, chen lấn	SÁT ĐÁO	n3k-x-12-034	
+n3k-l12	投	第12	36	213	投げる	なげる	Ném		n3k-x-12-036	
+n3k-l12	投	第12	37	213	投資	とうし	Đầu tư	ĐẦU TƯ	n3k-x-12-037	
+n3k-l12	役	第12	39	213	役員	やくいん	Nhân viên quản lý, cán bộ	DỊCH VIÊN	n3k-x-12-039	
+n3k-l12	役	第12	40	214	市役所	しやくしょ	Tòa thị chính	THỊ DỊCH SỞ	n3k-x-12-040	
+n3k-l12	役	第12	41	214	役割	やくわり	Vai trò	DỊCH CÁT	n3k-x-12-041	
+n3k-l12	段	第12	43	214	段階	だんかい	Giai đoạn	ĐOẠN GIAI	n3k-x-12-043	
+n3k-l12	段	第12	44	214	手段	しゅだん	Phương thức, cách thức	THỦ ĐOẠN	n3k-x-12-044	
+n3k-l12	段	第12	45	214	階段	かいだん	Cầu thang	GIAI ĐOẠN	n3k-x-12-045	
+n3k-l12	歯	第12	47	214	歯	は	Răng		n3k-x-12-047	
+n3k-l12	歯	第12	48	214	永久歯	えいきゅうし	Răng vĩnh viễn	VĨNH CỬU XỈ	n3k-x-12-048	
+n3k-l12	歯	第12	49	214	虫歯	むしば	Răng sâu	TRÙNG XỈ	n3k-x-12-049	
+n3k-l12	歯	第12	50	214	歯車	はぐるま	Bánh răng	XỈ XA	n3k-x-12-050	
+n3k-l12	類	第12	52	214	人類学	じんるいがく	Nhân chủng học	NHÂN LOẠI HỌC	n3k-x-12-052	
+n3k-l12	類	第12	53	214	書類	しょるい	Tài liệu, hồ sơ	THƯ LOẠI	n3k-x-12-053	
+n3k-l12	類	第12	54	214	種類	しゅるい	Loại, chủng loại	CHỦNG LOẠI	n3k-x-12-054	
+n3k-l12	断	第12	56	215	横断歩道	おうだんほどう	Đường đi bộ qua đường	HOÀNH ĐOẠN BỘ ĐẠO	n3k-x-12-056	
+n3k-l12	断	第12	57	215	断る	ことわる	Từ chối		n3k-x-12-057	
+n3k-l12	断	第12	58	215	判断	はんだん	Phán đoán, đánh giá	PHÁN ĐOẠN	n3k-x-12-058	
+n3k-l12	断	第12	59	215	断定	だんてい	Kết luận, khẳng định	ĐOẠN ĐỊNH	n3k-x-12-059	text-before-reading
+n3k-l12	齢	第12	61	215	年齢制限	ねんれいせいげん	Giới hạn độ tuổi	NIÊN LINH CHẾ HẠN	n3k-x-12-061	
+n3k-l12	齢	第12	62	215	高齢化	こうれいか	Sự già hóa dân số	CAO LINH HÓA	n3k-x-12-062	
+n3k-l12	齢	第12	63	215	対象年齢	たいしょうねんれい	Độ tuổi đối tượng	ĐỐI TƯỢNG NIÊN LINH	n3k-x-12-063	
+n3k-l12	皆	第12	65	215	皆様	みなさま	Mọi người (kính ngữ)	GIAI DẠNG	n3k-x-12-065	
+n3k-l12	階	第12	67	215	階段	かいだん	Cầu thang	GIAI ĐOẠN	n3k-x-12-067	
+n3k-l12	階	第12	68	215	初期段階	しょきだんかい	Giai đoạn đầu	SƠ KỲ ĐOẠN GIAI	n3k-x-12-068	
+n3k-l12	階	第12	69	216	三階	さんがい	Tầng 3	TAM GIAI	n3k-x-12-069	
+n3k-l12	指	第12	71	216	指す	さす	Chỉ		n3k-x-12-071	
+n3k-l12	指	第12	72	216	指導	しどう	Chỉ đạo, hướng dẫn	CHỈ ĐẠO	n3k-x-12-072	
+n3k-l12	指	第12	73	216	指示	しじ	Chỉ thị, hướng dẫn	CHỈ THỊ	n3k-x-12-073	
+n3k-l12	脂	第12	75	216	脂	あぶら	Mỡ (động vật)		n3k-x-12-075	
+n3k-l12	脂	第12	76	216	脂身	あぶらみ	Miếng thịt mỡ	CHI THÂN	n3k-x-12-076	
+n3k-l12	法	第13	2	216	法学部	ほうがくぶ	Khoa luật	PHÁP HỌC BỘ	n3k-x-13-002	
+n3k-l12	法	第13	3	216	方法	ほうほう	Phương pháp	PHƯƠNG PHÁP	n3k-x-13-003	
+n3k-l12	法	第13	4	216	文法	ぶんぽう	Ngữ pháp	VĂN PHÁP	n3k-x-13-004	
+n3k-l12	法	第13	5	216	法律	ほうりつ	Pháp luật	PHÁP LUẬT	n3k-x-13-005	
+n3k-l12	洗	第13	7	216	洗う	あらう	Giặt, rửa		n3k-x-13-007	
+n3k-l12	洗	第13	8	217	洗濯洗剤	せんたくせんざい	Bột giặt	TẨY TRẠC TẨY TỄ	n3k-x-13-008	
+n3k-l12	洗	第13	9	217	お手洗い	おてあらい	Nhà vệ sinh (chỗ rửa tay)	THỦ TẨY	n3k-x-13-009	
+n3k-l12	洗	第13	10	217	洗面所	せんめんじょ	Chỗ rửa mặt	TẨY DIỆN SỞ	n3k-x-13-010	
+n3k-l12	洗	第13	11	217	洗顔	せんがん	Rửa mặt	TẨY NHAN	n3k-x-13-011	
+n3k-l12	活	第13	13	217	生活	せいかつ	Sinh hoạt, cuộc sống	SANH HOẠT	n3k-x-13-013	
+n3k-l12	活	第13	14	217	活動	かつどう	Hoạt động	HOẠT ĐỘNG	n3k-x-13-014	
+n3k-l12	活	第13	15	217	活発	かっぱつ	Hoạt bát	HOẠT PHÁT	n3k-x-13-015	
+n3k-l12	活	第13	16	217	活気	かっき	Nhộn nhịp, sôi động	HOẠT KHÍ	n3k-x-13-016	
+n3k-l12	活	第13	17	217	活用	かつよう	Tận dụng, vận dụng	HOẠT DỤNG	n3k-x-13-017	
+n3k-l12	活	第13	18	217	復活	ふっかつ	Sự sống lại, hồi sinh	PHỤC HOẠT	n3k-x-13-018	
+n3k-l12	液	第13	20	217	液体	えきたい	Chất lỏng	DỊCH THỂ	n3k-x-13-020	dropped-lines
+n3k-l12	液	第13	21	218	血液型	けつえきがた	Nhóm máu	HUYẾT DỊCH HÌNH	n3k-x-13-021	
+n3k-l12	液	第13	22	218	溶液	ようえき	Dung dịch	DUNG DỊCH	n3k-x-13-022	
+n3k-l12	和	第13	24	218	和む	なごむ	Thư thái, làm dịu đi		n3k-x-13-024	several-senses dropped-lines gloss-fixed-by-hand
+n3k-l12	和	第13	25	218	和食	わしょく	Món ăn nhật	HÒA THỰC	n3k-x-13-025	
+n3k-l12	和	第13	26	218	和やか	なごやか	Hòa nhã, thân mật, thân thiện		n3k-x-13-026	
+n3k-l12	和	第13	27	218	平和	へいわ	Hòa bình	BÌNH HÒA	n3k-x-13-027	
+n3k-l12	秒	第13	29	218	秒10	じゅうびょう	10 giây		n3k-x-13-029	
+n3k-l12	秒	第13	30	218	秒読み	びょうよみ	Đếm ngược	MIỂU ĐỘC	n3k-x-13-030	
+n3k-l12	移	第13	32	218	移動	いどう	Di chuyển	DI ĐỘNG	n3k-x-13-032	
+n3k-l12	移	第13	33	218	移住	いじゅう	Di cư	DI TRỤ	n3k-x-13-033	
+n3k-l12	移	第13	34	218	移す	うつす	Làm di chuyển, lây nhiễm		n3k-x-13-034	
+n3k-l12	移	第13	35	218	移る	うつる	Chuyển, di chuyển, lây lan, thay đổi		n3k-x-13-035	
+n3k-l12	移	第13	36	219	移転	いてん	Di chuyển địa điểm (văn phòng)	DI CHUYỂN	n3k-x-13-036	
+n3k-l12	種	第13	38	219	種	たね	Hạt giống, hạt		n3k-x-13-038	
+n3k-l12	種	第13	39	219	人種差別	じんしゅさべつ	Phân biệt chủng tộc	NHÂN CHỦNG SOA BIỆT	n3k-x-13-039	
+n3k-l12	種	第13	40	219	種類	しゅるい	Loại, chủng loại		n3k-x-13-040	
+n3k-l12	種	第13	41	219	品種	ひんしゅ	Giống loài, chủng loại	PHẨM CHỦNG	n3k-x-13-041	
+n3k-l12	効	第13	43	219	有効	ゆうこう	Có hiệu lực, hữu hiệu, hiệu quả	HỮU HIỆU	n3k-x-13-043	
+n3k-l12	効	第13	44	219	効き目	ききめ	Hiệu quả, tác dụng	HIỆU MỤC	n3k-x-13-044	
+n3k-l12	効	第13	45	219	効果	こうか	Kết quả, hiệu quả	HIỆU QUẢ	n3k-x-13-045	
+n3k-l12	効	第13	46	219	効率	こうりつ	Hiệu suất	HIỆU SUẤT	n3k-x-13-046	
+n3k-l12	功	第13	48	219	成功	せいこう	Thành công		n3k-x-13-048	
+n3k-l12	功	第13	49	219	功績	こうせき	Thành tích, công lao	CÔNG TÍCH	n3k-x-13-049	
+n3k-l12	功	第13	50	219	不成功	ふせいこう	Thất bại	BẤT THÀNH CÔNG	n3k-x-13-050	
+n3k-l13	助	第13	52	220	助手席	じょしゅせき	Ghế phụ lái	TRỢ THỦ TỊCH	n3k-x-13-052	
+n3k-l13	助	第13	53	220	助けて	たすけて	Hãy giúp tôi/Cứu với		n3k-x-13-053	
+n3k-l13	助	第13	54	220	救助	きゅうじょ	Cứu trợ	CỨU TRỢ	n3k-x-13-054	
+n3k-l13	助	第13	55	220	助かる	たすかる	Được giúp đỡ, may mắn thoát nạn		n3k-x-13-055	
+n3k-l13	助	第13	56	220	助言	じょげん	Lời khuyên	TRỢ NGÔN	n3k-x-13-056	
+n3k-l13	助	第13	57	220	補助	ほじょ	Bổ trợ, hỗ trợ	BỔ TRỢ	n3k-x-13-057	
+n3k-l13	労	第13	59	220	労働	ろうどう	Lao động	LAO ĐỘNG	n3k-x-13-059	
+n3k-l13	労	第13	60	220	苦労様	くろうさま	Vất vả rồi (lời chào)		n3k-x-13-060	text-before-reading
+n3k-l13	労	第13	61	220	過労	かろう	Làm việc quá sức	QUÁ LAO	n3k-x-13-061	
+n3k-l13	幸	第13	63	220	不幸	ふこう	Bất hạnh	BẤT HẠNH	n3k-x-13-063	
+n3k-l13	幸	第13	64	220	幸福	こうふく	Hạnh phúc	HẠNH PHÚC	n3k-x-13-064	
+n3k-l13	幸	第13	65	220	幸せ	しあわせ	Hạnh phúc		n3k-x-13-065	
+n3k-l13	辛	第13	67	221	辛い	からい	Cay		n3k-x-13-067	
+n3k-l13	辛	第13	68	221	香辛料	こうしんりょう	Gia vị	HƯƠNG TÂN LIÊU	n3k-x-13-068	text-before-reading
+n3k-l13	辛	第13	69	221	辛口	からくち	Vị cay,Gay gắt; khắc nghiệt	TÂN KHẨU	n3k-x-13-069	
+n3k-l13	辛	第13	70	221	辛い	つらい	Đau khổ, khó khăn		n3k-x-13-070	
+n3k-l13	辛	第13	71	221	辛抱	しんぼう	Kiên nhẫn, chịu đựng	TÂN BÃO	n3k-x-13-071	dropped-lines
+n3k-l13	辞	第13	73	221	辞書	じしょ	Từ điển	TỪ THƯ	n3k-x-13-073	
+n3k-l13	辞	第13	74	221	辞典	じてん	Từ điển	TỪ ĐIỂN	n3k-x-13-074	
+n3k-l13	辞	第13	75	221	辞めた	やめた	Nghỉ việc, bỏ		n3k-x-13-075	
+n3k-l13	辞	第13	76	221	辞職	じしょく	Từ chức	TỪ CHỨC	n3k-x-13-076	text-before-reading
+n3k-l13	退	第14	2	221	退屈	たいくつ	Chán ngắt	THOÁI KHUẤT	n3k-x-14-002	
+n3k-l13	退	第14	3	222	辞退	じたい	Từ chối, khước từ. Rút lui, Xin rút	TỪ THOÁI	n3k-x-14-003	
+n3k-l13	退	第14	4	222	退く	しりぞく	Rút lui, nghỉ việc		n3k-x-14-004	
+n3k-l13	退	第14	5	222	退学	たいがく	Nghỉ học, bỏ học	THOÁI HỌC	n3k-x-14-005	
+n3k-l13	退	第14	6	222	退院	たいいん	Xuất viện	THOÁI VIỆN	n3k-x-14-006	
+n3k-l13	根	第14	8	222	根元	ねもと	Gốc rễ.Nguồn gốc.nguyên nhân	CĂN NGUYÊN	n3k-x-14-008	
+n3k-l13	根	第14	9	222	屋根	やね	Mái nhà	ỐC CĂN	n3k-x-14-009	
+n3k-l13	根	第14	10	222	根本的	こんぽんてき	Căn bản, tận gốc, triệt để, cốt lõi		n3k-x-14-010	dropped-lines text-before-reading
+n3k-l13	残	第14	12	222	残る	のこる	Còn lại		n3k-x-14-012	
+n3k-l13	残	第14	13	222	残念	ざんねん	Đáng tiếc; đáng thất vọng		n3k-x-14-013	text-before-reading
+n3k-l13	残	第14	14	222	残して	のこして	Để lại		n3k-x-14-014	
+n3k-l13	残	第14	15	222	残業	ざんぎょう	Làm thêm giờ	TÀN NGHIỆP	n3k-x-14-015	
+n3k-l13	浅	第14	17	222	浅い	あさい	Nông, cạn		n3k-x-14-017	
+n3k-l13	浅	第14	18	223	浅薄	せんぱく	Nông cạn, hời hợt	THIỂN BẠC	n3k-x-14-018	
+n3k-l13	昔	第14	20	223	昔話	むかしばなし	Truyện cổ tích		n3k-x-14-020	text-before-reading
+n3k-l13	昔	第14	21	223	昔	むかし	Ngày xưa		n3k-x-14-021	
+n3k-l13	昔	第14	22	223	今昔	こんじゃく	Nay và xưa	KIM TÍCH	n3k-x-14-022	
+n3k-l13	借	第14	24	223	借金	しゃっきん	Khoản nợ		n3k-x-14-024	text-before-reading
+n3k-l13	借	第14	25	223	借りて	かりて	Mượn; Vay		n3k-x-14-025	several-senses
+n3k-l13	借	第14	26	223	借地	しゃくち	Đất thuê		n3k-x-14-026	text-before-reading
+n3k-l13	借	第14	27	223	貸し借り	かしかり	Việc vay mượn		n3k-x-14-027	text-before-reading
+n3k-l13	借	第14	28	223	借用書	しゃくようしょ	Giấy vay tiền	TÁ DỤNG THƯ	n3k-x-14-028	
+n3k-l13	以	第14	30	223	以後	いご	Sau đó, sau này		n3k-x-14-030	text-before-reading
+n3k-l13	以	第14	31	224	以下	いか	Bên dưới, trở xuống	Dĩ Hạ	n3k-x-14-031	
+n3k-l13	以	第14	32	224	以上	いじょう	Bên trên, trở lên		n3k-x-14-032	text-before-reading
+n3k-l13	以	第14	33	224	以内	いない	Trong vòng	DĨ NỘI	n3k-x-14-033	
+n3k-l13	似	第14	35	224	似ている	にている	Giống nhau		n3k-x-14-035	
+n3k-l13	似	第14	36	224	類似品	るいじひん	Hàng nhái		n3k-x-14-036	text-before-reading
+n3k-l13	似	第14	37	224	似顔絵	にがおえ	Tranh chân dung	TỰ NHAN HỘI	n3k-x-14-037	
+n3k-l13	量	第14	39	224	適量	てきりょう	Lượng thích hợp		n3k-x-14-039	text-before-reading
+n3k-l13	量	第14	40	224	量った	はかった	Đã cân, đã đo		n3k-x-14-040	
+n3k-l13	量	第14	41	224	大量	たいりょう	Số lượng lớn	ĐẠI LƯỢNG	n3k-x-14-041	
+n3k-l13	童	第14	43	224	河童	かっぱ	Hà đồng (quái vật truyền thuyết)		n3k-x-14-043	text-before-reading
+n3k-l13	童	第14	44	224	童話	どうわ	Truyện thiếu nhi		n3k-x-14-044	text-before-reading
+n3k-l13	童	第14	45	225	児童	じどう	Nhi đồng, trẻ em		n3k-x-14-045	text-before-reading
+n3k-l13	童	第14	46	225	童心	どうしん	Tâm hồn trẻ thơ; Sự hồn nhiên; sự ngây thơ	ĐỒNG TÂM	n3k-x-14-046	several-senses
+n3k-l13	注	第14	48	225	注いで	そそいで	Rót, tưới		n3k-x-14-048	
+n3k-l13	注	第14	49	225	ご注意	ごちゅうい	Sự chú ý, cẩn thận (cách nói lịch sự)		n3k-x-14-049	no-meaning text-before-reading meaning-jmdict-1005090
+n3k-l13	注	第14	50	225	注目	ちゅうもく	Chú mục, tập trung sự chú ý		n3k-x-14-050	text-before-reading
+n3k-l13	注	第14	51	225	注文	ちゅうもん	Đặt hàng, gọi món		n3k-x-14-051	text-before-reading
+n3k-l13	注	第14	52	225	注射	ちゅうしゃ	Tiêm thuốc	CHÚ XẠ	n3k-x-14-052	
+n3k-l13	柱	第14	54	225	柱	はしら	Trụ, cột		n3k-x-14-054	
+n3k-l13	柱	第14	55	225	電柱	でんちゅう	Cột điện		n3k-x-14-055	
+n3k-l13	柱	第14	56	225	大黒柱	だいこくばしら	Trụ cột gia đình		n3k-x-14-056	text-before-reading
+n3k-l13	柱	第14	57	225	円柱	えんちゅう	Hình trụ	VIÊN TRỤ	n3k-x-14-057	
+n3k-l13	塩	第14	59	226	塩味	しおあじ	Vị muối		n3k-x-14-059	text-before-reading
+n3k-l13	塩	第14	60	226	塩	しお	Muối		n3k-x-14-060	
+n3k-l13	塩	第14	61	226	塩分	えんぶん	Lượng muối		n3k-x-14-061	text-before-reading
+n3k-l13	塩	第14	62	226	塩素	えんそ	Nguyên tố clo (Cl)		n3k-x-14-062	text-before-reading
+n3k-l13	塩	第14	63	226	食塩	しょくえん	Muối ăn	THỰC DIÊM	n3k-x-14-063	
+n3k-l13	温	第14	65	226	温まる	あたたまる	Ấm lên		n3k-x-14-065	
+n3k-l13	温	第14	66	226	温度	おんど	Nhiệt độ		n3k-x-14-066	
+n3k-l13	温	第14	67	226	温かい	あたたかい	Ấm áp		n3k-x-14-067	
+n3k-l13	温	第14	68	226	温める	あたためる	Làm ấm		n3k-x-14-068	
+n3k-l13	温	第14	69	226	体温計	たいおんけい	Nhiệt kế		n3k-x-14-069	text-before-reading
+n3k-l13	温	第14	70	226	温泉	おんせん	Suối nước nóng	ÔN TUYỀN	n3k-x-14-070	
+n3k-l13	未	第14	72	226	未来	みらい	Tương lai		n3k-x-14-072	text-before-reading
+n3k-l13	未	第14	73	226	未満	みまん	Không đầy; không đủ		n3k-x-14-073	text-before-reading
+n3k-l13	未	第14	74	227	未定	みてい	Chưa quyết định		n3k-x-14-074	text-before-reading
+n3k-l13	未	第14	75	227	未成年	みせいねん	Trẻ vị thành niên		n3k-x-14-075	text-before-reading
+n3k-l13	未	第14	76	227	未知	みち	Chưa biết , chưa rõ, chưa được xác định	VỊ TRI	n3k-x-14-076	
+n3k-l13	末	第14	78	227	期末	きまつ	Cuối kỳ		n3k-x-14-078	text-before-reading
+n3k-l13	末	第14	79	227	今月末	こんげつまつ	Cuối tháng này		n3k-x-14-079	text-before-reading
+n3k-l13	末	第14	80	227	年末年始	ねんまつねんし	Cuối năm đầu năm		n3k-x-14-080	
+n3k-l13	末	第14	81	227	末っ子	すえっこ	Con út		n3k-x-14-081	text-before-reading
+n3k-l13	末	第14	82	227	週末	しゅうまつ	Cuối tuần	CHU MẠT	n3k-x-14-082	
+n3k-l13	両	第15	2	227	両方	りょうほう	Cả hai bên, hai phía	LƯỠNG PHƯƠNG	n3k-x-15-002	
+n3k-l13	両	第15	3	227	両手	りょうて	Hai tay	LƯỠNG THỦ	n3k-x-15-003	
+n3k-l13	両	第15	4	227	両立	りょうりつ	Cân bằng, cùng tồn tại	LƯỠNG LẬP	n3k-x-15-004	
+n3k-l13	満	第15	6	228	満ちる	みちる	Đầy, tròn		n3k-x-15-006	
+n3k-l13	満	第15	7	228	満たされる	みたされる	Được lấp đầy, làm thỏa mãn		n3k-x-15-007	
+n3k-l13	満	第15	8	228	満足	まんぞく	Hài lòng, thỏa mãn	MÃN TÚC	n3k-x-15-008	
+n3k-l13	満	第15	9	228	満席	まんせき	Hết chỗ, kín chỗ	MÃN TỊCH	n3k-x-15-009	
+n3k-l13	満	第15	10	228	満員	まんいん	Đông nghịt người	MÃN VIÊN	n3k-x-15-010	
+n3k-l13	帯	第15	12	228	一帯	いったい	Toàn vùng, cả khu vực	NHẤT ĐỚI	n3k-x-15-012	
+n3k-l13	帯	第15	13	228	包帯	ほうたい	Băng gạc	BAO ĐỚI	n3k-x-15-013	
+n3k-l13	帯	第15	14	228	携帯	けいたい	Mang theo, điện thoại di động	HUỀ ĐỚI	n3k-x-15-014	
+n3k-l13	帯	第15	15	228	連帯感	れんたいかん	Cảm giác đoàn kết	LIÊN ĐỚI CẢM	n3k-x-15-015	
+n3k-l13	帯	第15	16	228	熱帯	ねったい	Nhiệt đới	NHIỆT ĐỚI	n3k-x-15-016	text-before-reading
+n3k-l14	滞	第15	18	228	滞る	とどこおる	Trì trệ, ứ đọng		n3k-x-15-018	
+n3k-l14	滞	第15	19	229	渋滞	じゅうたい	Tắc nghẽn (giao thông)	SÁP TRỆ	n3k-x-15-019	
+n3k-l14	滞	第15	20	229	滞在	たいざい	Lưu trú, tạm trú	TRỆ TẠI	n3k-x-15-020	
+n3k-l14	滞	第15	21	229	滞納	たいのう	Nộp muộn, chậm thanh toán,trễ hạn	TRỆ NẠP	n3k-x-15-021	dropped-lines
+n3k-l14	滞	第15	22	229	停滞	ていたい	Đình trệ, ngưng trệ	ĐÌNH TRỆ	n3k-x-15-022	
+n3k-l14	寝	第15	24	229	寝ない	ねない	Không ngủ		n3k-x-15-024	
+n3k-l14	寝	第15	25	229	昼寝	ひるね	Ngủ trưa	TRÚ TẨM	n3k-x-15-025	
+n3k-l14	寝	第15	26	229	寝室	しんしつ	Phòng ngủ	TẨM THẤT	n3k-x-15-026	
+n3k-l14	寝	第15	27	229	寝坊	ねぼう	Ngủ nướng, ngủ quên	TẨM PHƯỜNG	n3k-x-15-027	
+n3k-l14	定	第15	29	229	定める	さだめる	Xác định , quy định		n3k-x-15-029	dropped-lines
+n3k-l14	定	第15	30	229	予定	よてい	Dự định, kế hoạch	DƯ ĐỊNH	n3k-x-15-030	
+n3k-l14	定	第15	31	229	決定	けってい	Quyết định	QUYẾT ĐỊNH	n3k-x-15-031	
+n3k-l14	定	第15	32	230	定休日	ていきゅうび	Ngày nghỉ cố định	ĐỊNH HƯU NHẬT	n3k-x-15-032	
+n3k-l14	算	第15	34	230	算数	さんすう	Làm toán, môn toán	TOÁN SỐ	n3k-x-15-034	
+n3k-l14	算	第15	35	230	暗算	あんざん	Tính nhẩm	ÁM TOÁN	n3k-x-15-035	
+n3k-l14	算	第15	36	230	予算	よさん	Ngân sách	DƯ TOÁN	n3k-x-15-036	dropped-lines
+n3k-l14	算	第15	37	230	計算	けいさん	Tính toán	KẾ TOÁN	n3k-x-15-037	
+n3k-l14	算	第15	38	230	算盤	そろばん	Bàn tính	TOÁN BÀN	n3k-x-15-038	text-before-reading
+n3k-l14	具	第15	40	230	家具	かぐ	Nội thất, đồ đạc trong nhà	GIA CỤ	n3k-x-15-040	
+n3k-l14	具	第15	41	230	具体的	ぐたいてき	Một cách Cụ thể; rõ ràng	CỤ THỂ ĐÍCH	n3k-x-15-041	
+n3k-l14	具	第15	42	230	文房具	ぶんぼうぐ	Văn phòng phẩm	VĂN PHÒNG CỤ	n3k-x-15-042	
+n3k-l14	具	第15	43	230	道具	どうぐ	Dụng cụ, công cụ	ĐẠO CỤ	n3k-x-15-043	
+n3k-l14	具	第15	44	231	具合	ぐあい	Tình trạng, trạng thái	CỤ HỢP	n3k-x-15-044	
+n3k-l14	消	第15	46	231	消える	きえる	Biến mất, tắt, mất đi	TIÊU	n3k-x-15-046	
+n3k-l14	消	第15	47	231	消す	けす	Tắt (điện), xóa	TIÊU	n3k-x-15-047	
+n3k-l14	消	第15	48	231	消化	しょうか	Tiêu hóa	TIÊU HÓA	n3k-x-15-048	
+n3k-l14	消	第15	49	231	消しゴム	けしゴム	Cục tẩy		n3k-x-15-049	
+n3k-l14	消	第15	50	231	解消	かいしょう	Giải tỏa, hủy bỏ	GIẢI TIÊU	n3k-x-15-050	
+n3k-l14	期	第15	52	231	一学期	いちがっき	Học kỳ 1	NHẤT HỌC KÌ	n3k-x-15-052	
+n3k-l14	期	第15	53	231	新学期	しんがっき	Học kỳ mới	TÂN HỌC KÌ	n3k-x-15-053	
+n3k-l14	期	第15	54	231	期待	きたい	Kỳ vọng, mong đợi	KÌ ĐÃI	n3k-x-15-054	
+n3k-l14	期	第15	55	231	期間	きかん	Giai đoạn,kỳ hạn, thời hạn	KÌ GIAN	n3k-x-15-055	
+n3k-l14	担	第15	57	231	担ぐ	かつぐ	Khiêng, vác		n3k-x-15-057	dropped-lines
+n3k-l14	担	第15	58	232	担う	になう	Gánh vác, đảm nhận, chịu trách nhiệm		n3k-x-15-058	
+n3k-l14	担	第15	59	232	担当	たんとう	Phụ trách, đảm nhận	ĐẢM ĐƯƠNG	n3k-x-15-059	
+n3k-l14	担	第15	60	232	負担	ふたん	Gánh nặng, sự chịu đựng, trách nhiệm phải gánh vác	PHỤ ĐẢM	n3k-x-15-060	
+n3k-l14	担	第15	61	232	担任	たんにん	Chủ nhiệm	ĐẢM NHIỆM	n3k-x-15-061	
+n3k-l14	担	第15	62	232	担保	たんぽ	Thế chấp, bảo đảm	ĐẢM BẢO	n3k-x-15-062	
+n3k-l14	打	第15	64	232	打った	うった	Đã đánh, đã gõ		n3k-x-15-064	
+n3k-l14	打	第15	65	232	強打	きょうだ	Đánh mạnh	CƯỜNG ĐẢ	n3k-x-15-065	text-before-reading
+n3k-l14	打	第15	66	232	打ち合わせ	うちあわせ	Cuộc họp; cuộc gặp gỡ	ĐẢ HỢP	n3k-x-15-066	
+n3k-l14	実	第15	68	232	実力	じつりょく	Thực lực	THỰC LỰC	n3k-x-15-068	
+n3k-l14	実	第15	69	232	実家	じっか	Nhà đẻ, quê quán	THỰC GIA	n3k-x-15-069	
+n3k-l14	実	第15	70	232	実現	じつげん	Thực hiện	THỰC HIỆN	n3k-x-15-070	
+n3k-l14	実	第15	71	232	実	み	Quả, trái	THỰC	n3k-x-15-071	
+n3k-l14	実	第15	72	232	実る	みのる	Ra quả, chín; có kết quả		n3k-x-15-072	no-meaning meaning-jmdict-1320850
+n3k-l14	実	第15	73	233	事実	じじつ	Sự thật	SỰ THỰC	n3k-x-15-073	
+n3k-l14	美	第15	75	233	美しい	うつくしい	Đẹp		n3k-x-15-075	
+n3k-l14	美	第15	76	233	美容院	びよういん	Thẩm mỹ viện, tiệm làm tóc	MĨ DUNG VIỆN	n3k-x-15-076	
+n3k-l14	美	第15	77	233	美女	びじょ	Mỹ nữ, người đẹp	MĨ NỮ	n3k-x-15-077	
+n3k-l14	美	第15	78	233	美術	びじゅつ	Mỹ thuật	MĨ THUẬT	n3k-x-15-078	
+n3k-l14	券	第15	80	233	商品券	しょうひんけん	Phiếu mua hàng	THƯƠNG PHẨM KHOÁN	n3k-x-15-080	
+n3k-l14	券	第15	81	233	乗車券	じょうしゃけん	Vé tàu xe	THỪA XA KHOÁN	n3k-x-15-081	
+n3k-l14	券	第15	82	233	食事券	しょくじけん	Phiếu ăn	THỰC SỰ KHOÁN	n3k-x-15-082	
+n3k-l14	券	第15	83	233	証券会社	しょうけんがいしゃ	Công ty chứng khoán	CHỨNG KHOÁN HỘI XÃ	n3k-x-15-083	
+n3k-l14	券	第15	84	233	旅券	りょけん	Hộ chiếu (Passport)	LỮ KHOÁN	n3k-x-15-084	
+n3k-l14	勝	第15	86	233	勝負	しょうぶ	Thắng thua	THẮNG PHỤ	n3k-x-15-086	
+n3k-l14	勝	第15	87	234	決勝戦	けっしょうせん	Trận chung kết	QUYẾT THẮNG CHIẾN	n3k-x-15-087	
+n3k-l14	勝	第15	88	234	勝って	かって	Hãy chiến thắng		n3k-x-15-088	
+n3k-l14	勝	第15	89	234	勝利	しょうり	Thắng lợi, chiến thắng	THẮNG LỢI	n3k-x-15-089	dropped-lines
+n3k-l14	型	第16	2	234	典型的な	てんけいてきな	Điển hình	ĐIỂN HÌNH ĐÍCH	n3k-x-16-002	
+n3k-l14	型	第16	3	234	大型車	おおがたしゃ	Xe cỡ lớn	ĐẠI HÌNH XA	n3k-x-16-003	
+n3k-l14	型	第16	4	234	新型	しんがた	Kiểu mới, loại mới, mẫu mới	TÂN HÌNH	n3k-x-16-004	
+n3k-l14	形	第16	6	234	形	かたち	Hình dáng		n3k-x-16-006	
+n3k-l14	形	第16	7	234	人形	にんぎょう	Búp bê	NHÂN HÌNH	n3k-x-16-007	
+n3k-l14	形	第16	8	234	形式的な	けいしきてきな	Mang tính hình thức	HÌNH THỨC ĐÍCH	n3k-x-16-008	
+n3k-l14	形	第16	9	234	四角形	しかくけい	Hình tứ giác	TỨ GIÁC HÌNH	n3k-x-16-009	
+n3k-l14	形	第16	10	234	三角形	さんかくけい	Hình tam giác	TAM GIÁC HÌNH	n3k-x-16-010	
+n3k-l14	形	第16	11	235	図形	ずけい	Đồ họa, hình vẽ	ĐỒ HÌNH	n3k-x-16-011	
+n3k-l14	果	第16	13	235	果たす	はたす	Hoàn thành		n3k-x-16-013	
+n3k-l14	果	第16	14	235	成果	せいか	Thành quả	THÀNH QUẢ	n3k-x-16-014	no-meaning meaning-jmdict-1375650
+n3k-l14	果	第16	15	235	果実酒	かじつしゅ	Rượu hoa quả	QUẢ THỰC TỬU	n3k-x-16-015	
+n3k-l14	果	第16	16	235	果物	くだもの	Trái cây	QUẢ VẬT	n3k-x-16-016	
+n3k-l14	果	第16	17	235	結果	けっか	Kết quả	KẾT QUẢ	n3k-x-16-017	no-meaning meaning-jmdict-1254690
+n3k-l14	単	第16	19	235	単独	たんどく	Đơn độc	ĐƠN ĐỘC	n3k-x-16-019	
+n3k-l14	単	第16	20	235	簡単な	かんたんな	Đơn giản	GIẢN ĐƠN	n3k-x-16-020	
+n3k-l14	単	第16	21	235	単位	たんい	Đơn vị, tín chỉ	ĐƠN VỊ	n3k-x-16-021	
+n3k-l14	単	第16	22	235	単語	たんご	Từ vựng	ĐƠN NGỮ	n3k-x-16-022	
+n3k-l14	老	第16	24	235	老後	ろうご	Tuổi già	LÃO HẬU	n3k-x-16-024	text-before-reading
+n3k-l14	老	第16	25	235	老けて	ふけて	Già đi		n3k-x-16-025	
+n3k-l14	老	第16	26	236	年老いて	としおいて	Trở nên già cả	NIÊN LÃO	n3k-x-16-026	
+n3k-l14	老	第16	27	236	老人	ろうじん	Người già	LÃO NHÂN	n3k-x-16-027	
+n3k-l14	者	第16	29	236	有力者	ゆうりょくしゃ	Người có thế lực, nhân vật quyền lực, người có ảnh hưởng lớn	HỮU LỰC GIẢ	n3k-x-16-029	
+n3k-l14	者	第16	30	236	記者	きしゃ	Phóng viên, ký giả	KÍ GIẢ	n3k-x-16-030	
+n3k-l14	者	第16	31	236	医者	いしゃ	Bác sĩ	Y GIẢ	n3k-x-16-031	
+n3k-l14	者	第16	32	236	人気者	にんきもの	Người được yêu thích	NHÂN KHÍ GIẢ	n3k-x-16-032	
+n3k-l14	者	第16	33	236	者	もの	Người		n3k-x-16-033	
+n3k-l14	者	第16	34	236	若者	わかもの	Người trẻ	NHƯỢC GIẢ	n3k-x-16-034	
+n3k-l14	者	第16	35	236	学者	がくしゃ	Học giả	HỌC GIẢ	n3k-x-16-035	
+n3k-l14	紙	第16	37	236	手紙	てがみ	Thư	THỦ CHỈ	n3k-x-16-037	
+n3k-l14	紙	第16	38	236	紙	かみ	Giấy		n3k-x-16-038	
+n3k-l14	紙	第16	39	236	和紙	わし	Giấy Nhật		n3k-x-16-039	
+n3k-l14	婚	第16	41	237	婚約	こんやく	Đính hôn	HÔN ƯỚC	n3k-x-16-041	
+n3k-l14	婚	第16	42	237	結婚	けっこん	Kết hôn	KẾT HÔN	n3k-x-16-042	
+n3k-l14	婚	第16	43	237	新婚旅行	しんこんりょこう	Tuần trăng mật	TÂN HÔN LỮ HÀNH	n3k-x-16-043	
+n3k-l14	婚	第16	44	237	未婚	みこん	Chưa kết hôn	VỊ HÔN	n3k-x-16-044	
+n3k-l14	婚	第16	45	237	離婚	りこん	Ly hôn	LY HÔN	n3k-x-16-045	
+n3k-l14	鳥	第16	47	237	鳥	とり	Con chim		n3k-x-16-047	
+n3k-l14	鳥	第16	48	237	小鳥	ことり	Chim nhỏ		n3k-x-16-048	
+n3k-l14	島	第16	50	237	島国	しまぐに	Quốc đảo	ĐẢO QUỐC	n3k-x-16-050	
+n3k-l14	島	第16	51	237	無人島	むじんとう	Đảo hoang	VÔ NHÂN ĐẢO	n3k-x-16-051	
+n3k-l14	島	第16	52	237	諸島	しょとう	Quần đảo	CHƯ ĐẢO	n3k-x-16-052	
+n3k-l14	島	第16	53	237	バリ島	ばりとう	Đảo Bali		n3k-x-16-053	
+n3k-l14	島	第16	54	237	半島	はんとう	Bán đảo	BÁN ĐẢO	n3k-x-16-054	
+n3k-l14	州	第16	56	238	連合	れんごう	Liên minh , Liên đoàn	LIÊN HỢP	n3k-x-16-056	text-before-reading word-without-its-kanji
+n3k-l14	州	第16	57	238	州	しゅう	Bang, châu		n3k-x-16-057	text-before-reading
+n3k-l15	流	第16	59	238	流れる	ながれる	Chảy		n3k-x-16-059	
+n3k-l15	流	第16	60	238	流行した	りゅうこうした	Đã lưu hành, thịnh hành	LƯU HÀNH	n3k-x-16-060	
+n3k-l15	流	第16	61	238	一流	いちりゅう	Bậc nhất, hàng đầu	NHẤT LƯU	n3k-x-16-061	
+n3k-l15	念	第16	63	238	信念	しんねん	Niềm tin	TÍN NIÊM	n3k-x-16-063	
+n3k-l15	念	第16	64	238	念願	ねんがん	Nguyện vọng, mong mỏi	NIÊM NGUYỆN	n3k-x-16-064	
+n3k-l15	念	第16	65	238	残念	ざんねん	Đáng tiếc	TÀN NIÊM	n3k-x-16-065	
+n3k-l15	念	第16	66	238	記念日	きねんび	Ngày kỷ niệm	KÍ NIÊM NHẬT	n3k-x-16-066	
+n3k-l15	含	第16	68	238	含めて	ふくめて	Bao gồm cả		n3k-x-16-068	
+n3k-l15	含	第16	69	238	含まれている	ふくまれている	Được bao hàm		n3k-x-16-069	
+n3k-l15	含	第16	70	239	含有量	がんゆうりょう	Hàm lượng	HÀM HỮU LƯỢNG	n3k-x-16-070	dropped-lines
+n3k-l15	肯	第16	72	239	肯定する	こうていする	Khẳng định	KHẲNG ĐỊNH	n3k-x-16-072	text-before-reading
+n3k-l15	肯	第16	73	239	肯定的	こうていてき	Mang tính khẳng định	KHẲNG ĐỊNH ĐÍCH	n3k-x-16-073	
+n3k-l15	企	第16	75	239	企てる	くわだてる	Dự tính, lên kế hoạch		n3k-x-16-075	text-before-reading
+n3k-l15	企	第16	76	239	企画	きかく	Quy hoạch lên kế hoạch	XÍ HỌA	n3k-x-16-076	
+n3k-l15	企	第16	77	239	中小企業	ちゅうしょうきぎょう	Doanh nghiệp vừa và nhỏ	TRUNG TIỂU XÍ NGHIỆP	n3k-x-16-077	
+n3k-l15	企	第16	78	239	大企業	だいきぎょう	Doanh nghiệp lớn	ĐẠI XÍ NGHIỆP	n3k-x-16-078	
+n3k-l15	企	第16	79	239	企業家	きぎょうか	Doanh nhân	XÍ NGHIỆP GIA	n3k-x-16-079	
+n3k-l15	報	第17	2	239	情報	じょうほう	Thông tin	TÌNH BÁO	n3k-x-17-002	
+n3k-l15	報	第17	3	240	報告	ほうこく	Báo cáo	BÁO CÁO	n3k-x-17-003	
+n3k-l15	報	第17	4	240	天気予報	てんきよほう	Dự báo thời tiết	THIÊN KHÍ DƯ BÁO	n3k-x-17-004	
+n3k-l15	服	第17	6	240	服	ふく	Quần áo		n3k-x-17-006	
+n3k-l15	服	第17	7	240	服装	ふくそう	Trang phục	PHỤC TRANG	n3k-x-17-007	
+n3k-l15	服	第17	8	240	和服	わふく	Kimono, trang phục kiểu Nhật	HÒA PHỤC	n3k-x-17-008	
+n3k-l15	卒	第17	10	240	卒業	そつぎょう	Tốt nghiệp	TỐT NGHIỆP	n3k-x-17-010	
+n3k-l15	卒	第17	11	240	脳卒中	のうそっちゅう	Tai biến mạch máu não	NÃO TỐT TRUNG	n3k-x-17-011	
+n3k-l15	卒	第17	12	240	卒論	そつろん	Luận văn tốt nghiệp	TỐT LUẬN	n3k-x-17-012	
+n3k-l15	卒	第17	13	240	新卒	しんそつ	Người mới tốt nghiệp	TÂN TỐT	n3k-x-17-013	
+n3k-l15	率	第17	15	240	効率	こうりつ	Hiệu suất, hiệu quả	HIỆU SUẤT	n3k-x-17-015	
+n3k-l15	率	第17	16	240	確率	かくりつ	Xác suất	XÁC SUẤT	n3k-x-17-016	no-meaning meaning-jmdict-1205950
+n3k-l15	率	第17	17	241	率いて	ひきいて	Dẫn dắt, chỉ huy		n3k-x-17-017	text-before-reading
+n3k-l15	率	第17	18	241	倍率	ばいりつ	Tỷ lệ chọi	BỘI SUẤT	n3k-x-17-018	
+n3k-l15	率	第17	19	241	比率	ひりつ	Tỷ lệ	BỈ SUẤT	n3k-x-17-019	
+n3k-l15	祈	第17	21	241	祈る	いのる	Cầu nguyện		n3k-x-17-021	
+n3k-l15	祈	第17	22	241	祈願	きがん	Cầu nguyện, khấn nguyện	KÌ NGUYỆN	n3k-x-17-022	
+n3k-l15	祈	第17	23	241	祈祷	きとう	Cầu nguyện, khấn vái, tụng kinh	KÌ ĐẢO	n3k-x-17-023	
+n3k-l15	折	第17	25	241	右折	うせつ	Rẽ phải	HỮU CHIẾT	n3k-x-17-025	
+n3k-l15	折	第17	26	241	折る	おる	Bẻ, gấp		n3k-x-17-026	
+n3k-l15	折	第17	27	241	折り紙	おりがみ	Nghệ thuật gấp giấy	CHIẾT CHỈ	n3k-x-17-027	
+n3k-l15	折	第17	28	241	挫折	ざせつ	Nản lòng, bỏ cuộc giữa chừng	TỎA CHIẾT	n3k-x-17-028	
+n3k-l15	机	第17	30	241	机	つくえ	Cái bàn		n3k-x-17-030	
+n3k-l15	机	第17	31	242	学習机	がくしゅうづくえ	Bàn học	HỌC TẬP CƠ	n3k-x-17-031	
+n3k-l15	机	第17	32	242	机上	きじょう	Trên bàn; lý thuyết; trên giấy tờ	CƠ THƯỢNG	n3k-x-17-032	text-before-reading
+n3k-l15	築	第17	34	242	改築	かいちく	Cải tạo, xây lại	CẢI TRÚC	n3k-x-17-034	text-before-reading
+n3k-l15	築	第17	35	242	新築	しんちく	Xây mới	TÂN TRÚC	n3k-x-17-035	
+n3k-l15	築	第17	36	242	建築	けんちく	Kiến trúc, xây dựng	KIẾN TRÚC	n3k-x-17-036	
+n3k-l15	築	第17	37	242	築	ちく	Xây dựng, kiến tạo, gây dựng		n3k-x-17-037	
+n3k-l15	築	第17	38	242	築く	きずく	Xây dựng	TRÚC	n3k-x-17-038	
+n3k-l15	苦	第17	40	242	苦しむ	くるしむ	Đau khổ, khổ sở		n3k-x-17-040	
+n3k-l15	苦	第17	41	242	苦い	にがい	Đắng		n3k-x-17-041	
+n3k-l15	苦	第17	42	242	苦情	くじょう	Than phiền, khiếu nại	KHỔ TÌNH	n3k-x-17-042	text-before-reading
+n3k-l15	苦	第17	43	242	苦労	くろう	Gian khổ, vất vả	KHỔ LAO	n3k-x-17-043	
+n3k-l15	個	第17	45	243	一個	いっこ	Một cái (vật nhỏ)	NHẤT CÁ	n3k-x-17-045	
+n3k-l15	個	第17	46	243	個室	こしつ	Phòng riêng	CÁ THẤT	n3k-x-17-046	
+n3k-l15	個	第17	47	243	個性的な	こせいてきな	Đầy cá tính	CÁ TÍNH ĐÍCH	n3k-x-17-047	
+n3k-l15	個	第17	48	243	個人的な	こじんてきな	Mang tính cá nhân	CÁ NHÂN ĐÍCH	n3k-x-17-048	
+n3k-l15	個	第17	49	243	個人	こじん	Cá nhân	CÁ NHÂN	n3k-x-17-049	no-meaning meaning-jmdict-1264770
+n3k-l15	舟	第17	51	243	助け舟	たすけぶね	Thuyền cứu trợ	TRỢ CHU	n3k-x-17-051	
+n3k-l15	舟	第17	52	243	小舟	こぶね	Thuyền nhỏ	TIỂU CHU	n3k-x-17-052	
+n3k-l15	舟	第17	53	243	舟	ふね	Con thuyền nhỏ		n3k-x-17-053	
+n3k-l15	船	第17	55	243	船	ふね	Con thuyền lớn	THUYỀN	n3k-x-17-055	
+n3k-l15	船	第17	56	243	船便	ふなびん	Gửi bằng đường tàu	THUYỀN TIỆN	n3k-x-17-056	text-before-reading
+n3k-l15	船	第17	57	243	船長	せんちょう	Thuyền trưởng	THUYỀN TRƯỞNG	n3k-x-17-057	no-meaning meaning-jmdict-1392060
+n3k-l15	船	第17	58	243	造船	ぞうせん	Đóng tàu	TẠO THUYỀN	n3k-x-17-058	text-before-reading
+n3k-l15	告	第17	60	244	告げる	つげる	Thông báo, cho biết		n3k-x-17-060	text-before-reading
+n3k-l15	告	第17	61	244	報告	ほうこく	Báo cáo	BÁO CÁO	n3k-x-17-061	
+n3k-l15	告	第17	62	244	告白	こくはく	Tỏ tình, thổ lộ	CÁO BẠCH	n3k-x-17-062	
+n3k-l15	造	第17	64	244	構造	こうぞう	Cấu tạo	CẤU TẠO	n3k-x-17-064	text-before-reading
+n3k-l15	造	第17	65	244	木造船	もくぞうせん	Thuyền gỗ	MỘC TẠO THUYỀN	n3k-x-17-065	text-before-reading
+n3k-l15	笑	第17	67	244	微笑んで	ほほえんで	Mỉm cười	VI TIẾU	n3k-x-17-067	text-before-reading
+n3k-l15	笑	第17	68	244	笑顔	えがお	Khuôn mặt tươi cười	TIẾU NHAN	n3k-x-17-068	text-before-reading
+n3k-l15	笑	第17	69	244	笑い	わらい	Tiếng cười, sự cười đùa		n3k-x-17-069	
+n3k-l15	笑	第17	70	245	爆笑	ばくしょう	Cười phá lên	BẠO TIẾU	n3k-x-17-070	
+n3k-l15	等	第17	72	245	等しい	ひとしい	Ngang bằng, như nhau		n3k-x-17-072	dropped-lines
+n3k-l15	等	第17	73	245	平等	びょうどう	Bình đẳng	BÌNH ĐẲNG	n3k-x-17-073	dropped-lines
+n3k-l15	等	第17	74	245	高等学校	こうとうがっこう	Trường cấp 3	CAO ĐẲNG HỌC HIỆU	n3k-x-17-074	
+n3k-l15	等	第17	75	245	一等	いっとう	Hạng nhất	NHẤT ĐẲNG	n3k-x-17-075	dropped-lines
+n3k-l15	再	第18	2	245	再来年	さらいねん	Năm sau nữa	TÁI LAI NIÊN	n3k-x-18-002	
+n3k-l15	再	第18	3	245	再開	さいかい	Bắt đầu lại	TÁI KHAI	n3k-x-18-003	
+n3k-l15	再	第18	4	245	再び	ふたたび	Lại một lần nữa		n3k-x-18-004	text-before-reading
+n3k-l15	再	第18	5	245	再試験	さいしけん	Thi lại	TÁI THÍ NGHIỆM	n3k-x-18-005	
+n3k-l15	再	第18	6	246	再会	さいかい	Tái ngộ, gặp lại	TÁI HỘI	n3k-x-18-006	
+n3k-l15	再	第18	7	246	再生	さいせい	Tái sinh, tái chế,phục hồi, tái tạo	TÁI SINH	n3k-x-18-007	
+n3k-l15	冊	第18	9	246	別冊	べっさつ	Tập riêng, phụ lục	BIỆT SÁCH	n3k-x-18-009	
+n3k-l15	冊	第18	10	246	数冊	すうさつ	Vài cuốn sách	SỐ SÁCH	n3k-x-18-010	
+n3k-l15	用	第18	12	246	用いて	もちいて	Sử dụng		n3k-x-18-012	dropped-lines
+n3k-l15	用	第18	13	246	利用	りよう	Sử dụng	LỢI DỤNG	n3k-x-18-013	
+n3k-l15	用	第18	14	246	用	よう	Dùng cho		n3k-x-18-014	
+n3k-l15	用	第18	15	246	用事	ようじ	Việc riêng	DỤNG SỰ	n3k-x-18-015	
+n3k-l15	用	第18	16	246	用意	ようい	Chuẩn bị	DỤNG Ý	n3k-x-18-016	
+n3k-l16	初	第18	18	246	最初	さいしょ	Đầu tiên	TỐI SƠ	n3k-x-18-018	
+n3k-l16	初	第18	19	246	初雪	はつゆき	Tuyết đầu mùa	SƠ TUYẾT	n3k-x-18-019	
+n3k-l16	初	第18	20	247	初日	しょにち	Ngày đầu tiên	SƠ NHẬT	n3k-x-18-020	
+n3k-l16	初	第18	21	247	初心者	しょしんしゃ	Người mới bắt đầu	SƠ TÂM GIẢ	n3k-x-18-021	
+n3k-l16	対	第18	23	247	絶対	ぜったい	Tuyệt đối	TUYỆT ĐỐI	n3k-x-18-023	
+n3k-l16	対	第18	24	247	反対	はんたい	Phản đối	PHẢN ĐỐI	n3k-x-18-024	
+n3k-l16	対	第18	25	247	対立	たいりつ	Đối lập	ĐỐI LẬP	n3k-x-18-025	
+n3k-l16	対	第18	26	247	対象	たいしょう	Đối tượng	ĐỐI TƯỢNG	n3k-x-18-026	
+n3k-l16	面	第18	28	247	水面	すいめん	Mặt nước	THỦY DIỆN	n3k-x-18-028	
+n3k-l16	面	第18	29	247	面接	めんせつ	Phỏng vấn	DIỆN TIẾP	n3k-x-18-029	
+n3k-l16	面	第18	30	247	面白い	おもしろい	Thú vị	DIỆN BẠCH	n3k-x-18-030	
+n3k-l16	面	第18	31	247	真面目	まじめ	Nghiêm túc	CHÂN DIỆN MỤC	n3k-x-18-031	
+n3k-l16	面	第18	32	247	面積	めんせき	Diện tích	DIỆN TÍCH	n3k-x-18-032	no-meaning meaning-jmdict-1533500
+n3k-l16	面	第18	33	247	表面	ひょうめん	Bề mặt	BIỂU DIỆN	n3k-x-18-033	
+n3k-l16	卵	第18	35	248	卵	たまご	Trứng		n3k-x-18-035	
+n3k-l16	卵	第18	36	248	卵白	らんぱく	Lòng trắng trứng	NOÃN BẠCH	n3k-x-18-036	
+n3k-l16	卵	第18	37	248	産卵	さんらん	Đẻ trứng	SẢN NOÃN	n3k-x-18-037	
+n3k-l16	飛	第18	39	248	飛びたい	とびたい	Muốn bay		n3k-x-18-039	
+n3k-l16	飛	第18	40	248	飛ばす	とばす	Làm cho bay, phóng		n3k-x-18-040	
+n3k-l16	飛	第18	41	248	飛行機	ひこうき	Máy bay	PHI HÀNH CƠ	n3k-x-18-041	
+n3k-l16	飛	第18	42	248	飛び出し	とびだし	Lao ra, nhảy ra	PHI XUẤT	n3k-x-18-042	
+n3k-l16	飛	第18	43	248	飛行	ひこう	Chuyến bay, hàng không	PHI HÀNH	n3k-x-18-043	
+n3k-l16	夢	第18	45	248	悪夢	あくむ	Ác mộng	ÁC MỘNG	n3k-x-18-045	
+n3k-l16	夢	第18	46	248	夢	ゆめ	Giấc mơ		n3k-x-18-046	
+n3k-l16	夢	第18	47	248	夢中	むちゅう	Say sưa, miệt mài	MỘNG TRUNG	n3k-x-18-047	
+n3k-l16	夢	第18	48	249	夢想	むそう	Giấc mơ	MỘNG TƯỞNG	n3k-x-18-048	
+n3k-l16	昨	第18	50	249	昨晩	さくばん	Tối qua	TẠC VÃN	n3k-x-18-050	
+n3k-l16	昨	第18	51	249	昨年	さくねん	Năm ngoái	TẠC NIÊN	n3k-x-18-051	
+n3k-l16	昨	第18	52	249	昨夜	さくや	Đêm qua	TẠC DẠ	n3k-x-18-052	several-senses gloss-fixed-by-hand
+n3k-l16	昨	第18	53	249	昨日	きのう	Hôm qua	TẠC NHẬT	n3k-x-18-053	
+n3k-l16	昨	第18	54	249	昨今	さっこん	Dạo này, gần đây	TẠC KIM	n3k-x-18-054	
+n3k-l16	首	第18	56	249	首	くび	Cái cổ		n3k-x-18-056	dropped-lines
+n3k-l16	首	第18	57	249	首になって	くびになって	Bị sa thải		n3k-x-18-057	
+n3k-l16	首	第18	58	249	首相	しゅしょう	Thủ tướng	THỦ TƯƠNG	n3k-x-18-058	
+n3k-l16	首	第18	59	249	首都	しゅと	Thủ đô	THỦ ĐÔ	n3k-x-18-059	dropped-lines
+n3k-l16	留	第18	61	250	留まり	とどまり	Sự dừng lại, ở lại, giới hạn ở mức đó		n3k-x-18-061	text-before-reading
+n3k-l16	留	第18	62	250	留守番	るすばん	Trông nhà	LƯU THỦ PHIÊN	n3k-x-18-062	
+n3k-l16	留	第18	63	250	保留	ほりゅう	Bảo lưu, trì hoãn	BẢO LƯU	n3k-x-18-063	
+n3k-l16	留	第18	64	250	書き留めた	かきとめた	Ghi chép lại	THƯ LƯU	n3k-x-18-064	
+n3k-l16	留	第18	65	250	留学	りゅうがく	Du học	LƯU HỌC	n3k-x-18-065	
+n3k-l16	包	第18	67	250	包んで	つつんで	Gói, bọc		n3k-x-18-067	
+n3k-l16	包	第18	68	250	包帯	ほうたい	Băng gạc	BAO ĐỚI	n3k-x-18-068	
+n3k-l16	包	第18	69	250	小包	こづつみ	Bưu kiện nhỏ	TIỂU BAO	n3k-x-18-069	
+n3k-l16	匹	第18	71	250	匹	ひき	Con (đơn vị đếm động vật nhỏ)		n3k-x-18-071	
+n3k-l16	匹	第18	72	250	三匹	さんびき	Ba con	TAM THẤT	n3k-x-18-072	
+n3k-l16	橋	第18	74	251	歩道橋	ほどうきょう	Cầu vượt đi bộ	BỘ ĐẠO KIỀU	n3k-x-18-074	
+n3k-l16	橋	第18	75	251	鉄橋	てっきょう	Cầu sắt	THIẾT KIỀU	n3k-x-18-075	
+n3k-l16	橋	第18	76	251	橋	はし	Cây cầu	KIỀU	n3k-x-18-076	
+n3k-l16	収	第18	78	251	収める	おさめる	Thu được, đạt được		n3k-x-18-078	
+n3k-l16	収	第18	79	251	吸収	きゅうしゅう	Hấp thụ	HẤP THU	n3k-x-18-079	
+n3k-l16	収	第18	80	251	収入	しゅうにゅう	Thu nhập	THU NHẬP	n3k-x-18-080	
+n3k-l16	収	第18	81	251	収まる	おさまる	Lắng xuống, yên ổn, vừa vặn, được giải quyết	THU	n3k-x-18-081	text-before-reading
+n3k-l16	収	第18	82	251	収穫	しゅうかく	Thu hoạch	THU HOẠCH	n3k-x-18-082	no-meaning meaning-jmdict-1330510
+n3k-l16	座	第18	84	251	座って	すわって	Ngồi		n3k-x-18-084	
+n3k-l16	座	第18	85	251	座席	ざせき	Chỗ ngồi	TỌA TỊCH	n3k-x-18-085	
+n3k-l16	座	第18	86	252	口座	こうざ	Tài khoản ngân hàng	KHẨU TỌA	n3k-x-18-086	dropped-lines
+n3k-l16	悩	第18	88	252	悩み	なやみ	Nỗi lo, sự phiền muộn		n3k-x-18-088	
+n3k-l16	悩	第18	89	252	悩む	なやむ	Lo lắng, ưu phiền		n3k-x-18-089	
+n3k-l16	悩	第18	90	252	苦悩	くのう	Khổ não, đau khổ	KHỔ NÃO	n3k-x-18-090	no-meaning meaning-jmdict-1244610
+n3k-l16	介	第18	92	252	紹介	しょうかい	Giới thiệu	THIỆU GIỚI	n3k-x-18-092	
+n3k-l16	介	第18	93	252	仲介料	ちゅうかいりょう	Phí môi giới	TRỌNG GIỚI LIÊU	n3k-x-18-093	
+n3k-l16	介	第18	94	252	介入	かいにゅう	Can thiệp	GIỚI NHẬP	n3k-x-18-094	
+n3k-l16	判	第18	96	252	判決	はんけつ	Phán quyết	PHÁN QUYẾT	n3k-x-18-096	
+n3k-l16	判	第18	97	252	評判	ひょうばん	Đánh giá, danh tiếng	BÌNH PHÁN	n3k-x-18-097	
+n3k-l16	判	第18	98	252	判断	はんだん	Phán đoán	PHÁN ĐOẠN	n3k-x-18-098	
+n3k-l16	判	第18	99	252	審判	しんぱん	Trọng tài	THẨM PHÁN	n3k-x-18-099	
+n3k-l16	厳	第18	101	253	厳しい	きびしい	Nghiêm khắc		n3k-x-18-101	
+n3k-l16	厳	第18	102	253	厳重な	げんじゅうな	Nghiêm ngặt; Cẩn trọng	NGHIÊM TRỌNG	n3k-x-18-102	several-senses dropped-lines
+n3k-l16	厳	第18	103	253	厳かな	おごそかな	Trang trọng, uy nghiêm		n3k-x-18-103	
+n3k-l16	厳	第18	104	253	厳格	げんかく	Nghiêm ngặt, khắt khe	NGHIÊM CÁCH	n3k-x-18-104	
+n3k-l16	危	第18	106	253	危ない	あぶない	Nguy hiểm		n3k-x-18-106	
+n3k-l16	危	第18	107	253	危険	きけん	Nguy hiểm	NGUY HIỂM	n3k-x-18-107	
+n3k-l16	危	第18	108	253	危急	ききゅう	Nguy cấp	NGUY CẤP	n3k-x-18-108	
+n3k-l16	兵	第18	110	253	兵士	へいし	Binh sĩ	BINH SĨ	n3k-x-18-110	
+n3k-l16	兵	第18	111	254	兵隊	へいたい	Quân đội, binh lính	BINH ĐỘI	n3k-x-18-111	
+n3k-l16	関	第18	113	254	関連	かんれん	Liên quan	QUAN LIÊN	n3k-x-18-113	
+n3k-l16	関	第18	114	254	機関	きかん	Cơ quan	CƠ QUAN	n3k-x-18-114	
+n3k-l16	関	第18	115	254	関わる	かかわる	Liên quan		n3k-x-18-115	
+n3k-l16	関	第18	116	254	玄関	げんかん	Cổng vào, sảnh vào	HUYỀN QUAN	n3k-x-18-116	dropped-lines
+n3k-l16	関	第18	117	254	関係者	かんけいしゃ	Người có liên quan	QUAN HỆ GIẢ	n3k-x-18-117	
+n3k-l16	関	第18	118	254	関心	かんしん	Quan tâm	QUAN TÂM	n3k-x-18-118	
+n3k-l16	関	第18	119	254	税関	ぜいかん	Hải quan	THUẾ QUAN	n3k-x-18-119	
+n3k-l16	久	第18	121	254	久しぶり	ひさしぶり	Lâu rồi mới gặp		n3k-x-18-121	
+n3k-l16	久	第18	122	254	久々	ひさびさ	Lâu lâu, sau một thời gian dài	CỬU CỬU	n3k-x-18-122	
+n3k-l16	在	第18	124	255	存在	そんざい	Tồn tại	TỒN TẠI	n3k-x-18-124	
+n3k-l16	在	第18	125	255	在学中	ざいがくちゅう	Đang đi học	TẠI HỌC TRUNG	n3k-x-18-125	
+n3k-l16	在	第18	126	255	現在	げんざい	Hiện tại	HIỆN TẠI	n3k-x-18-126	
+n3k-l16	在	第18	127	255	在籍	ざいせき	Có tên trong danh sách, đang học	TẠI TỊCH	n3k-x-18-127	
+n3k-l16	在	第18	128	255	在日	ざいにち	Đang ở Nhật	TẠI NHẬT	n3k-x-18-128	
+n3k-l16	在	第18	129	255	滞在	たいざい	Lưu trú	TRỆ TẠI	n3k-x-18-129	
+n3k-l16	必	第18	131	255	必ず	かならず	Chắc chắn, nhất định		n3k-x-18-131	
+n3k-l16	必	第18	132	255	必要な	ひつような	Cần thiết	TẤT YẾU	n3k-x-18-132	
+n3k-l16	必	第18	133	255	必勝	ひっしょう	Quyết thắng	TẤT THẮNG	n3k-x-18-133	

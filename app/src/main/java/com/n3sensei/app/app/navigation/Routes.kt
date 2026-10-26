@@ -26,6 +26,15 @@ import kotlinx.serialization.Serializable
 
 @Serializable data class KanjiDetailRoute(val kanjiId: String)
 
+/** The learner's edit of a kanji (kept apart from its pack). */
+@Serializable data class KanjiEditRoute(val kanjiId: String)
+
+/** Edit of a pack word (kept apart from its pack) or of one of the learner's own words. */
+@Serializable data class VocabularyEditRoute(val vocabularyId: String)
+
+/** New word for "Từ của tôi". */
+@Serializable data object AddWordRoute
+
 /** [status] pre-selects the learning-status filter (a LearningStatus name). */
 @Serializable data class GrammarRoute(val status: String? = null)
 

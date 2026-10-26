@@ -1,4 +1,23 @@
-# Gói ngữ pháp N3 (110 mẫu, tự soạn theo danh mục Mimikara N3)
+# Gói ngữ pháp N3 (174 mẫu: 110 tự soạn theo danh mục Mimikara N3 + 64 từ N3.pdf)
+
+## Phiên bản 2: hợp nhất với thẻ ngữ pháp của N3.pdf
+
+156 thẻ ngữ pháp của N3.pdf (6 nhóm chủ đề 01–03, 05–07; không có nhóm 04) được đối chiếu **từng thẻ** với 110 mẫu (mẫu, nghĩa, cách dùng, biến thể), ghi trong `tools/content/n3_grammar/pdf_mapping.py`, bảng đầy đủ ở `docs/data/n3-grammar-pdf-mapping.tsv`:
+
+| Loại | Số thẻ | Xử lý |
+|---|---|---|
+| 1. Trùng hoàn toàn | 57 | Gắn vào mẫu có sẵn (giữ ID, nội dung, tiến độ) |
+| 2. Trùng mẫu, khác giải thích / biến thể | 24 | Như trên (vd. 〜からこそ → 〜こそ; 〜に対して → cả n3g-g025 và n3g-g034) |
+| 3. Liên quan nhưng khác cách dùng | 6 | Mục mới, có lưu ý phân biệt (〜とか〜とか ≠ 〜とか nghe nói; 〜たところだ ≠ 〜たところ…) |
+| 4. Mẫu riêng | 58 | Mục mới |
+| 5. Chưa đủ thông tin | 0 | |
+| Thẻ so sánh ("Dễ nhầm…") | 11 | Không phải mẫu; ghi lại các thẻ được so sánh |
+
+64 mục mới (`n3g-g111`…`n3g-g174`, theo thứ tự PDF) chỉ có **tên mẫu, cách chia, nghĩa ngắn** lấy từ thẻ (`pdf_new_points.py`); giải thích, mẹo nhớ, câu ví dụ của thẻ không được đóng gói (chưa xác minh quyền). Nguồn mỗi mục: "N3.pdf · Ngữ pháp, nhóm NN thẻ K", `licenseVerified = false`.
+
+Thứ tự: 110 mẫu theo danh mục Mimikara N3, rồi 64 mẫu PDF; cắt thành **25 bài 7 mẫu** (bài 25: 6 mẫu). ID của 110 mẫu không đổi → tiến độ, lịch ôn, đánh dấu giữ nguyên khi app cài bản 2 thay bản 1 (có test với bản 1 thật). Bài `n3g-lNN` nay chứa 7 mẫu thay vì 10; không dữ liệu người học nào gắn với bài.
+
+## Phiên bản 1
 
 Gói `n3-grammar` (`app/src/main/assets/content/n3-grammar.json`) được đóng gói cùng app, tự cài ở lần mở đầu (cạnh gói minh họa và gói từ vựng Mimikara N3). Nguồn danh mục: <https://www.vnjpclub.com/mimi-kara-n3-bunpo/>.
 

@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
+import androidx.room.Update
 import androidx.room.Upsert
 import com.n3sensei.app.data.local.entity.ContentPackEntity
 import com.n3sensei.app.data.local.entity.ContentSourceEntity
@@ -15,9 +16,11 @@ import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.KanjiExampleCrossRef
 import com.n3sensei.app.data.local.entity.LessonEntity
 import com.n3sensei.app.data.local.entity.TagEntity
+import com.n3sensei.app.data.local.entity.UserContentEditEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.data.local.entity.VocabularyExampleCrossRef
 import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
+import com.n3sensei.app.data.local.ContentEdits
 import com.n3sensei.app.data.local.model.ContentPackBundle
 import com.n3sensei.app.data.local.model.ContentPackRow
 import com.n3sensei.app.data.local.withSearchText
@@ -62,6 +65,7 @@ abstract class ContentPackDao {
     /**
      * Atomically replaces a pack with [bundle]. If any row is invalid, nothing changes.
      * Learner progress is untouched because it is keyed by stable item IDs, not by FK.
+     * The learner's edits of this pack's items are applied again on the new rows.
      */
     @Transaction
     open suspend fun replacePack(bundle: ContentPackBundle) {
@@ -79,7 +83,58 @@ abstract class ContentPackDao {
         insertGrammarExamples(bundle.grammarExamples)
         upsertTags(bundle.tags)
         insertVocabularyTags(bundle.vocabularyTags)
+        reapplyUserEdits(bundle.pack.id)
     }
+
+    /**
+     * The new rows carry the pack's values: record them as each edit's base and write the
+     * learner's values over them. Edits of items the pack no longer has are left as they are.
+     */
+    private suspend fun reapplyUserEdits(packId: String) {
+        getKanjiEditsOfPack(packId).groupBy { it.itemId }.forEach { (id, edits) ->
+            val row = getKanji(id) ?: return@forEach
+            val rebased = edits.map { it.copy(baseValue = ContentEdits.get(row, it.field)) }
+            upsertEdits(rebased.filterIndexed { i, e -> e != edits[i] })
+            updateKanji(ContentEdits.merged(row, rebased).withSearchText())
+        }
+        getVocabularyEditsOfPack(packId).groupBy { it.itemId }.forEach { (id, edits) ->
+            val row = getVocabulary(id) ?: return@forEach
+            val rebased = edits.map { it.copy(baseValue = ContentEdits.get(row, it.field)) }
+            upsertEdits(rebased.filterIndexed { i, e -> e != edits[i] })
+            updateVocabulary(ContentEdits.merged(row, rebased).withSearchText())
+        }
+    }
+
+    @Query(
+        """
+        SELECT e.* FROM user_content_edits e JOIN kanji k ON k.id = e.item_id JOIN lessons l ON l.id = k.lesson_id
+        WHERE e.item_type = 'KANJI' AND l.pack_id = :packId
+        """,
+    )
+    abstract suspend fun getKanjiEditsOfPack(packId: String): List<UserContentEditEntity>
+
+    @Query(
+        """
+        SELECT e.* FROM user_content_edits e JOIN vocabulary v ON v.id = e.item_id JOIN lessons l ON l.id = v.lesson_id
+        WHERE e.item_type = 'VOCABULARY' AND l.pack_id = :packId
+        """,
+    )
+    abstract suspend fun getVocabularyEditsOfPack(packId: String): List<UserContentEditEntity>
+
+    @Query("SELECT * FROM kanji WHERE id = :id")
+    abstract suspend fun getKanji(id: String): KanjiEntity?
+
+    @Query("SELECT * FROM vocabulary WHERE id = :id")
+    abstract suspend fun getVocabulary(id: String): VocabularyEntity?
+
+    @Update
+    abstract suspend fun updateKanji(row: KanjiEntity)
+
+    @Update
+    abstract suspend fun updateVocabulary(row: VocabularyEntity)
+
+    @Upsert
+    abstract suspend fun upsertEdits(edits: List<UserContentEditEntity>)
 
     // Upsert (not REPLACE) so a referenced source is updated in place instead of being
     // deleted, which the RESTRICT foreign keys would reject.

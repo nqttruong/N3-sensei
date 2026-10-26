@@ -16,6 +16,7 @@ import com.n3sensei.app.data.repository.OfflineAnalyticsRepository
 import com.n3sensei.app.data.repository.OfflineContentRepository
 import com.n3sensei.app.data.repository.OfflineProgressRepository
 import com.n3sensei.app.data.repository.OfflineReviewSessionRepository
+import com.n3sensei.app.data.repository.OfflineUserContentRepository
 import com.n3sensei.app.domain.backup.BackupRepository
 import com.n3sensei.app.domain.forecast.ReviewSessionRepository
 import com.n3sensei.app.domain.integrity.DatabaseRecoveryRepository
@@ -26,6 +27,7 @@ import com.n3sensei.app.domain.repository.AnalyticsRepository
 import com.n3sensei.app.domain.repository.ContentImportRepository
 import com.n3sensei.app.domain.repository.ContentRepository
 import com.n3sensei.app.domain.repository.ProgressRepository
+import com.n3sensei.app.domain.repository.UserContentRepository
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
 import java.io.File
 import java.time.Clock
@@ -36,6 +38,7 @@ import java.time.Clock
  */
 interface AppContainer {
     val contentRepository: ContentRepository
+    val userContentRepository: UserContentRepository
     val progressRepository: ProgressRepository
     val analyticsRepository: AnalyticsRepository
     val reviewSessionRepository: ReviewSessionRepository
@@ -64,6 +67,10 @@ class DefaultAppContainer(context: Context) : AppContainer {
 
     override val contentRepository: ContentRepository by lazy {
         OfflineContentRepository(database.contentDao(), database.contentPackDao())
+    }
+
+    override val userContentRepository: UserContentRepository by lazy {
+        OfflineUserContentRepository(database.userContentDao(), clock)
     }
 
     override val analyticsRepository: AnalyticsRepository by lazy { OfflineAnalyticsRepository(database.analyticsDao()) }

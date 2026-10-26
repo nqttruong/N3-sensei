@@ -23,7 +23,7 @@ import java.time.Clock
 import java.time.Instant
 import java.time.ZoneOffset
 
-/** The bundled N3 grammar pack (110 patterns) in a real Room database file. */
+/** The bundled N3 grammar pack (110 patterns + 64 from N3.pdf) in a real Room database file. */
 @RunWith(AndroidJUnit4::class)
 class N3GrammarImportTest {
 
@@ -51,13 +51,17 @@ class N3GrammarImportTest {
         context.deleteDatabase(name)
     }
 
-    private fun bumped(version: Int) = json.replaceFirst("\"version\": 1", "\"version\": $version")
+    /** Version 1 as committed before the N3.pdf points were added (110 points, lessons of 10). */
+    private val v1 = InstrumentationRegistry.getInstrumentation().context.assets
+        .open("content-history/n3-grammar-v1.json").use { it.readBytes().toString(Charsets.UTF_8) }
+
+    private fun bumped(version: Int) = json.replaceFirst("\"version\": 2", "\"version\": $version")
     private fun query(q: ItemQuery) = runBlocking { content.observeGrammarItems(q).first().map { it.item } }
 
     @Test
     fun allPatternsImported_withExamplesAndSource() = runBlocking {
         assertEquals(ImportOutcome.IMPORTED, importer.import(json).outcome)
-        assertEquals(110, db.countRows("grammar"))
+        assertEquals(174, db.countRows("grammar"))
         assertEquals(220, db.countRows("example_sentences"))
         val detail = content.getGrammarDetail("n3g-g001")!!
         assertEquals("〜ことにしている", detail.grammar.pattern)
@@ -65,17 +69,24 @@ class N3GrammarImportTest {
         assertEquals("Vì sức khỏe, tôi có thói quen đi bộ ba mươi phút mỗi sáng.", detail.examples[0].translationVi)
         assertEquals("https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-1.html", detail.source.url)
         assertTrue(!detail.source.licenseVerified)
+        val fromPdf = content.getGrammarDetail("n3g-g111")!!
+        assertEquals("〜ため（に）", fromPdf.grammar.pattern)
+        assertEquals("V普通形 + ため（に）／Nの + ため（に）", fromPdf.grammar.structure)
+        assertTrue(fromPdf.examples.isEmpty())
+        assertEquals("N3.pdf · Ngữ pháp, nhóm 01 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)", fromPdf.source.name)
     }
 
     @Test
     fun listSearchAndLessonFilter() = runBlocking {
         importer.import(json)
-        assertEquals(110, query(ItemQuery()).size)
+        assertEquals(174, query(ItemQuery()).size)
         assertEquals(listOf("〜から〜にかけて"), query(ItemQuery(text = "にかけて")).map { it.pattern })
         // Meaning without Vietnamese diacritics.
         assertTrue(query(ItemQuery(text = "so voi")).map { it.id }.containsAll(listOf("n3g-g023", "n3g-g104")))
         assertEquals(2, query(ItemQuery(text = "に対し")).size) // two uses, both kept
-        assertEquals(10, query(ItemQuery(lessonId = "n3g-l01")).size)
+        assertEquals(7, query(ItemQuery(lessonId = "n3g-l01")).size)
+        assertEquals(6, query(ItemQuery(lessonId = "n3g-l25")).size)
+        assertEquals(listOf("〜はずがない"), query(ItemQuery(text = "はずがない")).map { it.pattern })
         assertEquals("〜ことにしている", query(ItemQuery(lessonId = "n3g-l01")).first().pattern)
     }
 
@@ -86,8 +97,8 @@ class N3GrammarImportTest {
         db.progressDao().upsert(progress)
         db.progressDao().insertMark(ItemMarkEntity(ItemType.GRAMMAR, "n3g-g092", 9))
         assertEquals(ImportOutcome.UP_TO_DATE, importer.import(json, onlyIfNewer = true).outcome)
-        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(2)).outcome)
-        assertEquals(110, db.countRows("grammar"))
+        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(3)).outcome)
+        assertEquals(174, db.countRows("grammar"))
         assertEquals(220, db.countRows("example_sentences"))
         assertEquals(progress, db.progressDao().get(ItemType.GRAMMAR, "n3g-g039"))
         assertEquals(listOf("n3g-g092"), query(ItemQuery(markedOnly = true)).map { it.id })
@@ -100,9 +111,9 @@ class N3GrammarImportTest {
         db.openHelper.writableDatabase.execSQL(
             "CREATE TRIGGER fail_g060 BEFORE INSERT ON grammar WHEN NEW.id = 'n3g-g060' BEGIN SELECT RAISE(ABORT, 'disk full (test)'); END",
         )
-        assertEquals(ImportOutcome.FAILED, importer.import(bumped(2)).outcome)
-        assertEquals(1, db.contentPackDao().getPack("n3-grammar")!!.version)
-        assertEquals(110, db.countRows("grammar"))
+        assertEquals(ImportOutcome.FAILED, importer.import(bumped(3)).outcome)
+        assertEquals(2, db.contentPackDao().getPack("n3-grammar")!!.version)
+        assertEquals(174, db.countRows("grammar"))
         assertEquals(1, db.countRows("learning_progress"))
     }
 
@@ -111,7 +122,33 @@ class N3GrammarImportTest {
         importer.import(json)
         db.close()
         open()
-        assertEquals(110, db.countRows("grammar"))
+        assertEquals(174, db.countRows("grammar"))
         assertEquals("〜おそれがある", content.getGrammarDetail("n3g-g110")!!.grammar.pattern)
+    }
+
+    @Test
+    fun upgradeFromVersion1_keepsProgressAndMarks_ofThe110() = runBlocking {
+        assertEquals(ImportOutcome.IMPORTED, importer.import(v1).outcome)
+        assertEquals(110, db.countRows("grammar"))
+        assertEquals("n3g-l03", content.getGrammarDetail("n3g-g025")!!.grammar.lessonId)
+        val progress = LearningProgressEntity(ItemType.GRAMMAR, "n3g-g025", ProgressState.REVIEW, 2, 1440, 7_000, 6_000, 3, 0, 1_000, 6_000)
+        db.progressDao().upsert(progress)
+        db.progressDao().insertMark(ItemMarkEntity(ItemType.GRAMMAR, "n3g-g104", 5))
+        db.openHelper.writableDatabase.execSQL(
+            "INSERT INTO review_records (item_type, item_id, rating, reviewed_at, interval_before_minutes, interval_after_minutes, due_at_after, was_new) " +
+                "VALUES ('GRAMMAR', 'n3g-g025', 'GOOD', 6000, 20, 1440, 7000, 0)",
+        )
+
+        // The bundled version 2 replaces version 1 on the next launch.
+        assertEquals(ImportOutcome.IMPORTED, importer.import(json, onlyIfNewer = true).outcome)
+        assertEquals(174, db.countRows("grammar"))
+        assertEquals(progress, db.progressDao().get(ItemType.GRAMMAR, "n3g-g025"))
+        assertEquals(listOf("n3g-g104"), query(ItemQuery(markedOnly = true)).map { it.id })
+        assertEquals(1, db.countRows("review_records"))
+        // Same point, now in the lesson of 7 that holds it.
+        val moved = content.getGrammarDetail("n3g-g025")!!.grammar
+        assertEquals("〜に対し（て）", moved.pattern)
+        assertEquals("n3g-l04", moved.lessonId)
+        assertEquals(25, db.countRows("lessons"))
     }
 }

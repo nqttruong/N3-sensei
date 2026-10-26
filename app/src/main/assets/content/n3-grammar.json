@@ -3,8 +3,8 @@
  "formatVersion": 1,
  "pack": {
   "id": "n3-grammar",
-  "title": "Ngữ pháp N3 (tự soạn, theo danh mục Mimikara N3)",
-  "version": 1,
+  "title": "Ngữ pháp N3 (danh mục Mimikara N3 + bổ sung từ N3.pdf)",
+  "version": 2,
   "jlptLevel": "N3",
   "defaultSourceId": "n3sensei-grammar"
  },
@@ -894,6 +894,518 @@
    "name": "N3 Sensei tự soạn · đối chiếu mục 110 \"～おそれがある\" trong danh mục VNJPCLUB Mimikara N3 ngữ pháp",
    "url": "https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-110.html",
    "license": "Giải thích, cấu trúc và ví dụ do N3 Sensei tự soạn, chưa qua kiểm duyệt chuyên môn. Chỉ tên mẫu và thứ tự lấy từ danh mục công khai của nguồn.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-01-01",
+   "name": "N3.pdf · Ngữ pháp, nhóm 01 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-02-01",
+   "name": "N3.pdf · Ngữ pháp, nhóm 02 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-03-01",
+   "name": "N3.pdf · Ngữ pháp, nhóm 03 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-03-06",
+   "name": "N3.pdf · Ngữ pháp, nhóm 03 thẻ 6 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-03-08",
+   "name": "N3.pdf · Ngữ pháp, nhóm 03 thẻ 8 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-03-09",
+   "name": "N3.pdf · Ngữ pháp, nhóm 03 thẻ 9 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-03-10",
+   "name": "N3.pdf · Ngữ pháp, nhóm 03 thẻ 10 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-05-01",
+   "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-05-05",
+   "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 5 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-05-06",
+   "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 6 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-05-07",
+   "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 7 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-05-09",
+   "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 9 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-05-13",
+   "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 13 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-05-15",
+   "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 15 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-05-17",
+   "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 17 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-05-18",
+   "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 18 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-05-19",
+   "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 19 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-05-28",
+   "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 28 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-05-30",
+   "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 30 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-01",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-07",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 7 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-08",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 8 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-09",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 9 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-10",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 10 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-11",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 11 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-12",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 12 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-13",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 13 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-14",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 14 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-15",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 15 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-16",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 16 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-17",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 17 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-18",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 18 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-06-20",
+   "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 20 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-01",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-02",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 2 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-03",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 3 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-05",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 5 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-06",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 6 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-08",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 8 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-09",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 9 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-10",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 10 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-12",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 12 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-13",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 13 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-18",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 18 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-19",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 19 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-20",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 20 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-23",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 23 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-24",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 24 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-30",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 30 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-32",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 32 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-33",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 33 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-39",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 39 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-42",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 42 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-43",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 43 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-63",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 63 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-66",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 66 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-68",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 68 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-69",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 69 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-71",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 71 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-72",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 72 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-73",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 73 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-74",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 74 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-76",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 76 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "attribution": null,
+   "licenseVerified": false
+  },
+  {
+   "id": "n3pdf-g-07-77",
+   "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 77 (tên mẫu, cách chia, nghĩa ngắn)",
+   "url": null,
+   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
    "attribution": null,
    "licenseVerified": false
   }
@@ -2444,8 +2956,8 @@
   {
    "id": "n3g-l01",
    "number": 1,
-   "title": "Ngữ pháp N3 · mục 1–10",
-   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "title": "Ngữ pháp N3 · mục 1–7",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
    "vocabulary": [],
    "kanji": [],
    "grammar": [
@@ -2461,7 +2973,12 @@
       "n3g-g001-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-001"
+     "sourceId": "vnjp-np-001",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 1,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g002",
@@ -2475,7 +2992,12 @@
       "n3g-g002-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-002"
+     "sourceId": "vnjp-np-002",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 2,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g003",
@@ -2489,7 +3011,12 @@
       "n3g-g003-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-003"
+     "sourceId": "vnjp-np-003",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 3,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g004",
@@ -2503,7 +3030,17 @@
       "n3g-g004-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-004"
+     "sourceId": "vnjp-np-004",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 4,
+      "pdfCards": [
+       {
+        "card": "05.22",
+        "category": 2
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g005",
@@ -2517,7 +3054,21 @@
       "n3g-g005-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-005"
+     "sourceId": "vnjp-np-005",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 5,
+      "pdfCards": [
+       {
+        "card": "05.08",
+        "category": 1
+       },
+       {
+        "card": "05.23",
+        "category": 2
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g006",
@@ -2531,7 +3082,21 @@
       "n3g-g006-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-006"
+     "sourceId": "vnjp-np-006",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 6,
+      "pdfCards": [
+       {
+        "card": "05.02",
+        "category": 1
+       },
+       {
+        "card": "05.21",
+        "category": 2
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g007",
@@ -2545,8 +3110,28 @@
       "n3g-g007-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-007"
-    },
+     "sourceId": "vnjp-np-007",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 7,
+      "pdfCards": [
+       {
+        "card": "07.45",
+        "category": 2
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l02",
+   "number": 2,
+   "title": "Ngữ pháp N3 · mục 8–14",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g008",
      "pattern": "〜てくる",
@@ -2559,7 +3144,17 @@
       "n3g-g008-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-008"
+     "sourceId": "vnjp-np-008",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 8,
+      "pdfCards": [
+       {
+        "card": "07.11",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g009",
@@ -2573,7 +3168,17 @@
       "n3g-g009-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-009"
+     "sourceId": "vnjp-np-009",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 9,
+      "pdfCards": [
+       {
+        "card": "06.04",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g010",
@@ -2587,18 +3192,22 @@
       "n3g-g010-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-010"
-    }
-   ]
-  },
-  {
-   "id": "n3g-l02",
-   "number": 2,
-   "title": "Ngữ pháp N3 · mục 11–20",
-   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
-   "vocabulary": [],
-   "kanji": [],
-   "grammar": [
+     "sourceId": "vnjp-np-010",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 10,
+      "pdfCards": [
+       {
+        "card": "02.03",
+        "category": 2
+       },
+       {
+        "card": "02.04",
+        "category": 2
+       }
+      ]
+     }
+    },
     {
      "id": "n3g-g011",
      "pattern": "使役形を使った表現（〜させてください／〜させられる）",
@@ -2611,7 +3220,21 @@
       "n3g-g011-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-011"
+     "sourceId": "vnjp-np-011",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 11,
+      "pdfCards": [
+       {
+        "card": "06.05",
+        "category": 2
+       },
+       {
+        "card": "06.06",
+        "category": 2
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g012",
@@ -2625,7 +3248,12 @@
       "n3g-g012-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-012"
+     "sourceId": "vnjp-np-012",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 12,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g013",
@@ -2639,7 +3267,12 @@
       "n3g-g013-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-013"
+     "sourceId": "vnjp-np-013",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 13,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g014",
@@ -2653,8 +3286,23 @@
       "n3g-g014-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-014"
-    },
+     "sourceId": "vnjp-np-014",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 14,
+      "pdfCards": []
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l03",
+   "number": 3,
+   "title": "Ngữ pháp N3 · mục 15–21",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g015",
      "pattern": "縮約形（〜ちゃう・〜とく・〜なきゃ など）",
@@ -2667,7 +3315,12 @@
       "n3g-g015-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-015"
+     "sourceId": "vnjp-np-015",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 15,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g016",
@@ -2681,7 +3334,17 @@
       "n3g-g016-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-016"
+     "sourceId": "vnjp-np-016",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 16,
+      "pdfCards": [
+       {
+        "card": "07.28",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g017",
@@ -2695,7 +3358,17 @@
       "n3g-g017-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-017"
+     "sourceId": "vnjp-np-017",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 17,
+      "pdfCards": [
+       {
+        "card": "07.31",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g018",
@@ -2709,7 +3382,17 @@
       "n3g-g018-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-018"
+     "sourceId": "vnjp-np-018",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 18,
+      "pdfCards": [
+       {
+        "card": "01.02",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g019",
@@ -2723,7 +3406,17 @@
       "n3g-g019-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-019"
+     "sourceId": "vnjp-np-019",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 19,
+      "pdfCards": [
+       {
+        "card": "01.03",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g020",
@@ -2737,18 +3430,13 @@
       "n3g-g020-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-020"
-    }
-   ]
-  },
-  {
-   "id": "n3g-l03",
-   "number": 3,
-   "title": "Ngữ pháp N3 · mục 21–30",
-   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
-   "vocabulary": [],
-   "kanji": [],
-   "grammar": [
+     "sourceId": "vnjp-np-020",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 20,
+      "pdfCards": []
+     }
+    },
     {
      "id": "n3g-g021",
      "pattern": "〜について／〜につき",
@@ -2761,8 +3449,28 @@
       "n3g-g021-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-021"
-    },
+     "sourceId": "vnjp-np-021",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 21,
+      "pdfCards": [
+       {
+        "card": "07.46",
+        "category": 1
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l04",
+   "number": 4,
+   "title": "Ngữ pháp N3 · mục 22–28",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g022",
      "pattern": "〜に関し（て）",
@@ -2775,7 +3483,17 @@
       "n3g-g022-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-022"
+     "sourceId": "vnjp-np-022",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 22,
+      "pdfCards": [
+       {
+        "card": "07.51",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g023",
@@ -2789,7 +3507,21 @@
       "n3g-g023-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-023"
+     "sourceId": "vnjp-np-023",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 23,
+      "pdfCards": [
+       {
+        "card": "05.24",
+        "category": 1
+       },
+       {
+        "card": "07.60",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g024",
@@ -2803,7 +3535,12 @@
       "n3g-g024-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-024"
+     "sourceId": "vnjp-np-024",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 24,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g025",
@@ -2817,7 +3554,21 @@
       "n3g-g025-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-025"
+     "sourceId": "vnjp-np-025",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 25,
+      "pdfCards": [
+       {
+        "card": "05.25",
+        "category": 2
+       },
+       {
+        "card": "07.52",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g026",
@@ -2831,7 +3582,17 @@
       "n3g-g026-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-026"
+     "sourceId": "vnjp-np-026",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 26,
+      "pdfCards": [
+       {
+        "card": "07.25",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g027",
@@ -2845,7 +3606,12 @@
       "n3g-g027-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-027"
+     "sourceId": "vnjp-np-027",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 27,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g028",
@@ -2859,8 +3625,36 @@
       "n3g-g028-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-028"
-    },
+     "sourceId": "vnjp-np-028",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 28,
+      "pdfCards": [
+       {
+        "card": "05.04",
+        "category": 2
+       },
+       {
+        "card": "07.62",
+        "category": 2
+       },
+       {
+        "card": "07.64",
+        "category": 2
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l05",
+   "number": 5,
+   "title": "Ngữ pháp N3 · mục 29–35",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g029",
      "pattern": "〜くらい／〜ぐらい",
@@ -2873,7 +3667,17 @@
       "n3g-g029-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-029"
+     "sourceId": "vnjp-np-029",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 29,
+      "pdfCards": [
+       {
+        "card": "05.26",
+        "category": 2
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g030",
@@ -2887,18 +3691,18 @@
       "n3g-g030-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-030"
-    }
-   ]
-  },
-  {
-   "id": "n3g-l04",
-   "number": 4,
-   "title": "Ngữ pháp N3 · mục 31–40",
-   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
-   "vocabulary": [],
-   "kanji": [],
-   "grammar": [
+     "sourceId": "vnjp-np-030",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 30,
+      "pdfCards": [
+       {
+        "card": "03.07",
+        "category": 1
+       }
+      ]
+     }
+    },
     {
      "id": "n3g-g031",
      "pattern": "〜うちに",
@@ -2911,7 +3715,17 @@
       "n3g-g031-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-031"
+     "sourceId": "vnjp-np-031",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 31,
+      "pdfCards": [
+       {
+        "card": "07.15",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g032",
@@ -2925,7 +3739,17 @@
       "n3g-g032-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-032"
+     "sourceId": "vnjp-np-032",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 32,
+      "pdfCards": [
+       {
+        "card": "07.56",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g033",
@@ -2939,7 +3763,12 @@
       "n3g-g033-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-033"
+     "sourceId": "vnjp-np-033",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 33,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g034",
@@ -2953,7 +3782,17 @@
       "n3g-g034-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-034"
+     "sourceId": "vnjp-np-034",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 34,
+      "pdfCards": [
+       {
+        "card": "05.25",
+        "category": 2
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g035",
@@ -2967,8 +3806,28 @@
       "n3g-g035-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-035"
-    },
+     "sourceId": "vnjp-np-035",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 35,
+      "pdfCards": [
+       {
+        "card": "07.54",
+        "category": 1
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l06",
+   "number": 6,
+   "title": "Ngữ pháp N3 · mục 36–42",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g036",
      "pattern": "〜にわたって／〜にわたり",
@@ -2981,7 +3840,17 @@
       "n3g-g036-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-036"
+     "sourceId": "vnjp-np-036",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 36,
+      "pdfCards": [
+       {
+        "card": "07.55",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g037",
@@ -2995,7 +3864,17 @@
       "n3g-g037-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-037"
+     "sourceId": "vnjp-np-037",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 37,
+      "pdfCards": [
+       {
+        "card": "07.53",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g038",
@@ -3009,7 +3888,29 @@
       "n3g-g038-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-038"
+     "sourceId": "vnjp-np-038",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 38,
+      "pdfCards": [
+       {
+        "card": "01.06",
+        "category": 2
+       },
+       {
+        "card": "07.47",
+        "category": 2
+       },
+       {
+        "card": "07.48",
+        "category": 2
+       },
+       {
+        "card": "07.49",
+        "category": 2
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g039",
@@ -3023,7 +3924,17 @@
       "n3g-g039-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-039"
+     "sourceId": "vnjp-np-039",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 39,
+      "pdfCards": [
+       {
+        "card": "05.11",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g040",
@@ -3037,18 +3948,18 @@
       "n3g-g040-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-040"
-    }
-   ]
-  },
-  {
-   "id": "n3g-l05",
-   "number": 5,
-   "title": "Ngữ pháp N3 · mục 41–50",
-   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
-   "vocabulary": [],
-   "kanji": [],
-   "grammar": [
+     "sourceId": "vnjp-np-040",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 40,
+      "pdfCards": [
+       {
+        "card": "07.61",
+        "category": 1
+       }
+      ]
+     }
+    },
     {
      "id": "n3g-g041",
      "pattern": "〜たとたん（に）",
@@ -3061,7 +3972,17 @@
       "n3g-g041-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-041"
+     "sourceId": "vnjp-np-041",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 41,
+      "pdfCards": [
+       {
+        "card": "07.27",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g042",
@@ -3075,8 +3996,23 @@
       "n3g-g042-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-042"
-    },
+     "sourceId": "vnjp-np-042",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 42,
+      "pdfCards": []
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l07",
+   "number": 7,
+   "title": "Ngữ pháp N3 · mục 43–49",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g043",
      "pattern": "〜にしたがって／〜にしたがい",
@@ -3089,7 +4025,12 @@
       "n3g-g043-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-043"
+     "sourceId": "vnjp-np-043",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 43,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g044",
@@ -3103,7 +4044,17 @@
       "n3g-g044-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-044"
+     "sourceId": "vnjp-np-044",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 44,
+      "pdfCards": [
+       {
+        "card": "07.16",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g045",
@@ -3117,7 +4068,17 @@
       "n3g-g045-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-045"
+     "sourceId": "vnjp-np-045",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 45,
+      "pdfCards": [
+       {
+        "card": "03.03",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g046",
@@ -3131,7 +4092,17 @@
       "n3g-g046-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-046"
+     "sourceId": "vnjp-np-046",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 46,
+      "pdfCards": [
+       {
+        "card": "07.29",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g047",
@@ -3145,7 +4116,12 @@
       "n3g-g047-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-047"
+     "sourceId": "vnjp-np-047",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 47,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g048",
@@ -3159,7 +4135,17 @@
       "n3g-g048-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-048"
+     "sourceId": "vnjp-np-048",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 48,
+      "pdfCards": [
+       {
+        "card": "06.03",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g049",
@@ -3173,8 +4159,28 @@
       "n3g-g049-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-049"
-    },
+     "sourceId": "vnjp-np-049",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 49,
+      "pdfCards": [
+       {
+        "card": "03.12",
+        "category": 1
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l08",
+   "number": 8,
+   "title": "Ngữ pháp N3 · mục 50–56",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g050",
      "pattern": "〜ついでに",
@@ -3187,18 +4193,18 @@
       "n3g-g050-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-050"
-    }
-   ]
-  },
-  {
-   "id": "n3g-l06",
-   "number": 6,
-   "title": "Ngữ pháp N3 · mục 51–60",
-   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
-   "vocabulary": [],
-   "kanji": [],
-   "grammar": [
+     "sourceId": "vnjp-np-050",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 50,
+      "pdfCards": [
+       {
+        "card": "03.15",
+        "category": 1
+       }
+      ]
+     }
+    },
     {
      "id": "n3g-g051",
      "pattern": "〜ということだ",
@@ -3211,7 +4217,17 @@
       "n3g-g051-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-051"
+     "sourceId": "vnjp-np-051",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 51,
+      "pdfCards": [
+       {
+        "card": "05.03",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g052",
@@ -3225,7 +4241,12 @@
       "n3g-g052-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-052"
+     "sourceId": "vnjp-np-052",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 52,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g053",
@@ -3239,7 +4260,12 @@
       "n3g-g053-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-053"
+     "sourceId": "vnjp-np-053",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 53,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g054",
@@ -3253,7 +4279,12 @@
       "n3g-g054-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-054"
+     "sourceId": "vnjp-np-054",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 54,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g055",
@@ -3267,7 +4298,12 @@
       "n3g-g055-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-055"
+     "sourceId": "vnjp-np-055",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 55,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g056",
@@ -3281,8 +4317,28 @@
       "n3g-g056-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-056"
-    },
+     "sourceId": "vnjp-np-056",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 56,
+      "pdfCards": [
+       {
+        "card": "01.04",
+        "category": 1
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l09",
+   "number": 9,
+   "title": "Ngữ pháp N3 · mục 57–63",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g057",
      "pattern": "〜ものか",
@@ -3295,7 +4351,17 @@
       "n3g-g057-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-057"
+     "sourceId": "vnjp-np-057",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 57,
+      "pdfCards": [
+       {
+        "card": "06.19",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g058",
@@ -3309,7 +4375,12 @@
       "n3g-g058-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-058"
+     "sourceId": "vnjp-np-058",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 58,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g059",
@@ -3323,7 +4394,25 @@
       "n3g-g059-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-059"
+     "sourceId": "vnjp-np-059",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 59,
+      "pdfCards": [
+       {
+        "card": "07.17",
+        "category": 2
+       },
+       {
+        "card": "07.21",
+        "category": 1
+       },
+       {
+        "card": "07.22",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g060",
@@ -3337,18 +4426,18 @@
       "n3g-g060-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-060"
-    }
-   ]
-  },
-  {
-   "id": "n3g-l07",
-   "number": 7,
-   "title": "Ngữ pháp N3 · mục 61–70",
-   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
-   "vocabulary": [],
-   "kanji": [],
-   "grammar": [
+     "sourceId": "vnjp-np-060",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 60,
+      "pdfCards": [
+       {
+        "card": "03.04",
+        "category": 1
+       }
+      ]
+     }
+    },
     {
      "id": "n3g-g061",
      "pattern": "〜ほど",
@@ -3361,7 +4450,17 @@
       "n3g-g061-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-061"
+     "sourceId": "vnjp-np-061",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 61,
+      "pdfCards": [
+       {
+        "card": "05.26",
+        "category": 2
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g062",
@@ -3375,7 +4474,12 @@
       "n3g-g062-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-062"
+     "sourceId": "vnjp-np-062",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 62,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g063",
@@ -3389,8 +4493,32 @@
       "n3g-g063-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-063"
-    },
+     "sourceId": "vnjp-np-063",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 63,
+      "pdfCards": [
+       {
+        "card": "05.27",
+        "category": 2
+       },
+       {
+        "card": "05.29",
+        "category": 1
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l10",
+   "number": 10,
+   "title": "Ngữ pháp N3 · mục 64–70",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g064",
      "pattern": "〜など／〜なんか／〜なんて",
@@ -3403,7 +4531,17 @@
       "n3g-g064-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-064"
+     "sourceId": "vnjp-np-064",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 64,
+      "pdfCards": [
+       {
+        "card": "03.14",
+        "category": 2
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g065",
@@ -3417,7 +4555,12 @@
       "n3g-g065-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-065"
+     "sourceId": "vnjp-np-065",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 65,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g066",
@@ -3431,7 +4574,12 @@
       "n3g-g066-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-066"
+     "sourceId": "vnjp-np-066",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 66,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g067",
@@ -3445,7 +4593,17 @@
       "n3g-g067-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-067"
+     "sourceId": "vnjp-np-067",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 67,
+      "pdfCards": [
+       {
+        "card": "07.04",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g068",
@@ -3459,7 +4617,17 @@
       "n3g-g068-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-068"
+     "sourceId": "vnjp-np-068",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 68,
+      "pdfCards": [
+       {
+        "card": "07.40",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g069",
@@ -3473,7 +4641,17 @@
       "n3g-g069-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-069"
+     "sourceId": "vnjp-np-069",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 69,
+      "pdfCards": [
+       {
+        "card": "07.38",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g070",
@@ -3487,15 +4665,25 @@
       "n3g-g070-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-070"
+     "sourceId": "vnjp-np-070",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 70,
+      "pdfCards": [
+       {
+        "card": "07.35",
+        "category": 1
+       }
+      ]
+     }
     }
    ]
   },
   {
-   "id": "n3g-l08",
-   "number": 8,
-   "title": "Ngữ pháp N3 · mục 71–80",
-   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
+   "id": "n3g-l11",
+   "number": 11,
+   "title": "Ngữ pháp N3 · mục 71–77",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
    "vocabulary": [],
    "kanji": [],
    "grammar": [
@@ -3511,7 +4699,17 @@
       "n3g-g071-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-071"
+     "sourceId": "vnjp-np-071",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 71,
+      "pdfCards": [
+       {
+        "card": "07.36",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g072",
@@ -3525,7 +4723,17 @@
       "n3g-g072-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-072"
+     "sourceId": "vnjp-np-072",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 72,
+      "pdfCards": [
+       {
+        "card": "07.57",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g073",
@@ -3539,7 +4747,17 @@
       "n3g-g073-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-073"
+     "sourceId": "vnjp-np-073",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 73,
+      "pdfCards": [
+       {
+        "card": "05.20",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g074",
@@ -3553,7 +4771,12 @@
       "n3g-g074-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-074"
+     "sourceId": "vnjp-np-074",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 74,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g075",
@@ -3567,7 +4790,12 @@
       "n3g-g075-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-075"
+     "sourceId": "vnjp-np-075",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 75,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g076",
@@ -3581,7 +4809,12 @@
       "n3g-g076-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-076"
+     "sourceId": "vnjp-np-076",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 76,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g077",
@@ -3595,8 +4828,28 @@
       "n3g-g077-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-077"
-    },
+     "sourceId": "vnjp-np-077",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 77,
+      "pdfCards": [
+       {
+        "card": "07.70",
+        "category": 1
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l12",
+   "number": 12,
+   "title": "Ngữ pháp N3 · mục 78–84",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g078",
      "pattern": "〜ように",
@@ -3609,7 +4862,17 @@
       "n3g-g078-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-078"
+     "sourceId": "vnjp-np-078",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 78,
+      "pdfCards": [
+       {
+        "card": "02.02",
+        "category": 2
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g079",
@@ -3623,7 +4886,12 @@
       "n3g-g079-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-079"
+     "sourceId": "vnjp-np-079",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 79,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g080",
@@ -3637,18 +4905,18 @@
       "n3g-g080-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-080"
-    }
-   ]
-  },
-  {
-   "id": "n3g-l09",
-   "number": 9,
-   "title": "Ngữ pháp N3 · mục 81–90",
-   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
-   "vocabulary": [],
-   "kanji": [],
-   "grammar": [
+     "sourceId": "vnjp-np-080",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 80,
+      "pdfCards": [
+       {
+        "card": "05.10",
+        "category": 1
+       }
+      ]
+     }
+    },
     {
      "id": "n3g-g081",
      "pattern": "〜わけだ",
@@ -3661,7 +4929,17 @@
       "n3g-g081-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-081"
+     "sourceId": "vnjp-np-081",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 81,
+      "pdfCards": [
+       {
+        "card": "05.12",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g082",
@@ -3675,7 +4953,17 @@
       "n3g-g082-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-082"
+     "sourceId": "vnjp-np-082",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 82,
+      "pdfCards": [
+       {
+        "card": "05.14",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g083",
@@ -3689,7 +4977,17 @@
       "n3g-g083-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-083"
+     "sourceId": "vnjp-np-083",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 83,
+      "pdfCards": [
+       {
+        "card": "05.16",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g084",
@@ -3703,8 +5001,23 @@
       "n3g-g084-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-084"
-    },
+     "sourceId": "vnjp-np-084",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 84,
+      "pdfCards": []
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l13",
+   "number": 13,
+   "title": "Ngữ pháp N3 · mục 85–91",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g085",
      "pattern": "〜ないわけにはいかない",
@@ -3717,7 +5030,12 @@
       "n3g-g085-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-085"
+     "sourceId": "vnjp-np-085",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 85,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g086",
@@ -3731,7 +5049,17 @@
       "n3g-g086-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-086"
+     "sourceId": "vnjp-np-086",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 86,
+      "pdfCards": [
+       {
+        "card": "03.16",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g087",
@@ -3745,7 +5073,12 @@
       "n3g-g087-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-087"
+     "sourceId": "vnjp-np-087",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 87,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g088",
@@ -3759,7 +5092,17 @@
       "n3g-g088-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-088"
+     "sourceId": "vnjp-np-088",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 88,
+      "pdfCards": [
+       {
+        "card": "01.05",
+        "category": 2
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g089",
@@ -3773,7 +5116,21 @@
       "n3g-g089-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-089"
+     "sourceId": "vnjp-np-089",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 89,
+      "pdfCards": [
+       {
+        "card": "03.02",
+        "category": 2
+       },
+       {
+        "card": "07.65",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g090",
@@ -3787,18 +5144,18 @@
       "n3g-g090-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-090"
-    }
-   ]
-  },
-  {
-   "id": "n3g-l10",
-   "number": 10,
-   "title": "Ngữ pháp N3 · mục 91–100",
-   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
-   "vocabulary": [],
-   "kanji": [],
-   "grammar": [
+     "sourceId": "vnjp-np-090",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 90,
+      "pdfCards": [
+       {
+        "card": "07.58",
+        "category": 1
+       }
+      ]
+     }
+    },
     {
      "id": "n3g-g091",
      "pattern": "〜からといって",
@@ -3811,8 +5168,28 @@
       "n3g-g091-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-091"
-    },
+     "sourceId": "vnjp-np-091",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 91,
+      "pdfCards": [
+       {
+        "card": "03.05",
+        "category": 1
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l14",
+   "number": 14,
+   "title": "Ngữ pháp N3 · mục 92–98",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g092",
      "pattern": "〜に反し（て）",
@@ -3825,7 +5202,12 @@
       "n3g-g092-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-092"
+     "sourceId": "vnjp-np-092",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 92,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g093",
@@ -3839,7 +5221,12 @@
       "n3g-g093-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-093"
+     "sourceId": "vnjp-np-093",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 93,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g094",
@@ -3853,7 +5240,12 @@
       "n3g-g094-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-094"
+     "sourceId": "vnjp-np-094",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 94,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g095",
@@ -3867,7 +5259,17 @@
       "n3g-g095-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-095"
+     "sourceId": "vnjp-np-095",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 95,
+      "pdfCards": [
+       {
+        "card": "03.17",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g096",
@@ -3881,7 +5283,12 @@
       "n3g-g096-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-096"
+     "sourceId": "vnjp-np-096",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 96,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g097",
@@ -3895,7 +5302,12 @@
       "n3g-g097-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-097"
+     "sourceId": "vnjp-np-097",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 97,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g098",
@@ -3909,8 +5321,23 @@
       "n3g-g098-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-098"
-    },
+     "sourceId": "vnjp-np-098",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 98,
+      "pdfCards": []
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l15",
+   "number": 15,
+   "title": "Ngữ pháp N3 · mục 99–105",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g099",
      "pattern": "〜とか",
@@ -3923,7 +5350,12 @@
       "n3g-g099-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-099"
+     "sourceId": "vnjp-np-099",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 99,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g100",
@@ -3937,18 +5369,18 @@
       "n3g-g100-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-100"
-    }
-   ]
-  },
-  {
-   "id": "n3g-l11",
-   "number": 11,
-   "title": "Ngữ pháp N3 · mục 101–110",
-   "description": "Nhóm 10 mẫu theo thứ tự danh mục nguồn (nguồn không chia bài).",
-   "vocabulary": [],
-   "kanji": [],
-   "grammar": [
+     "sourceId": "vnjp-np-100",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 100,
+      "pdfCards": [
+       {
+        "card": "07.75",
+        "category": 1
+       }
+      ]
+     }
+    },
     {
      "id": "n3g-g101",
      "pattern": "〜ばかりでなく",
@@ -3961,7 +5393,17 @@
       "n3g-g101-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-101"
+     "sourceId": "vnjp-np-101",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 101,
+      "pdfCards": [
+       {
+        "card": "03.11",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g102",
@@ -3975,7 +5417,17 @@
       "n3g-g102-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-102"
+     "sourceId": "vnjp-np-102",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 102,
+      "pdfCards": [
+       {
+        "card": "07.07",
+        "category": 1
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g103",
@@ -3989,7 +5441,12 @@
       "n3g-g103-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-103"
+     "sourceId": "vnjp-np-103",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 103,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g104",
@@ -4003,7 +5460,12 @@
       "n3g-g104-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-104"
+     "sourceId": "vnjp-np-104",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 104,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g105",
@@ -4017,8 +5479,28 @@
       "n3g-g105-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-105"
-    },
+     "sourceId": "vnjp-np-105",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 105,
+      "pdfCards": [
+       {
+        "card": "03.18",
+        "category": 1
+       }
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l16",
+   "number": 16,
+   "title": "Ngữ pháp N3 · mục 106–112",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
     {
      "id": "n3g-g106",
      "pattern": "〜てみせる",
@@ -4031,7 +5513,12 @@
       "n3g-g106-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-106"
+     "sourceId": "vnjp-np-106",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 106,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g107",
@@ -4045,7 +5532,12 @@
       "n3g-g107-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-107"
+     "sourceId": "vnjp-np-107",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 107,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g108",
@@ -4059,7 +5551,17 @@
       "n3g-g108-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-108"
+     "sourceId": "vnjp-np-108",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 108,
+      "pdfCards": [
+       {
+        "card": "06.02",
+        "category": 2
+       }
+      ]
+     }
     },
     {
      "id": "n3g-g109",
@@ -4073,7 +5575,12 @@
       "n3g-g109-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-109"
+     "sourceId": "vnjp-np-109",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 109,
+      "pdfCards": []
+     }
     },
     {
      "id": "n3g-g110",
@@ -4087,7 +5594,1126 @@
       "n3g-g110-ex2"
      ],
      "exercises": [],
-     "sourceId": "vnjp-np-110"
+     "sourceId": "vnjp-np-110",
+     "origin": {
+      "list": "vnjpclub-mimikara-n3",
+      "order": 110,
+      "pdfCards": []
+     }
+    },
+    {
+     "id": "n3g-g111",
+     "pattern": "〜ため（に）",
+     "structure": "V普通形 + ため（に）／Nの + ため（に）",
+     "meaningVi": "do…, vì… (nêu nguyên nhân một cách khách quan)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-01-01",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "01.01",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g112",
+     "pattern": "〜には",
+     "structure": "Vる + には",
+     "meaningVi": "muốn… thì phải…, để… thì cần… (mục đích + điều kiện cần)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-02-01",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "02.01",
+      "category": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l17",
+   "number": 17,
+   "title": "Ngữ pháp N3 · mục 113–119",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g113",
+     "pattern": "〜なら",
+     "structure": "V普通形／Aい／Aな／N + なら",
+     "meaningVi": "nếu là…, nếu… thì",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-03-01",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "03.01",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g114",
+     "pattern": "〜といっても",
+     "structure": "普通形 + といっても",
+     "meaningVi": "dù nói là… nhưng (thực tế không bằng)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-03-06",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "03.06",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g115",
+     "pattern": "〜といえば／〜というと／〜といったら",
+     "structure": "V普通形／A／N + といえば／というと／といったら",
+     "meaningVi": "nhắc đến… thì…, nói về… thì…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-03-08",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "03.08",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g116",
+     "pattern": "〜とか〜とか",
+     "structure": "N／V普通形／A普通形 + とか",
+     "meaningVi": "nào là… nào là… (liệt kê ví dụ)",
+     "usage": null,
+     "cautionNote": "Khác với 〜とか (nghe nói là…) trong danh sách.",
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-03-09",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "03.09",
+      "category": 3
+     }
+    },
+    {
+     "id": "n3g-g117",
+     "pattern": "〜うえ（に）",
+     "structure": "Nの／Aな／Aい／V + うえ（に）",
+     "meaningVi": "hơn nữa, không những… mà còn…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-03-10",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "03.10",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g118",
+     "pattern": "〜そうだ（伝聞）",
+     "structure": "V普通形／Aい／Aな／N + そうだ",
+     "meaningVi": "nghe nói là…, nghe đồn rằng…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-05-01",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "05.01",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g119",
+     "pattern": "〜そうだ（様態）",
+     "structure": "Vます + そうだ／Aい（bỏ い）+ そうだ／Aな + そうだ",
+     "meaningVi": "trông có vẻ…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-05-05",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "05.05",
+      "category": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l18",
+   "number": 18,
+   "title": "Ngữ pháp N3 · mục 120–126",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g120",
+     "pattern": "〜そうにない",
+     "structure": "Vます + そうにない",
+     "meaningVi": "có vẻ không…, khó mà…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-05-06",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "05.06",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g121",
+     "pattern": "〜ようだ",
+     "structure": "V普通形／Aい + ようだ；Aな + な + ようだ；N + の + ようだ",
+     "meaningVi": "có vẻ như…, hình như… (suy đoán)",
+     "usage": null,
+     "cautionNote": "Khác với 〜ような／〜ように (giống như…) trong danh sách.",
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-05-07",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "05.07",
+      "category": 3
+     }
+    },
+    {
+     "id": "n3g-g122",
+     "pattern": "〜かのようだ／〜かのような／〜かのように",
+     "structure": "普通形／Aな／Nである + かのようだ",
+     "meaningVi": "cứ như thể…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-05-09",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "05.09",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g123",
+     "pattern": "〜はずがない",
+     "structure": "V普通形／Aい + はずがない；Aな + な／N + の + はずがない",
+     "meaningVi": "không thể nào…, chắc chắn không…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-05-13",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "05.13",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g124",
+     "pattern": "〜とは限らない",
+     "structure": "V普通形／Aい／Aな／N + とは限らない",
+     "meaningVi": "không hẳn là…, không nhất thiết là…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-05-15",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "05.15",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g125",
+     "pattern": "〜に過ぎない",
+     "structure": "V普通形／Aい + に過ぎない；Aな／N（である）+ に過ぎない",
+     "meaningVi": "chỉ là…, chỉ ở mức…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-05-17",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "05.17",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g126",
+     "pattern": "〜かと思った",
+     "structure": "V普通形／A／N + かと思った",
+     "meaningVi": "tôi cứ tưởng là… (hóa ra không phải)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-05-18",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "05.18",
+      "category": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l19",
+   "number": 19,
+   "title": "Ngữ pháp N3 · mục 127–133",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g127",
+     "pattern": "〜たりして",
+     "structure": "Vた + りして",
+     "meaningVi": "biết đâu lại…, có khi… cũng nên",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-05-19",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "05.19",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g128",
+     "pattern": "〜ほどではない",
+     "structure": "Vる／N + ほどではない",
+     "meaningVi": "không đến mức…, chưa tới mức…",
+     "usage": null,
+     "cautionNote": "Khác với 〜ほど…ない (không… bằng…) trong danh sách.",
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-05-28",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "05.28",
+      "category": 3
+     }
+    },
+    {
+     "id": "n3g-g129",
+     "pattern": "〜というより",
+     "structure": "V普通形／A／N + というより",
+     "meaningVi": "… thì đúng hơn là…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-05-30",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "05.30",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g130",
+     "pattern": "〜にする",
+     "structure": "N + にする",
+     "meaningVi": "chọn…, quyết định…; làm cho…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-01",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.01",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g131",
+     "pattern": "〜てもいい",
+     "structure": "Vて + もいい",
+     "meaningVi": "… cũng được (cho phép)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-07",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.07",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g132",
+     "pattern": "〜てもかまわない",
+     "structure": "Vて + もかまわない",
+     "meaningVi": "… cũng không sao",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-08",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.08",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g133",
+     "pattern": "〜なくてもいい",
+     "structure": "Vない → なくてもいい",
+     "meaningVi": "không cần…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-09",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.09",
+      "category": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l20",
+   "number": 20,
+   "title": "Ngữ pháp N3 · mục 134–140",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g134",
+     "pattern": "〜てはいけない",
+     "structure": "Vて + はいけない",
+     "meaningVi": "không được… (quy tắc)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-10",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.10",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g135",
+     "pattern": "〜てはだめ",
+     "structure": "Vて + はだめ",
+     "meaningVi": "không được… (văn nói)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-11",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.11",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g136",
+     "pattern": "〜てはならない",
+     "structure": "Vて + はならない",
+     "meaningVi": "tuyệt đối không được… (trang trọng)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-12",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.12",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g137",
+     "pattern": "〜なければならない",
+     "structure": "Vない → なければならない",
+     "meaningVi": "phải… (nghĩa vụ)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-13",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.13",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g138",
+     "pattern": "〜なければいけない",
+     "structure": "Vない → なければいけない",
+     "meaningVi": "phải… (hội thoại)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-14",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.14",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g139",
+     "pattern": "〜べきだ",
+     "structure": "V辞書形 + べきだ",
+     "meaningVi": "nên…, phải…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-15",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.15",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g140",
+     "pattern": "〜べきではない",
+     "structure": "V辞書形 + べきではない",
+     "meaningVi": "không nên…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-16",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.16",
+      "category": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l21",
+   "number": 21,
+   "title": "Ngữ pháp N3 · mục 141–147",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g141",
+     "pattern": "〜てちょうだい",
+     "structure": "Vて + ちょうだい",
+     "meaningVi": "hãy… (nhờ vả nhẹ nhàng, thân mật)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-17",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.17",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g142",
+     "pattern": "〜てごらん",
+     "structure": "Vて + ごらん",
+     "meaningVi": "… thử xem",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-18",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.18",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g143",
+     "pattern": "〜ずにはいられない",
+     "structure": "Vない → ずにはいられない",
+     "meaningVi": "không thể không…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-06-20",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "06.20",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g144",
+     "pattern": "〜始める",
+     "structure": "Vます + 始める",
+     "meaningVi": "bắt đầu…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-01",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.01",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g145",
+     "pattern": "〜終わる",
+     "structure": "Vます + 終わる",
+     "meaningVi": "… xong",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-02",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.02",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g146",
+     "pattern": "〜続ける",
+     "structure": "Vます + 続ける",
+     "meaningVi": "tiếp tục…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-03",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.03",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g147",
+     "pattern": "〜たて",
+     "structure": "Vます + たて",
+     "meaningVi": "vừa mới… xong",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-05",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.05",
+      "category": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l22",
+   "number": 22,
+   "title": "Ngữ pháp N3 · mục 148–154",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g148",
+     "pattern": "〜上げる",
+     "structure": "Vます + 上げる",
+     "meaningVi": "… xong (hoàn thành bằng nỗ lực)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-06",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.06",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g149",
+     "pattern": "〜まま",
+     "structure": "Vた／Vない／Nの／Aい／Aな + まま",
+     "meaningVi": "cứ để nguyên…, giữ nguyên…; theo đúng như…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-08",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.08",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g150",
+     "pattern": "〜っぱなし",
+     "structure": "Vます + っぱなし",
+     "meaningVi": "cứ để nguyên…; … suốt",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-09",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.09",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g151",
+     "pattern": "〜ていく",
+     "structure": "Vて + いく",
+     "meaningVi": "… dần (từ nay về sau); … rồi đi",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-10",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.10",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g152",
+     "pattern": "〜間（は）",
+     "structure": "Nの／Aい／Aな／V普通形 + 間（は）",
+     "meaningVi": "suốt trong khi…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-12",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.12",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g153",
+     "pattern": "〜間に",
+     "structure": "Nの／Aい／Aな／V普通形 + 間に",
+     "meaningVi": "trong lúc… (thì một việc xảy ra)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-13",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.13",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g154",
+     "pattern": "〜るところだ",
+     "structure": "Vる + ところだ",
+     "meaningVi": "sắp…",
+     "usage": null,
+     "cautionNote": "Khác với 〜たところ (thử… thì…) trong danh sách.",
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-18",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.18",
+      "category": 3
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l23",
+   "number": 23,
+   "title": "Ngữ pháp N3 · mục 155–161",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g155",
+     "pattern": "〜ているところだ",
+     "structure": "Vている + ところだ",
+     "meaningVi": "đang…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-19",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.19",
+      "category": 3
+     }
+    },
+    {
+     "id": "n3g-g156",
+     "pattern": "〜たところだ",
+     "structure": "Vた + ところだ",
+     "meaningVi": "vừa mới… xong",
+     "usage": null,
+     "cautionNote": "Khác với 〜たところ (thử… thì…) trong danh sách.",
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-20",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.20",
+      "category": 3
+     }
+    },
+    {
+     "id": "n3g-g157",
+     "pattern": "〜おきに",
+     "structure": "Số lượng + おきに",
+     "meaningVi": "cứ cách…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-23",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.23",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g158",
+     "pattern": "〜ごとに",
+     "structure": "N／Vる + ごとに",
+     "meaningVi": "cứ mỗi…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-24",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.24",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g159",
+     "pattern": "〜抜き",
+     "structure": "N + 抜き",
+     "meaningVi": "không có…, bỏ…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-30",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.30",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g160",
+     "pattern": "〜ばかり（〜てばかりいる）",
+     "structure": "N + ばかり／Vて + ばかりいる",
+     "meaningVi": "chỉ toàn…, cứ… suốt",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-32",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.32",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g161",
+     "pattern": "〜ばかりだ",
+     "structure": "Vる + ばかりだ",
+     "meaningVi": "ngày càng… (thường theo chiều xấu)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-33",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.33",
+      "category": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l24",
+   "number": 24,
+   "title": "Ngữ pháp N3 · mục 162–168",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g162",
+     "pattern": "〜がる",
+     "structure": "Vたい → たがる／Aい（bỏ い）+ がる／Aな + がる",
+     "meaningVi": "(người khác) có vẻ…, tỏ ra…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-39",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.39",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g163",
+     "pattern": "〜かねる",
+     "structure": "Vます + かねる",
+     "meaningVi": "khó có thể…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-42",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.42",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g164",
+     "pattern": "〜かねない",
+     "structure": "Vます + かねない",
+     "meaningVi": "có thể… (lo ngại điều xấu)",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-43",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.43",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g165",
+     "pattern": "〜という〜",
+     "structure": "N1 + という + N2",
+     "meaningVi": "N2 tên là N1, cái gọi là N1",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-63",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.63",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g166",
+     "pattern": "〜まで",
+     "structure": "N／V／trợ từ + まで",
+     "meaningVi": "đến cả…, thậm chí…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-66",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.66",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g167",
+     "pattern": "〜だって",
+     "structure": "N／từ để hỏi + だって；Vたって",
+     "meaningVi": "ngay cả…, dù có…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-68",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.68",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g168",
+     "pattern": "〜てしかたがない／〜てしょうがない",
+     "structure": "Vて／Vたくて／Aくて／Aなで + しかたがない（しょうがない）",
+     "meaningVi": "… vô cùng, … không chịu nổi",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-69",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.69",
+      "category": 4
+     }
+    }
+   ]
+  },
+  {
+   "id": "n3g-l25",
+   "number": 25,
+   "title": "Ngữ pháp N3 · mục 169–174",
+   "description": "7 mẫu mỗi bài theo thứ tự: 110 mẫu theo danh mục Mimikara N3, sau đó 64 mẫu bổ sung từ N3.pdf.",
+   "vocabulary": [],
+   "kanji": [],
+   "grammar": [
+    {
+     "id": "n3g-g169",
+     "pattern": "〜っこない",
+     "structure": "Vます + っこない",
+     "meaningVi": "không đời nào…, không thể nào…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-71",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.71",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g170",
+     "pattern": "〜ず（に）",
+     "structure": "Vない → ず（に）（する → せず）",
+     "meaningVi": "không… (mà)…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-72",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.72",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g171",
+     "pattern": "〜ふりをする",
+     "structure": "V普通形／Aい／Aな／Nの + ふりをする",
+     "meaningVi": "giả vờ…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-73",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.73",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g172",
+     "pattern": "〜たものだ",
+     "structure": "Vた + ものだ",
+     "meaningVi": "(hồi xưa) thường hay…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-74",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.74",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g173",
+     "pattern": "めったに〜ない",
+     "structure": "めったに + Vない",
+     "meaningVi": "hiếm khi…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-76",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.76",
+      "category": 4
+     }
+    },
+    {
+     "id": "n3g-g174",
+     "pattern": "〜ことがある",
+     "structure": "Vる／Vない + ことがある",
+     "meaningVi": "có lúc…, đôi khi…",
+     "usage": null,
+     "cautionNote": null,
+     "examples": [],
+     "exercises": [],
+     "sourceId": "n3pdf-g-07-77",
+     "origin": {
+      "list": "n3-pdf",
+      "card": "07.77",
+      "category": 4
+     }
     }
    ]
   }

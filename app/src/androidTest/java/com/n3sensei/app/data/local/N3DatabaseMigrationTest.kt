@@ -9,6 +9,9 @@ import com.n3sensei.app.data.local.entity.ItemMarkEntity
 import com.n3sensei.app.data.local.entity.ReviewRecordEntity
 import com.n3sensei.app.data.repository.OfflineContentRepository
 import com.n3sensei.app.data.repository.OfflineReviewSessionRepository
+import com.n3sensei.app.data.repository.OfflineUserContentRepository
+import com.n3sensei.app.domain.edit.EditableField
+import com.n3sensei.app.domain.edit.SaveResult
 import com.n3sensei.app.domain.model.ItemQuery
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningStatus
@@ -20,7 +23,9 @@ import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import java.time.Clock
 import java.time.Instant
+import java.time.ZoneOffset
 
 /**
  * Verifies the upgrade path from every exported schema version to the current one, using the
@@ -183,6 +188,60 @@ class N3DatabaseMigrationTest {
             sessions.start("s", planned = 4, at = Instant.ofEpochMilli(10))
             sessions.updateAnswered("s", 2, Instant.ofEpochMilli(20))
             assertEquals(2, sessions.observeRecent(5).first().single().answered)
+        } finally {
+            room.close()
+            instrumentation.targetContext.deleteDatabase(name)
+        }
+    }
+
+    @Test
+    fun contentProgressAndHistoryWrittenWithV4Schema_surviveAndLearnerEditsWork() = runTest {
+        val name = "migration-test-data-v4"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 4).apply {
+            execSQL("INSERT INTO content_sources VALUES ('s', 'Nguồn', NULL, 'license', NULL, 0)")
+            execSQL("INSERT INTO content_packs VALUES ('p', 'Pack', 1, 's', 0, 0)")
+            execSQL("INSERT INTO lessons VALUES ('l', 'p', 1, 'Bài 1', 'N3', NULL)")
+            execSQL(
+                "INSERT INTO vocabulary (id, lesson_id, source_id, expression, reading, furigana, meaning_vi, part_of_speech, " +
+                    "jlpt_level, sort_order, note, search_text) VALUES ('v', 'l', 's', '経験', 'けいけん', NULL, 'kinh nghiệm', NULL, 'N3', 1, NULL, '経験 けいけん kinh nghiem')",
+            )
+            execSQL(
+                "INSERT INTO kanji (id, lesson_id, source_id, character, on_readings, kun_readings, han_viet, meaning_vi, " +
+                    "stroke_count, sort_order, note, search_text) VALUES ('k', 'l', 's', '経', 'ケイ', '', 'KINH', 'trải qua', 11, 1, NULL, '経 ケイ kinh trai qua')",
+            )
+            execSQL(
+                "INSERT INTO learning_progress (item_type, item_id, state, step_index, interval_minutes, due_at, " +
+                    "last_reviewed_at, review_count, lapse_count, created_at, updated_at) " +
+                    "VALUES ('KANJI', 'k', 'REVIEW', 2, 1440, 9000, 800, 5, 1, 100, 800)",
+            )
+            execSQL("INSERT INTO item_marks VALUES ('VOCABULARY', 'v', 7)")
+            execSQL(
+                "INSERT INTO review_records (item_type, item_id, rating, reviewed_at, interval_before_minutes, " +
+                    "interval_after_minutes, due_at_after, request_id, was_new) VALUES ('KANJI', 'k', 'GOOD', 800, 60, 1440, 9000, 'r1', 0)",
+            )
+            execSQL("INSERT INTO review_sessions VALUES ('s1', 700, 800, 5, 5, 1)")
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 5, true, N3Migrations.MIGRATION_4_5).use { db ->
+            db.query("SELECT COUNT(*) FROM user_content_edits").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+        }
+        val room = Room.databaseBuilder(instrumentation.targetContext, N3Database::class.java, name)
+            .addMigrations(*N3Migrations.ALL)
+            .build()
+        try {
+            val before = room.progressDao().get(ItemType.KANJI, "k")!!
+            assertEquals(5, before.reviewCount)
+            assertEquals(1, room.progressDao().getHistory(ItemType.KANJI, "k", 10).size)
+            assertEquals(1, room.progressDao().observeMarkedCount().first())
+            assertEquals("kinh nghiệm", room.contentDao().getVocabulary("v")!!.meaningVi)
+
+            // The new table works on the migrated rows, without touching progress.
+            val edits = OfflineUserContentRepository(room.userContentDao(), Clock.fixed(Instant.ofEpochMilli(1_000), ZoneOffset.UTC))
+            assertEquals(SaveResult.Saved("k"), edits.save(ItemType.KANJI, "k", mapOf(EditableField.KANJI_MEANING to "kinh qua, trải qua")))
+            assertEquals("kinh qua, trải qua", room.contentDao().getKanji("k")!!.meaningVi)
+            assertEquals(before, room.progressDao().get(ItemType.KANJI, "k"))
+            assertTrue(edits.addWord(mapOf(EditableField.WORD_EXPRESSION to "経由", EditableField.WORD_READING to "けいゆ", EditableField.WORD_MEANING to "đi qua")) is SaveResult.Saved)
         } finally {
             room.close()
             instrumentation.targetContext.deleteDatabase(name)

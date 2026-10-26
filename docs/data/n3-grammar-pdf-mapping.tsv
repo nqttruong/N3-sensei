@@ -1,0 +1,157 @@
+pdf_card	pdf_pages	pdf_front	category	decision	grammar_ids	patterns	lessons
+01.01	256	〜ため(に)	4	mục riêng → mục mới	n3g-g111	〜ため（に）	n3g-l16
+01.02	256	〜おかげで	1	trùng hoàn toàn	n3g-g018	〜おかげ	n3g-l03
+01.03	256	〜せいで	1	trùng hoàn toàn	n3g-g019	〜せい	n3g-l03
+01.04	256,257	〜ものだから	1	trùng hoàn toàn	n3g-g056	〜ものだから／〜もので	n3g-l08
+01.05	257	〜からこそ	2	trùng mẫu, khác giải thích/biến thể	n3g-g088	〜こそ	n3g-l13
+01.06	257	〜によって	2	trùng mẫu, khác giải thích/biến thể	n3g-g038	〜による／〜により／〜によって／〜によっては	n3g-l06
+02.01	257	Vる + には	4	mục riêng → mục mới	n3g-g112	〜には	n3g-l16
+02.02	258	Vます∕Vません + ように	2	trùng mẫu, khác giải thích/biến thể	n3g-g078	〜ように	n3g-l12
+02.03	258	Vる + といい∕Vば + いい∕Vた + らい い	2	trùng mẫu, khác giải thích/biến thể	n3g-g010	〜ば／〜たら／〜と…たい／のに／よかった	n3g-l02
+02.04	258	Vば + よかった(の に)	2	trùng mẫu, khác giải thích/biến thể	n3g-g010	〜ば／〜たら／〜と…たい／のに／よかった	n3g-l02
+03.01	258	〜なら	4	mục riêng → mục mới	n3g-g113	〜なら	n3g-l17
+03.02	258,259	〜さえ〜ば	2	trùng mẫu, khác giải thích/biến thể	n3g-g089	〜さえ	n3g-l13
+03.03	259	〜てからでないと	1	trùng hoàn toàn	n3g-g045	〜てからでないと／〜てからでなければ…ない	n3g-l07
+03.04	259	〜ところだった	1	trùng hoàn toàn	n3g-g060	〜ところだった	n3g-l09
+03.05	259	〜からといって	1	trùng hoàn toàn	n3g-g091	〜からといって	n3g-l13
+03.06	259,260	〜といっても	4	mục riêng → mục mới	n3g-g114	〜といっても	n3g-l17
+03.07	260	〜くらいなら	1	trùng hoàn toàn	n3g-g030	〜くらいなら／〜ぐらいなら	n3g-l05
+03.08	260	〜といえば∕とい うと∕といったら	4	mục riêng → mục mới	n3g-g115	〜といえば／〜というと／〜といったら	n3g-l17
+03.09	260	〜とか〜とか	3	liên quan, khác cách dùng → mục mới	n3g-g116	〜とか〜とか	n3g-l17
+03.10	260	〜うえ(に)	4	mục riêng → mục mới	n3g-g117	〜うえ（に）	n3g-l17
+03.11	260,261	〜ばかりでなく	1	trùng hoàn toàn	n3g-g101	〜ばかりでなく	n3g-l15
+03.12	261	〜はもちろん	1	trùng hoàn toàn	n3g-g049	〜はもちろん／〜はもとより	n3g-l07
+03.13	261	"So sánh 3 mẫu ""không chỉ"" うえに ばかりでなく はもちろん"	compare	thẻ so sánh, không phải mẫu	03.10 03.11 03.12		
+03.14	261	〜なんか∕なんて	2	trùng mẫu, khác giải thích/biến thể	n3g-g064	〜など／〜なんか／〜なんて	n3g-l10
+03.15	261,262	〜ついでに	1	trùng hoàn toàn	n3g-g050	〜ついでに	n3g-l08
+03.16	262	〜かわりに	1	trùng hoàn toàn	n3g-g086	〜かわり（に）	n3g-l13
+03.17	262	〜反面	1	trùng hoàn toàn	n3g-g095	〜反面／〜半面	n3g-l14
+03.18	262	〜くせに	1	trùng hoàn toàn	n3g-g105	〜くせに	n3g-l15
+03.19	262,263	Dễ nhầm nhất: 反 面 vs くせに	compare	thẻ so sánh, không phải mẫu	03.17 03.18		
+05.01	263	〜そうだ	4	mục riêng → mục mới	n3g-g118	〜そうだ（伝聞）	n3g-l17
+05.02	263	〜らしい	1	trùng hoàn toàn	n3g-g006	〜らしい	n3g-l01
+05.03	263	〜ということだ	1	trùng hoàn toàn	n3g-g051	〜ということだ	n3g-l08
+05.04	263,264	「〜って」 (Văn nói) Thay thế は Định nghĩa: ~とい う (Mà gọi là...) Thay thế trích dẫn: ~と (Là...)	2	trùng mẫu, khác giải thích/biến thể	n3g-g028	〜って	n3g-l04
+05.05	264	〜そうだ	4	mục riêng → mục mới	n3g-g119	〜そうだ（様態）	n3g-l17
+05.06	264	〜そうにない	4	mục riêng → mục mới	n3g-g120	〜そうにない	n3g-l18
+05.07	264	〜ようだ	3	liên quan, khác cách dùng → mục mới	n3g-g121	〜ようだ	n3g-l18
+05.08	264	〜みたい(だ)	1	trùng hoàn toàn	n3g-g005	〜みたいだ	n3g-l01
+05.09	264,265	〜かのような∕ か のように / かのよう だ	4	mục riêng → mục mới	n3g-g122	〜かのようだ／〜かのような／〜かのように	n3g-l18
+05.10	265	〜はずだ	1	trùng hoàn toàn	n3g-g080	〜はずだ	n3g-l12
+05.11	265	〜に違いない	1	trùng hoàn toàn	n3g-g039	〜に違いない	n3g-l06
+05.12	265	〜わけだ	1	trùng hoàn toàn	n3g-g081	〜わけだ	n3g-l12
+05.13	265,266	〜はずがない	4	mục riêng → mục mới	n3g-g123	〜はずがない	n3g-l18
+05.14	266	〜わけがない	1	trùng hoàn toàn	n3g-g082	〜わけがない	n3g-l12
+05.15	266	〜とは限らない	4	mục riêng → mục mới	n3g-g124	〜とは限らない	n3g-l18
+05.16	266,267	〜わけではない	1	trùng hoàn toàn	n3g-g083	〜わけではない	n3g-l12
+05.17	267	〜に過ぎない	4	mục riêng → mục mới	n3g-g125	〜に過ぎない	n3g-l18
+05.18	267	〜かと思った	4	mục riêng → mục mới	n3g-g126	〜かと思った	n3g-l18
+05.19	267	〜たりして	4	mục riêng → mục mới	n3g-g127	〜たりして	n3g-l19
+05.20	267	〜っぽい	1	trùng hoàn toàn	n3g-g073	〜っぽい	n3g-l11
+05.21	267	Nらしい	2	trùng mẫu, khác giải thích/biến thể	n3g-g006	〜らしい	n3g-l01
+05.22	267	〜のように	2	trùng mẫu, khác giải thích/biến thể	n3g-g004	〜ような／〜ように	n3g-l01
+05.23	268	〜みたいに	2	trùng mẫu, khác giải thích/biến thể	n3g-g005	〜みたいだ	n3g-l01
+05.24	268	〜に比べて	1	trùng hoàn toàn	n3g-g023	〜に比べ（て）	n3g-l04
+05.25	268	〜に対して	2	trùng mẫu, khác giải thích/biến thể	n3g-g025 n3g-g034	〜に対し（て） / 〜に対し（て）	n3g-l04 n3g-l05
+05.26	268	〜くらい∕ほど	2	trùng mẫu, khác giải thích/biến thể	n3g-g029 n3g-g061	〜くらい／〜ぐらい / 〜ほど	n3g-l05 n3g-l09
+05.27	268	〜くらい〜はない	2	trùng mẫu, khác giải thích/biến thể	n3g-g063	〜ほど…ない／〜ほど…はない	n3g-l09
+05.28	268,269	〜ほどではない	3	liên quan, khác cách dùng → mục mới	n3g-g128	〜ほどではない	n3g-l19
+05.29	269	〜ほど〜ない	1	trùng hoàn toàn	n3g-g063	〜ほど…ない／〜ほど…はない	n3g-l09
+05.30	269	〜というより	4	mục riêng → mục mới	n3g-g129	〜というより	n3g-l19
+06.01	269	〜にする	4	mục riêng → mục mới	n3g-g130	〜にする	n3g-l19
+06.02	269	〜ようとする	2	trùng mẫu, khác giải thích/biến thể	n3g-g108	〜とする	n3g-l16
+06.03	269,270	〜しかない	1	trùng hoàn toàn	n3g-g048	〜しかない／〜ほかない／〜よりない／〜よりほかない／〜ほかしかたがない	n3g-l07
+06.04	270	〜てほしい	1	trùng hoàn toàn	n3g-g009	〜てほしい／〜てもらいたい	n3g-l02
+06.05	270	〜させていただく	2	trùng mẫu, khác giải thích/biến thể	n3g-g011	使役形を使った表現（〜させてください／〜させられる）	n3g-l02
+06.06	270	〜させられる	2	trùng mẫu, khác giải thích/biến thể	n3g-g011	使役形を使った表現（〜させてください／〜させられる）	n3g-l02
+06.07	270	〜てもいい	4	mục riêng → mục mới	n3g-g131	〜てもいい	n3g-l19
+06.08	270	〜てもかまわない	4	mục riêng → mục mới	n3g-g132	〜てもかまわない	n3g-l19
+06.09	271	〜なくてもいい	4	mục riêng → mục mới	n3g-g133	〜なくてもいい	n3g-l19
+06.10	271	〜てはいけない	4	mục riêng → mục mới	n3g-g134	〜てはいけない	n3g-l20
+06.11	271	〜てはだめ	4	mục riêng → mục mới	n3g-g135	〜てはだめ	n3g-l20
+06.12	271	〜てはならない	4	mục riêng → mục mới	n3g-g136	〜てはならない	n3g-l20
+06.13	271	〜なければならな い	4	mục riêng → mục mới	n3g-g137	〜なければならない	n3g-l20
+06.14	271	〜なければいけな い	4	mục riêng → mục mới	n3g-g138	〜なければいけない	n3g-l20
+06.15	271	〜べきだ	4	mục riêng → mục mới	n3g-g139	〜べきだ	n3g-l20
+06.16	271,272	〜べきではない	4	mục riêng → mục mới	n3g-g140	〜べきではない	n3g-l20
+06.17	272	〜てちょうだい	4	mục riêng → mục mới	n3g-g141	〜てちょうだい	n3g-l21
+06.18	272	〜てごらん	4	mục riêng → mục mới	n3g-g142	〜てごらん	n3g-l21
+06.19	272	〜ものか	1	trùng hoàn toàn	n3g-g057	〜ものか	n3g-l09
+06.20	272	〜ずにはいられな い	4	mục riêng → mục mới	n3g-g143	〜ずにはいられない	n3g-l21
+07.01	273	Vます + 始める	4	mục riêng → mục mới	n3g-g144	〜始める	n3g-l21
+07.02	273	Vます + 終わる	4	mục riêng → mục mới	n3g-g145	〜終わる	n3g-l21
+07.03	273	Vます + 続ける	4	mục riêng → mục mới	n3g-g146	〜続ける	n3g-l21
+07.04	273	Vます + きる	1	trùng hoàn toàn	n3g-g067	〜きる	n3g-l10
+07.05	273	Vます + たて	4	mục riêng → mục mới	n3g-g147	〜たて	n3g-l21
+07.06	274	Vます + あげる	4	mục riêng → mục mới	n3g-g148	〜上げる	n3g-l22
+07.07	274	Vます + かけ	1	trùng hoàn toàn	n3g-g102	〜かけ／〜かける	n3g-l15
+07.08	274	〜まま	4	mục riêng → mục mới	n3g-g149	〜まま	n3g-l22
+07.09	274,275	〜っぱなし	4	mục riêng → mục mới	n3g-g150	〜っぱなし	n3g-l22
+07.10	275	Vていく	4	mục riêng → mục mới	n3g-g151	〜ていく	n3g-l22
+07.11	275	Vてくる	1	trùng hoàn toàn	n3g-g008	〜てくる	n3g-l02
+07.12	275	〜間(は)	4	mục riêng → mục mới	n3g-g152	〜間（は）	n3g-l22
+07.13	275,276	〜間に	4	mục riêng → mục mới	n3g-g153	〜間に	n3g-l22
+07.14	276	Dễ nhầm nhất 間 / 間に	compare	thẻ so sánh, không phải mẫu	07.12 07.13		
+07.15	276	〜うちに	1	trùng hoàn toàn	n3g-g031	〜うちに	n3g-l05
+07.16	276	〜最中(に)	1	trùng hoàn toàn	n3g-g044	〜最中	n3g-l07
+07.17	277	〜ところ	2	trùng mẫu, khác giải thích/biến thể	n3g-g059	〜ところに／〜ところへ／〜ところを／〜ところで	n3g-l09
+07.18	277	Vるところ	3	liên quan, khác cách dùng → mục mới	n3g-g154	〜るところだ	n3g-l22
+07.19	277	Vているところ	3	liên quan, khác cách dùng → mục mới	n3g-g155	〜ているところだ	n3g-l23
+07.20	277	Vたところ	3	liên quan, khác cách dùng → mục mới	n3g-g156	〜たところだ	n3g-l23
+07.21	277	〜ところに	1	trùng hoàn toàn	n3g-g059	〜ところに／〜ところへ／〜ところを／〜ところで	n3g-l09
+07.22	277	〜ところを	1	trùng hoàn toàn	n3g-g059	〜ところに／〜ところへ／〜ところを／〜ところで	n3g-l09
+07.23	277	〜おきに	4	mục riêng → mục mới	n3g-g157	〜おきに	n3g-l23
+07.24	277,278	〜ごとに	4	mục riêng → mục mới	n3g-g158	〜ごとに	n3g-l23
+07.25	278	〜たびに	1	trùng hoàn toàn	n3g-g026	〜たびに	n3g-l04
+07.26	278	Dễ nhầm ごとに たびに	compare	thẻ so sánh, không phải mẫu	07.24 07.25		
+07.27	278	〜とたん(に)	1	trùng hoàn toàn	n3g-g041	〜たとたん（に）	n3g-l06
+07.28	278	〜から〜にかけて	1	trùng hoàn toàn	n3g-g016	〜から〜にかけて	n3g-l03
+07.29	279	〜以来	1	trùng hoàn toàn	n3g-g046	〜て以来	n3g-l07
+07.30	279	N + ぬき	4	mục riêng → mục mới	n3g-g159	〜抜き	n3g-l23
+07.31	279	N + だらけ	1	trùng hoàn toàn	n3g-g017	〜だらけ	n3g-l03
+07.32	279	N / Vて + ばかり	4	mục riêng → mục mới	n3g-g160	〜ばかり（〜てばかりいる）	n3g-l23
+07.33	279,280	Vる + ばかりだ	4	mục riêng → mục mới	n3g-g161	〜ばかりだ	n3g-l23
+07.34	280	Dễ nhầm ばかり Vるばかりだ	compare	thẻ so sánh, không phải mẫu	07.32 07.33		
+07.35	280	N + 向き	1	trùng hoàn toàn	n3g-g070	〜向き	n3g-l10
+07.36	280	N + 向け	1	trùng hoàn toàn	n3g-g071	〜向け	n3g-l11
+07.37	280	Dễ nhầm 向き 向け	compare	thẻ so sánh, không phải mẫu	07.35 07.36		
+07.38	280,281	〜がち	1	trùng hoàn toàn	n3g-g069	〜がち	n3g-l10
+07.39	281	〜がる	4	mục riêng → mục mới	n3g-g162	〜がる	n3g-l24
+07.40	281	〜ぎみ	1	trùng hoàn toàn	n3g-g068	〜ぎみ	n3g-l10
+07.41	281	Dễ nhầm がち ぎみ	compare	thẻ so sánh, không phải mẫu	07.38 07.40		
+07.42	281,282	〜かねる	4	mục riêng → mục mới	n3g-g163	〜かねる	n3g-l24
+07.43	282	〜かねない	4	mục riêng → mục mới	n3g-g164	〜かねない	n3g-l24
+07.44	282	Dễ Nhầm かねる かねない	compare	thẻ so sánh, không phải mẫu	07.42 07.43		
+07.45	282	Vた + つもりで	2	trùng mẫu, khác giải thích/biến thể	n3g-g007	〜つもり	n3g-l01
+07.46	282	N + について	1	trùng hoàn toàn	n3g-g021	〜について／〜につき	n3g-l03
+07.47	282,283	N / Vること + によ って	2	trùng mẫu, khác giải thích/biến thể	n3g-g038	〜による／〜により／〜によって／〜によっては	n3g-l06
+07.48	283	N + によって	2	trùng mẫu, khác giải thích/biến thể	n3g-g038	〜による／〜により／〜によって／〜によっては	n3g-l06
+07.49	283	N + によっては	2	trùng mẫu, khác giải thích/biến thể	n3g-g038	〜による／〜により／〜によって／〜によっては	n3g-l06
+07.50	283	Dễ nhầm によって によっては	compare	thẻ so sánh, không phải mẫu	07.48 07.49		
+07.51	283	N + に関して	1	trùng hoàn toàn	n3g-g022	〜に関し（て）	n3g-l04
+07.52	283,284	N + に対して	1	trùng hoàn toàn	n3g-g025	〜に対し（て）	n3g-l04
+07.53	284	N + にとって	1	trùng hoàn toàn	n3g-g037	〜にとって	n3g-l06
+07.54	284	N + において	1	trùng hoàn toàn	n3g-g035	〜において	n3g-l05
+07.55	284	N + にわたって	1	trùng hoàn toàn	n3g-g036	〜にわたって／〜にわたり	n3g-l06
+07.56	284,285	N + を中心に	1	trùng hoàn toàn	n3g-g032	〜を中心に／〜を中心として／〜を中心にして	n3g-l05
+07.57	285	N + を通して N + を通じて	1	trùng hoàn toàn	n3g-g072	〜を通じ（て）／〜を通し（て）	n3g-l11
+07.58	285	N + として	1	trùng hoàn toàn	n3g-g090	〜として	n3g-l13
+07.59	285	So sánh bộ cực hay nhầm として にとって に対して	compare	thẻ so sánh, không phải mẫu	07.58 07.53 07.52		
+07.60	285,286	N + に比べて	1	trùng hoàn toàn	n3g-g023	〜に比べ（て）	n3g-l04
+07.61	286	N + とは / というの は	1	trùng hoàn toàn	n3g-g040	〜とは／〜というのは	n3g-l06
+07.62	286	Nって	2	trùng mẫu, khác giải thích/biến thể	n3g-g028	〜って	n3g-l04
+07.63	286	N1というN2	4	mục riêng → mục mới	n3g-g165	〜という〜	n3g-l24
+07.64	286	Mệnh đề + って	2	trùng mẫu, khác giải thích/biến thể	n3g-g028	〜って	n3g-l04
+07.65	286,287	〜さえ	1	trùng hoàn toàn	n3g-g089	〜さえ	n3g-l13
+07.66	287	〜まで	4	mục riêng → mục mới	n3g-g166	〜まで	n3g-l24
+07.67	287	So sánh さえ まで	compare	thẻ so sánh, không phải mẫu	07.65 07.66		
+07.68	287	〜だって	4	mục riêng → mục mới	n3g-g167	〜だって	n3g-l24
+07.69	287,288	〜しかたがない 〜しょうがない	4	mục riêng → mục mới	n3g-g168	〜てしかたがない／〜てしょうがない	n3g-l24
+07.70	288	〜っけ	1	trùng hoàn toàn	n3g-g077	〜っけ	n3g-l11
+07.71	288	Vます + っこない	4	mục riêng → mục mới	n3g-g169	〜っこない	n3g-l25
+07.72	288,289	Vず / Vずに	4	mục riêng → mục mới	n3g-g170	〜ず（に）	n3g-l25
+07.73	289	〜ふりをする	4	mục riêng → mục mới	n3g-g171	〜ふりをする	n3g-l25
+07.74	289	Vた + ものだ	4	mục riêng → mục mới	n3g-g172	〜たものだ	n3g-l25
+07.75	289	〜だけ	1	trùng hoàn toàn	n3g-g100	〜だけ	n3g-l15
+07.76	289	めったに〜ない	4	mục riêng → mục mới	n3g-g173	めったに〜ない	n3g-l25
+07.77	289,290	〜ことがある	4	mục riêng → mục mới	n3g-g174	〜ことがある	n3g-l25
