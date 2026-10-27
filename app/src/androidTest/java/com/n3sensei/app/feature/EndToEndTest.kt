@@ -74,12 +74,13 @@ class EndToEndTest {
 
     private fun openTab(tab: TopLevelDestination) = composeRule.onNodeWithTag(tab.testTag).performClick()
 
+    /** Học → Bài học → Bài 01 (the seed content: 2 kanji, 4 words, 1 grammar point). */
     private fun openLesson1() {
         openTab(TopLevelDestination.LEARN)
         clickable(string(R.string.lessons_title)).performClick()
-        waitForText("Bài seed 1")
-        composeRule.onNodeWithText("Bài seed 1").performClick()
-        waitForText(string(R.string.lesson_counts, 4, 2, 1))
+        waitForText(string(R.string.course_lesson_title, 1))
+        awaitClickable(string(R.string.course_open)).performClick()
+        waitForText(string(R.string.course_lesson_counts, 2, 4, 1))
     }
 
     @Test
@@ -110,35 +111,55 @@ class EndToEndTest {
         launch().use {
             openLesson1()
 
+            // Kanji tab (first): a kanji expands to its words, then opens its own detail screen.
+            composeRule.onNodeWithText("経").performClick()
+            waitForText(string(R.string.flashcard_kanji_words, 1))
+            composeRule.onNodeWithText("Tôi có kinh nghiệm làm việc ở Nhật.").assertIsDisplayed()
+            clickable(string(R.string.course_open_kanji)).performClick()
+            waitForText("KINH")
+            composeRule.onNodeWithText("ケイ、キョウ").assertIsDisplayed()
+            Espresso.pressBack()
+
+            clickable(string(R.string.lesson_tab_vocabulary, 4)).performClick()
+            waitForText(string(R.string.course_vocabulary_section, "1", 4))
             composeRule.onNodeWithText("経験").performClick()
             waitForText("kinh nghiệm")
             composeRule.onNodeWithText("Tôi có kinh nghiệm làm việc ở Nhật.").performScrollTo().assertIsDisplayed()
             composeRule.onNodeWithText(string(R.string.source_license_unverified, ""), substring = true).performScrollTo().assertIsDisplayed()
             Espresso.pressBack()
 
-            clickable(string(R.string.lesson_tab_kanji, 2)).performClick()
-            composeRule.onNodeWithText("経").performClick()
-            waitForText("KINH")
-            composeRule.onNodeWithText("ケイ、キョウ").assertIsDisplayed()
-            Espresso.pressBack()
-
             clickable(string(R.string.lesson_tab_grammar, 1)).performClick()
             composeRule.onNodeWithText("〜たばかり").performClick()
+            waitForText("日本に来たばかりです。")
+            clickable(string(R.string.course_open_grammar)).performScrollTo().performClick()
             waitForText(string(R.string.grammar_caution))
-            composeRule.onNodeWithText("日本に来たばかりです。").performScrollTo().assertIsDisplayed()
         }
     }
 
     @Test
-    fun emptyLesson_cannotBePracticed() {
+    fun lessonTabs_switchFreelyInAnyOrder_withoutLockingOrRecording() {
         launch().use {
-            openTab(TopLevelDestination.LEARN)
-            clickable(string(R.string.lessons_title)).performClick()
-            waitForText("Bài seed 2 (rỗng)")
-            composeRule.onNodeWithText("Bài seed 2 (rỗng)").performClick()
-            waitForText(string(R.string.lesson_empty_vocabulary))
-            composeRule.onNodeWithText(string(R.string.lesson_practice)).assertIsNotEnabled()
+            openLesson1()
+            listOf(
+                string(R.string.lesson_tab_grammar, 1) to "〜たばかり",
+                string(R.string.lesson_tab_kanji, 2) to "経",
+                string(R.string.lesson_tab_vocabulary, 4) to "経験",
+                string(R.string.lesson_tab_grammar, 1) to "〜たばかり",
+                string(R.string.lesson_tab_vocabulary, 4) to "増える",
+            ).forEach { (tab, shown) ->
+                clickable(tab).performClick()
+                waitForText(shown)
+            }
+            // Expanding a kanji and switching tabs back keeps it expanded.
+            clickable(string(R.string.lesson_tab_kanji, 2)).performClick()
+            composeRule.onNodeWithText("経").performClick()
+            waitForText(string(R.string.course_open_kanji))
+            clickable(string(R.string.lesson_tab_grammar, 1)).performClick()
+            clickable(string(R.string.lesson_tab_kanji, 2)).performClick()
+            waitForText(string(R.string.course_open_kanji))
         }
+        assertEquals(0, AppTestState.appContainer.database.countRows("learning_progress"))
+        assertEquals(0, AppTestState.appContainer.database.countRows("review_records"))
     }
 
     @Test
@@ -182,7 +203,7 @@ class EndToEndTest {
             composeRule.onNodeWithText(string(R.string.practice_result_not_saved)).assertIsDisplayed()
             composeRule.onNodeWithText("7 / 7", substring = true).assertIsDisplayed()
             composeRule.onNodeWithText(string(R.string.practice_result_back)).performClick()
-            waitForText(string(R.string.lesson_counts, 4, 2, 1))
+            waitForText(string(R.string.course_lesson_counts, 2, 4, 1))
 
             // Practice results are not saved to the review schedule.
             openTab(TopLevelDestination.REVIEW)
@@ -223,15 +244,15 @@ class EndToEndTest {
     }
 
     @Test
-    fun bundledIllustrationPack_isInstalledOnFirstLaunch_andReadFromRoom() {
+    fun bundledCourse_lessonOne_has24Kanji30Words7Grammar_fromEachList() {
         launch(seedContent = false, bundledContent = true).use {
             openTab(TopLevelDestination.LEARN)
             clickable(string(R.string.lessons_title)).performClick()
-            // Both bundled packs are installed; the Mimikara lessons come first (pack id order).
-            waitForText("Mimikara N3 · 名詞")
-            composeRule.onNode(hasScrollToIndexAction()).performScrollToNode(hasText(ILLUSTRATION_LESSON))
-            composeRule.onNodeWithText(ILLUSTRATION_LESSON).performClick()
-            waitForText(string(R.string.lesson_counts, 30, 27, 7))
+            waitForText(string(R.string.course_lesson_title, 1))
+            composeRule.onAllNodes(hasText(string(R.string.course_lesson_counts, 24, 30, 7))).onFirst().assertIsDisplayed()
+            // The last lesson holds the 10 words left after 30 full lessons.
+            composeRule.onNode(hasScrollToIndexAction()).performScrollToNode(hasText(string(R.string.course_lesson_title, 31)))
+            composeRule.onNodeWithText(string(R.string.course_lesson_counts, 0, 10, 0)).assertIsDisplayed()
         }
     }
 
@@ -240,10 +261,16 @@ class EndToEndTest {
         launch(seedContent = false, bundledContent = true).use {
             openTab(TopLevelDestination.LEARN)
             clickable(string(R.string.lessons_title)).performClick()
-            waitForText("Mimikara N3 · 名詞")
-            composeRule.onNodeWithText("Mimikara N3 · 名詞").performClick()
-            waitForText(string(R.string.lesson_counts, 120, 0, 0))
+            waitForText(string(R.string.course_lesson_title, 1))
+            composeRule.onAllNodes(hasText(string(R.string.course_open)) and hasClickAction()).onFirst().performClick()
+            clickable(string(R.string.lesson_tab_vocabulary, 30)).performClick()
+            waitForText(string(R.string.course_vocabulary_section, "1.1", 30))
             waitForText("男性")
+            // Kanji tab: 意 expands to all its words.
+            clickable(string(R.string.lesson_tab_kanji, 24)).performClick()
+            composeRule.onNodeWithText("意").performClick()
+            waitForText(string(R.string.flashcard_kanji_words, 3))
+            waitForText("Quyết tâm")
         }
         val vocabulary = AppTestState.appContainer.database.countRows("vocabulary")
         // Illustration 30 + Mimikara 880; the kanji pack adds no vocabulary.
@@ -451,6 +478,5 @@ class EndToEndTest {
 
     private companion object {
         const val SEED_SOURCE_NAME = "dữ liệu seed cho kiểm thử"
-        const val ILLUSTRATION_LESSON = "Bài minh họa 1: Công việc và đời sống"
     }
 }

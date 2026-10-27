@@ -8,6 +8,7 @@ import com.n3sensei.app.domain.model.GrammarPoint
 import com.n3sensei.app.domain.model.ItemQuery
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.Kanji
+import com.n3sensei.app.domain.model.KanjiWord
 import com.n3sensei.app.domain.model.KanjiDetail
 import com.n3sensei.app.domain.model.LessonSummary
 import com.n3sensei.app.domain.model.Tag
@@ -46,6 +47,9 @@ interface ContentRepository {
 
     /** The item as a flashcard, or null when it no longer exists. */
     suspend fun getPracticeItem(ref: ItemRef): PracticeItem?
+
+    /** Every word shown with a kanji: its example words in pack order, then the vocabulary the learner linked. */
+    suspend fun getKanjiWords(kanjiId: String): List<KanjiWord>
 
     /** Returns null when the item does not exist (e.g. removed by a content update). */
     suspend fun getVocabularyDetail(id: String): VocabularyDetail?

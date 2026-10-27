@@ -8,6 +8,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
 import com.n3sensei.app.core.ui.content.FlashcardSession
+import com.n3sensei.app.core.ui.content.intervalLabel
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.practice.PracticeResult
@@ -21,6 +22,7 @@ fun PracticeScreen(
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val hints by viewModel.hints.collectAsStateWithLifecycle()
     UiStateContent(
         state = state,
         emptyMessage = stringResource(if (markedOnly) R.string.practice_marked_empty else R.string.practice_empty),
@@ -34,6 +36,7 @@ fun PracticeScreen(
         } else {
             PracticeContent(
                 session = ui.session,
+                hints = hints.mapValues { (_, interval) -> intervalLabel(interval) },
                 onReveal = viewModel::revealAnswer,
                 onRate = viewModel::rate,
             )
@@ -44,6 +47,7 @@ fun PracticeScreen(
 @Composable
 private fun PracticeContent(
     session: PracticeSession,
+    hints: Map<ReviewRating, String>,
     onReveal: () -> Unit,
     onRate: (ReviewRating) -> Unit,
 ) {
@@ -56,5 +60,6 @@ private fun PracticeContent(
         isAnswerRevealed = session.isAnswerRevealed,
         onReveal = onReveal,
         onRate = onRate,
+        ratingHints = hints,
     )
 }

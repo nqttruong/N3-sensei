@@ -68,7 +68,6 @@
     <string name="lessons_title">Bài học</string>
     <string name="lesson_detail_title">Chi tiết bài học</string>
     <string name="lesson_number">Bài %1$d · %2$s</string>
-    <string name="lesson_counts">%1$d từ vựng · %2$d Kanji · %3$d ngữ pháp</string>
     <string name="lesson_practice">Luyện tập bài này</string>
     <string name="lesson_tab_vocabulary">Từ vựng (%1$d)</string>
     <string name="lesson_tab_kanji">Kanji (%1$d)</string>
@@ -77,6 +76,22 @@
     <string name="lesson_empty_kanji">Bài này chưa có Kanji.</string>
     <string name="lesson_empty_grammar">Bài này chưa có mẫu ngữ pháp.</string>
     <string name="lesson_not_found">Không tìm thấy bài học này.</string>
+    <string name="course_intro">Mỗi bài gồm 24 Kanji (kèm các từ đi kèm), 30 từ vựng và 7 mẫu ngữ pháp, lấy lần lượt theo thứ tự của mục Kanji, Từ vựng và Ngữ pháp. Ba phần học tự do, không cần học xong phần này mới mở phần kia.</string>
+    <string name="course_lesson_title">Bài %1$02d</string>
+    <string name="course_lesson_counts">%1$d Kanji · %2$d từ vựng · %3$d ngữ pháp</string>
+    <string name="course_open">Mở bài</string>
+    <string name="course_progress_kanji">Kanji đã học: %1$d/%2$d</string>
+    <string name="course_progress_words">Từ vựng đã học: %1$d/%2$d</string>
+    <string name="course_progress_grammar">Ngữ pháp đã học: %1$d/%2$d</string>
+    <string name="course_no_kanji">Bài này không có Kanji (đã phân bổ hết ở các bài trước).</string>
+    <string name="course_no_words">Bài này không có từ vựng (đã phân bổ hết ở các bài trước).</string>
+    <string name="course_no_grammar">Bài này không có mẫu ngữ pháp (đã phân bổ hết ở các bài trước).</string>
+    <string name="course_vocabulary_section">Nhóm %1$s · %2$d từ</string>
+    <string name="course_expanded">Đang mở rộng</string>
+    <string name="course_collapsed">Đang thu gọn</string>
+    <string name="course_load_failed">Không tải được. Hãy thu gọn rồi mở lại.</string>
+    <string name="course_open_kanji">Xem chi tiết Kanji</string>
+    <string name="course_open_grammar">Xem chi tiết ngữ pháp</string>
 
     <!-- Vocabulary -->
     <string name="vocabulary_title">Từ vựng</string>
@@ -99,6 +114,9 @@
     <string name="kanji_kun">Âm Kun</string>
     <string name="kanji_strokes_value">%1$d nét</string>
     <string name="kanji_example_words">Từ minh họa</string>
+    <string name="flashcard_kanji_words">Từ đi kèm (%1$d)</string>
+    <string name="flashcard_kanji_no_words">Chữ này chưa có từ đi kèm.</string>
+    <string name="flashcard_kanji_word_linked">Từ vựng bạn liên kết</string>
     <string name="kanji_edit_title">Sửa Kanji</string>
     <string name="vocabulary_edit_title">Sửa từ vựng</string>
     <string name="add_word_title">Thêm từ</string>
@@ -172,7 +190,7 @@
 
     <!-- Practice session -->
     <string name="practice_title">Luyện tập</string>
-    <string name="practice_not_saved">Chế độ luyện tập: đánh giá chỉ dùng cho kết quả phiên này, không thay đổi lịch ôn tập. Dùng tab Ôn tập để ôn theo lịch.</string>
+    <string name="practice_not_saved">Chế độ luyện tập: đánh giá chỉ dùng cho kết quả phiên này, không thay đổi lịch ôn tập. Thời gian trên mỗi nút là lần ôn tiếp theo mà mục này sẽ có nếu bạn trả lời như vậy trong tab Ôn tập.</string>
     <string name="practice_progress">Thẻ %1$d / %2$d</string>
     <string name="practice_empty">Bài này chưa có mục nào để luyện tập.</string>
     <string name="practice_reveal">Hiện đáp án</string>
@@ -303,7 +321,6 @@
     <string name="unit_days">ngày</string>
     <string name="unit_weeks">tuần</string>
     <string name="unit_months">tháng (theo lịch)</string>
-    <string name="rating_with_interval">%1$s\n%2$s</string>
 
     <string name="review_overview_due">Đến hạn: %1$d</string>
     <string name="review_overview_breakdown">Từ vựng %1$d · Kanji %2$d · Ngữ pháp %3$d</string>

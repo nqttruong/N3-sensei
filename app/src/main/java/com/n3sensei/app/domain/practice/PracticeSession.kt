@@ -4,6 +4,7 @@ import com.n3sensei.app.domain.model.GrammarPoint
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.Kanji
+import com.n3sensei.app.domain.model.KanjiWord
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.model.Vocabulary
 
@@ -15,7 +16,8 @@ sealed interface PracticeItem {
         override val ref = ItemRef(ItemType.VOCABULARY, vocabulary.id)
     }
 
-    data class KanjiItem(val kanji: Kanji) : PracticeItem {
+    /** [words]: every word shown with the kanji (its own example words, then the vocabulary the learner linked). */
+    data class KanjiItem(val kanji: Kanji, val words: List<KanjiWord> = emptyList()) : PracticeItem {
         override val ref = ItemRef(ItemType.KANJI, kanji.id)
     }
 

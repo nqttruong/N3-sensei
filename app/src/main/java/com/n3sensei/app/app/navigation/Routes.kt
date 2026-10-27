@@ -14,7 +14,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable data object LessonListRoute
 
-@Serializable data class LessonDetailRoute(val lessonId: String)
+/** One "Bài học" lesson: [number] is its position in the course (1-based). */
+@Serializable data class LessonDetailRoute(val number: Int)
 
 /**
  * [status] pre-selects the learning-status filter (a LearningStatus name), [lessonId] the
@@ -47,7 +48,8 @@ import kotlinx.serialization.Serializable
 @Serializable data class GrammarEditRoute(val grammarId: String)
 
 /** Practice one lesson's items, or marked items (optionally within [lessonId]). */
-@Serializable data class PracticeRoute(val lessonId: String? = null, val markedOnly: Boolean = false)
+/** [courseLesson]: the items of a "Bài học" lesson (by number) instead of a pack lesson. */
+@Serializable data class PracticeRoute(val lessonId: String? = null, val markedOnly: Boolean = false, val courseLesson: Int? = null)
 
 /** Session result travels as arguments: it is not persisted anywhere. */
 @Serializable
@@ -60,6 +62,7 @@ data class PracticeResultRoute(
     val good: Int,
     val easy: Int,
     val durationSeconds: Long,
+    val courseLesson: Int? = null,
 )
 
 @Serializable data object ReviewRoute

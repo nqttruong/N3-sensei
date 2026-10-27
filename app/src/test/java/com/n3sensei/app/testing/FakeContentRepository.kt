@@ -10,6 +10,7 @@ import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.Kanji
 import com.n3sensei.app.domain.model.KanjiDetail
+import com.n3sensei.app.domain.model.KanjiWord
 import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.domain.model.LessonSummary
 import com.n3sensei.app.domain.model.Tag
@@ -37,6 +38,10 @@ class FakeContentRepository : ContentRepository {
     val marked = MutableStateFlow<Set<String>>(emptySet())
 
     val browseQueries = mutableListOf<ItemQuery>()
+
+    /** Words of each kanji, by kanji id (none when absent). */
+    val kanjiWords = mutableMapOf<String, List<KanjiWord>>()
+    var kanjiWordCalls = 0
 
     var failDetails = false
     val searchCalls = mutableListOf<Pair<String, String?>>()
@@ -86,8 +91,13 @@ class FakeContentRepository : ContentRepository {
 
     override suspend fun getPracticeItem(ref: ItemRef): PracticeItem? = when (ref.type) {
         ItemType.VOCABULARY -> vocabulary.value.firstOrNull { it.id == ref.id }?.let { PracticeItem.VocabularyItem(it) }
-        ItemType.KANJI -> kanji.value.firstOrNull { it.id == ref.id }?.let { PracticeItem.KanjiItem(it) }
+        ItemType.KANJI -> kanji.value.firstOrNull { it.id == ref.id }?.let { PracticeItem.KanjiItem(it, kanjiWords[it.id].orEmpty()) }
         ItemType.GRAMMAR -> grammar.value.firstOrNull { it.id == ref.id }?.let { PracticeItem.GrammarItem(it) }
+    }
+
+    override suspend fun getKanjiWords(kanjiId: String): List<KanjiWord> {
+        kanjiWordCalls++
+        return kanjiWords[kanjiId].orEmpty()
     }
 
     override suspend fun getVocabularyDetail(id: String): VocabularyDetail? {

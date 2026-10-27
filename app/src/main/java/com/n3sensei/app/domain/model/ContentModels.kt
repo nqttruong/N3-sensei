@@ -101,6 +101,17 @@ data class KanjiDetail(
     val linkedVocabulary: List<Vocabulary> = emptyList(),
 )
 
+/**
+ * A word shown with a kanji: one of its example words (from its pack) or a vocabulary item the
+ * learner linked to it ([vocabularyId] set). [furigana] is null when there is no ruby markup.
+ */
+data class KanjiWord(
+    val japanese: String,
+    val furigana: String?,
+    val meaningVi: String,
+    val vocabularyId: String? = null,
+)
+
 /** Multiple-choice question attached to a grammar point by the content pack. */
 data class GrammarExercise(
     val id: String,

@@ -14,6 +14,7 @@ import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.Kanji
 import com.n3sensei.app.domain.model.KanjiDetail
+import com.n3sensei.app.domain.model.KanjiWord
 import com.n3sensei.app.domain.model.LessonSummary
 import com.n3sensei.app.domain.model.Tag
 import com.n3sensei.app.domain.model.TrackedItem
@@ -80,9 +81,13 @@ class OfflineContentRepository(
 
     override suspend fun getPracticeItem(ref: ItemRef): PracticeItem? = when (ref.type) {
         ItemType.VOCABULARY -> contentDao.getVocabulary(ref.id)?.let { PracticeItem.VocabularyItem(it.toDomain()) }
-        ItemType.KANJI -> contentDao.getKanji(ref.id)?.let { PracticeItem.KanjiItem(it.toDomain()) }
+        ItemType.KANJI -> contentDao.getKanji(ref.id)?.let { PracticeItem.KanjiItem(it.toDomain(), getKanjiWords(it.id)) }
         ItemType.GRAMMAR -> contentDao.getGrammar(ref.id)?.let { PracticeItem.GrammarItem(it.toDomain()) }
     }
+
+    override suspend fun getKanjiWords(kanjiId: String): List<KanjiWord> =
+        contentDao.getKanjiExamples(kanjiId).map { KanjiWord(it.japanese, it.furigana, it.translationVi) } +
+            contentDao.getLinkedVocabulary(kanjiId).map { KanjiWord(it.expression, it.furigana, it.meaningVi, vocabularyId = it.id) }
 
     override suspend fun getVocabularyDetail(id: String): VocabularyDetail? =
         contentDao.getVocabularyDetail(id)?.toDomain()

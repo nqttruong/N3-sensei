@@ -2,6 +2,23 @@ package com.n3sensei.app.feature.practice
 
 import com.n3sensei.app.core.ui.state.UiState
 import com.n3sensei.app.domain.model.ReviewRating
+import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.model.KanjiWord
+import com.n3sensei.app.domain.model.ReviewRating.AGAIN
+import com.n3sensei.app.domain.model.ReviewRating.EASY
+import com.n3sensei.app.domain.model.ReviewRating.GOOD
+import com.n3sensei.app.domain.model.ReviewRating.HARD
+import com.n3sensei.app.domain.srs.IntervalUnit
+import com.n3sensei.app.domain.srs.ReviewInterval
+import com.n3sensei.app.domain.srs.ReviewLadder
+import com.n3sensei.app.domain.srs.ReviewSettings
+import com.n3sensei.app.domain.srs.SpacedRepetitionScheduler
+import com.n3sensei.app.testing.FakeProgressRepository
+import com.n3sensei.app.testing.FakeUserPreferencesRepository
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
 import com.n3sensei.app.domain.practice.PracticeItem
 import com.n3sensei.app.domain.practice.PracticeResult
 import com.n3sensei.app.testing.FakeContentRepository
@@ -71,4 +88,95 @@ class PracticeViewModelTest {
     fun markedOnly_withNothingMarked_isEmpty() {
         assertEquals(UiState.Empty, PracticeViewModel(null, markedOnly = true, repository, clock).state.value)
     }
+
+    // --- next-interval labels ------------------------------------------------------------------
+
+    private val progressRepository = FakeProgressRepository()
+    private val preferences = FakeUserPreferencesRepository()
+
+    private fun withSchedule(lessonId: String? = "l1") =
+        PracticeViewModel(lessonId, markedOnly = false, repository, clock, progressRepository, preferences)
+
+    private fun ReviewSettings.withLadder(vararg intervals: ReviewInterval) = copy(ladder = ReviewLadder.of(intervals.toList()))
+
+    @Test
+    fun answerButtons_showTheIntervalTheSchedulerWouldGive_fromTheItemsStoredProgress() = runTest {
+        val k1 = ItemRef(ItemType.KANJI, "k1")
+        progressRepository.progress[k1] = TestContent.progress(k1, stepIndex = 2, dueAt = clock.instant())
+        val viewModel = withSchedule()
+        viewModel.hints.launchIn(backgroundScope)
+        runCurrent()
+        // v1 is new: 20 phút, 20 phút, 1 giờ, 1 ngày on the default ladder.
+        assertEquals(
+            mapOf(AGAIN to minutes(20), HARD to minutes(20), GOOD to ReviewInterval(1, IntervalUnit.HOURS), EASY to days(1)),
+            viewModel.hints.value,
+        )
+        viewModel.revealAnswer()
+        viewModel.rate(GOOD)
+        runCurrent()
+        // k1 is on step 2 (1 ngày): Quên back to 20 phút, Khó stays, Nhớ +1, Dễ +2.
+        val scheduler = SpacedRepetitionScheduler(ReviewLadder.DEFAULT)
+        assertEquals(ReviewRating.entries.associateWith { scheduler.preview(progressRepository.progress[k1], it) }, viewModel.hints.value)
+        assertEquals(mapOf(AGAIN to minutes(20), HARD to days(1), GOOD to days(2), EASY to ReviewInterval(1, IntervalUnit.WEEKS)), viewModel.hints.value)
+    }
+
+    @Test
+    fun changingTheLadder_updatesTheLabels() = runTest {
+        val viewModel = withSchedule()
+        viewModel.hints.launchIn(backgroundScope)
+        runCurrent()
+        preferences.setReviewSettings(preferences.preferences.value.reviewSettings.withLadder(minutes(10), days(1), days(3)))
+        runCurrent()
+        assertEquals(mapOf(AGAIN to minutes(10), HARD to minutes(10), GOOD to days(1), EASY to days(3)), viewModel.hints.value)
+    }
+
+    @Test
+    fun previewingAndRating_neverWriteTheSchedule() = runTest {
+        val viewModel = withSchedule()
+        viewModel.hints.launchIn(backgroundScope)
+        runCurrent()
+        repeat(3) {
+            viewModel.revealAnswer()
+            viewModel.rate(EASY)
+            runCurrent()
+        }
+        assertEquals(0, progressRepository.submitCalls)
+        assertTrue(progressRepository.progress.isEmpty())
+        assertTrue(progressRepository.records.isEmpty())
+    }
+
+    @Test
+    fun withoutTheSchedule_noLabelIsInvented() = runTest {
+        val viewModel = PracticeViewModel("l1", markedOnly = false, repository, clock)
+        viewModel.hints.launchIn(backgroundScope)
+        runCurrent()
+        assertTrue(viewModel.hints.value.isEmpty())
+    }
+
+    // --- kanji words -------------------------------------------------------------------------------
+
+    @Test
+    fun kanjiCards_carryAllTheirWords() {
+        val words = (1..40).map { KanjiWord("経$it", null, "nghĩa $it") } + KanjiWord("けいけん", null, "chỉ có kana") +
+            KanjiWord("経験", "{経験|けいけん}", "kinh nghiệm", vocabularyId = "v1")
+        repository.kanjiWords["k1"] = words
+        val card = PracticeViewModel("l1", markedOnly = false, repository, clock).ui().session.items
+            .filterIsInstance<PracticeItem.KanjiItem>().single()
+        assertEquals(words, card.words)
+    }
+
+    // --- "Bài học" lessons ---------------------------------------------------------------------------
+
+    @Test
+    fun courseLesson_practisesItsKanjiThenWordsThenGrammar() {
+        repository.kanji.value = (1..30).map { TestContent.kanji("k$it", "kl", "字") }
+        repository.vocabulary.value = (1..35).map { TestContent.vocabulary("v$it", "vl", "語$it") }
+        repository.grammar.value = (1..9).map { TestContent.grammar("g$it", "gl", "〜$it") }
+        val second = PracticeViewModel(null, markedOnly = false, repository, clock, courseLesson = 2).ui().session.items
+        assertEquals((25..30).map { "k$it" } + (31..35).map { "v$it" } + (8..9).map { "g$it" }, second.map { it.ref.id })
+        assertEquals(UiState.NotFound, PracticeViewModel(null, markedOnly = false, repository, clock, courseLesson = 3).state.value)
+    }
+
+    private fun minutes(n: Int) = ReviewInterval(n, IntervalUnit.MINUTES)
+    private fun days(n: Int) = ReviewInterval(n, IntervalUnit.DAYS)
 }

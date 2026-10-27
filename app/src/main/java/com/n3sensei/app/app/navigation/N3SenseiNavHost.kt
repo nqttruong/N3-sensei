@@ -100,11 +100,11 @@ fun N3SenseiNavHost(
             composable<LessonDetailRoute> { entry ->
                 val route = entry.toRoute<LessonDetailRoute>()
                 LessonDetailScreen(
-                    viewModel = appViewModel { LessonDetailViewModel(route.lessonId, contentRepository) },
+                    viewModel = appViewModel { LessonDetailViewModel(route.number, contentRepository) },
                     onOpenVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
                     onOpenKanji = { navController.navigate(KanjiDetailRoute(it)) },
                     onOpenGrammar = { navController.navigate(GrammarDetailRoute(it)) },
-                    onStartPractice = { navController.navigate(PracticeRoute(lessonId = route.lessonId)) },
+                    onStartPractice = { navController.navigate(PracticeRoute(courseLesson = route.number)) },
                 )
             }
             composable<VocabularyRoute> { entry ->
@@ -203,7 +203,12 @@ fun N3SenseiNavHost(
             composable<PracticeRoute> { entry ->
                 val route = entry.toRoute<PracticeRoute>()
                 PracticeScreen(
-                    viewModel = appViewModel { PracticeViewModel(route.lessonId, route.markedOnly, contentRepository, clock) },
+                    viewModel = appViewModel {
+                        PracticeViewModel(
+                            route.lessonId, route.markedOnly, contentRepository, clock,
+                            progressRepository, userPreferencesRepository, route.courseLesson,
+                        )
+                    },
                     markedOnly = route.markedOnly,
                     onFinished = { result ->
                         // Replace the finished session so Back from the result returns to where it started.
@@ -218,7 +223,7 @@ fun N3SenseiNavHost(
                 PracticeResultScreen(
                     result = PracticeResult(route.total, route.again, route.hard, route.good, route.easy, route.durationSeconds),
                     onPracticeAgain = {
-                        navController.navigate(PracticeRoute(route.lessonId, route.markedOnly)) {
+                        navController.navigate(PracticeRoute(route.lessonId, route.markedOnly, route.courseLesson)) {
                             popUpTo<PracticeResultRoute> { inclusive = true }
                         }
                     },
@@ -293,7 +298,7 @@ fun N3SenseiNavHost(
 }
 
 private fun PracticeResult.toRoute(practice: PracticeRoute) =
-    PracticeResultRoute(practice.lessonId, practice.markedOnly, total, again, hard, good, easy, durationSeconds)
+    PracticeResultRoute(practice.lessonId, practice.markedOnly, total, again, hard, good, easy, durationSeconds, practice.courseLesson)
 
 private fun String?.toLearningStatus(): LearningStatus? = LearningStatus.entries.firstOrNull { it.name == this }
 

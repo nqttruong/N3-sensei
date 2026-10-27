@@ -1,6 +1,7 @@
 package com.n3sensei.app.core.ui.content
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -18,6 +19,7 @@ import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -25,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.n3sensei.app.R
@@ -33,6 +36,7 @@ import com.n3sensei.app.core.designsystem.component.InfoBanner
 import com.n3sensei.app.core.designsystem.component.LocalShowFurigana
 import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.core.designsystem.theme.japaneseText
+import com.n3sensei.app.domain.model.KanjiWord
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.practice.PracticeItem
 
@@ -154,11 +158,62 @@ private fun CardBack(item: PracticeItem) {
                 textAlign = TextAlign.Center,
                 modifier = center,
             )
+            KanjiWords(item.words)
         }
         is PracticeItem.GrammarItem -> {
             val g = item.grammar
             Text(g.meaningVi, style = MaterialTheme.typography.titleLarge, textAlign = TextAlign.Center, modifier = center)
             Text(japaneseText(g.structure), style = MaterialTheme.typography.bodyLarge.japanese(), textAlign = TextAlign.Center, modifier = center)
+        }
+    }
+}
+
+/**
+ * Every word that goes with the kanji, all of them: the card area scrolls (see
+ * [FlashcardSession]), so a long list never pushes the rating buttons off screen.
+ */
+@Composable
+private fun KanjiWords(words: List<KanjiWord>) {
+    Column(modifier = Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        HorizontalDivider()
+        Text(
+            stringResource(R.string.flashcard_kanji_words, words.size),
+            style = MaterialTheme.typography.titleSmall,
+            color = MaterialTheme.colorScheme.primary,
+        )
+        if (words.isEmpty()) {
+            Text(stringResource(R.string.flashcard_kanji_no_words), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+        words.forEach { word ->
+            Surface(
+                shape = MaterialTheme.shapes.medium,
+                color = MaterialTheme.colorScheme.surfaceContainerHighest,
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                Row(
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Box(Modifier.weight(0.45f)) {
+                        if (word.furigana != null && LocalShowFurigana.current) {
+                            FuriganaText(word.furigana, style = MaterialTheme.typography.titleMedium)
+                        } else {
+                            Text(japaneseText(word.japanese), style = MaterialTheme.typography.titleMedium.japanese())
+                        }
+                    }
+                    Column(Modifier.weight(0.55f)) {
+                        Text(word.meaningVi, style = MaterialTheme.typography.bodyMedium)
+                        if (word.vocabularyId != null) {
+                            Text(
+                                stringResource(R.string.flashcard_kanji_word_linked),
+                                style = MaterialTheme.typography.labelSmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -207,8 +262,17 @@ private fun RowScope.RatingButton(
         colors = ButtonDefaults.buttonColors(containerColor = container, contentColor = content),
         // Tight padding so four buttons fit on narrow screens with large font scale.
         contentPadding = PaddingValues(horizontal = 4.dp, vertical = 8.dp),
-        modifier = Modifier.weight(1f).heightIn(min = 56.dp),
+        modifier = Modifier
+            .weight(1f)
+            .heightIn(min = 56.dp)
+            // Read as "Nhớ, 1 ngày" by TalkBack, like the two lines on screen.
+            .semantics(mergeDescendants = true) {},
     ) {
-        Text(if (hint != null) stringResource(R.string.rating_with_interval, label, hint) else label, textAlign = TextAlign.Center)
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(label, style = MaterialTheme.typography.labelLarge, textAlign = TextAlign.Center)
+            if (hint != null) {
+                Text(hint, style = MaterialTheme.typography.labelSmall, textAlign = TextAlign.Center)
+            }
+        }
     }
 }
