@@ -124,7 +124,7 @@ n3k-l05	貧	第05	69	166	BẦN	Nghèo, thiếu thốn	pdf	nghèo, thiếu thốn
 n3k-l05	覚	第05	73	167	GIÁC	Nhớ, nhận thức, tỉnh thức	pdf	nhớ, nhận thức, tỉnh thức	memorize; learn; remember; awake; sober up	カク	おぼ.える、さ.ます、さ.める、さと.る	12	3	
 n3k-l05	規	第05	77	167	QUY	Quy tắc, chuẩn mực, quy định	pdf	quy tắc, chuẩn mực, quy định	standard; measure	キ		11	3	
 n3k-l05	現	第05	81	167	HIỆN	Sự xuất hiện, sự biểu hiện	pdf	sự xuất hiện, sự biểu hiện	present; existing; actual	ゲン	あらわ.れる、あらわ.す、うつつ、うつ.つ	11	4	
-n3k-l05	連	第05	86	168	LIÊN	Nối liền, dẫn theo	kanjidic2-translated		take along; lead; join; connect; party; gang; clique	レン	つら.なる、つら.ねる、つ.れる、-づ.れ	10	3	no-meaning
+n3k-l05	連	第05	86	168	LIÊN	Nối liền, dẫn theo	kanjidic2-translated		take along; lead; join; connect; party; gang; clique	レン	つら.なる、つら.ねる、つ.れる、-づ.れ	10	4	no-meaning
 n3k-l05	軍	第05	90	168	QUÂN	Quân đội, quân sự	kanjidic2-translated		army; force; troops; war; battle	グン	いくさ	9	2	no-meaning
 n3k-l05	庫	第05	93	168	KHỐ	Kho	kanjidic2-translated		warehouse; storehouse	コ、ク	くら	10	2	no-meaning
 n3k-l06	度	第06	1	168	ĐỘ	Độ; lần	kanjidic2-translated		degrees; occurrence; time; counter for occurrences; consider; attitude	ド、ト、タク	たび、-た.い	9	3	no-meaning
@@ -223,7 +223,7 @@ n3k-l09	絡	第09	73	196	LẠC	Quấn, vướng vào	kanjidic2-translated		entwi
 n3k-l09	格	第09	77	196	CÁCH	Cấp bậc, tư cách	kanjidic2-translated		status; rank; capacity; character; case (law, grammar)	カク、コウ、キャク、ゴウ		10	3	no-meaning
 n3k-l09	落	第09	81	197	LẠC	Rơi rớt; bị loại; bỏ sót	pdf	rơi rớt; bị loại; bỏ sót	fall; drop; come down; village; hamlet	ラク	お.ちる、お.ち、お.とす	12	4	
 n3k-l09	路	第09	86	197	LỘ	Đường, lộ trình	kanjidic2-translated		path; route; road; distance	ロ、ル	-じ、みち	13	3	no-meaning
-n3k-l10	伸	第10	1	197	THÂN	Duỗi, kéo dài, vươn ra	kanjidic2-translated		expand; stretch; extend; lengthen; increase	シン	の.びる、の.ばす、の.べる、の.す	7	3	no-meaning
+n3k-l10	伸	第10	1	197	THÂN	Duỗi, kéo dài, vươn ra	kanjidic2-translated		expand; stretch; extend; lengthen; increase	シン	の.びる、の.ばす、の.べる、の.す	7	2	no-meaning
 n3k-l10	神	第10	5	198	THẦN	Thần, thần linh; tinh thần	kanjidic2-translated		gods; mind; soul	シン、ジン	かみ、かん-、こう-	9	4	no-meaning
 n3k-l10	押	第10	10	198	ÁP	Đẩy, ấn	kanjidic2-translated		push; stop; check; subdue; attach; seize; weight; shove; press; seal; do in spite of	オウ	お.す、お.し-、お.っ-、お.さえる、おさ.える	8	3	no-meaning
 n3k-l10	訳	第10	14	198	DỊCH	Dịch; lý do	kanjidic2-translated		translate; reason; circumstance; case	ヤク	わけ	11	3	no-meaning
@@ -248,7 +248,8 @@ n3k-l10	否	第10	87	204	PHỦ	Không, phủ định, từ chối	kanjidic2-tran
 n3k-l10	向	第10	90	204	HƯỚNG	Hướng về, phía	kanjidic2-translated		yonder; facing; beyond; confront; defy; tend toward; approach	コウ	む.く、む.い、-む.き、む.ける、-む.け、む.かう、む.かい、む.こう、む.こう-、むこ、むか.い	6	4	no-meaning
 n3k-l11	反	第11	1	204	PHẢN	Ngược lại, phản	kanjidic2-translated		anti-	ハン、ホン、タン、ホ	そ.る、そ.らす、かえ.す、かえ.る、-かえ.る	4	4	no-meaning
 n3k-l11	返	第11	6	205	PHẢN	Trả lại, đáp lại	kanjidic2-translated		return; answer; fade; repay	ヘン	かえ.す、-かえ.す、かえ.る、-かえ.る	7	4	no-meaning
-n3k-l11	坂	第11	11	205	PHẢN	Con dốc	kanjidic2-translated		slope; incline; hill	ハン	さか	7	5	no-meaning
+n3k-l11	坂	第11	11	205	PHẢN	Con dốc	kanjidic2-translated		slope; incline; hill	ハン	さか	7	0	no-meaning
+n3k-l11	板	第11	11	205	BẢN	Tấm ván, tấm bảng	kanjidic2-translated (kanji added, no PDF card)		plank; board; plate; stage	ハン、バン	いた	8	5	added:words-printed-under-坂
 n3k-l11	乳	第11	17	205	NHŨ	Sữa; vú	kanjidic2-translated		milk; breasts	ニュウ	ちち、ち	8	4	no-meaning
 n3k-l11	存	第11	22	206	TỒN	Tồn tại; biết, nghĩ	kanjidic2-translated		exist; suppose; be aware of; believe; feel	ソン、ゾン	ながら.える、あ.る、たも.つ、と.う	6	4	no-meaning
 n3k-l11	季	第11	27	206	QUÝ	Mùa	kanjidic2-translated		seasons	キ		8	4	no-meaning
@@ -270,7 +271,7 @@ n3k-l11	次	第12	5	211	THỨ	Tiếp theo, kế tiếp	kanjidic2-translated		nex
 n3k-l11	欧	第12	10	212	ÂU	Châu Âu	kanjidic2-translated		Europe	オウ	うた.う、は.く	8	2	no-meaning
 n3k-l11	吹	第12	13	212	XUY	Thổi	kanjidic2-translated		blow; breathe; puff; emit; smoke	スイ	ふ.く	7	1	no-meaning
 n3k-l11	位	第12	15	212	VỊ	Vị trí, cấp bậc	kanjidic2-translated		rank; grade; throne; crown; about; some	イ	くらい、ぐらい	7	3	no-meaning
-n3k-l11	倍	第12	19	212	BỘI	Gấp (bao nhiêu lần)	kanjidic2-translated		double; twice; times; fold	バイ		10	3	no-meaning
+n3k-l12	倍	第12	19	212	BỘI	Gấp (bao nhiêu lần)	kanjidic2-translated		double; twice; times; fold	バイ		10	3	no-meaning
 n3k-l12	泣	第12	23	212	KHẤP	Khóc	kanjidic2-translated		cry; weep; moan	キュウ	な.く	8	3	no-meaning
 n3k-l12	翌	第12	27	213	DỰC	(ngày, năm) tiếp theo, hôm sau	kanjidic2-translated		the following; next	ヨク		11	3	no-meaning
 n3k-l12	殺	第12	31	213	SÁT	Giết	kanjidic2-translated		kill; murder; butcher; slice off; split; diminish; reduce; spoil	サツ、サイ、セツ	ころ.す、-ごろ.し、そ.ぐ、あや.める	10	3	no-meaning
@@ -342,7 +343,7 @@ n3k-l14	紙	第16	36	236	CHỈ	Giấy	kanjidic2-translated		paper	シ	かみ	10	
 n3k-l14	婚	第16	40	236	HÔN	Hôn nhân	kanjidic2-translated		marriage	コン		11	5	no-meaning
 n3k-l14	鳥	第16	46	237	ĐIỂU	Chim	kanjidic2-translated		bird; chicken	チョウ	とり	11	2	no-meaning
 n3k-l14	島	第16	49	237	ĐẢO	Đảo	kanjidic2-translated		island	トウ	しま	10	5	no-meaning
-n3k-l14	州	第16	55	237	CHÂU	Châu, bang	kanjidic2-translated		state; province	シュウ、ス	す	6	2	no-meaning
+n3k-l14	州	第16	55	237	CHÂU	Châu, bang	kanjidic2-translated		state; province	シュウ、ス	す	6	1	no-meaning
 n3k-l15	流	第16	58	238	LƯU	Chảy, dòng chảy	kanjidic2-translated		current; a sink; flow; forfeit	リュウ、ル	なが.れる、なが.れ、なが.す、-なが.す	10	3	no-meaning
 n3k-l15	念	第16	62	238	NIỆM	Ý nghĩ, tâm niệm	kanjidic2-translated		wish; sense; idea; thought; feeling; desire; attention	ネン		8	4	no-meaning
 n3k-l15	含	第16	67	238	HÀM	Bao gồm, chứa	kanjidic2-translated		contain; include; hold in the mouth; bear in mind; understand; cherish	ガン	ふく.む、ふく.める	7	3	no-meaning

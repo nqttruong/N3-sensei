@@ -222,7 +222,7 @@ n3k-l04	速	第04	9	153	速い	はやい	Nhanh, mau lẹ		n3k-x-04-009
 n3k-l04	速	第04	10	153	時速	じそく	Tốc độ theo giờ, thường dùng để chỉ đơn vị km/h hoặc mph	THÌ TỐC	n3k-x-04-010	
 n3k-l04	士	第04	12	153	武士	ぶし	Võ sĩ, chỉ tầng lớp samurai	VŨ SĨ	n3k-x-04-012	
 n3k-l04	士	第04	13	153	弁護士	べんごし	Người biện hộ; luật sư	BIỆN HỘ SĨ	n3k-x-04-013	
-n3k-l04	仕	第04	15	153	お仕事	しごと	Công việc, nghề nghiệp	SĨ SỰ	n3k-x-04-015	reading-does-not-match-spelling
+n3k-l04	仕	第04	15	153	お仕事	おしごと	Công việc, nghề nghiệp	SĨ SỰ	n3k-x-04-015	reading-fixed:しごと
 n3k-l04	仕	第04	16	153	仕方	しかた	Cách làm; phương pháp	SĨ PHƯƠNG	n3k-x-04-016	
 n3k-l04	仕	第04	17	153	仕送り	しおくり	Tiền chu cấp, tiền gửi để nuôi sống ai đó	SĨ TỐNG	n3k-x-04-017	
 n3k-l04	志	第04	19	154	志望	しぼう	Nguyện vọng, ý muốn, ước nguyện	CHÍ VỌNG	n3k-x-04-019	
@@ -344,6 +344,7 @@ n3k-l05	現	第05	85	168	表現	ひょうげん	Sự biểu hiện; sự diễn 
 n3k-l05	連	第05	87	168	連続	れんぞく	Liên tục , liên tiếp	LIÊN TỤC	n3k-x-05-087	
 n3k-l05	連	第05	88	168	連れる	つれる	Dẫn; dắt; dẫn dắt		n3k-x-05-088	
 n3k-l05	連	第05	89	168	連絡	れんらく	Giữ liên lạc	LIÊN LẠC	n3k-x-05-089	
+n3k-l05	連	第16	56	238	連合	れんごう	Liên minh , Liên đoàn	LIÊN HỢP	n3k-x-16-056	text-before-reading regrouped-from:州
 n3k-l05	軍	第05	91	168	軍隊	ぐんたい	Quân đội, Binh ngũ	QUÂN ĐỘI	n3k-x-05-091	
 n3k-l05	軍	第05	92	168	空軍	くうぐん	Không quân	KHÔNG QUÂN	n3k-x-05-092	
 n3k-l05	庫	第05	94	168	金庫	きんこ	Két sắt , Kho bạc	KIM KHỐ	n3k-x-05-094	
@@ -638,9 +639,9 @@ n3k-l09	落	第09	85	197	落語	らくご	Tấu hài Nhật Bản	LẠC NGÔN	n3
 n3k-l09	路	第09	87	197	道路	どうろ	Đường xá	ĐẠO LỘ	n3k-x-09-087	
 n3k-l09	路	第09	88	197	線路	せんろ	Đường ray	TUYẾN LỘ	n3k-x-09-088	
 n3k-l09	路	第09	89	197	進路	しんろ	Lối đi, hướng đi (tương lai); Tuyến đường, lộ trình, hướng tiến lên	TIẾN LỘ	n3k-x-09-089	several-senses
-n3k-l10	伸	第10	2	197	身長	しんちょう	Chiều cao	THÂN TRƯỜNG	n3k-x-10-002	word-without-its-kanji
 n3k-l10	伸	第10	3	197	追伸	ついしん	Tái bút	TRUY THÂN	n3k-x-10-003	
 n3k-l10	伸	第10	4	197	伸びる	のびる	Kéo dài, giãn ra, phát triển, vươn ra		n3k-x-10-004	
+n3k-l10	伸	第10	2	197	身長	しんちょう	Chiều cao	THÂN TRƯỜNG	n3k-x-10-002	regrouped-from:伸
 n3k-l10	神	第10	6	198	神社	じんじゃ	Đền thờ	THẦN XÃ	n3k-x-10-006	
 n3k-l10	神	第10	7	198	神経質	しんけいしつ	Nhạy cảm, dễ lo lắng	THẦN KINH CHẤT	n3k-x-10-007	
 n3k-l10	神	第10	8	198	神様	かみさま	Thần thánh		n3k-x-10-008	
@@ -717,11 +718,11 @@ n3k-l11	返	第11	7	205	振り返る	ふりかえる	Nhìn lại	CHẤN PHẢN	n
 n3k-l11	返	第11	8	205	返信	へんしん	Hồi âm, trả lời tin nhắn	PHẢN TÍN	n3k-x-11-008	
 n3k-l11	返	第11	9	205	返事	へんじ	Trả lời, hồi đáp	PHẢN SỰ	n3k-x-11-009	
 n3k-l11	返	第11	10	205	返却	へんきゃく	Trả lại (đồ đã mượn)	PHẢN KHƯỚC	n3k-x-11-010	dropped-lines
-n3k-l11	坂	第11	12	205	木の板	きのいた	Tấm ván gỗ		n3k-x-11-012	word-without-its-kanji
-n3k-l11	坂	第11	13	205	黒板	こくばん	Bảng đen	HẮC BẢN	n3k-x-11-013	word-without-its-kanji
-n3k-l11	坂	第11	14	205	板書	ばんしょ	Viết lên bảng	BẢN THƯ	n3k-x-11-014	word-without-its-kanji
-n3k-l11	坂	第11	15	205	板前	いたまえ	Đầu bếp (đứng trước thớt)	BẢN TIỀN	n3k-x-11-015	word-without-its-kanji
-n3k-l11	坂	第11	16	205	看板	かんばん	Biển báo, Biển hiệu, bảng quảng cáo, bảng thông báo	KHÁN BẢN	n3k-x-11-016	word-without-its-kanji
+n3k-l11	板	第11	12	205	木の板	きのいた	Tấm ván gỗ		n3k-x-11-012	regrouped-from:坂
+n3k-l11	板	第11	13	205	黒板	こくばん	Bảng đen	HẮC BẢN	n3k-x-11-013	regrouped-from:坂
+n3k-l11	板	第11	14	205	板書	ばんしょ	Viết lên bảng	BẢN THƯ	n3k-x-11-014	regrouped-from:坂
+n3k-l11	板	第11	15	205	板前	いたまえ	Đầu bếp (đứng trước thớt)	BẢN TIỀN	n3k-x-11-015	regrouped-from:坂
+n3k-l11	板	第11	16	205	看板	かんばん	Biển báo, Biển hiệu, bảng quảng cáo, bảng thông báo	KHÁN BẢN	n3k-x-11-016	regrouped-from:坂
 n3k-l11	乳	第11	18	205	乳歯	にゅうし	Răng sữa	NHŨ XỈ	n3k-x-11-018	
 n3k-l11	乳	第11	19	206	乳しぼり	ちちしぼり	Vắt sữa (bò)		n3k-x-11-019	
 n3k-l11	乳	第11	20	206	牛乳	ぎゅうにゅう	Sữa bò	NGƯU NHŨ	n3k-x-11-020	
@@ -800,9 +801,9 @@ n3k-l11	吹	第12	14	212	吹く	ふく	Thổi (gió thổi)		n3k-x-12-014
 n3k-l11	位	第12	16	212	地位	ちい	Địa vị	ĐỊA VỊ	n3k-x-12-016	
 n3k-l11	位	第12	17	212	位置	いち	Vị trí	VỊ TRÍ	n3k-x-12-017	
 n3k-l11	位	第12	18	212	上位	じょうい	Vị trí cao, lớp trên	THƯỢNG VỊ	n3k-x-12-018	
-n3k-l11	倍	第12	20	212	三倍	さんばい	Gấp 3 lần	TAM BỘI	n3k-x-12-020	
-n3k-l11	倍	第12	21	212	人一倍	ひといちばい	Gấp đôi người thường, hơn người khác	NHÂN NHẤT BỘI	n3k-x-12-021	
-n3k-l11	倍	第12	22	212	倍にする	ばいにする	Làm gấp đôi lên		n3k-x-12-022	
+n3k-l12	倍	第12	20	212	三倍	さんばい	Gấp 3 lần	TAM BỘI	n3k-x-12-020	
+n3k-l12	倍	第12	21	212	人一倍	ひといちばい	Gấp đôi người thường, hơn người khác	NHÂN NHẤT BỘI	n3k-x-12-021	
+n3k-l12	倍	第12	22	212	倍にする	ばいにする	Làm gấp đôi lên		n3k-x-12-022	
 n3k-l12	泣	第12	24	212	泣く	なく	Khóc		n3k-x-12-024	
 n3k-l12	泣	第12	25	213	号泣	ごうきゅう	Khóc nức nở	HIỆU KHẤP	n3k-x-12-025	
 n3k-l12	泣	第12	26	213	泣き虫	なきむし	Người hay khóc nhè	KHẤP TRÙNG	n3k-x-12-026	
@@ -1087,7 +1088,6 @@ n3k-l14	島	第16	51	237	無人島	むじんとう	Đảo hoang	VÔ NHÂN ĐẢO
 n3k-l14	島	第16	52	237	諸島	しょとう	Quần đảo	CHƯ ĐẢO	n3k-x-16-052	
 n3k-l14	島	第16	53	237	バリ島	ばりとう	Đảo Bali		n3k-x-16-053	
 n3k-l14	島	第16	54	237	半島	はんとう	Bán đảo	BÁN ĐẢO	n3k-x-16-054	
-n3k-l14	州	第16	56	238	連合	れんごう	Liên minh , Liên đoàn	LIÊN HỢP	n3k-x-16-056	text-before-reading word-without-its-kanji
 n3k-l14	州	第16	57	238	州	しゅう	Bang, châu		n3k-x-16-057	text-before-reading
 n3k-l15	流	第16	59	238	流れる	ながれる	Chảy		n3k-x-16-059	
 n3k-l15	流	第16	60	238	流行した	りゅうこうした	Đã lưu hành, thịnh hành	LƯU HÀNH	n3k-x-16-060	

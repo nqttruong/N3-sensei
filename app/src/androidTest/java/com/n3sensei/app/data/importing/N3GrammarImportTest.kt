@@ -55,7 +55,7 @@ class N3GrammarImportTest {
     private val v1 = InstrumentationRegistry.getInstrumentation().context.assets
         .open("content-history/n3-grammar-v1.json").use { it.readBytes().toString(Charsets.UTF_8) }
 
-    private fun bumped(version: Int) = json.replaceFirst("\"version\": 2", "\"version\": $version")
+    private fun bumped(version: Int) = json.replaceFirst("\"version\": 3", "\"version\": $version")
     private fun query(q: ItemQuery) = runBlocking { content.observeGrammarItems(q).first().map { it.item } }
 
     @Test
@@ -97,7 +97,7 @@ class N3GrammarImportTest {
         db.progressDao().upsert(progress)
         db.progressDao().insertMark(ItemMarkEntity(ItemType.GRAMMAR, "n3g-g092", 9))
         assertEquals(ImportOutcome.UP_TO_DATE, importer.import(json, onlyIfNewer = true).outcome)
-        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(3)).outcome)
+        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(4)).outcome)
         assertEquals(174, db.countRows("grammar"))
         assertEquals(220, db.countRows("example_sentences"))
         assertEquals(progress, db.progressDao().get(ItemType.GRAMMAR, "n3g-g039"))
@@ -111,8 +111,8 @@ class N3GrammarImportTest {
         db.openHelper.writableDatabase.execSQL(
             "CREATE TRIGGER fail_g060 BEFORE INSERT ON grammar WHEN NEW.id = 'n3g-g060' BEGIN SELECT RAISE(ABORT, 'disk full (test)'); END",
         )
-        assertEquals(ImportOutcome.FAILED, importer.import(bumped(3)).outcome)
-        assertEquals(2, db.contentPackDao().getPack("n3-grammar")!!.version)
+        assertEquals(ImportOutcome.FAILED, importer.import(bumped(4)).outcome)
+        assertEquals(3, db.contentPackDao().getPack("n3-grammar")!!.version)
         assertEquals(174, db.countRows("grammar"))
         assertEquals(1, db.countRows("learning_progress"))
     }

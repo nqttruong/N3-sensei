@@ -42,10 +42,11 @@ class N3KanjiPackTest {
     private val rawExamples by lazy { raw["examples"]!!.jsonArray.map { it.jsonObject }.associateBy { it.text("id") } }
 
     @Test
-    fun importsWithoutErrors_392Kanji_with1272ExampleWords_andNoVocabulary() {
+    fun importsWithoutErrors_393Kanji_with1272ExampleWords_andNoVocabulary() {
         val counts = result.report.counts
         assertEquals(16, counts.getValue(ImportRecordType.LESSON).valid)
-        assertEquals(392, counts.getValue(ImportRecordType.KANJI).valid)
+        // 392 kanji cards of the PDF + 板, whose words the PDF prints under 坂.
+        assertEquals(393, counts.getValue(ImportRecordType.KANJI).valid)
         assertEquals(1272, counts.getValue(ImportRecordType.EXAMPLE).valid)
         // The kanji's words are not vocabulary items: nothing goes to the vocabulary domain.
         assertEquals(0, counts[ImportRecordType.VOCABULARY]?.valid ?: 0)
@@ -56,7 +57,7 @@ class N3KanjiPackTest {
 
     @Test
     fun eachKanjiIsOneUnit_andItsWordsAreNotCountedAsKanji() {
-        assertEquals(392, bundle.kanji.map { it.character }.toSet().size)
+        assertEquals(393, bundle.kanji.map { it.character }.toSet().size)
         assertTrue(bundle.kanji.all { it.character.codePointCount(0, it.character.length) == 1 })
         // A one-kanji word (波 なみ) is an example word of the kanji 波, not a second kanji record.
         assertEquals(listOf("{波|なみ}"), wordsOf("波").filter { it.japanese == "波" }.map { it.furigana })
@@ -65,8 +66,8 @@ class N3KanjiPackTest {
     @Test
     fun lessonsKeepThePdfOrder_24To27KanjiEach_noGroupSplit() {
         val sizes = bundle.lessons.sortedBy { it.number }.map { l -> bundle.kanji.count { it.lessonId == l.id } }
-        // Decks 第01–第10 as in the PDF (第01 has 27 with 狼), then 第11–第18 re-cut in order.
-        assertEquals(listOf(27, 26, 27, 24, 24, 24, 24, 24, 24, 23, 25, 24, 24, 24, 24, 24), sizes)
+        // Decks 第01–第10 as in the PDF (第01 has 27 with 狼), then 第11–第18 (+ 板) re-cut in order.
+        assertEquals(listOf(27, 26, 27, 24, 24, 24, 24, 24, 24, 23, 25, 25, 24, 24, 24, 24), sizes)
         val order = rawKanji.map { it.origin().text("deck") to it.origin()["card"]!!.jsonPrimitive.int }
         assertEquals(order.sortedWith(compareBy({ it.first }, { it.second })), order)
         val first = bundle.kanji.filter { it.lessonId == "n3k-l01" }.sortedBy { it.sortOrder }.map { it.character }
@@ -84,14 +85,17 @@ class N3KanjiPackTest {
             val origin = rawExamples.getValue(ref.exampleId).origin()
             assertEquals(ref.exampleId, origin.text("kanji"), bundle.kanji.single { it.id == ref.kanjiId }.character)
         }
-        assertEquals(1272, bundle.kanjiExamples.map { it.exampleId }.toSet().size)
+        // 1 272 word cards; 身長 (第10#2) is the same card as under 身 and is kept but not shown twice.
+        assertEquals(1271, bundle.kanjiExamples.map { it.exampleId }.toSet().size)
+        assertEquals(1272, bundle.examples.size)
         bundle.examples.forEach { e ->
             val reading = rawExamples.getValue(e.id).origin().text("reading")
             // Kana written in katakana (ゴミ箱) stays katakana in the ruby text.
             if (e.furigana != null) assertEquals(e.japanese, hiragana(reading), hiragana(Furigana.readingText(e.furigana!!)))
         }
-        // お仕事 is read しごと in the PDF: no furigana, flagged for review.
-        assertEquals(listOf("お仕事"), bundle.examples.filter { it.furigana == null && Regex("\\p{IsHan}").containsMatchIn(it.japanese) }.map { it.japanese })
+        // お仕事: the PDF reads しごと; fixed to おしごと, same id.
+        assertEquals("お{仕事|しごと}", bundle.examples.single { it.id == "n3k-x-04-015" }.furigana)
+        assertTrue(bundle.examples.none { it.furigana == null && Regex("\\p{IsHan}").containsMatchIn(it.japanese) })
     }
 
     @Test
@@ -105,15 +109,34 @@ class N3KanjiPackTest {
     }
 
     @Test
-    fun wordsUnderTheWrongKanjiInThePdf_areFlagged_andLeftWhereThePdfPutsThem() {
-        val flagged = rawExamples.values.filter { e ->
-            (e.origin()["flags"] as JsonArray).any { it.jsonPrimitive.content == "word-without-its-kanji" }
-        }.map { it.origin().text("kanji") + ":" + it.text("japanese") }
+    fun wordsUnderTheWrongKanjiInThePdf_moveToTheirKanji_keepingTheirIds() {
+        val moved = rawExamples.values.mapNotNull { e ->
+            val from = (e.origin()["flags"] as JsonArray).map { it.jsonPrimitive.content }.firstOrNull { it.startsWith("regrouped-from:") }
+            from?.let { "${e.text("id")}:${e.text("japanese")}:${it.removePrefix("regrouped-from:")}" }
+        }.sorted()
         assertEquals(
-            listOf("伸:身長", "坂:木の板", "坂:黒板", "坂:板書", "坂:板前", "坂:看板", "州:連合"),
-            flagged,
+            listOf(
+                "n3k-x-10-002:身長:伸", "n3k-x-11-012:木の板:坂", "n3k-x-11-013:黒板:坂", "n3k-x-11-014:板書:坂",
+                "n3k-x-11-015:板前:坂", "n3k-x-11-016:看板:坂", "n3k-x-16-056:連合:州",
+            ),
+            moved,
         )
-        assertTrue(wordsOf("坂").map { it.japanese }.containsAll(listOf("黒板", "看板")))
+        assertEquals(listOf("木の板", "黒板", "板書", "板前", "看板"), wordsOf("板").map { it.japanese })
+        assertTrue(wordsOf("坂").isEmpty())
+        assertEquals("連合", wordsOf("連").last().japanese)
+        assertEquals(listOf("州"), wordsOf("州").map { it.japanese })
+        assertEquals(listOf("追伸", "伸びる"), wordsOf("伸").map { it.japanese })
+        // 身長 stays under 身 once (its own card 第07#78); the 第10#2 card is kept, marked as its duplicate.
+        assertEquals(1, wordsOf("身").count { it.japanese == "身長" })
+        assertEquals("n3k-x-07-078", rawExamples.getValue("n3k-x-10-002").origin().text("duplicateOf"))
+        // No word is left under a kanji it does not contain.
+        bundle.kanjiExamples.forEach { ref ->
+            val k = bundle.kanji.single { it.id == ref.kanjiId }.character
+            assertTrue(ref.exampleId, k in bundle.examples.single { it.id == ref.exampleId }.japanese)
+        }
+        // 板 is added from KANJIDIC2 (no card in the PDF).
+        assertEquals("BẢN", kanji("板").hanViet)
+        assertEquals("n3k-l11", kanji("板").lessonId)
     }
 
     @Test
@@ -125,7 +148,7 @@ class N3KanjiPackTest {
             assertTrue(k.character, k.strokeCount != null)
         }
         val statuses = rawKanji.groupingBy { it.origin()["meaning"]!!.jsonObject.text("status") }.eachCount()
-        assertEquals(273 + 14, statuses.filterKeys { it.startsWith("kanjidic2-translated") }.values.sum())
+        assertEquals(273 + 14 + 1, statuses.filterKeys { it.startsWith("kanjidic2-translated") }.values.sum())
         assertEquals(103 + 2, statuses.filterKeys { it.startsWith("pdf") }.values.sum())
         // A compound's meaning in the PDF is not taken as the kanji's meaning.
         assertEquals("Truyền, truyền đạt", kanji("伝").meaningVi)
@@ -134,7 +157,8 @@ class N3KanjiPackTest {
         assertEquals(listOf("ハ"), kanji("波").onReadings)
         assertEquals(8, kanji("波").strokeCount)
         val source = bundle.sources.single { it.id == kanji("波").sourceId }
-        assertFalse(source.licenseVerified)
+        // N3.pdf is the project owner's document; KANJIDIC2's licence is known (CC BY-SA 4.0).
+        assertTrue(source.licenseVerified)
         assertTrue(source.attribution!!.contains("Electronic Dictionary Research and Development Group"))
     }
 

@@ -28,6 +28,7 @@ import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.content.ExampleSentenceItem
 import com.n3sensei.app.core.ui.content.ItemActions
+import com.n3sensei.app.core.ui.content.KanjiCard
 import com.n3sensei.app.core.ui.content.SourceNote
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.VocabularyDetail
@@ -37,6 +38,7 @@ fun VocabularyDetailScreen(
     viewModel: VocabularyDetailViewModel,
     onPracticeLesson: (lessonId: String) -> Unit,
     onEdit: () -> Unit,
+    onOpenKanji: (kanjiId: String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -47,7 +49,7 @@ fun VocabularyDetailScreen(
     }
     val scheduleInfo by viewModel.scheduleInfo.collectAsStateWithLifecycle()
     UiStateContent(state = state, onRetry = viewModel::refresh, modifier = modifier) { detail ->
-        VocabularyDetailContent(detail) {
+        VocabularyDetailContent(detail, onOpenKanji) {
             ItemActions(scheduleInfo, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.vocabulary.lessonId) })
             OutlinedButton(onClick = onEdit) { Text(stringResource(R.string.edit_action)) }
         }
@@ -56,7 +58,7 @@ fun VocabularyDetailScreen(
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun VocabularyDetailContent(detail: VocabularyDetail, actions: @Composable () -> Unit) {
+private fun VocabularyDetailContent(detail: VocabularyDetail, onOpenKanji: (String) -> Unit, actions: @Composable () -> Unit) {
     val vocabulary = detail.vocabulary
     Column(
         modifier = Modifier
@@ -96,6 +98,13 @@ private fun VocabularyDetailContent(detail: VocabularyDetail, actions: @Composab
                 Text(stringResource(R.string.detail_no_examples), color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
             detail.examples.forEach { ExampleSentenceItem(it) }
+        }
+        if (detail.linkedKanji.isNotEmpty()) {
+            DetailSection(stringResource(R.string.vocabulary_linked_kanji)) {
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    detail.linkedKanji.forEach { KanjiCard(it, onClick = { onOpenKanji(it.id) }) }
+                }
+            }
         }
         HorizontalDivider()
         SourceNote(detail.source)

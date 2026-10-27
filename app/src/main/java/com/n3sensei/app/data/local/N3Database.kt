@@ -28,6 +28,8 @@ import com.n3sensei.app.data.local.entity.ReviewRecordEntity
 import com.n3sensei.app.data.local.entity.ReviewSessionEntity
 import com.n3sensei.app.data.local.entity.TagEntity
 import com.n3sensei.app.data.local.entity.UserContentEditEntity
+import com.n3sensei.app.data.local.entity.UserWordEntity
+import com.n3sensei.app.data.local.entity.VocabularyKanjiLinkEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.data.local.entity.VocabularyExampleCrossRef
 import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
@@ -52,6 +54,8 @@ import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
         ItemMarkEntity::class,
         ReviewSessionEntity::class,
         UserContentEditEntity::class,
+        VocabularyKanjiLinkEntity::class,
+        UserWordEntity::class,
     ],
     version = N3Database.VERSION,
     exportSchema = true,
@@ -67,7 +71,7 @@ abstract class N3Database : RoomDatabase() {
     abstract fun userContentDao(): UserContentDao
 
     companion object {
-        const val VERSION = 5
+        const val VERSION = 6
         const val NAME = "n3sensei.db"
 
         /**

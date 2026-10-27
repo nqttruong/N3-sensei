@@ -30,6 +30,7 @@ import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.content.ExampleSentenceItem
 import com.n3sensei.app.core.ui.content.ItemActions
 import com.n3sensei.app.core.ui.content.SourceNote
+import com.n3sensei.app.core.ui.content.VocabularyCard
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.KanjiDetail
 
@@ -38,6 +39,7 @@ fun KanjiDetailScreen(
     viewModel: KanjiDetailViewModel,
     onPracticeLesson: (lessonId: String) -> Unit,
     onEdit: () -> Unit,
+    onOpenVocabulary: (vocabularyId: String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -48,7 +50,7 @@ fun KanjiDetailScreen(
     }
     val scheduleInfo by viewModel.scheduleInfo.collectAsStateWithLifecycle()
     UiStateContent(state = state, onRetry = viewModel::refresh, modifier = modifier) { detail ->
-        KanjiDetailContent(detail) {
+        KanjiDetailContent(detail, onOpenVocabulary) {
             ItemActions(scheduleInfo, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.kanji.lessonId) })
             OutlinedButton(onClick = onEdit) { Text(stringResource(R.string.edit_action)) }
         }
@@ -56,7 +58,7 @@ fun KanjiDetailScreen(
 }
 
 @Composable
-private fun KanjiDetailContent(detail: KanjiDetail, actions: @Composable () -> Unit) {
+private fun KanjiDetailContent(detail: KanjiDetail, onOpenVocabulary: (String) -> Unit, actions: @Composable () -> Unit) {
     val kanji = detail.kanji
     val none = stringResource(R.string.common_none)
     Column(
@@ -104,6 +106,14 @@ private fun KanjiDetailContent(detail: KanjiDetail, actions: @Composable () -> U
                 Text(stringResource(R.string.detail_no_examples), color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
             detail.examples.forEach { ExampleSentenceItem(it) }
+        }
+        // Vocabulary items the learner linked to this kanji: separate from its example words.
+        if (detail.linkedVocabulary.isNotEmpty()) {
+            DetailSection(stringResource(R.string.kanji_linked_words)) {
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    detail.linkedVocabulary.forEach { VocabularyCard(it, onClick = { onOpenVocabulary(it.id) }) }
+                }
+            }
         }
         HorizontalDivider()
         SourceNote(detail.source)

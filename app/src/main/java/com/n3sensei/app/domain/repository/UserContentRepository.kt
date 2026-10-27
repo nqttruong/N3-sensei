@@ -2,29 +2,43 @@ package com.n3sensei.app.domain.repository
 
 import com.n3sensei.app.domain.edit.EditableField
 import com.n3sensei.app.domain.edit.EditableItem
+import com.n3sensei.app.domain.edit.KanjiChoice
 import com.n3sensei.app.domain.edit.SaveResult
 import com.n3sensei.app.domain.model.ItemType
 
 /**
  * The learner's changes to content: edits of pack items (kept apart from the pack and applied
- * again after every pack update) and the learner's own words (the "Từ của tôi" pack).
+ * again after every pack update), the learner's own words (the "Từ của tôi" pack) and the
+ * learner's links between words and kanji.
  */
 interface UserContentRepository {
-    /** Kanji or word to edit; null if it does not exist. */
+    /** Kanji, word or grammar point to edit; null if it does not exist. */
     suspend fun load(type: ItemType, id: String): EditableItem?
 
-    /** Saves the form of an existing item. Values equal to the pack's value remove that edit. */
-    suspend fun save(type: ItemType, id: String, values: Map<EditableField, String>): SaveResult
+    /**
+     * Saves the form of an existing item. Values equal to the pack's value remove that edit.
+     * For a word, [linkedKanji] (kanji ids) replaces its links when not null.
+     */
+    suspend fun save(
+        type: ItemType,
+        id: String,
+        values: Map<EditableField, String>,
+        linkedKanji: Set<String>? = null,
+        allowDuplicate: Boolean = false,
+    ): SaveResult
 
     /** Back to the pack's values for every field of a pack item. */
     suspend fun revert(type: ItemType, id: String): Boolean
 
-    /** Adds a word to "Từ của tôi". */
-    suspend fun addWord(values: Map<EditableField, String>): SaveResult
+    /** Adds a word to "Từ của tôi". A word with the same spelling and reading is refused unless [allowDuplicate]. */
+    suspend fun addWord(values: Map<EditableField, String>, linkedKanji: Set<String> = emptySet(), allowDuplicate: Boolean = false): SaveResult
 
-    /** Deletes one of the learner's own words (with its schedule and mark). Pack words cannot be deleted. */
+    /** Deletes one of the learner's own words (with its schedule, mark and links). Pack words cannot be deleted. */
     suspend fun deleteWord(id: String): Boolean
 
-    /** Edits whose item is no longer in any installed pack (kept; they apply again if it returns). */
-    suspend fun countOrphanEdits(): Int
+    /** Kanji written with any of the characters of [text], in every installed pack. */
+    suspend fun kanjiChoices(text: String): List<KanjiChoice>
+
+    /** Edits and links whose item is no longer in any installed pack (kept; they apply again if it returns). */
+    suspend fun countOrphans(): Int
 }

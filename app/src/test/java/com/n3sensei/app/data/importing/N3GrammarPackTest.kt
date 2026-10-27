@@ -107,7 +107,8 @@ class N3GrammarPackTest {
         bundle.grammar.filter { it.id > "n3g-g110" }.forEach { g ->
             val source = bundle.sources.single { it.id == g.sourceId }
             assertTrue(source.name, source.name.startsWith("N3.pdf · Ngữ pháp, nhóm "))
-            assertFalse(source.licenseVerified)
+            // N3.pdf is the project owner's document.
+            assertTrue(source.licenseVerified)
         }
         assertEquals("N3.pdf · Ngữ pháp, nhóm 01 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)", bundle.sources.single { it.id == grammar(111).sourceId }.name)
     }

@@ -11,6 +11,7 @@ import androidx.navigation.toRoute
 import com.n3sensei.app.R
 import com.n3sensei.app.app.di.appViewModel
 import com.n3sensei.app.app.reminder.ReminderDeepLinks
+import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningStatus
@@ -87,6 +88,7 @@ fun N3SenseiNavHost(
                     onOpenVocabulary = { navController.navigate(VocabularyRoute()) },
                     onOpenKanji = { navController.navigate(KanjiRoute()) },
                     onOpenGrammar = { navController.navigate(GrammarRoute()) },
+                    onOpenMyWords = { navController.navigate(VocabularyRoute(lessonId = UserWords.LESSON_ID)) },
                 )
             }
             composable<LessonListRoute> {
@@ -106,9 +108,10 @@ fun N3SenseiNavHost(
                 )
             }
             composable<VocabularyRoute> { entry ->
-                val status = entry.toRoute<VocabularyRoute>().status.toLearningStatus()
+                val route = entry.toRoute<VocabularyRoute>()
+                val status = route.status.toLearningStatus()
                 VocabularyListScreen(
-                    viewModel = appViewModel { VocabularyListViewModel(contentRepository, status) },
+                    viewModel = appViewModel { VocabularyListViewModel(contentRepository, status, route.lessonId) },
                     onOpenVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
                     onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
                     onAddWord = { navController.navigate(AddWordRoute) },
@@ -122,6 +125,7 @@ fun N3SenseiNavHost(
                     viewModel = appViewModel { VocabularyDetailViewModel(id, contentRepository, progressRepository, userPreferencesRepository, clock) },
                     onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
                     onEdit = { navController.navigate(VocabularyEditRoute(id)) },
+                    onOpenKanji = { navController.navigate(KanjiDetailRoute(it)) },
                 )
             }
             composable<VocabularyEditRoute> { entry ->
@@ -133,12 +137,16 @@ fun N3SenseiNavHost(
                         // The word no longer exists: leave its detail screen too.
                         if (deleted) navController.popBackStack()
                     },
+                    onCancel = { navController.popBackStack() },
+                    onOpenWord = { navController.navigate(VocabularyDetailRoute(it)) },
                 )
             }
             composable<AddWordRoute> {
                 ContentEditScreen(
                     viewModel = appViewModel { ContentEditViewModel(EditTarget.NewWord, userContentRepository) },
                     onDone = { navController.popBackStack() },
+                    onCancel = { navController.popBackStack() },
+                    onOpenWord = { navController.navigate(VocabularyDetailRoute(it)) },
                 )
             }
             composable<KanjiRoute> { entry ->
@@ -155,6 +163,7 @@ fun N3SenseiNavHost(
                     viewModel = appViewModel { KanjiDetailViewModel(id, contentRepository, progressRepository, userPreferencesRepository, clock) },
                     onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
                     onEdit = { navController.navigate(KanjiEditRoute(id)) },
+                    onOpenVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
                 )
             }
             composable<KanjiEditRoute> { entry ->
@@ -162,6 +171,8 @@ fun N3SenseiNavHost(
                 ContentEditScreen(
                     viewModel = appViewModel { ContentEditViewModel(EditTarget.Existing(ItemType.KANJI, id), userContentRepository) },
                     onDone = { navController.popBackStack() },
+                    onCancel = { navController.popBackStack() },
+                    onOpenWord = { navController.navigate(VocabularyDetailRoute(it)) },
                 )
             }
             composable<GrammarRoute> { entry ->
@@ -177,6 +188,16 @@ fun N3SenseiNavHost(
                 GrammarDetailScreen(
                     viewModel = appViewModel { GrammarDetailViewModel(id, contentRepository, progressRepository, userPreferencesRepository, clock) },
                     onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
+                    onEdit = { navController.navigate(GrammarEditRoute(id)) },
+                )
+            }
+            composable<GrammarEditRoute> { entry ->
+                val id = entry.toRoute<GrammarEditRoute>().grammarId
+                ContentEditScreen(
+                    viewModel = appViewModel { ContentEditViewModel(EditTarget.Existing(ItemType.GRAMMAR, id), userContentRepository) },
+                    onDone = { navController.popBackStack() },
+                    onCancel = { navController.popBackStack() },
+                    onOpenWord = { navController.navigate(VocabularyDetailRoute(it)) },
                 )
             }
             composable<PracticeRoute> { entry ->

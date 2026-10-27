@@ -50,11 +50,11 @@ for r in index: names.setdefault(re.sub(r'\s+', '', r['title']), []).append(r['o
 same_name = {k: v for k, v in names.items() if len(v) > 1}
 
 LESSON_SIZE = 7
-PDF_LICENSE = ('Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki "N3"); '
-               'không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.')
+PDF_LICENSE = ('N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn '
+               'từ thẻ ngữ pháp.')
 pack = {
     'format': 'n3sensei-content-pack', 'formatVersion': 1,
-    'pack': {'id': 'n3-grammar', 'title': 'Ngữ pháp N3 (danh mục Mimikara N3 + bổ sung từ N3.pdf)', 'version': 2,
+    'pack': {'id': 'n3-grammar', 'title': 'Ngữ pháp N3 (danh mục Mimikara N3 + bổ sung từ N3.pdf)', 'version': 3,
              'jlptLevel': 'N3', 'defaultSourceId': 'n3sensei-grammar'},
     # The pack needs a default source; each item also names its own source below.
     'sources': [{
@@ -104,7 +104,7 @@ for n, card in enumerate(sorted(NEW_POINTS, key=lambda c: (c[:2], int(c[3:]))), 
     src = f"n3pdf-g-{card.replace('.', '-')}"
     pack['sources'].append({
         'id': src, 'name': f"N3.pdf · Ngữ pháp, nhóm {card[:2]} thẻ {int(card[3:])} (tên mẫu, cách chia, nghĩa ngắn)",
-        'url': None, 'license': PDF_LICENSE, 'attribution': None, 'licenseVerified': False,
+        'url': None, 'license': PDF_LICENSE, 'attribution': None, 'licenseVerified': True,
     })
     for f, v in (('pattern', pattern), ('structure', structure), ('meaning', meaning)):
         if not clean(v): problems.append(f'{card}: missing {f}')

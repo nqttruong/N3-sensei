@@ -33,6 +33,7 @@ fun LearnHubScreen(
     onOpenVocabulary: () -> Unit,
     onOpenKanji: () -> Unit,
     onOpenGrammar: () -> Unit,
+    onOpenMyWords: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(modifier = modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
@@ -43,6 +44,8 @@ fun LearnHubScreen(
         LearnSectionItem("漢", R.string.kanji_title, R.string.learn_kanji_description, onOpenKanji)
         HorizontalDivider()
         LearnSectionItem("文", R.string.grammar_title, R.string.learn_grammar_description, onOpenGrammar)
+        HorizontalDivider()
+        LearnSectionItem("私", R.string.learn_my_words, R.string.learn_my_words_description, onOpenMyWords)
     }
 }
 
@@ -75,5 +78,5 @@ private fun LearnSectionItem(
 @Preview(showBackground = true)
 @Composable
 private fun LearnHubScreenPreview() {
-    N3SenseiTheme { LearnHubScreen(onOpenLessons = {}, onOpenVocabulary = {}, onOpenKanji = {}, onOpenGrammar = {}) }
+    N3SenseiTheme { LearnHubScreen(onOpenLessons = {}, onOpenVocabulary = {}, onOpenKanji = {}, onOpenGrammar = {}, onOpenMyWords = {}) }
 }

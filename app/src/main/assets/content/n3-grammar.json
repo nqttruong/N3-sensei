@@ -4,7 +4,7 @@
  "pack": {
   "id": "n3-grammar",
   "title": "Ngữ pháp N3 (danh mục Mimikara N3 + bổ sung từ N3.pdf)",
-  "version": 2,
+  "version": 3,
   "jlptLevel": "N3",
   "defaultSourceId": "n3sensei-grammar"
  },
@@ -901,513 +901,513 @@
    "id": "n3pdf-g-01-01",
    "name": "N3.pdf · Ngữ pháp, nhóm 01 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-02-01",
    "name": "N3.pdf · Ngữ pháp, nhóm 02 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-03-01",
    "name": "N3.pdf · Ngữ pháp, nhóm 03 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-03-06",
    "name": "N3.pdf · Ngữ pháp, nhóm 03 thẻ 6 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-03-08",
    "name": "N3.pdf · Ngữ pháp, nhóm 03 thẻ 8 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-03-09",
    "name": "N3.pdf · Ngữ pháp, nhóm 03 thẻ 9 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-03-10",
    "name": "N3.pdf · Ngữ pháp, nhóm 03 thẻ 10 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-05-01",
    "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-05-05",
    "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 5 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-05-06",
    "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 6 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-05-07",
    "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 7 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-05-09",
    "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 9 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-05-13",
    "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 13 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-05-15",
    "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 15 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-05-17",
    "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 17 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-05-18",
    "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 18 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-05-19",
    "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 19 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-05-28",
    "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 28 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-05-30",
    "name": "N3.pdf · Ngữ pháp, nhóm 05 thẻ 30 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-01",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-07",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 7 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-08",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 8 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-09",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 9 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-10",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 10 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-11",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 11 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-12",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 12 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-13",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 13 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-14",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 14 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-15",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 15 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-16",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 16 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-17",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 17 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-18",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 18 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-06-20",
    "name": "N3.pdf · Ngữ pháp, nhóm 06 thẻ 20 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-01",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-02",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 2 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-03",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 3 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-05",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 5 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-06",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 6 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-08",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 8 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-09",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 9 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-10",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 10 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-12",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 12 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-13",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 13 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-18",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 18 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-19",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 19 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-20",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 20 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-23",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 23 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-24",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 24 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-30",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 30 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-32",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 32 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-33",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 33 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-39",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 39 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-42",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 42 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-43",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 43 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-63",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 63 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-66",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 66 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-68",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 68 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-69",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 69 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-71",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 71 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-72",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 72 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-73",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 73 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-74",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 74 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-76",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 76 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-g-07-77",
    "name": "N3.pdf · Ngữ pháp, nhóm 07 thẻ 77 (tên mẫu, cách chia, nghĩa ngắn)",
    "url": null,
-   "license": "Chỉ lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp trong tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"); không lấy giải thích, mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   }
  ],
  "examples": [

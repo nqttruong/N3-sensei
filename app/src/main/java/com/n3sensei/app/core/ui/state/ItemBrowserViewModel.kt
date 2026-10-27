@@ -39,9 +39,10 @@ abstract class ItemBrowserViewModel<T>(
     /** The kind of item listed; lesson chips only offer lessons that contain some. */
     itemType: ItemType,
     initialStatus: LearningStatus? = null,
+    initialLessonId: String? = null,
 ) : ViewModel() {
 
-    private val _filters = MutableStateFlow(ItemQuery(status = initialStatus))
+    private val _filters = MutableStateFlow(ItemQuery(status = initialStatus, lessonId = initialLessonId))
 
     /** Current filters; [ItemQuery.text] is what the user typed (not yet debounced). */
     val filters: StateFlow<ItemQuery> = _filters.asStateFlow()

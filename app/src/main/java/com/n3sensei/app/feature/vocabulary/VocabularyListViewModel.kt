@@ -18,7 +18,8 @@ import kotlinx.coroutines.flow.stateIn
 class VocabularyListViewModel(
     private val contentRepository: ContentRepository,
     initialStatus: LearningStatus? = null,
-) : ItemBrowserViewModel<Vocabulary>(contentRepository, ItemType.VOCABULARY, initialStatus) {
+    initialLessonId: String? = null,
+) : ItemBrowserViewModel<Vocabulary>(contentRepository, ItemType.VOCABULARY, initialStatus, initialLessonId) {
     override val tags: StateFlow<List<Tag>> = contentRepository.observeTags()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), emptyList())
 

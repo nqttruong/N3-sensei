@@ -88,12 +88,17 @@ data class VocabularyDetail(
     val examples: List<ExampleSentence>,
     val tags: List<Tag>,
     val source: ContentSource,
+    /** Kanji the learner linked this word to. */
+    val linkedKanji: List<Kanji> = emptyList(),
 )
 
 data class KanjiDetail(
     val kanji: Kanji,
+    /** The kanji's own example words (from its pack). */
     val examples: List<ExampleSentence>,
     val source: ContentSource,
+    /** Vocabulary items the learner linked to this kanji. */
+    val linkedVocabulary: List<Vocabulary> = emptyList(),
 )
 
 /** Multiple-choice question attached to a grammar point by the content pack. */

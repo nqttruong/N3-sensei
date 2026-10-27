@@ -4,34 +4,34 @@
  "pack": {
   "id": "n3-kanji",
   "title": "Kanji N3 (theo N3.pdf)",
-  "version": 1,
+  "version": 2,
   "jlptLevel": "N3",
   "defaultSourceId": "n3pdf-kanji"
  },
  "sources": [
   {
    "id": "n3pdf-kanji",
-   "name": "N3.pdf · phần Kanji (bộ thẻ Anki \"N3\" của người dùng)",
+   "name": "N3.pdf · phần Kanji (tài liệu của chủ dự án)",
    "url": null,
-   "license": "Lấy từ phần Kanji của tệp N3.pdf của người dùng (bộ thẻ Anki \"N3\"): chữ Hán, âm Hán Việt, chữ viết, cách đọc và nghĩa ngắn của từ. Không lấy mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.",
+   "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói dùng phần Kanji: chữ Hán, âm Hán Việt, chữ viết, cách đọc và nghĩa ngắn của từ minh họa.",
    "attribution": null,
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-kanji-kanjidic2",
    "name": "Chữ Hán, âm Hán Việt: N3.pdf · âm On/Kun, số nét, nghĩa gốc tiếng Anh: KANJIDIC2 (EDRDG)",
    "url": "https://www.edrdg.org/wiki/index.php/KANJIDIC_Project",
-   "license": "Phần N3.pdf: chưa xác minh quyền sử dụng. Phần KANJIDIC2: CC BY-SA 4.0, Electronic Dictionary Research and Development Group (https://www.edrdg.org/edrdg/licence.html); nghĩa tiếng Việt do N3 Sensei dịch từ nghĩa tiếng Anh, chưa kiểm duyệt.",
+   "license": "Phần N3.pdf: tài liệu của chủ dự án. Phần KANJIDIC2: CC BY-SA 4.0, Electronic Dictionary Research and Development Group (https://www.edrdg.org/edrdg/licence.html); thay đổi: nghĩa tiếng Việt do N3 Sensei dịch từ nghĩa tiếng Anh (chưa kiểm duyệt), chỉ dùng âm On/Kun, số nét, nghĩa.",
    "attribution": "KANJIDIC2 © Electronic Dictionary Research and Development Group",
-   "licenseVerified": false
+   "licenseVerified": true
   },
   {
    "id": "n3pdf-kanji-jmdict",
    "name": "Từ, cách đọc: N3.pdf · nghĩa: dịch từ JMdict (EDRDG)",
    "url": "https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project",
-   "license": "Phần N3.pdf: chưa xác minh quyền sử dụng. Phần JMdict: CC BY-SA 4.0, Electronic Dictionary Research and Development Group (https://www.edrdg.org/edrdg/licence.html); nghĩa tiếng Việt do N3 Sensei dịch, chưa kiểm duyệt.",
+   "license": "Phần N3.pdf: tài liệu của chủ dự án. Phần JMdict: CC BY-SA 4.0, Electronic Dictionary Research and Development Group (https://www.edrdg.org/edrdg/licence.html); thay đổi: nghĩa tiếng Việt do N3 Sensei dịch từ nghĩa tiếng Anh (chưa kiểm duyệt).",
    "attribution": "JMdict © Electronic Dictionary Research and Development Group",
-   "licenseVerified": false
+   "licenseVerified": true
   }
  ],
  "examples": [
@@ -4095,7 +4095,7 @@
   {
    "id": "n3k-x-04-015",
    "japanese": "お仕事",
-   "furigana": null,
+   "furigana": "お{仕事|しごと}",
    "translationVi": "Công việc, nghề nghiệp",
    "sourceId": "n3pdf-kanji",
    "origin": {
@@ -4105,10 +4105,10 @@
      153
     ],
     "kanji": "仕",
-    "reading": "しごと",
+    "reading": "おしごと",
     "hanViet": "SĨ SỰ",
     "flags": [
-     "reading-does-not-match-spelling"
+     "reading-fixed:しごと"
     ]
    }
   },
@@ -6315,6 +6315,27 @@
     "reading": "れんらく",
     "hanViet": "LIÊN LẠC",
     "flags": []
+   }
+  },
+  {
+   "id": "n3k-x-16-056",
+   "japanese": "連合",
+   "furigana": "{連合|れんごう}",
+   "translationVi": "Liên minh , Liên đoàn",
+   "sourceId": "n3pdf-kanji",
+   "origin": {
+    "deck": "第16",
+    "card": 56,
+    "pages": [
+     238
+    ],
+    "kanji": "連",
+    "reading": "れんごう",
+    "hanViet": "LIÊN HỢP",
+    "flags": [
+     "text-before-reading",
+     "regrouped-from:州"
+    ]
    }
   },
   {
@@ -11667,26 +11688,6 @@
    }
   },
   {
-   "id": "n3k-x-10-002",
-   "japanese": "身長",
-   "furigana": "{身長|しんちょう}",
-   "translationVi": "Chiều cao",
-   "sourceId": "n3pdf-kanji",
-   "origin": {
-    "deck": "第10",
-    "card": 2,
-    "pages": [
-     197
-    ],
-    "kanji": "伸",
-    "reading": "しんちょう",
-    "hanViet": "THÂN TRƯỜNG",
-    "flags": [
-     "word-without-its-kanji"
-    ]
-   }
-  },
-  {
    "id": "n3k-x-10-003",
    "japanese": "追伸",
    "furigana": "{追伸|ついしん}",
@@ -11720,6 +11721,27 @@
     "reading": "のびる",
     "hanViet": null,
     "flags": []
+   }
+  },
+  {
+   "id": "n3k-x-10-002",
+   "japanese": "身長",
+   "furigana": "{身長|しんちょう}",
+   "translationVi": "Chiều cao",
+   "sourceId": "n3pdf-kanji",
+   "origin": {
+    "deck": "第10",
+    "card": 2,
+    "pages": [
+     197
+    ],
+    "kanji": "伸",
+    "reading": "しんちょう",
+    "hanViet": "THÂN TRƯỜNG",
+    "flags": [
+     "regrouped-from:伸"
+    ],
+    "duplicateOf": "n3k-x-07-078"
    }
   },
   {
@@ -13110,11 +13132,11 @@
     "pages": [
      205
     ],
-    "kanji": "坂",
+    "kanji": "板",
     "reading": "きのいた",
     "hanViet": null,
     "flags": [
-     "word-without-its-kanji"
+     "regrouped-from:坂"
     ]
    }
   },
@@ -13130,11 +13152,11 @@
     "pages": [
      205
     ],
-    "kanji": "坂",
+    "kanji": "板",
     "reading": "こくばん",
     "hanViet": "HẮC BẢN",
     "flags": [
-     "word-without-its-kanji"
+     "regrouped-from:坂"
     ]
    }
   },
@@ -13150,11 +13172,11 @@
     "pages": [
      205
     ],
-    "kanji": "坂",
+    "kanji": "板",
     "reading": "ばんしょ",
     "hanViet": "BẢN THƯ",
     "flags": [
-     "word-without-its-kanji"
+     "regrouped-from:坂"
     ]
    }
   },
@@ -13170,11 +13192,11 @@
     "pages": [
      205
     ],
-    "kanji": "坂",
+    "kanji": "板",
     "reading": "いたまえ",
     "hanViet": "BẢN TIỀN",
     "flags": [
-     "word-without-its-kanji"
+     "regrouped-from:坂"
     ]
    }
   },
@@ -13190,11 +13212,11 @@
     "pages": [
      205
     ],
-    "kanji": "坂",
+    "kanji": "板",
     "reading": "かんばん",
     "hanViet": "KHÁN BẢN",
     "flags": [
-     "word-without-its-kanji"
+     "regrouped-from:坂"
     ]
    }
   },
@@ -19874,27 +19896,6 @@
     "reading": "はんとう",
     "hanViet": "BÁN ĐẢO",
     "flags": []
-   }
-  },
-  {
-   "id": "n3k-x-16-056",
-   "japanese": "連合",
-   "furigana": "{連合|れんごう}",
-   "translationVi": "Liên minh , Liên đoàn",
-   "sourceId": "n3pdf-kanji",
-   "origin": {
-    "deck": "第16",
-    "card": 56,
-    "pages": [
-     238
-    ],
-    "kanji": "州",
-    "reading": "れんごう",
-    "hanViet": "LIÊN HỢP",
-    "flags": [
-     "text-before-reading",
-     "word-without-its-kanji"
-    ]
    }
   },
   {
@@ -28099,7 +28100,8 @@
      "examples": [
       "n3k-x-05-087",
       "n3k-x-05-088",
-      "n3k-x-05-089"
+      "n3k-x-05-089",
+      "n3k-x-16-056"
      ],
      "sourceId": "n3pdf-kanji-kanjidic2",
      "origin": {
@@ -31949,7 +31951,6 @@
      "strokeCount": 7,
      "note": "Nghĩa dịch từ KANJIDIC2 (tiếng Anh: expand; stretch; extend; lengthen; increase), chưa kiểm duyệt.",
      "examples": [
-      "n3k-x-10-002",
       "n3k-x-10-003",
       "n3k-x-10-004"
      ],
@@ -32839,7 +32840,7 @@
   {
    "id": "n3k-l11",
    "number": 11,
-   "title": "Kanji N3 · bài 11: 反–倍",
+   "title": "Kanji N3 · bài 11: 反–位",
    "description": "25 chữ Hán theo thứ tự N3.pdf (nhóm 第11, 第12) và từ minh họa của từng chữ.",
    "vocabulary": [],
    "kanji": [
@@ -32939,6 +32940,39 @@
      "meaningVi": "Con dốc",
      "strokeCount": 7,
      "note": "Nghĩa dịch từ KANJIDIC2 (tiếng Anh: slope; incline; hill), chưa kiểm duyệt.",
+     "examples": [],
+     "sourceId": "n3pdf-kanji-kanjidic2",
+     "origin": {
+      "deck": "第11",
+      "card": 11,
+      "pages": [
+       205
+      ],
+      "meaning": {
+       "status": "kanjidic2-translated",
+       "pdf": null,
+       "kanjidic2": [
+        "slope",
+        "incline",
+        "hill"
+       ]
+      }
+     }
+    },
+    {
+     "id": "n3k-k0677f",
+     "character": "板",
+     "onReadings": [
+      "ハン",
+      "バン"
+     ],
+     "kunReadings": [
+      "いた"
+     ],
+     "hanViet": "BẢN",
+     "meaningVi": "Tấm ván, tấm bảng",
+     "strokeCount": 8,
+     "note": "Nghĩa dịch từ KANJIDIC2 (tiếng Anh: plank; board; plate; stage), chưa kiểm duyệt.",
      "examples": [
       "n3k-x-11-012",
       "n3k-x-11-013",
@@ -32954,12 +32988,13 @@
        205
       ],
       "meaning": {
-       "status": "kanjidic2-translated",
+       "status": "kanjidic2-translated (kanji added, no PDF card)",
        "pdf": null,
        "kanjidic2": [
-        "slope",
-        "incline",
-        "hill"
+        "plank",
+        "board",
+        "plate",
+        "stage"
        ]
       }
      }
@@ -33788,7 +33823,17 @@
        ]
       }
      }
-    },
+    }
+   ],
+   "grammar": []
+  },
+  {
+   "id": "n3k-l12",
+   "number": 12,
+   "title": "Kanji N3 · bài 12: 倍–功",
+   "description": "25 chữ Hán theo thứ tự N3.pdf (nhóm 第12, 第13) và từ minh họa của từng chữ.",
+   "vocabulary": [],
+   "kanji": [
     {
      "id": "n3k-k0500d",
      "character": "倍",
@@ -33823,17 +33868,7 @@
        ]
       }
      }
-    }
-   ],
-   "grammar": []
-  },
-  {
-   "id": "n3k-l12",
-   "number": 12,
-   "title": "Kanji N3 · bài 12: 泣–功",
-   "description": "24 chữ Hán theo thứ tự N3.pdf (nhóm 第12, 第13) và từ minh họa của từng chữ.",
-   "vocabulary": [],
-   "kanji": [
+    },
     {
      "id": "n3k-k06ce3",
      "character": "泣",
@@ -36673,7 +36708,6 @@
      "strokeCount": 6,
      "note": "Nghĩa dịch từ KANJIDIC2 (tiếng Anh: state; province), chưa kiểm duyệt.",
      "examples": [
-      "n3k-x-16-056",
       "n3k-x-16-057"
      ],
      "sourceId": "n3pdf-kanji-kanjidic2",

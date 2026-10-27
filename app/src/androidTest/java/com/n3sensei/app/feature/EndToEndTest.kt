@@ -277,8 +277,8 @@ class EndToEndTest {
             waitForText("Chú ý")
             waitForText("Quyết tâm")
         }
-        // 27 kanji of the illustration pack + 392; the kanji words are kanji examples.
-        assertEquals(27 + 392, AppTestState.appContainer.database.countRows("kanji"))
+        // 27 kanji of the illustration pack + 393; the kanji words are kanji examples.
+        assertEquals(27 + 393, AppTestState.appContainer.database.countRows("kanji"))
         assertEquals(30 + 880, AppTestState.appContainer.database.countRows("vocabulary"))
     }
 

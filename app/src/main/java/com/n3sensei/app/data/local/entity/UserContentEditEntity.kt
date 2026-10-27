@@ -15,6 +15,8 @@ import com.n3sensei.app.domain.model.ItemType
  * @property field a [com.n3sensei.app.domain.edit.EditableField] key.
  * @property value the learner's value, encoded like the content column ([com.n3sensei.app.data.local.ContentEdits]).
  * @property baseValue the pack's value the last time the edit was applied, for revert and review.
+ * @property baseChanged the pack changed this field's own value since the learner edited it
+ *   (a conflict to show); cleared when the learner saves the field again.
  */
 @Entity(tableName = "user_content_edits", primaryKeys = ["item_type", "item_id", "field"])
 data class UserContentEditEntity(
@@ -25,4 +27,5 @@ data class UserContentEditEntity(
     @ColumnInfo(name = "base_value") val baseValue: String,
     @ColumnInfo(name = "created_at") val createdAt: Long,
     @ColumnInfo(name = "updated_at") val updatedAt: Long,
+    @ColumnInfo(name = "base_changed", defaultValue = "0") val baseChanged: Boolean = false,
 )

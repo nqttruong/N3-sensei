@@ -87,23 +87,44 @@ abstract class ContentPackDao {
     }
 
     /**
-     * The new rows carry the pack's values: record them as each edit's base and write the
-     * learner's values over them. Edits of items the pack no longer has are left as they are.
+     * The new rows carry the pack's values: record them as each edit's base (flagging the edits
+     * whose base the pack changed) and write the learner's values over them. Edits of items the
+     * pack no longer has are left as they are.
      */
     private suspend fun reapplyUserEdits(packId: String) {
         getKanjiEditsOfPack(packId).groupBy { it.itemId }.forEach { (id, edits) ->
             val row = getKanji(id) ?: return@forEach
-            val rebased = edits.map { it.copy(baseValue = ContentEdits.get(row, it.field)) }
+            val rebased = ContentEdits.rebase(edits) { ContentEdits.get(row, it) }
             upsertEdits(rebased.filterIndexed { i, e -> e != edits[i] })
             updateKanji(ContentEdits.merged(row, rebased).withSearchText())
         }
         getVocabularyEditsOfPack(packId).groupBy { it.itemId }.forEach { (id, edits) ->
             val row = getVocabulary(id) ?: return@forEach
-            val rebased = edits.map { it.copy(baseValue = ContentEdits.get(row, it.field)) }
+            val rebased = ContentEdits.rebase(edits) { ContentEdits.get(row, it) }
             upsertEdits(rebased.filterIndexed { i, e -> e != edits[i] })
             updateVocabulary(ContentEdits.merged(row, rebased).withSearchText())
         }
+        getGrammarEditsOfPack(packId).groupBy { it.itemId }.forEach { (id, edits) ->
+            val row = getGrammar(id) ?: return@forEach
+            val rebased = ContentEdits.rebase(edits) { ContentEdits.get(row, it) }
+            upsertEdits(rebased.filterIndexed { i, e -> e != edits[i] })
+            updateGrammar(ContentEdits.merged(row, rebased).withSearchText())
+        }
     }
+
+    @Query(
+        """
+        SELECT e.* FROM user_content_edits e JOIN grammar g ON g.id = e.item_id JOIN lessons l ON l.id = g.lesson_id
+        WHERE e.item_type = 'GRAMMAR' AND l.pack_id = :packId
+        """,
+    )
+    abstract suspend fun getGrammarEditsOfPack(packId: String): List<UserContentEditEntity>
+
+    @Query("SELECT * FROM grammar WHERE id = :id")
+    abstract suspend fun getGrammar(id: String): GrammarEntity?
+
+    @Update
+    abstract suspend fun updateGrammar(row: GrammarEntity)
 
     @Query(
         """

@@ -32,6 +32,7 @@ enum class AppScreen(
     ADD_WORD(AddWordRoute::class, R.string.add_word_title, TopLevelDestination.LEARN, isTabRoot = false),
     GRAMMAR(GrammarRoute::class, R.string.grammar_title, TopLevelDestination.LEARN, isTabRoot = false),
     GRAMMAR_DETAIL(GrammarDetailRoute::class, R.string.grammar_detail_title, TopLevelDestination.LEARN, isTabRoot = false),
+    GRAMMAR_EDIT(GrammarEditRoute::class, R.string.grammar_edit_title, TopLevelDestination.LEARN, isTabRoot = false),
     PRACTICE(PracticeRoute::class, R.string.practice_title, TopLevelDestination.LEARN, isTabRoot = false, isFocusSession = true),
     PRACTICE_RESULT(PracticeResultRoute::class, R.string.practice_result_title, TopLevelDestination.LEARN, isTabRoot = false),
     REVIEW(ReviewRoute::class, R.string.review_title, TopLevelDestination.REVIEW, isTabRoot = true),

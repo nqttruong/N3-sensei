@@ -16,8 +16,11 @@ import kotlinx.serialization.Serializable
 
 @Serializable data class LessonDetailRoute(val lessonId: String)
 
-/** [status] pre-selects the learning-status filter (a LearningStatus name). */
-@Serializable data class VocabularyRoute(val status: String? = null)
+/**
+ * [status] pre-selects the learning-status filter (a LearningStatus name), [lessonId] the
+ * lesson filter (e.g. "Từ của tôi").
+ */
+@Serializable data class VocabularyRoute(val status: String? = null, val lessonId: String? = null)
 
 @Serializable data class VocabularyDetailRoute(val vocabularyId: String)
 
@@ -39,6 +42,9 @@ import kotlinx.serialization.Serializable
 @Serializable data class GrammarRoute(val status: String? = null)
 
 @Serializable data class GrammarDetailRoute(val grammarId: String)
+
+/** The learner's edit of a grammar point (kept apart from its pack). */
+@Serializable data class GrammarEditRoute(val grammarId: String)
 
 /** Practice one lesson's items, or marked items (optionally within [lessonId]). */
 @Serializable data class PracticeRoute(val lessonId: String? = null, val markedOnly: Boolean = false)

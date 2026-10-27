@@ -2,15 +2,15 @@ package com.n3sensei.app.data.repository
 
 import com.n3sensei.app.data.local.ContentEdits
 import com.n3sensei.app.data.local.StringListCodec
+import com.n3sensei.app.data.local.dao.KanjiChoiceRow
 import com.n3sensei.app.data.local.dao.UserContentDao
-import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.UserContentEditEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
-import com.n3sensei.app.data.local.withSearchText
 import com.n3sensei.app.domain.edit.ContentEditValidator
 import com.n3sensei.app.domain.edit.EditableField
 import com.n3sensei.app.domain.edit.EditableItem
 import com.n3sensei.app.domain.edit.FieldKind
+import com.n3sensei.app.domain.edit.KanjiChoice
 import com.n3sensei.app.domain.edit.SaveResult
 import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.furigana.Furigana
@@ -33,91 +33,139 @@ class OfflineUserContentRepository(
     private fun form(field: EditableField, stored: String) =
         if (field.kind == FieldKind.READINGS) StringListCodec.decode(stored).joinToString("、") else stored
 
+    private fun KanjiChoiceRow.toChoice() = KanjiChoice(id, character, hanViet, meaningVi, packTitle)
+
     override suspend fun load(type: ItemType, id: String): EditableItem? = when (type) {
-        ItemType.KANJI -> dao.getKanji(id)?.let { row -> kanjiItem(row, dao.getEdits(type, id)) }
+        ItemType.KANJI -> dao.getKanji(id)?.let { row ->
+            val edits = dao.getEdits(type, id)
+            item(type, id, row.character, false, EditableField.KANJI_FORM, edits, { ContentEdits.get(row, it) }, { ContentEdits.get(ContentEdits.base(row, edits), it) })
+        }
+        ItemType.GRAMMAR -> dao.getGrammar(id)?.let { row ->
+            val edits = dao.getEdits(type, id)
+            item(type, id, row.pattern, false, EditableField.GRAMMAR_FORM, edits, { ContentEdits.get(row, it) }, { ContentEdits.get(ContentEdits.base(row, edits), it) })
+        }
         ItemType.VOCABULARY -> dao.getVocabulary(id)?.let { row ->
             val own = dao.packOfVocabulary(id) == UserWords.PACK_ID
-            wordItem(row, if (own) emptyList() else dao.getEdits(type, id), own)
+            val edits = if (own) emptyList() else dao.getEdits(type, id)
+            val example = if (own) dao.examplesOf(id).firstOrNull() else null
+            val fields = if (own) EditableField.USER_WORD_FORM else EditableField.PACK_WORD_FORM
+            val read: (VocabularyEntity, String) -> String = { r, key ->
+                when (key) {
+                    EditableField.WORD_EXAMPLE_JA.key -> example?.japanese.orEmpty()
+                    EditableField.WORD_EXAMPLE_VI.key -> example?.translationVi.orEmpty()
+                    else -> ContentEdits.get(r, key)
+                }
+            }
+            val base = ContentEdits.base(row, edits)
+            item(type, id, row.expression, own, fields, edits, { read(row, it) }, { read(base, it) }).copy(
+                linkedKanji = dao.linkedKanji(id).map { it.toChoice() },
+                hasProgress = dao.countProgress(type, id) > 0,
+            )
         }
-        ItemType.GRAMMAR -> null
     }
 
-    private fun kanjiItem(row: KanjiEntity, edits: List<UserContentEditEntity>): EditableItem {
-        val base = ContentEdits.base(row, edits)
-        val fields = EditableField.KANJI_FORM
+    private fun item(
+        type: ItemType,
+        id: String,
+        label: String,
+        own: Boolean,
+        fields: List<EditableField>,
+        edits: List<UserContentEditEntity>,
+        current: (String) -> String,
+        base: (String) -> String,
+    ): EditableItem {
+        val byKey = edits.associateBy { it.field }
         return EditableItem(
-            type = ItemType.KANJI, id = row.id, label = row.character, userCreated = false, fields = fields,
-            values = fields.associateWith { form(it, ContentEdits.get(row, it.key)) },
-            original = fields.associateWith { form(it, ContentEdits.get(base, it.key)) },
-            edited = fields.filter { f -> edits.any { it.field == f.key } }.toSet(),
+            type = type, id = id, label = label, userCreated = own, fields = fields,
+            values = fields.associateWith { form(it, current(it.key)) },
+            original = fields.associateWith { form(it, base(it.key)) },
+            edited = fields.filter { it.key in byKey }.toSet(),
+            changedInPack = fields.filter { byKey[it.key]?.baseChanged == true }.toSet(),
         )
     }
 
-    private fun wordItem(row: VocabularyEntity, edits: List<UserContentEditEntity>, own: Boolean): EditableItem {
-        val base = ContentEdits.base(row, edits)
-        val fields = if (own) EditableField.USER_WORD_FORM else EditableField.PACK_WORD_FORM
-        return EditableItem(
-            type = ItemType.VOCABULARY, id = row.id, label = row.expression, userCreated = own, fields = fields,
-            values = fields.associateWith { form(it, ContentEdits.get(row, it.key)) },
-            original = fields.associateWith { form(it, ContentEdits.get(base, it.key)) },
-            edited = fields.filter { f -> edits.any { it.field == f.key } }.toSet(),
-        )
-    }
-
-    override suspend fun save(type: ItemType, id: String, values: Map<EditableField, String>): SaveResult = guarded {
+    override suspend fun save(
+        type: ItemType,
+        id: String,
+        values: Map<EditableField, String>,
+        linkedKanji: Set<String>?,
+        allowDuplicate: Boolean,
+    ): SaveResult = guarded {
         val (valid, errors) = ContentEditValidator.validateAll(values)
         if (errors.isNotEmpty()) return@guarded SaveResult.Invalid(errors)
         val now = clock.millis()
+        val changes = { allowed: List<EditableField> ->
+            if (valid.keys.any { it !in allowed }) null else valid.entries.associate { (f, v) -> f.key to stored(f, v) }
+        }
         when (type) {
             ItemType.KANJI -> {
-                if (valid.keys.any { it !in EditableField.KANJI_FORM }) return@guarded SaveResult.Failed
-                val ok = dao.editKanji(id, valid.entries.associate { (f, v) -> f.key to stored(f, v) }, now)
-                if (ok) SaveResult.Saved(id) else SaveResult.NotFound
+                val c = changes(EditableField.KANJI_FORM) ?: return@guarded SaveResult.Failed
+                if (dao.editKanji(id, c, now)) SaveResult.Saved(id) else SaveResult.NotFound
+            }
+            ItemType.GRAMMAR -> {
+                val c = changes(EditableField.GRAMMAR_FORM) ?: return@guarded SaveResult.Failed
+                if (dao.editGrammar(id, c, now)) SaveResult.Saved(id) else SaveResult.NotFound
             }
             ItemType.VOCABULARY -> {
                 val row = dao.getVocabulary(id) ?: return@guarded SaveResult.NotFound
                 if (dao.packOfVocabulary(id) == UserWords.PACK_ID) {
-                    saveOwnWord(row, valid)
+                    saveOwnWord(row, valid, allowDuplicate, now)?.let { return@guarded it }
                 } else {
-                    if (valid.keys.any { it !in EditableField.PACK_WORD_FORM }) return@guarded SaveResult.Failed
-                    val changes = valid.entries.associate { (f, v) -> f.key to stored(f, v) }.toMutableMap()
+                    val c = changes(EditableField.PACK_WORD_FORM)?.toMutableMap() ?: return@guarded SaveResult.Failed
                     // A new reading makes the pack's furigana wrong: hide it (kept as the base, back on revert).
-                    val reading = changes[EditableField.WORD_READING.key]
+                    val reading = c[EditableField.WORD_READING.key]
                     val furigana = ContentEdits.base(row, dao.getEdits(type, id)).furigana
-                    if (reading != null && furigana != null && Furigana.readingText(furigana) != reading) {
-                        changes[ContentEdits.FURIGANA] = ""
-                    } else if (reading != null) {
-                        changes[ContentEdits.FURIGANA] = furigana.orEmpty()
+                    if (reading != null) {
+                        c[ContentEdits.FURIGANA] = if (furigana != null && Furigana.readingText(furigana) != reading) "" else furigana.orEmpty()
                     }
-                    dao.editVocabulary(id, changes, now)
-                    SaveResult.Saved(id)
+                    dao.editVocabulary(id, c, now)
                 }
+                linkedKanji?.let { dao.setLinks(id, it, now) }
+                SaveResult.Saved(id)
             }
-            ItemType.GRAMMAR -> SaveResult.Failed
         }
     }
 
-    private suspend fun saveOwnWord(row: VocabularyEntity, valid: Map<EditableField, String>): SaveResult {
-        val updated = valid.entries.fold(row) { r, (f, v) -> ContentEdits.set(r, f.key, stored(f, v)) }
-        dao.findWord(updated.expression, updated.reading, exceptId = row.id)?.let { return SaveResult.DuplicateWord(it.id, it.packTitle) }
-        dao.updateVocabulary(updated.withSearchText())
-        return SaveResult.Saved(row.id)
+    /** Null when saved; otherwise the result to return (duplicate). */
+    private suspend fun saveOwnWord(row: VocabularyEntity, valid: Map<EditableField, String>, allowDuplicate: Boolean, now: Long): SaveResult? {
+        val updated = valid.entries
+            .filter { it.key != EditableField.WORD_EXAMPLE_JA && it.key != EditableField.WORD_EXAMPLE_VI }
+            .fold(row) { r, (f, v) -> ContentEdits.set(r, f.key, stored(f, v)) }
+        if (!allowDuplicate && (updated.expression != row.expression || updated.reading != row.reading)) {
+            dao.findWord(updated.expression, updated.reading, exceptId = row.id)?.let { return SaveResult.DuplicateWord(it.id, it.packTitle) }
+        }
+        val current = dao.examplesOf(row.id).firstOrNull()
+        val example = when {
+            EditableField.WORD_EXAMPLE_JA in valid -> example(valid)
+            current != null -> current.japanese to current.translationVi
+            else -> null
+        }
+        dao.updateUserWord(updated, example, now)
+        return null
+    }
+
+    private fun example(valid: Map<EditableField, String>): Pair<String, String>? {
+        val ja = valid[EditableField.WORD_EXAMPLE_JA].orEmpty()
+        val vi = valid[EditableField.WORD_EXAMPLE_VI].orEmpty()
+        return if (ja.isEmpty()) null else ja to vi
     }
 
     override suspend fun revert(type: ItemType, id: String): Boolean = runCatchingDb {
         when (type) {
             ItemType.KANJI -> dao.revertKanji(id)
+            ItemType.GRAMMAR -> dao.revertGrammar(id)
             ItemType.VOCABULARY -> dao.packOfVocabulary(id) != UserWords.PACK_ID && dao.revertVocabulary(id)
-            ItemType.GRAMMAR -> false
         }
     } ?: false
 
-    override suspend fun addWord(values: Map<EditableField, String>): SaveResult = guarded {
+    override suspend fun addWord(values: Map<EditableField, String>, linkedKanji: Set<String>, allowDuplicate: Boolean): SaveResult = guarded {
         val (valid, errors) = ContentEditValidator.validateAll(EditableField.USER_WORD_FORM.associateWith { values[it].orEmpty() })
         if (errors.isNotEmpty()) return@guarded SaveResult.Invalid(errors)
         val expression = valid.getValue(EditableField.WORD_EXPRESSION)
         val reading = valid.getValue(EditableField.WORD_READING)
-        dao.findWord(expression, reading)?.let { return@guarded SaveResult.DuplicateWord(it.id, it.packTitle) }
+        if (!allowDuplicate) {
+            dao.findWord(expression, reading)?.let { return@guarded SaveResult.DuplicateWord(it.id, it.packTitle) }
+        }
         val id = newId()
         dao.addUserWord(
             VocabularyEntity(
@@ -128,6 +176,8 @@ class OfflineUserContentRepository(
                 jlptLevel = "N3", sortOrder = 0,
                 note = valid[EditableField.WORD_NOTE]?.ifEmpty { null },
             ),
+            example(valid),
+            linkedKanji,
             clock.millis(),
         )
         SaveResult.Saved(id)
@@ -135,7 +185,15 @@ class OfflineUserContentRepository(
 
     override suspend fun deleteWord(id: String): Boolean = runCatchingDb { dao.deleteUserWord(id) } ?: false
 
-    override suspend fun countOrphanEdits(): Int = dao.countOrphanEdits()
+    override suspend fun kanjiChoices(text: String): List<KanjiChoice> {
+        val characters = text.codePoints().toArray()
+            .filter { Character.UnicodeScript.of(it) == Character.UnicodeScript.HAN }
+            .map { String(Character.toChars(it)) }
+            .distinct()
+        return if (characters.isEmpty()) emptyList() else dao.kanjiByCharacters(characters).map { it.toChoice() }
+    }
+
+    override suspend fun countOrphans(): Int = dao.countOrphans()
 
     private inline fun guarded(block: () -> SaveResult): SaveResult = runCatchingDb(block) ?: SaveResult.Failed
 

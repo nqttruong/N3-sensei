@@ -90,7 +90,33 @@ object N3Migrations {
         }
     }
 
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
+    /**
+     * v6 (additions only): `user_content_edits.base_changed` (conflict flag, false for existing
+     * edits), `vocabulary_kanji_links` (learner's word ↔ kanji links, empty) and `user_words`
+     * (dates of the learner's own words: existing words get the migration time, their real
+     * creation time was never stored).
+     */
+    val MIGRATION_5_6 = object : Migration(5, 6) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `user_content_edits` ADD COLUMN `base_changed` INTEGER NOT NULL DEFAULT 0")
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `vocabulary_kanji_links` (`vocabulary_id` TEXT NOT NULL, `kanji_id` TEXT NOT NULL, " +
+                    "`created_at` INTEGER NOT NULL, PRIMARY KEY(`vocabulary_id`, `kanji_id`))",
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_vocabulary_kanji_links_kanji_id` ON `vocabulary_kanji_links` (`kanji_id`)")
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `user_words` (`vocabulary_id` TEXT NOT NULL, `created_at` INTEGER NOT NULL, " +
+                    "`updated_at` INTEGER NOT NULL, PRIMARY KEY(`vocabulary_id`))",
+            )
+            db.execSQL(
+                "INSERT INTO `user_words` (`vocabulary_id`, `created_at`, `updated_at`) " +
+                    "SELECT v.`id`, CAST(strftime('%s','now') AS INTEGER) * 1000, CAST(strftime('%s','now') AS INTEGER) * 1000 " +
+                    "FROM `vocabulary` v JOIN `lessons` l ON l.`id` = v.`lesson_id` WHERE l.`pack_id` = 'user-words'",
+            )
+        }
+    }
+
+    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6)
 
     private fun String.toReadings(): String = StringListCodec.decode(this).joinToString(" ")
 

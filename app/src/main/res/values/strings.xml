@@ -121,7 +121,30 @@
     <string name="edit_error_not_kana">Chỉ dùng hiragana hoặc katakana.</string>
     <string name="edit_error_not_number">Phải là một số.</string>
     <string name="edit_error_strokes_range">Số nét từ 1 đến 40.</string>
-    <string name="edit_duplicate_word">Từ này (cùng chữ viết và cách đọc) đã có trong "%1$s".</string>
+    <string name="edit_duplicate_word">Từ này (cùng chữ viết và cách đọc) đã có trong "%1$s". Bạn có thể mở từ đó, hoặc vẫn lưu để giữ cả hai.</string>
+    <string name="edit_open_existing">Mở từ đã có</string>
+    <string name="edit_keep_both">Vẫn lưu</string>
+    <string name="edit_pack_changed_banner">Gói nội dung đã cập nhật một số trường bạn từng sửa. Bản của bạn vẫn được dùng; giá trị mới của gói ghi bên dưới từng trường. Lưu lại để xác nhận.</string>
+    <string name="edit_field_pack_changed">Gói đã đổi bản gốc thành: %1$s</string>
+    <string name="edit_example_section">Ví dụ (không bắt buộc)</string>
+    <string name="edit_field_example_ja">Câu ví dụ (tiếng Nhật)</string>
+    <string name="edit_field_example_vi">Dịch câu ví dụ</string>
+    <string name="edit_error_example_incomplete">Cần cả câu ví dụ và bản dịch, hoặc để trống cả hai.</string>
+    <string name="edit_field_pattern">Mẫu ngữ pháp</string>
+    <string name="edit_field_structure">Cấu trúc</string>
+    <string name="edit_field_caution">Lưu ý</string>
+    <string name="edit_kanji_links">Kanji liên quan</string>
+    <string name="edit_kanji_links_hint">Chọn các chữ Hán muốn liên kết với từ này. Liên kết là của bạn, không thay đổi gói Kanji.</string>
+    <string name="edit_kanji_links_none">Chưa có chữ Hán nào để chọn. Hãy tìm một chữ bên dưới.</string>
+    <string name="edit_kanji_lookup">Tìm chữ Hán khác</string>
+    <string name="edit_kanji_lookup_action">Tìm</string>
+    <string name="edit_kanji_not_found">Không có chữ Hán "%1$s" trong các gói đã cài.</string>
+    <string name="edit_delete_confirm_progress">Xóa từ này khỏi "Từ của tôi"? Từ đã có lịch ôn: lịch ôn, đánh dấu và liên kết Kanji của từ sẽ bị xóa (lịch sử ôn vẫn giữ).</string>
+    <string name="grammar_edit_title">Sửa ngữ pháp</string>
+    <string name="kanji_linked_words">Từ vựng bạn liên kết</string>
+    <string name="vocabulary_linked_kanji">Kanji liên quan</string>
+    <string name="learn_my_words">Từ của tôi</string>
+    <string name="learn_my_words_description">Các từ bạn tự thêm, không bị gói nội dung ghi đè</string>
     <string name="edit_save_failed">Không lưu được. Dữ liệu cũ vẫn giữ nguyên; hãy thử lại.</string>
     <string name="edit_not_found">Không tìm thấy mục này. Có thể gói chứa nó đã được cập nhật.</string>
     <string name="edit_save">Lưu</string>
@@ -129,7 +152,7 @@
     <string name="edit_revert">Khôi phục bản gốc</string>
     <string name="edit_revert_confirm">Bỏ mọi thay đổi của bạn ở mục này và dùng lại nội dung của gói?</string>
     <string name="edit_delete_word">Xóa từ này</string>
-    <string name="edit_delete_confirm">Xóa từ này khỏi "Từ của tôi"? Lịch ôn và đánh dấu của từ cũng bị xóa.</string>
+    <string name="edit_delete_confirm">Xóa từ này khỏi "Từ của tôi"? Liên kết Kanji của từ cũng bị xóa.</string>
 
     <!-- Grammar -->
     <string name="grammar_title">Ngữ pháp</string>

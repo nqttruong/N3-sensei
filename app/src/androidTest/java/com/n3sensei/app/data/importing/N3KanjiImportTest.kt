@@ -24,7 +24,7 @@ import java.time.Instant
 import java.time.ZoneOffset
 
 /**
- * The bundled N3 kanji pack (392 kanji from N3.pdf, each with its PDF group words as kanji
+ * The bundled N3 kanji pack (393 kanji from N3.pdf, each with its PDF group words as kanji
  * examples) in a real Room database file, next to the Mimikara vocabulary pack.
  */
 @RunWith(AndroidJUnit4::class)
@@ -58,14 +58,14 @@ class N3KanjiImportTest {
     }
 
     private fun kanjiId(character: String) = "n3k-k%05x".format(character.codePointAt(0))
-    private fun bumped(version: Int) = json.replaceFirst("\"version\": 1", "\"version\": $version")
+    private fun bumped(version: Int) = json.replaceFirst("\"version\": 2", "\"version\": $version")
     private fun kanjiQuery(q: ItemQuery) = runBlocking { content.observeKanjiItems(q).first().map { it.item } }
 
     @Test
     fun kanjiImport_writesOnlyKanjiAndTheirWords_neverVocabulary() = runBlocking {
         assertEquals(ImportOutcome.IMPORTED, importer.import(json).outcome)
-        assertEquals(392, db.countRows("kanji"))
-        assertEquals(1272, db.countRows("kanji_examples"))
+        assertEquals(393, db.countRows("kanji"))
+        assertEquals(1271, db.countRows("kanji_examples"))
         // Mimikara's 880 words, untouched; none added by the kanji pack.
         assertEquals(880, db.countRows("vocabulary"))
         assertEquals(880, content.observeVocabularyItems(ItemQuery()).first().size)
@@ -75,7 +75,7 @@ class N3KanjiImportTest {
         assertEquals(listOf("ハ"), detail.kanji.onReadings)
         assertEquals(listOf("なみ"), detail.kanji.kunReadings)
         assertEquals(8, detail.kanji.strokeCount)
-        assertTrue(!detail.source.licenseVerified)
+        assertTrue(detail.source.licenseVerified)
     }
 
     @Test
@@ -83,8 +83,8 @@ class N3KanjiImportTest {
         importer.import(json)
         val mimikara = asset(AndroidContentImportRepository.MIMIKARA_PACK_ASSET).replaceFirst("\"version\": 1", "\"version\": 2")
         assertEquals(ImportOutcome.IMPORTED, importer.import(mimikara).outcome)
-        assertEquals(392, db.countRows("kanji"))
-        assertEquals(1272, db.countRows("kanji_examples"))
+        assertEquals(393, db.countRows("kanji"))
+        assertEquals(1271, db.countRows("kanji_examples"))
         assertEquals(3, content.getKanjiDetail(kanjiId("意"))!!.examples.size)
     }
 
@@ -102,8 +102,9 @@ class N3KanjiImportTest {
         assertTrue(skin.any { it.japanese == "皮" && it.translationVi == "Da, vỏ" })
         assertTrue(skin.none { it.id == vocabulary.id })
         assertEquals("da", vocabulary.meaningVi)
-        // A word the PDF lists under the wrong kanji stays where the PDF puts it.
-        assertTrue(content.getKanjiDetail(kanjiId("坂"))!!.examples.any { it.japanese == "黒板" })
+        // Words the PDF prints under 坂 belong to 板: shown there, same ids.
+        assertTrue(content.getKanjiDetail(kanjiId("坂"))!!.examples.isEmpty())
+        assertEquals("n3k-x-11-013", content.getKanjiDetail(kanjiId("板"))!!.examples.single { it.japanese == "黒板" }.id)
     }
 
     @Test
@@ -123,10 +124,10 @@ class N3KanjiImportTest {
         db.progressDao().upsert(progress)
         db.progressDao().insertMark(ItemMarkEntity(ItemType.KANJI, kanjiId("波"), 9))
         assertEquals(ImportOutcome.UP_TO_DATE, importer.import(json, onlyIfNewer = true).outcome)
-        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(2)).outcome)
-        assertEquals(392, db.countRows("kanji"))
+        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(3)).outcome)
+        assertEquals(393, db.countRows("kanji"))
         assertEquals(1272, db.countRows("example_sentences"))
-        assertEquals(1272, db.countRows("kanji_examples"))
+        assertEquals(1271, db.countRows("kanji_examples"))
         assertEquals(progress, db.progressDao().get(ItemType.KANJI, kanjiId("意")))
         assertEquals(listOf(kanjiId("波")), kanjiQuery(ItemQuery(markedOnly = true)).map { it.id })
     }
@@ -138,9 +139,9 @@ class N3KanjiImportTest {
         db.openHelper.writableDatabase.execSQL(
             "CREATE TRIGGER fail_kanji BEFORE INSERT ON kanji WHEN NEW.character = '必' BEGIN SELECT RAISE(ABORT, 'disk full (test)'); END",
         )
-        assertEquals(ImportOutcome.FAILED, importer.import(bumped(2)).outcome)
-        assertEquals(1, db.contentPackDao().getPack("n3-kanji")!!.version)
-        assertEquals(392, db.countRows("kanji"))
+        assertEquals(ImportOutcome.FAILED, importer.import(bumped(3)).outcome)
+        assertEquals(2, db.contentPackDao().getPack("n3-kanji")!!.version)
+        assertEquals(393, db.countRows("kanji"))
         assertEquals(1, db.countRows("learning_progress"))
     }
 
@@ -149,7 +150,7 @@ class N3KanjiImportTest {
         importer.import(json)
         db.close()
         open()
-        assertEquals(392, db.countRows("kanji"))
+        assertEquals(393, db.countRows("kanji"))
         assertEquals("Truyền, truyền đạt", content.getKanjiDetail(kanjiId("伝"))!!.kanji.meaningVi)
     }
 }

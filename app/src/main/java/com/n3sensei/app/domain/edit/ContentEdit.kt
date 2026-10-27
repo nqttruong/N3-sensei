@@ -19,8 +19,11 @@ enum class FieldKind {
 
 /**
  * Fields the learner may change. [key] is stored in `user_content_edits.field` and must not
- * change. The kanji character and a pack word's spelling are not editable: they are what the
- * item is (a different character is a different kanji).
+ * change. Not editable on pack items, by design:
+ * - the kanji character and a pack word's spelling: they are what the item is (another
+ *   character is another kanji, progress and links follow the id);
+ * - example sentences: shared rows of the pack, possibly used by several items;
+ * - grammar exercises: an answer key the app checks against.
  */
 enum class EditableField(val type: ItemType, val key: String, val kind: FieldKind, val required: Boolean, val maxLength: Int) {
     KANJI_HAN_VIET(ItemType.KANJI, "hanViet", FieldKind.TEXT, required = false, maxLength = 60),
@@ -36,16 +39,34 @@ enum class EditableField(val type: ItemType, val key: String, val kind: FieldKin
     WORD_MEANING(ItemType.VOCABULARY, "meaningVi", FieldKind.TEXT, required = true, maxLength = 200),
     WORD_PART_OF_SPEECH(ItemType.VOCABULARY, "partOfSpeech", FieldKind.TEXT, required = false, maxLength = 60),
     WORD_NOTE(ItemType.VOCABULARY, "note", FieldKind.TEXT, required = false, maxLength = 500),
+
+    /** The learner's own words only: one example sentence and its translation (both or none). */
+    WORD_EXAMPLE_JA(ItemType.VOCABULARY, "exampleJapanese", FieldKind.TEXT, required = false, maxLength = 200),
+    WORD_EXAMPLE_VI(ItemType.VOCABULARY, "exampleTranslation", FieldKind.TEXT, required = false, maxLength = 300),
+
+    GRAMMAR_PATTERN(ItemType.GRAMMAR, "pattern", FieldKind.TEXT, required = true, maxLength = 120),
+    GRAMMAR_STRUCTURE(ItemType.GRAMMAR, "structure", FieldKind.TEXT, required = true, maxLength = 300),
+    GRAMMAR_MEANING(ItemType.GRAMMAR, "meaningVi", FieldKind.TEXT, required = true, maxLength = 300),
+    GRAMMAR_USAGE(ItemType.GRAMMAR, "usage", FieldKind.TEXT, required = false, maxLength = 1500),
+    GRAMMAR_CAUTION(ItemType.GRAMMAR, "cautionNote", FieldKind.TEXT, required = false, maxLength = 1000),
     ;
+
+    val multiline: Boolean get() = this in setOf(KANJI_NOTE, WORD_NOTE, GRAMMAR_USAGE, GRAMMAR_CAUTION, GRAMMAR_STRUCTURE)
 
     companion object {
         val KANJI_FORM = listOf(KANJI_MEANING, KANJI_HAN_VIET, KANJI_ON, KANJI_KUN, KANJI_STROKES, KANJI_NOTE)
         val PACK_WORD_FORM = listOf(WORD_READING, WORD_MEANING, WORD_PART_OF_SPEECH, WORD_NOTE)
-        val USER_WORD_FORM = listOf(WORD_EXPRESSION) + PACK_WORD_FORM
+        val USER_WORD_FORM = listOf(WORD_EXPRESSION) + PACK_WORD_FORM + listOf(WORD_EXAMPLE_JA, WORD_EXAMPLE_VI)
+        val GRAMMAR_FORM = listOf(GRAMMAR_PATTERN, GRAMMAR_STRUCTURE, GRAMMAR_MEANING, GRAMMAR_USAGE, GRAMMAR_CAUTION)
     }
 }
 
-enum class FieldError { REQUIRED, TOO_LONG, NOT_KANA, NOT_A_NUMBER, OUT_OF_RANGE }
+enum class FieldError {
+    REQUIRED, TOO_LONG, NOT_KANA, NOT_A_NUMBER, OUT_OF_RANGE,
+
+    /** An example sentence without its translation, or the other way round. */
+    EXAMPLE_INCOMPLETE,
+}
 
 /**
  * Form text → normalized form text. Normalized values are what the repository stores and
@@ -68,7 +89,7 @@ object ContentEditValidator {
     fun validate(field: EditableField, raw: String): Result {
         val text = Normalizer.normalize(raw, Normalizer.Form.NFC).trim()
         val value = when (field.kind) {
-            FieldKind.TEXT -> text.replace(Regex("[\\t\\r]"), " ")
+            FieldKind.TEXT -> if (field.multiline) text.replace("\r", "") else text.replace(Regex("[\\t\\r\\n]"), " ")
             FieldKind.KANA -> text.replace(Regex("[\\s\u3000]+"), "")
             FieldKind.READINGS -> readings(text).joinToString("、")
             FieldKind.NUMBER -> text
@@ -99,6 +120,11 @@ object ContentEditValidator {
                 is Result.Invalid -> errors[field] = r.error
             }
         }
+        val ja = ok[EditableField.WORD_EXAMPLE_JA]
+        val vi = ok[EditableField.WORD_EXAMPLE_VI]
+        if (ja != null && vi != null && ja.isEmpty() != vi.isEmpty()) {
+            errors[if (ja.isEmpty()) EditableField.WORD_EXAMPLE_JA else EditableField.WORD_EXAMPLE_VI] = FieldError.EXAMPLE_INCOMPLETE
+        }
         return ok to errors
     }
 }
@@ -109,7 +135,14 @@ object UserWords {
     const val LESSON_ID = "user-words-l1"
     const val SOURCE_ID = "user-words"
     const val ID_PREFIX = "user-w-"
+    const val EXAMPLE_ID_PREFIX = "user-x-"
+
+    /** Ids a content pack may not use: they belong to the learner's words and their examples. */
+    const val RESERVED_ID_PREFIX = "user-"
 }
+
+/** A kanji the learner can link a word to (any installed pack). */
+data class KanjiChoice(val id: String, val character: String, val hanViet: String?, val meaningVi: String, val packTitle: String)
 
 /**
  * An item opened in the edit form. [values] are the current (merged) values, [original] the
@@ -125,13 +158,22 @@ data class EditableItem(
     val values: Map<EditableField, String>,
     val original: Map<EditableField, String>,
     val edited: Set<EditableField>,
+    /** Edited fields whose value the pack changed since (conflict: the learner's value is kept). */
+    val changedInPack: Set<EditableField> = emptySet(),
+    /** Vocabulary only: kanji the word is linked to. */
+    val linkedKanji: List<KanjiChoice> = emptyList(),
+    /** The item has a schedule (deleting it loses the schedule). */
+    val hasProgress: Boolean = false,
 )
 
 sealed interface SaveResult {
     data class Saved(val id: String) : SaveResult
     data class Invalid(val errors: Map<EditableField, FieldError>) : SaveResult
 
-    /** The same spelling and reading is already a word (in a pack or among the learner's words). */
+    /**
+     * The same spelling and reading is already a word (in a pack or among the learner's words).
+     * Nothing was written; the learner may open that word or save again with `allowDuplicate`.
+     */
     data class DuplicateWord(val existingId: String, val packTitle: String) : SaveResult
     data object NotFound : SaveResult
     data object Failed : SaveResult

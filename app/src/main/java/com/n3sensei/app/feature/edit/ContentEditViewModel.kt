@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.n3sensei.app.domain.edit.EditableField
 import com.n3sensei.app.domain.edit.EditableItem
 import com.n3sensei.app.domain.edit.FieldError
+import com.n3sensei.app.domain.edit.KanjiChoice
 import com.n3sensei.app.domain.edit.SaveResult
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.repository.UserContentRepository
@@ -15,7 +16,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-/** What the form edits: an existing kanji / word, or a new word for "Từ của tôi". */
+/** What the form edits: an existing kanji / word / grammar point, or a new word for "Từ của tôi". */
 sealed interface EditTarget {
     data class Existing(val type: ItemType, val id: String) : EditTarget
     data object NewWord : EditTarget
@@ -26,19 +27,26 @@ enum class EditEvent { SAVED, REVERTED, DELETED }
 
 enum class EditProblem { NOT_FOUND, SAVE_FAILED }
 
+/** The word already exists: the learner opens it or saves anyway. */
+data class DuplicateWarning(val existingId: String, val packTitle: String)
+
 data class ContentEditUiState(
     val loading: Boolean = true,
     val item: EditableItem? = null,
     val fields: List<EditableField> = emptyList(),
     val values: Map<EditableField, String> = emptyMap(),
     val errors: Map<EditableField, FieldError> = emptyMap(),
-    /** Set when the word already exists: its pack title. */
-    val duplicateIn: String? = null,
+    val duplicate: DuplicateWarning? = null,
     val problem: EditProblem? = null,
     val busy: Boolean = false,
     val event: EditEvent? = null,
+    /** Words only: kanji the learner can link (from the word's characters and from lookups) and the chosen ones. */
+    val kanjiChoices: List<KanjiChoice> = emptyList(),
+    val linkedKanji: Set<String> = emptySet(),
+    /** A looked-up character with no kanji in any pack. */
+    val kanjiNotFound: String? = null,
 ) {
-    val isNew get() = item == null && !loading && problem != EditProblem.NOT_FOUND
+    val isWord: Boolean get() = item?.type == ItemType.VOCABULARY || (item == null && fields.contains(EditableField.WORD_EXPRESSION))
 }
 
 class ContentEditViewModel(
@@ -72,26 +80,59 @@ class ContentEditViewModel(
                     _state.value = if (item == null) {
                         ContentEditUiState(loading = false, problem = EditProblem.NOT_FOUND)
                     } else {
-                        ContentEditUiState(loading = false, item = item, fields = item.fields, values = item.values)
+                        ContentEditUiState(
+                            loading = false, item = item, fields = item.fields, values = item.values,
+                            kanjiChoices = item.linkedKanji, linkedKanji = item.linkedKanji.map { it.id }.toSet(),
+                        )
                     }
+                    if (item?.type == ItemType.VOCABULARY) addChoices(item.label)
                 }
             }
         }
     }
 
     fun onChange(field: EditableField, value: String) {
-        _state.update { it.copy(values = it.values + (field to value), errors = it.errors - field, duplicateIn = null, problem = null) }
+        _state.update { it.copy(values = it.values + (field to value), errors = it.errors - field, duplicate = null, problem = null) }
+        if (field == EditableField.WORD_EXPRESSION) viewModelScope.launch { addChoices(value) }
     }
 
-    fun save() = launchAction {
+    /** Offers the kanji of [text] for linking (keeps the ones already offered). */
+    private suspend fun addChoices(text: String) {
+        val found = try {
+            repository.kanjiChoices(text)
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            emptyList()
+        }
+        _state.update { s -> s.copy(kanjiChoices = (s.kanjiChoices + found).distinctBy { it.id }) }
+    }
+
+    /** Looks up a kanji typed by the learner (one that is not in the word). */
+    fun lookUpKanji(text: String) {
+        viewModelScope.launch {
+            val before = _state.value.kanjiChoices.size
+            addChoices(text)
+            val found = _state.value.kanjiChoices.size > before || _state.value.kanjiChoices.any { it.character in text }
+            _state.update { it.copy(kanjiNotFound = if (found) null else text.trim()) }
+        }
+    }
+
+    fun toggleKanji(id: String) {
+        _state.update { s -> s.copy(linkedKanji = if (id in s.linkedKanji) s.linkedKanji - id else s.linkedKanji + id) }
+    }
+
+    fun save(allowDuplicate: Boolean = false) = launchAction {
+        val s = _state.value
+        val links = if (s.isWord) s.linkedKanji else null
         when (target) {
-            EditTarget.NewWord -> repository.addWord(_state.value.values)
-            is EditTarget.Existing -> repository.save(target.type, target.id, _state.value.values)
+            EditTarget.NewWord -> repository.addWord(s.values, s.linkedKanji, allowDuplicate)
+            is EditTarget.Existing -> repository.save(target.type, target.id, s.values, links, allowDuplicate)
         }.let { result ->
             when (result) {
                 is SaveResult.Saved -> _state.update { it.copy(event = EditEvent.SAVED) }
                 is SaveResult.Invalid -> _state.update { it.copy(errors = result.errors) }
-                is SaveResult.DuplicateWord -> _state.update { it.copy(duplicateIn = result.packTitle) }
+                is SaveResult.DuplicateWord -> _state.update { it.copy(duplicate = DuplicateWarning(result.existingId, result.packTitle)) }
                 SaveResult.NotFound -> _state.update { it.copy(problem = EditProblem.NOT_FOUND) }
                 SaveResult.Failed -> _state.update { it.copy(problem = EditProblem.SAVE_FAILED) }
             }

@@ -93,10 +93,11 @@ internal fun VocabularyDetailRow.toDomain() = VocabularyDetail(
     examples = examples.map { it.toDomain() },
     tags = tags.map { it.toDomain() },
     source = source.toDomain(),
+    linkedKanji = linkedKanji.map { it.toDomain() },
 )
 
 internal fun KanjiDetailRow.toDomain() =
-    KanjiDetail(kanji.toDomain(), examples.map { it.toDomain() }, source.toDomain())
+    KanjiDetail(kanji.toDomain(), examples.map { it.toDomain() }, source.toDomain(), linkedVocabulary.map { it.toDomain() })
 
 internal fun GrammarDetailRow.toDomain() =
     GrammarDetail(grammar.toDomain(), examples.map { it.toDomain() }, source.toDomain(), exercises.map { it.toDomain() })

@@ -34,7 +34,7 @@ import kanjidic  # noqa: E402
 from furigana import furigana  # noqa: E402
 from meanings_vi import KANJIDIC2_TRANSLATED, PDF_MEANING_EDITED, PDF_MEANING_REPLACED  # noqa: E402
 from pdf_cards import HAN, groups  # noqa: E402
-from word_fixes import GLOSS_FIX, JMDICT_TRANSLATED  # noqa: E402
+from word_fixes import ADDED_KANJI, GLOSS_FIX, JMDICT_TRANSLATED, READING_FIX, REGROUP  # noqa: E402
 
 raw_path, kanjidic_path, out_pack, out_report, tables_dir = sys.argv[1:6]
 FIXED_DECKS = 10       # 第01–第10 kept as they are
@@ -51,6 +51,28 @@ def first_upper(s: str) -> str:
 
 rows = json.loads(Path(raw_path).read_text(encoding="utf-8"))["rows"]
 G = groups(rows)
+
+# Words the PDF puts under the wrong kanji move to the kanji they belong to (REGROUP); a kanji
+# the PDF has no card for is added after the card whose words it takes (ADDED_KANJI).
+for character, added in ADDED_KANJI.items():
+    i = next(i for i, g in enumerate(G) if g["character"] == added["after"])
+    G.insert(i + 1, {**{k: G[i][k] for k in ("deck", "card", "pages")}, "character": character, "hanViet": added["hanViet"],
+                     "pdfMeaning": None, "issues": [f"added:words-printed-under-{added['after']}"], "words": [], "added": added})
+by_char = {g["character"]: g for g in G}
+regrouped = []
+moves = [(g, w) for g in G for w in g["words"] if (w["deck"], w["card"]) in REGROUP]
+for g, w in moves:
+    target = REGROUP[(w["deck"], w["card"])]
+    g["words"].remove(w)
+    w["issues"] = w["issues"] + [f"regrouped-from:{g['character']}"]
+    if target is not None:
+        by_char[target]["words"].append(w)
+    else:
+        w["unlinked"] = True
+        g.setdefault("unlinked", []).append(w)
+    regrouped.append({"card": f"{w['deck']}#{w['card']}", "word": w["expression"], "before": g["character"], "after": target})
+if len(regrouped) != len(REGROUP):
+    sys.exit(f"REGROUP: {len(regrouped)} of {len(REGROUP)} cards found")
 kd = kanjidic.load(kanjidic_path, {g["character"] for g in G})
 kd_version = kd.pop("_version")
 problems = []
@@ -74,23 +96,23 @@ for size in sizes:
 SRC_PDF = "n3pdf-kanji"
 SRC_KANJI = "n3pdf-kanji-kanjidic2"
 SRC_WORD_JMDICT = "n3pdf-kanji-jmdict"
-PDF_LICENSE = ('Lấy từ phần Kanji của tệp N3.pdf của người dùng (bộ thẻ Anki "N3"): chữ Hán, âm Hán Việt, '
-               'chữ viết, cách đọc và nghĩa ngắn của từ. Không lấy mẹo nhớ, câu ví dụ. Chưa xác minh quyền sử dụng.')
+PDF_LICENSE = ('N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói dùng phần Kanji: chữ Hán, âm Hán Việt, '
+               'chữ viết, cách đọc và nghĩa ngắn của từ minh họa.')
 EDRDG = "CC BY-SA 4.0, Electronic Dictionary Research and Development Group (https://www.edrdg.org/edrdg/licence.html)"
 pack = {
     "format": "n3sensei-content-pack", "formatVersion": 1,
-    "pack": {"id": "n3-kanji", "title": "Kanji N3 (theo N3.pdf)", "version": 1, "jlptLevel": "N3", "defaultSourceId": SRC_PDF},
+    "pack": {"id": "n3-kanji", "title": "Kanji N3 (theo N3.pdf)", "version": 2, "jlptLevel": "N3", "defaultSourceId": SRC_PDF},
     "sources": [
-        {"id": SRC_PDF, "name": "N3.pdf · phần Kanji (bộ thẻ Anki \"N3\" của người dùng)", "url": None,
-         "license": PDF_LICENSE, "attribution": None, "licenseVerified": False},
+        {"id": SRC_PDF, "name": "N3.pdf · phần Kanji (tài liệu của chủ dự án)", "url": None,
+         "license": PDF_LICENSE, "attribution": None, "licenseVerified": True},
         {"id": SRC_KANJI, "name": "Chữ Hán, âm Hán Việt: N3.pdf · âm On/Kun, số nét, nghĩa gốc tiếng Anh: KANJIDIC2 (EDRDG)",
          "url": "https://www.edrdg.org/wiki/index.php/KANJIDIC_Project",
-         "license": f"Phần N3.pdf: chưa xác minh quyền sử dụng. Phần KANJIDIC2: {EDRDG}; nghĩa tiếng Việt do N3 Sensei dịch từ nghĩa tiếng Anh, chưa kiểm duyệt.",
-         "attribution": "KANJIDIC2 © Electronic Dictionary Research and Development Group", "licenseVerified": False},
+         "license": f"Phần N3.pdf: tài liệu của chủ dự án. Phần KANJIDIC2: {EDRDG}; thay đổi: nghĩa tiếng Việt do N3 Sensei dịch từ nghĩa tiếng Anh (chưa kiểm duyệt), chỉ dùng âm On/Kun, số nét, nghĩa.",
+         "attribution": "KANJIDIC2 © Electronic Dictionary Research and Development Group", "licenseVerified": True},
         {"id": SRC_WORD_JMDICT, "name": "Từ, cách đọc: N3.pdf · nghĩa: dịch từ JMdict (EDRDG)",
          "url": "https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project",
-         "license": f"Phần N3.pdf: chưa xác minh quyền sử dụng. Phần JMdict: {EDRDG}; nghĩa tiếng Việt do N3 Sensei dịch, chưa kiểm duyệt.",
-         "attribution": "JMdict © Electronic Dictionary Research and Development Group", "licenseVerified": False},
+         "license": f"Phần N3.pdf: tài liệu của chủ dự án. Phần JMdict: {EDRDG}; thay đổi: nghĩa tiếng Việt do N3 Sensei dịch từ nghĩa tiếng Anh (chưa kiểm duyệt).",
+         "attribution": "JMdict © Electronic Dictionary Research and Development Group", "licenseVerified": True},
     ],
     "examples": [], "lessons": [],
 }
@@ -116,6 +138,8 @@ for number, lgroups in enumerate(lesson_groups, 1):
             meaning, status = PDF_MEANING_EDITED[c], "pdf (cleaned)"
         elif g["pdfMeaning"]:
             meaning, status = g["pdfMeaning"], "pdf"
+        elif "added" in g:
+            meaning, status = g["added"]["meaning"], "kanjidic2-translated (kanji added, no PDF card)"
         elif c in KANJIDIC2_TRANSLATED:
             meaning, status = KANJIDIC2_TRANSLATED[c], "kanjidic2-translated"
         else:
@@ -126,13 +150,18 @@ for number, lgroups in enumerate(lesson_groups, 1):
         note = (f"Nghĩa dịch từ KANJIDIC2 (tiếng Anh: {'; '.join(k['meanings'][:6])}), chưa kiểm duyệt." if from_kd
                 else "Nghĩa theo N3.pdf.")
         example_ids = []
-        for w in g["words"]:
+        for w in g["words"] + g.get("unlinked", []):
             stats["words"] += 1
             expression, reading = nfc(w["expression"]), nfc(w["reading"]).replace(" ", "").replace("\u3000", "")
+            if (w["deck"], w["card"]) in READING_FIX:
+                flags_reading = [f"reading-fixed:{reading}"]
+                reading = READING_FIX[(w["deck"], w["card"])]
+            else:
+                flags_reading = []
             meanings = GLOSS_FIX.get((w["deck"], w["card"]), w["meanings"])
             gloss = "; ".join(first_upper(nfc(m)) for m in meanings)
-            flags = list(w["issues"])
-            if c not in expression:
+            flags = list(w["issues"]) + flags_reading
+            if c not in expression and not w.get("unlinked"):
                 flags.append("word-without-its-kanji")
             if (w["deck"], w["card"]) in GLOSS_FIX:
                 flags.append("gloss-fixed-by-hand")
@@ -157,7 +186,12 @@ for number, lgroups in enumerate(lesson_groups, 1):
                 "origin": {"deck": w["deck"], "card": w["card"], "pages": w["pages"], "kanji": c,
                            "reading": reading, "hanViet": w["hanViet"], "flags": flags},
             })
-            example_ids.append(eid)
+            if not w.get("unlinked"):
+                example_ids.append(eid)
+            else:
+                # Same word as another card of the kanji it belongs to: kept, not shown twice.
+                same = next(e["id"] for e in pack["examples"] if e["japanese"] == expression and e["id"] != eid)
+                pack["examples"][-1]["origin"]["duplicateOf"] = same
             word_rows.append([lesson_id, c, w["deck"], w["card"], ",".join(map(str, w["pages"])), expression, reading,
                               gloss, w["hanViet"] or "", eid, " ".join(flags)])
         kanji_flags = list(g["issues"]) + (["meaning-replaced"] if c in PDF_MEANING_REPLACED else [])
@@ -194,6 +228,7 @@ lessons = [{"id": l["id"], "kanji": len(l["kanji"]), "words": sum(len(k["example
             "characters": "".join(k["character"] for k in l["kanji"]), "title": l["title"]} for l in pack["lessons"]]
 report = {
     "kanjidic2": {"version": kd_version[0], "date": kd_version[1]},
+    "regrouped": regrouped,
     "kanji": len(kanji_rows),
     "kanji_meaning_status": {s: sum(1 for r in kanji_rows if r[7] == s) for s in sorted({r[7] for r in kanji_rows})},
     **stats,

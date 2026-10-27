@@ -183,12 +183,12 @@ class UserContentRepositoryTest {
         edits.save(ItemType.VOCABULARY, "w1", mapOf(EditableField.WORD_MEANING to "trải nghiệm"))
         assertEquals(ImportOutcome.IMPORTED, importer.import(pack(version = 2, withWord = false)).outcome)
         assertNull(word("w1"))
-        assertEquals(1, edits.countOrphanEdits())
+        assertEquals(1, edits.countOrphans())
         assertNull(edits.load(ItemType.VOCABULARY, "w1"))
         assertEquals(SaveResult.NotFound, edits.save(ItemType.VOCABULARY, "w1", mapOf(EditableField.WORD_MEANING to "x")))
         importer.import(pack(version = 3))
         assertEquals("trải nghiệm", word("w1")!!.meaningVi)
-        assertEquals(0, edits.countOrphanEdits())
+        assertEquals(0, edits.countOrphans())
     }
 
     @Test

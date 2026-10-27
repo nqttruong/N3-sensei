@@ -247,4 +247,38 @@ class N3DatabaseMigrationTest {
             instrumentation.targetContext.deleteDatabase(name)
         }
     }
+
+    @Test
+    fun learnerEditsAndOwnWordsWrittenWithV5Schema_surviveTheMigrationTo6() = runTest {
+        val name = "migration-test-data-v5"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 5).apply {
+            execSQL("INSERT INTO content_sources VALUES ('user-words', 'Bạn tự thêm', NULL, 'x', NULL, 0)")
+            execSQL("INSERT INTO content_packs VALUES ('user-words', 'Từ của tôi', 1, 'user-words', 0, 0)")
+            execSQL("INSERT INTO lessons VALUES ('user-words-l1', 'user-words', 1, 'Từ của tôi', 'N3', NULL)")
+            execSQL(
+                "INSERT INTO vocabulary (id, lesson_id, source_id, expression, reading, furigana, meaning_vi, part_of_speech, " +
+                    "jlpt_level, sort_order, note, search_text) VALUES ('user-w-1', 'user-words-l1', 'user-words', '経由', 'けいゆ', NULL, 'đi qua', NULL, 'N3', 0, NULL, '')",
+            )
+            execSQL("INSERT INTO user_content_edits VALUES ('KANJI', 'k', 'meaningVi', 'kinh qua', 'trải qua', 10, 20)")
+            execSQL(
+                "INSERT INTO learning_progress (item_type, item_id, state, step_index, interval_minutes, due_at, " +
+                    "last_reviewed_at, review_count, lapse_count, created_at, updated_at) " +
+                    "VALUES ('VOCABULARY', 'user-w-1', 'LEARNING', 1, 60, 5000, 1000, 2, 0, 100, 1000)",
+            )
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 6, true, N3Migrations.MIGRATION_5_6).use { db ->
+            db.query("SELECT value, base_value, base_changed FROM user_content_edits").use { c ->
+                assertTrue(c.moveToFirst())
+                assertEquals("kinh qua", c.getString(0))
+                assertEquals("trải qua", c.getString(1))
+                assertEquals(0, c.getInt(2))
+            }
+            db.query("SELECT vocabulary_id FROM user_words").use { c -> assertTrue(c.moveToFirst()); assertEquals("user-w-1", c.getString(0)) }
+            db.query("SELECT COUNT(*) FROM vocabulary_kanji_links").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+            db.query("SELECT review_count FROM learning_progress WHERE item_id = 'user-w-1'").use { c -> c.moveToFirst(); assertEquals(2, c.getInt(0)) }
+        }
+        instrumentation.targetContext.deleteDatabase(name)
+    }
 }

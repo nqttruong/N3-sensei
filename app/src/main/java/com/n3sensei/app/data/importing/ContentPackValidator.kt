@@ -198,6 +198,7 @@ class ContentPackValidator(
                 checkFurigana(furigana, base = japanese, reading = null)?.let { return@mapIndexedNotNull skip(it, furigana) }
             }
             if (!ids.add(id)) return@mapIndexedNotNull skip(IssueCode.DUPLICATE_ID, id)
+            if (id.startsWith(UserWords.RESERVED_ID_PREFIX)) return@mapIndexedNotNull skip(IssueCode.INVALID_VALUE, id)
             val sourceId = resolveSource(e.sourceId, loc) ?: return@mapIndexedNotNull null.also { skipped(ImportRecordType.EXAMPLE) }
             valid(ImportRecordType.EXAMPLE)
             ExampleSentenceEntity(id, packId, sourceId, japanese, furigana, translation)
@@ -228,7 +229,7 @@ class ContentPackValidator(
                 checkFurigana(furigana, base = expression, reading = reading)?.let { return@forEachIndexed skip(it, furigana) }
             }
             if (id in itemIds.vocabulary) return@forEachIndexed skip(IssueCode.DUPLICATE_ID, id)
-            if (id.startsWith(UserWords.ID_PREFIX)) return@forEachIndexed skip(IssueCode.INVALID_VALUE, id)
+            if (id.startsWith(UserWords.RESERVED_ID_PREFIX)) return@forEachIndexed skip(IssueCode.INVALID_VALUE, id)
             // Same word and reading with another meaning is a different sense (e.g. しっかり
             // in two lessons of a textbook), not a duplicate.
             if (!itemIds.vocabularyEntries.add(Triple(expression, reading, meaning))) {

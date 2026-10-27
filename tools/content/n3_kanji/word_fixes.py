@@ -38,3 +38,28 @@ JMDICT_TRANSLATED = {
     ("収穫", "しゅうかく"): ("1330510", "thu hoạch"),
     ("苦悩", "くのう"): ("1244610", "khổ não, đau khổ"),
 }
+
+# Readings the PDF gets wrong (the card's reading does not spell the word). Key: (deck, card).
+READING_FIX = {
+    ("第04", 15): "おしごと",  # お仕事: the PDF reads しごと
+}
+
+# Word cards the PDF puts under a kanji the word does not contain (checked on the page images
+# and against the word's spelling; see docs/N3_KANJI.md). Value: the kanji the word belongs to,
+# or None when that kanji already has the same word card (the card is kept, not shown twice).
+REGROUP = {
+    ("第11", 12): "板",  # 木の板  under 坂 (p. 205): the PDF has no card for 板
+    ("第11", 13): "板",  # 黒板
+    ("第11", 14): "板",  # 板書
+    ("第11", 15): "板",  # 板前
+    ("第11", 16): "板",  # 看板
+    ("第16", 56): "連",  # 連合 under 州 (p. 238)
+    ("第10", 2): None,   # 身長 under 伸 (p. 197): already under 身 (第07#78)
+}
+
+# Kanji the regrouped words need that have no card in the PDF. Placed right after the card
+# whose words they take. Hán Việt from KANJIDIC2 ("Bản"), the same as in the words' Hán Việt
+# printed by the PDF (HẮC BẢN, KHÁN BẢN, BẢN THƯ…); meaning translated from KANJIDIC2.
+ADDED_KANJI = {
+    "板": {"after": "坂", "hanViet": "BẢN", "meaning": "tấm ván, tấm bảng"},
+}

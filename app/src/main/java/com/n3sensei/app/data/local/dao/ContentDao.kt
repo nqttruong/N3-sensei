@@ -110,6 +110,24 @@ abstract class ContentDao {
     )
     abstract suspend fun getKanjiExamples(kanjiId: String): List<ExampleSentenceEntity>
 
+    /** Vocabulary the learner linked to a kanji (not the kanji's own example words). */
+    @Query(
+        """
+        SELECT v.* FROM vocabulary v JOIN vocabulary_kanji_links x ON x.vocabulary_id = v.id
+        WHERE x.kanji_id = :kanjiId ORDER BY x.created_at, v.id
+        """,
+    )
+    abstract suspend fun getLinkedVocabulary(kanjiId: String): List<VocabularyEntity>
+
+    /** Kanji the learner linked a word to. */
+    @Query(
+        """
+        SELECT k.* FROM kanji k JOIN vocabulary_kanji_links x ON x.kanji_id = k.id
+        WHERE x.vocabulary_id = :vocabularyId ORDER BY x.created_at, k.id
+        """,
+    )
+    abstract suspend fun getLinkedKanji(vocabularyId: String): List<KanjiEntity>
+
     @Query(
         """
         SELECT e.* FROM example_sentences e
@@ -141,14 +159,14 @@ abstract class ContentDao {
     open suspend fun getVocabularyDetail(id: String): VocabularyDetailRow? {
         val vocabulary = getVocabulary(id) ?: return null
         val source = getSource(vocabulary.sourceId) ?: return null
-        return VocabularyDetailRow(vocabulary, getVocabularyExamples(id), getVocabularyTags(id), source)
+        return VocabularyDetailRow(vocabulary, getVocabularyExamples(id), getVocabularyTags(id), source, getLinkedKanji(id))
     }
 
     @Transaction
     open suspend fun getKanjiDetail(id: String): KanjiDetailRow? {
         val kanji = getKanji(id) ?: return null
         val source = getSource(kanji.sourceId) ?: return null
-        return KanjiDetailRow(kanji, getKanjiExamples(id), source)
+        return KanjiDetailRow(kanji, getKanjiExamples(id), source, getLinkedVocabulary(id))
     }
 
     @Transaction

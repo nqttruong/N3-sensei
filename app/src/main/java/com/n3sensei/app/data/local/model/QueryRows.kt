@@ -27,12 +27,14 @@ data class VocabularyDetailRow(
     val examples: List<ExampleSentenceEntity>,
     val tags: List<TagEntity>,
     val source: ContentSourceEntity,
+    val linkedKanji: List<KanjiEntity>,
 )
 
 data class KanjiDetailRow(
     val kanji: KanjiEntity,
     val examples: List<ExampleSentenceEntity>,
     val source: ContentSourceEntity,
+    val linkedVocabulary: List<VocabularyEntity>,
 )
 
 data class GrammarDetailRow(
