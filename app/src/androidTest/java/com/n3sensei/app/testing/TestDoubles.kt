@@ -20,6 +20,7 @@ class InMemoryPreferencesRepository(initial: UserPreferences = UserPreferences()
     override suspend fun setReviewSettings(settings: ReviewSettings) = preferences.update { it.copy(reviewSettings = settings) }
     override suspend fun setReminderSettings(settings: ReminderSettings) = preferences.update { it.copy(reminderSettings = settings) }
     override suspend fun setWidgetSettings(settings: WidgetSettings) = preferences.update { it.copy(widgetSettings = settings) }
+    override suspend fun setDailyStudyMinutes(minutes: Int) = preferences.update { it.copy(dailyStudyMinutes = minutes) }
 }
 
 class RecordingReminderScheduler : ReminderScheduler {

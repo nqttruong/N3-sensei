@@ -11,6 +11,7 @@ import androidx.room.Upsert
 import com.n3sensei.app.data.local.entity.ErrorRecordEntity
 import com.n3sensei.app.data.local.entity.ExamAnswerEntity
 import com.n3sensei.app.data.local.entity.ExamAttemptEntity
+import com.n3sensei.app.data.local.entity.ExamAttemptItemEntity
 import com.n3sensei.app.data.local.entity.ExamFlagEntity
 import com.n3sensei.app.data.local.entity.ExamPassageEntity
 import com.n3sensei.app.data.local.entity.ExamQuestionEntity
@@ -18,6 +19,7 @@ import com.n3sensei.app.data.local.entity.ExamQuestionItemEntity
 import com.n3sensei.app.data.local.entity.ExamSectionEntity
 import com.n3sensei.app.data.local.entity.ExamSetEntity
 import com.n3sensei.app.data.local.entity.ReviewItemEntity
+import com.n3sensei.app.domain.mistakes.ErrorReviewSchedule
 import kotlinx.coroutines.flow.Flow
 
 /** An exam set with everything it contains, as written and read in one transaction. */
@@ -34,6 +36,7 @@ data class ExamSetSummaryRow(
     @ColumnInfo(name = "question_count") val questionCount: Int,
     @ColumnInfo(name = "submitted_attempts") val submittedAttempts: Int,
     @ColumnInfo(name = "last_correct") val lastCorrect: Int?,
+    @ColumnInfo(name = "in_progress_attempts") val inProgressAttempts: Int,
 )
 
 data class ErrorReviewRow(
@@ -48,8 +51,26 @@ data class ExamQuestionKindRow(
     val section: String,
 )
 
+/** A graded question of a submitted attempt, with when it was submitted and what was answered. */
+data class GradedRow(
+    @Embedded val item: ExamAttemptItemEntity,
+    @ColumnInfo(name = "exam_set_id") val examSetId: String,
+    @ColumnInfo(name = "submitted_at") val submittedAt: Long,
+    val status: String,
+    @ColumnInfo(name = "selected_index") val selectedIndex: Int?,
+    @ColumnInfo(name = "text_answer") val textAnswer: String?,
+    @ColumnInfo(name = "time_spent_ms") val timeSpentMs: Long?,
+)
+
 /** A wrong (or unanswered) answer of a submitted attempt, to put in the error notebook. */
-data class WrongAnswer(val questionId: String, val examSetId: String, val errorType: String, val questionSnapshot: String)
+data class WrongAnswer(
+    val questionId: String,
+    val examSetId: String,
+    val errorType: String,
+    val questionSnapshot: String,
+    val jlptLevel: String? = null,
+    val skill: String? = null,
+)
 
 @Dao
 abstract class ExamDao {
@@ -92,7 +113,8 @@ abstract class ExamDao {
             (SELECT COUNT(*) FROM exam_questions q WHERE q.exam_set_id = s.id) AS question_count,
             (SELECT COUNT(*) FROM exam_attempts a WHERE a.exam_set_id = s.id AND a.status IN ('SUBMITTED', 'EXPIRED')) AS submitted_attempts,
             (SELECT a.correct_count FROM exam_attempts a WHERE a.exam_set_id = s.id AND a.status IN ('SUBMITTED', 'EXPIRED')
-                ORDER BY a.submitted_at DESC LIMIT 1) AS last_correct
+                ORDER BY a.submitted_at DESC LIMIT 1) AS last_correct,
+            (SELECT COUNT(*) FROM exam_attempts a WHERE a.exam_set_id = s.id AND a.status = 'IN_PROGRESS') AS in_progress_attempts
         FROM exam_sets s ORDER BY s.jlpt_level, s.created_at, s.title
         """,
     )
@@ -133,6 +155,15 @@ abstract class ExamDao {
         return ExamSetBundle(set, getSections(setId), getPassages(setId), getQuestions(setId), getQuestionItems(setId))
     }
 
+    @Query("SELECT * FROM exam_questions")
+    abstract suspend fun getAllQuestions(): List<ExamQuestionEntity>
+
+    @Query("SELECT * FROM exam_question_items")
+    abstract suspend fun getAllQuestionItems(): List<ExamQuestionItemEntity>
+
+    @Query("SELECT * FROM exam_passages")
+    abstract suspend fun getAllPassages(): List<ExamPassageEntity>
+
     @Query("SELECT * FROM exam_questions WHERE id = :id")
     abstract suspend fun getQuestion(id: String): ExamQuestionEntity?
 
@@ -167,6 +198,24 @@ abstract class ExamDao {
 
     @Query("SELECT question_id FROM exam_flags WHERE attempt_id = :attemptId ORDER BY flagged_at, question_id")
     abstract suspend fun getFlags(attemptId: String): List<String>
+
+    @Insert
+    abstract suspend fun insertAttemptItems(rows: List<ExamAttemptItemEntity>)
+
+    @Query("SELECT * FROM exam_attempt_items WHERE attempt_id = :attemptId ORDER BY position")
+    abstract suspend fun getAttemptItems(attemptId: String): List<ExamAttemptItemEntity>
+
+    @Query(
+        """
+        SELECT i.*, a.exam_set_id, a.submitted_at, a.status, ans.selected_index, ans.text_answer, ans.time_spent_ms
+        FROM exam_attempt_items i
+        JOIN exam_attempts a ON a.id = i.attempt_id
+        LEFT JOIN exam_answers ans ON ans.attempt_id = i.attempt_id AND ans.question_id = i.question_id
+        WHERE a.status IN ('SUBMITTED', 'EXPIRED') AND a.submitted_at IS NOT NULL
+        ORDER BY a.submitted_at, i.position
+        """,
+    )
+    abstract suspend fun getGradedHistory(): List<GradedRow>
 
     @Upsert
     abstract suspend fun upsertAnswer(row: ExamAnswerEntity)
@@ -220,12 +269,13 @@ abstract class ExamDao {
 
     /**
      * Ends an attempt and records its mistakes, all in one transaction: a question already in
-     * the notebook is counted again and its review starts over (due now); a new one gets a
-     * record and a review item due now. A record that was mastered or archived becomes active.
+     * the notebook is counted again and its review starts over; a new one gets a record and a
+     * review item. Either way the first review is a day later (ErrorReviewSchedule). A record that was mastered or archived becomes active.
      */
     @Transaction
-    open suspend fun submit(attempt: ExamAttemptEntity, wrong: List<WrongAnswer>, now: Long) {
+    open suspend fun submit(attempt: ExamAttemptEntity, items: List<ExamAttemptItemEntity>, wrong: List<WrongAnswer>, now: Long) {
         updateAttempt(attempt)
+        insertAttemptItems(items)
         wrong.forEach { w ->
             val existing = getErrorForQuestion(w.questionId)
             val errorId = if (existing == null) {
@@ -233,7 +283,7 @@ abstract class ExamDao {
                     ErrorRecordEntity(
                         questionId = w.questionId, examSetId = w.examSetId, errorType = w.errorType, errorCount = 1,
                         firstWrongAt = now, lastWrongAt = now, masteryLevel = 0, status = "ACTIVE", notes = null,
-                        questionSnapshot = w.questionSnapshot,
+                        questionSnapshot = w.questionSnapshot, jlptLevel = w.jlptLevel, skill = w.skill,
                     ),
                 )
             } else {
@@ -241,6 +291,8 @@ abstract class ExamDao {
                     existing.copy(
                         errorType = w.errorType, errorCount = existing.errorCount + 1, lastWrongAt = now,
                         masteryLevel = 0, status = "ACTIVE", questionSnapshot = w.questionSnapshot,
+                        // Missed again: "understood" no longer holds; level and skill as of this set.
+                        understoodAt = null, jlptLevel = w.jlptLevel ?: existing.jlptLevel, skill = w.skill ?: existing.skill,
                     ),
                 )
                 existing.id
@@ -249,13 +301,20 @@ abstract class ExamDao {
             if (review == null) {
                 insertReviewItem(
                     ReviewItemEntity(
-                        errorRecordId = errorId, nextReviewAt = now, intervalMinutes = 0, stepIndex = 0,
+                        errorRecordId = errorId, nextReviewAt = ErrorReviewSchedule.firstDue(now),
+                        intervalMinutes = ErrorReviewSchedule.LADDER_DAYS.first() * ErrorReviewSchedule.DAY_MINUTES, stepIndex = 0,
                         reviewCount = 0, successCount = 0, lastReviewedAt = null, reviewStatus = "NEW",
                     ),
                 )
             } else {
-                // Review counts are history: kept. The step starts over.
-                updateReviewItem(review.copy(nextReviewAt = now, intervalMinutes = 0, stepIndex = 0, reviewStatus = "LEARNING"))
+                // Review counts are history: kept. The step starts over, first review a day later.
+                updateReviewItem(
+                    review.copy(
+                        nextReviewAt = ErrorReviewSchedule.firstDue(now),
+                        intervalMinutes = ErrorReviewSchedule.LADDER_DAYS.first() * ErrorReviewSchedule.DAY_MINUTES,
+                        stepIndex = 0, reviewStatus = "LEARNING",
+                    ),
+                )
             }
         }
     }

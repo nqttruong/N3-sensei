@@ -46,6 +46,12 @@ private fun NavGraph.findDestination(screen: AppScreen): NavDestination? {
 fun NavDestination?.isInTab(destination: TopLevelDestination): Boolean =
     this?.hierarchy?.any { it.hasRoute(destination.route::class) } == true
 
+/** Opens "Phân tích JLPT" inside the Learn tab, from any tab. */
+fun NavController.navigateToExamDashboard() {
+    navigateToTopLevel(TopLevelDestination.LEARN)
+    navigate(ExamDashboardRoute) { launchSingleTop = true }
+}
+
 /** Opens the lesson list inside the Learn tab, from any tab. */
 fun NavController.navigateToLessons() {
     navigateToTopLevel(TopLevelDestination.LEARN)

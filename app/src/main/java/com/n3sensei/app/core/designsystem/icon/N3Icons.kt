@@ -41,6 +41,24 @@ object N3Icons {
         materialIcon("BookmarkBorder", "M17,3H7c-1.1,0 -1.99,0.9 -1.99,2L5,21l7,-3 7,3V5c0,-1.1 -0.9,-2 -2,-2zM17,18l-5,-2.18L7,18V5h10v13z")
     }
 
+    /** Material "flag" (filled): exam question flagged to look at again. */
+    val Flagged: ImageVector by lazy {
+        materialIcon("Flag", "M14.4,6L14,4H5v17h2v-7h5.6l0.4,2h7V6z")
+    }
+
+    /** Material "outlined_flag". */
+    val Unflagged: ImageVector by lazy {
+        materialIcon("OutlinedFlag", "M14,6l-1,-2H5v17h2v-7h5l1,2h7V6h-6zM18,14h-4l-1,-2H7V6h5l1,2h5v6z")
+    }
+
+    /** Material "apps": the grid of all exam questions. */
+    val QuestionGrid: ImageVector by lazy {
+        materialIcon(
+            "Apps",
+            "M4,8h4V4H4v4zM10,20h4v-4h-4v4zM4,20h4v-4H4v4zM4,14h4v-4H4v4zM10,14h4v-4h-4v4zM16,4v4h4V4h-4zM10,8h4V4h-4v4zM16,14h4v-4h-4v4zM16,20h4v-4h-4v4z",
+        )
+    }
+
     private fun materialIcon(name: String, pathData: String): ImageVector =
         ImageVector.Builder(
             name = name,

@@ -14,4 +14,10 @@ data class UserPreferences(
     val reviewSettings: ReviewSettings = ReviewSettings(),
     val reminderSettings: ReminderSettings = ReminderSettings(),
     val widgetSettings: WidgetSettings = WidgetSettings(),
-)
+    /** Time the learner plans to study a day, in minutes: the daily plan never goes over it. */
+    val dailyStudyMinutes: Int = DEFAULT_DAILY_STUDY_MINUTES,
+) {
+    companion object {
+        const val DEFAULT_DAILY_STUDY_MINUTES = 20
+    }
+}

@@ -20,6 +20,18 @@ object ReminderDeepLinks {
     const val KANJI_BASE = "n3sensei://kanji"
     const val GRAMMAR_BASE = "n3sensei://grammar"
 
+    /** Today's error review session (no ids: it only opens the session of what is due). */
+    const val ERROR_REVIEW = "n3sensei://error-review"
+
+    fun openErrorReview(context: Context): PendingIntent =
+        PendingIntent.getActivity(
+            context,
+            ERROR_REVIEW.hashCode(),
+            Intent(Intent.ACTION_VIEW, ERROR_REVIEW.toUri(), context, MainActivity::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK),
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
+        )
+
     private fun base(type: ItemType) = when (type) {
         ItemType.VOCABULARY -> VOCABULARY_BASE
         ItemType.KANJI -> KANJI_BASE

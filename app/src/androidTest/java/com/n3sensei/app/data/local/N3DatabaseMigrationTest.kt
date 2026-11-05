@@ -383,4 +383,89 @@ class N3DatabaseMigrationTest {
         }
         instrumentation.targetContext.deleteDatabase(name)
     }
+
+    @Test
+    fun aSubmittedAttemptWrittenWithV10Schema_survivesTheMigrationTo11_withNoGradedItemsYet() = runTest {
+        val name = "migration-test-data-v10"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 10).apply {
+            execSQL("INSERT INTO exam_attempts VALUES ('a-1', 'set-1', 'Đề', 1000, 5000, 1800, 4, 1, 6, 'SUBMITTED', 'q-2')")
+            execSQL("INSERT INTO exam_answers VALUES ('a-1', 'q-1', 0, NULL, 1, 4000, NULL, 0, 2000, '{}')")
+            execSQL("INSERT INTO exam_flags VALUES ('a-1', 'q-2', 3000)")
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 11, true, N3Migrations.MIGRATION_10_11).use { db ->
+            db.query("SELECT status, correct_count, question_count, current_question_id FROM exam_attempts").use { c ->
+                assertTrue(c.moveToFirst())
+                assertEquals("SUBMITTED", c.getString(0)); assertEquals(1, c.getInt(1)); assertEquals(6, c.getInt(2)); assertEquals("q-2", c.getString(3))
+            }
+            db.query("SELECT COUNT(*) FROM exam_answers").use { c -> c.moveToFirst(); assertEquals(1, c.getInt(0)) }
+            db.query("SELECT COUNT(*) FROM exam_flags").use { c -> c.moveToFirst(); assertEquals(1, c.getInt(0)) }
+            db.query("SELECT COUNT(*) FROM exam_attempt_items").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+            // A graded item goes with its attempt.
+            db.execSQL("PRAGMA foreign_keys = ON")
+            db.execSQL("INSERT INTO exam_attempt_items VALUES ('a-1', 0, 'q-1', 'VOCABULARY', 'KANJI', 'CORRECT', '{}')")
+            db.execSQL("DELETE FROM exam_attempts WHERE id = 'a-1'")
+            db.query("SELECT COUNT(*) FROM exam_attempt_items").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+            db.query("PRAGMA foreign_key_check").use { c -> assertFalse(c.moveToFirst()) }
+        }
+        instrumentation.targetContext.deleteDatabase(name)
+    }
+
+    @Test
+    fun errorsWrittenWithV11Schema_survivesTheMigrationTo12_withLevelAndSkillFilledInWhereKnown() = runTest {
+        val name = "migration-test-data-v11"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 11).apply {
+            execSQL("INSERT INTO exam_sets VALUES ('set-1', 'Đề', NULL, 'N3', 'FULL', 1800, NULL, 0)")
+            execSQL("INSERT INTO exam_attempts VALUES ('a-1', 'set-1', 'Đề', 1000, 5000, 1800, 4, 1, 2, 'SUBMITTED', NULL)")
+            execSQL("INSERT INTO exam_attempt_items VALUES ('a-1', 0, 'q-1', 'VOCABULARY', 'KANJI', 'WRONG', '{}')")
+            // One error with its set and graded item, one whose set is gone and was never graded per question.
+            execSQL("INSERT INTO error_records VALUES (1, 'q-1', 'set-1', 'INCORRECT', 2, 100, 5000, 0, 'ACTIVE', 'ghi chú', '{}')")
+            execSQL("INSERT INTO error_records VALUES (2, 'q-old', 'set-gone', 'UNANSWERED', 1, 100, 200, 0, 'ACTIVE', NULL, '{}')")
+            execSQL("INSERT INTO review_items VALUES (1, 1, 6000, 20, 1, 1, 1, 5500, 'LEARNING')")
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 12, true, N3Migrations.MIGRATION_11_12).use { db ->
+            db.query("SELECT id, error_count, notes, is_important, understood_at, jlpt_level, skill FROM error_records ORDER BY id").use { c ->
+                assertTrue(c.moveToFirst())
+                assertEquals(2, c.getInt(1)); assertEquals("ghi chú", c.getString(2)); assertEquals(0, c.getInt(3)); assertTrue(c.isNull(4))
+                assertEquals("N3", c.getString(5)); assertEquals("KANJI", c.getString(6))
+                assertTrue(c.moveToNext())
+                assertTrue(c.isNull(5)); assertTrue(c.isNull(6))
+            }
+            db.query("SELECT step_index, review_count FROM review_items").use { c ->
+                assertTrue(c.moveToFirst()); assertEquals(1, c.getInt(0)); assertEquals(1, c.getInt(1))
+            }
+            db.query("SELECT COUNT(*) FROM error_review_log").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+            db.execSQL("PRAGMA foreign_keys = ON")
+            db.execSQL("INSERT INTO error_review_log (error_record_id, reviewed_at, correct, counted, step_before, step_after) VALUES (1, 7000, 1, 1, 1, 2)")
+            db.execSQL("DELETE FROM error_records WHERE id = 1")
+            db.query("SELECT COUNT(*) FROM error_review_log").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+            db.query("PRAGMA foreign_key_check").use { c -> assertFalse(c.moveToFirst()) }
+        }
+        instrumentation.targetContext.deleteDatabase(name)
+    }
+
+    @Test
+    fun reviewsLoggedWithV12Schema_survivesTheMigrationTo13_withoutAQuestionRecorded() = runTest {
+        val name = "migration-test-data-v12"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 12).apply {
+            execSQL("INSERT INTO error_records VALUES (1, 'q-1', 'set-1', 'INCORRECT', 1, 100, 200, 1, 'ACTIVE', NULL, '{}', 1, NULL, 'N3', 'KANJI')")
+            execSQL("INSERT INTO error_review_log (error_record_id, reviewed_at, correct, counted, step_before, step_after) VALUES (1, 300, 1, 1, 0, 1)")
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 13, true, N3Migrations.MIGRATION_12_13).use { db ->
+            db.query("SELECT correct, counted, step_after, question_id, question_kind FROM error_review_log").use { c ->
+                assertTrue(c.moveToFirst())
+                assertEquals(1, c.getInt(0)); assertEquals(1, c.getInt(1)); assertEquals(1, c.getInt(2))
+                assertTrue(c.isNull(3)); assertTrue(c.isNull(4))
+            }
+            db.query("SELECT is_important, skill FROM error_records").use { c ->
+                assertTrue(c.moveToFirst()); assertEquals(1, c.getInt(0)); assertEquals("KANJI", c.getString(1))
+            }
+        }
+        instrumentation.targetContext.deleteDatabase(name)
+    }
 }

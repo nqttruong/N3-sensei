@@ -17,12 +17,14 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
     override suspend fun doWork(): Result {
         val container = (applicationContext as N3SenseiApplication).container
         val outcome = container.reminderRunner.runScheduled()
+        val errorOutcome = container.errorReviewReminder.run()
         StudyWordWidget.updateAllSizes(applicationContext)
         // A reminder that could not be shown is not a failure: retrying would only cause bursts.
-        return Result.success(workDataOf(KEY_OUTCOME to outcome.name))
+        return Result.success(workDataOf(KEY_OUTCOME to outcome.name, KEY_ERROR_OUTCOME to errorOutcome.name))
     }
 
     companion object {
         const val KEY_OUTCOME = "outcome"
+        const val KEY_ERROR_OUTCOME = "error_outcome"
     }
 }

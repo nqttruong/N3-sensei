@@ -136,6 +136,31 @@ data class ExamAttemptEntity(
     @ColumnInfo(name = "current_question_id") val currentQuestionId: String? = null,
 )
 
+/**
+ * One question of a submitted attempt as it was graded (schema 11): written once, in the submit
+ * transaction, and never changed. The result screen, the review and the comparison between
+ * attempts read these rows, so they stay right when the set is edited or deleted later, and
+ * every attempt keeps its own result.
+ */
+@Entity(
+    tableName = "exam_attempt_items",
+    primaryKeys = ["attempt_id", "position"],
+    foreignKeys = [ForeignKey(entity = ExamAttemptEntity::class, parentColumns = ["id"], childColumns = ["attempt_id"], onDelete = ForeignKey.CASCADE)],
+)
+data class ExamAttemptItemEntity(
+    @ColumnInfo(name = "attempt_id") val attemptId: String,
+    /** 0-based place in the exam (sections in order, then questions). */
+    val position: Int,
+    @ColumnInfo(name = "question_id") val questionId: String,
+    /** ExamSectionKind name. */
+    val section: String,
+    /** ExamSkill name. */
+    val skill: String,
+    /** CORRECT, WRONG or UNANSWERED (see ItemOutcome). */
+    val outcome: String,
+    @ColumnInfo(name = "question_snapshot") val questionSnapshot: String,
+)
+
 /** A question the learner marked to look at again before submitting (schema 10). */
 @Entity(
     tableName = "exam_flags",
@@ -188,6 +213,35 @@ data class ErrorRecordEntity(
     val status: String,
     val notes: String?,
     @ColumnInfo(name = "question_snapshot") val questionSnapshot: String,
+    /** Marked by the learner as needing attention (schema 12). */
+    @ColumnInfo(name = "is_important", defaultValue = "0") val isImportant: Boolean = false,
+    /** When the learner said they understood it; not mastery, which only reviews give (schema 12). */
+    @ColumnInfo(name = "understood_at") val understoodAt: Long? = null,
+    /** Level of the set it was made in, for filtering; null when unknown (schema 12). */
+    @ColumnInfo(name = "jlpt_level") val jlptLevel: String? = null,
+    /** ExamSkill name of the question, for filtering; null when unknown (schema 12). */
+    val skill: String? = null,
+)
+
+/** One review of an error (schema 12): kept as the error's review history. */
+@Entity(
+    tableName = "error_review_log",
+    foreignKeys = [ForeignKey(entity = ErrorRecordEntity::class, parentColumns = ["id"], childColumns = ["error_record_id"], onDelete = ForeignKey.CASCADE)],
+    indices = [Index("error_record_id")],
+)
+data class ErrorReviewLogEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    @ColumnInfo(name = "error_record_id") val errorRecordId: Long,
+    @ColumnInfo(name = "reviewed_at") val reviewedAt: Long,
+    val correct: Boolean,
+    /** Whether it counted towards mastery (it was due); an early review is practice only. */
+    val counted: Boolean,
+    @ColumnInfo(name = "step_before") val stepBefore: Int,
+    @ColumnInfo(name = "step_after") val stepAfter: Int,
+    /** The question asked (the original or another one on the same study item; schema 13). */
+    @ColumnInfo(name = "question_id") val questionId: String? = null,
+    /** ReviewQuestionKind name; null for reviews before schema 13 (the original question). */
+    @ColumnInfo(name = "question_kind") val questionKind: String? = null,
 )
 
 /** Spaced-repetition state of an error record, on the same ladder as the review tab. */

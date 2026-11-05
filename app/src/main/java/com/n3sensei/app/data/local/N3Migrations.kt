@@ -188,7 +188,56 @@ object N3Migrations {
         }
     }
 
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10)
+    /**
+     * 10 → 11: `exam_attempt_items`, the graded questions of each submitted attempt (empty:
+     * attempts submitted before have no rows and their result is rebuilt from their answers).
+     */
+    val MIGRATION_10_11 = object : Migration(10, 11) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `exam_attempt_items` (`attempt_id` TEXT NOT NULL, `position` INTEGER NOT NULL, " +
+                    "`question_id` TEXT NOT NULL, `section` TEXT NOT NULL, `skill` TEXT NOT NULL, `outcome` TEXT NOT NULL, " +
+                    "`question_snapshot` TEXT NOT NULL, PRIMARY KEY(`attempt_id`, `position`), FOREIGN KEY(`attempt_id`) " +
+                    "REFERENCES `exam_attempts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+            )
+        }
+    }
+
+    /**
+     * 11 → 12: the error notebook. `error_records` gets the learner's flag ("cần chú ý"), when they
+     * marked it understood, and the level and skill to filter by; `error_review_log` keeps every
+     * review (empty). Level and skill are filled in for existing errors from their exam set and
+     * their latest graded question, when those exist; otherwise they stay null. No row is lost.
+     */
+    val MIGRATION_11_12 = object : Migration(11, 12) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `error_records` ADD COLUMN `is_important` INTEGER NOT NULL DEFAULT 0")
+            db.execSQL("ALTER TABLE `error_records` ADD COLUMN `understood_at` INTEGER")
+            db.execSQL("ALTER TABLE `error_records` ADD COLUMN `jlpt_level` TEXT")
+            db.execSQL("ALTER TABLE `error_records` ADD COLUMN `skill` TEXT")
+            db.execSQL("UPDATE `error_records` SET `jlpt_level` = (SELECT s.`jlpt_level` FROM `exam_sets` s WHERE s.`id` = `error_records`.`exam_set_id`)")
+            db.execSQL(
+                "UPDATE `error_records` SET `skill` = (SELECT i.`skill` FROM `exam_attempt_items` i JOIN `exam_attempts` a ON a.`id` = i.`attempt_id` " +
+                    "WHERE i.`question_id` = `error_records`.`question_id` ORDER BY a.`submitted_at` DESC LIMIT 1)",
+            )
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `error_review_log` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `error_record_id` INTEGER NOT NULL, " +
+                    "`reviewed_at` INTEGER NOT NULL, `correct` INTEGER NOT NULL, `counted` INTEGER NOT NULL, `step_before` INTEGER NOT NULL, " +
+                    "`step_after` INTEGER NOT NULL, FOREIGN KEY(`error_record_id`) REFERENCES `error_records`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_error_review_log_error_record_id` ON `error_review_log` (`error_record_id`)")
+        }
+    }
+
+    /** 12 → 13: each error review records which question was asked and of what kind (null before). */
+    val MIGRATION_12_13 = object : Migration(12, 13) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `error_review_log` ADD COLUMN `question_id` TEXT")
+            db.execSQL("ALTER TABLE `error_review_log` ADD COLUMN `question_kind` TEXT")
+        }
+    }
+
+    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13)
 
     private fun String.toReadings(): String = StringListCodec.decode(this).joinToString(" ")
 

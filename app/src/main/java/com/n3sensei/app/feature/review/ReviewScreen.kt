@@ -21,6 +21,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.InfoBanner
 import com.n3sensei.app.core.designsystem.component.N3Card
+import com.n3sensei.app.core.designsystem.component.SectionCard
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.ItemType
 
@@ -31,9 +32,11 @@ fun ReviewScreen(
     onOpenLessons: () -> Unit,
     onPracticeMarked: () -> Unit,
     modifier: Modifier = Modifier,
+    onStartErrorReview: () -> Unit = {},
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val markedCount by viewModel.markedCount.collectAsStateWithLifecycle()
+    val errorsDue by viewModel.errorsDue.collectAsStateWithLifecycle()
     UiStateContent(state = state, modifier = modifier) { ui ->
         val overview = ui.overview
         Column(
@@ -43,6 +46,14 @@ fun ReviewScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
+            if (errorsDue > 0) {
+                SectionCard(stringResource(R.string.review_error_card_title)) {
+                    Text(stringResource(R.string.review_error_card_body, errorsDue), style = MaterialTheme.typography.bodyMedium)
+                    FilledTonalButton(onClick = onStartErrorReview, modifier = Modifier.fillMaxWidth()) {
+                        Text(stringResource(R.string.review_error_card_action))
+                    }
+                }
+            }
             N3Card(verticalArrangement = Arrangement.spacedBy(6.dp)) {
                 Text(stringResource(R.string.review_overview_due, overview.due), style = MaterialTheme.typography.headlineSmall)
                 Text(

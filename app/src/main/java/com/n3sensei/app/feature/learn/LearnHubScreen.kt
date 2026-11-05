@@ -26,7 +26,10 @@ fun LearnHubScreen(
     onOpenKanji: () -> Unit,
     onOpenGrammar: () -> Unit,
     onOpenMyWords: () -> Unit,
+    onOpenExams: () -> Unit,
+    onOpenErrors: () -> Unit,
     modifier: Modifier = Modifier,
+    onOpenJlpt: () -> Unit = {},
 ) {
     Column(modifier = modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
         LearnSectionItem("課", R.string.lessons_title, R.string.learn_lessons_description, onOpenLessons)
@@ -38,6 +41,12 @@ fun LearnHubScreen(
         LearnSectionItem("文", R.string.grammar_title, R.string.learn_grammar_description, onOpenGrammar)
         HorizontalDivider()
         LearnSectionItem("私", R.string.learn_my_words, R.string.learn_my_words_description, onOpenMyWords)
+        HorizontalDivider()
+        LearnSectionItem("試", R.string.learn_exam, R.string.learn_exam_description, onOpenExams)
+        HorizontalDivider()
+        LearnSectionItem("誤", R.string.mistakes_title, R.string.learn_errors_description, onOpenErrors)
+        HorizontalDivider()
+        LearnSectionItem("析", R.string.jlpt_dashboard_title, R.string.jlpt_dashboard_entry_description, onOpenJlpt)
     }
 }
 
@@ -62,5 +71,5 @@ private fun LearnSectionItem(
 @Preview(showBackground = true)
 @Composable
 private fun LearnHubScreenPreview() {
-    N3SenseiTheme { LearnHubScreen(onOpenLessons = {}, onOpenVocabulary = {}, onOpenKanji = {}, onOpenGrammar = {}, onOpenMyWords = {}) }
+    N3SenseiTheme { LearnHubScreen(onOpenLessons = {}, onOpenVocabulary = {}, onOpenKanji = {}, onOpenGrammar = {}, onOpenMyWords = {}, onOpenExams = {}, onOpenErrors = {}) }
 }

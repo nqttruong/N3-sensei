@@ -29,6 +29,45 @@ import kotlinx.serialization.Serializable
 /** One vocabulary group, by [VocabularyGroup.key][com.n3sensei.app.domain.course.VocabularyGroup.key]. */
 @Serializable data class VocabularyGroupRoute(val key: String)
 
+/** "Thi thử JLPT": the exam sets in the app, with filters. */
+@Serializable data object ExamListRoute
+
+/** One exam set before it is taken: facts, rules, start or continue. */
+@Serializable data class ExamIntroRoute(val examSetId: String)
+
+/** Taking an exam: a new attempt, or [attemptId] continued. */
+@Serializable data class ExamSessionRoute(val examSetId: String, val attemptId: String? = null)
+
+/** Result of a submitted attempt (read from Room: opens again after the app was closed). */
+@Serializable data class ExamResultRoute(val attemptId: String)
+
+/** Every question of a submitted attempt; [filter] a ReviewFilter name, [position] the question to open at. */
+@Serializable data class ExamReviewRoute(val attemptId: String, val filter: String = "ALL", val position: Int? = null)
+
+/** The missed questions of a submitted attempt, analysed (category, evidence, fixes). */
+@Serializable data class MistakeAnalysisRoute(val attemptId: String)
+
+/** "Sổ lỗi sai": every question missed in submitted exams, with filters and search; [skill] pre-selects one. */
+@Serializable data class ErrorNotebookRoute(val skill: String? = null)
+
+/** "Phân tích JLPT": exam figures, error analysis, progress and today's plan. */
+@Serializable data object ExamDashboardRoute
+
+/** One skill of the exams in detail (an ExamSkill name). */
+@Serializable data class SkillDetailRoute(val skill: String)
+
+/** One error of the notebook. */
+@Serializable data class ErrorDetailRoute(val errorId: Long)
+
+/**
+ * Review of errors: today's due ones (only [skill]'s, at most [limit], for a task of the daily
+ * plan), or only [errorId] ("Ôn ngay").
+ */
+@Serializable data class ErrorReviewRoute(val errorId: Long? = null, val skill: String? = null, val limit: Int? = null)
+
+/** Weak points over all submitted exams. */
+@Serializable data object WeaknessRoute
+
 /** "Từ của tôi": only the words the learner added. */
 @Serializable data object MyWordsRoute
 

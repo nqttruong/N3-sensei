@@ -16,11 +16,21 @@ import androidx.navigation.navDeepLink
 import androidx.navigation.navigation
 import androidx.navigation.toRoute
 import com.n3sensei.app.R
+import com.n3sensei.app.app.di.appSavedStateViewModel
 import com.n3sensei.app.app.di.appViewModel
 import com.n3sensei.app.app.reminder.ReminderDeepLinks
 import com.n3sensei.app.core.designsystem.theme.LocalReduceMotion
 import com.n3sensei.app.core.designsystem.theme.N3Motion
 import com.n3sensei.app.domain.edit.UserWords
+import com.n3sensei.app.domain.dashboard.ExamDashboardManager
+import com.n3sensei.app.domain.dashboard.PlanTask
+import com.n3sensei.app.domain.exam.AnswerManager
+import com.n3sensei.app.domain.exam.ExamSkill
+import com.n3sensei.app.domain.exam.ExamResultManager
+import com.n3sensei.app.domain.exam.ExamSessionManager
+import com.n3sensei.app.domain.exam.ExamSubmissionManager
+import com.n3sensei.app.domain.mistakes.ErrorReviewSessionManager
+import com.n3sensei.app.domain.mistakes.MistakeAnalysisManager
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningStatus
@@ -29,6 +39,32 @@ import com.n3sensei.app.domain.srs.SubmitReviewUseCase
 import com.n3sensei.app.feature.edit.ContentEditScreen
 import com.n3sensei.app.feature.edit.ContentEditViewModel
 import com.n3sensei.app.feature.edit.EditTarget
+import com.n3sensei.app.feature.exam.ExamIntroScreen
+import com.n3sensei.app.feature.exam.ExamIntroViewModel
+import com.n3sensei.app.feature.exam.ExamListScreen
+import com.n3sensei.app.feature.exam.ExamListViewModel
+import com.n3sensei.app.feature.exam.ExamResultScreen
+import com.n3sensei.app.feature.exam.ExamResultViewModel
+import com.n3sensei.app.feature.exam.ExamReviewScreen
+import com.n3sensei.app.feature.exam.ExamReviewViewModel
+import com.n3sensei.app.feature.exam.MistakeActions
+import com.n3sensei.app.feature.exam.MistakeAnalysisScreen
+import com.n3sensei.app.feature.exam.MistakeAnalysisViewModel
+import com.n3sensei.app.feature.exam.ErrorDetailScreen
+import com.n3sensei.app.feature.exam.ExamDashboardScreen
+import com.n3sensei.app.feature.exam.ExamDashboardViewModel
+import com.n3sensei.app.feature.exam.SkillDetailScreen
+import com.n3sensei.app.feature.exam.SkillDetailViewModel
+import com.n3sensei.app.feature.exam.ErrorDetailViewModel
+import com.n3sensei.app.feature.exam.ErrorNotebookScreen
+import com.n3sensei.app.feature.exam.ErrorNotebookViewModel
+import com.n3sensei.app.feature.exam.ErrorReviewSessionScreen
+import com.n3sensei.app.feature.exam.ErrorReviewSessionViewModel
+import com.n3sensei.app.feature.exam.WeaknessScreen
+import com.n3sensei.app.feature.exam.WeaknessViewModel
+import com.n3sensei.app.feature.exam.ReviewFilter
+import com.n3sensei.app.feature.exam.ExamSessionScreen
+import com.n3sensei.app.feature.exam.ExamSessionViewModel
 import com.n3sensei.app.feature.grammar.GrammarDetailScreen
 import com.n3sensei.app.feature.grammar.GrammarDetailViewModel
 import com.n3sensei.app.feature.grammar.GrammarListScreen
@@ -118,7 +154,108 @@ fun N3SenseiNavHost(
                     onOpenKanji = { navController.navigate(KanjiRoute()) },
                     onOpenGrammar = { navController.navigate(GrammarRoute()) },
                     onOpenMyWords = { navController.navigate(MyWordsRoute) },
+                    onOpenExams = { navController.navigate(ExamListRoute) },
+                    onOpenErrors = { navController.navigate(ErrorNotebookRoute()) },
+                    onOpenJlpt = { navController.navigate(ExamDashboardRoute) },
                 )
+            }
+            composable<ExamListRoute> {
+                ExamListScreen(
+                    viewModel = appViewModel { ExamListViewModel(examRepository, ExamSubmissionManager(examRepository, clock)) },
+                    onOpenExam = { navController.navigate(ExamIntroRoute(it)) },
+                )
+            }
+            composable<ExamIntroRoute> { entry ->
+                val id = entry.toRoute<ExamIntroRoute>().examSetId
+                ExamIntroScreen(
+                    viewModel = appViewModel {
+                        ExamIntroViewModel(id, examRepository, ExamSessionManager(examRepository, ExamSubmissionManager(examRepository, clock)), clock)
+                    },
+                    onStart = { navController.navigate(ExamSessionRoute(id)) },
+                    onResume = { navController.navigate(ExamSessionRoute(id, attemptId = it)) },
+                    onOpenResult = { navController.navigate(ExamResultRoute(it)) },
+                )
+            }
+            composable<ExamSessionRoute> { entry ->
+                val route = entry.toRoute<ExamSessionRoute>()
+                ExamSessionScreen(
+                    viewModel = appSavedStateViewModel { saved ->
+                        val submission = ExamSubmissionManager(examRepository, clock)
+                        ExamSessionViewModel(
+                            route.examSetId, saved, ExamSessionManager(examRepository, submission), AnswerManager(examRepository, clock),
+                            submission, clock, resumeAttemptId = route.attemptId, autoStart = route.attemptId == null,
+                        )
+                    },
+                    onDone = { navController.popBackStack() },
+                    onSubmitted = { attemptId ->
+                        navController.navigate(ExamResultRoute(attemptId)) { popUpTo<ExamSessionRoute> { inclusive = true } }
+                    },
+                )
+            }
+            composable<ExamResultRoute> { entry ->
+                val attemptId = entry.toRoute<ExamResultRoute>().attemptId
+                ExamResultScreen(
+                    viewModel = appViewModel { ExamResultViewModel(attemptId, ExamResultManager(examRepository)) },
+                    onReview = { filter, position -> navController.navigate(ExamReviewRoute(attemptId, filter.name, position)) },
+                    onOpenNotebook = { navController.navigate(ErrorNotebookRoute()) },
+                    onNewExam = { navController.navigate(ExamListRoute) { popUpTo<ExamListRoute> { inclusive = true } } },
+                    onRetake = { setId -> navController.navigate(ExamIntroRoute(setId)) { popUpTo<ExamIntroRoute> { inclusive = true } } },
+                    onOpenAttempt = { navController.navigate(ExamResultRoute(it)) },
+                    onAnalyze = { navController.navigate(MistakeAnalysisRoute(attemptId)) },
+                )
+            }
+            composable<ExamReviewRoute> { entry ->
+                val route = entry.toRoute<ExamReviewRoute>()
+                val filter = ReviewFilter.entries.firstOrNull { it.name == route.filter } ?: ReviewFilter.ALL
+                ExamReviewScreen(
+                    viewModel = appViewModel { ExamReviewViewModel(route.attemptId, filter, ExamResultManager(examRepository), errorRepository) },
+                    startPosition = route.position,
+                    onOpenError = { navController.navigate(ErrorDetailRoute(it)) },
+                )
+            }
+            composable<MistakeAnalysisRoute> { entry ->
+                val attemptId = entry.toRoute<MistakeAnalysisRoute>().attemptId
+                val viewModel = appViewModel {
+                    MistakeAnalysisViewModel(attemptId, MistakeAnalysisManager(examRepository, contentRepository, progressRepository))
+                }
+                MistakeAnalysisScreen(viewModel, navController.mistakeActions { refs, then -> viewModel.practiceWords(refs, then) })
+            }
+            composable<ErrorNotebookRoute> {
+                ErrorNotebookScreen(
+                    viewModel = appSavedStateViewModel { saved -> ErrorNotebookViewModel(errorRepository, saved, clock) },
+                    onOpenError = { navController.navigate(ErrorDetailRoute(it)) },
+                    onOpenWeakness = { navController.navigate(WeaknessRoute) },
+                    onReviewDue = { navController.navigate(ErrorReviewRoute()) },
+                )
+            }
+            composable<ErrorDetailRoute> { entry ->
+                val errorId = entry.toRoute<ErrorDetailRoute>().errorId
+                val viewModel = appViewModel {
+                    ErrorDetailViewModel(errorId, errorRepository, MistakeAnalysisManager(examRepository, contentRepository, progressRepository))
+                }
+                ErrorDetailScreen(
+                    viewModel = viewModel,
+                    actions = navController.mistakeActions { refs, then -> viewModel.practiceWords(refs, then) },
+                    onReviewNow = { navController.navigate(ErrorReviewRoute(errorId)) },
+                )
+            }
+            composable<ErrorReviewRoute>(
+                deepLinks = listOf(navDeepLink<ErrorReviewRoute>(basePath = ReminderDeepLinks.ERROR_REVIEW)),
+            ) { entry ->
+                val route = entry.toRoute<ErrorReviewRoute>()
+                ErrorReviewSessionScreen(
+                    viewModel = appViewModel {
+                        ErrorReviewSessionViewModel(
+                            route.errorId, ErrorReviewSessionManager(errorRepository, examRepository, clock),
+                            ExamSkill.entries.firstOrNull { it.name == route.skill }, route.limit,
+                        )
+                    },
+                    onDone = { navController.popBackStack() },
+                )
+            }
+            composable<WeaknessRoute> {
+                val viewModel = appViewModel { WeaknessViewModel(MistakeAnalysisManager(examRepository, contentRepository, progressRepository)) }
+                WeaknessScreen(viewModel, navController.mistakeActions { refs, then -> viewModel.practiceWords(refs, then) })
             }
             composable<LessonListRoute> {
                 LessonListScreen(
@@ -288,10 +425,43 @@ fun N3SenseiNavHost(
                     backLabelRes = if (route.markedOnly) R.string.common_navigate_up else R.string.practice_result_back,
                 )
             }
+            composable<ExamDashboardRoute> {
+                val viewModel = appViewModel {
+                    ExamDashboardViewModel(
+                        ExamDashboardManager(examRepository, errorRepository, progressRepository, contentRepository, userPreferencesRepository, clock),
+                    )
+                }
+                ExamDashboardScreen(
+                    viewModel = viewModel,
+                    onTask = { task ->
+                        when (task) {
+                            is PlanTask.ReviewErrors -> navController.navigate(ErrorReviewRoute(skill = task.skill?.name, limit = task.count))
+                            is PlanTask.StudyWeakItems -> viewModel.practice(task.refs) { navController.navigate(PracticeRoute(markedOnly = true)) }
+                            is PlanTask.TakeSectionExam -> navController.navigate(ExamIntroRoute(task.examSetId))
+                            is PlanTask.ReviewFlashcards -> navController.navigate(ReviewSessionRoute)
+                        }
+                    },
+                    onOpenSkill = { navController.navigate(SkillDetailRoute(it.name)) },
+                )
+            }
+            composable<SkillDetailRoute> { entry ->
+                val skill = ExamSkill.entries.firstOrNull { it.name == entry.toRoute<SkillDetailRoute>().skill } ?: ExamSkill.VOCABULARY
+                SkillDetailScreen(
+                    viewModel = appViewModel {
+                        SkillDetailViewModel(
+                            skill,
+                            ExamDashboardManager(examRepository, errorRepository, progressRepository, contentRepository, userPreferencesRepository, clock),
+                        )
+                    },
+                    onOpenItem = { navController.navigateToItem(it) },
+                    onOpenErrors = { navController.navigate(ErrorNotebookRoute(it.name)) },
+                )
+            }
         }
         composable<ReviewRoute> {
             ReviewScreen(
-                viewModel = appViewModel { ReviewViewModel(progressRepository, userPreferencesRepository, clock) },
+                viewModel = appViewModel { ReviewViewModel(progressRepository, userPreferencesRepository, clock, errorRepository) },
+                onStartErrorReview = { navController.navigate(ErrorReviewRoute()) },
                 onStartSession = { navController.navigate(ReviewSessionRoute) },
                 onOpenLessons = { navController.navigateToLessons() },
                 onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
@@ -332,6 +502,7 @@ fun N3SenseiNavHost(
                 onOpenReview = { navController.navigateToTopLevel(TopLevelDestination.REVIEW) },
                 onOpenList = { type, status -> navController.navigateToItemList(type, status) },
                 onOpenItem = { ref -> navController.navigateToItem(ref) },
+                onOpenJlpt = { navController.navigateToExamDashboard() },
             )
         }
         composable<SettingsRoute> {
@@ -384,3 +555,16 @@ private fun NavHostController.navigateToItem(ref: ItemRef) {
         ItemType.GRAMMAR -> navigate(GrammarDetailRoute(ref.id))
     }
 }
+
+/** Where the mistake analysis links to: the existing detail, lesson and practice screens. */
+private fun NavHostController.mistakeActions(mark: (List<ItemRef>, () -> Unit) -> Unit) = MistakeActions(
+    onOpenItem = { ref ->
+        when (ref.type) {
+            ItemType.VOCABULARY -> navigate(VocabularyDetailRoute(ref.id))
+            ItemType.KANJI -> navigate(KanjiDetailRoute(ref.id))
+            ItemType.GRAMMAR -> navigate(GrammarDetailRoute(ref.id))
+        }
+    },
+    onOpenLesson = { navigate(LessonDetailRoute(it)) },
+    onPracticeWords = { refs -> mark(refs) { navigate(PracticeRoute(markedOnly = true)) } },
+)

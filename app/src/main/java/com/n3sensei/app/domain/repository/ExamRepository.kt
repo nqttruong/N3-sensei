@@ -1,6 +1,7 @@
 package com.n3sensei.app.domain.repository
 
 import com.n3sensei.app.domain.exam.AnswerInput
+import com.n3sensei.app.domain.exam.AttemptRecord
 import com.n3sensei.app.domain.exam.AttemptResult
 import com.n3sensei.app.domain.exam.Confidence
 import com.n3sensei.app.domain.exam.ErrorRecord
@@ -13,6 +14,8 @@ import com.n3sensei.app.domain.exam.ExamSet
 import com.n3sensei.app.domain.exam.ExamSetFilter
 import com.n3sensei.app.domain.exam.ExamSetSummary
 import com.n3sensei.app.domain.exam.ExamSkill
+import com.n3sensei.app.domain.mistakes.GradedOccurrence
+import com.n3sensei.app.domain.mistakes.PooledQuestion
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -65,6 +68,22 @@ interface ExamRepository {
 
     /** Attempts not submitted yet (some may have run out of time while the app was closed), latest first. */
     suspend fun getInProgressAttempts(): List<ExamAttempt>
+
+    /**
+     * Every question of an attempt with how it ended. For a submitted attempt these are the rows
+     * written at the submit (unchanged by later edits of the set); otherwise they are built from
+     * the set as it is now. Null if unknown.
+     */
+    suspend fun getRecord(attemptId: String): AttemptRecord?
+
+    /**
+     * Every graded question of every submitted attempt, oldest first: the history mistakes and
+     * weak points are analysed from. Attempts submitted before schema 11 have none.
+     */
+    suspend fun getGradedHistory(): List<GradedOccurrence>
+
+    /** Every question of every exam set in the app, with its passage: the pool review questions come from. */
+    suspend fun getQuestionPool(): List<PooledQuestion>
 
     /** The attempt and its answers; null if unknown. */
     suspend fun getResult(attemptId: String): AttemptResult?

@@ -16,6 +16,7 @@ import com.n3sensei.app.data.preferences.DataStoreUserPreferencesRepository
 import com.n3sensei.app.data.proverb.AssetProverbRepository
 import com.n3sensei.app.data.repository.OfflineAnalyticsRepository
 import com.n3sensei.app.data.repository.OfflineContentRepository
+import com.n3sensei.app.data.repository.OfflineErrorRepository
 import com.n3sensei.app.data.repository.OfflineExamRepository
 import com.n3sensei.app.data.repository.OfflineProgressRepository
 import com.n3sensei.app.data.repository.OfflineReviewSessionRepository
@@ -25,12 +26,14 @@ import com.n3sensei.app.domain.backup.BackupRepository
 import com.n3sensei.app.domain.forecast.ReviewSessionRepository
 import com.n3sensei.app.domain.integrity.DatabaseRecoveryRepository
 import com.n3sensei.app.domain.proverb.ProverbRepository
+import com.n3sensei.app.domain.reminder.ErrorReviewReminder
 import com.n3sensei.app.domain.reminder.ReminderNotifier
 import com.n3sensei.app.domain.reminder.ReminderRunner
 import com.n3sensei.app.domain.reminder.ReminderScheduler
 import com.n3sensei.app.domain.repository.AnalyticsRepository
 import com.n3sensei.app.domain.repository.ContentImportRepository
 import com.n3sensei.app.domain.repository.ContentRepository
+import com.n3sensei.app.domain.repository.ErrorRepository
 import com.n3sensei.app.domain.repository.ExamRepository
 import com.n3sensei.app.domain.repository.ProgressRepository
 import com.n3sensei.app.domain.repository.UserContentRepository
@@ -61,9 +64,11 @@ interface AppContainer {
     val reminderScheduler: ReminderScheduler
     val reminderNotifier: ReminderNotifier
     val reminderRunner: ReminderRunner
+    val errorReviewReminder: ErrorReviewReminder
     val widgetContentPicker: WidgetContentPicker
     val proverbRepository: ProverbRepository
     val examRepository: ExamRepository
+    val errorRepository: ErrorRepository
     val widgetUpdater: WidgetUpdater
     val clock: Clock
 }
@@ -116,12 +121,18 @@ class DefaultAppContainer(context: Context) : AppContainer {
 
     override val examRepository: ExamRepository by lazy { OfflineExamRepository(database, clock) }
 
+    override val errorRepository: ErrorRepository by lazy { OfflineErrorRepository(database, clock) }
+
     override val widgetContentPicker: WidgetContentPicker by lazy { WidgetContentPicker(contentRepository, progressRepository, clock) }
 
     /** Widget refreshes outlive the screen that asked for them. */
     private val widgetScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
 
     override val widgetUpdater: WidgetUpdater by lazy { GlanceWidgetUpdater(appContext) { block -> widgetScope.launch { block() } } }
+
+    override val errorReviewReminder: ErrorReviewReminder by lazy {
+        ErrorReviewReminder(userPreferencesRepository, errorRepository, AndroidReminderNotifier(appContext), reminderStateStore, clock)
+    }
 
     override val reminderRunner: ReminderRunner by lazy {
         ReminderRunner(

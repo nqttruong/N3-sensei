@@ -21,7 +21,8 @@ class WorkManagerReminderScheduler(private val context: Context) : ReminderSched
 
     override fun apply(settings: ReminderSettings) {
         val workManager = WorkManager.getInstance(context)
-        if (!settings.enabled) {
+        // One periodic run serves the study reminders and the error review reminder.
+        if (!settings.enabled && !settings.errorReviews) {
             workManager.cancelUniqueWork(WORK_NAME)
             return
         }

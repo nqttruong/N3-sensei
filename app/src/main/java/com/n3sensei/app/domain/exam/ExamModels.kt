@@ -136,6 +136,8 @@ data class ExamSetSummary(
     val lastCorrect: Int?,
     /** Skills its questions train (one for a section exam, several for a full one). */
     val skills: Set<ExamSkill> = emptySet(),
+    /** Attempts started and not submitted yet (0 or 1 in practice). */
+    val inProgressAttempts: Int = 0,
 )
 
 /** Exam list filter; null means any. A set matches a skill when any of its questions trains it. */

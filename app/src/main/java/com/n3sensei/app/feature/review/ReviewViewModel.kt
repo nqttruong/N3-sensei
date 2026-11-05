@@ -6,6 +6,7 @@ import com.n3sensei.app.core.ui.state.STOP_TIMEOUT_MILLIS
 import com.n3sensei.app.core.ui.state.UiState
 import com.n3sensei.app.core.ui.state.ticks
 import com.n3sensei.app.domain.model.ReviewOverview
+import com.n3sensei.app.domain.repository.ErrorRepository
 import com.n3sensei.app.domain.repository.ProgressRepository
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
 import com.n3sensei.app.domain.srs.DailyLimits
@@ -18,6 +19,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
@@ -39,6 +41,8 @@ class ReviewViewModel(
     progressRepository: ProgressRepository,
     preferencesRepository: UserPreferencesRepository,
     private val clock: Clock,
+    /** Exam errors due for review, shown as their own card; null leaves the card out. */
+    errors: ErrorRepository? = null,
 ) : ViewModel() {
 
     /** Recomputed every minute and whenever the data or the daily limits change. */
@@ -61,5 +65,9 @@ class ReviewViewModel(
 
     /** Items marked as needing attention whose content still exists. */
     val markedCount: StateFlow<Int> = progressRepository.observeMarkedCount()
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), 0)
+
+    /** Exam errors due now, recounted every minute (errors fall due with time, not with app use). */
+    val errorsDue: StateFlow<Int> = (errors?.let { repo -> clock.ticks().flatMapLatest { repo.observeDueCount(it.toEpochMilli()) } } ?: flowOf(0))
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), 0)
 }

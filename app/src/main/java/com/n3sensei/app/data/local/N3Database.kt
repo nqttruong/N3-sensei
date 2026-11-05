@@ -10,6 +10,7 @@ import com.n3sensei.app.data.local.dao.AnalyticsDao
 import com.n3sensei.app.data.local.dao.BackupDao
 import com.n3sensei.app.data.local.dao.ContentDao
 import com.n3sensei.app.data.local.dao.ContentPackDao
+import com.n3sensei.app.data.local.dao.ErrorDao
 import com.n3sensei.app.data.local.dao.ExamDao
 import com.n3sensei.app.data.local.dao.ProgressDao
 import com.n3sensei.app.data.local.dao.ReminderHistoryDao
@@ -18,8 +19,10 @@ import com.n3sensei.app.data.local.dao.UserContentDao
 import com.n3sensei.app.data.local.entity.ContentPackEntity
 import com.n3sensei.app.data.local.entity.ContentSourceEntity
 import com.n3sensei.app.data.local.entity.ErrorRecordEntity
+import com.n3sensei.app.data.local.entity.ErrorReviewLogEntity
 import com.n3sensei.app.data.local.entity.ExamAnswerEntity
 import com.n3sensei.app.data.local.entity.ExamAttemptEntity
+import com.n3sensei.app.data.local.entity.ExamAttemptItemEntity
 import com.n3sensei.app.data.local.entity.ExamFlagEntity
 import com.n3sensei.app.data.local.entity.ExamPassageEntity
 import com.n3sensei.app.data.local.entity.ExamQuestionEntity
@@ -80,6 +83,8 @@ import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
         ExamAttemptEntity::class,
         ExamAnswerEntity::class,
         ExamFlagEntity::class,
+        ExamAttemptItemEntity::class,
+        ErrorReviewLogEntity::class,
         ErrorRecordEntity::class,
         ReviewItemEntity::class,
     ],
@@ -97,9 +102,10 @@ abstract class N3Database : RoomDatabase() {
     abstract fun userContentDao(): UserContentDao
     abstract fun reminderHistoryDao(): ReminderHistoryDao
     abstract fun examDao(): ExamDao
+    abstract fun errorDao(): ErrorDao
 
     companion object {
-        const val VERSION = 10
+        const val VERSION = 13
         const val NAME = "n3sensei.db"
 
         /**

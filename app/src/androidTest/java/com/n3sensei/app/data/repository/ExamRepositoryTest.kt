@@ -126,7 +126,7 @@ class ExamRepositoryTest {
     }
 
     @Test
-    fun submitting_scoresTheAttempt_andPutsEveryMistakeInTheNotebook_withAReviewDueNow() = runBlocking {
+    fun submitting_scoresTheAttempt_andPutsEveryMistakeInTheNotebook_withAReviewADayLater() = runBlocking {
         val attempt = exams.startAttempt(SET_ID)!!
         exams.answer(attempt.id, Q_KANJI, AnswerInput.Choice(0), 1_000) // right
         exams.answer(attempt.id, Q_FILL, AnswerInput.Text("のに"), 1_000) // wrong
@@ -143,9 +143,12 @@ class ExamRepositoryTest {
         assertEquals(ErrorType.INCORRECT, errors.getValue(Q_FILL).errorType)
         assertEquals(ErrorType.UNANSWERED, errors.getValue(Q_LISTEN).errorType)
         assertEquals("雨が降った＿＿、試合は中止になった。", errors.getValue(Q_FILL).question!!.content)
-        val due = exams.observeDueReviews(clock.millis()).first()
+        // The first review is a day after the exam (ErrorReviewSchedule).
+        assertTrue(exams.observeDueReviews(clock.millis()).first().isEmpty())
+        val day = 24 * 60 * 60_000L
+        val due = exams.observeDueReviews(clock.millis() + day).first()
         assertEquals(4, due.size)
-        assertTrue(due.all { it.review.stepIndex == 0 && it.review.nextReviewAt == clock.millis() })
+        assertTrue(due.all { it.review.stepIndex == 0 && it.review.nextReviewAt == clock.millis() + day })
         // A submitted attempt takes no more answers and cannot be submitted twice.
         assertNull(exams.answer(attempt.id, Q_LISTEN, AnswerInput.Choice(3), 1))
         assertNull(exams.submit(attempt.id))
@@ -223,10 +226,11 @@ class ExamRepositoryTest {
         assertEquals(5, exams.observeErrors(ErrorStatus.ACTIVE).first().size)
         assertEquals(1, exams.observeErrors(ErrorStatus.ARCHIVED).first().size)
         assertEquals(6, exams.observeErrors(null).first().size)
-        // Archived errors are not due for review.
-        assertEquals(5, exams.observeDueReviews(clock.millis()).first().size)
-        // Not due before they were made.
-        assertEquals(0, exams.observeDueReviews(clock.millis() - 1).first().size)
+        // Archived errors are not due for review; the others are, a day after the exam.
+        val day = 24 * 60 * 60_000L
+        assertEquals(5, exams.observeDueReviews(clock.millis() + day).first().size)
+        // Not due before that.
+        assertEquals(0, exams.observeDueReviews(clock.millis() + day - 1).first().size)
 
         assertTrue(exams.deleteError(error.id))
         assertEquals(5, db.countRows("review_items"))

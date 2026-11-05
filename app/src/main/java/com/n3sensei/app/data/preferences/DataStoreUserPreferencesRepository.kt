@@ -42,7 +42,9 @@ class DataStoreUserPreferencesRepository(
         val REMINDER_MAX_PER_DAY = intPreferencesKey("reminder_max_per_day")
         val REMINDER_CONTENT = stringPreferencesKey("reminder_content")
         val REMINDER_REVIEW_ONLY = booleanPreferencesKey("reminder_review_only")
+        val REMINDER_ERROR_REVIEWS = booleanPreferencesKey("reminder_error_reviews")
         val WIDGET_MODE = stringPreferencesKey("widget_mode")
+        val DAILY_STUDY_MINUTES = intPreferencesKey("daily_study_minutes")
         val WIDGET_LESSON = intPreferencesKey("widget_lesson")
         val WIDGET_SHOW_FURIGANA = booleanPreferencesKey("widget_show_furigana")
         val WIDGET_SHOW_MEANING = booleanPreferencesKey("widget_show_meaning")
@@ -67,6 +69,7 @@ class DataStoreUserPreferencesRepository(
                 ),
                 reminderSettings = readReminder(prefs),
                 widgetSettings = readWidget(prefs),
+                dailyStudyMinutes = prefs[Keys.DAILY_STUDY_MINUTES]?.takeIf { it in 1..600 } ?: UserPreferences.DEFAULT_DAILY_STUDY_MINUTES,
             )
         }
 
@@ -92,6 +95,7 @@ class DataStoreUserPreferencesRepository(
                 ?.mapNotNull { name -> ReminderContent.entries.firstOrNull { it.name == name } }
                 ?.toSet()?.ifEmpty { null } ?: d.content,
             reviewOnly = prefs[Keys.REMINDER_REVIEW_ONLY] ?: d.reviewOnly,
+            errorReviews = prefs[Keys.REMINDER_ERROR_REVIEWS] ?: d.errorReviews,
         )
     }
 
@@ -110,6 +114,7 @@ class DataStoreUserPreferencesRepository(
             it[Keys.REMINDER_MAX_PER_DAY] = settings.maxPerDay
             it[Keys.REMINDER_CONTENT] = settings.content.sortedBy { c -> c.ordinal }.joinToString(",") { c -> c.name }
             it[Keys.REMINDER_REVIEW_ONLY] = settings.reviewOnly
+            it[Keys.REMINDER_ERROR_REVIEWS] = settings.errorReviews
         }
     }
 
@@ -122,6 +127,10 @@ class DataStoreUserPreferencesRepository(
             showMeaning = prefs[Keys.WIDGET_SHOW_MEANING] ?: d.showMeaning,
             tap = enumOrDefault(prefs[Keys.WIDGET_TAP], d.tap),
         )
+    }
+
+    override suspend fun setDailyStudyMinutes(minutes: Int) {
+        dataStore.edit { it[Keys.DAILY_STUDY_MINUTES] = minutes.coerceIn(1, 600) }
     }
 
     override suspend fun setWidgetSettings(settings: WidgetSettings) {

@@ -73,6 +73,9 @@ class ExamSessionManager(private val exams: ExamRepository, private val submissi
         return exams.getInProgressAttempts().filter { examSetId == null || it.examSetId == examSetId }
     }
 
+    /** Gives up an attempt in progress: no score, nothing in the notebook, its answers kept. */
+    suspend fun abandon(attemptId: String): Boolean = exams.abandon(attemptId)
+
     /** Saves the question the learner is on; false when the attempt is over. */
     suspend fun moveTo(attemptId: String, questionId: String): Boolean = exams.setCurrentQuestion(attemptId, questionId)
 

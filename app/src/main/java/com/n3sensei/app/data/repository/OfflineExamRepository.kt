@@ -7,6 +7,7 @@ import com.n3sensei.app.data.local.dao.WrongAnswer
 import com.n3sensei.app.data.local.entity.ErrorRecordEntity
 import com.n3sensei.app.data.local.entity.ExamAnswerEntity
 import com.n3sensei.app.data.local.entity.ExamAttemptEntity
+import com.n3sensei.app.data.local.entity.ExamAttemptItemEntity
 import com.n3sensei.app.data.local.entity.ExamFlagEntity
 import com.n3sensei.app.data.local.entity.ExamPassageEntity
 import com.n3sensei.app.data.local.entity.ExamQuestionEntity
@@ -16,6 +17,7 @@ import com.n3sensei.app.data.local.entity.ExamSetEntity
 import com.n3sensei.app.data.local.entity.ReviewItemEntity
 import com.n3sensei.app.domain.exam.AnswerFormat
 import com.n3sensei.app.domain.exam.AnswerInput
+import com.n3sensei.app.domain.exam.AttemptRecord
 import com.n3sensei.app.domain.exam.AttemptResult
 import com.n3sensei.app.domain.exam.AttemptStatus
 import com.n3sensei.app.domain.exam.Confidence
@@ -36,16 +38,22 @@ import com.n3sensei.app.domain.exam.ExamSetSummary
 import com.n3sensei.app.domain.exam.ExamSkill
 import com.n3sensei.app.domain.exam.ExamTimer
 import com.n3sensei.app.domain.exam.ExamType
+import com.n3sensei.app.domain.exam.ItemOutcome
 import com.n3sensei.app.domain.exam.QuestionType
+import com.n3sensei.app.domain.exam.ResultItem
 import com.n3sensei.app.domain.exam.ReviewItem
 import com.n3sensei.app.domain.exam.ReviewStatus
+import com.n3sensei.app.domain.mistakes.GradedOccurrence
+import com.n3sensei.app.domain.mistakes.PooledQuestion
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.repository.ExamRepository
 import com.n3sensei.app.domain.repository.SaveExamResult
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import java.time.Clock
@@ -72,7 +80,7 @@ class OfflineExamRepository(
                 ExamSetSummary(
                     it.set.id, it.set.title, it.set.jlptLevel, enumOr(it.set.examType, ExamType.SECTION),
                     it.set.durationSeconds, it.questionCount, it.submittedAttempts, it.lastCorrect,
-                    skills[it.set.id].orEmpty().toSet(),
+                    skills[it.set.id].orEmpty().toSet(), it.inProgressAttempts,
                 )
             }.filter(filter::matches)
         }
@@ -171,7 +179,28 @@ class OfflineExamRepository(
             answers.values.filter { it.questionId !in inSet && !it.isCorrect }
                 .forEach { add(WrongAnswer(it.questionId, attempt.examSetId, ErrorType.INCORRECT.name, it.questionSnapshot)) }
         }
-        val questionCount = if (bundle == null) attempt.questionCount else questions.size
+        // Every question of the attempt as graded, in exam order; answered questions removed from
+        // the set since the start come last.
+        val sectionKinds = bundle?.sections.orEmpty().associate { it.id to enumOr(it.section, ExamSectionKind.VOCABULARY) }
+        val graded = questions.map { q ->
+            val answer = answers[q.id]
+            Triple(q.id, answer?.questionSnapshot ?: snapshot(q.toDomain(itemsByQuestion[q.id].orEmpty())), answer)
+        } + answers.values.filter { a -> questions.none { it.id == a.questionId } }.map { Triple(it.questionId, it.questionSnapshot, it) }
+        val items = graded.mapIndexed { position, (questionId, snapshotJson, answer) ->
+            val question = fromSnapshot(snapshotJson)
+            val section = question?.sectionId?.let(sectionKinds::get) ?: ExamSectionKind.VOCABULARY
+            ExamAttemptItemEntity(
+                attemptId = attemptId, position = position, questionId = questionId, section = section.name,
+                skill = ExamSkill.of(question?.type ?: QuestionType.OTHER, section).name,
+                outcome = when {
+                    answer == null -> ItemOutcome.UNANSWERED
+                    answer.isCorrect -> ItemOutcome.CORRECT
+                    else -> ItemOutcome.WRONG
+                }.name,
+                questionSnapshot = snapshotJson,
+            )
+        }
+        val questionCount = if (bundle == null) attempt.questionCount else items.size
         val updated = attempt.copy(
             submittedAt = now,
             durationSeconds = ((now - attempt.startedAt) / 1000).coerceAtLeast(0),
@@ -179,7 +208,9 @@ class OfflineExamRepository(
             questionCount = questionCount,
             status = if (expired) AttemptStatus.EXPIRED.name else AttemptStatus.SUBMITTED.name,
         )
-        dao.submit(updated, wrong, now)
+        val skillOf = items.associate { it.questionId to it.skill }
+        val level = bundle?.set?.jlptLevel
+        dao.submit(updated, items, wrong.map { it.copy(jlptLevel = level, skill = skillOf[it.questionId]) }, now)
         AttemptResult(updated.toDomain(), dao.getAnswers(attemptId).map { it.toDomain() })
     }
 
@@ -196,6 +227,66 @@ class OfflineExamRepository(
         dao.setCurrentQuestion(attemptId, questionId) > 0
 
     override suspend fun getInProgressAttempts(): List<ExamAttempt> = dao.getInProgressAttempts().map { it.toDomain() }
+
+    override suspend fun getRecord(attemptId: String): AttemptRecord? {
+        val attempt = dao.getAttempt(attemptId)?.toDomain() ?: return null
+        val answers = dao.getAnswers(attemptId).map { it.toDomain() }.associateBy { it.questionId }
+        val set = getExamSet(attempt.examSetId)
+        val passages = set?.passages.orEmpty().associateBy { it.id }
+        val rows = dao.getAttemptItems(attemptId)
+        val items = if (rows.isNotEmpty()) {
+            rows.mapNotNull { row ->
+                val question = fromSnapshot(row.questionSnapshot) ?: return@mapNotNull null
+                ResultItem(
+                    row.position, question, enumOr(row.section, ExamSectionKind.VOCABULARY), enumOr(row.skill, ExamSkill.VOCABULARY),
+                    enumOr(row.outcome, ItemOutcome.UNANSWERED), answers[row.questionId],
+                )
+            }
+        } else {
+            // Not graded per question (in progress, abandoned, or submitted before schema 11):
+            // the set as it is now, or only the answered questions if it is gone.
+            val known = set?.questions ?: dao.getAnswers(attemptId).mapNotNull { fromSnapshot(it.questionSnapshot) }
+            known.mapIndexed { position, q ->
+                val answer = answers[q.id]
+                val section = set?.sections?.firstOrNull { it.id == q.sectionId }?.kind ?: ExamSectionKind.VOCABULARY
+                val outcome = when {
+                    answer == null -> ItemOutcome.UNANSWERED
+                    answer.isCorrect -> ItemOutcome.CORRECT
+                    else -> ItemOutcome.WRONG
+                }
+                ResultItem(position, q, section, ExamSkill.of(q.type, section), outcome, answer)
+            }
+        }
+        return AttemptRecord(attempt, items, passages)
+    }
+
+    // Thousands of question snapshots to decode: off the caller's (often the main) thread.
+    override suspend fun getGradedHistory(): List<GradedOccurrence> {
+        val rows = dao.getGradedHistory()
+        return withContext(Dispatchers.Default) {
+            rows.mapNotNull { row ->
+                val question = fromSnapshot(row.item.questionSnapshot) ?: return@mapNotNull null
+                GradedOccurrence(
+                    attemptId = row.item.attemptId, examSetId = row.examSetId, submittedAt = row.submittedAt,
+                    expired = row.status == AttemptStatus.EXPIRED.name, position = row.item.position, question = question,
+                    section = enumOr(row.item.section, ExamSectionKind.VOCABULARY), skill = enumOr(row.item.skill, ExamSkill.VOCABULARY),
+                    outcome = enumOr(row.item.outcome, ItemOutcome.UNANSWERED), selectedIndex = row.selectedIndex, textAnswer = row.textAnswer,
+                    timeSpentMs = row.timeSpentMs,
+                )
+            }
+        }
+    }
+
+    override suspend fun getQuestionPool(): List<PooledQuestion> = database.withTransaction {
+        val items = dao.getAllQuestionItems().groupBy { it.questionId }
+        val passages = dao.getAllPassages().associateBy { it.id }
+        dao.getAllQuestions().map { q ->
+            PooledQuestion(
+                q.toDomain(items[q.id].orEmpty()),
+                q.passageId?.let(passages::get)?.let { ExamPassage(it.id, it.title, it.text, it.furigana, it.audioPath) },
+            )
+        }
+    }
 
     override suspend fun getResult(attemptId: String): AttemptResult? {
         val attempt = dao.getAttempt(attemptId) ?: return null

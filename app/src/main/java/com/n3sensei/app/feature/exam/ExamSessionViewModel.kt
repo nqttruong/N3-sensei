@@ -65,6 +65,10 @@ class ExamSessionViewModel(
     private val submission: ExamSubmissionManager,
     private val clock: Clock,
     private val ticks: Flow<Unit> = ExamTimer.ticks(),
+    /** Opens this attempt (continuing it) instead of preparing the set. */
+    private val resumeAttemptId: String? = null,
+    /** Starts a new attempt as soon as the set is loaded (the learner tapped "Bắt đầu thi"). */
+    private val autoStart: Boolean = false,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow<UiState<ExamSessionUiState>>(UiState.Loading)
@@ -84,8 +88,14 @@ class ExamSessionViewModel(
     fun load() {
         viewModelScope.launch {
             try {
-                val saved = savedState.get<String>(KEY_ATTEMPT)
-                if (saved != null) open(saved) else prepare()
+                // After a process death the saved id wins: the attempt started here is continued, not started again.
+                val saved = savedState.get<String>(KEY_ATTEMPT) ?: resumeAttemptId
+                if (saved != null) {
+                    open(saved)
+                } else {
+                    prepare()
+                    if (autoStart) start()
+                }
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {

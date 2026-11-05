@@ -78,6 +78,10 @@ fun ReminderSettingsScreen(
         viewModel.refreshPermission()
         if (granted) viewModel.setEnabled(true)
     }
+    val requestForErrorReviews = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+        viewModel.refreshPermission()
+        if (granted) viewModel.setErrorReviews(true)
+    }
     val openSystemSettings = {
         context.startActivity(
             Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName),
@@ -108,6 +112,20 @@ fun ReminderSettingsScreen(
                 OutlinedButton(onClick = openSystemSettings) { Text(stringResource(R.string.reminder_open_system_settings)) }
             }
         }
+        ListItem(
+            headlineContent = { Text(stringResource(R.string.reminder_error_reviews)) },
+            supportingContent = { Text(stringResource(R.string.reminder_error_reviews_description)) },
+            trailingContent = { Switch(checked = current.errorReviews, onCheckedChange = null) },
+            modifier = Modifier.toggleable(value = current.errorReviews, role = Role.Switch) { on ->
+                when {
+                    !on -> viewModel.setErrorReviews(false)
+                    allowed -> viewModel.setErrorReviews(true)
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ->
+                        requestForErrorReviews.launch(Manifest.permission.POST_NOTIFICATIONS)
+                    else -> openSystemSettings()
+                }
+            },
+        )
         HorizontalDivider(Modifier.padding(top = 8.dp))
 
         SectionHeader(stringResource(R.string.reminder_window), Modifier.padding(horizontal = 16.dp))

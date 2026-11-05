@@ -8,6 +8,7 @@ import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.reminder.ErrorReminderStateStore
 import com.n3sensei.app.domain.reminder.ReminderState
 import com.n3sensei.app.domain.reminder.ReminderStateStore
 import kotlinx.coroutines.flow.first
@@ -17,7 +18,7 @@ import java.time.LocalDate
 /** Last reminder time and item, and today's count, kept next to the settings in the same DataStore file. */
 class DataStoreReminderStateStore(
     private val dataStore: DataStore<Preferences>,
-) : ReminderStateStore {
+) : ReminderStateStore, ErrorReminderStateStore {
 
     private val lastShownAt = longPreferencesKey("reminder_last_shown_at")
 
@@ -26,6 +27,14 @@ class DataStoreReminderStateStore(
     private val lastItem = stringPreferencesKey("reminder_last_item")
     private val countDay = stringPreferencesKey("reminder_count_day")
     private val countToday = intPreferencesKey("reminder_count_today")
+    private val errorReminderDay = stringPreferencesKey("error_reminder_day")
+
+    override suspend fun lastShownDay(): LocalDate? =
+        dataStore.data.first()[errorReminderDay]?.let { runCatching { LocalDate.parse(it) }.getOrNull() }
+
+    override suspend fun setLastShownDay(day: LocalDate) {
+        dataStore.edit { it[errorReminderDay] = day.toString() }
+    }
 
     override suspend fun read(): ReminderState {
         val prefs = dataStore.data.first()

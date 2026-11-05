@@ -71,6 +71,7 @@ fun StatsScreen(
     onOpenList: (ItemType, LearningStatus?) -> Unit,
     onOpenItem: (ItemRef) -> Unit,
     modifier: Modifier = Modifier,
+    onOpenJlpt: () -> Unit = {},
 ) {
     val period by viewModel.period.collectAsStateWithLifecycle()
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -97,6 +98,10 @@ fun StatsScreen(
                     .padding(horizontal = 16.dp, vertical = 8.dp),
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
+                SectionCard(
+                    stringResource(R.string.jlpt_dashboard_entry),
+                    onClick = onOpenJlpt,
+                ) { Caption(stringResource(R.string.jlpt_dashboard_entry_description)) }
                 if (!ui.hasContent) InfoBanner(stringResource(R.string.common_no_content))
                 ActivityCard(ui)
                 DueCard(ui, onOpenReview)

@@ -2,7 +2,9 @@ package com.n3sensei.app.app.di
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
@@ -26,4 +28,16 @@ inline fun <reified VM : ViewModel> appViewModel(
 ): VM {
     val container = (LocalContext.current.applicationContext as N3SenseiApplication).container
     return viewModel(factory = viewModelFactory { initializer { container.create() } })
+}
+
+/**
+ * [appViewModel] for a ViewModel that keeps state in the back stack entry's [SavedStateHandle]
+ * (restored after the process was killed).
+ */
+@Composable
+inline fun <reified VM : ViewModel> appSavedStateViewModel(
+    crossinline create: AppContainer.(SavedStateHandle) -> VM,
+): VM {
+    val container = (LocalContext.current.applicationContext as N3SenseiApplication).container
+    return viewModel(factory = viewModelFactory { initializer { container.create(createSavedStateHandle()) } })
 }

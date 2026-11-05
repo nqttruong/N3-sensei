@@ -57,6 +57,8 @@ data class ReminderSettings(
     val content: Set<ReminderContent> = setOf(ReminderContent.VOCABULARY),
     /** Only items that need review (due, or marked as needing attention); no new items. */
     val reviewOnly: Boolean = false,
+    /** One notification a day when exam errors are due for review (see ErrorReviewReminder). */
+    val errorReviews: Boolean = false,
 ) {
     init {
         require(startHour in 0..23 && endHour in 0..23) { "Hours must be 0..23" }
@@ -73,5 +75,5 @@ data class ReminderSettings(
      * The part of the settings that background work depends on. The window and content are
      * read on every run, so changing them needs no rescheduling.
      */
-    fun scheduleKey(): Pair<Boolean, ReminderFrequency> = enabled to frequency
+    fun scheduleKey(): Pair<Boolean, ReminderFrequency> = (enabled || errorReviews) to frequency
 }

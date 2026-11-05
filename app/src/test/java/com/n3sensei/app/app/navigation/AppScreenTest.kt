@@ -36,6 +36,9 @@ class AppScreenTest {
         val expected = setOf(
             HomeRoute::class, LearnHubRoute::class, LessonListRoute::class, LessonDetailRoute::class,
             VocabularyGroupsRoute::class, VocabularyGroupRoute::class, VocabularyRoute::class, MyWordsRoute::class, VocabularyDetailRoute::class, KanjiRoute::class, KanjiDetailRoute::class,
+            ExamListRoute::class, ExamIntroRoute::class, ExamSessionRoute::class, ExamResultRoute::class, ExamReviewRoute::class,
+            MistakeAnalysisRoute::class, ErrorNotebookRoute::class, ErrorDetailRoute::class, ErrorReviewRoute::class, WeaknessRoute::class,
+            ExamDashboardRoute::class, SkillDetailRoute::class,
             KanjiEditRoute::class, VocabularyEditRoute::class, AddWordRoute::class,
             GrammarRoute::class, GrammarDetailRoute::class, GrammarEditRoute::class, PracticeRoute::class, PracticeResultRoute::class,
             ReviewRoute::class, ReviewSessionRoute::class, ReviewResultRoute::class,

@@ -20,4 +20,6 @@ interface UserPreferencesRepository {
     suspend fun setReminderSettings(settings: ReminderSettings)
 
     suspend fun setWidgetSettings(settings: WidgetSettings)
+
+    suspend fun setDailyStudyMinutes(minutes: Int)
 }

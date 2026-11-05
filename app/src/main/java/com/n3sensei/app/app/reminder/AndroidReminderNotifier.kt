@@ -16,6 +16,7 @@ import com.n3sensei.app.domain.practice.PracticeItem
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.reminder.LockScreenPrivacy
 import com.n3sensei.app.domain.reminder.ReminderMessage
+import com.n3sensei.app.domain.reminder.ErrorReviewNotifier
 import com.n3sensei.app.domain.reminder.ReminderNotifier
 import com.n3sensei.app.domain.reminder.ReminderReason
 
@@ -23,7 +24,7 @@ import com.n3sensei.app.domain.reminder.ReminderReason
  * Posts the single study-reminder notification. A new reminder replaces the previous one
  * (same id), so reminders never pile up.
  */
-class AndroidReminderNotifier(private val context: Context) : ReminderNotifier {
+class AndroidReminderNotifier(private val context: Context) : ReminderNotifier, ErrorReviewNotifier {
 
     override fun canPostNotifications(): Boolean {
         val manager = NotificationManagerCompat.from(context)
@@ -103,6 +104,30 @@ class AndroidReminderNotifier(private val context: Context) : ReminderNotifier {
         notifyIfAllowed(REMINDER_NOTIFICATION_ID, builder)
     }
 
+    /** Always the same notification: shown again it replaces itself, never piles up. */
+    override fun showErrorReviews(dueCount: Int) {
+        ensureChannel(context)
+        val title = context.getString(R.string.error_reminder_title)
+        val text = context.getString(R.string.error_reminder_text, dueCount)
+        val open = ReminderDeepLinks.openErrorReview(context)
+        val builder = NotificationCompat.Builder(context, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_stat_reminder)
+            .setContentTitle(title)
+            .setContentText(text)
+            .setCategory(NotificationCompat.CATEGORY_REMINDER)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setOnlyAlertOnce(true)
+            .setContentIntent(open)
+            .setAutoCancel(true)
+            .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
+            .setPublicVersion(publicVersion(title, null))
+        notifyIfAllowed(ERROR_REVIEW_NOTIFICATION_ID, builder)
+    }
+
+    override fun cancelErrorReviews() {
+        NotificationManagerCompat.from(context).cancel(ERROR_REVIEW_NOTIFICATION_ID)
+    }
+
     private fun publicVersion(title: String, text: String?) =
         NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_stat_reminder)
@@ -136,6 +161,7 @@ class AndroidReminderNotifier(private val context: Context) : ReminderNotifier {
     companion object {
         const val CHANNEL_ID = "study_reminders"
         const val REMINDER_NOTIFICATION_ID = 1001
+        const val ERROR_REVIEW_NOTIFICATION_ID = 1002
         private const val CONFIRMATION_TIMEOUT_MILLIS = 8_000L
 
         /** Idempotent; called at app start and before posting. */

@@ -62,6 +62,13 @@ class ReminderSettingsViewModel(
         update { it.copy(enabled = enabled) }
     }
 
+    /** Like [setEnabled]: only saved on when notifications can be posted. */
+    fun setErrorReviews(on: Boolean) {
+        refreshPermission()
+        if (on && !_notificationsAllowed.value) return
+        update { it.copy(errorReviews = on) }
+    }
+
     fun setStartHour(hour: Int) = update { it.copy(startHour = hour) }
     fun setEndHour(hour: Int) = update { it.copy(endHour = hour) }
     fun setFrequency(frequency: ReminderFrequency) = update { it.copy(frequency = frequency) }
