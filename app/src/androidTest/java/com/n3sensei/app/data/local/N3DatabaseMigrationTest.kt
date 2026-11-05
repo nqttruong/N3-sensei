@@ -19,6 +19,7 @@ import com.n3sensei.app.domain.model.ReviewRating
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
@@ -316,6 +317,40 @@ class N3DatabaseMigrationTest {
             db.query("SELECT kanji_id FROM user_kanji_examples").use { c -> assertTrue(c.moveToFirst()); assertEquals("k", c.getString(0)) }
             db.query("SELECT COUNT(*) FROM user_words").use { c -> c.moveToFirst(); assertEquals(1, c.getInt(0)) }
             db.query("SELECT COUNT(*) FROM reminder_history").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+        }
+        instrumentation.targetContext.deleteDatabase(name)
+    }
+
+    @Test
+    fun learnerDataWrittenWithV8Schema_survivesTheMigrationTo9_andTheExamTablesStartEmpty() = runTest {
+        val name = "migration-test-data-v8"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 8).apply {
+            execSQL(
+                "INSERT INTO learning_progress (item_type, item_id, state, step_index, interval_minutes, due_at, " +
+                    "last_reviewed_at, review_count, lapse_count, created_at, updated_at) " +
+                    "VALUES ('KANJI', 'k', 'REVIEW', 3, 2880, 5000, 1000, 4, 1, 100, 1000)",
+            )
+            execSQL("INSERT INTO user_words VALUES ('user-w-1', 10, 20)")
+            execSQL("INSERT INTO user_kanji_examples VALUES ('user-x-k-1', 'k', 0, 10, 20)")
+            execSQL("INSERT INTO reminder_history VALUES ('KANJI', 'k', 3000, 2)")
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 9, true, N3Migrations.MIGRATION_8_9).use { db ->
+            db.query("SELECT step_index, review_count, lapse_count FROM learning_progress WHERE item_id = 'k'").use { c ->
+                assertTrue(c.moveToFirst()); assertEquals(3, c.getInt(0)); assertEquals(4, c.getInt(1)); assertEquals(1, c.getInt(2))
+            }
+            db.query("SELECT COUNT(*) FROM user_words").use { c -> c.moveToFirst(); assertEquals(1, c.getInt(0)) }
+            db.query("SELECT COUNT(*) FROM user_kanji_examples").use { c -> c.moveToFirst(); assertEquals(1, c.getInt(0)) }
+            db.query("SELECT shown_count FROM reminder_history").use { c -> c.moveToFirst(); assertEquals(2, c.getInt(0)) }
+            listOf(
+                "exam_sets", "exam_sections", "exam_passages", "exam_questions", "exam_question_items",
+                "exam_attempts", "exam_answers", "error_records", "review_items",
+            ).forEach { table ->
+                db.query("SELECT COUNT(*) FROM $table").use { c -> c.moveToFirst(); assertEquals(table, 0, c.getInt(0)) }
+            }
+            // Foreign keys of the new tables hold on the migrated database.
+            db.query("PRAGMA foreign_key_check").use { c -> assertFalse(c.moveToFirst()) }
         }
         instrumentation.targetContext.deleteDatabase(name)
     }

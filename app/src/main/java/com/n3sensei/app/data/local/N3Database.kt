@@ -10,12 +10,21 @@ import com.n3sensei.app.data.local.dao.AnalyticsDao
 import com.n3sensei.app.data.local.dao.BackupDao
 import com.n3sensei.app.data.local.dao.ContentDao
 import com.n3sensei.app.data.local.dao.ContentPackDao
+import com.n3sensei.app.data.local.dao.ExamDao
 import com.n3sensei.app.data.local.dao.ProgressDao
 import com.n3sensei.app.data.local.dao.ReminderHistoryDao
 import com.n3sensei.app.data.local.dao.ReviewSessionDao
 import com.n3sensei.app.data.local.dao.UserContentDao
 import com.n3sensei.app.data.local.entity.ContentPackEntity
 import com.n3sensei.app.data.local.entity.ContentSourceEntity
+import com.n3sensei.app.data.local.entity.ErrorRecordEntity
+import com.n3sensei.app.data.local.entity.ExamAnswerEntity
+import com.n3sensei.app.data.local.entity.ExamAttemptEntity
+import com.n3sensei.app.data.local.entity.ExamPassageEntity
+import com.n3sensei.app.data.local.entity.ExamQuestionEntity
+import com.n3sensei.app.data.local.entity.ExamQuestionItemEntity
+import com.n3sensei.app.data.local.entity.ExamSectionEntity
+import com.n3sensei.app.data.local.entity.ExamSetEntity
 import com.n3sensei.app.data.local.entity.ExampleSentenceEntity
 import com.n3sensei.app.data.local.entity.GrammarEntity
 import com.n3sensei.app.data.local.entity.GrammarExampleCrossRef
@@ -26,6 +35,7 @@ import com.n3sensei.app.data.local.entity.KanjiExampleCrossRef
 import com.n3sensei.app.data.local.entity.LearningProgressEntity
 import com.n3sensei.app.data.local.entity.LessonEntity
 import com.n3sensei.app.data.local.entity.ReminderHistoryEntity
+import com.n3sensei.app.data.local.entity.ReviewItemEntity
 import com.n3sensei.app.data.local.entity.ReviewRecordEntity
 import com.n3sensei.app.data.local.entity.ReviewSessionEntity
 import com.n3sensei.app.data.local.entity.TagEntity
@@ -61,6 +71,15 @@ import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
         UserWordEntity::class,
         UserKanjiExampleEntity::class,
         ReminderHistoryEntity::class,
+        ExamSetEntity::class,
+        ExamSectionEntity::class,
+        ExamPassageEntity::class,
+        ExamQuestionEntity::class,
+        ExamQuestionItemEntity::class,
+        ExamAttemptEntity::class,
+        ExamAnswerEntity::class,
+        ErrorRecordEntity::class,
+        ReviewItemEntity::class,
     ],
     version = N3Database.VERSION,
     exportSchema = true,
@@ -75,9 +94,10 @@ abstract class N3Database : RoomDatabase() {
     abstract fun backupDao(): BackupDao
     abstract fun userContentDao(): UserContentDao
     abstract fun reminderHistoryDao(): ReminderHistoryDao
+    abstract fun examDao(): ExamDao
 
     companion object {
-        const val VERSION = 8
+        const val VERSION = 9
         const val NAME = "n3sensei.db"
 
         /**

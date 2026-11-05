@@ -137,7 +137,42 @@ object N3Migrations {
         }
     }
 
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8)
+    /**
+     * 8 → 9: the JLPT exam module. Only new, empty tables (exam content, attempts and answers,
+     * error notebook and its reviews); no existing table or row changes. Statements copied from
+     * the schema Room exports for version 9, so the result matches it exactly.
+     */
+    val MIGRATION_8_9 = object : Migration(8, 9) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            listOf(
+                "CREATE TABLE IF NOT EXISTS `exam_sets` (`id` TEXT NOT NULL, `title` TEXT NOT NULL, `description` TEXT, `jlpt_level` TEXT NOT NULL, `exam_type` TEXT NOT NULL, `duration_seconds` INTEGER NOT NULL, `source` TEXT, `created_at` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+                "CREATE INDEX IF NOT EXISTS `index_exam_sets_jlpt_level` ON `exam_sets` (`jlpt_level`)",
+                "CREATE TABLE IF NOT EXISTS `exam_sections` (`id` TEXT NOT NULL, `exam_set_id` TEXT NOT NULL, `section` TEXT NOT NULL, `duration_seconds` INTEGER, `section_order` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`exam_set_id`) REFERENCES `exam_sets`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+                "CREATE INDEX IF NOT EXISTS `index_exam_sections_exam_set_id` ON `exam_sections` (`exam_set_id`)",
+                "CREATE TABLE IF NOT EXISTS `exam_passages` (`id` TEXT NOT NULL, `exam_set_id` TEXT NOT NULL, `title` TEXT, `text` TEXT, `furigana` TEXT, `audio_path` TEXT, PRIMARY KEY(`id`), FOREIGN KEY(`exam_set_id`) REFERENCES `exam_sets`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+                "CREATE INDEX IF NOT EXISTS `index_exam_passages_exam_set_id` ON `exam_passages` (`exam_set_id`)",
+                "CREATE TABLE IF NOT EXISTS `exam_questions` (`id` TEXT NOT NULL, `exam_set_id` TEXT NOT NULL, `section_id` TEXT NOT NULL, `question_type` TEXT NOT NULL, `answer_format` TEXT NOT NULL, `content` TEXT NOT NULL, `content_furigana` TEXT, `options` TEXT NOT NULL, `answer_index` INTEGER, `accepted_answers` TEXT NOT NULL, `explanation` TEXT, `difficulty` INTEGER, `passage_id` TEXT, `audio_path` TEXT, `question_order` INTEGER NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`exam_set_id`) REFERENCES `exam_sets`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`section_id`) REFERENCES `exam_sections`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`passage_id`) REFERENCES `exam_passages`(`id`) ON UPDATE NO ACTION ON DELETE SET NULL )",
+                "CREATE INDEX IF NOT EXISTS `index_exam_questions_exam_set_id_question_order` ON `exam_questions` (`exam_set_id`, `question_order`)",
+                "CREATE INDEX IF NOT EXISTS `index_exam_questions_section_id` ON `exam_questions` (`section_id`)",
+                "CREATE INDEX IF NOT EXISTS `index_exam_questions_passage_id` ON `exam_questions` (`passage_id`)",
+                "CREATE TABLE IF NOT EXISTS `exam_question_items` (`question_id` TEXT NOT NULL, `item_type` TEXT NOT NULL, `item_id` TEXT NOT NULL, PRIMARY KEY(`question_id`, `item_type`, `item_id`), FOREIGN KEY(`question_id`) REFERENCES `exam_questions`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+                "CREATE INDEX IF NOT EXISTS `index_exam_question_items_item_type_item_id` ON `exam_question_items` (`item_type`, `item_id`)",
+                "CREATE TABLE IF NOT EXISTS `exam_attempts` (`id` TEXT NOT NULL, `exam_set_id` TEXT NOT NULL, `exam_title` TEXT NOT NULL, `started_at` INTEGER NOT NULL, `submitted_at` INTEGER, `time_limit_seconds` INTEGER NOT NULL, `duration_seconds` INTEGER, `correct_count` INTEGER, `question_count` INTEGER NOT NULL, `status` TEXT NOT NULL, PRIMARY KEY(`id`))",
+                "CREATE INDEX IF NOT EXISTS `index_exam_attempts_exam_set_id` ON `exam_attempts` (`exam_set_id`)",
+                "CREATE INDEX IF NOT EXISTS `index_exam_attempts_started_at` ON `exam_attempts` (`started_at`)",
+                "CREATE TABLE IF NOT EXISTS `exam_answers` (`attempt_id` TEXT NOT NULL, `question_id` TEXT NOT NULL, `selected_index` INTEGER, `text_answer` TEXT, `is_correct` INTEGER NOT NULL, `time_spent_ms` INTEGER NOT NULL, `confidence` TEXT, `change_count` INTEGER NOT NULL, `answered_at` INTEGER NOT NULL, `question_snapshot` TEXT NOT NULL, PRIMARY KEY(`attempt_id`, `question_id`), FOREIGN KEY(`attempt_id`) REFERENCES `exam_attempts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+                "CREATE INDEX IF NOT EXISTS `index_exam_answers_question_id` ON `exam_answers` (`question_id`)",
+                "CREATE TABLE IF NOT EXISTS `error_records` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `question_id` TEXT NOT NULL, `exam_set_id` TEXT NOT NULL, `error_type` TEXT NOT NULL, `error_count` INTEGER NOT NULL, `first_wrong_at` INTEGER NOT NULL, `last_wrong_at` INTEGER NOT NULL, `mastery_level` INTEGER NOT NULL, `status` TEXT NOT NULL, `notes` TEXT, `question_snapshot` TEXT NOT NULL)",
+                "CREATE UNIQUE INDEX IF NOT EXISTS `index_error_records_question_id` ON `error_records` (`question_id`)",
+                "CREATE INDEX IF NOT EXISTS `index_error_records_status` ON `error_records` (`status`)",
+                "CREATE TABLE IF NOT EXISTS `review_items` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `error_record_id` INTEGER NOT NULL, `next_review_at` INTEGER NOT NULL, `interval_minutes` INTEGER NOT NULL, `step_index` INTEGER NOT NULL, `review_count` INTEGER NOT NULL, `success_count` INTEGER NOT NULL, `last_reviewed_at` INTEGER, `review_status` TEXT NOT NULL, FOREIGN KEY(`error_record_id`) REFERENCES `error_records`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+                "CREATE UNIQUE INDEX IF NOT EXISTS `index_review_items_error_record_id` ON `review_items` (`error_record_id`)",
+                "CREATE INDEX IF NOT EXISTS `index_review_items_next_review_at` ON `review_items` (`next_review_at`)",
+            ).forEach(db::execSQL)
+        }
+    }
+
+    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9)
 
     private fun String.toReadings(): String = StringListCodec.decode(this).joinToString(" ")
 

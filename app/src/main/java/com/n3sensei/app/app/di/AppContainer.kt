@@ -16,6 +16,7 @@ import com.n3sensei.app.data.preferences.DataStoreUserPreferencesRepository
 import com.n3sensei.app.data.proverb.AssetProverbRepository
 import com.n3sensei.app.data.repository.OfflineAnalyticsRepository
 import com.n3sensei.app.data.repository.OfflineContentRepository
+import com.n3sensei.app.data.repository.OfflineExamRepository
 import com.n3sensei.app.data.repository.OfflineProgressRepository
 import com.n3sensei.app.data.repository.OfflineReviewSessionRepository
 import com.n3sensei.app.data.repository.OfflineUserContentRepository
@@ -30,6 +31,7 @@ import com.n3sensei.app.domain.reminder.ReminderScheduler
 import com.n3sensei.app.domain.repository.AnalyticsRepository
 import com.n3sensei.app.domain.repository.ContentImportRepository
 import com.n3sensei.app.domain.repository.ContentRepository
+import com.n3sensei.app.domain.repository.ExamRepository
 import com.n3sensei.app.domain.repository.ProgressRepository
 import com.n3sensei.app.domain.repository.UserContentRepository
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
@@ -61,6 +63,7 @@ interface AppContainer {
     val reminderRunner: ReminderRunner
     val widgetContentPicker: WidgetContentPicker
     val proverbRepository: ProverbRepository
+    val examRepository: ExamRepository
     val widgetUpdater: WidgetUpdater
     val clock: Clock
 }
@@ -110,6 +113,8 @@ class DefaultAppContainer(context: Context) : AppContainer {
     internal val reminderStateStore by lazy { DataStoreReminderStateStore(preferencesDataStore) }
 
     override val proverbRepository: ProverbRepository by lazy { AssetProverbRepository(appContext) }
+
+    override val examRepository: ExamRepository by lazy { OfflineExamRepository(database.examDao(), clock) }
 
     override val widgetContentPicker: WidgetContentPicker by lazy { WidgetContentPicker(contentRepository, progressRepository, clock) }
 
