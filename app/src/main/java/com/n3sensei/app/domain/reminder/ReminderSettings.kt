@@ -1,14 +1,28 @@
 package com.n3sensei.app.domain.reminder
 
-/** How often a reminder may be shown. Names are persisted; never rename an entry. */
-enum class ReminderFrequency(val hours: Int) {
-    EVERY_HOUR(1),
-    EVERY_2_HOURS(2),
-    EVERY_3_HOURS(3),
-    EVERY_4_HOURS(4),
-    EVERY_6_HOURS(6),
-    ONCE_A_DAY(24),
+/**
+ * How often a reminder may be shown. Names are persisted; never rename an entry. The settings
+ * offer [SELECTABLE]; the longer periods of earlier versions are still read and kept.
+ */
+enum class ReminderFrequency(val minutes: Int) {
+    EVERY_15_MINUTES(15),
+    EVERY_30_MINUTES(30),
+    EVERY_HOUR(60),
+    EVERY_2_HOURS(120),
+    EVERY_3_HOURS(180),
+    EVERY_4_HOURS(240),
+    EVERY_6_HOURS(360),
+    ONCE_A_DAY(1440),
+    ;
+
+    companion object {
+        /** 15 minutes is the shortest period Android's WorkManager runs periodic work at. */
+        val SELECTABLE = listOf(EVERY_15_MINUTES, EVERY_30_MINUTES, EVERY_HOUR, EVERY_2_HOURS)
+    }
 }
+
+/** What reminders may show. Names are persisted. */
+enum class ReminderContent { VOCABULARY, KANJI, GRAMMAR }
 
 /**
  * What a reminder may reveal on the lock screen. Names are persisted.
@@ -32,13 +46,27 @@ data class ReminderSettings(
     val enabled: Boolean = false,
     val startHour: Int = 8,
     val endHour: Int = 21,
-    val frequency: ReminderFrequency = ReminderFrequency.EVERY_3_HOURS,
+    val frequency: ReminderFrequency = ReminderFrequency.EVERY_HOUR,
     val showReading: Boolean = true,
-    val showMeaning: Boolean = true,
+    /** Off by default: a reminder asks the learner to recall the meaning; the app shows it. */
+    val showMeaning: Boolean = false,
     val lockScreen: LockScreenPrivacy = LockScreenPrivacy.HIDE_MEANING,
+    /** At most this many reminders per local day; 0 = no limit besides the frequency. */
+    val maxPerDay: Int = DEFAULT_MAX_PER_DAY,
+    /** Kinds of items a reminder may show (never empty). */
+    val content: Set<ReminderContent> = setOf(ReminderContent.VOCABULARY),
+    /** Only items that need review (due, or marked as needing attention); no new items. */
+    val reviewOnly: Boolean = false,
 ) {
     init {
         require(startHour in 0..23 && endHour in 0..23) { "Hours must be 0..23" }
+        require(maxPerDay >= 0) { "maxPerDay must be >= 0" }
+        require(content.isNotEmpty()) { "content must not be empty" }
+    }
+
+    companion object {
+        const val DEFAULT_MAX_PER_DAY = 12
+        val MAX_PER_DAY_CHOICES = listOf(4, 8, 12, 20, 30, 0)
     }
 
     /**

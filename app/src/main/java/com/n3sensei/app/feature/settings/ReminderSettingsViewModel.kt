@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.n3sensei.app.core.ui.state.STOP_TIMEOUT_MILLIS
 import com.n3sensei.app.domain.reminder.LockScreenPrivacy
+import com.n3sensei.app.domain.reminder.ReminderContent
 import com.n3sensei.app.domain.reminder.ReminderFrequency
 import com.n3sensei.app.domain.reminder.ReminderNotifier
 import com.n3sensei.app.domain.reminder.ReminderOutcome
@@ -67,6 +68,14 @@ class ReminderSettingsViewModel(
     fun setShowReading(show: Boolean) = update { it.copy(showReading = show) }
     fun setShowMeaning(show: Boolean) = update { it.copy(showMeaning = show) }
     fun setLockScreen(privacy: LockScreenPrivacy) = update { it.copy(lockScreen = privacy) }
+    fun setMaxPerDay(max: Int) = update { it.copy(maxPerDay = max.coerceAtLeast(0)) }
+    fun setReviewOnly(reviewOnly: Boolean) = update { it.copy(reviewOnly = reviewOnly) }
+
+    /** Turns one kind of content on or off; the last kind left stays on (a reminder needs something to show). */
+    fun toggleContent(kind: ReminderContent) = update {
+        val next = if (kind in it.content) it.content - kind else it.content + kind
+        if (next.isEmpty()) it else it.copy(content = next)
+    }
 
     fun sendTest() {
         viewModelScope.launch { _testOutcome.value = runner.showNow() }

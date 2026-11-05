@@ -1,5 +1,6 @@
 package com.n3sensei.app.domain.repository
 
+import com.n3sensei.app.domain.widget.WidgetSettings
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.domain.reminder.ReminderSettings
@@ -17,4 +18,6 @@ interface UserPreferencesRepository {
     suspend fun setReviewSettings(settings: ReviewSettings)
 
     suspend fun setReminderSettings(settings: ReminderSettings)
+
+    suspend fun setWidgetSettings(settings: WidgetSettings)
 }

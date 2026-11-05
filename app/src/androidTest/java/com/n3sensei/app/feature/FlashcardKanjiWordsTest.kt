@@ -4,7 +4,9 @@ import androidx.annotation.StringRes
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasClickAction
 import androidx.compose.ui.test.hasText
+import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performScrollTo
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -32,10 +34,10 @@ class FlashcardKanjiWordsTest {
 
     private val kanji = Kanji("k", "l", "経", listOf("ケイ"), listOf("へ.る"), "KINH", "trải qua", 11, null)
 
-    private fun show(words: List<KanjiWord>) = composeRule.setContent {
+    private fun show(words: List<KanjiWord>, revealed: Boolean = true) = composeRule.setContent {
         N3SenseiTheme {
             FlashcardSession(
-                banner = null, position = 0, total = 1, item = PracticeItem.KanjiItem(kanji, words), isAnswerRevealed = true,
+                banner = null, position = 0, total = 1, item = PracticeItem.KanjiItem(kanji, words), isAnswerRevealed = revealed,
                 onReveal = {}, onRate = {},
                 ratingHints = mapOf(
                     ReviewRating.AGAIN to "20 phút", ReviewRating.HARD to "20 phút",
@@ -80,5 +82,30 @@ class FlashcardKanjiWordsTest {
             assertButtonsUsable()
         }
         composeRule.onNodeWithText(string(R.string.flashcard_kanji_word_linked)).performScrollTo().assertIsDisplayed()
+    }
+
+    @Test
+    fun questionSide_listsEveryWord_withoutReadingsOrMeanings() {
+        val words = (1..30).map { KanjiWord("経$it", "{経|けい}$it", "nghĩa số $it") }
+        show(words, revealed = false)
+        composeRule.onNodeWithText(string(R.string.flashcard_kanji_words, 30)).assertIsDisplayed()
+        // Every word is on the question side, written as is.
+        listOf("経1", "経15", "経30").forEach { composeRule.onNodeWithText(it).performScrollTo().assertIsDisplayed() }
+        // Nothing of the answer: no meanings, no furigana, not the kanji's meaning or readings.
+        composeRule.onAllNodesWithText("nghĩa số", substring = true).assertCountEquals(0)
+        composeRule.onAllNodesWithText("けい", substring = true).assertCountEquals(0)
+        composeRule.onAllNodesWithText("trải qua").assertCountEquals(0)
+        composeRule.onAllNodesWithText("KINH").assertCountEquals(0)
+        composeRule.onAllNodesWithText("ケイ", substring = true).assertCountEquals(0)
+        composeRule.onNodeWithText(string(R.string.practice_reveal)).assertIsDisplayed()
+    }
+
+    @Test
+    fun answerSide_showsTheReadingAndMeaningOfEachWord() {
+        show(listOf(KanjiWord("経験", "{経験|けいけん}", "kinh nghiệm"), KanjiWord("経由", "{経由|けいゆ}", "đi qua")))
+        composeRule.onNodeWithText("trải qua").assertIsDisplayed()
+        composeRule.onNodeWithText("KINH").assertIsDisplayed()
+        composeRule.onNodeWithText("kinh nghiệm").performScrollTo().assertIsDisplayed()
+        composeRule.onNodeWithText("đi qua").performScrollTo().assertIsDisplayed()
     }
 }

@@ -177,6 +177,16 @@ class PracticeViewModelTest {
         assertEquals(UiState.NotFound, PracticeViewModel(null, markedOnly = false, repository, clock, courseLesson = 3).state.value)
     }
 
+    @Test
+    fun vocabularyGroup_practisesJustItsWordsInOrder() {
+        repository.vocabulary.value = (1..65).map { TestContent.vocabulary("v$it", "vl", "語$it") }
+        val second = PracticeViewModel(null, markedOnly = false, repository, clock, vocabularyGroup = "vl#2").ui().session.items
+        assertEquals((31..60).map { "v$it" }, second.map { it.ref.id })
+        val last = PracticeViewModel(null, markedOnly = false, repository, clock, vocabularyGroup = "vl#3").ui().session.items
+        assertEquals((61..65).map { "v$it" }, last.map { it.ref.id })
+        assertEquals(UiState.NotFound, PracticeViewModel(null, markedOnly = false, repository, clock, vocabularyGroup = "vl#4").state.value)
+    }
+
     private fun minutes(n: Int) = ReviewInterval(n, IntervalUnit.MINUTES)
     private fun days(n: Int) = ReviewInterval(n, IntervalUnit.DAYS)
 }

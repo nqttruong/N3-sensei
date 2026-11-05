@@ -5,6 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.n3sensei.app.core.ui.state.STOP_TIMEOUT_MILLIS
 import com.n3sensei.app.core.ui.state.UiState
 import com.n3sensei.app.domain.course.CourseBuilder
+import com.n3sensei.app.domain.course.VocabularyGroups
+import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.model.ItemQuery
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.Kanji
@@ -59,6 +61,8 @@ class PracticeViewModel(
     private val progressRepository: ProgressRepository? = null,
     preferencesRepository: UserPreferencesRepository? = null,
     private val courseLesson: Int? = null,
+    /** A vocabulary group of "Học → Từ vựng" ([VocabularyGroup.key][com.n3sensei.app.domain.course.VocabularyGroup.key]). */
+    private val vocabularyGroup: String? = null,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow<UiState<PracticeUiState>>(UiState.Loading)
@@ -92,7 +96,11 @@ class PracticeViewModel(
         viewModelScope.launch {
             _state.value = UiState.Loading
             _state.value = try {
-                if (courseLesson != null) loadCourseLesson(courseLesson) else loadLesson()
+                when {
+                    courseLesson != null -> loadCourseLesson(courseLesson)
+                    vocabularyGroup != null -> loadVocabularyGroup(vocabularyGroup)
+                    else -> loadLesson()
+                }
             } catch (e: CancellationException) {
                 throw e
             } catch (e: Exception) {
@@ -104,7 +112,8 @@ class PracticeViewModel(
     private suspend fun loadLesson(): UiState<PracticeUiState> {
         val lesson = lessonId?.let { contentRepository.observeLesson(it).first() }
         if (lessonId != null && lesson == null) return UiState.NotFound
-        val query = ItemQuery(lessonId = lessonId, markedOnly = markedOnly)
+        // "Từ của tôi" practises the learner's own words only, as its list shows them.
+        val query = ItemQuery(lessonId = lessonId, markedOnly = markedOnly, userWordsOnly = lessonId == UserWords.LESSON_ID)
         val items = contentRepository.observeVocabularyItems(query).first().map { PracticeItem.VocabularyItem(it.item) } +
             contentRepository.observeKanjiItems(query).first().map { kanjiItem(it.item) } +
             contentRepository.observeGrammarItems(query).first().map { PracticeItem.GrammarItem(it.item) }
@@ -118,6 +127,12 @@ class PracticeViewModel(
             lesson.words.map { PracticeItem.VocabularyItem(it.item) } +
             lesson.grammar.map { PracticeItem.GrammarItem(it.item) }
         return start(null, items)
+    }
+
+    /** The group's words in their order. */
+    private suspend fun loadVocabularyGroup(key: String): UiState<PracticeUiState> {
+        val group = VocabularyGroups.observe(contentRepository).first().firstOrNull { it.key == key } ?: return UiState.NotFound
+        return start(null, group.words.map { PracticeItem.VocabularyItem(it.item) })
     }
 
     private suspend fun kanjiItem(kanji: Kanji) =

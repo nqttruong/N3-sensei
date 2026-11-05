@@ -10,8 +10,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,12 +25,17 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.DetailSection
 import com.n3sensei.app.core.designsystem.component.DetailText
+import com.n3sensei.app.core.designsystem.component.GlyphSize
+import com.n3sensei.app.core.designsystem.component.GlyphTile
 import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.content.ExampleSentenceItem
 import com.n3sensei.app.core.ui.content.ItemActions
+import com.n3sensei.app.core.ui.content.LocationSection
+import com.n3sensei.app.core.ui.content.LocationTag
 import com.n3sensei.app.core.ui.content.SourceNote
 import com.n3sensei.app.core.ui.content.VocabularyCard
+import com.n3sensei.app.core.ui.state.DetailLocation
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.KanjiDetail
 
@@ -49,8 +54,9 @@ fun KanjiDetailScreen(
         onPauseOrDispose {}
     }
     val scheduleInfo by viewModel.scheduleInfo.collectAsStateWithLifecycle()
+    val location by viewModel.location.collectAsStateWithLifecycle()
     UiStateContent(state = state, onRetry = viewModel::refresh, modifier = modifier) { detail ->
-        KanjiDetailContent(detail, onOpenVocabulary) {
+        KanjiDetailContent(detail, location, onOpenVocabulary) {
             ItemActions(scheduleInfo, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.kanji.lessonId) })
             OutlinedButton(onClick = onEdit) { Text(stringResource(R.string.edit_action)) }
         }
@@ -58,7 +64,7 @@ fun KanjiDetailScreen(
 }
 
 @Composable
-private fun KanjiDetailContent(detail: KanjiDetail, onOpenVocabulary: (String) -> Unit, actions: @Composable () -> Unit) {
+private fun KanjiDetailContent(detail: KanjiDetail, location: DetailLocation?, onOpenVocabulary: (String) -> Unit, actions: @Composable () -> Unit) {
     val kanji = detail.kanji
     val none = stringResource(R.string.common_none)
     Column(
@@ -68,16 +74,10 @@ private fun KanjiDetailContent(detail: KanjiDetail, onOpenVocabulary: (String) -
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
+        // Where it is studied, first, like the running head of a page.
+        location?.let { LocationTag(it.location) }
         Row(horizontalArrangement = Arrangement.spacedBy(16.dp), verticalAlignment = Alignment.CenterVertically) {
-            Surface(
-                shape = MaterialTheme.shapes.large,
-                color = MaterialTheme.colorScheme.primaryContainer,
-                modifier = Modifier.size(112.dp),
-            ) {
-                Box(contentAlignment = Alignment.Center) {
-                    Text(japaneseText(kanji.character), style = MaterialTheme.typography.displayLarge.japanese())
-                }
-            }
+            GlyphTile(kanji.character, size = GlyphSize.Large)
             Column {
                 kanji.hanViet?.let { Text(it, style = MaterialTheme.typography.headlineSmall) }
                 Text(kanji.meaningVi, style = MaterialTheme.typography.titleMedium)
@@ -116,6 +116,7 @@ private fun KanjiDetailContent(detail: KanjiDetail, onOpenVocabulary: (String) -
             }
         }
         HorizontalDivider()
+        location?.let { LocationSection(it) }
         SourceNote(detail.source)
     }
 }

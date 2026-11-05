@@ -1,18 +1,25 @@
 package com.n3sensei.app.feature.settings
 
+import com.n3sensei.app.core.ui.state.UiState
+import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.importing.ImportOutcome
 import com.n3sensei.app.domain.importing.ImportReport
+import com.n3sensei.app.domain.model.ContentPackInfo
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.testing.FakeContentImportRepository
 import com.n3sensei.app.testing.FakeContentRepository
 import com.n3sensei.app.testing.FakeUserPreferencesRepository
 import com.n3sensei.app.testing.MainDispatcherRule
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
 
+@OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class)
 class SettingsViewModelTest {
 
     @get:Rule
@@ -78,4 +85,19 @@ class SettingsViewModelTest {
         assertEquals(ImportUiState.Finished(failed), viewModel.importState.value)
         assertTrue(importRepository.imported.isEmpty())
     }
+
+    @Test
+    fun contentList_showsInstalledPacks_notTheLearnersOwnWords() = runTest {
+        val content = FakeContentRepository().apply {
+            packs.value = listOf(
+                ContentPackInfo("mimikara-n3-vocab", "Mimikara N3", 1, isSeed = true, lessonCount = 12),
+                ContentPackInfo(UserWords.PACK_ID, "Từ của tôi", 1, isSeed = false, lessonCount = 1),
+            )
+        }
+        val settings = SettingsViewModel(preferences, content, importRepository)
+        settings.state.launchIn(backgroundScope)
+        runCurrent()
+        assertEquals(listOf("mimikara-n3-vocab"), (settings.state.value as UiState.Success).data.packs.map { it.id })
+    }
 }
+

@@ -65,6 +65,7 @@ class AccessibilityTest {
         ActivityScenario.launch(MainActivity::class.java).use {
             composeRule.onNodeWithTag(TopLevelDestination.LEARN.testTag).performClick()
             composeRule.onNode(hasText(string(R.string.vocabulary_title)) and hasClickAction()).performClick()
+            composeRule.onNode(hasText(string(R.string.vocabulary_all)) and hasClickAction()).performClick()
             waitFor("経験")
             composeRule.waitForIdle()
             val word = findNode("経験")
@@ -81,6 +82,7 @@ class AccessibilityTest {
         ActivityScenario.launch(MainActivity::class.java).use {
             composeRule.onNodeWithTag(TopLevelDestination.LEARN.testTag).performClick()
             composeRule.onNode(hasText(string(R.string.vocabulary_title)) and hasClickAction()).performClick()
+            composeRule.onNode(hasText(string(R.string.vocabulary_all)) and hasClickAction()).performClick()
             waitFor("経験")
             composeRule.onNode(hasText("経験") and hasClickAction()).performClick()
             // Example sentence with ruby: one node, the base text only, marked Japanese.

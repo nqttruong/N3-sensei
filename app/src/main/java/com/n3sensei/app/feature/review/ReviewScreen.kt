@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -21,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.InfoBanner
+import com.n3sensei.app.core.designsystem.component.N3Card
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.ItemType
 
@@ -43,38 +43,36 @@ fun ReviewScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
-            ElevatedCard(modifier = Modifier.fillMaxWidth()) {
-                Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                    Text(stringResource(R.string.review_overview_due, overview.due), style = MaterialTheme.typography.headlineSmall)
+            N3Card(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                Text(stringResource(R.string.review_overview_due, overview.due), style = MaterialTheme.typography.headlineSmall)
+                Text(
+                    stringResource(
+                        R.string.review_overview_breakdown,
+                        overview.dueByType[ItemType.VOCABULARY] ?: 0,
+                        overview.dueByType[ItemType.KANJI] ?: 0,
+                        overview.dueByType[ItemType.GRAMMAR] ?: 0,
+                    ),
+                    style = MaterialTheme.typography.bodyMedium,
+                )
+                if (overview.overdue > 0) {
                     Text(
-                        stringResource(
-                            R.string.review_overview_breakdown,
-                            overview.dueByType[ItemType.VOCABULARY] ?: 0,
-                            overview.dueByType[ItemType.KANJI] ?: 0,
-                            overview.dueByType[ItemType.GRAMMAR] ?: 0,
-                        ),
+                        stringResource(R.string.review_overview_overdue, overview.overdue),
                         style = MaterialTheme.typography.bodyMedium,
-                    )
-                    if (overview.overdue > 0) {
-                        Text(
-                            stringResource(R.string.review_overview_overdue, overview.overdue),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.error,
-                        )
-                    }
-                    Text(stringResource(R.string.review_overview_new, ui.newToday, overview.newAvailable), style = MaterialTheme.typography.bodyMedium)
-                    Text(
-                        stringResource(
-                            R.string.review_overview_today,
-                            overview.today.reviewsAnswered,
-                            ui.limits.reviewsPerDay,
-                            overview.today.newAnswered,
-                            ui.limits.newPerDay,
-                        ),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        color = MaterialTheme.colorScheme.error,
                     )
                 }
+                Text(stringResource(R.string.review_overview_new, ui.newToday, overview.newAvailable), style = MaterialTheme.typography.bodyMedium)
+                Text(
+                    stringResource(
+                        R.string.review_overview_today,
+                        overview.today.reviewsAnswered,
+                        ui.limits.reviewsPerDay,
+                        overview.today.newAnswered,
+                        ui.limits.newPerDay,
+                    ),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
             }
             Button(onClick = onStartSession, enabled = ui.sessionSize > 0, modifier = Modifier.fillMaxWidth()) {
                 Text(stringResource(R.string.review_start, ui.sessionSize))

@@ -87,7 +87,7 @@ class ReminderInstrumentedTest {
     private fun postedReminder(): Notification? =
         notificationManager.activeNotifications.firstOrNull { it.id == AndroidReminderNotifier.REMINDER_NOTIFICATION_ID }?.notification
 
-    private val allDay = ReminderSettings(enabled = true, startHour = 0, endHour = 0)
+    private val allDay = ReminderSettings(enabled = true, startHour = 0, endHour = 0, showMeaning = true)
 
     @Test
     fun worker_postsFirstNewWord_fromRoom_withActions() {
@@ -123,9 +123,11 @@ class ReminderInstrumentedTest {
         setReminder(allDay.copy(showMeaning = false, showReading = false))
         runWorker()
         val noMeaning = postedReminder()!!
-        assertEquals("経験", noMeaning.extras.getCharSequence(Notification.EXTRA_TITLE).toString())
-        assertFalse(noMeaning.extras.getCharSequence(Notification.EXTRA_TEXT).toString().contains("kinh nghiệm"))
-        assertFalse(noMeaning.extras.getCharSequence(Notification.EXTRA_BIG_TEXT).toString().contains("kinh nghiệm"))
+        // Which word comes third depends on the reminder history (the first two were just shown);
+        // whichever it is: no reading in the title, and the question instead of the meaning.
+        assertFalse(noMeaning.extras.getCharSequence(Notification.EXTRA_TITLE).toString().contains("("))
+        assertEquals(context.getString(R.string.reminder_tap_for_meaning), noMeaning.extras.getCharSequence(Notification.EXTRA_TEXT).toString())
+        assertEquals(context.getString(R.string.reminder_tap_for_meaning), noMeaning.extras.getCharSequence(Notification.EXTRA_BIG_TEXT).toString())
     }
 
     @Test
@@ -222,5 +224,65 @@ class ReminderInstrumentedTest {
         // Periodic work stays scheduled for the next period.
         assertEquals(WorkInfo.State.ENQUEUED, workManager.getWorkInfoById(id).get()!!.state)
         container.reminderScheduler.apply(allDay.copy(enabled = false))
+    }
+
+    @Test
+    fun byDefault_theReminderAsksAndHidesTheMeaning() {
+        setReminder(ReminderSettings(enabled = true, startHour = 0, endHour = 0))
+        assertEquals(ReminderOutcome.SHOWN, runWorker())
+        val n = postedReminder()!!
+        assertEquals(context.getString(R.string.reminder_tap_for_meaning), n.extras.getCharSequence(Notification.EXTRA_TEXT).toString())
+        assertFalse(n.extras.getCharSequence(Notification.EXTRA_BIG_TEXT).toString().contains("kinh nghiệm"))
+    }
+
+    /** Opening the app, every frequency change, turning off and on, a restore: still one schedule. */
+    @Test
+    fun scheduler_neverKeepsMoreThanOneSchedule() {
+        val workManager = WorkManager.getInstance(context)
+        fun active() = workManager.getWorkInfosByTag(WorkManagerReminderScheduler.WORK_NAME).get().filter { !it.state.isFinished }
+        val scheduler = container.reminderScheduler
+        repeat(3) { scheduler.apply(allDay) } // app opened three times
+        ReminderFrequency.SELECTABLE.forEach { frequency ->
+            scheduler.apply(allDay.copy(frequency = frequency))
+            assertEquals(1, active().size)
+            assertEquals(TimeUnit.MINUTES.toMillis(frequency.minutes.toLong()), active().single().periodicityInfo!!.repeatIntervalMillis)
+        }
+        scheduler.apply(allDay.copy(enabled = false))
+        assertEquals(0, active().size)
+        scheduler.apply(allDay.copy(frequency = ReminderFrequency.EVERY_30_MINUTES))
+        scheduler.apply(allDay.copy(frequency = ReminderFrequency.EVERY_30_MINUTES)) // e.g. after a restore
+        assertEquals(1, active().size)
+        assertEquals(1, workManager.getWorkInfosForUniqueWork(WorkManagerReminderScheduler.WORK_NAME).get().count { !it.state.isFinished })
+        scheduler.apply(allDay.copy(enabled = false))
+    }
+
+    /** Sent reminders are recorded in Room per item, and the next one picks another item. */
+    @Test
+    fun history_isRecordedPerItem_andTheNextReminderShowsAnotherItem() {
+        setReminder(allDay)
+        runBlocking { container.reminderRunner.showNow() }
+        val first = postedReminder()!!.extras.getCharSequence(Notification.EXTRA_TITLE).toString()
+        runBlocking { container.reminderRunner.showNow() }
+        val second = postedReminder()!!.extras.getCharSequence(Notification.EXTRA_TITLE).toString()
+        assertTrue("$first then $second", first != second)
+        assertEquals(2, container.database.countRows("reminder_history"))
+        assertEquals(2, runBlocking { container.reminderStateStore.read() }.countToday)
+    }
+
+    @Test
+    fun kanjiReminder_opensTheKanjiCard() {
+        setReminder(allDay.copy(content = setOf(com.n3sensei.app.domain.reminder.ReminderContent.KANJI)))
+        assertEquals(ReminderOutcome.SHOWN, runWorker())
+        val n = postedReminder()!!
+        val ref = runBlocking { container.reminderStateStore.read() }.lastItem!!
+        assertEquals(ItemType.KANJI, ref.type)
+        ActivityScenario.launch<MainActivity>(
+            Intent(Intent.ACTION_VIEW, ReminderDeepLinks.itemUri(ref), context, MainActivity::class.java),
+        ).use {
+            composeRule.waitUntil(5_000) {
+                composeRule.onAllNodes(hasText(context.getString(R.string.kanji_detail_title))).fetchSemanticsNodes().isNotEmpty()
+            }
+        }
+        assertNotNull(n.contentIntent)
     }
 }

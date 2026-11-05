@@ -281,4 +281,42 @@ class N3DatabaseMigrationTest {
         }
         instrumentation.targetContext.deleteDatabase(name)
     }
+
+    @Test
+    fun learnerDataWrittenWithV6Schema_survivesTheMigrationTo7_withNoKanjiExamplesYet() = runTest {
+        val name = "migration-test-data-v6"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 6).apply {
+            execSQL("INSERT INTO user_words VALUES ('user-w-1', 10, 20)")
+            execSQL("INSERT INTO vocabulary_kanji_links VALUES ('user-w-1', 'k', 30)")
+            execSQL("INSERT INTO user_content_edits VALUES ('KANJI', 'k', 'meaningVi', 'kinh qua', 'trải qua', 10, 20, 0)")
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 7, true, N3Migrations.MIGRATION_6_7).use { db ->
+            db.query("SELECT created_at, updated_at FROM user_words WHERE vocabulary_id = 'user-w-1'").use { c ->
+                assertTrue(c.moveToFirst()); assertEquals(10, c.getInt(0)); assertEquals(20, c.getInt(1))
+            }
+            db.query("SELECT COUNT(*) FROM vocabulary_kanji_links").use { c -> c.moveToFirst(); assertEquals(1, c.getInt(0)) }
+            db.query("SELECT value FROM user_content_edits").use { c -> c.moveToFirst(); assertEquals("kinh qua", c.getString(0)) }
+            db.query("SELECT COUNT(*) FROM user_kanji_examples").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+        }
+        instrumentation.targetContext.deleteDatabase(name)
+    }
+
+    @Test
+    fun dataWrittenWithV7Schema_survivesTheMigrationTo8_withAnEmptyReminderHistory() = runTest {
+        val name = "migration-test-data-v7"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 7).apply {
+            execSQL("INSERT INTO user_kanji_examples VALUES ('user-x-k-1', 'k', 0, 10, 20)")
+            execSQL("INSERT INTO user_words VALUES ('user-w-1', 10, 20)")
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 8, true, N3Migrations.MIGRATION_7_8).use { db ->
+            db.query("SELECT kanji_id FROM user_kanji_examples").use { c -> assertTrue(c.moveToFirst()); assertEquals("k", c.getString(0)) }
+            db.query("SELECT COUNT(*) FROM user_words").use { c -> c.moveToFirst(); assertEquals(1, c.getInt(0)) }
+            db.query("SELECT COUNT(*) FROM reminder_history").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+        }
+        instrumentation.targetContext.deleteDatabase(name)
+    }
 }

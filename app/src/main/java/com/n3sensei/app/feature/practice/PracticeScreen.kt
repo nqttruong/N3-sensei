@@ -53,7 +53,8 @@ private fun PracticeContent(
 ) {
     val item = session.current ?: return
     FlashcardSession(
-        banner = stringResource(R.string.practice_not_saved),
+        // Said on the first card, as in the review session; repeating it only takes room.
+        banner = if (session.currentIndex == 0) stringResource(R.string.practice_not_saved) else null,
         position = session.currentIndex,
         total = session.total,
         item = item,

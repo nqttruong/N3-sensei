@@ -12,6 +12,8 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import com.n3sensei.app.R
+import com.n3sensei.app.domain.practice.PracticeItem
+import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.reminder.LockScreenPrivacy
 import com.n3sensei.app.domain.reminder.ReminderMessage
 import com.n3sensei.app.domain.reminder.ReminderNotifier
@@ -37,10 +39,23 @@ class AndroidReminderNotifier(private val context: Context) : ReminderNotifier {
 
     override fun show(message: ReminderMessage) {
         ensureChannel(context)
-        val v = message.vocabulary
         val settings = message.settings
-        val title = if (settings.showReading && v.reading != v.expression) "${v.expression} (${v.reading})" else v.expression
-        val body = if (settings.showMeaning) v.meaningVi else context.getString(R.string.reminder_tap_for_meaning)
+        val ref = message.item.ref
+        // A short question by default: the word, kanji or pattern; the answer is one tap away.
+        val (title, meaning) = when (val item = message.item) {
+            is PracticeItem.VocabularyItem -> {
+                val v = item.vocabulary
+                (if (settings.showReading && v.reading != v.expression) "${v.expression} (${v.reading})" else v.expression) to v.meaningVi
+            }
+            is PracticeItem.KanjiItem -> {
+                val k = item.kanji
+                val readings = (k.onReadings + k.kunReadings).joinToString("、")
+                (if (settings.showReading && readings.isNotEmpty()) "${k.character} ($readings)" else k.character) to
+                    listOfNotNull(k.hanViet, k.meaningVi).joinToString(" · ")
+            }
+            is PracticeItem.GrammarItem -> item.grammar.pattern to item.grammar.meaningVi
+        }
+        val body = if (settings.showMeaning) meaning else context.getString(R.string.reminder_tap_for_meaning)
         val reason = context.getString(
             when (message.reason) {
                 ReminderReason.DUE -> R.string.reminder_reason_due
@@ -49,7 +64,7 @@ class AndroidReminderNotifier(private val context: Context) : ReminderNotifier {
             },
         )
         val summary = if (message.dueCount > 0) context.getString(R.string.reminder_due_count, message.dueCount) else reason
-        val open = ReminderDeepLinks.openVocabulary(context, v.id)
+        val open = ReminderDeepLinks.openItem(context, ref)
 
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_stat_reminder)
@@ -62,7 +77,7 @@ class AndroidReminderNotifier(private val context: Context) : ReminderNotifier {
             .setContentIntent(open)
             .setAutoCancel(true)
             .addAction(0, context.getString(R.string.reminder_action_open), open)
-            .addAction(0, context.getString(R.string.reminder_action_mark), markIntent(v.id))
+            .addAction(0, context.getString(R.string.reminder_action_mark), markIntent(ref))
 
         when (settings.lockScreen) {
             LockScreenPrivacy.SHOW_ALL -> builder.setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
@@ -95,13 +110,14 @@ class AndroidReminderNotifier(private val context: Context) : ReminderNotifier {
             .setContentText(text)
             .build()
 
-    private fun markIntent(vocabularyId: String): PendingIntent {
+    private fun markIntent(ref: ItemRef): PendingIntent {
         val intent = Intent(context, ReminderActionReceiver::class.java)
             .setAction(ReminderActionReceiver.ACTION_MARK)
-            .putExtra(ReminderActionReceiver.EXTRA_VOCABULARY_ID, vocabularyId)
+            .putExtra(ReminderActionReceiver.EXTRA_ITEM_TYPE, ref.type.name)
+            .putExtra(ReminderActionReceiver.EXTRA_VOCABULARY_ID, ref.id)
         return PendingIntent.getBroadcast(
             context,
-            vocabularyId.hashCode(),
+            (ref.type.name + ref.id).hashCode(),
             intent,
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
         )

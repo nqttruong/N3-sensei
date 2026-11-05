@@ -1,9 +1,12 @@
 package com.n3sensei.app.app
 
 import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.consumeWindowInsets
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -15,12 +18,15 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
@@ -33,6 +39,7 @@ import com.n3sensei.app.app.navigation.TopLevelDestination
 import com.n3sensei.app.app.navigation.isInTab
 import com.n3sensei.app.app.navigation.selectTab
 import com.n3sensei.app.core.designsystem.icon.N3Icons
+import com.n3sensei.app.core.designsystem.theme.N3Spacing
 
 @Composable
 fun N3SenseiApp(
@@ -59,14 +66,21 @@ fun N3SenseiApp(
             }
         },
     ) { innerPadding ->
-        N3SenseiNavHost(
-            navController = navController,
-            // Keep search fields and lists above the keyboard.
+        // Keep search fields and lists above the keyboard. On wide screens the content keeps a
+        // readable width and is centred instead of stretching edge to edge.
+        Box(
             modifier = Modifier
+                .fillMaxSize()
                 .padding(innerPadding)
                 .consumeWindowInsets(innerPadding)
                 .imePadding(),
-        )
+            contentAlignment = Alignment.TopCenter,
+        ) {
+            N3SenseiNavHost(
+                navController = navController,
+                modifier = Modifier.widthIn(max = N3Spacing.maxContentWidth).fillMaxSize(),
+            )
+        }
     }
 }
 
@@ -79,8 +93,12 @@ private fun N3TopAppBar(
 ) {
     CenterAlignedTopAppBar(
         title = {
+            // Serif masthead, like the running head of a printed book.
             Text(
                 text = stringResource(titleRes),
+                style = MaterialTheme.typography.titleLarge.copy(fontFamily = FontFamily.Serif, fontWeight = FontWeight.Normal),
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.semantics { heading() },
             )
         },

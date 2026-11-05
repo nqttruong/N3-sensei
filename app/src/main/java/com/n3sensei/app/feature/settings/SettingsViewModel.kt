@@ -8,7 +8,7 @@ import com.n3sensei.app.domain.importing.ImportCheck
 import com.n3sensei.app.domain.importing.ImportPreview
 import com.n3sensei.app.domain.importing.ImportReport
 import com.n3sensei.app.domain.model.ContentPackInfo
-import com.n3sensei.app.domain.model.ContentSource
+import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.domain.repository.ContentImportRepository
@@ -26,7 +26,7 @@ import kotlinx.coroutines.launch
 
 data class SettingsUiState(
     val preferences: UserPreferences,
-    val sources: List<ContentSource>,
+    /** Installed packs, without the learner's own "Từ của tôi" (not a pack they installed). */
     val packs: List<ContentPackInfo>,
 )
 
@@ -46,9 +46,8 @@ class SettingsViewModel(
 ) : ViewModel() {
     val state: StateFlow<UiState<SettingsUiState>> = combine(
         preferencesRepository.preferences,
-        contentRepository.observeSources(),
         contentRepository.observePacks(),
-    ) { prefs, sources, packs -> UiState.Success(SettingsUiState(prefs, sources, packs)) }
+    ) { prefs, packs -> UiState.Success(SettingsUiState(prefs, packs.filter { it.id != UserWords.PACK_ID })) }
         .onStart<UiState<SettingsUiState>> { emit(UiState.Loading) }
         .catch { emit(UiState.Error(it)) }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), UiState.Loading)

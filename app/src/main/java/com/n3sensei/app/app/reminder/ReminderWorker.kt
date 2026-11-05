@@ -1,7 +1,6 @@
 package com.n3sensei.app.app.reminder
 
 import android.content.Context
-import androidx.glance.appwidget.updateAll
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
@@ -18,7 +17,7 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
     override suspend fun doWork(): Result {
         val container = (applicationContext as N3SenseiApplication).container
         val outcome = container.reminderRunner.runScheduled()
-        runCatching { StudyWordWidget().updateAll(applicationContext) }
+        StudyWordWidget.updateAllSizes(applicationContext)
         // A reminder that could not be shown is not a failure: retrying would only cause bursts.
         return Result.success(workDataOf(KEY_OUTCOME to outcome.name))
     }

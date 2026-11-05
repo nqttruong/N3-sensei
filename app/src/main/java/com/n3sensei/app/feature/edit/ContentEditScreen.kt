@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.imePadding
@@ -18,6 +19,7 @@ import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -37,19 +39,25 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
+import com.n3sensei.app.core.designsystem.component.Caption
+import com.n3sensei.app.core.designsystem.component.FuriganaText
 import com.n3sensei.app.core.designsystem.component.InfoBanner
 import com.n3sensei.app.core.designsystem.component.SectionHeader
+import com.n3sensei.app.core.designsystem.component.Tag
+import com.n3sensei.app.core.designsystem.component.TagTone
 import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.state.LoadingContent
 import com.n3sensei.app.domain.edit.EditableField
+import com.n3sensei.app.domain.edit.ExampleField
 import com.n3sensei.app.domain.edit.FieldError
 import com.n3sensei.app.domain.edit.FieldKind
 
 /**
  * Form to edit a kanji, a word or a grammar point, or to add a word to "Từ của tôi". Pack
  * items are edited as a layer over the pack (kept across updates, revertible); the learner's
- * words are edited and deleted directly. Nothing is written until Lưu; Hủy leaves without saving.
+ * words are edited and deleted directly. Nothing is written until Lưu (a kanji's examples
+ * included); Hủy leaves without saving.
  */
 @Composable
 fun ContentEditScreen(
@@ -114,6 +122,7 @@ fun ContentEditScreen(
             )
         }
         if (state.isWord) KanjiLinks(state, viewModel)
+        if (state.isKanji) KanjiExamples(state, viewModel)
         state.duplicate?.let { duplicate ->
             Text(
                 stringResource(R.string.edit_duplicate_word, duplicate.packTitle),
@@ -157,6 +166,7 @@ fun ContentEditScreen(
         }
     }
 
+    state.exampleEditor?.let { ExampleDialog(it, viewModel) }
     if (confirmRevert) {
         ConfirmDialog(
             text = stringResource(R.string.edit_revert_confirm),
@@ -219,6 +229,112 @@ private fun KanjiLinks(state: ContentEditUiState, viewModel: ContentEditViewMode
     state.kanjiNotFound?.let { Text(stringResource(R.string.edit_kanji_not_found, it), color = MaterialTheme.colorScheme.error) }
 }
 
+/**
+ * The kanji's examples: the pack's (read only) and the learner's, which can be added, changed
+ * and removed. Changes are kept in the form and written with Lưu, like every other field.
+ */
+@Composable
+private fun KanjiExamples(state: ContentEditUiState, viewModel: ContentEditViewModel) {
+    SectionHeader(stringResource(R.string.edit_examples_section))
+    Caption(stringResource(R.string.edit_examples_hint))
+    if (state.examples.isEmpty()) Text(stringResource(R.string.edit_examples_none), style = MaterialTheme.typography.bodyMedium)
+    var confirmRemove by remember { mutableStateOf<String?>(null) }
+    state.examples.forEach { example ->
+        Surface(
+            shape = MaterialTheme.shapes.medium,
+            color = MaterialTheme.colorScheme.surfaceContainerHigh,
+            modifier = Modifier.fillMaxWidth(),
+        ) {
+            Column(Modifier.padding(horizontal = 14.dp, vertical = 10.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                if (example.furigana != null) {
+                    FuriganaText(example.furigana, style = MaterialTheme.typography.titleMedium)
+                } else {
+                    Text(japaneseText(example.japanese), style = MaterialTheme.typography.titleMedium.japanese())
+                }
+                Text(example.meaningVi, style = MaterialTheme.typography.bodyMedium)
+                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                    Tag(
+                        stringResource(
+                            when {
+                                !example.own -> R.string.edit_example_pack
+                                example.id.startsWith(NEW_EXAMPLE) || example.id in state.changedExamples -> R.string.edit_example_unsaved
+                                else -> R.string.edit_example_own
+                            },
+                        ),
+                        tone = if (example.own) TagTone.Accent else TagTone.Neutral,
+                    )
+                    Spacer(Modifier.weight(1f))
+                    if (example.own) {
+                        TextButton(onClick = { viewModel.editExample(example.id) }, enabled = !state.busy) {
+                            Text(stringResource(R.string.edit_example_edit))
+                        }
+                        TextButton(onClick = { confirmRemove = example.id }, enabled = !state.busy) {
+                            Text(stringResource(R.string.edit_example_delete))
+                        }
+                    }
+                }
+            }
+        }
+    }
+    OutlinedButton(onClick = viewModel::addExample, enabled = !state.busy, modifier = Modifier.fillMaxWidth()) {
+        Text(stringResource(R.string.edit_example_add))
+    }
+    confirmRemove?.let { id ->
+        ConfirmDialog(
+            text = stringResource(R.string.edit_example_delete_confirm),
+            confirm = stringResource(R.string.edit_example_delete),
+            onConfirm = { confirmRemove = null; viewModel.removeExample(id) },
+            onDismiss = { confirmRemove = null },
+        )
+    }
+}
+
+@Composable
+private fun ExampleDialog(editor: ExampleEditor, viewModel: ContentEditViewModel) {
+    val draft = editor.draft
+    AlertDialog(
+        onDismissRequest = viewModel::dismissExampleEditor,
+        title = { Text(stringResource(if (editor.key == null) R.string.edit_example_add else R.string.edit_example_edit)) },
+        text = {
+            Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                ExampleTextField(ExampleField.JAPANESE, draft.japanese, editor, japanese = true) { viewModel.onExampleChange(draft.copy(japanese = it)) }
+                ExampleTextField(ExampleField.FURIGANA, draft.furigana, editor, japanese = true) { viewModel.onExampleChange(draft.copy(furigana = it)) }
+                ExampleTextField(ExampleField.MEANING, draft.meaningVi, editor, japanese = false) { viewModel.onExampleChange(draft.copy(meaningVi = it)) }
+            }
+        },
+        confirmButton = { TextButton(onClick = viewModel::keepExample) { Text(stringResource(R.string.edit_example_keep)) } },
+        dismissButton = { TextButton(onClick = viewModel::dismissExampleEditor) { Text(stringResource(R.string.common_cancel)) } },
+    )
+}
+
+@Composable
+private fun ExampleTextField(field: ExampleField, value: String, editor: ExampleEditor, japanese: Boolean, onChange: (String) -> Unit) {
+    val error = editor.errors[field]
+    OutlinedTextField(
+        value = value,
+        onValueChange = onChange,
+        label = {
+            Text(
+                stringResource(
+                    when (field) {
+                        ExampleField.JAPANESE -> R.string.edit_example_field_ja
+                        ExampleField.FURIGANA -> R.string.edit_example_field_furigana
+                        ExampleField.MEANING -> R.string.edit_example_field_meaning
+                    },
+                ) + if (field == ExampleField.FURIGANA) "" else " *",
+            )
+        },
+        isError = error != null,
+        supportingText = when {
+            error != null -> { { Text(stringResource(error.messageRes())) } }
+            field == ExampleField.FURIGANA -> { { Text(stringResource(R.string.edit_example_furigana_hint)) } }
+            else -> null
+        },
+        textStyle = if (japanese) MaterialTheme.typography.bodyLarge.japanese() else MaterialTheme.typography.bodyLarge,
+        modifier = Modifier.fillMaxWidth(),
+    )
+}
+
 @Composable
 private fun ConfirmDialog(text: String, confirm: String, onConfirm: () -> Unit, onDismiss: () -> Unit) {
     AlertDialog(
@@ -254,4 +370,6 @@ private fun FieldError.messageRes(): Int = when (this) {
     FieldError.NOT_A_NUMBER -> R.string.edit_error_not_number
     FieldError.OUT_OF_RANGE -> R.string.edit_error_strokes_range
     FieldError.EXAMPLE_INCOMPLETE -> R.string.edit_error_example_incomplete
+    FieldError.MISSING_KANJI -> R.string.edit_error_missing_kanji
+    FieldError.FURIGANA_MISMATCH -> R.string.edit_error_furigana_mismatch
 }

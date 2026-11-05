@@ -7,6 +7,7 @@ import com.n3sensei.app.domain.reminder.ReminderOutcome
 import com.n3sensei.app.domain.reminder.ReminderRunner
 import com.n3sensei.app.testing.FakeContentRepository
 import com.n3sensei.app.testing.FakeProgressRepository
+import com.n3sensei.app.testing.FakeReminderHistory
 import com.n3sensei.app.testing.FakeReminderNotifier
 import com.n3sensei.app.testing.FakeReminderScheduler
 import com.n3sensei.app.testing.FakeReminderStateStore
@@ -27,7 +28,7 @@ class ReminderSettingsViewModelTest {
     private val prefs = FakeUserPreferencesRepository(UserPreferences(onboardingCompleted = true))
     private val scheduler = FakeReminderScheduler()
     private val notifier = FakeReminderNotifier(allowed = false)
-    private val runner = ReminderRunner(prefs, FakeReminderStateStore(), FakeContentRepository(), FakeProgressRepository(), notifier, MutableClock())
+    private val runner = ReminderRunner(prefs, FakeReminderStateStore(), FakeContentRepository(), FakeProgressRepository(), notifier, MutableClock(), FakeReminderHistory())
     private val viewModel by lazy { ReminderSettingsViewModel(prefs, scheduler, notifier, runner) }
 
     private val saved get() = prefs.preferences.value.reminderSettings

@@ -29,10 +29,10 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.SectionHeader
-import com.n3sensei.app.core.ui.content.SourceNote
 import com.n3sensei.app.core.ui.content.intervalLabel
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.ThemeMode
+import com.n3sensei.app.domain.widget.WidgetMode
 
 @Composable
 fun SettingsScreen(
@@ -40,6 +40,7 @@ fun SettingsScreen(
     backupViewModel: BackupViewModel,
     onOpenReviewSettings: () -> Unit,
     onOpenReminderSettings: () -> Unit,
+    onOpenWidgetSettings: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -144,6 +145,13 @@ fun SettingsScreen(
             )
             HorizontalDivider()
 
+            ListItem(
+                headlineContent = { Text(stringResource(R.string.widget_settings_title)) },
+                supportingContent = { Text(stringResource(R.string.widget_settings_summary, widgetModeName(prefs.widgetSettings.mode))) },
+                modifier = Modifier.clickable(role = Role.Button, onClick = onOpenWidgetSettings),
+            )
+            HorizontalDivider()
+
             BackupSettingsSection(
                 state = backupState,
                 onExport = { createBackup.launch(backupViewModel.suggestedFileName()) },
@@ -177,14 +185,6 @@ fun SettingsScreen(
             )
             HorizontalDivider()
 
-            SectionHeader(stringResource(R.string.settings_sources), Modifier.padding(horizontal = 16.dp))
-            Column(Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
-                if (ui.sources.isEmpty()) {
-                    Text(stringResource(R.string.settings_no_sources), color = MaterialTheme.colorScheme.onSurfaceVariant)
-                }
-                ui.sources.forEach { SourceNote(it, Modifier.padding(vertical = 4.dp)) }
-            }
-            HorizontalDivider()
             Text(
                 stringResource(R.string.settings_about, appVersionName()),
                 style = MaterialTheme.typography.bodySmall,
@@ -202,3 +202,15 @@ private fun appVersionName(): String {
         .getOrNull()
         .orEmpty()
 }
+
+@Composable
+private fun widgetModeName(mode: WidgetMode): String = stringResource(
+    when (mode) {
+        WidgetMode.RANDOM -> R.string.widget_mode_random
+        WidgetMode.REVIEW -> R.string.widget_mode_review
+        WidgetMode.KANJI -> R.string.totals_kanji
+        WidgetMode.VOCABULARY -> R.string.totals_vocabulary
+        WidgetMode.GRAMMAR -> R.string.totals_grammar
+        WidgetMode.LESSON -> R.string.widget_mode_lesson
+    },
+)

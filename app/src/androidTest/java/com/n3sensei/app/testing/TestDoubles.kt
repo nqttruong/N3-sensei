@@ -6,6 +6,7 @@ import com.n3sensei.app.domain.reminder.ReminderScheduler
 import com.n3sensei.app.domain.reminder.ReminderSettings
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
 import com.n3sensei.app.domain.srs.ReviewSettings
+import com.n3sensei.app.domain.widget.WidgetSettings
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 
@@ -18,6 +19,7 @@ class InMemoryPreferencesRepository(initial: UserPreferences = UserPreferences()
     override suspend fun setShowFurigana(show: Boolean) = preferences.update { it.copy(showFurigana = show) }
     override suspend fun setReviewSettings(settings: ReviewSettings) = preferences.update { it.copy(reviewSettings = settings) }
     override suspend fun setReminderSettings(settings: ReminderSettings) = preferences.update { it.copy(reminderSettings = settings) }
+    override suspend fun setWidgetSettings(settings: WidgetSettings) = preferences.update { it.copy(widgetSettings = settings) }
 }
 
 class RecordingReminderScheduler : ReminderScheduler {

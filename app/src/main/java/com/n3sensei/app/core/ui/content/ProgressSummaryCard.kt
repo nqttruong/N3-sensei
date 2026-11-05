@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,6 +16,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.n3sensei.app.R
+import com.n3sensei.app.core.designsystem.component.N3Card
 import com.n3sensei.app.core.designsystem.theme.N3SenseiTheme
 import com.n3sensei.app.domain.model.ProgressSummary
 
@@ -26,15 +26,13 @@ fun ProgressSummaryCard(
     summary: ProgressSummary,
     modifier: Modifier = Modifier,
 ) {
-    ElevatedCard(modifier = modifier.fillMaxWidth()) {
-        Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            Text(stringResource(R.string.progress_title), style = MaterialTheme.typography.titleMedium)
-            Row(modifier = Modifier.fillMaxWidth()) {
-                StatItem(summary.dueNow.toString(), stringResource(R.string.progress_due_now), Modifier.weight(1f))
-                StatItem(summary.learning.toString(), stringResource(R.string.progress_learning), Modifier.weight(1f))
-                StatItem(summary.inReview.toString(), stringResource(R.string.progress_in_review), Modifier.weight(1f))
-                StatItem(summary.mastered.toString(), stringResource(R.string.progress_mastered), Modifier.weight(1f))
-            }
+    N3Card(modifier = modifier, verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text(stringResource(R.string.progress_title), style = MaterialTheme.typography.titleMedium)
+        Row(modifier = Modifier.fillMaxWidth()) {
+            StatItem(summary.dueNow.toString(), stringResource(R.string.progress_due_now), Modifier.weight(1f))
+            StatItem(summary.learning.toString(), stringResource(R.string.progress_learning), Modifier.weight(1f))
+            StatItem(summary.inReview.toString(), stringResource(R.string.progress_in_review), Modifier.weight(1f))
+            StatItem(summary.mastered.toString(), stringResource(R.string.progress_mastered), Modifier.weight(1f))
         }
     }
 }

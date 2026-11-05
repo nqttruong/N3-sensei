@@ -23,7 +23,10 @@ enum class AppScreen(
     LEARN_HUB(LearnHubRoute::class, R.string.learn_title, TopLevelDestination.LEARN, isTabRoot = true),
     LESSONS(LessonListRoute::class, R.string.lessons_title, TopLevelDestination.LEARN, isTabRoot = false),
     LESSON_DETAIL(LessonDetailRoute::class, R.string.lesson_detail_title, TopLevelDestination.LEARN, isTabRoot = false),
-    VOCABULARY(VocabularyRoute::class, R.string.vocabulary_title, TopLevelDestination.LEARN, isTabRoot = false),
+    VOCABULARY_GROUPS(VocabularyGroupsRoute::class, R.string.vocabulary_title, TopLevelDestination.LEARN, isTabRoot = false),
+    VOCABULARY_GROUP(VocabularyGroupRoute::class, R.string.vocabulary_group_screen_title, TopLevelDestination.LEARN, isTabRoot = false),
+    VOCABULARY(VocabularyRoute::class, R.string.vocabulary_all, TopLevelDestination.LEARN, isTabRoot = false),
+    MY_WORDS(MyWordsRoute::class, R.string.learn_my_words, TopLevelDestination.LEARN, isTabRoot = false),
     VOCABULARY_DETAIL(VocabularyDetailRoute::class, R.string.vocabulary_detail_title, TopLevelDestination.LEARN, isTabRoot = false),
     KANJI(KanjiRoute::class, R.string.kanji_title, TopLevelDestination.LEARN, isTabRoot = false),
     KANJI_DETAIL(KanjiDetailRoute::class, R.string.kanji_detail_title, TopLevelDestination.LEARN, isTabRoot = false),
@@ -41,7 +44,8 @@ enum class AppScreen(
     STATS(StatsRoute::class, R.string.stats_title, TopLevelDestination.STATS, isTabRoot = true),
     SETTINGS(SettingsRoute::class, R.string.settings_title, TopLevelDestination.SETTINGS, isTabRoot = true),
     REVIEW_SETTINGS(ReviewSettingsRoute::class, R.string.review_settings_title, TopLevelDestination.SETTINGS, isTabRoot = false),
-    REMINDER_SETTINGS(ReminderSettingsRoute::class, R.string.reminder_settings_title, TopLevelDestination.SETTINGS, isTabRoot = false);
+    REMINDER_SETTINGS(ReminderSettingsRoute::class, R.string.reminder_settings_title, TopLevelDestination.SETTINGS, isTabRoot = false),
+    WIDGET_SETTINGS(WidgetSettingsRoute::class, R.string.widget_settings_title, TopLevelDestination.SETTINGS, isTabRoot = false);
 
     fun matches(destination: NavDestination): Boolean = destination.hasRoute(route)
 

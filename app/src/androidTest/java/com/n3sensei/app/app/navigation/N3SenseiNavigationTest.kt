@@ -6,12 +6,13 @@ import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsSelected
+import androidx.compose.ui.test.hasClickAction
 import androidx.compose.ui.test.hasContentDescription
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import androidx.navigation.NavDestination
@@ -76,7 +77,7 @@ class N3SenseiNavigationTest {
 
     private val learnSubScreens = listOf(
         R.string.lessons_title to AppScreen.LESSONS,
-        R.string.vocabulary_title to AppScreen.VOCABULARY,
+        R.string.vocabulary_title to AppScreen.VOCABULARY_GROUPS,
         R.string.kanji_title to AppScreen.KANJI,
         R.string.grammar_title to AppScreen.GRAMMAR,
     )
@@ -168,8 +169,9 @@ class N3SenseiNavigationTest {
         pressBack()
         assertOn(AppScreen.LEARN_HUB)
         clickTab(TopLevelDestination.HOME)
-        composeRule.onNodeWithText(string(R.string.dashboard_open_stats)).performScrollTo().performClick()
-        assertOn(AppScreen.STATS)
+        // The whole "Cần ôn" card opens the review.
+        composeRule.onNode(hasText(string(R.string.dashboard_due)) and hasClickAction()).performScrollTo().performClick()
+        assertOn(AppScreen.REVIEW)
     }
 
     @Test

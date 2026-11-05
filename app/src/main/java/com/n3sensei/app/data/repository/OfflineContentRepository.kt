@@ -53,6 +53,7 @@ class OfflineContentRepository(
         val text = BrowseText.of(query)
         return contentDao.observeVocabularyItems(
             query.lessonId, query.tagId, query.status?.name, query.markedOnly, text.pattern, text.raw, text.limit,
+            query.userWordsOnly,
         ).map { rows -> rows.map { it.toDomain() } }
     }
 
@@ -85,8 +86,10 @@ class OfflineContentRepository(
         ItemType.GRAMMAR -> contentDao.getGrammar(ref.id)?.let { PracticeItem.GrammarItem(it.toDomain()) }
     }
 
+    /** The pack's example words, then the learner's own examples, then the learner's linked words. */
     override suspend fun getKanjiWords(kanjiId: String): List<KanjiWord> =
-        contentDao.getKanjiExamples(kanjiId).map { KanjiWord(it.japanese, it.furigana, it.translationVi) } +
+        (contentDao.getKanjiExamples(kanjiId) + contentDao.getOwnKanjiExamples(kanjiId))
+            .map { KanjiWord(it.japanese, it.furigana, it.translationVi) } +
             contentDao.getLinkedVocabulary(kanjiId).map { KanjiWord(it.expression, it.furigana, it.meaningVi, vocabularyId = it.id) }
 
     override suspend fun getVocabularyDetail(id: String): VocabularyDetail? =

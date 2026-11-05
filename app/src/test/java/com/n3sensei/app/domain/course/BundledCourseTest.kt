@@ -72,4 +72,34 @@ class BundledCourseTest {
         val labels = sections.map { it.label }
         assertEquals(labels.distinct().size, labels.size - sections.zipWithNext().count { (a, b) -> a.label == b.label })
     }
+
+    @Test
+    fun vocabularyGroups_overTheBundledPacks_splitEachLessonInto30s_withTheCoursesLabels() {
+        val groups = VocabularyGroups.build(lessons, words)
+        assertEquals(words, groups.flatMap { it.words })
+        assertTrue(groups.all { it.words.size in 1..30 })
+        val perLesson = words.groupBy { it.item.lessonId }.mapValues { (_, w) -> (w.size + 29) / 30 }
+        assertEquals(perLesson.values.sum(), groups.size)
+        // Mimikara: lessons of 120, 100, 78, 112, 100, 40, 40, 45, 80, 80, 50, 35 words.
+        assertEquals(
+            listOf(4, 4, 3, 4, 4, 2, 2, 2, 3, 3, 2, 2),
+            groups.filter { it.lessonId.startsWith("mimikara") }.groupBy { it.lessonId }.values.map { it.size },
+        )
+        // The same "n.k" a word has in the sections of Học → Bài học.
+        val courseLabels = course.flatMap { l -> l.vocabulary.flatMap { s -> s.words.map { it.item.id to s.label } } }.toMap()
+        groups.forEach { g -> g.words.forEach { assertEquals(courseLabels.getValue(it.item.id), g.label) } }
+    }
+
+    @Test
+    fun everyBundledItemHasALocation_andWordsInTwoPacksPointToEachOther() {
+        val locations = ItemLocations.build(lessons, kanji, words, grammar)
+        val refs = kanji.map { com.n3sensei.app.domain.model.ItemRef(com.n3sensei.app.domain.model.ItemType.KANJI, it.item.id) } +
+            words.map { com.n3sensei.app.domain.model.ItemRef(com.n3sensei.app.domain.model.ItemType.VOCABULARY, it.item.id) } +
+            grammar.map { com.n3sensei.app.domain.model.ItemRef(com.n3sensei.app.domain.model.ItemType.GRAMMAR, it.item.id) }
+        assertTrue(refs.none { locations.of(it).kind == ItemLocation.Kind.NONE })
+        assertTrue(refs.all { locations.of(it).courseLesson != null })
+        val shared = words.filter { locations.sameWord(it.item.id).isNotEmpty() }
+        assertTrue(shared.isNotEmpty())
+        shared.forEach { w -> locations.sameWord(w.item.id).forEach { other -> assertTrue(locations.sameWord(other.vocabularyId).any { it.vocabularyId == w.item.id }) } }
+    }
 }

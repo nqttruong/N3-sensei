@@ -1,7 +1,14 @@
 package com.n3sensei.app.app.navigation
 
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -11,6 +18,8 @@ import androidx.navigation.toRoute
 import com.n3sensei.app.R
 import com.n3sensei.app.app.di.appViewModel
 import com.n3sensei.app.app.reminder.ReminderDeepLinks
+import com.n3sensei.app.core.designsystem.theme.LocalReduceMotion
+import com.n3sensei.app.core.designsystem.theme.N3Motion
 import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
@@ -25,7 +34,8 @@ import com.n3sensei.app.feature.grammar.GrammarDetailViewModel
 import com.n3sensei.app.feature.grammar.GrammarListScreen
 import com.n3sensei.app.feature.grammar.GrammarListViewModel
 import com.n3sensei.app.feature.home.HomeScreen
-import com.n3sensei.app.feature.home.HomeViewModel
+import com.n3sensei.app.core.ui.state.DashboardViewModel
+import com.n3sensei.app.feature.home.ProverbViewModel
 import com.n3sensei.app.feature.kanji.KanjiDetailScreen
 import com.n3sensei.app.feature.kanji.KanjiDetailViewModel
 import com.n3sensei.app.feature.kanji.KanjiListScreen
@@ -49,10 +59,16 @@ import com.n3sensei.app.feature.settings.ReviewSettingsScreen
 import com.n3sensei.app.feature.settings.ReviewSettingsViewModel
 import com.n3sensei.app.feature.settings.SettingsScreen
 import com.n3sensei.app.feature.settings.SettingsViewModel
+import com.n3sensei.app.feature.settings.WidgetSettingsScreen
+import com.n3sensei.app.feature.settings.WidgetSettingsViewModel
 import com.n3sensei.app.feature.stats.StatsScreen
 import com.n3sensei.app.feature.stats.StatsViewModel
 import com.n3sensei.app.feature.vocabulary.VocabularyDetailScreen
 import com.n3sensei.app.feature.vocabulary.VocabularyDetailViewModel
+import com.n3sensei.app.feature.vocabulary.VocabularyGroupScreen
+import com.n3sensei.app.feature.vocabulary.VocabularyGroupViewModel
+import com.n3sensei.app.feature.vocabulary.VocabularyGroupsScreen
+import com.n3sensei.app.feature.vocabulary.VocabularyGroupsViewModel
 import com.n3sensei.app.feature.vocabulary.VocabularyListScreen
 import com.n3sensei.app.feature.vocabulary.VocabularyListViewModel
 
@@ -66,29 +82,42 @@ fun N3SenseiNavHost(
     navController: NavHostController,
     modifier: Modifier = Modifier,
 ) {
+    // Short fade with a small rise instead of the default 700 ms crossfade, which made every
+    // tap feel slow. Only the fade is kept when the system asks for reduced motion.
+    val reduceMotion = LocalReduceMotion.current
+    val rise = if (reduceMotion) 0 else with(LocalDensity.current) { 24.dp.roundToPx() }
     NavHost(
         navController = navController,
         startDestination = TopLevelDestination.START.route,
         modifier = modifier,
+        enterTransition = {
+            fadeIn(tween(N3Motion.MEDIUM, easing = N3Motion.EnterEasing)) +
+                slideInVertically(tween(N3Motion.MEDIUM, easing = N3Motion.EnterEasing)) { rise }
+        },
+        exitTransition = { fadeOut(tween(N3Motion.SHORT)) },
+        popEnterTransition = { fadeIn(tween(N3Motion.MEDIUM, easing = N3Motion.EnterEasing)) },
+        popExitTransition = {
+            fadeOut(tween(N3Motion.SHORT)) + slideOutVertically(tween(N3Motion.SHORT)) { rise }
+        },
     ) {
         composable<HomeRoute> {
             HomeScreen(
-                viewModel = appViewModel { HomeViewModel(analyticsRepository, reviewSessionRepository, userPreferencesRepository, clock) },
+                viewModel = appViewModel { DashboardViewModel(analyticsRepository, reviewSessionRepository, userPreferencesRepository, clock) },
+                proverbViewModel = appViewModel { ProverbViewModel(proverbRepository, clock) },
                 onOpenReview = { navController.navigateToTopLevel(TopLevelDestination.REVIEW) },
                 onStartSession = { navController.navigate(ReviewSessionRoute) },
                 onOpenLessons = { navController.navigateToLessons() },
                 onOpenItem = { navController.navigateToItem(it) },
-                onOpenStats = { navController.navigateToTopLevel(TopLevelDestination.STATS) },
             )
         }
         navigation<LearnGraphRoute>(startDestination = LearnHubRoute) {
             composable<LearnHubRoute> {
                 LearnHubScreen(
                     onOpenLessons = { navController.navigate(LessonListRoute) },
-                    onOpenVocabulary = { navController.navigate(VocabularyRoute()) },
+                    onOpenVocabulary = { navController.navigate(VocabularyGroupsRoute) },
                     onOpenKanji = { navController.navigate(KanjiRoute()) },
                     onOpenGrammar = { navController.navigate(GrammarRoute()) },
-                    onOpenMyWords = { navController.navigate(VocabularyRoute(lessonId = UserWords.LESSON_ID)) },
+                    onOpenMyWords = { navController.navigate(MyWordsRoute) },
                 )
             }
             composable<LessonListRoute> {
@@ -114,6 +143,30 @@ fun N3SenseiNavHost(
                     viewModel = appViewModel { VocabularyListViewModel(contentRepository, status, route.lessonId) },
                     onOpenVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
                     onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
+                    onAddWord = { navController.navigate(AddWordRoute) },
+                )
+            }
+            composable<VocabularyGroupsRoute> {
+                VocabularyGroupsScreen(
+                    viewModel = appViewModel { VocabularyGroupsViewModel(contentRepository) },
+                    onOpenGroup = { navController.navigate(VocabularyGroupRoute(it)) },
+                    onOpenAll = { navController.navigate(VocabularyRoute()) },
+                )
+            }
+            composable<VocabularyGroupRoute> { entry ->
+                val key = entry.toRoute<VocabularyGroupRoute>().key
+                VocabularyGroupScreen(
+                    viewModel = appViewModel { VocabularyGroupViewModel(key, contentRepository) },
+                    onOpenVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
+                    onPractice = { navController.navigate(PracticeRoute(vocabularyGroup = key)) },
+                )
+            }
+            composable<MyWordsRoute> {
+                VocabularyListScreen(
+                    viewModel = appViewModel { VocabularyListViewModel(contentRepository, myWords = true) },
+                    onOpenVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
+                    // Marked words of this list only, not marked words of every pack.
+                    onPracticeMarked = { navController.navigate(PracticeRoute(lessonId = UserWords.LESSON_ID, markedOnly = true)) },
                     onAddWord = { navController.navigate(AddWordRoute) },
                 )
             }
@@ -157,7 +210,9 @@ fun N3SenseiNavHost(
                     onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
                 )
             }
-            composable<KanjiDetailRoute> { entry ->
+            composable<KanjiDetailRoute>(
+                deepLinks = listOf(navDeepLink<KanjiDetailRoute>(basePath = ReminderDeepLinks.KANJI_BASE)),
+            ) { entry ->
                 val id = entry.toRoute<KanjiDetailRoute>().kanjiId
                 KanjiDetailScreen(
                     viewModel = appViewModel { KanjiDetailViewModel(id, contentRepository, progressRepository, userPreferencesRepository, clock) },
@@ -183,7 +238,9 @@ fun N3SenseiNavHost(
                     onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
                 )
             }
-            composable<GrammarDetailRoute> { entry ->
+            composable<GrammarDetailRoute>(
+                deepLinks = listOf(navDeepLink<GrammarDetailRoute>(basePath = ReminderDeepLinks.GRAMMAR_BASE)),
+            ) { entry ->
                 val id = entry.toRoute<GrammarDetailRoute>().grammarId
                 GrammarDetailScreen(
                     viewModel = appViewModel { GrammarDetailViewModel(id, contentRepository, progressRepository, userPreferencesRepository, clock) },
@@ -206,7 +263,7 @@ fun N3SenseiNavHost(
                     viewModel = appViewModel {
                         PracticeViewModel(
                             route.lessonId, route.markedOnly, contentRepository, clock,
-                            progressRepository, userPreferencesRepository, route.courseLesson,
+                            progressRepository, userPreferencesRepository, route.courseLesson, route.vocabularyGroup,
                         )
                     },
                     markedOnly = route.markedOnly,
@@ -223,7 +280,7 @@ fun N3SenseiNavHost(
                 PracticeResultScreen(
                     result = PracticeResult(route.total, route.again, route.hard, route.good, route.easy, route.durationSeconds),
                     onPracticeAgain = {
-                        navController.navigate(PracticeRoute(route.lessonId, route.markedOnly, route.courseLesson)) {
+                        navController.navigate(PracticeRoute(route.lessonId, route.markedOnly, route.courseLesson, route.vocabularyGroup)) {
                             popUpTo<PracticeResultRoute> { inclusive = true }
                         }
                     },
@@ -271,6 +328,7 @@ fun N3SenseiNavHost(
         composable<StatsRoute> {
             StatsScreen(
                 viewModel = appViewModel { StatsViewModel(analyticsRepository, clock) },
+                dashboardViewModel = appViewModel { DashboardViewModel(analyticsRepository, reviewSessionRepository, userPreferencesRepository, clock) },
                 onOpenReview = { navController.navigateToTopLevel(TopLevelDestination.REVIEW) },
                 onOpenList = { type, status -> navController.navigateToItemList(type, status) },
                 onOpenItem = { ref -> navController.navigateToItem(ref) },
@@ -282,7 +340,11 @@ fun N3SenseiNavHost(
                 backupViewModel = appViewModel { BackupViewModel(backupRepository, clock) },
                 onOpenReviewSettings = { navController.navigate(ReviewSettingsRoute) },
                 onOpenReminderSettings = { navController.navigate(ReminderSettingsRoute) },
+                onOpenWidgetSettings = { navController.navigate(WidgetSettingsRoute) },
             )
+        }
+        composable<WidgetSettingsRoute> {
+            WidgetSettingsScreen(viewModel = appViewModel { WidgetSettingsViewModel(userPreferencesRepository, contentRepository, widgetUpdater) })
         }
         composable<ReminderSettingsRoute> {
             ReminderSettingsScreen(
@@ -298,7 +360,9 @@ fun N3SenseiNavHost(
 }
 
 private fun PracticeResult.toRoute(practice: PracticeRoute) =
-    PracticeResultRoute(practice.lessonId, practice.markedOnly, total, again, hard, good, easy, durationSeconds, practice.courseLesson)
+    PracticeResultRoute(
+        practice.lessonId, practice.markedOnly, total, again, hard, good, easy, durationSeconds, practice.courseLesson, practice.vocabularyGroup,
+    )
 
 private fun String?.toLearningStatus(): LearningStatus? = LearningStatus.entries.firstOrNull { it.name == this }
 

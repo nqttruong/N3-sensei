@@ -1,6 +1,7 @@
 package com.n3sensei.app.domain.edit
 
 import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.furigana.Furigana
 import java.text.Normalizer
 
 /** How a field is typed in the edit form. */
@@ -66,6 +67,12 @@ enum class FieldError {
 
     /** An example sentence without its translation, or the other way round. */
     EXAMPLE_INCOMPLETE,
+
+    /** A kanji example that does not contain the kanji. */
+    MISSING_KANJI,
+
+    /** Furigana whose base text is not the example, or kana for a text that is not all kanji. */
+    FURIGANA_MISMATCH,
 }
 
 /**
@@ -137,8 +144,71 @@ object UserWords {
     const val ID_PREFIX = "user-w-"
     const val EXAMPLE_ID_PREFIX = "user-x-"
 
+    /** The learner's examples of a kanji (in the same pack as the learner's words). */
+    const val KANJI_EXAMPLE_ID_PREFIX = "user-x-k-"
+
     /** Ids a content pack may not use: they belong to the learner's words and their examples. */
     const val RESERVED_ID_PREFIX = "user-"
+}
+
+/** The parts of a kanji example in the edit form. */
+enum class ExampleField(val maxLength: Int) { JAPANESE(200), FURIGANA(400), MEANING(300) }
+
+/** Example form text, as typed. */
+data class ExampleDraft(val japanese: String = "", val furigana: String = "", val meaningVi: String = "")
+
+/** A word or sentence shown with a kanji: the pack's own ([own] false, read only) or the learner's. */
+data class KanjiExample(val id: String, val japanese: String, val furigana: String?, val meaningVi: String, val own: Boolean) {
+    fun toDraft() = ExampleDraft(japanese, furigana.orEmpty(), meaningVi)
+}
+
+/** A valid example, normalized: [furigana] is `{base|reading}` markup or null. */
+data class ValidExample(val japanese: String, val furigana: String?, val meaningVi: String)
+
+sealed interface ExampleSaveResult {
+    data class Saved(val id: String) : ExampleSaveResult
+    data class Invalid(val errors: Map<ExampleField, FieldError>) : ExampleSaveResult
+    data object NotFound : ExampleSaveResult
+    data object Failed : ExampleSaveResult
+}
+
+/**
+ * Checks a learner's example for [kanji]: Japanese and meaning are required, the Japanese must
+ * contain the kanji (so no word is attached to the wrong kanji). Furigana is optional, either
+ * `{base|reading}` markup whose base text is the Japanese, or kana only when the Japanese is
+ * written in kanji only (then it becomes one ruby over the whole text).
+ */
+object KanjiExampleValidator {
+    private val KANA = Regex("[ぁ-ゖァ-ヺー・]+")
+    private val HAS_KANA = Regex("[ぁ-ゖァ-ヺー]")
+
+    fun validate(kanji: String, draft: ExampleDraft): Pair<ValidExample?, Map<ExampleField, FieldError>> {
+        fun clean(s: String) = Normalizer.normalize(s, Normalizer.Form.NFC).replace(Regex("[\\t\\r\\n]"), " ").trim()
+        val japanese = clean(draft.japanese)
+        val meaning = clean(draft.meaningVi)
+        val furiganaInput = clean(draft.furigana).replace(Regex("[\\s\u3000]+"), "")
+        val errors = mutableMapOf<ExampleField, FieldError>()
+        when {
+            japanese.isEmpty() -> errors[ExampleField.JAPANESE] = FieldError.REQUIRED
+            japanese.length > ExampleField.JAPANESE.maxLength -> errors[ExampleField.JAPANESE] = FieldError.TOO_LONG
+            kanji !in japanese -> errors[ExampleField.JAPANESE] = FieldError.MISSING_KANJI
+        }
+        when {
+            meaning.isEmpty() -> errors[ExampleField.MEANING] = FieldError.REQUIRED
+            meaning.length > ExampleField.MEANING.maxLength -> errors[ExampleField.MEANING] = FieldError.TOO_LONG
+        }
+        val furigana: String? = when {
+            furiganaInput.isEmpty() -> null
+            furiganaInput.length > ExampleField.FURIGANA.maxLength -> null.also { errors[ExampleField.FURIGANA] = FieldError.TOO_LONG }
+            furiganaInput.contains('{') -> furiganaInput.takeIf {
+                Furigana.isValid(it) && Furigana.baseText(it) == japanese && Furigana.parse(it).any { s -> s.reading != null }
+            } ?: null.also { errors[ExampleField.FURIGANA] = FieldError.FURIGANA_MISMATCH }
+            !KANA.matches(furiganaInput) -> null.also { errors[ExampleField.FURIGANA] = FieldError.NOT_KANA }
+            japanese.isEmpty() || HAS_KANA.containsMatchIn(japanese) -> null.also { errors[ExampleField.FURIGANA] = FieldError.FURIGANA_MISMATCH }
+            else -> "{$japanese|$furiganaInput}"
+        }
+        return (if (errors.isEmpty()) ValidExample(japanese, furigana, meaning) else null) to errors
+    }
 }
 
 /** A kanji the learner can link a word to (any installed pack). */

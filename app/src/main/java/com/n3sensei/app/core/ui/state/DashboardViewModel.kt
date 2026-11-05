@@ -1,10 +1,7 @@
-package com.n3sensei.app.feature.home
+package com.n3sensei.app.core.ui.state
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.n3sensei.app.core.ui.state.STOP_TIMEOUT_MILLIS
-import com.n3sensei.app.core.ui.state.UiState
-import com.n3sensei.app.core.ui.state.ticks
 import com.n3sensei.app.domain.analytics.DueCounts
 import com.n3sensei.app.domain.analytics.LearningAnalytics
 import com.n3sensei.app.domain.analytics.PriorityItem
@@ -38,8 +35,10 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import java.time.Clock
 
-/** Dashboard. Fields from the database are REAL; [forecasts] estimates and [progress] are ESTIMATES. */
-data class HomeUiState(
+/**
+ * Study dashboard shared by Trang chủ (goal, due) and Thống kê (forecasts, trend, volume,
+ * progress estimate, sessions). Fields from the database are REAL; [forecasts] estimates and [progress] are ESTIMATES. */
+data class DashboardUiState(
     val goal: DailyGoal,
     val due: DueCounts,
     val priority: List<PriorityItem>,
@@ -56,7 +55,7 @@ data class HomeUiState(
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class HomeViewModel(
+class DashboardViewModel(
     private val analytics: AnalyticsRepository,
     private val sessions: ReviewSessionRepository,
     private val preferences: UserPreferencesRepository,
@@ -64,12 +63,13 @@ class HomeViewModel(
 ) : ViewModel() {
 
     private val _trendUnit = MutableStateFlow(TrendUnit.DAY)
+    val trendUnit: StateFlow<TrendUnit> = _trendUnit.asStateFlow()
 
     fun selectTrendUnit(unit: TrendUnit) {
         _trendUnit.value = unit
     }
 
-    val state: StateFlow<UiState<HomeUiState>> =
+    val state: StateFlow<UiState<DashboardUiState>> =
         combine(clock.ticks(), _trendUnit, preferences.preferences) { now, unit, prefs -> Triple(now, unit, prefs.reviewSettings) }
             .flatMapLatest { (now, unit, settings) ->
                 val zone = clock.zone
@@ -97,7 +97,7 @@ class HomeViewModel(
                     val assumptions = ForecastAssumptions(settings.limits.newPerDay, newAvailable)
                     val pace = LearningAnalytics.dailySeries(buckets, zone, today, ProgressEstimator.WINDOW_DAYS)
                     UiState.Success(
-                        HomeUiState(
+                        DashboardUiState(
                             goal = DailyGoalCalculator.goal(settings.limits, r.newToday, newAvailable, r.reviewsToday, r.due.due),
                             due = r.due,
                             priority = r.priority,
@@ -118,7 +118,7 @@ class HomeViewModel(
                     )
                 }
             }
-            .onStart<UiState<HomeUiState>> { emit(UiState.Loading) }
+            .onStart<UiState<DashboardUiState>> { emit(UiState.Loading) }
             .catch { emit(UiState.Error(it)) }
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), UiState.Loading)
 

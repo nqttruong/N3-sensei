@@ -116,7 +116,28 @@ object N3Migrations {
         }
     }
 
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6)
+    /** 6 → 7: `user_kanji_examples`, the learner's own examples of a kanji (empty). Nothing else changes. */
+    val MIGRATION_6_7 = object : Migration(6, 7) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `user_kanji_examples` (`example_id` TEXT NOT NULL, `kanji_id` TEXT NOT NULL, " +
+                    "`sort_order` INTEGER NOT NULL, `created_at` INTEGER NOT NULL, `updated_at` INTEGER NOT NULL, PRIMARY KEY(`example_id`))",
+            )
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_user_kanji_examples_kanji_id` ON `user_kanji_examples` (`kanji_id`)")
+        }
+    }
+
+    /** 7 → 8: `reminder_history`, when each item was last shown in a study reminder (empty). */
+    val MIGRATION_7_8 = object : Migration(7, 8) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `reminder_history` (`item_type` TEXT NOT NULL, `item_id` TEXT NOT NULL, " +
+                    "`last_shown_at` INTEGER NOT NULL, `shown_count` INTEGER NOT NULL, PRIMARY KEY(`item_type`, `item_id`))",
+            )
+        }
+    }
+
+    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8)
 
     private fun String.toReadings(): String = StringListCodec.decode(this).joinToString(" ")
 

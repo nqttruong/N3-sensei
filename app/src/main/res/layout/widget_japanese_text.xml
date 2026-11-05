@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Japanese text of the widgets. A plain TextView so the text can carry a LocaleSpan (ja-JP):
+     Glance's Text has no locale, and Han characters would then take Chinese glyph forms. -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_japanese_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:textColor="@color/widget_ink"
+    android:textStyle="bold" />

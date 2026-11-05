@@ -6,7 +6,12 @@ import com.n3sensei.app.data.importing.ContentPackImporter
 import com.n3sensei.app.data.local.N3Database
 import com.n3sensei.app.data.local.entity.ItemMarkEntity
 import com.n3sensei.app.data.local.entity.LearningProgressEntity
+import com.n3sensei.app.data.local.entity.UserWordEntity
 import com.n3sensei.app.domain.edit.EditableField
+import com.n3sensei.app.domain.edit.KanjiExample
+import com.n3sensei.app.domain.edit.ExampleSaveResult
+import com.n3sensei.app.domain.edit.ExampleField
+import com.n3sensei.app.domain.edit.ExampleDraft
 import com.n3sensei.app.domain.edit.FieldError
 import com.n3sensei.app.domain.edit.SaveResult
 import com.n3sensei.app.domain.edit.UserWords
@@ -212,6 +217,89 @@ class UserContentRepositoryTest {
         open()
         assertEquals("đi qua, quá cảnh", word(added.id)!!.meaningVi)
         assertEquals(1, db.countRows("vocabulary WHERE lesson_id = '${UserWords.LESSON_ID}'"))
+    }
+
+    /**
+     * "Từ của tôi" lists only words added with the add action. Rows that look like the learner's
+     * but were not added by it (a pack word in `user_words`, a row in the lesson without the
+     * registry entry or the generated id) are left out of the list but not deleted, and editing
+     * one does not make it the learner's.
+     */
+    @Test
+    fun myWordsList_showsOnlyWordsTheLearnerAdded() = runBlocking {
+        val added = (edits.addWord(
+            mapOf(EditableField.WORD_EXPRESSION to "経由", EditableField.WORD_READING to "けいゆ", EditableField.WORD_MEANING to "đi qua"),
+        ) as SaveResult.Saved).id
+        val dao = db.userContentDao()
+        val packWord = word("w2")!!
+        // A pack word wrongly registered as the learner's.
+        dao.upsertUserWord(UserWordEntity("w2", 1, 1))
+        // Rows placed in the lesson without the add action: one with a generated-looking id but
+        // no registry entry, one with a pack-style id and a registry entry.
+        dao.insertVocabulary(packWord.copy(id = "user-w-legacy", expression = "増加", reading = "ぞうか", lessonId = UserWords.LESSON_ID, sortOrder = 100))
+        dao.insertVocabulary(packWord.copy(id = "copied", expression = "増大", reading = "ぞうだい", lessonId = UserWords.LESSON_ID, sortOrder = 101))
+        dao.upsertUserWord(UserWordEntity("copied", 1, 1))
+        val vocabularyBefore = db.countRows("vocabulary")
+
+        val mine = content.observeVocabularyItems(ItemQuery(userWordsOnly = true)).first().map { it.item.id }
+        assertEquals(listOf(added), mine)
+        // The general list still has every word: nothing was removed anywhere.
+        assertEquals(vocabularyBefore, content.observeVocabularyItems(ItemQuery()).first().size)
+        assertEquals(packWord, word("w2"))
+
+        // Editing a row the learner did not add keeps it out of the list.
+        edits.save(ItemType.VOCABULARY, "user-w-legacy", mapOf(EditableField.WORD_MEANING to "gia tăng"))
+        assertNull(dao.getUserWord("user-w-legacy"))
+        assertEquals(listOf(added), content.observeVocabularyItems(ItemQuery(userWordsOnly = true)).first().map { it.item.id })
+        // Editing the learner's own word keeps it there and its creation date.
+        val created = dao.getUserWord(added)!!.createdAt
+        edits.save(ItemType.VOCABULARY, added, mapOf(EditableField.WORD_MEANING to "đi qua, quá cảnh"))
+        assertEquals(created, dao.getUserWord(added)!!.createdAt)
+        assertEquals(listOf(added), content.observeVocabularyItems(ItemQuery(userWordsOnly = true, text = "qua")).first().map { it.item.id })
+    }
+
+    @Test
+    fun kanjiExamples_areAddedChangedAndDeleted_surviveUpdatesAndRestarts_andShowWithTheKanji() = runBlocking {
+        val first = edits.saveKanjiExample("k1", null, ExampleDraft("経験", "けいけん", "kinh nghiệm")) as ExampleSaveResult.Saved
+        assertTrue(first.id.startsWith(UserWords.KANJI_EXAMPLE_ID_PREFIX))
+        val second = edits.saveKanjiExample("k1", null, ExampleDraft("経験があります", "{経験|けいけん}があります", "có kinh nghiệm")) as ExampleSaveResult.Saved
+        // Kana for an all-kanji word becomes one ruby; markup is kept as typed.
+        assertEquals(
+            listOf(
+                KanjiExample(first.id, "経験", "{経験|けいけん}", "kinh nghiệm", own = true),
+                KanjiExample(second.id, "経験があります", "{経験|けいけん}があります", "có kinh nghiệm", own = true),
+            ),
+            edits.kanjiExamples("k1"),
+        )
+        // On the flashcard and the kanji page, after the pack's own words.
+        assertEquals(listOf("経験", "経験があります"), content.getKanjiWords("k1").map { it.japanese })
+        assertEquals(listOf("kinh nghiệm", "có kinh nghiệm"), content.getKanjiDetail("k1")!!.examples.map { it.translationVi })
+
+        // Invalid: no kanji in it, furigana that does not match, missing meaning. Nothing written.
+        val invalid = edits.saveKanjiExample("k1", null, ExampleDraft("増える", "{経験|けいけん}", "")) as ExampleSaveResult.Invalid
+        assertEquals(
+            mapOf(ExampleField.JAPANESE to FieldError.MISSING_KANJI, ExampleField.FURIGANA to FieldError.FURIGANA_MISMATCH, ExampleField.MEANING to FieldError.REQUIRED),
+            invalid.errors,
+        )
+        assertEquals(2, edits.kanjiExamples("k1").size)
+
+        // A pack update (also one that drops and re-adds the kanji rows) keeps them.
+        importer.import(pack(version = 2, kanjiMeaning = "kinh qua"))
+        db.close()
+        open()
+        assertEquals(listOf(first.id, second.id), edits.kanjiExamples("k1").map { it.id })
+
+        assertEquals(ExampleSaveResult.Saved(first.id), edits.saveKanjiExample("k1", first.id, ExampleDraft("経験", "", "trải nghiệm")))
+        assertEquals(KanjiExample(first.id, "経験", null, "trải nghiệm", own = true), edits.kanjiExamples("k1").first())
+        assertTrue(edits.deleteKanjiExample(second.id))
+        assertEquals(listOf(first.id), edits.kanjiExamples("k1").map { it.id })
+        assertEquals(0, db.countRows("example_sentences WHERE id = '${second.id}'"))
+        // Ids that are not the learner's examples are neither changed nor deleted.
+        assertEquals(ExampleSaveResult.NotFound, edits.saveKanjiExample("k1", "pack-example", ExampleDraft("経験", "", "x")))
+        assertFalse(edits.deleteKanjiExample("pack-example"))
+        assertEquals(ExampleSaveResult.NotFound, edits.saveKanjiExample("no-such-kanji", null, ExampleDraft("経験", "", "x")))
+        // The kanji itself, its id and progress-relevant rows are untouched.
+        assertEquals("k1", kanji("k1").id)
     }
 
     @Test

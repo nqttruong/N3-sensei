@@ -41,4 +41,33 @@ class ContentEditValidatorTest {
         assertEquals(Valid("nghiệm"), check(EditableField.WORD_MEANING, " nghiệm "))
         assertEquals(Invalid(FieldError.TOO_LONG), check(EditableField.WORD_MEANING, "a".repeat(201)))
     }
+
+    @Test
+    fun kanjiExample_needsJapaneseWithTheKanji_andAMeaning() {
+        assertEquals(
+            ValidExample("経験", null, "kinh nghiệm") to emptyMap<ExampleField, FieldError>(),
+            KanjiExampleValidator.validate("経", ExampleDraft(" 経験 ", "", " kinh nghiệm ")),
+        )
+        assertEquals(
+            mapOf(ExampleField.JAPANESE to FieldError.REQUIRED, ExampleField.MEANING to FieldError.REQUIRED),
+            KanjiExampleValidator.validate("経", ExampleDraft()).second,
+        )
+        assertEquals(mapOf(ExampleField.JAPANESE to FieldError.MISSING_KANJI), KanjiExampleValidator.validate("経", ExampleDraft("増える", "", "tăng")).second)
+        assertEquals(mapOf(ExampleField.JAPANESE to FieldError.TOO_LONG), KanjiExampleValidator.validate("経", ExampleDraft("経".repeat(201), "", "x")).second)
+    }
+
+    @Test
+    fun kanjiExample_furiganaIsMarkupForTheSameText_orKanaForAnAllKanjiWord() {
+        // Kana over an all-kanji word: one ruby over the whole word.
+        assertEquals("{経験|けいけん}", KanjiExampleValidator.validate("経", ExampleDraft("経験", "けい けん", "x")).first!!.furigana)
+        // Markup whose base text is the example.
+        assertEquals("{経験|けいけん}があります", KanjiExampleValidator.validate("経", ExampleDraft("経験があります", "{経験|けいけん}があります", "x")).first!!.furigana)
+        // Kana over a text with kana in it would put the reading in the wrong place.
+        assertEquals(mapOf(ExampleField.FURIGANA to FieldError.FURIGANA_MISMATCH), KanjiExampleValidator.validate("経", ExampleDraft("経験がある", "けいけんがある", "x")).second)
+        // Markup for another text, or broken markup.
+        listOf("{経由|けいゆ}", "{経験|けいけん", "{経験}").forEach {
+            assertEquals(it, mapOf(ExampleField.FURIGANA to FieldError.FURIGANA_MISMATCH), KanjiExampleValidator.validate("経", ExampleDraft("経験", it, "x")).second)
+        }
+        assertEquals(mapOf(ExampleField.FURIGANA to FieldError.NOT_KANA), KanjiExampleValidator.validate("経", ExampleDraft("経験", "keiken", "x")).second)
+    }
 }

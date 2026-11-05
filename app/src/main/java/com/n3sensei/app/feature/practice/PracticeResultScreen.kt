@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
@@ -20,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.InfoBanner
+import com.n3sensei.app.core.designsystem.component.N3Card
 import com.n3sensei.app.core.designsystem.theme.N3SenseiTheme
 import com.n3sensei.app.core.ui.content.StatItem
 import com.n3sensei.app.domain.practice.PracticeResult
@@ -46,8 +46,8 @@ fun PracticeResultScreen(
             stringResource(R.string.practice_result_summary, result.rated, result.total, formatDuration(result.durationSeconds)),
             style = MaterialTheme.typography.titleMedium,
         )
-        ElevatedCard(modifier = Modifier.fillMaxWidth()) {
-            Row(modifier = Modifier.padding(16.dp)) {
+        N3Card {
+            Row {
                 StatItem(result.again.toString(), stringResource(R.string.rating_again), Modifier.weight(1f))
                 StatItem(result.hard.toString(), stringResource(R.string.rating_hard), Modifier.weight(1f))
                 StatItem(result.good.toString(), stringResource(R.string.rating_good), Modifier.weight(1f))

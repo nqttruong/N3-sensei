@@ -60,7 +60,7 @@
     <!-- Learn hub -->
     <string name="learn_title">Học</string>
     <string name="learn_lessons_description">Học theo từng bài: từ vựng, Kanji và ngữ pháp</string>
-    <string name="learn_vocabulary_description">Tra cứu toàn bộ từ vựng, lọc theo bài</string>
+    <string name="learn_vocabulary_description">Theo bài, mỗi nhóm tối đa 30 từ; tra cứu toàn bộ từ vựng</string>
     <string name="learn_kanji_description">Tra cứu Kanji theo âm On, Kun, Hán Việt và nghĩa</string>
     <string name="learn_grammar_description">Tra cứu mẫu ngữ pháp, cách dùng và ví dụ</string>
 
@@ -95,6 +95,24 @@
 
     <!-- Vocabulary -->
     <string name="vocabulary_title">Từ vựng</string>
+    <string name="location_vocabulary">Bài %1$s · Từ vựng</string>
+    <string name="location_in_course">%1$s · %2$s</string>
+    <string name="location_none">Chưa thuộc bài</string>
+    <string name="location_section">Vị trí học</string>
+    <string name="location_course_line">Trong Học → Bài học: %1$s</string>
+    <string name="location_source_line">Bài nguồn: %1$s</string>
+    <string name="location_same_word">Cùng từ này còn có ở: %1$s</string>
+    <string name="location_my_words_note">Từ bạn tự thêm, nằm trong Từ của tôi, không thuộc bài nào.</string>
+    <string name="location_none_note">Mục này không nằm trong danh sách bài nào nên không có bài để hiển thị.</string>
+    <string name="vocabulary_all">Tất cả từ vựng</string>
+    <string name="vocabulary_groups_intro">Từ vựng theo thứ tự của từng bài nguồn. Bài có hơn %1$d từ được chia thành các nhóm %1$d từ: Bài 1.1, Bài 1.2…; không gộp các bài với nhau.</string>
+    <string name="vocabulary_groups_empty">Chưa có từ vựng nào.</string>
+    <string name="vocabulary_group_title">Bài %1$s</string>
+    <string name="vocabulary_group_screen_title">Nhóm từ vựng</string>
+    <string name="vocabulary_group_part">Nhóm %1$d/%2$d</string>
+    <string name="vocabulary_group_progress">Đã học %1$d/%2$d từ</string>
+    <string name="vocabulary_group_practice">Luyện tập nhóm này</string>
+    <string name="vocabulary_group_not_found">Không tìm thấy nhóm từ vựng này. Nội dung có thể đã thay đổi.</string>
     <string name="vocabulary_detail_title">Thẻ từ</string>
     <string name="vocabulary_search_placeholder">Tìm theo chữ, cách đọc hoặc nghĩa</string>
     <string name="vocabulary_empty">Chưa có từ vựng. Ứng dụng chưa nạp gói nội dung N3 nào.</string>
@@ -147,6 +165,23 @@
     <string name="edit_example_section">Ví dụ (không bắt buộc)</string>
     <string name="edit_field_example_ja">Câu ví dụ (tiếng Nhật)</string>
     <string name="edit_field_example_vi">Dịch câu ví dụ</string>
+    <string name="edit_error_missing_kanji">Ví dụ phải chứa chữ Kanji đang sửa.</string>
+    <string name="edit_error_furigana_mismatch">Furigana không khớp với phần tiếng Nhật. Gõ kana khi cả phần tiếng Nhật là Kanji, hoặc dùng dạng {経験|けいけん}があります.</string>
+    <string name="edit_examples_section">Ví dụ</string>
+    <string name="edit_examples_hint">Ví dụ của gói nội dung chỉ để xem. Ví dụ bạn thêm hiện trên thẻ ghi nhớ và trang Kanji, được ghi khi bấm Lưu và không bị gói nội dung ghi đè.</string>
+    <string name="edit_examples_none">Chưa có ví dụ nào.</string>
+    <string name="edit_example_add">Thêm ví dụ</string>
+    <string name="edit_example_edit">Sửa ví dụ</string>
+    <string name="edit_example_delete">Xóa ví dụ</string>
+    <string name="edit_example_delete_confirm">Bỏ ví dụ này? Ví dụ bị xóa khi bạn bấm Lưu; bấm Hủy để giữ lại.</string>
+    <string name="edit_example_keep">Xong</string>
+    <string name="edit_example_pack">Từ gói nội dung</string>
+    <string name="edit_example_own">Ví dụ của bạn</string>
+    <string name="edit_example_unsaved">Chưa lưu</string>
+    <string name="edit_example_field_ja">Từ hoặc câu tiếng Nhật</string>
+    <string name="edit_example_field_furigana">Furigana (không bắt buộc)</string>
+    <string name="edit_example_furigana_hint">Kana (けいけん) khi cả phần tiếng Nhật là Kanji, hoặc dạng {経験|けいけん}があります.</string>
+    <string name="edit_example_field_meaning">Nghĩa tiếng Việt</string>
     <string name="edit_error_example_incomplete">Cần cả câu ví dụ và bản dịch, hoặc để trống cả hai.</string>
     <string name="edit_field_pattern">Mẫu ngữ pháp</string>
     <string name="edit_field_structure">Cấu trúc</string>
@@ -162,6 +197,7 @@
     <string name="kanji_linked_words">Từ vựng bạn liên kết</string>
     <string name="vocabulary_linked_kanji">Kanji liên quan</string>
     <string name="learn_my_words">Từ của tôi</string>
+    <string name="my_words_empty">Bạn chưa thêm từ nào. Bấm “Thêm từ của tôi” để thêm từ đầu tiên.</string>
     <string name="learn_my_words_description">Các từ bạn tự thêm, không bị gói nội dung ghi đè</string>
     <string name="edit_save_failed">Không lưu được. Dữ liệu cũ vẫn giữ nguyên; hãy thử lại.</string>
     <string name="edit_not_found">Không tìm thấy mục này. Có thể gói chứa nó đã được cập nhật.</string>
@@ -228,8 +264,6 @@
     <string name="settings_show_furigana">Hiển thị furigana</string>
     <string name="settings_show_furigana_description">Hiện cách đọc phía trên Kanji trong thẻ từ và câu ví dụ</string>
     <string name="settings_replay_onboarding">Xem lại phần giới thiệu</string>
-    <string name="settings_sources">Nguồn nội dung</string>
-    <string name="settings_no_sources">Chưa có nguồn nội dung nào.</string>
     <string name="settings_about">Phiên bản %1$s</string>
 
     <!-- Learner status, marks, filters -->
@@ -368,8 +402,8 @@
     <string name="review_settings_error_limits">Giới hạn mỗi ngày không hợp lệ.</string>
     <!-- Study reminders -->
     <string name="reminder_channel_name">Nhắc học</string>
-    <string name="reminder_channel_description">Thông báo một từ cần học theo khung giờ bạn chọn.</string>
-    <string name="reminder_tap_for_meaning">Bạn còn nhớ nghĩa không? Chạm để xem thẻ từ.</string>
+    <string name="reminder_channel_description">Thông báo một mục cần học theo khung giờ và tần suất bạn chọn.</string>
+    <string name="reminder_tap_for_meaning">Bạn còn nhớ không? Chạm để xem đáp án.</string>
     <string name="reminder_reason_due">Đến hạn ôn</string>
     <string name="reminder_reason_marked">Đã đánh dấu cần chú ý</string>
     <string name="reminder_reason_new">Từ mới</string>
@@ -378,15 +412,41 @@
     <string name="reminder_action_mark">Cần học lại</string>
     <string name="reminder_marked_title">Đã đánh dấu cần học lại</string>
     <string name="reminder_marked_text">%1$s · lịch ôn không thay đổi</string>
-    <string name="widget_title">N3 Sensei · Từ cần học</string>
-    <string name="widget_description">Hiện một từ cần học từ dữ liệu của bạn.</string>
-    <string name="widget_empty">Chưa có từ cần học.</string>
+    <string name="widget_small_title">N3 Sensei · Nhỏ (1×1)</string>
+    <string name="widget_small_description">Một chữ Kanji hoặc từ vựng, gọn trong một ô.</string>
+    <string name="widget_empty_short">Chưa có mục</string>
+    <string name="widget_next">Đổi</string>
+    <string name="widget_tap_for_answer">Chạm để xem đáp án</string>
+    <string name="widget_settings_title">Widget</string>
+    <string name="widget_settings_summary">Nội dung: %1$s</string>
+    <string name="widget_settings_content">Nội dung hiển thị</string>
+    <string name="widget_mode_random">Ngẫu nhiên</string>
+    <string name="widget_mode_random_description">Kanji, từ vựng và ngữ pháp, chọn ngẫu nhiên.</string>
+    <string name="widget_mode_review">Cần ôn</string>
+    <string name="widget_mode_review_description">Mục đến hạn ôn hoặc đã đánh dấu cần chú ý.</string>
+    <string name="widget_mode_lesson">Một bài học</string>
+    <string name="widget_mode_lesson_description">Đi lần lượt các mục của bài đã chọn trong Học → Bài học, không tự đổi sang bài khác.</string>
+    <string name="widget_lesson_button">Bài đang chọn: %1$s</string>
+    <string name="widget_lesson_missing">Bài này không còn trong danh sách Bài học; widget sẽ báo chưa có mục cho đến khi bạn chọn bài khác.</string>
+    <string name="widget_settings_show">Hiển thị</string>
+    <string name="widget_settings_furigana">Hiện cách đọc (furigana)</string>
+    <string name="widget_settings_meaning">Hiện nghĩa</string>
+    <string name="widget_settings_tap">Khi nhấn vào widget</string>
+    <string name="widget_tap_open">Mở nội dung trong ứng dụng</string>
+    <string name="widget_tap_next">Đổi sang mục khác</string>
+    <string name="widget_add_small">Thêm widget nhỏ (1×1)</string>
+    <string name="widget_add_large">Thêm widget lớn (2×2)</string>
+    <string name="widget_how_to_add">Thêm từ màn hình chính: nhấn giữ chỗ trống → Tiện ích (Widgets) → N3 Sensei → chọn Nhỏ (1×1) hoặc Lớn (2×2) và kéo ra màn hình. Kích thước ô thật tùy launcher của máy; widget tự co giãn theo diện tích được cấp.</string>
+    <string name="widget_update_note">Widget không chạy nền liên tục: nội dung được làm mới khi bạn đổi cài đặt, nhấn “Đổi”, rời ứng dụng hoặc sau mỗi lần nhắc học. Widget lớn có nút “Đổi”; widget nhỏ đổi mục khi nhấn nếu bạn chọn “Đổi sang mục khác”.</string>
+    <string name="widget_title">N3 Sensei · Lớn (2×2)</string>
+    <string name="widget_description">Một chữ Kanji, từ vựng hoặc mẫu ngữ pháp, kèm cách đọc và nghĩa nếu bạn bật.</string>
+    <string name="widget_empty">Chưa có mục nào để hiện với lựa chọn trong Cài đặt → Widget.</string>
 
     <string name="settings_reminders_summary_off">Đang tắt</string>
     <string name="settings_reminders_summary_on">%1$s · %2$02d:00–%3$02d:00</string>
-    <string name="reminder_settings_title">Nhắc học</string>
+    <string name="reminder_settings_title">Thông báo học tập</string>
     <string name="reminder_enable">Bật nhắc học</string>
-    <string name="reminder_enable_description">Thông báo một từ cần học, lấy từ dữ liệu của bạn.</string>
+    <string name="reminder_enable_description">Thông báo một từ, chữ Kanji hoặc mẫu ngữ pháp để tự kiểm tra, lấy từ dữ liệu của bạn.</string>
     <string name="reminder_permission_denied">Ứng dụng chưa được phép gửi thông báo. Bật nhắc học để cấp quyền; nếu đã từ chối trước đó, hãy cho phép trong cài đặt hệ thống.</string>
     <string name="reminder_blocked_while_enabled">Nhắc học đang bật nhưng ứng dụng không được phép gửi thông báo, nên sẽ không có nhắc nào. Hãy cho phép thông báo trong cài đặt hệ thống.</string>
     <string name="reminder_open_system_settings">Mở cài đặt thông báo</string>
@@ -397,6 +457,14 @@
     <string name="reminder_hour">%1$02d:00</string>
     <string name="reminder_frequency">Tần suất</string>
     <string name="reminder_frequency_hours">Mỗi %1$d giờ</string>
+    <string name="reminder_frequency_minutes">Mỗi %1$d phút</string>
+    <string name="reminder_frequency_hint">Android không đảm bảo đúng giờ: lần nhắc có thể đến muộn khi máy tiết kiệm pin hoặc ít dùng ứng dụng. 15 phút là khoảng ngắn nhất hệ thống cho phép.</string>
+    <string name="reminder_max_per_day">Tối đa mỗi ngày</string>
+    <string name="reminder_max_value">%1$d thông báo</string>
+    <string name="reminder_max_unlimited">Không giới hạn</string>
+    <string name="reminder_scope">Nội dung nhắc</string>
+    <string name="reminder_review_only">Chỉ mục cần ôn</string>
+    <string name="reminder_review_only_description">Chỉ nhắc mục đến hạn ôn hoặc đã đánh dấu cần chú ý, không nhắc mục mới.</string>
     <string name="reminder_frequency_daily">Mỗi ngày một lần</string>
     <string name="reminder_content">Nội dung thông báo</string>
     <string name="reminder_show_reading">Hiện cách đọc</string>
@@ -411,11 +479,11 @@
     <string name="reminder_send_test">Gửi thử thông báo</string>
     <string name="reminder_test_shown">Đã gửi thông báo thử.</string>
     <string name="reminder_test_blocked">Không gửi được: thông báo đang bị chặn.</string>
-    <string name="reminder_test_nothing">Chưa có từ nào để nhắc (chưa có nội dung từ vựng).</string>
-    <string name="reminder_word_rule">Từ được chọn: từ vựng đến hạn ôn lâu nhất; nếu không có thì từ đã đánh dấu cần chú ý; nếu không có thì từ mới tiếp theo. Nhắc học không thay đổi lịch ôn.</string>
+    <string name="reminder_test_nothing">Chưa có mục nào để nhắc với nội dung đã chọn.</string>
+    <string name="reminder_word_rule">Mục được chọn: đến hạn ôn trước, rồi mục đã đánh dấu cần chú ý, rồi mục mới. Mục đã nhắc trong 24 giờ qua được để sau khi còn mục khác; sau 24 giờ có thể được nhắc lại. Nhắc học không thay đổi lịch ôn.</string>
     <string name="reminder_limits">Android giới hạn việc chạy nền: nhắc học có thể đến muộn vài phút đến hơn một giờ khi máy tiết kiệm pin hoặc ít dùng ứng dụng, và không chạy khi pin yếu. Ứng dụng không dùng báo thức chính xác và không đánh thức máy riêng cho việc nhắc. Mỗi lần chỉ có một thông báo nhắc học; thông báo mới thay thế thông báo cũ.</string>
-    <string name="reminder_add_widget">Thêm widget “Từ cần học” vào màn hình chính</string>
-    <string name="reminder_lock_screen_widget_note">Widget “Từ cần học” dùng trên màn hình chính. Điện thoại Android nói chung không cho ứng dụng đặt widget lên màn hình khóa; trên màn hình khóa, hãy dùng thông báo nhắc học.</string>
+    <string name="reminder_add_widget">Thêm widget N3 Sensei (2×2) vào màn hình chính</string>
+    <string name="reminder_lock_screen_widget_note">Widget N3 Sensei dùng trên màn hình chính (chọn nội dung trong Cài đặt → Widget). Điện thoại Android nói chung không cho ứng dụng đặt widget lên màn hình khóa; trên màn hình khóa, hãy dùng thông báo nhắc học.</string>
     <!-- Statistics -->
     <string name="stats_period_today">Hôm nay</string>
     <string name="stats_period_7">7 ngày</string>
@@ -472,6 +540,10 @@
     <string name="dashboard_goal_reached">Đã đạt mục tiêu hôm nay.</string>
     <string name="dashboard_goal_rule">Mục mới: theo giới hạn mỗi ngày nhưng không vượt số mục chưa học. Lượt ôn: đã ôn hôm nay + đang đến hạn, tối đa bằng giới hạn mỗi ngày; có thể tăng khi có thêm mục đến hạn trong ngày.</string>
     <string name="dashboard_start_review">Xem mục Ôn tập</string>
+    <string name="home_proverb_title">Câu nói hôm nay</string>
+    <string name="home_proverb_next">Câu khác</string>
+    <string name="home_proverb_error">Không đọc được bộ câu nói đi kèm ứng dụng.</string>
+    <string name="home_proverb_empty">Chưa có câu nói nào.</string>
     <string name="dashboard_open_lessons">Xem bài học</string>
     <string name="dashboard_due">Cần ôn</string>
     <string name="dashboard_priority">Ưu tiên ôn</string>
@@ -491,7 +563,7 @@
     <string name="dashboard_trend_week">Tuần</string>
     <string name="dashboard_trend_month">Tháng</string>
     <string name="dashboard_trend_description">Lượt trả lời theo %1$s: tổng %2$d, cao nhất %3$d.</string>
-    <string name="dashboard_trend_empty">Chưa có lượt trả lời nào trong khoảng này.</string>
+    <string name="dashboard_trend_empty">Chưa có lượt trả lời nào trong các tuần (tháng) của biểu đồ xu hướng.</string>
     <string name="dashboard_volume">Khối lượng 7 ngày qua</string>
     <string name="dashboard_volume_rule">Lượt trả lời theo loại nội dung trong 7 ngày gần nhất.</string>
     <string name="dashboard_progress">Dự báo tiến độ</string>
@@ -510,7 +582,6 @@
     <string name="dashboard_session_finished">Hoàn thành</string>
     <string name="dashboard_session_unfinished">Dừng giữa chừng</string>
     <string name="dashboard_sessions_empty">Chưa có phiên ôn nào.</string>
-    <string name="dashboard_open_stats">Xem thống kê chi tiết</string>
     <!-- Backup and restore -->
     <string name="backup_title">Sao lưu và khôi phục</string>
     <string name="backup_scope">Tệp sao lưu (JSON) gồm tiến độ học, lịch sử ôn, mục đã đánh dấu, phiên ôn và cài đặt. Không gồm nội dung bài học (nhập lại gói nội dung riêng), trạng thái bật/tắt nhắc học và phần giới thiệu.</string>

@@ -15,6 +15,7 @@ import com.n3sensei.app.domain.model.ProgressState
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.reminder.LockScreenPrivacy
+import com.n3sensei.app.domain.reminder.ReminderContent
 import com.n3sensei.app.domain.reminder.ReminderFrequency
 import com.n3sensei.app.domain.reminder.ReminderSettings
 import com.n3sensei.app.domain.srs.DailyLimits
@@ -69,6 +70,21 @@ class BackupCodecTest {
         assertEquals("1.0", decoded.appVersion)
         assertEquals(0, decoded.skippedEntries)
         assertTrue(decoded.issues.isEmpty())
+    }
+
+    @Test
+    fun reminderSettingsAddedLater_areOptional_andKeepTheCurrentValuesWhenAbsent() {
+        val text = BackupCodec.encode(sample, 9_000, "1.0")
+        val older = Regex(""","?(maxPerDay|content|reviewOnly)"\s*:\s*(\[[^\]]*]|[^,}\s]+)""").replace(text, "")
+        require(older != text && "maxPerDay" !in older && "reviewOnly" !in older)
+        val reminder = ok(older).data.settings!!.reminder
+        assertNull(reminder.maxPerDay)
+        val current = ReminderSettings(maxPerDay = 4, content = setOf(ReminderContent.KANJI), reviewOnly = true)
+        val restored = reminder.applyTo(current)
+        assertEquals(4, restored.maxPerDay)
+        assertEquals(setOf(ReminderContent.KANJI), restored.content)
+        assertTrue(restored.reviewOnly)
+        assertEquals(ReminderFrequency.ONCE_A_DAY, restored.frequency)
     }
 
     @Test

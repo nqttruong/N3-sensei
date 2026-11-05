@@ -3,4 +3,6 @@
     <color name="ic_launcher_background">#1E2A5A</color>
     <color name="ic_launcher_foreground">#FFFFFF</color>
     <color name="ic_launcher_accent">#C8102E</color>
+    <!-- Widget text: ink on paper; the night value is in values-night. -->
+    <color name="widget_ink">#FF1B1C18</color>
 </resources>

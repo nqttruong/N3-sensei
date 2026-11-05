@@ -46,4 +46,10 @@ data class ItemQuery(
     val status: LearningStatus? = null,
     val markedOnly: Boolean = false,
     val tagId: String? = null,
+    /**
+     * Only words the learner added with "Thêm từ của tôi" (vocabulary only). Such a word is in
+     * the "Từ của tôi" lesson, has an id the add action generated (`user-w-…`, a prefix content
+     * packs may not use) and a row in `user_words`, written only by that action.
+     */
+    val userWordsOnly: Boolean = false,
 )

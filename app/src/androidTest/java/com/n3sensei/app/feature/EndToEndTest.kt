@@ -5,6 +5,8 @@ import androidx.compose.ui.test.SemanticsNodeInteraction
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.hasClickAction
+import androidx.compose.ui.test.onAllNodesWithText
+import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.hasSetTextAction
 import androidx.compose.ui.test.hasText
 import com.n3sensei.app.testing.countRows
@@ -29,6 +31,9 @@ import com.n3sensei.app.app.navigation.TopLevelDestination
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.testing.AppTestState
 import kotlinx.coroutines.flow.first
+import com.n3sensei.app.data.local.entity.LearningProgressEntity
+import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.model.ProgressState
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -92,6 +97,7 @@ class EndToEndTest {
             waitForText(string(R.string.common_no_content))
             Espresso.pressBack()
             clickable(string(R.string.vocabulary_title)).performClick()
+            awaitClickable(string(R.string.vocabulary_all)).performClick()
             waitForText(string(R.string.vocabulary_empty))
         }
     }
@@ -167,6 +173,7 @@ class EndToEndTest {
         launch().use {
             openTab(TopLevelDestination.LEARN)
             clickable(string(R.string.vocabulary_title)).performClick()
+            awaitClickable(string(R.string.vocabulary_all)).performClick()
             waitForText("経験")
 
             val field = composeRule.onNode(hasSetTextAction())
@@ -239,7 +246,9 @@ class EndToEndTest {
             val prefs = runBlocking { AppTestState.preferences.first() }
             assertEquals(ThemeMode.DARK, prefs.themeMode)
             assertFalse(prefs.showFurigana)
-            composeRule.onNodeWithText(SEED_SOURCE_NAME, substring = true).performScrollTo().assertIsDisplayed()
+            // The content section stays; the list of every content source is no longer in Cài đặt.
+            composeRule.onNodeWithText(string(R.string.settings_import)).performScrollTo().assertIsDisplayed()
+            composeRule.onAllNodesWithText(SEED_SOURCE_NAME, substring = true).assertCountEquals(0)
         }
     }
 
@@ -263,11 +272,11 @@ class EndToEndTest {
             clickable(string(R.string.lessons_title)).performClick()
             waitForText(string(R.string.course_lesson_title, 1))
             composeRule.onAllNodes(hasText(string(R.string.course_open)) and hasClickAction()).onFirst().performClick()
-            clickable(string(R.string.lesson_tab_vocabulary, 30)).performClick()
+            awaitClickable(string(R.string.lesson_tab_vocabulary, 30)).performClick()
             waitForText(string(R.string.course_vocabulary_section, "1.1", 30))
             waitForText("男性")
             // Kanji tab: 意 expands to all its words.
-            clickable(string(R.string.lesson_tab_kanji, 24)).performClick()
+            awaitClickable(string(R.string.lesson_tab_kanji, 24)).performClick()
             composeRule.onNodeWithText("意").performClick()
             waitForText(string(R.string.flashcard_kanji_words, 3))
             waitForText("Quyết tâm")
@@ -332,10 +341,100 @@ class EndToEndTest {
     }
 
     @Test
+    fun kanjiExamples_addedInTheEditForm_areSavedWithLuu_shownAgain_andRemovable() {
+        launch().use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.kanji_title)).performClick()
+            waitForText("経")
+            composeRule.onAllNodes(hasText("経") and hasClickAction()).onFirst().performClick()
+            awaitClickable(string(R.string.edit_action)).performScrollTo().performClick()
+            awaitClickable(string(R.string.edit_example_add)).performScrollTo().performClick()
+            // The dialog checks the example before keeping it.
+            composeRule.onNode(hasSetTextAction() and hasText(string(R.string.edit_example_field_ja) + " *")).performTextInput("路")
+            clickable(string(R.string.edit_example_keep)).performClick()
+            waitForText(string(R.string.edit_error_missing_kanji))
+            composeRule.onNode(hasSetTextAction() and hasText("路")).performTextReplacement("経路")
+            composeRule.onNode(hasSetTextAction() and hasText(string(R.string.edit_example_field_furigana))).performTextInput("けいろ")
+            // The dialog's field (the form's meaning field has the same label behind it).
+            composeRule.onAllNodes(hasSetTextAction() and hasText(string(R.string.edit_example_field_meaning) + " *")).onLast().performTextInput("lộ trình (thử)")
+            clickable(string(R.string.edit_example_keep)).performClick()
+            waitForText(string(R.string.edit_example_unsaved))
+            awaitClickable(string(R.string.edit_save)).performScrollTo().performClick()
+            // On the kanji page with the pack's words.
+            waitForText("lộ trình (thử)")
+            composeRule.onNodeWithText("lộ trình (thử)").performScrollTo().assertIsDisplayed()
+
+            // Shown again when the form opens; removing it and leaving with Hủy keeps it.
+            awaitClickable(string(R.string.edit_action)).performScrollTo().performClick()
+            waitForText(string(R.string.edit_example_own))
+            awaitClickable(string(R.string.edit_example_delete)).performScrollTo().performClick()
+            composeRule.onAllNodes(hasText(string(R.string.edit_example_delete)) and hasClickAction()).onLast().performClick()
+            awaitClickable(string(R.string.common_cancel)).performScrollTo().performClick()
+            waitForText("lộ trình (thử)")
+            composeRule.onNodeWithText("lộ trình (thử)").performScrollTo().assertIsDisplayed()
+
+            // Removed and saved: gone.
+            awaitClickable(string(R.string.edit_action)).performScrollTo().performClick()
+            awaitClickable(string(R.string.edit_example_delete)).performScrollTo().performClick()
+            composeRule.onAllNodes(hasText(string(R.string.edit_example_delete)) and hasClickAction()).onLast().performClick()
+            awaitClickable(string(R.string.edit_save)).performScrollTo().performClick()
+            awaitClickable(string(R.string.edit_action))
+            composeRule.onAllNodesWithText("lộ trình (thử)").assertCountEquals(0)
+        }
+        assertEquals(0, AppTestState.appContainer.database.countRows("user_kanji_examples"))
+    }
+
+    @Test
+    fun vocabularyGroups_splitLessonsInto30s_openAndPractise_andProgressSurvivesARestart() {
+        val group12 = string(R.string.vocabulary_group_part, 2, 4)
+        launch(seedContent = false, bundledContent = true).use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.vocabulary_title)).performClick()
+            // Mimikara lesson 1 has 120 words: Bài 1.1 to 1.4, 30 each.
+            awaitClickable(string(R.string.vocabulary_group_title, "1.2")).performClick()
+            waitForText("$group12 · " + string(R.string.vocabulary_group_progress, 0, 30))
+            awaitClickable(string(R.string.vocabulary_group_practice)).performScrollTo().performClick()
+            waitForText(string(R.string.practice_progress, 1, 30))
+        }
+        // The 31st word of the lesson is the first of Bài 1.2; progress belongs to the word's id.
+        val db = AppTestState.appContainer.database
+        val word31 = db.openHelper.readableDatabase
+            .query("SELECT id FROM vocabulary WHERE lesson_id = 'mimikara-n3-l01' ORDER BY sort_order LIMIT 1 OFFSET 30")
+            .use { it.moveToFirst(); it.getString(0) }
+        runBlocking {
+            db.progressDao().upsert(LearningProgressEntity(ItemType.VOCABULARY, word31, ProgressState.LEARNING, 0, 20, 1, 1, 1, 0, 1, 1))
+        }
+        // Closed and opened again: same groups, the word counted in Bài 1.2 only, no copies.
+        ActivityScenario.launch(MainActivity::class.java).use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.vocabulary_title)).performClick()
+            awaitClickable(string(R.string.vocabulary_group_title, "1.2")).performClick()
+            waitForText("$group12 · " + string(R.string.vocabulary_group_progress, 1, 30))
+        }
+        assertEquals(30 + 880, db.countRows("vocabulary"))
+    }
+
+    @Test
+    fun cardsAndDetails_sayWhereEachItemIsStudied() {
+        launch(seedContent = false, bundledContent = true).use {
+            openTab(TopLevelDestination.LEARN)
+            clickable(string(R.string.kanji_title)).performClick()
+            // 意 opens Học → Bài học: lesson 1, Kanji tab.
+            val kanjiPlace = string(R.string.location_in_course, string(R.string.course_lesson_title, 1), string(R.string.totals_kanji))
+            waitForText(kanjiPlace, substring = true)
+            composeRule.onAllNodes(hasText("意") and hasClickAction()).onFirst().performClick()
+            waitForText(string(R.string.location_section))
+            composeRule.onNodeWithText(string(R.string.location_section)).performScrollTo().assertIsDisplayed()
+            assertTrue(composeRule.onAllNodes(hasText(kanjiPlace)).fetchSemanticsNodes().isNotEmpty())
+        }
+    }
+
+    @Test
     fun addingAWord_putsItInMyWords_andRejectsADuplicate() {
         launch().use {
             openTab(TopLevelDestination.LEARN)
             clickable(string(R.string.vocabulary_title)).performClick()
+            awaitClickable(string(R.string.vocabulary_all)).performClick()
             waitForText("経験")
             awaitClickable(string(R.string.add_word_action)).performClick()
             waitForText(string(R.string.edit_new_word_hint))
@@ -360,6 +459,7 @@ class EndToEndTest {
         launch().use {
             openTab(TopLevelDestination.LEARN)
             clickable(string(R.string.vocabulary_title)).performClick()
+            awaitClickable(string(R.string.vocabulary_all)).performClick()
             waitForText("経験")
             composeRule.onNode(hasSetTextAction()).performTextInput("gui den")
             composeRule.waitUntil(5_000) { composeRule.onAllNodesWithTextExact("経験").isEmpty() }
@@ -372,6 +472,7 @@ class EndToEndTest {
         launch().use {
             openTab(TopLevelDestination.LEARN)
             clickable(string(R.string.vocabulary_title)).performClick()
+            awaitClickable(string(R.string.vocabulary_all)).performClick()
             waitForText("増える")
             composeRule.onNodeWithText("増える").performClick()
             clickable(string(R.string.mark_add)).performClick()
@@ -448,6 +549,7 @@ class EndToEndTest {
             waitForText(string(R.string.review_overview_today, 0, 200, 7, 20))
             openTab(TopLevelDestination.LEARN)
             clickable(string(R.string.vocabulary_title)).performClick()
+            awaitClickable(string(R.string.vocabulary_all)).performClick()
             waitForText("経験")
             composeRule.onNodeWithText("経験").performClick()
             waitForText(string(R.string.item_memory_level, 2, 7))

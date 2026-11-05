@@ -26,7 +26,10 @@ import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.content.ExampleSentenceItem
 import com.n3sensei.app.core.ui.content.ItemActions
+import com.n3sensei.app.core.ui.content.LocationSection
+import com.n3sensei.app.core.ui.content.LocationTag
 import com.n3sensei.app.core.ui.content.SourceNote
+import com.n3sensei.app.core.ui.state.DetailLocation
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.GrammarDetail
 
@@ -44,8 +47,9 @@ fun GrammarDetailScreen(
         onPauseOrDispose {}
     }
     val scheduleInfo by viewModel.scheduleInfo.collectAsStateWithLifecycle()
+    val location by viewModel.location.collectAsStateWithLifecycle()
     UiStateContent(state = state, onRetry = viewModel::refresh, modifier = modifier) { detail ->
-        GrammarDetailContent(detail) {
+        GrammarDetailContent(detail, location) {
             ItemActions(scheduleInfo, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.grammar.lessonId) })
             OutlinedButton(onClick = onEdit) { Text(stringResource(R.string.edit_action)) }
         }
@@ -53,7 +57,7 @@ fun GrammarDetailScreen(
 }
 
 @Composable
-private fun GrammarDetailContent(detail: GrammarDetail, actions: @Composable () -> Unit) {
+private fun GrammarDetailContent(detail: GrammarDetail, location: DetailLocation?, actions: @Composable () -> Unit) {
     val grammar = detail.grammar
     Column(
         modifier = Modifier
@@ -62,6 +66,8 @@ private fun GrammarDetailContent(detail: GrammarDetail, actions: @Composable () 
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
+        // Where it is studied, first, like the running head of a page.
+        location?.let { LocationTag(it.location) }
         Text(japaneseText(grammar.pattern), style = MaterialTheme.typography.headlineMedium.japanese())
         actions()
         DetailText(
@@ -100,6 +106,7 @@ private fun GrammarDetailContent(detail: GrammarDetail, actions: @Composable () 
             }
         }
         HorizontalDivider()
+        location?.let { LocationSection(it) }
         SourceNote(detail.source)
     }
 }

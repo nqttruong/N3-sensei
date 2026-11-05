@@ -85,4 +85,7 @@ data class ReminderDto(
     val showReading: Boolean? = null,
     val showMeaning: Boolean? = null,
     val lockScreen: String? = null,
+    val maxPerDay: Int? = null,
+    val content: List<String>? = null,
+    val reviewOnly: Boolean? = null,
 )

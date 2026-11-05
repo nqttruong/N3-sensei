@@ -1,6 +1,5 @@
-package com.n3sensei.app.feature.home
+package com.n3sensei.app.core.ui.state
 
-import com.n3sensei.app.core.ui.state.UiState
 import com.n3sensei.app.domain.analytics.ActivityTotals
 import com.n3sensei.app.domain.analytics.DueCounts
 import com.n3sensei.app.domain.analytics.StatusCounts
@@ -33,7 +32,7 @@ import java.time.LocalDateTime
 import java.time.ZoneId
 
 @OptIn(ExperimentalCoroutinesApi::class)
-class HomeViewModelTest {
+class DashboardViewModelTest {
 
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()
@@ -46,7 +45,7 @@ class HomeViewModelTest {
     private val prefs = FakeUserPreferencesRepository(
         UserPreferences(onboardingCompleted = true, reviewSettings = ReviewSettings(limits = DailyLimits(newPerDay = 10, reviewsPerDay = 100))),
     )
-    private val viewModel by lazy { HomeViewModel(analytics, sessions, prefs, clock) }
+    private val viewModel by lazy { DashboardViewModel(analytics, sessions, prefs, clock) }
     private fun ui() = (viewModel.state.value as UiState.Success).data
 
     @Test

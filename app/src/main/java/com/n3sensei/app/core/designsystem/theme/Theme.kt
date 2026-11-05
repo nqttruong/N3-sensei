@@ -11,53 +11,89 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
+// Every role is set: roles left to Material 3 defaults are purple-tinted and clash with moss.
 internal val LightColors = lightColorScheme(
-    primary = Indigo40,
-    onPrimary = Slate99,
-    primaryContainer = Indigo90,
-    onPrimaryContainer = Indigo10,
-    secondary = Vermilion40,
-    onSecondary = Slate99,
-    secondaryContainer = Vermilion90,
-    onSecondaryContainer = Vermilion10,
-    tertiary = Matcha40,
-    onTertiary = Slate99,
-    tertiaryContainer = Matcha90,
-    onTertiaryContainer = Matcha10,
-    background = Slate99,
-    onBackground = Slate10,
-    surface = Slate99,
-    onSurface = Slate10,
-    surfaceVariant = Slate90,
-    onSurfaceVariant = Slate30,
-    surfaceContainer = Slate95,
+    primary = Moss40,
+    onPrimary = Paper100,
+    primaryContainer = Moss90,
+    onPrimaryContainer = Moss10,
+    inversePrimary = Moss80,
+    secondary = Sage40,
+    onSecondary = Paper100,
+    secondaryContainer = Sage90,
+    onSecondaryContainer = Sage10,
+    tertiary = Ai40,
+    onTertiary = Paper100,
+    tertiaryContainer = Ai90,
+    onTertiaryContainer = Ai10,
+    error = Shu40,
+    onError = Paper100,
+    errorContainer = Shu90,
+    onErrorContainer = Shu10,
+    background = Paper98,
+    onBackground = Ink10,
+    surface = Paper98,
+    onSurface = Ink10,
+    surfaceVariant = Paper90,
+    onSurfaceVariant = Ink30,
+    surfaceTint = Moss40,
+    inverseSurface = Ink20,
+    inverseOnSurface = Paper94,
+    outline = Ink50,
+    outlineVariant = Paper80,
+    scrim = Ink4,
+    surfaceBright = Paper98,
+    surfaceDim = Paper87,
+    surfaceContainerLowest = Paper99,
+    surfaceContainerLow = Paper96,
+    surfaceContainer = Paper94,
+    surfaceContainerHigh = Paper92,
+    surfaceContainerHighest = Paper90,
 )
 
 internal val DarkColors = darkColorScheme(
-    primary = Indigo80,
-    onPrimary = Indigo20,
-    primaryContainer = Indigo30,
-    onPrimaryContainer = Indigo90,
-    secondary = Vermilion80,
-    onSecondary = Vermilion20,
-    secondaryContainer = Vermilion30,
-    onSecondaryContainer = Vermilion90,
-    tertiary = Matcha80,
-    onTertiary = Matcha20,
-    tertiaryContainer = Matcha30,
-    onTertiaryContainer = Matcha90,
-    background = Slate10,
-    onBackground = Slate90,
-    surface = Slate10,
-    onSurface = Slate90,
-    surfaceVariant = Slate30,
-    onSurfaceVariant = Slate80,
-    surfaceContainer = Slate20,
+    primary = Moss80,
+    onPrimary = Moss20,
+    primaryContainer = Moss30,
+    onPrimaryContainer = Moss90,
+    inversePrimary = Moss40,
+    secondary = Sage80,
+    onSecondary = Sage20,
+    secondaryContainer = Sage30,
+    onSecondaryContainer = Sage90,
+    tertiary = Ai80,
+    onTertiary = Ai20,
+    tertiaryContainer = Ai30,
+    onTertiaryContainer = Ai90,
+    error = Shu80,
+    onError = Shu20,
+    errorContainer = Shu30,
+    onErrorContainer = Shu90,
+    background = Ink6,
+    onBackground = Paper90,
+    surface = Ink6,
+    onSurface = Paper90,
+    surfaceVariant = Ink30,
+    onSurfaceVariant = Paper80,
+    surfaceTint = Moss80,
+    inverseSurface = Paper90,
+    inverseOnSurface = Ink20,
+    outline = Ink60,
+    outlineVariant = Ink30,
+    scrim = Ink4,
+    surfaceBright = Ink24,
+    surfaceDim = Ink6,
+    surfaceContainerLowest = Ink4,
+    surfaceContainerLow = Ink10,
+    surfaceContainer = Ink12,
+    surfaceContainerHigh = Ink17,
+    surfaceContainerHighest = Ink22,
 )
 
 @Composable
@@ -90,11 +126,14 @@ fun N3SenseiTheme(
         }
     }
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content,
-    )
+    CompositionLocalProvider(LocalReduceMotion provides rememberReduceMotion()) {
+        MaterialTheme(
+            colorScheme = colorScheme,
+            typography = Typography,
+            shapes = Shapes,
+            content = content,
+        )
+    }
 }
 
 private tailrec fun Context.findActivity(): Activity? = when (this) {

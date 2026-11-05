@@ -1,11 +1,15 @@
 package com.n3sensei.app.feature.grammar
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
 import com.n3sensei.app.core.ui.content.GrammarCard
 import com.n3sensei.app.core.ui.content.ItemBrowser
+import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.ItemType
 
 @Composable
 fun GrammarListScreen(
@@ -14,6 +18,7 @@ fun GrammarListScreen(
     onPracticeMarked: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val locations by viewModel.locations.collectAsStateWithLifecycle()
     ItemBrowser(
         viewModel = viewModel,
         searchPlaceholder = stringResource(R.string.grammar_search_placeholder),
@@ -23,6 +28,12 @@ fun GrammarListScreen(
         onPracticeMarked = onPracticeMarked,
         modifier = modifier,
     ) { tracked ->
-        GrammarCard(tracked.item, onClick = { onOpenGrammar(tracked.item.id) }, status = tracked.status, isMarked = tracked.isMarked)
+        GrammarCard(
+            tracked.item,
+            onClick = { onOpenGrammar(tracked.item.id) },
+            status = tracked.status,
+            isMarked = tracked.isMarked,
+            location = locations.of(ItemRef(ItemType.GRAMMAR, tracked.item.id)),
+        )
     }
 }

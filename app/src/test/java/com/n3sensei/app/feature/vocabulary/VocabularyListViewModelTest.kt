@@ -2,6 +2,7 @@ package com.n3sensei.app.feature.vocabulary
 
 import com.n3sensei.app.core.ui.state.SEARCH_DEBOUNCE_MILLIS
 import com.n3sensei.app.core.ui.state.UiState
+import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.testing.FakeContentRepository
 import com.n3sensei.app.testing.MainDispatcherRule
@@ -111,5 +112,29 @@ class VocabularyListViewModelTest {
         advanceTimeBy(SEARCH_DEBOUNCE_MILLIS + 1)
         runCurrent()
         assertEquals(UiState.Empty, viewModel.items.value)
+    }
+
+    @Test
+    fun myWords_listsOnlyWordsTheLearnerAdded_withNoLessonOrTopicToSwitchTo() = runTest {
+        repository.lessons.value = listOf(TestContent.lesson("l1", 1, vocabulary = 2), TestContent.lesson(UserWords.LESSON_ID, 1, vocabulary = 2))
+        repository.vocabulary.value = repository.vocabulary.value + listOf(
+            TestContent.vocabulary(UserWords.ID_PREFIX + "a", UserWords.LESSON_ID, "経由"),
+            // In the lesson but not created by "Thêm từ của tôi".
+            TestContent.vocabulary("copied", UserWords.LESSON_ID, "増大"),
+        )
+        val mine = VocabularyListViewModel(repository, myWords = true)
+        mine.items.launchIn(backgroundScope)
+        mine.lessons.launchIn(backgroundScope)
+        mine.tags.launchIn(backgroundScope)
+        runCurrent()
+
+        assertEquals(listOf(UserWords.ID_PREFIX + "a"), (mine.items.value as UiState.Success).data.map { it.item.id })
+        assertTrue(mine.lessons.value.isEmpty())
+        assertTrue(mine.tags.value.isEmpty())
+        // Clearing every filter the screen offers still shows only the learner's words.
+        mine.onLessonSelected(null)
+        mine.onStatusSelected(null)
+        runCurrent()
+        assertEquals(listOf(UserWords.ID_PREFIX + "a"), (mine.items.value as UiState.Success).data.map { it.item.id })
     }
 }

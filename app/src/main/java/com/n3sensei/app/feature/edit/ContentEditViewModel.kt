@@ -4,6 +4,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.n3sensei.app.domain.edit.EditableField
 import com.n3sensei.app.domain.edit.EditableItem
+import com.n3sensei.app.domain.edit.ExampleDraft
+import com.n3sensei.app.domain.edit.ExampleField
+import com.n3sensei.app.domain.edit.ExampleSaveResult
+import com.n3sensei.app.domain.edit.KanjiExample
+import com.n3sensei.app.domain.edit.KanjiExampleValidator
 import com.n3sensei.app.domain.edit.FieldError
 import com.n3sensei.app.domain.edit.KanjiChoice
 import com.n3sensei.app.domain.edit.SaveResult
@@ -27,6 +32,12 @@ enum class EditEvent { SAVED, REVERTED, DELETED }
 
 enum class EditProblem { NOT_FOUND, SAVE_FAILED }
 
+/**
+ * The example dialog: [key] is the example being changed (null for a new one), [draft] what
+ * is typed, [errors] from the last attempt to keep it.
+ */
+data class ExampleEditor(val key: String?, val draft: ExampleDraft, val errors: Map<ExampleField, FieldError> = emptyMap())
+
 /** The word already exists: the learner opens it or saves anyway. */
 data class DuplicateWarning(val existingId: String, val packTitle: String)
 
@@ -45,9 +56,22 @@ data class ContentEditUiState(
     val linkedKanji: Set<String> = emptySet(),
     /** A looked-up character with no kanji in any pack. */
     val kanjiNotFound: String? = null,
+    /**
+     * Kanji only: its examples as they will be after Lưu (pack examples read only, then the
+     * learner's; ids starting with [NEW_EXAMPLE] are not saved yet). Hủy discards the changes.
+     */
+    val examples: List<KanjiExample> = emptyList(),
+    val deletedExamples: Set<String> = emptySet(),
+    val changedExamples: Set<String> = emptySet(),
+    val exampleEditor: ExampleEditor? = null,
 ) {
+    val isKanji: Boolean get() = item?.type == ItemType.KANJI
+
     val isWord: Boolean get() = item?.type == ItemType.VOCABULARY || (item == null && fields.contains(EditableField.WORD_EXPRESSION))
 }
+
+/** Prefix of examples kept in the form but not saved yet. */
+const val NEW_EXAMPLE = "new-"
 
 class ContentEditViewModel(
     private val target: EditTarget,
@@ -86,9 +110,71 @@ class ContentEditViewModel(
                         )
                     }
                     if (item?.type == ItemType.VOCABULARY) addChoices(item.label)
+                    if (item?.type == ItemType.KANJI) loadExamples(item.id)
                 }
             }
         }
+    }
+
+    private suspend fun loadExamples(kanjiId: String) {
+        val examples = try {
+            repository.kanjiExamples(kanjiId)
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            emptyList()
+        }
+        _state.update { it.copy(examples = examples) }
+    }
+
+    fun addExample() = _state.update { it.copy(exampleEditor = ExampleEditor(null, ExampleDraft())) }
+
+    fun editExample(id: String) = _state.update { s ->
+        val example = s.examples.firstOrNull { it.id == id && it.own } ?: return@update s
+        s.copy(exampleEditor = ExampleEditor(id, example.toDraft()))
+    }
+
+    fun onExampleChange(draft: ExampleDraft) = _state.update { s ->
+        s.copy(exampleEditor = s.exampleEditor?.copy(draft = draft, errors = emptyMap()))
+    }
+
+    fun dismissExampleEditor() = _state.update { it.copy(exampleEditor = null) }
+
+    /** Checks the dialog's example and keeps it in the form (written on Lưu). */
+    fun keepExample() = _state.update { s ->
+        val editor = s.exampleEditor ?: return@update s
+        val (valid, errors) = KanjiExampleValidator.validate(s.item?.label.orEmpty(), editor.draft)
+        if (valid == null) return@update s.copy(exampleEditor = editor.copy(errors = errors))
+        val key = editor.key ?: (NEW_EXAMPLE + s.examples.size + "-" + System.nanoTime())
+        val example = KanjiExample(key, valid.japanese, valid.furigana, valid.meaningVi, own = true)
+        val examples = if (editor.key == null) s.examples + example else s.examples.map { if (it.id == key) example else it }
+        s.copy(
+            examples = examples,
+            changedExamples = if (editor.key == null || key.startsWith(NEW_EXAMPLE)) s.changedExamples else s.changedExamples + key,
+            exampleEditor = null,
+        )
+    }
+
+    /** Removes one of the learner's examples from the form (deleted on Lưu). */
+    fun removeExample(id: String) = _state.update { s ->
+        if (s.examples.none { it.id == id && it.own }) return@update s
+        s.copy(
+            examples = s.examples.filterNot { it.id == id },
+            deletedExamples = if (id.startsWith(NEW_EXAMPLE)) s.deletedExamples else s.deletedExamples + id,
+            changedExamples = s.changedExamples - id,
+        )
+    }
+
+    /** Writes the kept example changes; false when one could not be written. */
+    private suspend fun saveExamples(kanjiId: String): Boolean {
+        val s = _state.value
+        var ok = true
+        s.deletedExamples.forEach { ok = repository.deleteKanjiExample(it) && ok }
+        s.examples.filter { it.own && (it.id.startsWith(NEW_EXAMPLE) || it.id in s.changedExamples) }.forEach { e ->
+            val id = e.id.takeUnless { it.startsWith(NEW_EXAMPLE) }
+            ok = repository.saveKanjiExample(kanjiId, id, e.toDraft()) is ExampleSaveResult.Saved && ok
+        }
+        return ok
     }
 
     fun onChange(field: EditableField, value: String) {
@@ -130,7 +216,16 @@ class ContentEditViewModel(
             is EditTarget.Existing -> repository.save(target.type, target.id, s.values, links, allowDuplicate)
         }.let { result ->
             when (result) {
-                is SaveResult.Saved -> _state.update { it.copy(event = EditEvent.SAVED) }
+                is SaveResult.Saved -> {
+                    val kanji = (target as? EditTarget.Existing)?.takeIf { it.type == ItemType.KANJI }
+                    if (kanji == null || saveExamples(kanji.id)) {
+                        _state.update { it.copy(event = EditEvent.SAVED) }
+                    } else {
+                        // Some example could not be written: stay, with the saved state reloaded.
+                        _state.update { it.copy(problem = EditProblem.SAVE_FAILED, deletedExamples = emptySet(), changedExamples = emptySet()) }
+                        loadExamples(kanji.id)
+                    }
+                }
                 is SaveResult.Invalid -> _state.update { it.copy(errors = result.errors) }
                 is SaveResult.DuplicateWord -> _state.update { it.copy(duplicate = DuplicateWarning(result.existingId, result.packTitle)) }
                 SaveResult.NotFound -> _state.update { it.copy(problem = EditProblem.NOT_FOUND) }

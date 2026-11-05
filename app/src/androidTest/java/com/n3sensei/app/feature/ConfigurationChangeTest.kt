@@ -92,6 +92,7 @@ class ConfigurationChangeTest {
         launch().use { scenario ->
             openTab(TopLevelDestination.LEARN)
             composeRule.onNode(hasText(string(R.string.vocabulary_title)) and hasClickAction()).performClick()
+            composeRule.onNode(hasText(string(R.string.vocabulary_all)) and hasClickAction()).performClick()
             waitFor("経験")
             composeRule.onNode(hasSetTextAction()).performTextInput("ふえる")
             composeRule.waitUntil(5_000) { composeRule.onAllNodes(hasText("経験")).fetchSemanticsNodes().isEmpty() }
@@ -109,6 +110,7 @@ class ConfigurationChangeTest {
         launch().use { scenario ->
             openTab(TopLevelDestination.LEARN)
             composeRule.onNode(hasText(string(R.string.vocabulary_title)) and hasClickAction()).performClick()
+            composeRule.onNode(hasText(string(R.string.vocabulary_all)) and hasClickAction()).performClick()
             waitFor("経験")
             composeRule.onNodeWithText("経験").performClick()
             waitFor("kinh nghiệm", substring = true)

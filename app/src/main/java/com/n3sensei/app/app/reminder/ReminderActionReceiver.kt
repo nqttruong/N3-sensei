@@ -6,6 +6,7 @@ import android.content.Intent
 import com.n3sensei.app.N3SenseiApplication
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.practice.PracticeItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -21,14 +22,21 @@ class ReminderActionReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action != ACTION_MARK) return
         val id = intent.getStringExtra(EXTRA_VOCABULARY_ID) ?: return
+        // Reminders of earlier versions only had words, and no type extra.
+        val type = ItemType.entries.firstOrNull { it.name == intent.getStringExtra(EXTRA_ITEM_TYPE) } ?: ItemType.VOCABULARY
         val container = (context.applicationContext as N3SenseiApplication).container
         val pending = goAsync()
         scope.launch {
             try {
-                val ref = ItemRef(ItemType.VOCABULARY, id)
+                val ref = ItemRef(type, id)
                 container.progressRepository.setMarked(ref, true)
-                val expression = container.contentRepository.getVocabularyDetail(id)?.vocabulary?.expression
-                AndroidReminderNotifier(context).showMarkedConfirmation(expression)
+                val label = when (val item = container.contentRepository.getPracticeItem(ref)) {
+                    is PracticeItem.VocabularyItem -> item.vocabulary.expression
+                    is PracticeItem.KanjiItem -> item.kanji.character
+                    is PracticeItem.GrammarItem -> item.grammar.pattern
+                    null -> null
+                }
+                AndroidReminderNotifier(context).showMarkedConfirmation(label)
             } finally {
                 pending.finish()
             }
@@ -37,7 +45,9 @@ class ReminderActionReceiver : BroadcastReceiver() {
 
     companion object {
         const val ACTION_MARK = "com.n3sensei.app.action.MARK_FOR_REVIEW"
+        /** The item id (named for the first version, which had words only). */
         const val EXTRA_VOCABULARY_ID = "vocabulary_id"
+        const val EXTRA_ITEM_TYPE = "item_type"
         private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     }
 }

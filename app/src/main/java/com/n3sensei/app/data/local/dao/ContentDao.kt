@@ -110,6 +110,16 @@ abstract class ContentDao {
     )
     abstract suspend fun getKanjiExamples(kanjiId: String): List<ExampleSentenceEntity>
 
+    /** Examples the learner added to a kanji, in the order they were added. */
+    @Query(
+        """
+        SELECT e.* FROM example_sentences e
+        JOIN user_kanji_examples x ON x.example_id = e.id
+        WHERE x.kanji_id = :kanjiId ORDER BY x.sort_order
+        """,
+    )
+    abstract suspend fun getOwnKanjiExamples(kanjiId: String): List<ExampleSentenceEntity>
+
     /** Vocabulary the learner linked to a kanji (not the kanji's own example words). */
     @Query(
         """
@@ -166,7 +176,7 @@ abstract class ContentDao {
     open suspend fun getKanjiDetail(id: String): KanjiDetailRow? {
         val kanji = getKanji(id) ?: return null
         val source = getSource(kanji.sourceId) ?: return null
-        return KanjiDetailRow(kanji, getKanjiExamples(id), source, getLinkedVocabulary(id))
+        return KanjiDetailRow(kanji, getKanjiExamples(id) + getOwnKanjiExamples(id), source, getLinkedVocabulary(id))
     }
 
     @Transaction
@@ -250,6 +260,8 @@ abstract class ContentDao {
             AND (:status IS NULL OR (:status = 'NEW' AND p.item_id IS NULL) OR p.state = :status)
             AND (:markedOnly = 0 OR m.item_id IS NOT NULL)
             AND (:pattern IS NULL OR v.search_text LIKE :pattern ESCAPE '\')
+            AND (:userWordsOnly = 0 OR (v.lesson_id = 'user-words-l1' AND v.id LIKE 'user-w-%'
+                AND EXISTS (SELECT 1 FROM user_words u WHERE u.vocabulary_id = v.id)))
         ORDER BY CASE WHEN v.expression = :query OR v.reading = :query THEN 0 ELSE 1 END,
             l.pack_id, l.number, v.sort_order
         LIMIT :limit
@@ -263,6 +275,8 @@ abstract class ContentDao {
         pattern: String?,
         query: String?,
         limit: Int,
+        // Literals above match UserWords.LESSON_ID and UserWords.ID_PREFIX.
+        userWordsOnly: Boolean = false,
     ): Flow<List<VocabularyItemRow>>
 
     @Query(

@@ -17,13 +17,13 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AssistChip
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -35,31 +35,38 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.BarValue
+import com.n3sensei.app.core.designsystem.component.Caption
 import com.n3sensei.app.core.designsystem.component.DailyBarChart
 import com.n3sensei.app.core.designsystem.component.FilterChipRow
 import com.n3sensei.app.core.designsystem.component.FilterOption
 import com.n3sensei.app.core.designsystem.component.InfoBanner
-import com.n3sensei.app.core.designsystem.component.SectionHeader
+import com.n3sensei.app.core.designsystem.component.SectionCard
 import com.n3sensei.app.core.designsystem.component.StackSegment
 import com.n3sensei.app.core.designsystem.component.StackedBar
 import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.content.StatItem
+import com.n3sensei.app.core.ui.content.StudyColors
 import com.n3sensei.app.core.ui.content.labelRes
+import com.n3sensei.app.core.ui.state.DashboardViewModel
+import com.n3sensei.app.core.ui.state.UiState
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.analytics.DayActivity
 import com.n3sensei.app.domain.analytics.StatsPeriod
 import com.n3sensei.app.domain.analytics.StatusCounts
+import com.n3sensei.app.domain.forecast.TrendUnit
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.domain.model.ReviewRating
-import kotlin.math.roundToInt
 import java.time.format.DateTimeFormatter
+import kotlin.math.roundToInt
 
 @Composable
 fun StatsScreen(
     viewModel: StatsViewModel,
+    /** The figures that were on Trang chủ: forecast, trend, volume, progress estimate, sessions. */
+    dashboardViewModel: DashboardViewModel,
     onOpenReview: () -> Unit,
     onOpenList: (ItemType, LearningStatus?) -> Unit,
     onOpenItem: (ItemRef) -> Unit,
@@ -67,6 +74,9 @@ fun StatsScreen(
 ) {
     val period by viewModel.period.collectAsStateWithLifecycle()
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val dashboard by dashboardViewModel.state.collectAsStateWithLifecycle()
+    // Day by day is the daily chart below: the trend here starts by week.
+    LaunchedEffect(Unit) { if (dashboardViewModel.trendUnit.value == TrendUnit.DAY) dashboardViewModel.selectTrendUnit(TrendUnit.WEEK) }
     Column(modifier = modifier.fillMaxSize()) {
         FilterChipRow(
             options = listOf(
@@ -92,10 +102,17 @@ fun StatsScreen(
                 DueCard(ui, onOpenReview)
                 RecallCard(ui)
                 DailyCard(ui.daily)
+                (dashboard as? UiState.Success)?.data?.let { d -> DashboardTrendCard(d, dashboardViewModel::selectTrendUnit, units = listOf(TrendUnit.WEEK, TrendUnit.MONTH)) }
                 ForecastCard(ui.forecast)
+                (dashboard as? UiState.Success)?.data?.let { d -> DashboardForecastCard(d) }
                 StreakCard(ui)
                 ProgressCard(ui, onOpenList)
                 TroubleCard(ui, onOpenItem)
+                (dashboard as? UiState.Success)?.data?.let { d ->
+                    DashboardVolumeCard(d)
+                    DashboardProgressCard(d.progress, d.assumptions.newPerDay)
+                    DashboardSessionsCard(d)
+                }
                 Text(
                     stringResource(R.string.stats_excluded_note),
                     style = MaterialTheme.typography.bodySmall,
@@ -108,18 +125,11 @@ fun StatsScreen(
 
 @Composable
 private fun StatsCard(@StringRes titleRes: Int, title: String = stringResource(titleRes), content: @Composable () -> Unit) {
-    ElevatedCard(modifier = Modifier.fillMaxWidth()) {
-        Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            SectionHeader(title)
-            content()
-        }
-    }
+    SectionCard(title) { content() }
 }
 
 @Composable
-private fun Note(text: String) {
-    Text(text, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-}
+private fun Note(text: String) = Caption(text)
 
 @Composable
 private fun ActivityCard(ui: StatsUiState) {
@@ -169,7 +179,6 @@ private fun RecallCard(ui: StatsUiState) {
                 )
             }
         }
-        val colors = MaterialTheme.colorScheme
         val line = stringResource(
             R.string.stats_rating_line,
             ratings[ReviewRating.AGAIN] ?: 0,
@@ -178,12 +187,7 @@ private fun RecallCard(ui: StatsUiState) {
             ratings[ReviewRating.EASY] ?: 0,
         )
         StackedBar(
-            segments = listOf(
-                StackSegment(ratings[ReviewRating.AGAIN] ?: 0, colors.error),
-                StackSegment(ratings[ReviewRating.HARD] ?: 0, colors.outline),
-                StackSegment(ratings[ReviewRating.GOOD] ?: 0, colors.primary),
-                StackSegment(ratings[ReviewRating.EASY] ?: 0, colors.tertiary),
-            ),
+            segments = ReviewRating.entries.map { StackSegment(ratings[it] ?: 0, StudyColors.ratingAccent(it)) },
             description = line,
         )
         Text(line, style = MaterialTheme.typography.bodySmall)
@@ -244,13 +248,7 @@ private fun StreakCard(ui: StatsUiState) {
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun ProgressCard(ui: StatsUiState, onOpenList: (ItemType, LearningStatus?) -> Unit) {
-    val colors = MaterialTheme.colorScheme
-    val statusColors: List<Pair<LearningStatus, Color>> = listOf(
-        LearningStatus.NEW to colors.outlineVariant,
-        LearningStatus.LEARNING to colors.inversePrimary,
-        LearningStatus.REVIEW to colors.primary,
-        LearningStatus.MASTERED to colors.tertiary,
-    )
+    val statusColors: List<Pair<LearningStatus, Color>> = LearningStatus.entries.map { it to StudyColors.status(it) }
     StatsCard(R.string.stats_progress) {
         listOf(
             ItemType.VOCABULARY to R.string.totals_vocabulary,

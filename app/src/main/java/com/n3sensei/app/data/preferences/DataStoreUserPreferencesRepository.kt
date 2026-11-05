@@ -9,7 +9,9 @@ import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.model.UserPreferences
+import com.n3sensei.app.domain.reminder.ReminderContent
 import com.n3sensei.app.domain.reminder.ReminderSettings
+import com.n3sensei.app.domain.widget.WidgetSettings
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
 import com.n3sensei.app.domain.srs.DailyLimits
 import com.n3sensei.app.domain.srs.ReviewLadder
@@ -37,6 +39,14 @@ class DataStoreUserPreferencesRepository(
         val REMINDER_FREQUENCY = stringPreferencesKey("reminder_frequency")
         val REMINDER_SHOW_READING = booleanPreferencesKey("reminder_show_reading")
         val REMINDER_SHOW_MEANING = booleanPreferencesKey("reminder_show_meaning")
+        val REMINDER_MAX_PER_DAY = intPreferencesKey("reminder_max_per_day")
+        val REMINDER_CONTENT = stringPreferencesKey("reminder_content")
+        val REMINDER_REVIEW_ONLY = booleanPreferencesKey("reminder_review_only")
+        val WIDGET_MODE = stringPreferencesKey("widget_mode")
+        val WIDGET_LESSON = intPreferencesKey("widget_lesson")
+        val WIDGET_SHOW_FURIGANA = booleanPreferencesKey("widget_show_furigana")
+        val WIDGET_SHOW_MEANING = booleanPreferencesKey("widget_show_meaning")
+        val WIDGET_TAP = stringPreferencesKey("widget_tap")
         val REMINDER_LOCK_SCREEN = stringPreferencesKey("reminder_lock_screen")
     }
 
@@ -56,6 +66,7 @@ class DataStoreUserPreferencesRepository(
                     limits = readLimits(prefs),
                 ),
                 reminderSettings = readReminder(prefs),
+                widgetSettings = readWidget(prefs),
             )
         }
 
@@ -76,6 +87,11 @@ class DataStoreUserPreferencesRepository(
             showReading = prefs[Keys.REMINDER_SHOW_READING] ?: d.showReading,
             showMeaning = prefs[Keys.REMINDER_SHOW_MEANING] ?: d.showMeaning,
             lockScreen = enumOrDefault(prefs[Keys.REMINDER_LOCK_SCREEN], d.lockScreen),
+            maxPerDay = prefs[Keys.REMINDER_MAX_PER_DAY]?.takeIf { it in 0..MAX_REMINDERS_PER_DAY } ?: d.maxPerDay,
+            content = prefs[Keys.REMINDER_CONTENT]?.split(',')
+                ?.mapNotNull { name -> ReminderContent.entries.firstOrNull { it.name == name } }
+                ?.toSet()?.ifEmpty { null } ?: d.content,
+            reviewOnly = prefs[Keys.REMINDER_REVIEW_ONLY] ?: d.reviewOnly,
         )
     }
 
@@ -91,6 +107,30 @@ class DataStoreUserPreferencesRepository(
             it[Keys.REMINDER_SHOW_READING] = settings.showReading
             it[Keys.REMINDER_SHOW_MEANING] = settings.showMeaning
             it[Keys.REMINDER_LOCK_SCREEN] = settings.lockScreen.name
+            it[Keys.REMINDER_MAX_PER_DAY] = settings.maxPerDay
+            it[Keys.REMINDER_CONTENT] = settings.content.sortedBy { c -> c.ordinal }.joinToString(",") { c -> c.name }
+            it[Keys.REMINDER_REVIEW_ONLY] = settings.reviewOnly
+        }
+    }
+
+    private fun readWidget(prefs: Preferences): WidgetSettings {
+        val d = WidgetSettings()
+        return WidgetSettings(
+            mode = enumOrDefault(prefs[Keys.WIDGET_MODE], d.mode),
+            lesson = prefs[Keys.WIDGET_LESSON]?.takeIf { it >= 1 } ?: d.lesson,
+            showFurigana = prefs[Keys.WIDGET_SHOW_FURIGANA] ?: d.showFurigana,
+            showMeaning = prefs[Keys.WIDGET_SHOW_MEANING] ?: d.showMeaning,
+            tap = enumOrDefault(prefs[Keys.WIDGET_TAP], d.tap),
+        )
+    }
+
+    override suspend fun setWidgetSettings(settings: WidgetSettings) {
+        dataStore.edit {
+            it[Keys.WIDGET_MODE] = settings.mode.name
+            it[Keys.WIDGET_LESSON] = settings.lesson
+            it[Keys.WIDGET_SHOW_FURIGANA] = settings.showFurigana
+            it[Keys.WIDGET_SHOW_MEANING] = settings.showMeaning
+            it[Keys.WIDGET_TAP] = settings.tap.name
         }
     }
 
@@ -114,3 +154,6 @@ class DataStoreUserPreferencesRepository(
         dataStore.edit { it[Keys.SHOW_FURIGANA] = show }
     }
 }
+
+/** Stored values above this (e.g. edited by hand) fall back to the default. */
+private const val MAX_REMINDERS_PER_DAY = 100

@@ -2,6 +2,9 @@ package com.n3sensei.app.domain.repository
 
 import com.n3sensei.app.domain.edit.EditableField
 import com.n3sensei.app.domain.edit.EditableItem
+import com.n3sensei.app.domain.edit.ExampleDraft
+import com.n3sensei.app.domain.edit.ExampleSaveResult
+import com.n3sensei.app.domain.edit.KanjiExample
 import com.n3sensei.app.domain.edit.KanjiChoice
 import com.n3sensei.app.domain.edit.SaveResult
 import com.n3sensei.app.domain.model.ItemType
@@ -38,6 +41,18 @@ interface UserContentRepository {
 
     /** Kanji written with any of the characters of [text], in every installed pack. */
     suspend fun kanjiChoices(text: String): List<KanjiChoice>
+
+    /** The kanji's examples: the pack's (read only) first, then the learner's own. */
+    suspend fun kanjiExamples(kanjiId: String): List<KanjiExample>
+
+    /**
+     * Adds an example to a kanji ([exampleId] null) or changes one of the learner's examples.
+     * Pack examples cannot be changed. Validated with [com.n3sensei.app.domain.edit.KanjiExampleValidator].
+     */
+    suspend fun saveKanjiExample(kanjiId: String, exampleId: String?, draft: ExampleDraft): ExampleSaveResult
+
+    /** Deletes one of the learner's kanji examples; false for a pack example or an unknown id. */
+    suspend fun deleteKanjiExample(exampleId: String): Boolean
 
     /** Edits and links whose item is no longer in any installed pack (kept; they apply again if it returns). */
     suspend fun countOrphans(): Int

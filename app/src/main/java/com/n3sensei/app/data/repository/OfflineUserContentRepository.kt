@@ -4,11 +4,17 @@ import com.n3sensei.app.data.local.ContentEdits
 import com.n3sensei.app.data.local.StringListCodec
 import com.n3sensei.app.data.local.dao.KanjiChoiceRow
 import com.n3sensei.app.data.local.dao.UserContentDao
+import com.n3sensei.app.data.local.entity.ExampleSentenceEntity
 import com.n3sensei.app.data.local.entity.UserContentEditEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.domain.edit.ContentEditValidator
 import com.n3sensei.app.domain.edit.EditableField
 import com.n3sensei.app.domain.edit.EditableItem
+import com.n3sensei.app.domain.edit.ExampleDraft
+import com.n3sensei.app.domain.edit.ExampleSaveResult
+import com.n3sensei.app.domain.edit.KanjiExample
+import com.n3sensei.app.domain.edit.KanjiExampleValidator
+import com.n3sensei.app.domain.edit.ValidExample
 import com.n3sensei.app.domain.edit.FieldKind
 import com.n3sensei.app.domain.edit.KanjiChoice
 import com.n3sensei.app.domain.edit.SaveResult
@@ -24,6 +30,7 @@ class OfflineUserContentRepository(
     private val dao: UserContentDao,
     private val clock: Clock,
     private val newId: () -> String = { UserWords.ID_PREFIX + UUID.randomUUID() },
+    private val newExampleId: () -> String = { UserWords.KANJI_EXAMPLE_ID_PREFIX + UUID.randomUUID() },
 ) : UserContentRepository {
 
     // Form text ↔ stored value: only readings differ (、-joined in the form, codec in the column).
@@ -194,6 +201,38 @@ class OfflineUserContentRepository(
     }
 
     override suspend fun countOrphans(): Int = dao.countOrphans()
+
+    override suspend fun kanjiExamples(kanjiId: String): List<KanjiExample> =
+        dao.packKanjiExamples(kanjiId).map { KanjiExample(it.id, it.japanese, it.furigana, it.translationVi, own = false) } +
+            dao.ownKanjiExamples(kanjiId).map { KanjiExample(it.id, it.japanese, it.furigana, it.translationVi, own = true) }
+
+    override suspend fun saveKanjiExample(kanjiId: String, exampleId: String?, draft: ExampleDraft): ExampleSaveResult = try {
+        val kanji = dao.getKanji(kanjiId)
+        if (kanji == null) {
+            ExampleSaveResult.NotFound
+        } else {
+            val (valid, errors) = KanjiExampleValidator.validate(kanji.character, draft)
+            when {
+                valid == null -> ExampleSaveResult.Invalid(errors)
+                exampleId == null -> {
+                    val id = newExampleId()
+                    dao.addKanjiExample(kanjiId, valid.toEntity(id), clock.millis())
+                    ExampleSaveResult.Saved(id)
+                }
+                dao.updateKanjiExample(valid.toEntity(exampleId), clock.millis()) -> ExampleSaveResult.Saved(exampleId)
+                else -> ExampleSaveResult.NotFound
+            }
+        }
+    } catch (e: CancellationException) {
+        throw e
+    } catch (e: Exception) {
+        ExampleSaveResult.Failed
+    }
+
+    private fun ValidExample.toEntity(id: String) =
+        ExampleSentenceEntity(id, UserWords.PACK_ID, UserWords.SOURCE_ID, japanese, furigana, meaningVi)
+
+    override suspend fun deleteKanjiExample(exampleId: String): Boolean = runCatchingDb { dao.deleteKanjiExample(exampleId) } ?: false
 
     private inline fun guarded(block: () -> SaveResult): SaveResult = runCatchingDb(block) ?: SaveResult.Failed
 

@@ -39,6 +39,20 @@
             android:name=".app.reminder.ReminderActionReceiver"
             android:exported="false" />
 
+        <!-- Widgets: 2×2 (first name kept for widgets already placed) and 1×1. Exported as
+             launchers bind them; they only render, and act through our own PendingIntents. -->
+        <receiver
+            android:name=".app.widget.SmallStudyWordWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_small_title">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/study_word_widget_small_info" />
+        </receiver>
+
         <receiver
             android:name=".app.widget.StudyWordWidgetReceiver"
             android:exported="true"

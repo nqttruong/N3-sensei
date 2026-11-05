@@ -16,6 +16,7 @@ import com.n3sensei.app.domain.model.ProgressState
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.reminder.LockScreenPrivacy
+import com.n3sensei.app.domain.reminder.ReminderContent
 import com.n3sensei.app.domain.reminder.ReminderFrequency
 import com.n3sensei.app.domain.srs.DailyLimits
 import com.n3sensei.app.domain.srs.ReviewLadder
@@ -393,6 +394,10 @@ object BackupCodec {
                 showReading = required(r.showReading, "reminder.showReading"),
                 showMeaning = required(r.showMeaning, "reminder.showMeaning"),
                 lockScreen = enumField<LockScreenPrivacy>(r.lockScreen, "reminder.lockScreen"),
+                // Optional: absent in older backups. Unknown kinds are ignored, not an error.
+                maxPerDay = r.maxPerDay?.also { check(it in 0..100, "reminder.maxPerDay") },
+                content = r.content?.mapNotNull { name -> ReminderContent.entries.firstOrNull { it.name == name } }?.toSet(),
+                reviewOnly = r.reviewOnly,
             ),
         )
     }
@@ -415,6 +420,7 @@ object BackupCodec {
         reminder = ReminderDto(
             reminder.startHour, reminder.endHour, reminder.frequency.name,
             reminder.showReading, reminder.showMeaning, reminder.lockScreen.name,
+            reminder.maxPerDay, reminder.content?.sortedBy { it.ordinal }?.map { it.name }, reminder.reviewOnly,
         ),
     )
 

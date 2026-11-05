@@ -12,6 +12,7 @@ import com.n3sensei.app.domain.model.Vocabulary
 import com.n3sensei.app.domain.repository.ContentRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 
@@ -19,8 +20,10 @@ class VocabularyListViewModel(
     private val contentRepository: ContentRepository,
     initialStatus: LearningStatus? = null,
     initialLessonId: String? = null,
-) : ItemBrowserViewModel<Vocabulary>(contentRepository, ItemType.VOCABULARY, initialStatus, initialLessonId) {
-    override val tags: StateFlow<List<Tag>> = contentRepository.observeTags()
+    /** "Từ của tôi": only words the learner added; no lesson or topic chips. */
+    val myWords: Boolean = false,
+) : ItemBrowserViewModel<Vocabulary>(contentRepository, ItemType.VOCABULARY, initialStatus, initialLessonId, userWordsOnly = myWords) {
+    override val tags: StateFlow<List<Tag>> = (if (myWords) flowOf(emptyList()) else contentRepository.observeTags())
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), emptyList())
 
     override fun observe(query: ItemQuery): Flow<List<TrackedItem<Vocabulary>>> = contentRepository.observeVocabularyItems(query)

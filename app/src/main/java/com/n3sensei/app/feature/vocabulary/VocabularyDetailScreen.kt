@@ -29,7 +29,10 @@ import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.content.ExampleSentenceItem
 import com.n3sensei.app.core.ui.content.ItemActions
 import com.n3sensei.app.core.ui.content.KanjiCard
+import com.n3sensei.app.core.ui.content.LocationSection
+import com.n3sensei.app.core.ui.content.LocationTag
 import com.n3sensei.app.core.ui.content.SourceNote
+import com.n3sensei.app.core.ui.state.DetailLocation
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.VocabularyDetail
 
@@ -48,8 +51,9 @@ fun VocabularyDetailScreen(
         onPauseOrDispose {}
     }
     val scheduleInfo by viewModel.scheduleInfo.collectAsStateWithLifecycle()
+    val location by viewModel.location.collectAsStateWithLifecycle()
     UiStateContent(state = state, onRetry = viewModel::refresh, modifier = modifier) { detail ->
-        VocabularyDetailContent(detail, onOpenKanji) {
+        VocabularyDetailContent(detail, location, onOpenKanji) {
             ItemActions(scheduleInfo, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.vocabulary.lessonId) })
             OutlinedButton(onClick = onEdit) { Text(stringResource(R.string.edit_action)) }
         }
@@ -58,7 +62,7 @@ fun VocabularyDetailScreen(
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun VocabularyDetailContent(detail: VocabularyDetail, onOpenKanji: (String) -> Unit, actions: @Composable () -> Unit) {
+private fun VocabularyDetailContent(detail: VocabularyDetail, location: DetailLocation?, onOpenKanji: (String) -> Unit, actions: @Composable () -> Unit) {
     val vocabulary = detail.vocabulary
     Column(
         modifier = Modifier
@@ -67,6 +71,8 @@ private fun VocabularyDetailContent(detail: VocabularyDetail, onOpenKanji: (Stri
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
+        // Where it is studied, first, like the running head of a page.
+        location?.let { LocationTag(it.location) }
         if (vocabulary.furigana != null) {
             FuriganaText(vocabulary.furigana, style = MaterialTheme.typography.displaySmall)
         } else {
@@ -107,6 +113,7 @@ private fun VocabularyDetailContent(detail: VocabularyDetail, onOpenKanji: (Stri
             }
         }
         HorizontalDivider()
+        location?.let { LocationSection(it) }
         SourceNote(detail.source)
     }
 }

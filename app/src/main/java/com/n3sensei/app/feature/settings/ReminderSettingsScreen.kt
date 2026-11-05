@@ -47,6 +47,11 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
+import com.n3sensei.app.domain.reminder.ReminderSettings
+import com.n3sensei.app.domain.reminder.ReminderContent
+import androidx.compose.material3.FilterChip
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import com.n3sensei.app.core.designsystem.component.InfoBanner
 import com.n3sensei.app.core.designsystem.component.SectionHeader
 import com.n3sensei.app.core.ui.state.LoadingContent
@@ -54,6 +59,7 @@ import com.n3sensei.app.domain.reminder.LockScreenPrivacy
 import com.n3sensei.app.domain.reminder.ReminderFrequency
 import com.n3sensei.app.domain.reminder.ReminderOutcome
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ReminderSettingsScreen(
     viewModel: ReminderSettingsViewModel,
@@ -124,10 +130,56 @@ fun ReminderSettingsScreen(
 
         SectionHeader(stringResource(R.string.reminder_frequency), Modifier.padding(horizontal = 16.dp))
         Column(Modifier.selectableGroup()) {
-            ReminderFrequency.entries.forEach { frequency ->
+            // A longer period chosen in an earlier version stays listed while it is selected.
+            (ReminderFrequency.SELECTABLE + current.frequency).distinct().sortedBy { it.minutes }.forEach { frequency ->
                 RadioRow(frequencyLabel(frequency), current.frequency == frequency) { viewModel.setFrequency(frequency) }
             }
         }
+        Text(
+            stringResource(R.string.reminder_frequency_hint),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            modifier = Modifier.padding(16.dp, 4.dp),
+        )
+
+        SectionHeader(stringResource(R.string.reminder_max_per_day), Modifier.padding(horizontal = 16.dp))
+        ChoiceChips(
+            options = ReminderSettings.MAX_PER_DAY_CHOICES,
+            selected = current.maxPerDay,
+            label = { if (it == 0) stringResource(R.string.reminder_max_unlimited) else stringResource(R.string.reminder_max_value, it) },
+            onSelect = viewModel::setMaxPerDay,
+        )
+        HorizontalDivider(Modifier.padding(top = 8.dp))
+
+        SectionHeader(stringResource(R.string.reminder_scope), Modifier.padding(horizontal = 16.dp))
+        FlowRow(
+            modifier = Modifier.padding(horizontal = 16.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            ReminderContent.entries.forEach { kind ->
+                FilterChip(
+                    selected = kind in current.content,
+                    onClick = { viewModel.toggleContent(kind) },
+                    label = {
+                        Text(
+                            stringResource(
+                                when (kind) {
+                                    ReminderContent.VOCABULARY -> R.string.totals_vocabulary
+                                    ReminderContent.KANJI -> R.string.totals_kanji
+                                    ReminderContent.GRAMMAR -> R.string.totals_grammar
+                                },
+                            ),
+                        )
+                    },
+                )
+            }
+        }
+        SwitchRow(
+            stringResource(R.string.reminder_review_only),
+            stringResource(R.string.reminder_review_only_description),
+            current.reviewOnly,
+            viewModel::setReviewOnly,
+        )
         HorizontalDivider()
 
         SectionHeader(stringResource(R.string.reminder_content), Modifier.padding(horizontal = 16.dp))
@@ -168,6 +220,7 @@ fun ReminderSettingsScreen(
                         when (outcome) {
                             ReminderOutcome.SHOWN -> R.string.reminder_test_shown
                             ReminderOutcome.NOTIFICATIONS_BLOCKED -> R.string.reminder_test_blocked
+                            ReminderOutcome.NOTHING_TO_SHOW -> R.string.reminder_test_nothing
                             else -> R.string.reminder_test_nothing
                         },
                     ),
@@ -194,12 +247,25 @@ fun ReminderSettingsScreen(
 private const val WIDGET_RECEIVER = "com.n3sensei.app.app.widget.StudyWordWidgetReceiver"
 
 @Composable
-fun frequencyLabel(frequency: ReminderFrequency): String =
-    if (frequency == ReminderFrequency.ONCE_A_DAY) {
-        stringResource(R.string.reminder_frequency_daily)
-    } else {
-        stringResource(R.string.reminder_frequency_hours, frequency.hours)
+fun frequencyLabel(frequency: ReminderFrequency): String = when {
+    frequency == ReminderFrequency.ONCE_A_DAY -> stringResource(R.string.reminder_frequency_daily)
+    frequency.minutes < 60 -> stringResource(R.string.reminder_frequency_minutes, frequency.minutes)
+    else -> stringResource(R.string.reminder_frequency_hours, frequency.minutes / 60)
+}
+
+/** Single choice among a few values, as chips (fits the daily-limit row on one or two lines). */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun <T> ChoiceChips(options: List<T>, selected: T, label: @Composable (T) -> String, onSelect: (T) -> Unit) {
+    FlowRow(
+        modifier = Modifier.padding(horizontal = 16.dp).selectableGroup(),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        options.forEach { option ->
+            FilterChip(selected = option == selected, onClick = { onSelect(option) }, label = { Text(label(option)) })
+        }
     }
+}
 
 @Composable
 private fun HourPicker(hour: Int, onSelect: (Int) -> Unit) {

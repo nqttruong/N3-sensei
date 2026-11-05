@@ -1,5 +1,6 @@
 package com.n3sensei.app.testing
 
+import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.model.ContentPackInfo
 import com.n3sensei.app.domain.model.ContentSource
 import com.n3sensei.app.domain.model.ContentTotals
@@ -80,6 +81,8 @@ class FakeContentRepository : ContentRepository {
                 .filter { query.text.isBlank() || textOf(it).any { t -> query.text.trim() in t } }
                 .filter { !query.markedOnly || idOf(it) in marks }
                 .filter { query.status == null || query.status == LearningStatus.NEW }
+                // No user_words table here: the lesson and the generated id prefix stand for it.
+                .filter { !query.userWordsOnly || (lessonOf(it) == UserWords.LESSON_ID && idOf(it).startsWith(UserWords.ID_PREFIX)) }
                 .map { TrackedItem(it, LearningStatus.NEW, idOf(it) in marks) }
                 .toList()
         }

@@ -10,7 +10,7 @@ import com.n3sensei.app.domain.reminder.ReminderSettings
 import java.util.concurrent.TimeUnit
 
 /**
- * One unique periodic job, every [ReminderSettings.frequency] hours.
+ * One unique periodic job, every [ReminderSettings.frequency] (15 minutes to a day).
  *
  * Android limits background work: WorkManager runs are inexact (the system may delay them,
  * e.g. in Doze or app-standby buckets, and batches them with other apps), the minimum period
@@ -26,8 +26,8 @@ class WorkManagerReminderScheduler(private val context: Context) : ReminderSched
             return
         }
         val request = PeriodicWorkRequestBuilder<ReminderWorker>(
-            settings.frequency.hours.toLong(), TimeUnit.HOURS,
-            FLEX_MINUTES, TimeUnit.MINUTES,
+            settings.frequency.minutes.toLong(), TimeUnit.MINUTES,
+            flexMinutes(settings.frequency.minutes), TimeUnit.MINUTES,
         )
             .setConstraints(Constraints.Builder().setRequiresBatteryNotLow(true).build())
             .addTag(WORK_NAME)
@@ -38,6 +38,11 @@ class WorkManagerReminderScheduler(private val context: Context) : ReminderSched
 
     companion object {
         const val WORK_NAME = "study_reminder"
-        private const val FLEX_MINUTES = 30L
+
+        /**
+         * The window at the end of each period in which the run may happen: a quarter of the
+         * period, between WorkManager's 5-minute minimum and 30 minutes.
+         */
+        fun flexMinutes(periodMinutes: Int): Long = (periodMinutes / 4).coerceIn(5, 30).toLong()
     }
 }

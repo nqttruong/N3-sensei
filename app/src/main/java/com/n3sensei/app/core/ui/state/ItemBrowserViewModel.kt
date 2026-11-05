@@ -2,6 +2,7 @@ package com.n3sensei.app.core.ui.state
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.n3sensei.app.domain.course.ItemLocations
 import com.n3sensei.app.domain.model.ItemQuery
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningStatus
@@ -40,16 +41,21 @@ abstract class ItemBrowserViewModel<T>(
     itemType: ItemType,
     initialStatus: LearningStatus? = null,
     initialLessonId: String? = null,
+    /** "Từ của tôi": only the learner's own words, with no lesson to switch to. */
+    userWordsOnly: Boolean = false,
 ) : ViewModel() {
 
-    private val _filters = MutableStateFlow(ItemQuery(status = initialStatus, lessonId = initialLessonId))
+    private val _filters = MutableStateFlow(ItemQuery(status = initialStatus, lessonId = initialLessonId, userWordsOnly = userWordsOnly))
 
     /** Current filters; [ItemQuery.text] is what the user typed (not yet debounced). */
     val filters: StateFlow<ItemQuery> = _filters.asStateFlow()
 
     val lessons: StateFlow<List<LessonSummary>> = contentRepository.observeLessons()
-        .map { all -> all.filter { it.countOf(itemType) > 0 } }
+        .map { all -> if (userWordsOnly) emptyList() else all.filter { it.countOf(itemType) > 0 } }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), emptyList())
+
+    /** Where every item is studied, for the location tag on each card. */
+    val locations: StateFlow<ItemLocations> = itemLocations(viewModelScope, contentRepository)
 
     /** Topics available for filtering; empty for item types without topics. */
     open val tags: StateFlow<List<Tag>> = MutableStateFlow(emptyList())

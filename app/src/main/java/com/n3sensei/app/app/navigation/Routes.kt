@@ -23,6 +23,15 @@ import kotlinx.serialization.Serializable
  */
 @Serializable data class VocabularyRoute(val status: String? = null, val lessonId: String? = null)
 
+/** "Học → Từ vựng": the vocabulary in groups of at most 30 words. */
+@Serializable data object VocabularyGroupsRoute
+
+/** One vocabulary group, by [VocabularyGroup.key][com.n3sensei.app.domain.course.VocabularyGroup.key]. */
+@Serializable data class VocabularyGroupRoute(val key: String)
+
+/** "Từ của tôi": only the words the learner added. */
+@Serializable data object MyWordsRoute
+
 @Serializable data class VocabularyDetailRoute(val vocabularyId: String)
 
 /** [status] pre-selects the learning-status filter (a LearningStatus name). */
@@ -49,7 +58,13 @@ import kotlinx.serialization.Serializable
 
 /** Practice one lesson's items, or marked items (optionally within [lessonId]). */
 /** [courseLesson]: the items of a "Bài học" lesson (by number) instead of a pack lesson. */
-@Serializable data class PracticeRoute(val lessonId: String? = null, val markedOnly: Boolean = false, val courseLesson: Int? = null)
+@Serializable data class PracticeRoute(
+    val lessonId: String? = null,
+    val markedOnly: Boolean = false,
+    val courseLesson: Int? = null,
+    /** Practice one vocabulary group of "Học → Từ vựng". */
+    val vocabularyGroup: String? = null,
+)
 
 /** Session result travels as arguments: it is not persisted anywhere. */
 @Serializable
@@ -63,6 +78,7 @@ data class PracticeResultRoute(
     val easy: Int,
     val durationSeconds: Long,
     val courseLesson: Int? = null,
+    val vocabularyGroup: String? = null,
 )
 
 @Serializable data object ReviewRoute
@@ -87,3 +103,4 @@ data class ReviewResultRoute(
 @Serializable data object ReviewSettingsRoute
 
 @Serializable data object ReminderSettingsRoute
+@Serializable data object WidgetSettingsRoute

@@ -5,6 +5,7 @@ import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.testing.FakeContentRepository
 import com.n3sensei.app.testing.FakeProgressRepository
+import com.n3sensei.app.testing.FakeReminderHistory
 import com.n3sensei.app.testing.FakeReminderNotifier
 import com.n3sensei.app.testing.FakeReminderStateStore
 import com.n3sensei.app.testing.FakeUserPreferencesRepository
@@ -35,7 +36,8 @@ class ReminderRunnerTest {
     )
     private val notifier = FakeReminderNotifier()
     private val state = FakeReminderStateStore()
-    private val runner = ReminderRunner(prefs, state, content, progress, notifier, clock)
+    private val history = FakeReminderHistory()
+    private val runner = ReminderRunner(prefs, state, content, progress, notifier, clock, history)
 
     private fun v(id: String) = ItemRef(ItemType.VOCABULARY, id)
 
@@ -45,7 +47,7 @@ class ReminderRunnerTest {
         progress.newItems = listOf(v("v2"))
         assertEquals(ReminderOutcome.SHOWN, runner.runScheduled())
         val message = notifier.shown.single()
-        assertEquals("v3", message.vocabulary.id)
+        assertEquals("v3", message.item.ref.id)
         assertEquals(ReminderReason.DUE, message.reason)
         assertEquals(3, message.dueCount)
     }
@@ -57,21 +59,21 @@ class ReminderRunnerTest {
         assertEquals(ReminderReason.MARKED, runner.nextMessage(ReminderSettings())!!.reason)
         content.marked.value = emptySet()
         val next = runner.nextMessage(ReminderSettings())!!
-        assertEquals("v1", next.vocabulary.id)
+        assertEquals("v1", next.item.ref.id)
         assertEquals(ReminderReason.NEW, next.reason)
     }
 
     @Test
     fun avoidsRepeatingTheLastWord_whenAnotherIsAvailable() = runTest {
         progress.dueItems = listOf(v("v1"), v("v2"))
-        state.state = ReminderState(lastShownAt = null, lastVocabularyId = "v1")
+        state.state = ReminderState(lastShownAt = null, lastItem = v("v1"))
         runner.runScheduled()
-        assertEquals("v2", notifier.shown.single().vocabulary.id)
+        assertEquals("v2", notifier.shown.single().item.ref.id)
         // With only one candidate it is shown again rather than nothing.
         progress.dueItems = listOf(v("v2"))
         clock.advance(Duration.ofHours(3))
         runner.runScheduled()
-        assertEquals("v2", notifier.shown.last().vocabulary.id)
+        assertEquals("v2", notifier.shown.last().item.ref.id)
     }
 
     @Test
@@ -86,7 +88,7 @@ class ReminderRunnerTest {
     fun deletedContent_isSkipped() = runTest {
         progress.dueItems = listOf(v("gone"), v("v1"))
         runner.runScheduled()
-        assertEquals("v1", notifier.shown.single().vocabulary.id)
+        assertEquals("v1", notifier.shown.single().item.ref.id)
     }
 
     @Test
@@ -126,5 +128,81 @@ class ReminderRunnerTest {
         assertEquals(0, progress.submitCalls)
         assertTrue(progress.records.isEmpty())
         assertTrue(progress.progress.isEmpty())
+    }
+
+    private suspend fun showEvery(minutes: Long, times: Int): List<String> = List(times) {
+        assertEquals(ReminderOutcome.SHOWN, runner.runScheduled())
+        clock.advance(Duration.ofMinutes(minutes))
+        notifier.shown.last().item.ref.id
+    }
+
+    @Test
+    fun theSameFewWordsDoNotComeBackInTurn_everyCandidateIsShownFirst() = runTest {
+        // Before: A, B, A, B… (only the last word was avoided). Now every word comes once first.
+        prefs.preferences.value = prefs.preferences.value.copy(
+            reminderSettings = ReminderSettings(enabled = true, startHour = 0, endHour = 0, frequency = ReminderFrequency.EVERY_15_MINUTES, maxPerDay = 0),
+        )
+        progress.dueItems = listOf(v("v1"), v("v2"), v("v3"))
+        assertEquals(listOf("v1", "v2", "v3"), showEvery(15, 3))
+        // All shown within 24 hours: the one shown longest ago, never the last one again.
+        assertEquals(listOf("v1", "v2", "v3"), showEvery(15, 3))
+        assertEquals(3, history.shown.size)
+    }
+
+    @Test
+    fun aShownItemRests24Hours_thenMayComeBack() = runTest {
+        progress.dueItems = listOf(v("v1"))
+        progress.newItems = listOf(v("v2"))
+        runner.showNow()
+        assertEquals("v1", notifier.shown.last().item.ref.id)
+        // v1 is still the most urgent, but was just shown: the new word goes first.
+        clock.advance(Duration.ofHours(2))
+        runner.showNow()
+        assertEquals("v2", notifier.shown.last().item.ref.id)
+        clock.advance(Duration.ofHours(23))
+        runner.showNow()
+        assertEquals("v1", notifier.shown.last().item.ref.id)
+    }
+
+    @Test
+    fun dailyLimit_stopsScheduledRuns_untilTheNextDay() = runTest {
+        prefs.preferences.value = prefs.preferences.value.copy(
+            reminderSettings = ReminderSettings(enabled = true, startHour = 0, endHour = 0, frequency = ReminderFrequency.EVERY_15_MINUTES, maxPerDay = 2),
+        )
+        progress.newItems = listOf(v("v1"), v("v2"), v("v3"))
+        clock.now = Instant.parse("2026-10-11T00:10:00Z")
+        assertEquals(ReminderOutcome.SHOWN, runner.runScheduled())
+        clock.advance(Duration.ofMinutes(15))
+        assertEquals(ReminderOutcome.SHOWN, runner.runScheduled())
+        clock.advance(Duration.ofMinutes(15))
+        assertEquals(ReminderOutcome.DAILY_LIMIT, runner.runScheduled())
+        assertEquals(2, state.state.countToday)
+        clock.now = Instant.parse("2026-10-12T00:05:00Z")
+        assertEquals(ReminderOutcome.SHOWN, runner.runScheduled())
+        assertEquals(1, state.state.countToday)
+    }
+
+    @Test
+    fun frequencyOf15Minutes_allowsARunAfter12Minutes_notAfter10() = runTest {
+        prefs.preferences.value = prefs.preferences.value.copy(
+            reminderSettings = ReminderSettings(enabled = true, startHour = 0, endHour = 0, frequency = ReminderFrequency.EVERY_15_MINUTES),
+        )
+        progress.newItems = listOf(v("v1"), v("v2"))
+        assertEquals(ReminderOutcome.SHOWN, runner.runScheduled())
+        clock.advance(Duration.ofMinutes(10))
+        assertEquals(ReminderOutcome.TOO_SOON, runner.runScheduled())
+        clock.advance(Duration.ofMinutes(2))
+        assertEquals(ReminderOutcome.SHOWN, runner.runScheduled())
+    }
+
+    @Test
+    fun contentKinds_andReviewOnly_limitWhatIsShown() = runTest {
+        progress.dueItems = listOf(ItemRef(ItemType.KANJI, "k1"))
+        progress.newItems = listOf(v("v1"))
+        val kanjiOnly = ReminderSettings(content = setOf(ReminderContent.KANJI))
+        assertEquals(ItemRef(ItemType.KANJI, "k1"), runner.nextMessage(kanjiOnly)!!.item.ref)
+        // Words only, review only: the kanji is not a word and v1 is new, so nothing.
+        assertNull(runner.nextMessage(ReminderSettings(reviewOnly = true)))
+        assertEquals("v1", runner.nextMessage(ReminderSettings())!!.item.ref.id)
     }
 }

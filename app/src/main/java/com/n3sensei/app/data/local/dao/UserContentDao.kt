@@ -15,6 +15,7 @@ import com.n3sensei.app.data.local.entity.GrammarEntity
 import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.LessonEntity
 import com.n3sensei.app.data.local.entity.UserContentEditEntity
+import com.n3sensei.app.data.local.entity.UserKanjiExampleEntity
 import com.n3sensei.app.data.local.entity.UserWordEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.data.local.entity.VocabularyExampleCrossRef
@@ -289,6 +290,39 @@ abstract class UserContentDao {
     @Query("DELETE FROM example_sentences WHERE id = :id")
     abstract suspend fun deleteExample(id: String)
 
+    @Upsert
+    abstract suspend fun upsertKanjiExampleLink(row: UserKanjiExampleEntity)
+
+    @Query("SELECT * FROM user_kanji_examples WHERE example_id = :id")
+    abstract suspend fun getKanjiExampleLink(id: String): UserKanjiExampleEntity?
+
+    @Query("DELETE FROM user_kanji_examples WHERE example_id = :id")
+    abstract suspend fun deleteKanjiExampleLink(id: String)
+
+    @Query("SELECT COALESCE(MAX(sort_order), -1) FROM user_kanji_examples WHERE kanji_id = :kanjiId")
+    abstract suspend fun maxKanjiExampleOrder(kanjiId: String): Int
+
+    @Query("SELECT * FROM example_sentences WHERE id = :id")
+    abstract suspend fun getExample(id: String): ExampleSentenceEntity?
+
+    /** The kanji's examples from its pack (read only in the edit form). */
+    @Query(
+        """
+        SELECT e.* FROM example_sentences e JOIN kanji_examples x ON x.example_id = e.id
+        WHERE x.kanji_id = :kanjiId ORDER BY x.sort_order
+        """,
+    )
+    abstract suspend fun packKanjiExamples(kanjiId: String): List<ExampleSentenceEntity>
+
+    /** The learner's examples of a kanji, in the order they were added. */
+    @Query(
+        """
+        SELECT e.* FROM example_sentences e JOIN user_kanji_examples x ON x.example_id = e.id
+        WHERE x.kanji_id = :kanjiId ORDER BY x.sort_order
+        """,
+    )
+    abstract suspend fun ownKanjiExamples(kanjiId: String): List<ExampleSentenceEntity>
+
     /** Creates the "Từ của tôi" pack, its lesson and source if they are not there yet. */
     @Transaction
     open suspend fun ensureUserPack(now: Long) {
@@ -316,12 +350,16 @@ abstract class UserContentDao {
         setLinks(row.id, kanjiIds, now)
     }
 
-    /** Saves one of the learner's words: the row, its example (null = none) and the date of the change. */
+    /**
+     * Saves one of the learner's words: the row, its example (null = none) and the date of the
+     * change. Only [addUserWord] creates the `user_words` row that makes a word the learner's
+     * own; editing never does, so a word that was not added by the learner cannot become one.
+     */
     @Transaction
     open suspend fun updateUserWord(row: VocabularyEntity, example: Pair<String, String>?, now: Long) {
         updateVocabulary(row.withSearchText())
         setExample(row.id, example)
-        upsertUserWord(UserWordEntity(row.id, getUserWord(row.id)?.createdAt ?: now, now))
+        getUserWord(row.id)?.let { upsertUserWord(it.copy(updatedAt = now)) }
     }
 
     /** The learner's words have at most one example, with the id `user-x-<word id>`. */
@@ -333,6 +371,32 @@ abstract class UserContentDao {
             upsertExample(ExampleSentenceEntity(id, UserWords.PACK_ID, UserWords.SOURCE_ID, example.first, null, example.second))
             insertVocabularyExample(VocabularyExampleCrossRef(vocabularyId, id, 0))
         }
+    }
+
+    /** Adds a learner's example ([example] in the learner's pack) at the end of the kanji's own examples. */
+    @Transaction
+    open suspend fun addKanjiExample(kanjiId: String, example: ExampleSentenceEntity, now: Long) {
+        ensureUserPack(now)
+        upsertExample(example)
+        upsertKanjiExampleLink(UserKanjiExampleEntity(example.id, kanjiId, maxKanjiExampleOrder(kanjiId) + 1, now, now))
+    }
+
+    /** Changes one of the learner's kanji examples; false if [example] is not one (pack examples are read only). */
+    @Transaction
+    open suspend fun updateKanjiExample(example: ExampleSentenceEntity, now: Long): Boolean {
+        val link = getKanjiExampleLink(example.id) ?: return false
+        upsertExample(example)
+        upsertKanjiExampleLink(link.copy(updatedAt = now))
+        return true
+    }
+
+    /** Deletes one of the learner's kanji examples; false (and nothing deleted) for any other example. */
+    @Transaction
+    open suspend fun deleteKanjiExample(id: String): Boolean {
+        getKanjiExampleLink(id) ?: return false
+        deleteKanjiExampleLink(id)
+        deleteExample(id)
+        return true
     }
 
     /** Deletes one of the learner's words with its example, schedule, mark and links (review history stays). */

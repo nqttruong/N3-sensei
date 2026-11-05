@@ -1,5 +1,6 @@
 package com.n3sensei.app.domain.model
 
+import com.n3sensei.app.domain.widget.WidgetSettings
 import com.n3sensei.app.domain.reminder.ReminderSettings
 import com.n3sensei.app.domain.srs.ReviewSettings
 
@@ -12,4 +13,5 @@ data class UserPreferences(
     val showFurigana: Boolean = true,
     val reviewSettings: ReviewSettings = ReviewSettings(),
     val reminderSettings: ReminderSettings = ReminderSettings(),
+    val widgetSettings: WidgetSettings = WidgetSettings(),
 )

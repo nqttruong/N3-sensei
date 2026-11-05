@@ -6,6 +6,7 @@ import com.n3sensei.app.domain.model.ProgressState
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.reminder.LockScreenPrivacy
+import com.n3sensei.app.domain.reminder.ReminderContent
 import com.n3sensei.app.domain.reminder.ReminderFrequency
 import com.n3sensei.app.domain.reminder.ReminderSettings
 import com.n3sensei.app.domain.srs.ReviewSettings
@@ -62,15 +63,24 @@ data class ReminderBackup(
     val showReading: Boolean,
     val showMeaning: Boolean,
     val lockScreen: LockScreenPrivacy,
+    /** Null in backups made before these settings existed: the current values are kept. */
+    val maxPerDay: Int? = null,
+    val content: Set<ReminderContent>? = null,
+    val reviewOnly: Boolean? = null,
 ) {
     fun applyTo(current: ReminderSettings): ReminderSettings =
         current.copy(
             startHour = startHour, endHour = endHour, frequency = frequency,
             showReading = showReading, showMeaning = showMeaning, lockScreen = lockScreen,
+            maxPerDay = maxPerDay ?: current.maxPerDay,
+            content = content?.ifEmpty { null } ?: current.content,
+            reviewOnly = reviewOnly ?: current.reviewOnly,
         )
 
     companion object {
-        fun from(s: ReminderSettings) = ReminderBackup(s.startHour, s.endHour, s.frequency, s.showReading, s.showMeaning, s.lockScreen)
+        fun from(s: ReminderSettings) = ReminderBackup(
+            s.startHour, s.endHour, s.frequency, s.showReading, s.showMeaning, s.lockScreen, s.maxPerDay, s.content, s.reviewOnly,
+        )
     }
 }
 
