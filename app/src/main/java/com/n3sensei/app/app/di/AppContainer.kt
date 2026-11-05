@@ -114,7 +114,7 @@ class DefaultAppContainer(context: Context) : AppContainer {
 
     override val proverbRepository: ProverbRepository by lazy { AssetProverbRepository(appContext) }
 
-    override val examRepository: ExamRepository by lazy { OfflineExamRepository(database.examDao(), clock) }
+    override val examRepository: ExamRepository by lazy { OfflineExamRepository(database, clock) }
 
     override val widgetContentPicker: WidgetContentPicker by lazy { WidgetContentPicker(contentRepository, progressRepository, clock) }
 

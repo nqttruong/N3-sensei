@@ -20,6 +20,7 @@ import com.n3sensei.app.data.local.entity.ContentSourceEntity
 import com.n3sensei.app.data.local.entity.ErrorRecordEntity
 import com.n3sensei.app.data.local.entity.ExamAnswerEntity
 import com.n3sensei.app.data.local.entity.ExamAttemptEntity
+import com.n3sensei.app.data.local.entity.ExamFlagEntity
 import com.n3sensei.app.data.local.entity.ExamPassageEntity
 import com.n3sensei.app.data.local.entity.ExamQuestionEntity
 import com.n3sensei.app.data.local.entity.ExamQuestionItemEntity
@@ -78,6 +79,7 @@ import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
         ExamQuestionItemEntity::class,
         ExamAttemptEntity::class,
         ExamAnswerEntity::class,
+        ExamFlagEntity::class,
         ErrorRecordEntity::class,
         ReviewItemEntity::class,
     ],
@@ -97,7 +99,7 @@ abstract class N3Database : RoomDatabase() {
     abstract fun examDao(): ExamDao
 
     companion object {
-        const val VERSION = 9
+        const val VERSION = 10
         const val NAME = "n3sensei.db"
 
         /**

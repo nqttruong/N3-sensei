@@ -47,7 +47,7 @@ class ExamRepositoryTest {
 
     private fun open() {
         db = N3Database.create(context, name)
-        exams = OfflineExamRepository(db.examDao(), clock) { "attempt-${++ids}" }
+        exams = OfflineExamRepository(db, clock) { "attempt-${++ids}" }
     }
 
     @Before

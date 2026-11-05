@@ -354,4 +354,33 @@ class N3DatabaseMigrationTest {
         }
         instrumentation.targetContext.deleteDatabase(name)
     }
+
+    @Test
+    fun anAttemptInProgressWrittenWithV9Schema_survivesTheMigrationTo10_onItsFirstQuestionWithNoFlags() = runTest {
+        val name = "migration-test-data-v9"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 9).apply {
+            execSQL("INSERT INTO exam_attempts VALUES ('a-1', 'set-1', 'Đề', 1000, NULL, 1800, NULL, NULL, 6, 'IN_PROGRESS')")
+            execSQL("INSERT INTO exam_answers VALUES ('a-1', 'q-1', 2, NULL, 1, 4000, NULL, 1, 2000, '{}')")
+            execSQL("INSERT INTO user_words VALUES ('user-w-1', 10, 20)")
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 10, true, N3Migrations.MIGRATION_9_10).use { db ->
+            db.query("SELECT status, current_question_id, time_limit_seconds FROM exam_attempts WHERE id = 'a-1'").use { c ->
+                assertTrue(c.moveToFirst()); assertEquals("IN_PROGRESS", c.getString(0)); assertTrue(c.isNull(1)); assertEquals(1800, c.getInt(2))
+            }
+            db.query("SELECT selected_index, change_count FROM exam_answers").use { c ->
+                assertTrue(c.moveToFirst()); assertEquals(2, c.getInt(0)); assertEquals(1, c.getInt(1))
+            }
+            db.query("SELECT COUNT(*) FROM user_words").use { c -> c.moveToFirst(); assertEquals(1, c.getInt(0)) }
+            db.query("SELECT COUNT(*) FROM exam_flags").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+            // A flag goes with its attempt.
+            db.execSQL("PRAGMA foreign_keys = ON")
+            db.execSQL("INSERT INTO exam_flags VALUES ('a-1', 'q-1', 3000)")
+            db.execSQL("DELETE FROM exam_attempts WHERE id = 'a-1'")
+            db.query("SELECT COUNT(*) FROM exam_flags").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+            db.query("PRAGMA foreign_key_check").use { c -> assertFalse(c.moveToFirst()) }
+        }
+        instrumentation.targetContext.deleteDatabase(name)
+    }
 }

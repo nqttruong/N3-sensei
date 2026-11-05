@@ -21,7 +21,54 @@ enum class QuestionType {
 /** How a question is answered: pick one option, or type the answer. Listening questions are CHOICE with audio. */
 enum class AnswerFormat { CHOICE, TEXT }
 
-enum class AttemptStatus { IN_PROGRESS, SUBMITTED, ABANDONED }
+/**
+ * Stored state of an attempt. [SUBMITTED] and [EXPIRED] are both submitted (scored, mistakes
+ * recorded, read-only): [EXPIRED] means the time ran out and the attempt was submitted for the
+ * learner at its deadline. [ABANDONED]: left without a score.
+ */
+enum class AttemptStatus {
+    IN_PROGRESS, SUBMITTED, EXPIRED, ABANDONED;
+
+    val isSubmitted: Boolean get() = this == SUBMITTED || this == EXPIRED
+}
+
+/** Where an exam session stands, including before its attempt exists. */
+enum class ExamSessionStatus {
+    NOT_STARTED, IN_PROGRESS, SUBMITTED, EXPIRED, ABANDONED;
+
+    companion object {
+        fun of(attempt: ExamAttempt?): ExamSessionStatus = when (attempt?.status) {
+            null -> NOT_STARTED
+            AttemptStatus.IN_PROGRESS -> IN_PROGRESS
+            AttemptStatus.SUBMITTED -> SUBMITTED
+            AttemptStatus.EXPIRED -> EXPIRED
+            AttemptStatus.ABANDONED -> ABANDONED
+        }
+    }
+}
+
+/** The skill a question trains, as the exam list filters them. */
+enum class ExamSkill {
+    VOCABULARY, KANJI, GRAMMAR, READING, LISTENING;
+
+    companion object {
+        /** From the question's task; a question of type OTHER takes its section's skill. */
+        fun of(type: QuestionType, section: ExamSectionKind): ExamSkill = when (type) {
+            QuestionType.KANJI_READING, QuestionType.ORTHOGRAPHY -> KANJI
+            QuestionType.CONTEXT, QuestionType.PARAPHRASE, QuestionType.USAGE -> VOCABULARY
+            QuestionType.GRAMMAR_FORM, QuestionType.SENTENCE_ORDER, QuestionType.TEXT_GRAMMAR -> GRAMMAR
+            QuestionType.READING_SHORT, QuestionType.READING_MID, QuestionType.READING_LONG, QuestionType.INFORMATION_SEARCH -> READING
+            QuestionType.LISTENING_TASK, QuestionType.LISTENING_POINT, QuestionType.LISTENING_SUMMARY,
+            QuestionType.LISTENING_EXPRESSION, QuestionType.LISTENING_RESPONSE -> LISTENING
+            QuestionType.OTHER -> when (section) {
+                ExamSectionKind.VOCABULARY -> VOCABULARY
+                ExamSectionKind.GRAMMAR -> GRAMMAR
+                ExamSectionKind.READING -> READING
+                ExamSectionKind.LISTENING -> LISTENING
+            }
+        }
+    }
+}
 
 enum class Confidence { LOW, MEDIUM, HIGH }
 
@@ -71,6 +118,9 @@ data class ExamSet(
     val questions: List<ExamQuestion>,
 ) {
     val totalQuestions: Int get() = questions.size
+
+    fun skillOf(question: ExamQuestion): ExamSkill =
+        ExamSkill.of(question.type, sections.firstOrNull { it.id == question.sectionId }?.kind ?: ExamSectionKind.VOCABULARY)
 }
 
 /** An exam set in a list: counts come from the questions and attempts, never stored apart. */
@@ -84,7 +134,17 @@ data class ExamSetSummary(
     val submittedAttempts: Int,
     /** Correct answers of the last submitted attempt; null before the first one. */
     val lastCorrect: Int?,
+    /** Skills its questions train (one for a section exam, several for a full one). */
+    val skills: Set<ExamSkill> = emptySet(),
 )
+
+/** Exam list filter; null means any. A set matches a skill when any of its questions trains it. */
+data class ExamSetFilter(val jlptLevel: String? = null, val skill: ExamSkill? = null, val type: ExamType? = null) {
+    fun matches(set: ExamSetSummary): Boolean =
+        (jlptLevel == null || set.jlptLevel.equals(jlptLevel, ignoreCase = true)) &&
+            (skill == null || skill in set.skills) &&
+            (type == null || set.type == type)
+}
 
 data class ExamAttempt(
     val id: String,
@@ -97,6 +157,8 @@ data class ExamAttempt(
     val correctCount: Int?,
     val questionCount: Int,
     val status: AttemptStatus,
+    /** The question the learner was on; null before they moved (the first question). */
+    val currentQuestionId: String? = null,
 )
 
 /** What the learner gave: an option for CHOICE questions, a text for TEXT questions. */

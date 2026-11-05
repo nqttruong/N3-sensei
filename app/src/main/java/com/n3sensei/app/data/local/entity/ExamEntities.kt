@@ -130,8 +130,22 @@ data class ExamAttemptEntity(
     @ColumnInfo(name = "duration_seconds") val durationSeconds: Long?,
     @ColumnInfo(name = "correct_count") val correctCount: Int?,
     @ColumnInfo(name = "question_count") val questionCount: Int,
-    /** IN_PROGRESS, SUBMITTED or ABANDONED (see AttemptStatus). */
+    /** IN_PROGRESS, SUBMITTED, EXPIRED or ABANDONED (see AttemptStatus). */
     val status: String,
+    /** The question the learner was on, so a resumed attempt opens where it was left (schema 10). */
+    @ColumnInfo(name = "current_question_id") val currentQuestionId: String? = null,
+)
+
+/** A question the learner marked to look at again before submitting (schema 10). */
+@Entity(
+    tableName = "exam_flags",
+    primaryKeys = ["attempt_id", "question_id"],
+    foreignKeys = [ForeignKey(entity = ExamAttemptEntity::class, parentColumns = ["id"], childColumns = ["attempt_id"], onDelete = ForeignKey.CASCADE)],
+)
+data class ExamFlagEntity(
+    @ColumnInfo(name = "attempt_id") val attemptId: String,
+    @ColumnInfo(name = "question_id") val questionId: String,
+    @ColumnInfo(name = "flagged_at") val flaggedAt: Long,
 )
 
 /** The learner's answer to one question in one attempt (changing it updates the row). */

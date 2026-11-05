@@ -11,6 +11,7 @@ import androidx.room.Upsert
 import com.n3sensei.app.data.local.entity.ErrorRecordEntity
 import com.n3sensei.app.data.local.entity.ExamAnswerEntity
 import com.n3sensei.app.data.local.entity.ExamAttemptEntity
+import com.n3sensei.app.data.local.entity.ExamFlagEntity
 import com.n3sensei.app.data.local.entity.ExamPassageEntity
 import com.n3sensei.app.data.local.entity.ExamQuestionEntity
 import com.n3sensei.app.data.local.entity.ExamQuestionItemEntity
@@ -38,6 +39,13 @@ data class ExamSetSummaryRow(
 data class ErrorReviewRow(
     @Embedded val error: ErrorRecordEntity,
     @Embedded(prefix = "r_") val review: ReviewItemEntity,
+)
+
+/** One kind of question in a set: its type and the section it is in (to tell the set's skills). */
+data class ExamQuestionKindRow(
+    @ColumnInfo(name = "exam_set_id") val examSetId: String,
+    @ColumnInfo(name = "question_type") val questionType: String,
+    val section: String,
 )
 
 /** A wrong (or unanswered) answer of a submitted attempt, to put in the error notebook. */
@@ -82,13 +90,21 @@ abstract class ExamDao {
         """
         SELECT s.*,
             (SELECT COUNT(*) FROM exam_questions q WHERE q.exam_set_id = s.id) AS question_count,
-            (SELECT COUNT(*) FROM exam_attempts a WHERE a.exam_set_id = s.id AND a.status = 'SUBMITTED') AS submitted_attempts,
-            (SELECT a.correct_count FROM exam_attempts a WHERE a.exam_set_id = s.id AND a.status = 'SUBMITTED'
+            (SELECT COUNT(*) FROM exam_attempts a WHERE a.exam_set_id = s.id AND a.status IN ('SUBMITTED', 'EXPIRED')) AS submitted_attempts,
+            (SELECT a.correct_count FROM exam_attempts a WHERE a.exam_set_id = s.id AND a.status IN ('SUBMITTED', 'EXPIRED')
                 ORDER BY a.submitted_at DESC LIMIT 1) AS last_correct
         FROM exam_sets s ORDER BY s.jlpt_level, s.created_at, s.title
         """,
     )
     abstract fun observeSetSummaries(): Flow<List<ExamSetSummaryRow>>
+
+    @Query(
+        """
+        SELECT DISTINCT q.exam_set_id, q.question_type, s.section
+        FROM exam_questions q JOIN exam_sections s ON s.id = q.section_id
+        """,
+    )
+    abstract fun observeQuestionKinds(): Flow<List<ExamQuestionKindRow>>
 
     @Query("SELECT * FROM exam_sets WHERE id = :id")
     abstract suspend fun getSet(id: String): ExamSetEntity?
@@ -136,6 +152,21 @@ abstract class ExamDao {
 
     @Query("SELECT * FROM exam_attempts WHERE (:setId IS NULL OR exam_set_id = :setId) ORDER BY started_at DESC")
     abstract fun observeAttempts(setId: String?): Flow<List<ExamAttemptEntity>>
+
+    @Query("SELECT * FROM exam_attempts WHERE status = 'IN_PROGRESS' ORDER BY started_at DESC")
+    abstract suspend fun getInProgressAttempts(): List<ExamAttemptEntity>
+
+    @Query("UPDATE exam_attempts SET current_question_id = :questionId WHERE id = :attemptId AND status = 'IN_PROGRESS'")
+    abstract suspend fun setCurrentQuestion(attemptId: String, questionId: String): Int
+
+    @Upsert
+    abstract suspend fun upsertFlag(row: ExamFlagEntity)
+
+    @Query("DELETE FROM exam_flags WHERE attempt_id = :attemptId AND question_id = :questionId")
+    abstract suspend fun deleteFlag(attemptId: String, questionId: String): Int
+
+    @Query("SELECT question_id FROM exam_flags WHERE attempt_id = :attemptId ORDER BY flagged_at, question_id")
+    abstract suspend fun getFlags(attemptId: String): List<String>
 
     @Upsert
     abstract suspend fun upsertAnswer(row: ExamAnswerEntity)

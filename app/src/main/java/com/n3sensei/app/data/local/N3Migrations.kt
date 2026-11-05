@@ -172,7 +172,23 @@ object N3Migrations {
         }
     }
 
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9)
+    /**
+     * 9 → 10: exam sessions. `exam_attempts` gets `current_question_id` (null for the attempts
+     * already there: they open on their first question) and `exam_flags` holds the questions
+     * marked to look at again (empty). No row changes.
+     */
+    val MIGRATION_9_10 = object : Migration(9, 10) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `exam_attempts` ADD COLUMN `current_question_id` TEXT")
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `exam_flags` (`attempt_id` TEXT NOT NULL, `question_id` TEXT NOT NULL, " +
+                    "`flagged_at` INTEGER NOT NULL, PRIMARY KEY(`attempt_id`, `question_id`), FOREIGN KEY(`attempt_id`) " +
+                    "REFERENCES `exam_attempts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+            )
+        }
+    }
+
+    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10)
 
     private fun String.toReadings(): String = StringListCodec.decode(this).joinToString(" ")
 

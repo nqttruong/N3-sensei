@@ -1,11 +1,13 @@
 package com.n3sensei.app.data.repository
 
-import com.n3sensei.app.data.local.dao.ExamDao
+import androidx.room.withTransaction
+import com.n3sensei.app.data.local.N3Database
 import com.n3sensei.app.data.local.dao.ExamSetBundle
 import com.n3sensei.app.data.local.dao.WrongAnswer
 import com.n3sensei.app.data.local.entity.ErrorRecordEntity
 import com.n3sensei.app.data.local.entity.ExamAnswerEntity
 import com.n3sensei.app.data.local.entity.ExamAttemptEntity
+import com.n3sensei.app.data.local.entity.ExamFlagEntity
 import com.n3sensei.app.data.local.entity.ExamPassageEntity
 import com.n3sensei.app.data.local.entity.ExamQuestionEntity
 import com.n3sensei.app.data.local.entity.ExamQuestionItemEntity
@@ -29,7 +31,10 @@ import com.n3sensei.app.domain.exam.ExamQuestion
 import com.n3sensei.app.domain.exam.ExamSection
 import com.n3sensei.app.domain.exam.ExamSectionKind
 import com.n3sensei.app.domain.exam.ExamSet
+import com.n3sensei.app.domain.exam.ExamSetFilter
 import com.n3sensei.app.domain.exam.ExamSetSummary
+import com.n3sensei.app.domain.exam.ExamSkill
+import com.n3sensei.app.domain.exam.ExamTimer
 import com.n3sensei.app.domain.exam.ExamType
 import com.n3sensei.app.domain.exam.QuestionType
 import com.n3sensei.app.domain.exam.ReviewItem
@@ -39,28 +44,45 @@ import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.repository.ExamRepository
 import com.n3sensei.app.domain.repository.SaveExamResult
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import java.time.Clock
 import java.util.UUID
 
+/**
+ * Answers and submits read and write in one transaction: a submit and a late answer, or two
+ * submits (the timer and the button), cannot interleave.
+ */
 class OfflineExamRepository(
-    private val dao: ExamDao,
+    private val database: N3Database,
     private val clock: Clock,
     private val newId: () -> String = { UUID.randomUUID().toString() },
 ) : ExamRepository {
 
-    override fun observeExamSets(): Flow<List<ExamSetSummary>> = dao.observeSetSummaries().map { rows ->
-        rows.map {
-            ExamSetSummary(
-                it.set.id, it.set.title, it.set.jlptLevel, enumOr(it.set.examType, ExamType.SECTION),
-                it.set.durationSeconds, it.questionCount, it.submittedAttempts, it.lastCorrect,
-            )
+    private val dao = database.examDao()
+
+    override fun observeExamSets(filter: ExamSetFilter): Flow<List<ExamSetSummary>> =
+        combine(dao.observeSetSummaries(), dao.observeQuestionKinds()) { rows, kinds ->
+            val skills = kinds.groupBy({ it.examSetId }) {
+                ExamSkill.of(enumOr(it.questionType, QuestionType.OTHER), enumOr(it.section, ExamSectionKind.VOCABULARY))
+            }
+            rows.map {
+                ExamSetSummary(
+                    it.set.id, it.set.title, it.set.jlptLevel, enumOr(it.set.examType, ExamType.SECTION),
+                    it.set.durationSeconds, it.questionCount, it.submittedAttempts, it.lastCorrect,
+                    skills[it.set.id].orEmpty().toSet(),
+                )
+            }.filter(filter::matches)
         }
-    }
 
     override suspend fun getExamSet(id: String): ExamSet? = dao.getBundle(id)?.toDomain()
+
+    override suspend fun getQuestions(examSetId: String, skill: ExamSkill?): List<ExamQuestion> {
+        val set = getExamSet(examSetId) ?: return emptyList()
+        return if (skill == null) set.questions else set.questions.filter { set.skillOf(it) == skill }
+    }
 
     override suspend fun saveExamSet(set: ExamSet): SaveExamResult {
         val problems = set.questions.associate { it.id to ExamGrading.problems(it) }.filterValues { it.isNotEmpty() }.toMutableMap()
@@ -87,6 +109,7 @@ class OfflineExamRepository(
             id = newId(), examSetId = set.set.id, examTitle = set.set.title, startedAt = clock.millis(), submittedAt = null,
             timeLimitSeconds = set.set.durationSeconds, durationSeconds = null, correctCount = null,
             questionCount = set.questions.size, status = AttemptStatus.IN_PROGRESS.name,
+            currentQuestionId = set.questions.firstOrNull()?.id,
         )
         dao.insertAttempt(row)
         return row.toDomain()
@@ -98,9 +121,9 @@ class OfflineExamRepository(
         input: AnswerInput,
         timeSpentMs: Long,
         confidence: Confidence?,
-    ): ExamAnswer? {
-        val attempt = dao.getAttempt(attemptId)?.takeIf { it.status == AttemptStatus.IN_PROGRESS.name } ?: return null
-        val entity = dao.getQuestion(questionId)?.takeIf { it.examSetId == attempt.examSetId } ?: return null
+    ): ExamAnswer? = database.withTransaction {
+        val attempt = openAttempt(attemptId) ?: return@withTransaction null
+        val entity = dao.getQuestion(questionId)?.takeIf { it.examSetId == attempt.examSetId } ?: return@withTransaction null
         val question = entity.toDomain(dao.getItemsOf(questionId))
         val previous = dao.getAnswer(attemptId, questionId)
         val selected = (input as? AnswerInput.Choice)?.index
@@ -115,12 +138,22 @@ class OfflineExamRepository(
             answeredAt = clock.millis(), questionSnapshot = snapshot(question),
         )
         dao.upsertAnswer(row)
-        return row.toDomain()
+        row.toDomain()
     }
 
-    override suspend fun submit(attemptId: String): AttemptResult? {
-        val attempt = dao.getAttempt(attemptId)?.takeIf { it.status == AttemptStatus.IN_PROGRESS.name } ?: return null
-        val now = clock.millis()
+    /** The attempt if it still takes changes: in progress and within its time. */
+    private suspend fun openAttempt(attemptId: String): ExamAttemptEntity? =
+        dao.getAttempt(attemptId)?.takeIf {
+            it.status == AttemptStatus.IN_PROGRESS.name && !ExamTimer.isExpired(it.toDomain(), clock.millis())
+        }
+
+    override suspend fun submit(attemptId: String): AttemptResult? = database.withTransaction {
+        val attempt = dao.getAttempt(attemptId)?.takeIf { it.status == AttemptStatus.IN_PROGRESS.name } ?: return@withTransaction null
+        // Past the deadline (e.g. the app was closed), the attempt ends at its deadline: no answer
+        // after it was accepted, and the time used is the limit.
+        val deadline = ExamTimer.deadline(attempt.toDomain())
+        val expired = deadline != null && clock.millis() >= deadline
+        val now = if (expired) deadline!! else clock.millis()
         val answers = dao.getAnswers(attemptId).associateBy { it.questionId }
         // The set as it is now; questions removed since the start are graded from the answers alone.
         val bundle = dao.getBundle(attempt.examSetId)
@@ -144,10 +177,29 @@ class OfflineExamRepository(
             durationSeconds = ((now - attempt.startedAt) / 1000).coerceAtLeast(0),
             correctCount = answers.values.count { it.isCorrect },
             questionCount = questionCount,
-            status = AttemptStatus.SUBMITTED.name,
+            status = if (expired) AttemptStatus.EXPIRED.name else AttemptStatus.SUBMITTED.name,
         )
         dao.submit(updated, wrong, now)
-        return AttemptResult(updated.toDomain(), dao.getAnswers(attemptId).map { it.toDomain() })
+        AttemptResult(updated.toDomain(), dao.getAnswers(attemptId).map { it.toDomain() })
+    }
+
+    override suspend fun setFlag(attemptId: String, questionId: String, flagged: Boolean): Boolean = database.withTransaction {
+        val attempt = openAttempt(attemptId) ?: return@withTransaction false
+        if (dao.getQuestion(questionId)?.examSetId != attempt.examSetId) return@withTransaction false
+        if (flagged) dao.upsertFlag(ExamFlagEntity(attemptId, questionId, clock.millis())) else dao.deleteFlag(attemptId, questionId)
+        true
+    }
+
+    override suspend fun getFlags(attemptId: String): List<String> = dao.getFlags(attemptId)
+
+    override suspend fun setCurrentQuestion(attemptId: String, questionId: String): Boolean =
+        dao.setCurrentQuestion(attemptId, questionId) > 0
+
+    override suspend fun getInProgressAttempts(): List<ExamAttempt> = dao.getInProgressAttempts().map { it.toDomain() }
+
+    override suspend fun getResult(attemptId: String): AttemptResult? {
+        val attempt = dao.getAttempt(attemptId) ?: return null
+        return AttemptResult(attempt.toDomain(), dao.getAnswers(attemptId).map { it.toDomain() })
     }
 
     override suspend fun abandon(attemptId: String): Boolean {
@@ -221,7 +273,7 @@ class OfflineExamRepository(
 
     private fun ExamAttemptEntity.toDomain() = ExamAttempt(
         id, examSetId, examTitle, startedAt, submittedAt, timeLimitSeconds, durationSeconds, correctCount, questionCount,
-        enumOr(status, AttemptStatus.ABANDONED),
+        enumOr(status, AttemptStatus.ABANDONED), currentQuestionId,
     )
 
     private fun ExamAnswerEntity.toDomain() = ExamAnswer(
