@@ -65,6 +65,8 @@ class ReminderRunnerTest {
 
     @Test
     fun avoidsRepeatingTheLastWord_whenAnotherIsAvailable() = runTest {
+        // Due words only (every word of the fake content counts as new otherwise).
+        prefs.preferences.value = prefs.preferences.value.copy(reminderSettings = prefs.preferences.value.reminderSettings.copy(reviewOnly = true))
         progress.dueItems = listOf(v("v1"), v("v2"))
         state.state = ReminderState(lastShownAt = null, lastItem = v("v1"))
         runner.runScheduled()

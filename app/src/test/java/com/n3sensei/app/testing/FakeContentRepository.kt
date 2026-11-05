@@ -4,6 +4,7 @@ import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.model.ContentPackInfo
 import com.n3sensei.app.domain.model.ContentSource
 import com.n3sensei.app.domain.model.ContentTotals
+import com.n3sensei.app.domain.model.ExampleSentence
 import com.n3sensei.app.domain.model.GrammarDetail
 import com.n3sensei.app.domain.model.GrammarPoint
 import com.n3sensei.app.domain.model.ItemQuery
@@ -42,6 +43,7 @@ class FakeContentRepository : ContentRepository {
 
     /** Words of each kanji, by kanji id (none when absent). */
     val kanjiWords = mutableMapOf<String, List<KanjiWord>>()
+    val grammarExamples = mutableMapOf<String, List<ExampleSentence>>()
     var kanjiWordCalls = 0
 
     var failDetails = false
@@ -112,7 +114,7 @@ class FakeContentRepository : ContentRepository {
         kanji.value.firstOrNull { it.id == id }?.let { KanjiDetail(it, emptyList(), TestContent.source) }
 
     override suspend fun getGrammarDetail(id: String): GrammarDetail? =
-        grammar.value.firstOrNull { it.id == id }?.let { GrammarDetail(it, emptyList(), TestContent.source) }
+        grammar.value.firstOrNull { it.id == id }?.let { GrammarDetail(it, grammarExamples[id].orEmpty(), TestContent.source) }
 
     override suspend fun searchVocabulary(query: String, lessonId: String?, limit: Int, offset: Int): List<Vocabulary> {
         searchCalls += query to lessonId

@@ -1,0 +1,80 @@
+# Mimikara N3 · bài 10 (動詞Ｃ): một câu ví dụ cho mỗi từ. Cột: item_id, câu, furigana (annotate.py điền, đã soát tay), dịch.
+mimikara-n3-v716	階段を上って、三階の教室へ行った。	{階段|かいだん}を{上|のぼ}って、{三階|さんがい}の{教室|きょうしつ}へ{行|い}った。	Tôi leo cầu thang lên phòng học ở tầng ba.
+mimikara-n3-v717	ボートで川を下った。	ボートで{川|かわ}を{下|くだ}った。	Chúng tôi xuôi dòng sông bằng thuyền.
+mimikara-n3-v718	列がなかなか前に進まない。	{列|れつ}がなかなか{前|まえ}に{進|すす}まない。	Hàng người mãi không tiến lên được.
+mimikara-n3-v719	この計画は予定どおりに進めてください。	この{計画|けいかく}は{予定|よてい}どおりに{進|すす}めてください。	Hãy tiến hành kế hoạch này đúng như dự định.
+mimikara-n3-v720	この道は車がたくさん通る。	この{道|みち}は{車|くるま}がたくさん{通|とお}る。	Con đường này có nhiều xe qua lại.
+mimikara-n3-v721	すみません、ちょっと通してください。	すみません、ちょっと{通|とお}してください。	Xin lỗi, cho tôi đi qua một chút.
+mimikara-n3-v722	今日の気温は三十五度を超えた。	{今日|きょう}の{気温|きおん}は{三|さん}{十|じゅう}{五|ご}{度|ど}を{超|こ}えた。	Nhiệt độ hôm nay đã vượt quá 35 độ.
+mimikara-n3-v723	約束の時間を十分過ぎても、彼は来なかった。	{約束|やくそく}の{時間|じかん}を{十分|じゅっぷん}{過|す}ぎても、{彼|かれ}は{来|こ}なかった。	Đã quá giờ hẹn mười phút mà anh ấy vẫn chưa đến.
+mimikara-n3-v724	週末は家族と一緒に過ごした。	{週末|しゅうまつ}は{家族|かぞく}と{一緒|いっしょ}に{過|す}ごした。	Cuối tuần tôi đã ở bên gia đình.
+mimikara-n3-v725	来月、大阪の支社に移ることになった。	{来月|らいげつ}、{大阪|おおさか}の{支社|ししゃ}に{移|うつ}ることになった。	Tháng sau tôi sẽ chuyển sang chi nhánh ở Osaka.
+mimikara-n3-v726	会議室を三階から五階に移した。	{会議|かいぎ}{室|しつ}を{三階|さんがい}から{五|ご}{階|かい}に{移|うつ}した。	Phòng họp đã được chuyển từ tầng ba lên tầng năm.
+mimikara-n3-v727	日曜日に子どもを連れて動物園に行った。	{日曜日|にちようび}に{子|こ}どもを{連|つ}れて{動物|どうぶつ}{園|えん}に{行|い}った。	Chủ nhật tôi dẫn con đi sở thú.
+mimikara-n3-v728	帰りに本屋に寄った。	{帰|かえ}りに{本屋|ほんや}に{寄|よ}った。	Trên đường về tôi đã ghé hiệu sách.
+mimikara-n3-v729	車を道の端に寄せて止めた。	{車|くるま}を{道|みち}の{端|はじ}に{寄|よ}せて{止|と}めた。	Tôi tấp xe vào lề đường rồi dừng lại.
+mimikara-n3-v730	子どもにお菓子を与えすぎないでください。	{子|こ}どもにお{菓子|かし}を{与|あた}えすぎないでください。	Xin đừng cho trẻ ăn quá nhiều bánh kẹo.
+mimikara-n3-v731	この仕事から多くの経験を得た。	この{仕事|しごと}から{多|おお}くの{経験|けいけん}を{得|え}た。	Tôi đã có được nhiều kinh nghiệm từ công việc này.
+mimikara-n3-v732	この部屋は南に向いているので、明るい。	この{部屋|へや}は{南|みなみ}に{向|む}いているので、{明|あか}るい。	Căn phòng này hướng nam nên rất sáng.
+mimikara-n3-v733	カメラをこちらに向けてください。	カメラをこちらに{向|む}けてください。	Hãy hướng máy ảnh về phía này.
+mimikara-n3-v734	医者に運動を勧められた。	{医者|いしゃ}に{運動|うんどう}を{勧|すす}められた。	Tôi được bác sĩ khuyên nên tập thể dục.
+mimikara-n3-v735	先生が薦めてくれた本を読んだ。	{先生|せんせい}が{薦|すす}めてくれた{本|ほん}を{読|よ}んだ。	Tôi đã đọc cuốn sách thầy giới thiệu.
+mimikara-n3-v736	この仕事は彼に任せよう。	この{仕事|しごと}は{彼|かれ}に{任|まか}せよう。	Việc này hãy giao cho anh ấy.
+mimikara-n3-v737	交通ルールを守って運転しましょう。	{交通|こうつう}ルールを{守|まも}って{運転|うんてん}しましょう。	Hãy tuân thủ luật giao thông khi lái xe.
+mimikara-n3-v738	兄弟でテレビのチャンネルを争った。	{兄弟|きょうだい}でテレビのチャンネルを{争|あらそ}った。	Anh em tranh nhau kênh tivi.
+mimikara-n3-v740	私はあなたの言うことを信じます。	{私|わたし}はあなたの{言|い}うことを{信|しん}じます。	Tôi tin những gì anh nói.
+mimikara-n3-v741	私の日本語が通じて、うれしかった。	{私|わたし}の{日本語|にほんご}が{通|つう}じて、うれしかった。	Tôi rất vui vì tiếng Nhật của mình đã được hiểu.
+mimikara-n3-v742	毎日同じ料理だと、飽きてしまう。	{毎日|まいにち}{同|おな}じ{料理|りょうり}だと、{飽|あ}きてしまう。	Ngày nào cũng ăn một món thì sẽ ngán.
+mimikara-n3-v743	お風呂に入っているときに、いいアイデアを思いついた。	お{風呂|ふろ}に{入|はい}っているときに、いいアイデアを{思|おも}いついた。	Lúc đang tắm, tôi chợt nghĩ ra một ý tưởng hay.
+mimikara-n3-v744	相手の気持ちを思いやることが大切だ。	{相手|あいて}の{気持|きも}ちを{思|おも}いやることが{大切|たいせつ}だ。	Biết thông cảm với cảm xúc của người khác là điều quan trọng.
+mimikara-n3-v745	弟は野球に熱中している。	{弟|おとうと}は{野球|やきゅう}に{熱中|ねっちゅう}している。	Em trai tôi đang say mê bóng chày.
+mimikara-n3-v746	祖母は田舎で一人で暮らしている。	{祖母|そぼ}は{田舎|いなか}で{一人|ひとり}で{暮|く}らしている。	Bà tôi đang sống một mình ở quê.
+mimikara-n3-v747	寒いので、首にマフラーを巻いた。	{寒|さむ}いので、{首|くび}にマフラーを{巻|ま}いた。	Trời lạnh nên tôi quàng khăn quanh cổ.
+mimikara-n3-v748	靴のひもをしっかり結んだ。	{靴|くつ}のひもをしっかり{結|むす}んだ。	Tôi buộc chặt dây giày.
+mimikara-n3-v749	仕事が早く済んだので、映画を見に行った。	{仕事|しごと}が{早|はや}く{済|す}んだので、{映画|えいが}を{見|み}に{行|い}った。	Công việc xong sớm nên tôi đã đi xem phim.
+mimikara-n3-v750	昼ご飯はコンビニのお弁当で済ませた。	{昼|ひる}ご{飯|はん}はコンビニのお{弁当|べんとう}で{済|す}ませた。	Bữa trưa tôi ăn tạm cơm hộp ở cửa hàng tiện lợi cho xong.
+mimikara-n3-v751	駅前に新しいスーパーが出来た。	{駅前|えきまえ}に{新|あたら}しいスーパーが{出来|でき}た。	Trước nhà ga mới mở một siêu thị.
+mimikara-n3-v752	パスポートの期限が切れていた。	パスポートの{期限|きげん}が{切|き}れていた。	Hộ chiếu của tôi đã hết hạn.
+mimikara-n3-v753	すみません、今ちょうど牛乳を切らしております。	すみません、{今|いま}ちょうど{牛乳|ぎゅうにゅう}を{切|き}らしております。	Xin lỗi, hiện cửa hàng vừa hết sữa ạ.
+mimikara-n3-v754	彼の気持ちが私にもよく伝わった。	{彼|かれ}の{気持|きも}ちが{私|わたし}にもよく{伝|つた}わった。	Tôi cũng cảm nhận rõ tình cảm của anh ấy.
+mimikara-n3-v755	田中さんに、会議は三時からだと伝えてください。	{田中|たなか}さんに、{会議|かいぎ}は{三|さん}{時|じ}からだと{伝|つた}えてください。	Hãy nhắn với anh Tanaka là cuộc họp bắt đầu từ 3 giờ.
+mimikara-n3-v756	雨の日が一週間も続いている。	{雨|あめ}の{日|ひ}が{一週間|いっしゅうかん}も{続|つづ}いている。	Trời mưa liên tục suốt cả tuần.
+mimikara-n3-v757	日本語の勉強を毎日続けている。	{日本語|にほんご}の{勉強|べんきょう}を{毎日|まいにち}{続|つづ}けている。	Tôi vẫn tiếp tục học tiếng Nhật mỗi ngày.
+mimikara-n3-v758	この道は駅までつながっている。	この{道|みち}は{駅|えき}までつながっている。	Con đường này nối thẳng tới ga.
+mimikara-n3-v759	母と手をつないで歩いた。	{母|はは}と{手|て}をつないで{歩|ある}いた。	Tôi nắm tay mẹ đi bộ.
+mimikara-n3-v760	今回の経験を次の仕事につなげたい。	{今回|こんかい}の{経験|けいけん}を{次|つぎ}の{仕事|しごと}につなげたい。	Tôi muốn kết nối kinh nghiệm lần này với công việc tiếp theo.
+mimikara-n3-v761	子どもの身長が一年で十センチ伸びた。	{子|こ}どもの{身長|しんちょう}が{一|いち}{年|ねん}で{十|じゅう}センチ{伸|の}びた。	Trong một năm, đứa trẻ cao thêm 10 xăng-ti-mét.
+mimikara-n3-v762	朝起きたら、まず体を伸ばす。	{朝|あさ}{起|お}きたら、まず{体|からだ}を{伸|の}ばす。	Sáng thức dậy, việc đầu tiên tôi làm là vươn vai.
+mimikara-n3-v763	雨で試合が来週に延びた。	{雨|あめ}で{試合|しあい}が{来週|らいしゅう}に{延|の}びた。	Do mưa nên trận đấu bị hoãn sang tuần sau.
+mimikara-n3-v764	レポートの締め切りを一週間延ばしてもらった。	レポートの{締|し}め{切|き}りを{一週間|いっしゅうかん}{延|の}ばしてもらった。	Tôi được gia hạn nộp báo cáo thêm một tuần.
+mimikara-n3-v765	今年は誕生日と日曜日が重なった。	{今年|ことし}は{誕生|たんじょう}{日|び}と{日曜日|にちようび}が{重|かさ}なった。	Năm nay sinh nhật trùng vào Chủ nhật.
+mimikara-n3-v766	寒いので、服を重ねて着た。	{寒|さむ}いので、{服|ふく}を{重|かさ}ねて{着|き}た。	Trời lạnh nên tôi mặc nhiều lớp áo.
+mimikara-n3-v767	火事はあっという間に隣の家まで広がった。	{火事|かじ}はあっという{間|ま}に{隣|となり}の{家|いえ}まで{広|ひろ}がった。	Đám cháy lan sang tận nhà bên cạnh chỉ trong chớp mắt.
+mimikara-n3-v768	テーブルの上に地図を広げた。	テーブルの{上|うえ}に{地図|ちず}を{広|ひろ}げた。	Tôi trải tấm bản đồ ra trên bàn.
+mimikara-n3-v769	私の写真が雑誌に載った。	{私|わたし}の{写真|しゃしん}が{雑誌|ざっし}に{載|の}った。	Ảnh của tôi đã được đăng trên tạp chí.
+mimikara-n3-v770	新しい店の広告を新聞に載せた。	{新|あたら}しい{店|みせ}の{広告|こうこく}を{新聞|しんぶん}に{載|の}せた。	Chúng tôi đã đăng quảng cáo cửa hàng mới lên báo.
+mimikara-n3-v771	全員がそろったら、出発します。	{全員|ぜんいん}がそろったら、{出発|しゅっぱつ}します。	Khi mọi người có mặt đông đủ thì sẽ xuất phát.
+mimikara-n3-v772	旅行に必要な物をそろえた。	{旅行|りょこう}に{必要|ひつよう}な{物|もの}をそろえた。	Tôi đã chuẩn bị sẵn đủ đồ cần cho chuyến đi.
+mimikara-n3-v773	話し合いの結果、みんなの意見がまとまった。	{話|はな}し{合|あ}いの{結果|けっか}、みんなの{意見|いけん}がまとまった。	Sau khi bàn bạc, ý kiến của mọi người đã được thống nhất.
+mimikara-n3-v774	会議の内容をレポートにまとめた。	{会議|かいぎ}の{内容|ないよう}をレポートにまとめた。	Tôi đã tổng hợp nội dung cuộc họp thành báo cáo.
+mimikara-n3-v775	シャツにカレーのしみが付いてしまった。	シャツにカレーのしみが{付|つ}いてしまった。	Áo sơ mi của tôi bị dính vết cà ri.
+mimikara-n3-v776	部屋の電気を付けてください。	{部屋|へや}の{電気|でんき}を{付|つ}けてください。	Hãy bật đèn trong phòng lên.
+mimikara-n3-v777	台所に洗い物がたまっている。	{台所|だいどころ}に{洗|あら}い{物|もの}がたまっている。	Bát đĩa chưa rửa đang chất đống trong bếp.
+mimikara-n3-v778	留学のために、お金をためている。	{留学|りゅうがく}のために、お{金|かね}をためている。	Tôi đang để dành tiền để đi du học.
+mimikara-n3-v779	ご飯に小さな石が混じっていた。	ご{飯|はん}に{小|ちい}さな{石|いし}が{混|ま}じっていた。	Trong cơm có lẫn một viên sỏi nhỏ.
+mimikara-n3-v780	この部屋は二つの国の文化が混ざったデザインだ。	この{部屋|へや}は{二|ふた}つの{国|くに}の{文化|ぶんか}が{混|ま}ざったデザインだ。	Căn phòng này có thiết kế pha trộn văn hóa của hai nước.
+mimikara-n3-v781	卵と牛乳をよく混ぜてください。	{卵|たまご}と{牛乳|ぎゅうにゅう}をよく{混|ま}ぜてください。	Hãy trộn đều trứng và sữa.
+mimikara-n3-v782	暖かくなって、雪が溶けてきた。	{暖|あたた}かくなって、{雪|ゆき}が{溶|と}けてきた。	Trời ấm lên nên tuyết bắt đầu tan.
+mimikara-n3-v783	この数学の問題がなかなか解けない。	この{数学|すうがく}の{問題|もんだい}がなかなか{解|と}けない。	Bài toán này mãi tôi không giải được.
+mimikara-n3-v784	この値段には税金が含まれていますか。	この{値段|ねだん}には{税金|ぜいきん}が{含|ふく}まれていますか。	Giá này đã bao gồm thuế chưa?
+mimikara-n3-v785	私を含めて、十人が参加した。	{私|わたし}を{含|ふく}めて、{十|じゅう}{人|にん}が{参加|さんか}した。	Kể cả tôi thì có mười người tham gia.
+mimikara-n3-v786	最近、髪がよく抜ける。	{最近|さいきん}、{髪|かみ}がよく{抜|ぬ}ける。	Dạo này tóc tôi hay rụng.
+mimikara-n3-v787	歯医者で虫歯を抜いた。	{歯医者|はいしゃ}で{虫歯|むしば}を{抜|ぬ}いた。	Tôi đã nhổ răng sâu ở nha sĩ.
+mimikara-n3-v788	雲の間から太陽が現れた。	{雲|くも}の{間|あいだ}から{太陽|たいよう}が{現|あらわ}れた。	Mặt trời ló ra từ giữa những đám mây.
+mimikara-n3-v789	約束の時間を過ぎて、彼はやっと姿を現した。	{約束|やくそく}の{時間|じかん}を{過|す}ぎて、{彼|かれ}はやっと{姿|すがた}を{現|あらわ}した。	Quá giờ hẹn, cuối cùng anh ấy mới xuất hiện.
+mimikara-n3-v790	試験に落ちた悔しさが顔に表れていた。	{試験|しけん}に{落|お}ちた{悔|くや}しさが{顔|かお}に{表|あらわ}れていた。	Nỗi tiếc nuối vì thi trượt hiện rõ trên khuôn mặt.
+mimikara-n3-v791	言葉では気持ちをうまく表せない。	{言葉|ことば}では{気持|きも}ちをうまく{表|あらわ}せない。	Tôi không thể diễn tả cảm xúc bằng lời một cách trọn vẹn.
+mimikara-n3-v792	風で桜の花が散ってしまった。	{風|かぜ}で{桜|さくら}の{花|はな}が{散|ち}ってしまった。	Hoa anh đào đã rụng vì gió.
+mimikara-n3-v793	子どもが部屋におもちゃを散らしている。	{子|こ}どもが{部屋|へや}におもちゃを{散|ち}らしている。	Đứa trẻ bày đồ chơi bừa bộn khắp phòng.
+mimikara-n3-v794	梅雨が明けて、本格的な夏になった。	{梅雨|つゆ}が{明|あ}けて、{本格|ほんかく}{的|てき}な{夏|なつ}になった。	Mùa mưa kết thúc và mùa hè thực sự đã đến.
+mimikara-n3-v795	雨が降ってきたので、傘を差した。	{雨|あめ}が{降|ふ}ってきたので、{傘|かさ}を{差|さ}した。	Trời bắt đầu mưa nên tôi giương ô lên.

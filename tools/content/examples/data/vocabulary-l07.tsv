@@ -1,0 +1,40 @@
+# Mimikara N3 · bài 7 (形容詞Ｂ): một câu ví dụ cho mỗi từ. Cột: item_id, câu, furigana (annotate.py điền, đã soát tay), dịch.
+mimikara-n3-v551	朝は濃いコーヒーを飲まないと目が覚めない。	{朝|あさ}は{濃|こ}いコーヒーを{飲|の}まないと{目|め}が{覚|さ}めない。	Buổi sáng không uống cà phê đậm thì tôi không tỉnh táo được.
+mimikara-n3-v552	この料理は味が薄いので、しょうゆを足した。	この{料理|りょうり}は{味|あじ}が{薄|うす}いので、しょうゆを{足|た}した。	Món này vị nhạt nên tôi thêm xì dầu.
+mimikara-n3-v553	このみかんはまだ酸っぱい。	このみかんはまだ{酸|す}っぱい。	Quả quýt này vẫn còn chua.
+mimikara-n3-v554	冷蔵庫の中が何か臭い。	{冷蔵庫|れいぞうこ}の{中|なか}が{何|なに}か{臭|くさ}い。	Trong tủ lạnh có mùi gì đó hôi.
+mimikara-n3-v555	このテレビ、ちょっと音がおかしい。	このテレビ、ちょっと{音|おと}がおかしい。	Cái tivi này âm thanh hơi lạ.
+mimikara-n3-v556	兄は背が高くて、かっこいい。	{兄|あに}は{背|せ}が{高|たか}くて、かっこいい。	Anh trai tôi cao ráo và bảnh bao.
+mimikara-n3-v557	この店のラーメンは本当にうまい。	この{店|みせ}のラーメンは{本当|ほんとう}にうまい。	Mì ramen của quán này ngon thật.
+mimikara-n3-v558	彼とは小学校の頃から親しい。	{彼|かれ}とは{小学校|しょうがっこう}の{頃|ころ}から{親|した}しい。	Tôi thân với cậu ấy từ hồi tiểu học.
+mimikara-n3-v559	詳しいことは、後でメールで送ります。	{詳|くわ}しいことは、{後|あと}でメールで{送|おく}ります。	Chi tiết thì tôi sẽ gửi qua email sau.
+mimikara-n3-v560	細かいお金がなかったので、一万円札で払った。	{細|こま}かいお{金|かね}がなかったので、{一|いち}{万|まん}{円|えん}{札|さつ}で{払|はら}った。	Không có tiền lẻ nên tôi đã trả bằng tờ 10.000 yên.
+mimikara-n3-v561	この川は浅いので、子どもでも安全に遊べる。	この{川|かわ}は{浅|あさ}いので、{子|こ}どもでも{安全|あんぜん}に{遊|あそ}べる。	Con sông này nông nên trẻ con cũng có thể chơi an toàn.
+mimikara-n3-v562	このパンは古くて、固くなってしまった。	このパンは{古|ふる}くて、{固|かた}くなってしまった。	Cái bánh mì này để lâu nên đã bị cứng.
+mimikara-n3-v563	お風呂のお湯がぬるくなっている。	お{風呂|ふろ}のお{湯|ゆ}がぬるくなっている。	Nước bồn tắm đã nguội bớt.
+mimikara-n3-v564	太陽の光がまぶしくて、目が開けられない。	{太陽|たいよう}の{光|ひかり}がまぶしくて、{目|め}が{開|あ}けられない。	Ánh mặt trời chói đến mức không mở mắt ra được.
+mimikara-n3-v565	日本の夏は蒸し暑くて、夜もなかなか眠れない。	{日本|にほん}の{夏|なつ}は{蒸|む}し{暑|あつ}くて、{夜|よる}もなかなか{眠|ねむ}れない。	Mùa hè Nhật Bản nóng ẩm nên đêm cũng khó ngủ.
+mimikara-n3-v566	病院はいつも清潔にしておかなければならない。	{病院|びょういん}はいつも{清潔|せいけつ}にしておかなければならない。	Bệnh viện lúc nào cũng phải được giữ sạch sẽ.
+mimikara-n3-v567	この店では新鮮な魚が安く買える。	この{店|みせ}では{新鮮|しんせん}な{魚|さかな}が{安|やす}く{買|か}える。	Ở cửa hàng này có thể mua cá tươi với giá rẻ.
+mimikara-n3-v568	彼は豊かな家庭で育った。	{彼|かれ}は{豊|ゆた}かな{家庭|かてい}で{育|そだ}った。	Anh ấy lớn lên trong một gia đình giàu có.
+mimikara-n3-v569	駅の前に立派なホテルが建った。	{駅|えき}の{前|まえ}に{立派|りっぱ}なホテルが{建|た}った。	Trước nhà ga đã xây xong một khách sạn rất bề thế.
+mimikara-n3-v570	正確な時間を教えてください。	{正確|せいかく}な{時間|じかん}を{教|おし}えてください。	Hãy cho tôi biết thời gian chính xác.
+mimikara-n3-v571	この情報は確かなところから聞いた。	この{情報|じょうほう}は{確|たし}かなところから{聞|き}いた。	Thông tin này tôi nghe từ nguồn đáng tin cậy.
+mimikara-n3-v572	これはとても重要な書類なので、なくさないでください。	これはとても{重要|じゅうよう}な{書類|しょるい}なので、なくさないでください。	Đây là giấy tờ rất quan trọng nên đừng làm mất.
+mimikara-n3-v573	旅行に必要な物をリストにした。	{旅行|りょこう}に{必要|ひつよう}な{物|もの}をリストにした。	Tôi đã lập danh sách những thứ cần thiết cho chuyến đi.
+mimikara-n3-v574	まだ使えるのに捨てるなんて、もったいない。	まだ{使|つか}えるのに{捨|す}てるなんて、もったいない。	Vẫn còn dùng được mà vứt đi thì thật phí.
+mimikara-n3-v575	一人で全部作ったなんて、すごいですね。	{一人|ひとり}で{全部|ぜんぶ}{作|つく}ったなんて、すごいですね。	Một mình làm hết tất cả, giỏi thật đấy.
+mimikara-n3-v576	今日はひどい雨で、電車が止まってしまった。	{今日|きょう}はひどい{雨|あめ}で、{電車|でんしゃ}が{止|と}まってしまった。	Hôm nay mưa dữ dội đến mức tàu phải ngừng chạy.
+mimikara-n3-v577	夜になって、雨が激しくなった。	{夜|よる}になって、{雨|あめ}が{激|はげ}しくなった。	Về đêm mưa càng trở nên dữ dội.
+mimikara-n3-v578	彼女はお姉さんとそっくりだ。	{彼女|かのじょ}はお{姉|ねえ}さんとそっくりだ。	Cô ấy giống hệt chị gái mình.
+mimikara-n3-v579	急な用事ができて、パーティーに行けなくなった。	{急|きゅう}な{用事|ようじ}ができて、パーティーに{行|い}けなくなった。	Có việc đột xuất nên tôi không thể đi dự tiệc được.
+mimikara-n3-v581	今日は私にとって特別な日です。	{今日|きょう}は{私|わたし}にとって{特別|とくべつ}な{日|ひ}です。	Hôm nay là một ngày đặc biệt đối với tôi.
+mimikara-n3-v582	風邪はまだ完全には治っていない。	{風邪|かぜ}はまだ{完全|かんぜん}には{治|なお}っていない。	Cảm vẫn chưa khỏi hoàn toàn.
+mimikara-n3-v583	この町では昔から漁業が盛んだ。	この{町|まち}では{昔|むかし}から{漁業|ぎょぎょう}が{盛|さか}んだ。	Ở thị trấn này, nghề đánh cá phát triển thịnh vượng từ xưa.
+mimikara-n3-v584	この大学には様々な国の留学生がいる。	この{大学|だいがく}には{様々|さまざま}な{国|くに}の{留学生|りゅうがくせい}がいる。	Trường đại học này có du học sinh đến từ nhiều nước khác nhau.
+mimikara-n3-v585	このホテルは予約なしでも宿泊が可能です。	このホテルは{予約|よやく}なしでも{宿泊|しゅくはく}が{可能|かのう}です。	Khách sạn này có thể nghỉ lại kể cả khi không đặt trước.
+mimikara-n3-v586	この仕事を一日で終わらせるのは不可能だ。	この{仕事|しごと}を{一日|いちにち}で{終|お}わらせるのは{不可能|ふかのう}だ。	Hoàn thành công việc này trong một ngày là điều bất khả thi.
+mimikara-n3-v587	まず基本的な文法をしっかり覚えましょう。	まず{基本的|きほんてき}な{文法|ぶんぽう}をしっかり{覚|おぼ}えましょう。	Trước tiên hãy học chắc ngữ pháp cơ bản.
+mimikara-n3-v588	この町は国際的な観光地として有名だ。	この{町|まち}は{国際的|こくさいてき}な{観光|かんこう}{地|ち}として{有名|ゆうめい}だ。	Thị trấn này nổi tiếng là một điểm du lịch mang tầm quốc tế.
+mimikara-n3-v589	家族はみんな仕事が忙しくて、晩ご飯の時間がばらばらだ。	{家族|かぞく}はみんな{仕事|しごと}が{忙|いそが}しくて、{晩|ばん}ご{飯|はん}の{時間|じかん}がばらばらだ。	Mọi người trong nhà đều bận công việc nên giờ ăn tối mỗi người một khác.
+mimikara-n3-v590	長く使ったので、かばんがぼろぼろになった。	{長|なが}く{使|つか}ったので、かばんがぼろぼろになった。	Dùng lâu năm nên chiếc cặp đã rách nát.

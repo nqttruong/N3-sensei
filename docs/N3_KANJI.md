@@ -45,7 +45,7 @@ Lớp chữ của PDF dùng ký tự bộ thủ thay cho chữ Hán ở 641 th�
 - furigana: 1.271/1.272; お仕事 không có vì PDF ghi cách đọc しごと (cờ `reading-does-not-match-spelling`);
 - âm Hán Việt của từ chỉ lưu trong metadata gói và bảng truy vết (không có cột hiển thị).
 
-Màn chi tiết Kanji hiện các từ này ở mục **"Từ minh họa"**, đúng thứ tự trong PDF.
+Màn chi tiết Kanji hiện các từ này ở mục **"Từ minh họa"**, đúng thứ tự trong PDF. Ba chữ không có từ nào trong PDF (亡, 希, 坂) được thêm 7 từ N3 Sensei tự soạn từ phiên bản 3, nguồn riêng `n3-kanji-examples`; xem [EXAMPLES.md](EXAMPLES.md).
 
 Cần kiểm tra: 7 từ không chứa chữ Hán của nhóm, giữ nguyên nhóm theo PDF (cờ `word-without-its-kanji`): 坂 → 木の板, 黒板, 板書, 板前, 看板 (PDF in thẻ 坂 rồi các từ của chữ 板, không có thẻ chữ 板); 伸 → 身長; 州 → 連合.
 

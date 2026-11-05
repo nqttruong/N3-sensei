@@ -54,7 +54,7 @@ class MimikaraImportTest {
         context.deleteDatabase(name)
     }
 
-    private fun bumped(version: Int) = json.replaceFirst("\"version\": 1", "\"version\": $version")
+    private fun bumped(version: Int) = json.replaceFirst("\"version\": 2", "\"version\": $version")
 
     private fun query(q: ItemQuery) = runBlocking { content.observeVocabularyItems(q).first().map { it.item } }
 
@@ -93,8 +93,8 @@ class MimikaraImportTest {
         // App start with the same version: nothing is written.
         assertEquals(ImportOutcome.UP_TO_DATE, importer.import(json, onlyIfNewer = true).outcome)
         // A newer version (or the same file picked again): the pack is replaced, never duplicated.
-        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(2), onlyIfNewer = true).outcome)
-        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(2)).outcome)
+        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(3), onlyIfNewer = true).outcome)
+        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(3)).outcome)
         assertEquals(880, db.countRows("vocabulary"))
         assertEquals(1, db.countRows("content_packs"))
         assertEquals(progress, db.progressDao().get(ItemType.VOCABULARY, "mimikara-n3-v001"))
@@ -110,9 +110,9 @@ class MimikaraImportTest {
         db.openHelper.writableDatabase.execSQL(
             "CREATE TRIGGER fail_v500 BEFORE INSERT ON vocabulary WHEN NEW.id = 'mimikara-n3-v500' BEGIN SELECT RAISE(ABORT, 'disk full (test)'); END",
         )
-        val report = importer.import(bumped(2))
+        val report = importer.import(bumped(3))
         assertEquals(ImportOutcome.FAILED, report.outcome)
-        assertEquals(1, db.contentPackDao().getPack("mimikara-n3-vocab")!!.version) // old version still installed
+        assertEquals(2, db.contentPackDao().getPack("mimikara-n3-vocab")!!.version) // old version still installed
         assertEquals(880, db.countRows("vocabulary"))
         assertEquals(1, db.countRows("learning_progress"))
     }

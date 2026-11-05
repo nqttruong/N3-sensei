@@ -11,6 +11,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,8 +23,10 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
@@ -30,6 +34,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -38,6 +43,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.Role
@@ -47,25 +53,27 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
-import com.n3sensei.app.domain.reminder.ReminderSettings
-import com.n3sensei.app.domain.reminder.ReminderContent
-import androidx.compose.material3.FilterChip
-import androidx.compose.foundation.layout.FlowRow
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import com.n3sensei.app.core.designsystem.component.InfoBanner
 import com.n3sensei.app.core.designsystem.component.SectionHeader
 import com.n3sensei.app.core.ui.state.LoadingContent
+import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.reminder.LessonSelection
 import com.n3sensei.app.domain.reminder.LockScreenPrivacy
+import com.n3sensei.app.domain.reminder.ReminderContent
 import com.n3sensei.app.domain.reminder.ReminderFrequency
 import com.n3sensei.app.domain.reminder.ReminderOutcome
+import com.n3sensei.app.domain.reminder.ReminderSettings
+import com.n3sensei.app.domain.reminder.type
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun ReminderSettingsScreen(
     viewModel: ReminderSettingsViewModel,
     modifier: Modifier = Modifier,
+    onChooseLessons: (ItemType) -> Unit = {},
 ) {
     val settings by viewModel.settings.collectAsStateWithLifecycle()
+    val catalog by viewModel.lessonCatalog.collectAsStateWithLifecycle()
     val allowed by viewModel.notificationsAllowed.collectAsStateWithLifecycle()
     val testOutcome by viewModel.testOutcome.collectAsStateWithLifecycle()
     val context = LocalContext.current
@@ -169,28 +177,51 @@ fun ReminderSettingsScreen(
         )
         HorizontalDivider(Modifier.padding(top = 8.dp))
 
-        SectionHeader(stringResource(R.string.reminder_scope), Modifier.padding(horizontal = 16.dp))
+        SectionHeader(stringResource(R.string.reminder_kinds), Modifier.padding(horizontal = 16.dp))
         FlowRow(
             modifier = Modifier.padding(horizontal = 16.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            ReminderContent.entries.forEach { kind ->
-                FilterChip(
-                    selected = kind in current.content,
-                    onClick = { viewModel.toggleContent(kind) },
-                    label = {
-                        Text(
-                            stringResource(
-                                when (kind) {
-                                    ReminderContent.VOCABULARY -> R.string.totals_vocabulary
-                                    ReminderContent.KANJI -> R.string.totals_kanji
-                                    ReminderContent.GRAMMAR -> R.string.totals_grammar
-                                },
-                            ),
-                        )
-                    },
-                )
-            }
+            OutlinedButton(onClick = viewModel::chooseAllContent) { Text(stringResource(R.string.reminder_kinds_all)) }
+            OutlinedButton(onClick = viewModel::chooseReviewOnly) { Text(stringResource(R.string.reminder_kinds_review_only)) }
+        }
+        ReminderContent.entries.forEach { kind ->
+            val on = kind in current.content
+            val selection = catalog.current(kind.type, current.lessons.of(kind.type))
+            val total = catalog.optionsOf(kind.type).size
+            ListItem(
+                leadingContent = { Checkbox(checked = on, onCheckedChange = null) },
+                headlineContent = {
+                    Text(
+                        stringResource(
+                            when (kind) {
+                                ReminderContent.VOCABULARY -> R.string.totals_vocabulary
+                                ReminderContent.KANJI -> R.string.totals_kanji
+                                ReminderContent.GRAMMAR -> R.string.totals_grammar
+                            },
+                        ),
+                    )
+                },
+                supportingContent = {
+                    Text(
+                        when {
+                            !on -> stringResource(R.string.reminder_kind_off)
+                            selection is LessonSelection.All -> stringResource(R.string.reminder_lessons_all)
+                            selection is LessonSelection.Only && selection.keys.isEmpty() -> stringResource(R.string.reminder_lessons_none)
+                            selection is LessonSelection.Only -> stringResource(R.string.reminder_lessons_some, selection.keys.size, total)
+                            else -> ""
+                        },
+                    )
+                },
+                trailingContent = {
+                    TextButton(onClick = { onChooseLessons(kind.type) }, enabled = on && total > 0) {
+                        Text(stringResource(R.string.reminder_lessons_choose))
+                    }
+                },
+                modifier = Modifier
+                    .testTag("reminder_kind_${kind.name}")
+                    .toggleable(value = on, role = Role.Checkbox) { viewModel.toggleContent(kind) },
+            )
         }
         SwitchRow(
             stringResource(R.string.reminder_review_only),

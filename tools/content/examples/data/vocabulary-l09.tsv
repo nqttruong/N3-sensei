@@ -1,0 +1,78 @@
+# Mimikara N3 · bài 9 (名詞Ｃ): một câu ví dụ cho mỗi từ. Cột: item_id, câu, furigana (annotate.py điền, đã soát tay), dịch.
+mimikara-n3-v636	私の趣味は読書です。	{私|わたし}の{趣味|しゅみ}は{読書|どくしょ}です。	Sở thích của tôi là đọc sách.
+mimikara-n3-v637	コンサートでピアノの演奏を聞いた。	コンサートでピアノの{演奏|えんそう}を{聞|き}いた。	Tôi đã nghe biểu diễn piano ở buổi hòa nhạc.
+mimikara-n3-v638	パリは芸術の町として知られている。	パリは{芸術|げいじゅつ}の{町|まち}として{知|し}られている。	Paris được biết đến là thành phố của nghệ thuật.
+mimikara-n3-v639	空港で荷物の検査を受けた。	{空港|くうこう}で{荷物|にもつ}の{検査|けんさ}を{受|う}けた。	Tôi đã được kiểm tra hành lý ở sân bay.
+mimikara-n3-v640	病院で血液の検査をした。	{病院|びょういん}で{血液|けつえき}の{検査|けんさ}をした。	Tôi đã xét nghiệm máu ở bệnh viện.
+mimikara-n3-v641	歯の治療に一か月かかった。	{歯|は}の{治療|ちりょう}に{一|いっ}か{月|げつ}かかった。	Việc điều trị răng mất một tháng.
+mimikara-n3-v642	熱や咳などの症状があったら、すぐに病院に行ってください。	{熱|ねつ}や{咳|せき}などの{症状|しょうじょう}があったら、すぐに{病院|びょういん}に{行|い}ってください。	Nếu có triệu chứng như sốt hay ho thì hãy đến bệnh viện ngay.
+mimikara-n3-v643	風邪の予防には、手洗いが大切だ。	{風邪|かぜ}の{予防|よぼう}には、{手洗|てあら}いが{大切|たいせつ}だ。	Để phòng cảm, việc rửa tay rất quan trọng.
+mimikara-n3-v644	野菜は栄養が豊富だ。	{野菜|やさい}は{栄養|えいよう}が{豊富|ほうふ}だ。	Rau củ giàu chất dinh dưỡng.
+mimikara-n3-v645	祖父は胃の手術を受けた。	{祖父|そふ}は{胃|い}の{手術|しゅじゅつ}を{受|う}けた。	Ông tôi đã được phẫu thuật dạ dày.
+mimikara-n3-v646	その事故で三人が死亡した。	その{事故|じこ}で{三|さん}{人|にん}が{死亡|しぼう}した。	Vụ tai nạn đó đã làm ba người tử vong.
+mimikara-n3-v647	医者は多くの人の命を救う仕事だ。	{医者|いしゃ}は{多|おお}くの{人|ひと}の{命|いのち}を{救|すく}う{仕事|しごと}だ。	Bác sĩ là nghề cứu sống nhiều sinh mạng.
+mimikara-n3-v648	あなたに受けた恩は一生忘れません。	あなたに{受|う}けた{恩|おん}は{一生|いっしょう}{忘|わす}れません。	Ơn của anh, tôi sẽ không bao giờ quên suốt đời.
+mimikara-n3-v649	私の言い方が悪くて、彼に誤解されてしまった。	{私|わたし}の{言|い}い{方|かた}が{悪|わる}くて、{彼|かれ}に{誤解|ごかい}されてしまった。	Do cách nói của tôi không tốt nên anh ấy đã hiểu lầm.
+mimikara-n3-v650	もっと勉強しておけばよかったと後悔している。	もっと{勉強|べんきょう}しておけばよかったと{後悔|こうかい}している。	Tôi hối hận vì đã không học chăm hơn.
+mimikara-n3-v651	彼が会社を辞めた訳を知っていますか。	{彼|かれ}が{会社|かいしゃ}を{辞|や}めた{訳|わけ}を{知|し}っていますか。	Bạn có biết lý do anh ấy nghỉ việc không?
+mimikara-n3-v652	店員の態度が悪くて、腹が立った。	{店員|てんいん}の{態度|たいど}が{悪|わる}くて、{腹|はら}が{立|た}った。	Thái độ của nhân viên cửa hàng tệ quá khiến tôi bực mình.
+mimikara-n3-v653	考えるときに、髪をさわる癖がある。	{考|かんが}えるときに、{髪|かみ}をさわる{癖|くせ}がある。	Tôi có thói quen sờ tóc khi suy nghĩ.
+mimikara-n3-v654	日本では礼儀を大切にする。	{日本|にほん}では{礼儀|れいぎ}を{大切|たいせつ}にする。	Ở Nhật người ta coi trọng lễ nghĩa.
+mimikara-n3-v655	彼はいつも仕事の文句ばかり言っている。	{彼|かれ}はいつも{仕事|しごと}の{文句|もんく}ばかり{言|い}っている。	Anh ta lúc nào cũng chỉ toàn phàn nàn về công việc.
+mimikara-n3-v656	彼女はうれしそうな表情で手紙を読んだ。	{彼女|かのじょ}はうれしそうな{表情|ひょうじょう}で{手紙|てがみ}を{読|よ}んだ。	Cô ấy đọc lá thư với vẻ mặt vui mừng.
+mimikara-n3-v658	この店は全席禁煙です。	この{店|みせ}は{全席|ぜんせき}{禁煙|きんえん}です。	Quán này cấm hút thuốc ở tất cả các chỗ ngồi.
+mimikara-n3-v659	ここに車を止めることは禁止されている。	ここに{車|くるま}を{止|と}めることは{禁止|きんし}されている。	Cấm đỗ xe ở đây.
+mimikara-n3-v660	新しい駅ビルが来年完成する予定だ。	{新|あたら}しい{駅|えき}ビルが{来年|らいねん}{完成|かんせい}する{予定|よてい}だ。	Tòa nhà ga mới dự kiến hoàn thành vào năm sau.
+mimikara-n3-v661	夏休みの課題がまだ終わっていない。	{夏休|なつやす}みの{課題|かだい}がまだ{終|お}わっていない。	Bài tập kỳ nghỉ hè của tôi vẫn chưa xong.
+mimikara-n3-v662	このルールに例外はありません。	このルールに{例外|れいがい}はありません。	Quy tắc này không có ngoại lệ.
+mimikara-n3-v663	何をするにも、基本が大切だ。	{何|なに}をするにも、{基本|きほん}が{大切|たいせつ}だ。	Làm gì thì cái cơ bản cũng quan trọng.
+mimikara-n3-v665	この車はまだいい状態だ。	この{車|くるま}はまだいい{状態|じょうたい}だ。	Chiếc xe này vẫn còn trong tình trạng tốt.
+mimikara-n3-v666	今日あった出来事を日記に書いた。	{今日|きょう}あった{出来事|できごと}を{日記|にっき}に{書|か}いた。	Tôi đã viết những chuyện xảy ra hôm nay vào nhật ký.
+mimikara-n3-v667	映画の最後の場面で泣いてしまった。	{映画|えいが}の{最後|さいご}の{場面|ばめん}で{泣|な}いてしまった。	Tôi đã khóc ở cảnh cuối của bộ phim.
+mimikara-n3-v668	日本人と話す機会がもっとほしい。	{日本人|にほんじん}と{話|はな}す{機会|きかい}がもっとほしい。	Tôi muốn có thêm cơ hội nói chuyện với người Nhật.
+mimikara-n3-v669	家から駅までの距離は二キロぐらいだ。	{家|いえ}から{駅|えき}までの{距離|きょり}は{二|に}キロぐらいだ。	Khoảng cách từ nhà đến ga khoảng hai ki-lô-mét.
+mimikara-n3-v670	会議で新しい企画を提案した。	{会議|かいぎ}で{新|あたら}しい{企画|きかく}を{提案|ていあん}した。	Tôi đã đề xuất một kế hoạch mới trong cuộc họp.
+mimikara-n3-v671	海外の会社とメールでやり取りをしている。	{海外|かいがい}の{会社|かいしゃ}とメールでやり{取|と}りをしている。	Tôi đang trao đổi qua email với một công ty nước ngoài.
+mimikara-n3-v672	この仕事には専門的な知識が必要だ。	この{仕事|しごと}には{専門|せんもん}{的|てき}な{知識|ちしき}が{必要|ひつよう}だ。	Công việc này cần kiến thức chuyên môn.
+mimikara-n3-v673	試験で実力を出し切ることができた。	{試験|しけん}で{実力|じつりょく}を{出|だ}し{切|き}ることができた。	Tôi đã phát huy hết thực lực của mình trong kỳ thi.
+mimikara-n3-v674	目的のためには手段を選ばない。	{目的|もくてき}のためには{手段|しゅだん}を{選|えら}ばない。	Vì mục đích thì không từ thủ đoạn nào.
+mimikara-n3-v675	彼は学校の代表として大会に出場した。	{彼|かれ}は{学校|がっこう}の{代表|だいひょう}として{大会|たいかい}に{出場|しゅつじょう}した。	Cậu ấy tham gia giải đấu với tư cách đại diện của trường.
+mimikara-n3-v676	台風の影響で、飛行機が欠航になった。	{台風|たいふう}の{影響|えいきょう}で、{飛行機|ひこうき}が{欠航|けっこう}になった。	Do ảnh hưởng của bão, chuyến bay đã bị hủy.
+mimikara-n3-v677	この薬はすぐに効果が出る。	この{薬|くすり}はすぐに{効果|こうか}が{出|で}る。	Thuốc này có hiệu quả ngay.
+mimikara-n3-v678	初めて会ったとき、彼にいい印象を持った。	{初|はじ}めて{会|あ}ったとき、{彼|かれ}にいい{印象|いんしょう}を{持|も}った。	Lần đầu gặp, tôi đã có ấn tượng tốt về anh ấy.
+mimikara-n3-v679	大事なところに赤ペンで印をつけた。	{大事|だいじ}なところに{赤|あか}ペンで{印|しるし}をつけた。	Tôi đánh dấu những chỗ quan trọng bằng bút đỏ.
+mimikara-n3-v680	私が手を上げたら、それを合図に始めてください。	{私|わたし}が{手|て}を{上|あ}げたら、それを{合図|あいず}に{始|はじ}めてください。	Khi tôi giơ tay thì hãy lấy đó làm ám hiệu để bắt đầu.
+mimikara-n3-v681	二人には共通の趣味がある。	{二人|ふたり}には{共通|きょうつう}の{趣味|しゅみ}がある。	Hai người có chung một sở thích.
+mimikara-n3-v683	説明の一部は省略します。	{説明|せつめい}の{一部|いちぶ}は{省略|しょうりゃく}します。	Tôi xin lược bớt một phần phần giải thích.
+mimikara-n3-v684	来年はフルマラソンに挑戦したい。	{来年|らいねん}はフルマラソンに{挑戦|ちょうせん}したい。	Năm sau tôi muốn thử sức với giải marathon toàn phần.
+mimikara-n3-v685	先生にほめられて、やる気が出た。	{先生|せんせい}にほめられて、やる{気|き}が{出|で}た。	Được thầy khen, tôi có thêm động lực.
+mimikara-n3-v686	勇気を出して、彼女に話しかけた。	{勇気|ゆうき}を{出|だ}して、{彼女|かのじょ}に{話|はな}しかけた。	Tôi lấy hết can đảm bắt chuyện với cô ấy.
+mimikara-n3-v687	看護師の資格を取るために勉強している。	{看護|かんご}{師|し}の{資格|しかく}を{取|と}るために{勉強|べんきょう}している。	Tôi đang học để lấy chứng chỉ điều dưỡng.
+mimikara-n3-v688	ビザの申請に必要な書類を準備した。	ビザの{申請|しんせい}に{必要|ひつよう}な{書類|しょるい}を{準備|じゅんび}した。	Tôi đã chuẩn bị các giấy tờ cần thiết để xin visa.
+mimikara-n3-v689	この書類は本人が書いてください。	この{書類|しょるい}は{本人|ほんにん}が{書|か}いてください。	Giấy tờ này xin chính người đó tự điền.
+mimikara-n3-v690	新しいアパートの契約をした。	{新|あたら}しいアパートの{契約|けいやく}をした。	Tôi đã ký hợp đồng thuê căn hộ mới.
+mimikara-n3-v691	この書類で、日本に住んでいることを証明できる。	この{書類|しょるい}で、{日本|にほん}に{住|す}んでいることを{証明|しょうめい}できる。	Với giấy tờ này có thể chứng minh việc tôi đang sống ở Nhật.
+mimikara-n3-v692	会議の時間が三時に変更になった。	{会議|かいぎ}の{時間|じかん}が{三|さん}{時|じ}に{変更|へんこう}になった。	Giờ họp đã được đổi sang 3 giờ.
+mimikara-n3-v693	ファイルを保存してから、パソコンを切ってください。	ファイルを{保存|ほぞん}してから、パソコンを{切|き}ってください。	Hãy lưu tệp rồi mới tắt máy tính.
+mimikara-n3-v694	この地域では、珍しい鳥が保護されている。	この{地域|ちいき}では、{珍|めずら}しい{鳥|とり}が{保護|ほご}されている。	Ở khu vực này, những loài chim quý hiếm đang được bảo vệ.
+mimikara-n3-v695	この会社は働く環境がとてもいい。	この{会社|かいしゃ}は{働|はたら}く{環境|かんきょう}がとてもいい。	Công ty này có môi trường làm việc rất tốt.
+mimikara-n3-v696	日本は天然資源が少ない国だ。	{日本|にほん}は{天然|てんねん}{資源|しげん}が{少|すく}ない{国|くに}だ。	Nhật Bản là quốc gia ít tài nguyên thiên nhiên.
+mimikara-n3-v697	最近、運動不足で体が重い。	{最近|さいきん}、{運動|うんどう}{不足|ふそく}で{体|からだ}が{重|おも}い。	Dạo này thiếu vận động nên người tôi nặng nề.
+mimikara-n3-v698	このクラスの平均点は七十点だった。	このクラスの{平均|へいきん}{点|てん}は{七十点|ななじゅってん}だった。	Điểm trung bình của lớp này là 70 điểm.
+mimikara-n3-v699	この学校では、女子学生の割合が高い。	この{学校|がっこう}では、{女子|じょし}{学生|がくせい}の{割合|わりあい}が{高|たか}い。	Ở trường này, tỷ lệ nữ sinh cao.
+mimikara-n3-v700	祖父は駅前で商売をしていた。	{祖父|そふ}は{駅前|えきまえ}で{商売|しょうばい}をしていた。	Ông tôi từng buôn bán ở trước nhà ga.
+mimikara-n3-v701	この店では、外国の商品も売っている。	この{店|みせ}では、{外国|がいこく}の{商品|しょうひん}も{売|う}っている。	Cửa hàng này cũng bán cả hàng nước ngoài.
+mimikara-n3-v702	値段は高いが、質がいいので長く使える。	{値段|ねだん}は{高|たか}いが、{質|しつ}がいいので{長|なが}く{使|つか}える。	Giá đắt nhưng chất lượng tốt nên dùng được lâu.
+mimikara-n3-v703	このパソコンは型が古いが、まだ使える。	このパソコンは{型|かた}が{古|ふる}いが、まだ{使|つか}える。	Máy tính này kiểu cũ nhưng vẫn dùng được.
+mimikara-n3-v704	この工場では、一日に千台の車を生産している。	この{工場|こうじょう}では、{一日|いちにち}に{千|せん}{台|だい}の{車|くるま}を{生産|せいさん}している。	Nhà máy này mỗi ngày sản xuất một nghìn chiếc ô tô.
+mimikara-n3-v705	夏になると、電気の消費が増える。	{夏|なつ}になると、{電気|でんき}の{消費|しょうひ}が{増|ふ}える。	Vào mùa hè, lượng điện tiêu thụ tăng lên.
+mimikara-n3-v706	東京は物価が高い。	{東京|とうきょう}は{物価|ぶっか}が{高|たか}い。	Vật giá ở Tokyo đắt đỏ.
+mimikara-n3-v707	不景気で多くの会社が倒産した。	{不景気|ふけいき}で{多|おお}くの{会社|かいしゃ}が{倒産|とうさん}した。	Do kinh tế suy thoái nên nhiều công ty đã phá sản.
+mimikara-n3-v708	雨が降りそうなので、傘を携帯したほうがいい。	{雨|あめ}が{降|ふ}りそうなので、{傘|かさ}を{携帯|けいたい}したほうがいい。	Trời có vẻ sắp mưa nên mang theo ô thì hơn.
+mimikara-n3-v709	現代の若者は、新聞をあまり読まない。	{現代|げんだい}の{若者|わかもの}は、{新聞|しんぶん}をあまり{読|よ}まない。	Giới trẻ thời nay không mấy khi đọc báo.
+mimikara-n3-v710	この寺は十七世紀に建てられた。	この{寺|てら}は{十|じゅう}{七|なな}{世紀|せいき}に{建|た}てられた。	Ngôi chùa này được xây vào thế kỷ 17.
+mimikara-n3-v711	日本の文化について発表した。	{日本|にほん}の{文化|ぶんか}について{発表|はっぴょう}した。	Tôi đã thuyết trình về văn hóa Nhật Bản.
+mimikara-n3-v712	東京は世界でも有名な大都市だ。	{東京|とうきょう}は{世界|せかい}でも{有名|ゆうめい}な{大|だい}{都市|とし}だ。	Tokyo là một đại đô thị nổi tiếng trên thế giới.
+mimikara-n3-v713	若者が都会に出て、地方の人口が減っている。	{若者|わかもの}が{都会|とかい}に{出|で}て、{地方|ちほう}の{人口|じんこう}が{減|へ}っている。	Giới trẻ lên thành phố nên dân số ở các địa phương đang giảm.
+mimikara-n3-v714	祖父は戦争の話をよくしてくれた。	{祖父|そふ}は{戦争|せんそう}の{話|はなし}をよくしてくれた。	Ông tôi hay kể cho tôi nghe chuyện chiến tranh.
+mimikara-n3-v715	世界の平和を願っている。	{世界|せかい}の{平和|へいわ}を{願|ねが}っている。	Tôi cầu mong hòa bình cho thế giới.

@@ -24,13 +24,14 @@ import com.n3sensei.app.core.designsystem.component.DetailSection
 import com.n3sensei.app.core.designsystem.component.DetailText
 import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.core.designsystem.theme.japaneseText
-import com.n3sensei.app.core.ui.content.ExampleSentenceItem
+import com.n3sensei.app.core.ui.content.ExamplesSection
 import com.n3sensei.app.core.ui.content.ItemActions
 import com.n3sensei.app.core.ui.content.LocationSection
 import com.n3sensei.app.core.ui.content.LocationTag
 import com.n3sensei.app.core.ui.content.SourceNote
 import com.n3sensei.app.core.ui.state.DetailLocation
 import com.n3sensei.app.core.ui.state.UiStateContent
+import com.n3sensei.app.domain.example.ExampleHighlight
 import com.n3sensei.app.domain.model.GrammarDetail
 
 @Composable
@@ -87,11 +88,9 @@ private fun GrammarDetailContent(detail: GrammarDetail, location: DetailLocation
                 DetailText(stringResource(R.string.grammar_caution), caution, modifier = Modifier.padding(12.dp))
             }
         }
-        DetailSection(stringResource(R.string.detail_examples)) {
-            if (detail.examples.isEmpty()) {
-                Text(stringResource(R.string.detail_no_examples), color = MaterialTheme.colorScheme.onSurfaceVariant)
-            }
-            detail.examples.forEach { ExampleSentenceItem(it) }
+        // Under the theory; no section when the point has no example. The pattern is emphasized.
+        ExamplesSection(stringResource(R.string.detail_examples), detail.examples) {
+            ExampleHighlight.ofGrammar(it.japanese, grammar.pattern)
         }
         if (detail.exercises.isNotEmpty()) {
             DetailSection(stringResource(R.string.grammar_exercises)) {

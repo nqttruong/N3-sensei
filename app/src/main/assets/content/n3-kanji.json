@@ -4,9 +4,10 @@
  "pack": {
   "id": "n3-kanji",
   "title": "Kanji N3 (theo N3.pdf)",
-  "version": 2,
+  "version": 3,
   "jlptLevel": "N3",
-  "defaultSourceId": "n3pdf-kanji"
+  "defaultSourceId": "n3pdf-kanji",
+  "examplesBaseVersion": 2
  },
  "sources": [
   {
@@ -32,6 +33,14 @@
    "license": "Phần N3.pdf: tài liệu của chủ dự án. Phần JMdict: CC BY-SA 4.0, Electronic Dictionary Research and Development Group (https://www.edrdg.org/edrdg/licence.html); thay đổi: nghĩa tiếng Việt do N3 Sensei dịch từ nghĩa tiếng Anh (chưa kiểm duyệt).",
    "attribution": "JMdict © Electronic Dictionary Research and Development Group",
    "licenseVerified": true
+  },
+  {
+   "id": "n3-kanji-examples",
+   "name": "N3 Sensei tự soạn · câu ví dụ bổ sung",
+   "url": null,
+   "license": "Câu ví dụ và bản dịch do N3 Sensei tự soạn (11/2026) theo nghĩa và cách dùng có sẵn trong app; chưa qua kiểm duyệt chuyên môn.",
+   "attribution": null,
+   "licenseVerified": false
   }
  ],
  "examples": [
@@ -23267,6 +23276,55 @@
     "hanViet": "TẤT THẮNG",
     "flags": []
    }
+  },
+  {
+   "id": "n3k-k04ea1-w1",
+   "japanese": "死亡",
+   "furigana": "{死亡|しぼう}",
+   "translationVi": "Tử vong, sự chết (âm On ボウ)",
+   "sourceId": "n3-kanji-examples"
+  },
+  {
+   "id": "n3k-k04ea1-w2",
+   "japanese": "亡くなる",
+   "furigana": "{亡|な}くなる",
+   "translationVi": "Qua đời, mất (âm Kun な.い)",
+   "sourceId": "n3-kanji-examples"
+  },
+  {
+   "id": "n3k-k05e0c-w1",
+   "japanese": "希望",
+   "furigana": "{希望|きぼう}",
+   "translationVi": "Hy vọng, nguyện vọng (âm On キ)",
+   "sourceId": "n3-kanji-examples"
+  },
+  {
+   "id": "n3k-k05e0c-w2",
+   "japanese": "希少",
+   "furigana": "{希少|きしょう}",
+   "translationVi": "Hiếm, khan hiếm (âm On キ)",
+   "sourceId": "n3-kanji-examples"
+  },
+  {
+   "id": "n3k-k05742-w1",
+   "japanese": "坂",
+   "furigana": "{坂|さか}",
+   "translationVi": "Con dốc (âm Kun さか)",
+   "sourceId": "n3-kanji-examples"
+  },
+  {
+   "id": "n3k-k05742-w2",
+   "japanese": "坂道",
+   "furigana": "{坂道|さかみち}",
+   "translationVi": "Đường dốc (âm Kun さか)",
+   "sourceId": "n3-kanji-examples"
+  },
+  {
+   "id": "n3k-k05742-w3",
+   "japanese": "上り坂",
+   "furigana": "{上|のぼ}り{坂|ざか}",
+   "translationVi": "Dốc lên (さか đọc thành ざか khi đứng sau từ khác)",
+   "sourceId": "n3-kanji-examples"
   }
  ],
  "lessons": [
@@ -26003,7 +26061,10 @@
      "meaningVi": "Chết, mất",
      "strokeCount": 3,
      "note": "Nghĩa dịch từ KANJIDIC2 (tiếng Anh: deceased; the late; dying; perish), chưa kiểm duyệt.",
-     "examples": [],
+     "examples": [
+      "n3k-k04ea1-w1",
+      "n3k-k04ea1-w2"
+     ],
      "sourceId": "n3pdf-kanji-kanjidic2",
      "origin": {
       "deck": "第03",
@@ -26309,7 +26370,10 @@
      "meaningVi": "Hy vọng, mong; hiếm",
      "strokeCount": 7,
      "note": "Nghĩa dịch từ KANJIDIC2 (tiếng Anh: hope; beg; request; pray; beseech; Greece), chưa kiểm duyệt.",
-     "examples": [],
+     "examples": [
+      "n3k-k05e0c-w1",
+      "n3k-k05e0c-w2"
+     ],
      "sourceId": "n3pdf-kanji-kanjidic2",
      "origin": {
       "deck": "第03",
@@ -32940,7 +33004,11 @@
      "meaningVi": "Con dốc",
      "strokeCount": 7,
      "note": "Nghĩa dịch từ KANJIDIC2 (tiếng Anh: slope; incline; hill), chưa kiểm duyệt.",
-     "examples": [],
+     "examples": [
+      "n3k-k05742-w1",
+      "n3k-k05742-w2",
+      "n3k-k05742-w3"
+     ],
      "sourceId": "n3pdf-kanji-kanjidic2",
      "origin": {
       "deck": "第11",

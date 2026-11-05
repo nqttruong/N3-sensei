@@ -1,0 +1,111 @@
+# Mimikara N3 · bài 4 (形容詞): một câu ví dụ cho mỗi từ. Cột: item_id, câu, furigana (annotate.py điền, đã soát tay), dịch.
+mimikara-n3-v299	お風呂に入って、体が温まった。	お{風呂|ふろ}に{入|はい}って、{体|からだ}が{温|あたた}まった。	Tắm bồn xong, người tôi ấm lên.
+mimikara-n3-v300	冷めたスープを電子レンジで温めた。	{冷|さ}めたスープを{電子|でんし}レンジで{温|あたた}めた。	Tôi hâm nóng món súp đã nguội bằng lò vi sóng.
+mimikara-n3-v301	試合が近づいて、選手たちの緊張が高まっている。	{試合|しあい}が{近|ちか}づいて、{選手|せんしゅ}たちの{緊張|きんちょう}が{高|たか}まっている。	Trận đấu đến gần, sự căng thẳng của các cầu thủ ngày càng tăng.
+mimikara-n3-v302	毎日の練習で、技術を高めることができる。	{毎日|まいにち}の{練習|れんしゅう}で、{技術|ぎじゅつ}を{高|たか}めることができる。	Nhờ luyện tập mỗi ngày, có thể nâng cao kỹ thuật.
+mimikara-n3-v303	夜になって、雨が強まってきた。	{夜|よる}になって、{雨|あめ}が{強|つよ}まってきた。	Về đêm mưa càng lúc càng mạnh.
+mimikara-n3-v304	台風が近づいて、風が勢いを強めている。	{台風|たいふう}が{近|ちか}づいて、{風|かぜ}が{勢|いきお}いを{強|つよ}めている。	Bão đến gần nên gió đang mạnh dần lên.
+mimikara-n3-v305	台風の勢いが少しずつ弱まってきた。	{台風|たいふう}の{勢|いきお}いが{少|すこ}しずつ{弱|よわ}まってきた。	Sức mạnh của cơn bão đã yếu dần.
+mimikara-n3-v306	料理ができたら、火を弱めてください。	{料理|りょうり}ができたら、{火|ひ}を{弱|よわ}めてください。	Món ăn chín rồi thì hãy vặn nhỏ lửa.
+mimikara-n3-v307	そのうわさは、あっという間に学校中に広まった。	そのうわさは、あっという{間|ま}に{学校中|がっこうじゅう}に{広|ひろ}まった。	Tin đồn đó lan khắp trường chỉ trong chớp mắt.
+mimikara-n3-v308	日本の文化を世界に広めたい。	{日本|にほん}の{文化|ぶんか}を{世界|せかい}に{広|ひろ}めたい。	Tôi muốn quảng bá văn hóa Nhật Bản ra thế giới.
+mimikara-n3-v309	一緒に旅行して、二人の仲が深まった。	{一緒|いっしょ}に{旅行|りょこう}して、{二人|ふたり}の{仲|なか}が{深|ふか}まった。	Đi du lịch cùng nhau, tình cảm của hai người càng thêm sâu đậm.
+mimikara-n3-v310	留学生と話して、異文化への理解を深めた。	{留学生|りゅうがくせい}と{話|はな}して、{異|い}{文化|ぶんか}への{理解|りかい}を{深|ふか}めた。	Trò chuyện với du học sinh giúp tôi hiểu sâu hơn về văn hóa khác.
+mimikara-n3-v311	妹は毎日、犬の世話をしている。	{妹|いもうと}は{毎日|まいにち}、{犬|いぬ}の{世話|せわ}をしている。	Ngày nào em gái tôi cũng chăm sóc con chó.
+mimikara-n3-v312	彼は温かい家庭で育った。	{彼|かれ}は{温|あたた}かい{家庭|かてい}で{育|そだ}った。	Anh ấy lớn lên trong một gia đình ấm áp.
+mimikara-n3-v313	みなさんのご協力をお願いします。	みなさんのご{協力|きょうりょく}をお{願|ねが}いします。	Rất mong nhận được sự hợp tác của mọi người.
+mimikara-n3-v314	助けてくれた人たちに心から感謝している。	{助|たす}けてくれた{人|ひと}たちに{心|こころ}から{感謝|かんしゃ}している。	Tôi thật lòng biết ơn những người đã giúp đỡ mình.
+mimikara-n3-v315	お世話になった先生にお礼の手紙を書いた。	お{世話|せわ}になった{先生|せんせい}にお{礼|れい}の{手紙|てがみ}を{書|か}いた。	Tôi đã viết thư cảm ơn thầy giáo đã giúp đỡ mình.
+mimikara-n3-v316	遅れてしまったことについて、お詫びを申し上げます。	{遅|おく}れてしまったことについて、お{詫|わ}びを{申|もう}し{上|あ}げます。	Tôi xin gửi lời xin lỗi vì đã đến muộn.
+mimikara-n3-v317	日本では、あいさつのときにおじぎをする。	{日本|にほん}では、あいさつのときにおじぎをする。	Ở Nhật, người ta cúi chào khi chào hỏi.
+mimikara-n3-v318	試合の後、両チームの選手が握手をした。	{試合|しあい}の{後|あと}、{両|りょう}チームの{選手|せんしゅ}が{握手|あくしゅ}をした。	Sau trận đấu, cầu thủ hai đội đã bắt tay nhau.
+mimikara-n3-v319	妹にいじわるをして、母にしかられた。	{妹|いもうと}にいじわるをして、{母|はは}にしかられた。	Tôi trêu chọc em gái nên bị mẹ mắng.
+mimikara-n3-v320	子どもが壁にいたずら書きをした。	{子|こ}どもが{壁|かべ}にいたずら{書|が}きをした。	Đứa trẻ nghịch ngợm vẽ bậy lên tường.
+mimikara-n3-v321	電気代を節約するために、こまめに電気を消している。	{電気|でんき}{代|だい}を{節約|せつやく}するために、こまめに{電気|でんき}を{消|け}している。	Để tiết kiệm tiền điện, tôi chịu khó tắt đèn khi không dùng.
+mimikara-n3-v322	父は小さなレストランを経営している。	{父|ちち}は{小|ちい}さなレストランを{経営|けいえい}している。	Bố tôi đang kinh doanh một nhà hàng nhỏ.
+mimikara-n3-v323	失敗したことを反省して、次は気をつけます。	{失敗|しっぱい}したことを{反省|はんせい}して、{次|つぎ}は{気|き}をつけます。	Tôi đã tự kiểm điểm về thất bại và lần sau sẽ cẩn thận hơn.
+mimikara-n3-v324	計画を立てるだけでなく、実行することが大切だ。	{計画|けいかく}を{立|た}てるだけでなく、{実行|じっこう}することが{大切|たいせつ}だ。	Không chỉ lập kế hoạch mà thực hiện mới là điều quan trọng.
+mimikara-n3-v325	科学技術の進歩で、生活が便利になった。	{科学|かがく}{技術|ぎじゅつ}の{進歩|しんぽ}で、{生活|せいかつ}が{便利|べんり}になった。	Nhờ tiến bộ khoa học kỹ thuật, cuộc sống trở nên tiện lợi hơn.
+mimikara-n3-v326	最近、天気の変化が激しい。	{最近|さいきん}、{天気|てんき}の{変化|へんか}が{激|はげ}しい。	Dạo này thời tiết thay đổi thất thường.
+mimikara-n3-v327	交通の発達によって、遠くの町へも簡単に行けるようになった。	{交通|こうつう}の{発達|はったつ}によって、{遠|とお}くの{町|まち}へも{簡単|かんたん}に{行|い}けるようになった。	Nhờ giao thông phát triển, việc đến những thị trấn xa cũng dễ dàng.
+mimikara-n3-v328	毎朝走って、体力をつけている。	{毎朝|まいあさ}{走|はし}って、{体力|たいりょく}をつけている。	Sáng nào tôi cũng chạy để rèn luyện thể lực.
+mimikara-n3-v329	うちの高校のチームが全国大会に出場する。	うちの{高校|こうこう}のチームが{全国|ぜんこく}{大会|たいかい}に{出場|しゅつじょう}する。	Đội của trường cấp ba chúng tôi sẽ tham dự giải toàn quốc.
+mimikara-n3-v330	彼は海外のチームで活躍している。	{彼|かれ}は{海外|かいがい}のチームで{活躍|かつやく}している。	Anh ấy đang thi đấu xuất sắc ở một đội bóng nước ngoài.
+mimikara-n3-v331	この業界は競争が激しい。	この{業界|ぎょうかい}は{競争|きょうそう}が{激|はげ}しい。	Ngành này cạnh tranh rất khốc liệt.
+mimikara-n3-v332	みんなで地元のチームを応援しに行った。	みんなで{地元|じもと}のチームを{応援|おうえん}しに{行|い}った。	Cả nhóm đã đi cổ vũ đội nhà.
+mimikara-n3-v333	演奏が終わると、大きな拍手が起こった。	{演奏|えんそう}が{終|お}わると、{大|おお}きな{拍手|はくしゅ}が{起|お}こった。	Khi màn biểu diễn kết thúc, tiếng vỗ tay vang lên.
+mimikara-n3-v334	この店のケーキは若い女性に人気がある。	この{店|みせ}のケーキは{若|わか}い{女性|じょせい}に{人気|にんき}がある。	Bánh ngọt của tiệm này được các cô gái trẻ ưa chuộng.
+mimikara-n3-v335	あの二人が結婚するといううわさを聞いた。	あの{二人|ふたり}が{結婚|けっこん}するといううわさを{聞|き}いた。	Tôi nghe tin đồn hai người đó sắp cưới.
+mimikara-n3-v336	インターネットで旅行の情報を集めた。	インターネットで{旅行|りょこう}の{情報|じょうほう}を{集|あつ}めた。	Tôi đã thu thập thông tin du lịch trên mạng.
+mimikara-n3-v337	留学生とメールアドレスを交換した。	{留学生|りゅうがくせい}とメールアドレスを{交換|こうかん}した。	Tôi đã trao đổi địa chỉ email với du học sinh.
+mimikara-n3-v338	今年はこの色の服が流行している。	{今年|ことし}はこの{色|いろ}の{服|ふく}が{流行|りゅうこう}している。	Năm nay quần áo màu này đang thịnh hành.
+mimikara-n3-v339	新しい商品をテレビで宣伝している。	{新|あたら}しい{商品|しょうひん}をテレビで{宣伝|せんでん}している。	Sản phẩm mới đang được quảng bá trên tivi.
+mimikara-n3-v340	新聞の広告を見て、このアルバイトに応募した。	{新聞|しんぶん}の{広告|こうこく}を{見|み}て、このアルバイトに{応募|おうぼ}した。	Tôi xem quảng cáo trên báo rồi ứng tuyển công việc làm thêm này.
+mimikara-n3-v341	彼の新しい作品は世界中から注目されている。	{彼|かれ}の{新|あたら}しい{作品|さくひん}は{世界中|せかいじゅう}から{注目|ちゅうもく}されている。	Tác phẩm mới của anh ấy đang được cả thế giới chú ý.
+mimikara-n3-v342	会議で日本語と英語の通訳をした。	{会議|かいぎ}で{日本語|にほんご}と{英語|えいご}の{通訳|つうやく}をした。	Tôi đã làm phiên dịch tiếng Nhật và tiếng Anh trong cuộc họp.
+mimikara-n3-v343	この小説はたくさんの言語に翻訳されている。	この{小説|しょうせつ}はたくさんの{言語|げんご}に{翻訳|ほんやく}されている。	Cuốn tiểu thuyết này đã được dịch ra nhiều thứ tiếng.
+mimikara-n3-v344	田中さんに伝言をお願いできますか。	{田中|たなか}さんに{伝言|でんごん}をお{願|ねが}いできますか。	Tôi có thể nhờ chị nhắn lại với anh Tanaka được không?
+mimikara-n3-v345	調査の結果を部長に報告した。	{調査|ちょうさ}の{結果|けっか}を{部長|ぶちょう}に{報告|ほうこく}した。	Tôi đã báo cáo kết quả khảo sát cho trưởng phòng.
+mimikara-n3-v346	見たいドラマを録画しておいた。	{見|み}たいドラマを{録画|ろくが}しておいた。	Tôi đã ghi hình sẵn bộ phim truyền hình muốn xem.
+mimikara-n3-v347	連休中は、観光地がどこも混雑する。	{連休|れんきゅう}{中|ちゅう}は、{観光|かんこう}{地|ち}がどこも{混雑|こんざつ}する。	Trong kỳ nghỉ dài ngày, các khu du lịch đều đông nghịt.
+mimikara-n3-v348	高速道路で十キロの渋滞が起きている。	{高速|こうそく}{道路|どうろ}で{十|じゅう}キロの{渋滞|じゅうたい}が{起|お}きている。	Trên đường cao tốc đang tắc đường dài 10 ki-lô-mét.
+mimikara-n3-v349	交差点で車とバスが衝突した。	{交差点|こうさてん}で{車|くるま}とバスが{衝突|しょうとつ}した。	Một chiếc ô tô và xe buýt đã đâm nhau ở ngã tư.
+mimikara-n3-v350	台風で農作物に大きな被害が出た。	{台風|たいふう}で{農作物|のうさくもつ}に{大|おお}きな{被害|ひがい}が{出|で}た。	Cơn bão đã gây thiệt hại lớn cho mùa màng.
+mimikara-n3-v351	雪の日は事故が多いので、運転に注意してください。	{雪|ゆき}の{日|ひ}は{事故|じこ}が{多|おお}いので、{運転|うんてん}に{注意|ちゅうい}してください。	Ngày tuyết rơi thường nhiều tai nạn nên hãy lái xe cẩn thận.
+mimikara-n3-v352	駅前で起きた事件について、警察が調べている。	{駅前|えきまえ}で{起|お}きた{事件|じけん}について、{警察|けいさつ}が{調|しら}べている。	Cảnh sát đang điều tra vụ việc xảy ra trước nhà ga.
+mimikara-n3-v353	エレベーターが故障して、階段で上がった。	エレベーターが{故障|こしょう}して、{階段|かいだん}で{上|あ}がった。	Thang máy bị hỏng nên tôi phải đi cầu thang bộ lên.
+mimikara-n3-v354	壊れた時計を修理に出した。	{壊|こわ}れた{時計|とけい}を{修理|しゅうり}に{出|だ}した。	Tôi đã mang chiếc đồng hồ bị hỏng đi sửa.
+mimikara-n3-v355	雷のせいで、町全体が停電した。	{雷|かみなり}のせいで、{町|まち}{全体|ぜんたい}が{停電|ていでん}した。	Do sấm sét mà cả thị trấn bị mất điện.
+mimikara-n3-v356	今日は体の調子がいい。	{今日|きょう}は{体|からだ}の{調子|ちょうし}がいい。	Hôm nay cơ thể tôi đang trong trạng thái tốt.
+mimikara-n3-v357	面接の前は緊張して、手が冷たくなった。	{面接|めんせつ}の{前|まえ}は{緊張|きんちょう}して、{手|て}が{冷|つめ}たくなった。	Trước buổi phỏng vấn tôi hồi hộp đến mức tay lạnh toát.
+mimikara-n3-v359	彼はいつも自分の車を自慢している。	{彼|かれ}はいつも{自分|じぶん}の{車|くるま}を{自慢|じまん}している。	Anh ta lúc nào cũng khoe khoang chiếc xe của mình.
+mimikara-n3-v361	その映画を見て、とても感動した。	その{映画|えいが}を{見|み}て、とても{感動|かんどう}した。	Xem bộ phim đó, tôi rất cảm động.
+mimikara-n3-v362	試合に勝って、ファンはみんな興奮していた。	{試合|しあい}に{勝|か}って、ファンはみんな{興奮|こうふん}していた。	Thắng trận, người hâm mộ ai nấy đều phấn khích.
+mimikara-n3-v363	旅行の感想を作文に書いた。	{旅行|りょこう}の{感想|かんそう}を{作文|さくぶん}に{書|か}いた。	Tôi đã viết cảm tưởng về chuyến đi vào bài văn.
+mimikara-n3-v364	試合の結果は、みんなの予想とは違った。	{試合|しあい}の{結果|けっか}は、みんなの{予想|よそう}とは{違|ちが}った。	Kết quả trận đấu khác với dự đoán của mọi người.
+mimikara-n3-v365	私の専門は日本の歴史です。	{私|わたし}の{専門|せんもん}は{日本|にほん}の{歴史|れきし}です。	Chuyên môn của tôi là lịch sử Nhật Bản.
+mimikara-n3-v366	大学で環境問題について研究している。	{大学|だいがく}で{環境|かんきょう}{問題|もんだい}について{研究|けんきゅう}している。	Tôi đang nghiên cứu về vấn đề môi trường ở trường đại học.
+mimikara-n3-v367	市は住民の生活について調査を行った。	{市|し}は{住民|じゅうみん}の{生活|せいかつ}について{調査|ちょうさ}を{行|おこな}った。	Thành phố đã tiến hành điều tra về đời sống của cư dân.
+mimikara-n3-v368	火事の原因はまだ分かっていない。	{火事|かじ}の{原因|げんいん}はまだ{分|わ}かっていない。	Nguyên nhân vụ hỏa hoạn vẫn chưa được làm rõ.
+mimikara-n3-v369	試験の結果は来週発表される。	{試験|しけん}の{結果|けっか}は{来週|らいしゅう}{発表|はっぴょう}される。	Kết quả kỳ thi sẽ được công bố vào tuần sau.
+mimikara-n3-v370	話し合いで問題を解決した。	{話|はな}し{合|あ}いで{問題|もんだい}を{解決|かいけつ}した。	Chúng tôi đã giải quyết vấn đề bằng cách bàn bạc.
+mimikara-n3-v371	出かける前に、ガスを消したかどうか確認した。	{出|で}かける{前|まえ}に、ガスを{消|け}したかどうか{確認|かくにん}した。	Trước khi ra ngoài, tôi kiểm tra xem đã khóa ga chưa.
+mimikara-n3-v372	この図書館は誰でも利用できます。	この{図書館|としょかん}は{誰|だれ}でも{利用|りよう}できます。	Thư viện này ai cũng có thể sử dụng.
+mimikara-n3-v373	先生の説明はとても分かりやすくて、すぐに理解できた。	{先生|せんせい}の{説明|せつめい}はとても{分|わ}かりやすくて、すぐに{理解|りかい}できた。	Lời giải thích của thầy rất dễ hiểu nên tôi hiểu ngay.
+mimikara-n3-v374	新しい星が発見された。	{新|あたら}しい{星|ほし}が{発見|はっけん}された。	Một ngôi sao mới đã được phát hiện.
+mimikara-n3-v375	電話を発明したのはベルだと言われている。	{電話|でんわ}を{発明|はつめい}したのはベルだと{言|い}われている。	Người ta nói rằng Bell là người phát minh ra điện thoại.
+mimikara-n3-v376	この事件とあの人は関係がないと思う。	この{事件|じけん}とあの{人|ひと}は{関係|かんけい}がないと{思|おも}う。	Tôi nghĩ người đó không liên quan đến vụ việc này.
+mimikara-n3-v377	この公園は団体で利用すると安くなる。	この{公園|こうえん}は{団体|だんたい}で{利用|りよう}すると{安|やす}くなる。	Công viên này nếu đi theo đoàn thì giá rẻ hơn.
+mimikara-n3-v378	来月、市長の選挙がある。	{来月|らいげつ}、{市長|しちょう}の{選挙|せんきょ}がある。	Tháng sau có cuộc bầu cử thị trưởng.
+mimikara-n3-v379	集めた税金は、道路や学校を作るために使われる。	{集|あつ}めた{税金|ぜいきん}は、{道路|どうろ}や{学校|がっこう}を{作|つく}るために{使|つか}われる。	Tiền thuế thu được được dùng để xây đường sá và trường học.
+mimikara-n3-v380	この事故の責任は会社にある。	この{事故|じこ}の{責任|せきにん}は{会社|かいしゃ}にある。	Trách nhiệm của vụ tai nạn này thuộc về công ty.
+mimikara-n3-v381	必要な書類をそろえて、窓口に出してください。	{必要|ひつよう}な{書類|しょるい}をそろえて、{窓口|まどぐち}に{出|だ}してください。	Hãy chuẩn bị đầy đủ giấy tờ cần thiết rồi nộp ở quầy.
+mimikara-n3-v382	この絵の題名は「春の海」です。	この{絵|え}の{題名|だいめい}は「{春|はる}の{海|うみ}」です。	Tên của bức tranh này là "Biển mùa xuân".
+mimikara-n3-v383	この仕事の条件は、英語が話せることです。	この{仕事|しごと}の{条件|じょうけん}は、{英語|えいご}が{話|はな}せることです。	Điều kiện của công việc này là nói được tiếng Anh.
+mimikara-n3-v384	レポートの締め切りは金曜日です。	レポートの{締|し}め{切|き}りは{金曜日|きんようび}です。	Hạn nộp báo cáo là thứ Sáu.
+mimikara-n3-v385	セールの期間は一週間です。	セールの{期間|きかん}は{一週間|いっしゅうかん}です。	Thời gian giảm giá là một tuần.
+mimikara-n3-v386	この町の人口は十年で二倍になった。	この{町|まち}の{人口|じんこう}は{十|じゅう}{年|ねん}で{二|に}{倍|ばい}になった。	Dân số thị trấn này đã tăng gấp đôi trong mười năm.
+mimikara-n3-v387	くじで旅行券が当たった。	くじで{旅行|りょこう}{券|けん}が{当|あ}たった。	Tôi đã bốc thăm trúng phiếu du lịch.
+mimikara-n3-v388	この公園を通ると近道になる。	この{公園|こうえん}を{通|とお}ると{近道|ちかみち}になる。	Đi qua công viên này là đường tắt.
+mimikara-n3-v389	ホテルは町の中心にあって、とても便利だ。	ホテルは{町|まち}の{中心|ちゅうしん}にあって、とても{便利|べんり}だ。	Khách sạn nằm ở trung tâm thành phố nên rất tiện.
+mimikara-n3-v390	この辺りに郵便局はありますか。	この{辺|あた}りに{郵便|ゆうびん}{局|きょく}はありますか。	Quanh đây có bưu điện không ạ?
+mimikara-n3-v391	家の周りに花を植えた。	{家|いえ}の{周|まわ}りに{花|はな}を{植|う}えた。	Tôi đã trồng hoa quanh nhà.
+mimikara-n3-v392	壁に穴が開いている。	{壁|かべ}に{穴|あな}が{開|あ}いている。	Trên tường có một cái lỗ.
+mimikara-n3-v393	店の前に長い列ができている。	{店|みせ}の{前|まえ}に{長|なが}い{列|れつ}ができている。	Trước cửa hàng đang có một hàng người dài.
+mimikara-n3-v394	この道は幅が狭いので、車は通れない。	この{道|みち}は{幅|はば}が{狭|せま}いので、{車|くるま}は{通|とお}れない。	Con đường này hẹp nên ô tô không đi qua được.
+mimikara-n3-v395	試験の範囲を確認しておこう。	{試験|しけん}の{範囲|はんい}を{確認|かくにん}しておこう。	Hãy kiểm tra trước phạm vi thi.
+mimikara-n3-v396	手紙の内容は誰にも言えない。	{手紙|てがみ}の{内容|ないよう}は{誰|だれ}にも{言|い}えない。	Nội dung lá thư thì tôi không thể nói với ai.
+mimikara-n3-v397	箱の中身は何ですか。	{箱|はこ}の{中身|なかみ}は{何|なん}ですか。	Bên trong hộp là gì vậy?
+mimikara-n3-v398	この車の特徴は、燃費がいいことだ。	この{車|くるま}の{特徴|とくちょう}は、{燃費|ねんぴ}がいいことだ。	Đặc trưng của chiếc xe này là tiết kiệm nhiên liệu.
+mimikara-n3-v399	普通は七時ごろ家を出ます。	{普通|ふつう}は{七|なな}{時|じ}ごろ{家|いえ}を{出|で}ます。	Thường thì tôi ra khỏi nhà vào khoảng 7 giờ.
+mimikara-n3-v400	困っている人を助けるのは当たり前のことだ。	{困|こま}っている{人|ひと}を{助|たす}けるのは{当|あ}たり{前|まえ}のことだ。	Giúp đỡ người gặp khó khăn là điều đương nhiên.
+mimikara-n3-v401	このブランドのバッグは偽が多いから注意して。	このブランドのバッグは{偽|にせ}が{多|おお}いから{注意|ちゅうい}して。	Túi xách hãng này có nhiều hàng giả nên hãy cẩn thận.
+mimikara-n3-v402	このかばんは高いので、別のを見せてください。	このかばんは{高|たか}いので、{別|べつ}のを{見|み}せてください。	Cái cặp này đắt quá, cho tôi xem cái khác.
+mimikara-n3-v403	彼は日本で生まれたが、国籍はアメリカだ。	{彼|かれ}は{日本|にほん}で{生|う}まれたが、{国籍|こくせき}はアメリカだ。	Anh ấy sinh ra ở Nhật nhưng mang quốc tịch Mỹ.
+mimikara-n3-v404	東洋の文化に興味を持つ人が増えている。	{東洋|とうよう}の{文化|ぶんか}に{興味|きょうみ}を{持|も}つ{人|ひと}が{増|ふ}えている。	Số người quan tâm đến văn hóa phương Đông đang tăng lên.
+mimikara-n3-v405	明治時代に、日本に西洋の文化が入ってきた。	{明治|めいじ}{時代|じだい}に、{日本|にほん}に{西洋|せいよう}の{文化|ぶんか}が{入|はい}ってきた。	Vào thời Minh Trị, văn hóa phương Tây du nhập vào Nhật Bản.
+mimikara-n3-v406	彼女は国際的な会議で通訳をしている。	{彼女|かのじょ}は{国際|こくさい}{的|てき}な{会議|かいぎ}で{通訳|つうやく}をしている。	Cô ấy làm phiên dịch tại các hội nghị quốc tế.
+mimikara-n3-v407	この町は自然が豊かで、空気がきれいだ。	この{町|まち}は{自然|しぜん}が{豊|ゆた}かで、{空気|くうき}がきれいだ。	Thị trấn này thiên nhiên phong phú, không khí trong lành.
+mimikara-n3-v408	山の上から見た景色は本当にきれいだった。	{山|やま}の{上|うえ}から{見|み}た{景色|けしき}は{本当|ほんとう}にきれいだった。	Cảnh nhìn từ trên đỉnh núi thật sự rất đẹp.
+mimikara-n3-v409	世界にはいろいろな宗教がある。	{世界|せかい}にはいろいろな{宗教|しゅうきょう}がある。	Trên thế giới có nhiều tôn giáo khác nhau.
+mimikara-n3-v410	親の愛はとても深い。	{親|おや}の{愛|あい}はとても{深|ふか}い。	Tình yêu của cha mẹ rất sâu nặng.

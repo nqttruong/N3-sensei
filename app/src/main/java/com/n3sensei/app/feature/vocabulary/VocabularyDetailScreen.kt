@@ -26,7 +26,7 @@ import com.n3sensei.app.core.designsystem.component.DetailText
 import com.n3sensei.app.core.designsystem.component.FuriganaText
 import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.core.designsystem.theme.japaneseText
-import com.n3sensei.app.core.ui.content.ExampleSentenceItem
+import com.n3sensei.app.core.ui.content.ExamplesSection
 import com.n3sensei.app.core.ui.content.ItemActions
 import com.n3sensei.app.core.ui.content.KanjiCard
 import com.n3sensei.app.core.ui.content.LocationSection
@@ -34,6 +34,7 @@ import com.n3sensei.app.core.ui.content.LocationTag
 import com.n3sensei.app.core.ui.content.SourceNote
 import com.n3sensei.app.core.ui.state.DetailLocation
 import com.n3sensei.app.core.ui.state.UiStateContent
+import com.n3sensei.app.domain.example.ExampleHighlight
 import com.n3sensei.app.domain.model.VocabularyDetail
 
 @Composable
@@ -99,11 +100,9 @@ private fun VocabularyDetailContent(detail: VocabularyDetail, location: DetailLo
             }
         }
         vocabulary.note?.let { DetailText(stringResource(R.string.vocabulary_note), it) }
-        DetailSection(stringResource(R.string.detail_examples)) {
-            if (detail.examples.isEmpty()) {
-                Text(stringResource(R.string.detail_no_examples), color = MaterialTheme.colorScheme.onSurfaceVariant)
-            }
-            detail.examples.forEach { ExampleSentenceItem(it) }
+        // Under the theory; no section when the word has no example. The word is emphasized.
+        ExamplesSection(stringResource(R.string.detail_examples), detail.examples) {
+            ExampleHighlight.ofVocabulary(it.japanese, vocabulary.expression, vocabulary.reading)
         }
         if (detail.linkedKanji.isNotEmpty()) {
             DetailSection(stringResource(R.string.vocabulary_linked_kanji)) {

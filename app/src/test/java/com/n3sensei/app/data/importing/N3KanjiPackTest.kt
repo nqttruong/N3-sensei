@@ -39,7 +39,11 @@ class N3KanjiPackTest {
     private fun wordsOf(character: String) = bundle.kanjiExamples.filter { it.kanjiId == kanji(character).id }
         .sortedBy { it.sortOrder }.map { ref -> bundle.examples.single { it.id == ref.exampleId } }
     private fun hiragana(s: String) = s.map { if (it in '\u30A1'..'\u30F6') it - 0x60 else it }.joinToString("")
-    private val rawExamples by lazy { raw["examples"]!!.jsonArray.map { it.jsonObject }.associateBy { it.text("id") } }
+    /** The PDF's word cards (the examples added later for kanji without words have no origin). */
+    private val rawExamples by lazy {
+        raw["examples"]!!.jsonArray.map { it.jsonObject }.filter { it.text("sourceId") != ADDED_SOURCE }.associateBy { it.text("id") }
+    }
+    private val pdfKanjiExamples by lazy { bundle.kanjiExamples.filter { it.exampleId in rawExamples } }
 
     @Test
     fun importsWithoutErrors_393Kanji_with1272ExampleWords_andNoVocabulary() {
@@ -47,7 +51,9 @@ class N3KanjiPackTest {
         assertEquals(16, counts.getValue(ImportRecordType.LESSON).valid)
         // 392 kanji cards of the PDF + 板, whose words the PDF prints under 坂.
         assertEquals(393, counts.getValue(ImportRecordType.KANJI).valid)
-        assertEquals(1272, counts.getValue(ImportRecordType.EXAMPLE).valid)
+        // 1 272 word cards of the PDF + 7 words added for 亡, 希 and 坂, which had none.
+        assertEquals(1272 + 7, counts.getValue(ImportRecordType.EXAMPLE).valid)
+        assertEquals(1272, rawExamples.size)
         // The kanji's words are not vocabulary items: nothing goes to the vocabulary domain.
         assertEquals(0, counts[ImportRecordType.VOCABULARY]?.valid ?: 0)
         assertTrue(bundle.vocabulary.isEmpty())
@@ -81,14 +87,14 @@ class N3KanjiPackTest {
         assertEquals(listOf("Chú ý", "Ý nghĩa", "Quyết tâm"), wordsOf("意").map { it.translationVi })
         assertEquals("{吸|す}い{取|と}る", bundle.examples.single { it.japanese == "吸い取る" }.furigana)
         // Every word card is attached to exactly the kanji card it follows in the PDF.
-        bundle.kanjiExamples.forEach { ref ->
+        pdfKanjiExamples.forEach { ref ->
             val origin = rawExamples.getValue(ref.exampleId).origin()
             assertEquals(ref.exampleId, origin.text("kanji"), bundle.kanji.single { it.id == ref.kanjiId }.character)
         }
         // 1 272 word cards; 身長 (第10#2) is the same card as under 身 and is kept but not shown twice.
-        assertEquals(1271, bundle.kanjiExamples.map { it.exampleId }.toSet().size)
-        assertEquals(1272, bundle.examples.size)
-        bundle.examples.forEach { e ->
+        assertEquals(1271, pdfKanjiExamples.map { it.exampleId }.toSet().size)
+        assertEquals(1272, bundle.examples.count { it.id in rawExamples })
+        bundle.examples.filter { it.id in rawExamples }.forEach { e ->
             val reading = rawExamples.getValue(e.id).origin().text("reading")
             // Kana written in katakana (ゴミ箱) stays katakana in the ruby text.
             if (e.furigana != null) assertEquals(e.japanese, hiragana(reading), hiragana(Furigana.readingText(e.furigana!!)))
@@ -122,7 +128,9 @@ class N3KanjiPackTest {
             moved,
         )
         assertEquals(listOf("木の板", "黒板", "板書", "板前", "看板"), wordsOf("板").map { it.japanese })
-        assertTrue(wordsOf("坂").isEmpty())
+        // 坂 has no word in the PDF; its words were added later, under their own source.
+        assertEquals(listOf("坂", "坂道", "上り坂"), wordsOf("坂").map { it.japanese })
+        assertTrue(wordsOf("坂").all { it.sourceId == ADDED_SOURCE })
         assertEquals("連合", wordsOf("連").last().japanese)
         assertEquals(listOf("州"), wordsOf("州").map { it.japanese })
         assertEquals(listOf("追伸", "伸びる"), wordsOf("伸").map { it.japanese })
@@ -182,5 +190,23 @@ class N3KanjiPackTest {
         }
         // The examples are the group's words, not the cards' sentences (no 。).
         assertTrue(bundle.examples.none { it.japanese.endsWith("。") })
+    }
+
+    @Test
+    fun kanjiWithoutWordsInThePdf_getAddedWords_readWithTheirOwnReadings() {
+        // Only the three kanji that had no word got additions; nothing else was touched.
+        val added = bundle.kanjiExamples.filter { it.exampleId !in rawExamples }
+        assertEquals(setOf("亡", "希", "坂"), added.map { ref -> bundle.kanji.single { it.id == ref.kanjiId }.character }.toSet())
+        assertEquals(listOf("{死亡|しぼう}", "{亡|な}くなる"), wordsOf("亡").map { it.furigana })
+        assertEquals(listOf("{希望|きぼう}", "{希少|きしょう}"), wordsOf("希").map { it.furigana })
+        assertEquals("{上|のぼ}り{坂|ざか}", wordsOf("坂").last().furigana)
+        with(bundle.sources.single { it.id == ADDED_SOURCE }) {
+            assertTrue(name.startsWith("N3 Sensei tự soạn"))
+            assertFalse(licenseVerified)
+        }
+    }
+
+    private companion object {
+        const val ADDED_SOURCE = "n3-kanji-examples"
     }
 }

@@ -1,5 +1,6 @@
 package com.n3sensei.app.data.importing
 
+import com.n3sensei.app.domain.furigana.Furigana
 import com.n3sensei.app.domain.importing.ImportRecordType
 import com.n3sensei.app.domain.importing.IssueCode
 import org.junit.Assert.assertEquals
@@ -29,12 +30,14 @@ class N3GrammarPackTest {
         val counts = result.report.counts
         assertEquals(25, counts.getValue(ImportRecordType.LESSON).valid)
         assertEquals(110 + 64, counts.getValue(ImportRecordType.GRAMMAR).valid)
-        assertEquals(220, counts.getValue(ImportRecordType.EXAMPLE).valid)
+        assertEquals(220 + 140, counts.getValue(ImportRecordType.EXAMPLE).valid)
         assertEquals(0, result.report.skippedRecords)
         assertEquals(setOf(IssueCode.LESSON_SIZE_DIFFERS), result.report.issues.map { it.code }.toSet())
         assertTrue((1..110).all { examplesOf(it).size == 2 })
-        // The PDF points bring no examples: the cards' sentences are not bundled.
-        assertTrue((111..174).all { examplesOf(it).isEmpty() })
+        // The PDF points bring no examples (the cards' sentences are not bundled): each has 2–3
+        // self-written ones, added later under their own source; the 110 got none added.
+        assertTrue((111..174).all { examplesOf(it).size in 2..3 && examplesOf(it).all { e -> e.sourceId == EXAMPLES_SOURCE } })
+        assertTrue((1..110).all { examplesOf(it).none { e -> e.sourceId == EXAMPLES_SOURCE } })
     }
 
     @Test
@@ -91,12 +94,23 @@ class N3GrammarPackTest {
         assertEquals("(tôi) có thói quen/nguyên tắc là…", grammar(1).meaningVi)
         assertEquals("健康のために、毎朝三十分歩くことにしている。", examplesOf(1)[0].japanese)
         assertEquals("Vì sức khỏe, tôi có thói quen đi bộ ba mươi phút mỗi sáng.", examplesOf(1)[0].translationVi)
-        assertTrue(bundle.examples.all { it.furigana == null })
+        // The first 220 examples have no furigana; the added ones do, matching their sentence.
+        assertTrue(bundle.examples.filter { it.sourceId != EXAMPLES_SOURCE }.all { it.furigana == null })
+        bundle.examples.filter { it.sourceId == EXAMPLES_SOURCE }.forEach { e ->
+            // Only a sentence without kanji has no furigana.
+            if (e.furigana == null) assertTrue(e.japanese, Regex("\\p{IsHan}").containsMatchIn(e.japanese).not())
+            else assertEquals(e.japanese, Furigana.baseText(e.furigana!!))
+        }
+        assertEquals("{大雨|おおあめ}のため、{電車|でんしゃ}が{止|と}まっています。", examplesOf(111)[0].furigana)
     }
 
     @Test
     fun everyItemNamesItsSource_selfAuthoredOrPdfCard() {
-        assertEquals(1 + 110 + 64, bundle.sources.size) // pack default + one per pattern
+        assertEquals(1 + 110 + 64 + 1, bundle.sources.size) // pack default + one per pattern + added examples
+        with(bundle.sources.single { it.id == EXAMPLES_SOURCE }) {
+            assertTrue(name.startsWith("N3 Sensei tự soạn"))
+            assertFalse(licenseVerified)
+        }
         bundle.grammar.filter { it.id <= "n3g-g110" }.forEach { g ->
             val source = bundle.sources.single { it.id == g.sourceId }
             assertTrue(source.url!!.startsWith("https://www.vnjpclub.com/mimi-kara-n3-bunpo/np-"))
@@ -111,5 +125,9 @@ class N3GrammarPackTest {
             assertTrue(source.licenseVerified)
         }
         assertEquals("N3.pdf · Ngữ pháp, nhóm 01 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)", bundle.sources.single { it.id == grammar(111).sourceId }.name)
+    }
+
+    private companion object {
+        const val EXAMPLES_SOURCE = "n3-grammar-examples"
     }
 }

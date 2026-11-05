@@ -57,6 +57,7 @@ enum class AppScreen(
     SETTINGS(SettingsRoute::class, R.string.settings_title, TopLevelDestination.SETTINGS, isTabRoot = true),
     REVIEW_SETTINGS(ReviewSettingsRoute::class, R.string.review_settings_title, TopLevelDestination.SETTINGS, isTabRoot = false),
     REMINDER_SETTINGS(ReminderSettingsRoute::class, R.string.reminder_settings_title, TopLevelDestination.SETTINGS, isTabRoot = false),
+    REMINDER_LESSONS(ReminderLessonsRoute::class, R.string.reminder_lessons_title, TopLevelDestination.SETTINGS, isTabRoot = false),
     WIDGET_SETTINGS(WidgetSettingsRoute::class, R.string.widget_settings_title, TopLevelDestination.SETTINGS, isTabRoot = false);
 
     fun matches(destination: NavDestination): Boolean = destination.hasRoute(route)

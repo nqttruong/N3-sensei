@@ -4,9 +4,10 @@
  "pack": {
   "id": "n3-grammar",
   "title": "Ngữ pháp N3 (danh mục Mimikara N3 + bổ sung từ N3.pdf)",
-  "version": 3,
+  "version": 4,
   "jlptLevel": "N3",
-  "defaultSourceId": "n3sensei-grammar"
+  "defaultSourceId": "n3sensei-grammar",
+  "examplesBaseVersion": 3
  },
  "sources": [
   {
@@ -1408,6 +1409,14 @@
    "license": "N3.pdf: tài liệu do chủ dự án tự tổng hợp, có quyền sử dụng. Gói lấy tên mẫu, cách chia và nghĩa ngắn từ thẻ ngữ pháp.",
    "attribution": null,
    "licenseVerified": true
+  },
+  {
+   "id": "n3-grammar-examples",
+   "name": "N3 Sensei tự soạn · câu ví dụ bổ sung",
+   "url": null,
+   "license": "Câu ví dụ và bản dịch do N3 Sensei tự soạn (11/2026) theo nghĩa và cách dùng có sẵn trong app; chưa qua kiểm duyệt chuyên môn.",
+   "attribution": null,
+   "licenseVerified": false
   }
  ],
  "examples": [
@@ -2950,6 +2959,986 @@
    "furigana": null,
    "translationVi": "Thuốc này có thể gây buồn ngủ.",
    "sourceId": "vnjp-np-110"
+  },
+  {
+   "id": "n3g-g111-ex1",
+   "japanese": "大雨のため、電車が止まっています。",
+   "furigana": "{大雨|おおあめ}のため、{電車|でんしゃ}が{止|と}まっています。",
+   "translationVi": "Do mưa lớn nên tàu điện đang ngừng chạy.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g111-ex2",
+   "japanese": "事故があったために、道がとても込んでいる。",
+   "furigana": "{事故|じこ}があったために、{道|みち}がとても{込|こ}んでいる。",
+   "translationVi": "Vì có tai nạn nên đường đang rất đông xe.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g112-ex1",
+   "japanese": "大学に合格するには、毎日勉強しなければならない。",
+   "furigana": "{大学|だいがく}に{合格|ごうかく}するには、{毎日|まいにち}{勉強|べんきょう}しなければならない。",
+   "translationVi": "Muốn đỗ đại học thì phải học mỗi ngày.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g112-ex2",
+   "japanese": "駅まで行くには、このバスが便利です。",
+   "furigana": "{駅|えき}まで{行|い}くには、このバスが{便利|べんり}です。",
+   "translationVi": "Để đi đến ga thì xe buýt này tiện lợi.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g113-ex1",
+   "japanese": "日本へ行くなら、京都がおすすめです。",
+   "furigana": "{日本|にほん}へ{行|い}くなら、{京都|きょうと}がおすすめです。",
+   "translationVi": "Nếu đi Nhật thì tôi khuyên bạn nên đến Kyoto.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g113-ex2",
+   "japanese": "田中さんなら、図書館にいますよ。",
+   "furigana": "{田中|たなか}さんなら、{図書館|としょかん}にいますよ。",
+   "translationVi": "Nếu là anh Tanaka thì anh ấy đang ở thư viện đấy.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g113-ex3",
+   "japanese": "安いなら、二つ買いたいです。",
+   "furigana": "{安|やす}いなら、{二|ふた}つ{買|か}いたいです。",
+   "translationVi": "Nếu rẻ thì tôi muốn mua hai cái.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g114-ex1",
+   "japanese": "料理ができるといっても、簡単なものだけです。",
+   "furigana": "{料理|りょうり}ができるといっても、{簡単|かんたん}なものだけです。",
+   "translationVi": "Nói là biết nấu ăn nhưng chỉ nấu được món đơn giản thôi.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g114-ex2",
+   "japanese": "旅行といっても、近くの温泉に一泊しただけだ。",
+   "furigana": "{旅行|りょこう}といっても、{近|ちか}くの{温泉|おんせん}に{一泊|いっぱく}しただけだ。",
+   "translationVi": "Nói là đi du lịch nhưng thật ra chỉ ở một đêm tại suối nước nóng gần nhà.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g115-ex1",
+   "japanese": "日本の夏といえば、花火大会ですね。",
+   "furigana": "{日本|にほん}の{夏|なつ}といえば、{花火|はなび}{大会|たいかい}ですね。",
+   "translationVi": "Nhắc đến mùa hè Nhật Bản thì phải kể đến lễ hội pháo hoa nhỉ.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g115-ex2",
+   "japanese": "北海道というと、何を思い出しますか。",
+   "furigana": "{北海道|ほっかいどう}というと、{何|なに}を{思|おも}い{出|だ}しますか。",
+   "translationVi": "Nói đến Hokkaido thì bạn nghĩ ngay đến điều gì?",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g115-ex3",
+   "japanese": "京都といったら、やっぱりお寺だよね。",
+   "furigana": "{京都|きょうと}といったら、やっぱりお{寺|てら}だよね。",
+   "translationVi": "Nhắc đến Kyoto thì đúng là phải nói đến chùa chiền nhỉ.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g116-ex1",
+   "japanese": "休みの日は、掃除とか洗濯とかで忙しい。",
+   "furigana": "{休|やす}みの{日|ひ}は、{掃除|そうじ}とか{洗濯|せんたく}とかで{忙|いそが}しい。",
+   "translationVi": "Ngày nghỉ tôi bận nào là dọn dẹp, nào là giặt giũ.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g116-ex2",
+   "japanese": "本を読むとか映画を見るとか、何か趣味を持ったほうがいい。",
+   "furigana": "{本|ほん}を{読|よ}むとか{映画|えいが}を{見|み}るとか、{何|なに}か{趣味|しゅみ}を{持|も}ったほうがいい。",
+   "translationVi": "Nên có sở thích gì đó, như đọc sách hay xem phim chẳng hạn.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g117-ex1",
+   "japanese": "この店は安いうえに、料理もおいしい。",
+   "furigana": "この{店|みせ}は{安|やす}いうえに、{料理|りょうり}もおいしい。",
+   "translationVi": "Quán này đã rẻ lại còn nấu ngon.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g117-ex2",
+   "japanese": "道に迷ったうえに、雨まで降ってきた。",
+   "furigana": "{道|みち}に{迷|まよ}ったうえに、{雨|あめ}まで{降|ふ}ってきた。",
+   "translationVi": "Đã lạc đường lại còn gặp mưa nữa.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g118-ex1",
+   "japanese": "天気予報によると、明日は雪が降るそうだ。",
+   "furigana": "{天気|てんき}{予報|よほう}によると、{明日|あした}は{雪|ゆき}が{降|ふ}るそうだ。",
+   "translationVi": "Theo dự báo thời tiết, nghe nói ngày mai sẽ có tuyết.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g118-ex2",
+   "japanese": "山田さんの話では、あの店はとても有名だそうです。",
+   "furigana": "{山田|やまだ}さんの{話|はなし}では、あの{店|みせ}はとても{有名|ゆうめい}だそうです。",
+   "translationVi": "Theo lời anh Yamada thì nghe nói quán đó rất nổi tiếng.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g119-ex1",
+   "japanese": "このケーキはおいしそうですね。",
+   "furigana": null,
+   "translationVi": "Cái bánh này trông ngon nhỉ.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g119-ex2",
+   "japanese": "空が暗くなってきた。雨が降りそうだ。",
+   "furigana": "{空|そら}が{暗|くら}くなってきた。{雨|あめ}が{降|ふ}りそうだ。",
+   "translationVi": "Trời tối dần rồi. Có vẻ sắp mưa.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g119-ex3",
+   "japanese": "彼女はいつも元気そうだ。",
+   "furigana": "{彼女|かのじょ}はいつも{元気|げんき}そうだ。",
+   "translationVi": "Lúc nào trông cô ấy cũng khỏe khoắn.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g120-ex1",
+   "japanese": "この仕事は今日中に終わりそうにない。",
+   "furigana": "この{仕事|しごと}は{今日中|きょうじゅう}に{終|お}わりそうにない。",
+   "translationVi": "Công việc này có vẻ không thể xong trong hôm nay.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g120-ex2",
+   "japanese": "雨はなかなかやみそうにない。",
+   "furigana": "{雨|あめ}はなかなかやみそうにない。",
+   "translationVi": "Mưa có vẻ mãi chưa tạnh.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g121-ex1",
+   "japanese": "電気が消えている。誰もいないようだ。",
+   "furigana": "{電気|でんき}が{消|き}えている。{誰|だれ}もいないようだ。",
+   "translationVi": "Đèn tắt rồi. Hình như không có ai ở nhà.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g121-ex2",
+   "japanese": "田中さんは風邪をひいたようです。",
+   "furigana": "{田中|たなか}さんは{風邪|かぜ}をひいたようです。",
+   "translationVi": "Hình như anh Tanaka bị cảm.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g121-ex3",
+   "japanese": "彼はこの町が好きなようだ。",
+   "furigana": "{彼|かれ}はこの{町|まち}が{好|す}きなようだ。",
+   "translationVi": "Có vẻ như anh ấy thích thị trấn này.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g122-ex1",
+   "japanese": "彼はまるで何も知らないかのような顔をしている。",
+   "furigana": "{彼|かれ}はまるで{何|なに}も{知|し}らないかのような{顔|かお}をしている。",
+   "translationVi": "Anh ta làm vẻ mặt cứ như thể không biết gì cả.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g122-ex2",
+   "japanese": "今日は暖かくて、春が来たかのようだ。",
+   "furigana": "{今日|きょう}は{暖|あたた}かくて、{春|はる}が{来|き}たかのようだ。",
+   "translationVi": "Hôm nay ấm áp, cứ như thể mùa xuân đã đến.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g123-ex1",
+   "japanese": "あんなにまじめな彼が嘘をつくはずがない。",
+   "furigana": "あんなにまじめな{彼|かれ}が{嘘|うそ}をつくはずがない。",
+   "translationVi": "Người nghiêm túc như anh ấy không thể nào nói dối.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g123-ex2",
+   "japanese": "昨日買ったばかりの時計が壊れるはずがない。",
+   "furigana": "{昨日|きのう}{買|か}ったばかりの{時計|とけい}が{壊|こわ}れるはずがない。",
+   "translationVi": "Chiếc đồng hồ vừa mới mua hôm qua không thể nào hỏng được.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g124-ex1",
+   "japanese": "値段が高い物がいつもいい物だとは限らない。",
+   "furigana": "{値段|ねだん}が{高|たか}い{物|もの}がいつもいい{物|もの}だとは{限|かぎ}らない。",
+   "translationVi": "Đồ đắt tiền không hẳn lúc nào cũng là đồ tốt.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g124-ex2",
+   "japanese": "日本人だからといって、みんな敬語が上手だとは限らない。",
+   "furigana": "{日本人|にほんじん}だからといって、みんな{敬語|けいご}が{上手|じょうず}だとは{限|かぎ}らない。",
+   "translationVi": "Không phải cứ là người Nhật thì ai cũng dùng kính ngữ giỏi.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g125-ex1",
+   "japanese": "これは私の意見に過ぎません。",
+   "furigana": "これは{私|わたし}の{意見|いけん}に{過|す}ぎません。",
+   "translationVi": "Đây chỉ là ý kiến của riêng tôi thôi.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g125-ex2",
+   "japanese": "彼が言ったことは、うわさに過ぎない。",
+   "furigana": "{彼|かれ}が{言|い}ったことは、うわさに{過|す}ぎない。",
+   "translationVi": "Điều anh ta nói chỉ là tin đồn mà thôi.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g126-ex1",
+   "japanese": "電話もないので、今日は来ないのかと思った。",
+   "furigana": "{電話|でんわ}もないので、{今日|きょう}は{来|こ}ないのかと{思|おも}った。",
+   "translationVi": "Không thấy gọi điện nên tôi cứ tưởng hôm nay cậu không đến.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g126-ex2",
+   "japanese": "あまりに静かだったので、誰もいないかと思いました。",
+   "furigana": "あまりに{静|しず}かだったので、{誰|だれ}もいないかと{思|おも}いました。",
+   "translationVi": "Yên tĩnh quá nên tôi cứ tưởng là không có ai.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g127-ex1",
+   "japanese": "彼、遅いね。約束を忘れたりして。",
+   "furigana": "{彼|かれ}、{遅|おそ}いね。{約束|やくそく}を{忘|わす}れたりして。",
+   "translationVi": "Anh ấy muộn nhỉ. Biết đâu lại quên mất cuộc hẹn cũng nên.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g127-ex2",
+   "japanese": "この宝くじ、当たったりして。",
+   "furigana": "この{宝|たから}くじ、{当|あ}たったりして。",
+   "translationVi": "Tờ vé số này, biết đâu lại trúng cũng nên.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g128-ex1",
+   "japanese": "少し寒いが、コートを着るほどではない。",
+   "furigana": "{少|すこ}し{寒|さむ}いが、コートを{着|き}るほどではない。",
+   "translationVi": "Hơi lạnh nhưng không đến mức phải mặc áo khoác.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g128-ex2",
+   "japanese": "日本語は話せますが、通訳ほどではありません。",
+   "furigana": "{日本語|にほんご}は{話|はな}せますが、{通訳|つうやく}ほどではありません。",
+   "translationVi": "Tôi nói được tiếng Nhật nhưng chưa đến mức như phiên dịch viên.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g129-ex1",
+   "japanese": "今日は暖かいというより、暑いくらいだ。",
+   "furigana": "{今日|きょう}は{暖|あたた}かいというより、{暑|あつ}いくらいだ。",
+   "translationVi": "Hôm nay phải nói là nóng thì đúng hơn là ấm.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g129-ex2",
+   "japanese": "彼は友達というより、家族のような存在です。",
+   "furigana": "{彼|かれ}は{友達|ともだち}というより、{家族|かぞく}のような{存在|そんざい}です。",
+   "translationVi": "Anh ấy giống như người nhà hơn là bạn bè.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g130-ex1",
+   "japanese": "飲み物はコーヒーにします。",
+   "furigana": "{飲|の}み{物|もの}はコーヒーにします。",
+   "translationVi": "Đồ uống thì tôi chọn cà phê.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g130-ex2",
+   "japanese": "会議は来週の月曜日にしましょう。",
+   "furigana": "{会議|かいぎ}は{来週|らいしゅう}の{月曜日|げつようび}にしましょう。",
+   "translationVi": "Cuộc họp thì ta quyết định vào thứ Hai tuần sau nhé.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g130-ex3",
+   "japanese": "お客さんが来るから、部屋をきれいにしておいてね。",
+   "furigana": "お{客|きゃく}さんが{来|く}るから、{部屋|へや}をきれいにしておいてね。",
+   "translationVi": "Sắp có khách nên con dọn phòng cho sạch sẽ nhé.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g131-ex1",
+   "japanese": "ここで写真を撮ってもいいですか。",
+   "furigana": "ここで{写真|しゃしん}を{撮|と}ってもいいですか。",
+   "translationVi": "Tôi chụp ảnh ở đây có được không?",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g131-ex2",
+   "japanese": "疲れたら、少し休んでもいいですよ。",
+   "furigana": "{疲|つか}れたら、{少|すこ}し{休|やす}んでもいいですよ。",
+   "translationVi": "Nếu mệt thì nghỉ một chút cũng được đấy.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g132-ex1",
+   "japanese": "明日の会議は、欠席してもかまいません。",
+   "furigana": "{明日|あした}の{会議|かいぎ}は、{欠席|けっせき}してもかまいません。",
+   "translationVi": "Cuộc họp ngày mai vắng mặt cũng không sao.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g132-ex2",
+   "japanese": "狭くてもかまわないので、駅に近い部屋を探しています。",
+   "furigana": "{狭|せま}くてもかまわないので、{駅|えき}に{近|ちか}い{部屋|へや}を{探|さが}しています。",
+   "translationVi": "Tôi đang tìm phòng gần ga, chật một chút cũng không sao.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g133-ex1",
+   "japanese": "明日は休みだから、早く起きなくてもいい。",
+   "furigana": "{明日|あした}は{休|やす}みだから、{早|はや}く{起|お}きなくてもいい。",
+   "translationVi": "Mai là ngày nghỉ nên không cần dậy sớm.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g133-ex2",
+   "japanese": "無理に全部食べなくてもいいですよ。",
+   "furigana": "{無理|むり}に{全部|ぜんぶ}{食|た}べなくてもいいですよ。",
+   "translationVi": "Không cần cố ăn hết đâu.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g134-ex1",
+   "japanese": "図書館で大きな声で話してはいけません。",
+   "furigana": "{図書館|としょかん}で{大|おお}きな{声|こえ}で{話|はな}してはいけません。",
+   "translationVi": "Không được nói to trong thư viện.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g134-ex2",
+   "japanese": "この川で泳いではいけない。",
+   "furigana": "この{川|かわ}で{泳|およ}いではいけない。",
+   "translationVi": "Không được bơi ở con sông này.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g135-ex1",
+   "japanese": "危ないから、そこで遊んではだめだよ。",
+   "furigana": "{危|あぶ}ないから、そこで{遊|あそ}んではだめだよ。",
+   "translationVi": "Nguy hiểm lắm, không được chơi ở đó đâu.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g135-ex2",
+   "japanese": "まだ食べてはだめ。みんなが来るまで待って。",
+   "furigana": "まだ{食|た}べてはだめ。みんなが{来|く}るまで{待|ま}って。",
+   "translationVi": "Chưa được ăn đâu. Đợi mọi người đến đã.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g136-ex1",
+   "japanese": "この事故のことを決して忘れてはならない。",
+   "furigana": "この{事故|じこ}のことを{決|けっ}して{忘|わす}れてはならない。",
+   "translationVi": "Tuyệt đối không được quên vụ tai nạn này.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g136-ex2",
+   "japanese": "会社の秘密を外の人に話してはならない。",
+   "furigana": "{会社|かいしゃ}の{秘密|ひみつ}を{外|そと}の{人|ひと}に{話|はな}してはならない。",
+   "translationVi": "Tuyệt đối không được tiết lộ bí mật của công ty cho người ngoài.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g137-ex1",
+   "japanese": "明日までにレポートを出さなければならない。",
+   "furigana": "{明日|あした}までにレポートを{出|だ}さなければならない。",
+   "translationVi": "Phải nộp báo cáo trước ngày mai.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g137-ex2",
+   "japanese": "外国で働くには、ビザを取らなければなりません。",
+   "furigana": "{外国|がいこく}で{働|はたら}くには、ビザを{取|と}らなければなりません。",
+   "translationVi": "Để làm việc ở nước ngoài thì phải xin visa.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g138-ex1",
+   "japanese": "もう帰らなければいけない時間だ。",
+   "furigana": "もう{帰|かえ}らなければいけない{時間|じかん}だ。",
+   "translationVi": "Đã đến giờ phải về rồi.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g138-ex2",
+   "japanese": "この薬は毎日飲まなければいけませんよ。",
+   "furigana": "この{薬|くすり}は{毎日|まいにち}{飲|の}まなければいけませんよ。",
+   "translationVi": "Thuốc này phải uống mỗi ngày đấy.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g139-ex1",
+   "japanese": "約束は守るべきだ。",
+   "furigana": "{約束|やくそく}は{守|まも}るべきだ。",
+   "translationVi": "Đã hứa thì nên giữ lời.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g139-ex2",
+   "japanese": "困ったときは、一人で悩まないで誰かに相談するべきです。",
+   "furigana": "{困|こま}ったときは、{一人|ひとり}で{悩|なや}まないで{誰|だれ}かに{相談|そうだん}するべきです。",
+   "translationVi": "Khi gặp khó khăn, nên tìm ai đó để trao đổi thay vì phiền muộn một mình.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g140-ex1",
+   "japanese": "人の悪口を言うべきではない。",
+   "furigana": "{人|ひと}の{悪口|わるぐち}を{言|い}うべきではない。",
+   "translationVi": "Không nên nói xấu người khác.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g140-ex2",
+   "japanese": "熱があるときは、無理に働くべきではありません。",
+   "furigana": "{熱|ねつ}があるときは、{無理|むり}に{働|はたら}くべきではありません。",
+   "translationVi": "Khi bị sốt thì không nên cố làm việc.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g141-ex1",
+   "japanese": "ちょっと、その塩を取ってちょうだい。",
+   "furigana": "ちょっと、その{塩|しお}を{取|と}ってちょうだい。",
+   "translationVi": "Này, lấy giúp lọ muối đó nhé.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g141-ex2",
+   "japanese": "帰りに牛乳を買ってきてちょうだい。",
+   "furigana": "{帰|かえ}りに{牛乳|ぎゅうにゅう}を{買|か}ってきてちょうだい。",
+   "translationVi": "Lúc về mua giúp sữa nhé.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g142-ex1",
+   "japanese": "この本、おもしろいから読んでごらん。",
+   "furigana": "この{本|ほん}、おもしろいから{読|よ}んでごらん。",
+   "translationVi": "Cuốn sách này hay lắm, con đọc thử xem.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g142-ex2",
+   "japanese": "目を閉じて、よく聞いてごらん。",
+   "furigana": "{目|め}を{閉|と}じて、よく{聞|き}いてごらん。",
+   "translationVi": "Nhắm mắt lại rồi lắng nghe thật kỹ thử xem.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g143-ex1",
+   "japanese": "その話を聞いて、泣かずにはいられなかった。",
+   "furigana": "その{話|はなし}を{聞|き}いて、{泣|な}かずにはいられなかった。",
+   "translationVi": "Nghe câu chuyện đó, tôi không thể không khóc.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g143-ex2",
+   "japanese": "彼のおかしな顔を見ると、笑わずにはいられない。",
+   "furigana": "{彼|かれ}のおかしな{顔|かお}を{見|み}ると、{笑|わら}わずにはいられない。",
+   "translationVi": "Nhìn khuôn mặt buồn cười của anh ấy thì không thể nhịn cười được.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g144-ex1",
+   "japanese": "去年から日本語を習い始めました。",
+   "furigana": "{去年|きょねん}から{日本語|にほんご}を{習|なら}い{始|はじ}めました。",
+   "translationVi": "Tôi bắt đầu học tiếng Nhật từ năm ngoái.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g144-ex2",
+   "japanese": "急に雨が降り始めた。",
+   "furigana": "{急|きゅう}に{雨|あめ}が{降|ふ}り{始|はじ}めた。",
+   "translationVi": "Đột nhiên trời bắt đầu mưa.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g145-ex1",
+   "japanese": "この本はもう読み終わりました。",
+   "furigana": "この{本|ほん}はもう{読|よ}み{終|お}わりました。",
+   "translationVi": "Tôi đã đọc xong cuốn sách này rồi.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g145-ex2",
+   "japanese": "食べ終わったら、お皿を洗ってください。",
+   "furigana": "{食|た}べ{終|お}わったら、お{皿|さら}を{洗|あら}ってください。",
+   "translationVi": "Ăn xong thì rửa đĩa giúp nhé.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g146-ex1",
+   "japanese": "彼は三時間も話し続けた。",
+   "furigana": "{彼|かれ}は{三|さん}{時間|じかん}も{話|はな}し{続|つづ}けた。",
+   "translationVi": "Anh ấy nói liên tục suốt ba tiếng đồng hồ.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g146-ex2",
+   "japanese": "毎日練習し続ければ、きっと上手になります。",
+   "furigana": "{毎日|まいにち}{練習|れんしゅう}し{続|つづ}ければ、きっと{上手|じょうず}になります。",
+   "translationVi": "Nếu tiếp tục luyện tập mỗi ngày thì chắc chắn sẽ giỏi lên.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g147-ex1",
+   "japanese": "焼きたてのパンはとてもいい匂いがする。",
+   "furigana": "{焼|や}きたてのパンはとてもいい{匂|にお}いがする。",
+   "translationVi": "Bánh mì vừa mới nướng xong có mùi rất thơm.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g147-ex2",
+   "japanese": "ペンキが塗りたてなので、壁に触らないでください。",
+   "furigana": "ペンキが{塗|ぬ}りたてなので、{壁|かべ}に{触|さわ}らないでください。",
+   "translationVi": "Tường vừa mới sơn xong nên xin đừng chạm vào.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g148-ex1",
+   "japanese": "一晩でレポートを書き上げた。",
+   "furigana": "{一晩|ひとばん}でレポートを{書|か}き{上|あ}げた。",
+   "translationVi": "Tôi đã viết xong bản báo cáo chỉ trong một đêm.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g148-ex2",
+   "japanese": "三年かけて、この作品を作り上げました。",
+   "furigana": "{三|さん}{年|ねん}かけて、この{作品|さくひん}を{作|つく}り{上|あ}げました。",
+   "translationVi": "Mất ba năm, tôi đã hoàn thành tác phẩm này.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g149-ex1",
+   "japanese": "靴をはいたまま、部屋に入らないでください。",
+   "furigana": "{靴|くつ}をはいたまま、{部屋|へや}に{入|はい}らないでください。",
+   "translationVi": "Xin đừng đi nguyên giày vào phòng.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g149-ex2",
+   "japanese": "窓を開けたまま寝てしまった。",
+   "furigana": "{窓|まど}を{開|あ}けたまま{寝|ね}てしまった。",
+   "translationVi": "Tôi đã ngủ mà để nguyên cửa sổ mở.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g149-ex3",
+   "japanese": "見たままを話してください。",
+   "furigana": "{見|み}たままを{話|はな}してください。",
+   "translationVi": "Hãy kể lại đúng như những gì bạn đã thấy.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g150-ex1",
+   "japanese": "水を出しっぱなしにしないでください。",
+   "furigana": "{水|みず}を{出|だ}しっぱなしにしないでください。",
+   "translationVi": "Đừng để nước chảy mãi như thế.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g150-ex2",
+   "japanese": "今日は一日中立ちっぱなしで、足が痛い。",
+   "furigana": "{今日|きょう}は{一日中|いちにちじゅう}{立|た}ちっぱなしで、{足|あし}が{痛|いた}い。",
+   "translationVi": "Hôm nay phải đứng suốt cả ngày nên đau chân.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g151-ex1",
+   "japanese": "これからだんだん寒くなっていくでしょう。",
+   "furigana": "これからだんだん{寒|さむ}くなっていくでしょう。",
+   "translationVi": "Từ giờ trời sẽ lạnh dần.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g151-ex2",
+   "japanese": "日本の人口は減っていくと言われている。",
+   "furigana": "{日本|にほん}の{人口|じんこう}は{減|へ}っていくと{言|い}われている。",
+   "translationVi": "Người ta nói dân số Nhật Bản sẽ ngày càng giảm.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g151-ex3",
+   "japanese": "駅まで歩いていきます。",
+   "furigana": "{駅|えき}まで{歩|ある}いていきます。",
+   "translationVi": "Tôi sẽ đi bộ đến ga.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g152-ex1",
+   "japanese": "夏休みの間、ずっと祖母の家にいた。",
+   "furigana": "{夏休|なつやす}みの{間|あいだ}、ずっと{祖母|そぼ}の{家|いえ}にいた。",
+   "translationVi": "Suốt kỳ nghỉ hè, tôi ở nhà bà.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g152-ex2",
+   "japanese": "子どもが寝ている間は、静かにしてください。",
+   "furigana": "{子|こ}どもが{寝|ね}ている{間|あいだ}は、{静|しず}かにしてください。",
+   "translationVi": "Trong khi con đang ngủ thì hãy giữ yên lặng.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g153-ex1",
+   "japanese": "留守の間に、友達が訪ねてきた。",
+   "furigana": "{留守|るす}の{間|あいだ}に、{友達|ともだち}が{訪|たず}ねてきた。",
+   "translationVi": "Trong lúc tôi vắng nhà thì bạn đã đến thăm.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g153-ex2",
+   "japanese": "若い間に、いろいろな国へ行ってみたい。",
+   "furigana": "{若|わか}い{間|あいだ}に、いろいろな{国|くに}へ{行|い}ってみたい。",
+   "translationVi": "Tôi muốn đi nhiều nước khi còn trẻ.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g153-ex3",
+   "japanese": "赤ちゃんが寝ている間に、洗濯をした。",
+   "furigana": "{赤|あか}ちゃんが{寝|ね}ている{間|あいだ}に、{洗濯|せんたく}をした。",
+   "translationVi": "Trong lúc em bé ngủ, tôi đã giặt đồ.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g154-ex1",
+   "japanese": "今から出かけるところです。",
+   "furigana": "{今|いま}から{出|で}かけるところです。",
+   "translationVi": "Bây giờ tôi sắp ra ngoài.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g154-ex2",
+   "japanese": "これから晩ご飯を食べるところだ。",
+   "furigana": "これから{晩|ばん}ご{飯|はん}を{食|た}べるところだ。",
+   "translationVi": "Tôi sắp ăn tối đây.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g155-ex1",
+   "japanese": "今、レポートを書いているところです。",
+   "furigana": "{今|いま}、レポートを{書|か}いているところです。",
+   "translationVi": "Bây giờ tôi đang viết báo cáo.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g155-ex2",
+   "japanese": "「準備はできた？」「今、やっているところだよ。」",
+   "furigana": "「{準備|じゅんび}はできた？」「{今|いま}、やっているところだよ。」",
+   "translationVi": "\"Chuẩn bị xong chưa?\" \"Đang làm đây.\"",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g156-ex1",
+   "japanese": "今、駅に着いたところです。",
+   "furigana": "{今|いま}、{駅|えき}に{着|つ}いたところです。",
+   "translationVi": "Tôi vừa mới đến ga.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g156-ex2",
+   "japanese": "授業はちょうど終わったところだ。",
+   "furigana": "{授業|じゅぎょう}はちょうど{終|お}わったところだ。",
+   "translationVi": "Buổi học vừa mới kết thúc.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g157-ex1",
+   "japanese": "このバスは十分おきに来ます。",
+   "furigana": "このバスは{十分|じゅっぷん}おきに{来|き}ます。",
+   "translationVi": "Xe buýt này cứ cách 10 phút có một chuyến.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g157-ex2",
+   "japanese": "一日おきにジョギングをしている。",
+   "furigana": "{一日|いちにち}おきにジョギングをしている。",
+   "translationVi": "Tôi chạy bộ cách ngày.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g158-ex1",
+   "japanese": "オリンピックは四年ごとに開かれる。",
+   "furigana": "オリンピックは{四年|よねん}ごとに{開|ひら}かれる。",
+   "translationVi": "Thế vận hội được tổ chức cứ mỗi bốn năm một lần.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g158-ex2",
+   "japanese": "駅に着くごとに、乗客が増えていった。",
+   "furigana": "{駅|えき}に{着|つ}くごとに、{乗客|じょうきゃく}が{増|ふ}えていった。",
+   "translationVi": "Cứ mỗi lần đến một ga, hành khách lại đông thêm.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g159-ex1",
+   "japanese": "朝ご飯抜きで学校へ行った。",
+   "furigana": "{朝|あさ}ご{飯|はん}{抜|ぬ}きで{学校|がっこう}へ{行|い}った。",
+   "translationVi": "Tôi đã đến trường mà không ăn sáng.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g159-ex2",
+   "japanese": "冗談抜きで、本当に困っているんです。",
+   "furigana": "{冗談|じょうだん}{抜|ぬ}きで、{本当|ほんとう}に{困|こま}っているんです。",
+   "translationVi": "Không đùa đâu, tôi thật sự đang gặp khó khăn.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g159-ex3",
+   "japanese": "わさび抜きのお寿司をください。",
+   "furigana": "わさび{抜|ぬ}きのお{寿司|すし}をください。",
+   "translationVi": "Cho tôi sushi không có wasabi.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g160-ex1",
+   "japanese": "弟はゲームばかりしている。",
+   "furigana": "{弟|おとうと}はゲームばかりしている。",
+   "translationVi": "Em trai tôi chỉ toàn chơi game.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g160-ex2",
+   "japanese": "彼女は泣いてばかりいて、何も話さない。",
+   "furigana": "{彼女|かのじょ}は{泣|な}いてばかりいて、{何|なに}も{話|はな}さない。",
+   "translationVi": "Cô ấy cứ khóc suốt, không nói gì cả.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g161-ex1",
+   "japanese": "物価は上がるばかりだ。",
+   "furigana": "{物価|ぶっか}は{上|あ}がるばかりだ。",
+   "translationVi": "Vật giá ngày càng tăng.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g161-ex2",
+   "japanese": "祖父の病気は悪くなるばかりです。",
+   "furigana": "{祖父|そふ}の{病気|びょうき}は{悪|わる}くなるばかりです。",
+   "translationVi": "Bệnh của ông tôi ngày càng xấu đi.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g162-ex1",
+   "japanese": "子どもが新しいおもちゃを欲しがっている。",
+   "furigana": "{子|こ}どもが{新|あたら}しいおもちゃを{欲|ほ}しがっている。",
+   "translationVi": "Đứa bé đang đòi đồ chơi mới.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g162-ex2",
+   "japanese": "弟は犬を怖がる。",
+   "furigana": "{弟|おとうと}は{犬|いぬ}を{怖|こわ}がる。",
+   "translationVi": "Em trai tôi sợ chó.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g162-ex3",
+   "japanese": "妹は海外に行きたがっている。",
+   "furigana": "{妹|いもうと}は{海外|かいがい}に{行|い}きたがっている。",
+   "translationVi": "Em gái tôi đang muốn đi nước ngoài.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g163-ex1",
+   "japanese": "申し訳ありませんが、そのご質問にはお答えしかねます。",
+   "furigana": "{申|もう}し{訳|わけ}ありませんが、そのご{質問|しつもん}にはお{答|こた}えしかねます。",
+   "translationVi": "Xin lỗi, tôi khó có thể trả lời câu hỏi đó.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g163-ex2",
+   "japanese": "その意見には賛成しかねる。",
+   "furigana": "その{意見|いけん}には{賛成|さんせい}しかねる。",
+   "translationVi": "Tôi khó có thể tán thành ý kiến đó.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g164-ex1",
+   "japanese": "そんなにスピードを出したら、事故を起こしかねない。",
+   "furigana": "そんなにスピードを{出|だ}したら、{事故|じこ}を{起|お}こしかねない。",
+   "translationVi": "Chạy nhanh như thế thì có thể gây tai nạn đấy.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g164-ex2",
+   "japanese": "寝不足が続くと、病気になりかねません。",
+   "furigana": "{寝不足|ねぶそく}が{続|つづ}くと、{病気|びょうき}になりかねません。",
+   "translationVi": "Thiếu ngủ kéo dài thì có thể sinh bệnh.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g165-ex1",
+   "japanese": "「さくら」という店で待っています。",
+   "furigana": "「さくら」という{店|みせ}で{待|ま}っています。",
+   "translationVi": "Tôi đang đợi ở quán tên là \"Sakura\".",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g165-ex2",
+   "japanese": "山田さんという人から電話がありました。",
+   "furigana": "{山田|やまだ}さんという{人|ひと}から{電話|でんわ}がありました。",
+   "translationVi": "Có cuộc gọi từ một người tên là Yamada.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g166-ex1",
+   "japanese": "親友にまで嘘をつかれた。",
+   "furigana": "{親友|しんゆう}にまで{嘘|うそ}をつかれた。",
+   "translationVi": "Đến cả bạn thân cũng nói dối tôi.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g166-ex2",
+   "japanese": "雨だけでなく、風まで強くなってきた。",
+   "furigana": "{雨|あめ}だけでなく、{風|かぜ}まで{強|つよ}くなってきた。",
+   "translationVi": "Không chỉ mưa mà đến cả gió cũng mạnh lên.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g167-ex1",
+   "japanese": "そんな簡単なこと、子どもだってできる。",
+   "furigana": "そんな{簡単|かんたん}なこと、{子|こ}どもだってできる。",
+   "translationVi": "Việc đơn giản như thế thì ngay cả trẻ con cũng làm được.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g167-ex2",
+   "japanese": "いつだって、君の味方だよ。",
+   "furigana": "いつだって、{君|きみ}の{味方|みかた}だよ。",
+   "translationVi": "Lúc nào tớ cũng đứng về phía cậu.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g167-ex3",
+   "japanese": "今から急いだって、間に合わないよ。",
+   "furigana": "{今|いま}から{急|いそ}いだって、{間|ま}に{合|あ}わないよ。",
+   "translationVi": "Bây giờ có vội thì cũng không kịp đâu.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g168-ex1",
+   "japanese": "彼女からの返事が気になってしかたがない。",
+   "furigana": "{彼女|かのじょ}からの{返事|へんじ}が{気|き}になってしかたがない。",
+   "translationVi": "Tôi cứ thấp thỏm không yên về hồi âm của cô ấy.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g168-ex2",
+   "japanese": "昨日あまり寝なかったので、眠くてしょうがない。",
+   "furigana": "{昨日|きのう}あまり{寝|ね}なかったので、{眠|ねむ}くてしょうがない。",
+   "translationVi": "Hôm qua ngủ ít nên giờ buồn ngủ không chịu nổi.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g168-ex3",
+   "japanese": "一人暮らしは寂しくてしかたがない。",
+   "furigana": "{一人暮|ひとりぐ}らしは{寂|さび}しくてしかたがない。",
+   "translationVi": "Sống một mình buồn vô cùng.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g169-ex1",
+   "japanese": "こんなにたくさんの仕事、一日でできっこない。",
+   "furigana": "こんなにたくさんの{仕事|しごと}、{一日|いちにち}でできっこない。",
+   "translationVi": "Nhiều việc thế này thì không đời nào làm xong trong một ngày.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g169-ex2",
+   "japanese": "彼に話しても、分かりっこないよ。",
+   "furigana": "{彼|かれ}に{話|はな}しても、{分|わ}かりっこないよ。",
+   "translationVi": "Có nói với anh ta thì cũng không đời nào anh ta hiểu đâu.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g170-ex1",
+   "japanese": "傘を持たずに出かけてしまった。",
+   "furigana": "{傘|かさ}を{持|も}たずに{出|で}かけてしまった。",
+   "translationVi": "Tôi đã ra ngoài mà không mang ô.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g170-ex2",
+   "japanese": "昨日は勉強せずに寝てしまった。",
+   "furigana": "{昨日|きのう}は{勉強|べんきょう}せずに{寝|ね}てしまった。",
+   "translationVi": "Hôm qua tôi đã đi ngủ mà không học bài.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g171-ex1",
+   "japanese": "彼は聞こえないふりをした。",
+   "furigana": "{彼|かれ}は{聞|き}こえないふりをした。",
+   "translationVi": "Anh ta giả vờ không nghe thấy.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g171-ex2",
+   "japanese": "知っているのに、知らないふりをする。",
+   "furigana": "{知|し}っているのに、{知|し}らないふりをする。",
+   "translationVi": "Biết rồi mà lại giả vờ không biết.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g172-ex1",
+   "japanese": "子どもの頃は、よくこの川で泳いだものだ。",
+   "furigana": "{子|こ}どもの{頃|ころ}は、よくこの{川|かわ}で{泳|およ}いだものだ。",
+   "translationVi": "Hồi nhỏ, tôi thường hay bơi ở con sông này.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g172-ex2",
+   "japanese": "学生時代は、夜遅くまで友達と話したものです。",
+   "furigana": "{学生|がくせい}{時代|じだい}は、{夜|よる}{遅|おそ}くまで{友達|ともだち}と{話|はな}したものです。",
+   "translationVi": "Hồi sinh viên, tôi thường trò chuyện với bạn bè đến tận khuya.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g173-ex1",
+   "japanese": "父はめったに怒らない。",
+   "furigana": "{父|ちち}はめったに{怒|おこ}らない。",
+   "translationVi": "Bố tôi hiếm khi nổi giận.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g173-ex2",
+   "japanese": "この町では、雪はめったに降りません。",
+   "furigana": "この{町|まち}では、{雪|ゆき}はめったに{降|ふ}りません。",
+   "translationVi": "Ở thị trấn này hiếm khi có tuyết.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g174-ex1",
+   "japanese": "忙しいときは、朝ご飯を食べないことがある。",
+   "furigana": "{忙|いそが}しいときは、{朝|あさ}ご{飯|はん}を{食|た}べないことがある。",
+   "translationVi": "Những lúc bận, có khi tôi không ăn sáng.",
+   "sourceId": "n3-grammar-examples"
+  },
+  {
+   "id": "n3g-g174-ex2",
+   "japanese": "この道は、冬になると通れなくなることがある。",
+   "furigana": "この{道|みち}は、{冬|ふゆ}になると{通|とお}れなくなることがある。",
+   "translationVi": "Con đường này có lúc không đi được khi vào mùa đông.",
+   "sourceId": "n3-grammar-examples"
   }
  ],
  "lessons": [
@@ -5608,7 +6597,10 @@
      "meaningVi": "do…, vì… (nêu nguyên nhân một cách khách quan)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g111-ex1",
+      "n3g-g111-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-01-01",
      "origin": {
@@ -5624,7 +6616,10 @@
      "meaningVi": "muốn… thì phải…, để… thì cần… (mục đích + điều kiện cần)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g112-ex1",
+      "n3g-g112-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-02-01",
      "origin": {
@@ -5650,7 +6645,11 @@
      "meaningVi": "nếu là…, nếu… thì",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g113-ex1",
+      "n3g-g113-ex2",
+      "n3g-g113-ex3"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-03-01",
      "origin": {
@@ -5666,7 +6665,10 @@
      "meaningVi": "dù nói là… nhưng (thực tế không bằng)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g114-ex1",
+      "n3g-g114-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-03-06",
      "origin": {
@@ -5682,7 +6684,11 @@
      "meaningVi": "nhắc đến… thì…, nói về… thì…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g115-ex1",
+      "n3g-g115-ex2",
+      "n3g-g115-ex3"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-03-08",
      "origin": {
@@ -5698,7 +6704,10 @@
      "meaningVi": "nào là… nào là… (liệt kê ví dụ)",
      "usage": null,
      "cautionNote": "Khác với 〜とか (nghe nói là…) trong danh sách.",
-     "examples": [],
+     "examples": [
+      "n3g-g116-ex1",
+      "n3g-g116-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-03-09",
      "origin": {
@@ -5714,7 +6723,10 @@
      "meaningVi": "hơn nữa, không những… mà còn…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g117-ex1",
+      "n3g-g117-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-03-10",
      "origin": {
@@ -5730,7 +6742,10 @@
      "meaningVi": "nghe nói là…, nghe đồn rằng…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g118-ex1",
+      "n3g-g118-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-05-01",
      "origin": {
@@ -5746,7 +6761,11 @@
      "meaningVi": "trông có vẻ…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g119-ex1",
+      "n3g-g119-ex2",
+      "n3g-g119-ex3"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-05-05",
      "origin": {
@@ -5772,7 +6791,10 @@
      "meaningVi": "có vẻ không…, khó mà…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g120-ex1",
+      "n3g-g120-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-05-06",
      "origin": {
@@ -5788,7 +6810,11 @@
      "meaningVi": "có vẻ như…, hình như… (suy đoán)",
      "usage": null,
      "cautionNote": "Khác với 〜ような／〜ように (giống như…) trong danh sách.",
-     "examples": [],
+     "examples": [
+      "n3g-g121-ex1",
+      "n3g-g121-ex2",
+      "n3g-g121-ex3"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-05-07",
      "origin": {
@@ -5804,7 +6830,10 @@
      "meaningVi": "cứ như thể…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g122-ex1",
+      "n3g-g122-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-05-09",
      "origin": {
@@ -5820,7 +6849,10 @@
      "meaningVi": "không thể nào…, chắc chắn không…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g123-ex1",
+      "n3g-g123-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-05-13",
      "origin": {
@@ -5836,7 +6868,10 @@
      "meaningVi": "không hẳn là…, không nhất thiết là…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g124-ex1",
+      "n3g-g124-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-05-15",
      "origin": {
@@ -5852,7 +6887,10 @@
      "meaningVi": "chỉ là…, chỉ ở mức…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g125-ex1",
+      "n3g-g125-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-05-17",
      "origin": {
@@ -5868,7 +6906,10 @@
      "meaningVi": "tôi cứ tưởng là… (hóa ra không phải)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g126-ex1",
+      "n3g-g126-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-05-18",
      "origin": {
@@ -5894,7 +6935,10 @@
      "meaningVi": "biết đâu lại…, có khi… cũng nên",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g127-ex1",
+      "n3g-g127-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-05-19",
      "origin": {
@@ -5910,7 +6954,10 @@
      "meaningVi": "không đến mức…, chưa tới mức…",
      "usage": null,
      "cautionNote": "Khác với 〜ほど…ない (không… bằng…) trong danh sách.",
-     "examples": [],
+     "examples": [
+      "n3g-g128-ex1",
+      "n3g-g128-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-05-28",
      "origin": {
@@ -5926,7 +6973,10 @@
      "meaningVi": "… thì đúng hơn là…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g129-ex1",
+      "n3g-g129-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-05-30",
      "origin": {
@@ -5942,7 +6992,11 @@
      "meaningVi": "chọn…, quyết định…; làm cho…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g130-ex1",
+      "n3g-g130-ex2",
+      "n3g-g130-ex3"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-01",
      "origin": {
@@ -5958,7 +7012,10 @@
      "meaningVi": "… cũng được (cho phép)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g131-ex1",
+      "n3g-g131-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-07",
      "origin": {
@@ -5974,7 +7031,10 @@
      "meaningVi": "… cũng không sao",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g132-ex1",
+      "n3g-g132-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-08",
      "origin": {
@@ -5990,7 +7050,10 @@
      "meaningVi": "không cần…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g133-ex1",
+      "n3g-g133-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-09",
      "origin": {
@@ -6016,7 +7079,10 @@
      "meaningVi": "không được… (quy tắc)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g134-ex1",
+      "n3g-g134-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-10",
      "origin": {
@@ -6032,7 +7098,10 @@
      "meaningVi": "không được… (văn nói)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g135-ex1",
+      "n3g-g135-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-11",
      "origin": {
@@ -6048,7 +7117,10 @@
      "meaningVi": "tuyệt đối không được… (trang trọng)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g136-ex1",
+      "n3g-g136-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-12",
      "origin": {
@@ -6064,7 +7136,10 @@
      "meaningVi": "phải… (nghĩa vụ)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g137-ex1",
+      "n3g-g137-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-13",
      "origin": {
@@ -6080,7 +7155,10 @@
      "meaningVi": "phải… (hội thoại)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g138-ex1",
+      "n3g-g138-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-14",
      "origin": {
@@ -6096,7 +7174,10 @@
      "meaningVi": "nên…, phải…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g139-ex1",
+      "n3g-g139-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-15",
      "origin": {
@@ -6112,7 +7193,10 @@
      "meaningVi": "không nên…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g140-ex1",
+      "n3g-g140-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-16",
      "origin": {
@@ -6138,7 +7222,10 @@
      "meaningVi": "hãy… (nhờ vả nhẹ nhàng, thân mật)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g141-ex1",
+      "n3g-g141-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-17",
      "origin": {
@@ -6154,7 +7241,10 @@
      "meaningVi": "… thử xem",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g142-ex1",
+      "n3g-g142-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-18",
      "origin": {
@@ -6170,7 +7260,10 @@
      "meaningVi": "không thể không…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g143-ex1",
+      "n3g-g143-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-06-20",
      "origin": {
@@ -6186,7 +7279,10 @@
      "meaningVi": "bắt đầu…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g144-ex1",
+      "n3g-g144-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-01",
      "origin": {
@@ -6202,7 +7298,10 @@
      "meaningVi": "… xong",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g145-ex1",
+      "n3g-g145-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-02",
      "origin": {
@@ -6218,7 +7317,10 @@
      "meaningVi": "tiếp tục…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g146-ex1",
+      "n3g-g146-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-03",
      "origin": {
@@ -6234,7 +7336,10 @@
      "meaningVi": "vừa mới… xong",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g147-ex1",
+      "n3g-g147-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-05",
      "origin": {
@@ -6260,7 +7365,10 @@
      "meaningVi": "… xong (hoàn thành bằng nỗ lực)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g148-ex1",
+      "n3g-g148-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-06",
      "origin": {
@@ -6276,7 +7384,11 @@
      "meaningVi": "cứ để nguyên…, giữ nguyên…; theo đúng như…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g149-ex1",
+      "n3g-g149-ex2",
+      "n3g-g149-ex3"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-08",
      "origin": {
@@ -6292,7 +7404,10 @@
      "meaningVi": "cứ để nguyên…; … suốt",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g150-ex1",
+      "n3g-g150-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-09",
      "origin": {
@@ -6308,7 +7423,11 @@
      "meaningVi": "… dần (từ nay về sau); … rồi đi",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g151-ex1",
+      "n3g-g151-ex2",
+      "n3g-g151-ex3"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-10",
      "origin": {
@@ -6324,7 +7443,10 @@
      "meaningVi": "suốt trong khi…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g152-ex1",
+      "n3g-g152-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-12",
      "origin": {
@@ -6340,7 +7462,11 @@
      "meaningVi": "trong lúc… (thì một việc xảy ra)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g153-ex1",
+      "n3g-g153-ex2",
+      "n3g-g153-ex3"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-13",
      "origin": {
@@ -6356,7 +7482,10 @@
      "meaningVi": "sắp…",
      "usage": null,
      "cautionNote": "Khác với 〜たところ (thử… thì…) trong danh sách.",
-     "examples": [],
+     "examples": [
+      "n3g-g154-ex1",
+      "n3g-g154-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-18",
      "origin": {
@@ -6382,7 +7511,10 @@
      "meaningVi": "đang…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g155-ex1",
+      "n3g-g155-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-19",
      "origin": {
@@ -6398,7 +7530,10 @@
      "meaningVi": "vừa mới… xong",
      "usage": null,
      "cautionNote": "Khác với 〜たところ (thử… thì…) trong danh sách.",
-     "examples": [],
+     "examples": [
+      "n3g-g156-ex1",
+      "n3g-g156-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-20",
      "origin": {
@@ -6414,7 +7549,10 @@
      "meaningVi": "cứ cách…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g157-ex1",
+      "n3g-g157-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-23",
      "origin": {
@@ -6430,7 +7568,10 @@
      "meaningVi": "cứ mỗi…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g158-ex1",
+      "n3g-g158-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-24",
      "origin": {
@@ -6446,7 +7587,11 @@
      "meaningVi": "không có…, bỏ…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g159-ex1",
+      "n3g-g159-ex2",
+      "n3g-g159-ex3"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-30",
      "origin": {
@@ -6462,7 +7607,10 @@
      "meaningVi": "chỉ toàn…, cứ… suốt",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g160-ex1",
+      "n3g-g160-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-32",
      "origin": {
@@ -6478,7 +7626,10 @@
      "meaningVi": "ngày càng… (thường theo chiều xấu)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g161-ex1",
+      "n3g-g161-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-33",
      "origin": {
@@ -6504,7 +7655,11 @@
      "meaningVi": "(người khác) có vẻ…, tỏ ra…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g162-ex1",
+      "n3g-g162-ex2",
+      "n3g-g162-ex3"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-39",
      "origin": {
@@ -6520,7 +7675,10 @@
      "meaningVi": "khó có thể…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g163-ex1",
+      "n3g-g163-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-42",
      "origin": {
@@ -6536,7 +7694,10 @@
      "meaningVi": "có thể… (lo ngại điều xấu)",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g164-ex1",
+      "n3g-g164-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-43",
      "origin": {
@@ -6552,7 +7713,10 @@
      "meaningVi": "N2 tên là N1, cái gọi là N1",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g165-ex1",
+      "n3g-g165-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-63",
      "origin": {
@@ -6568,7 +7732,10 @@
      "meaningVi": "đến cả…, thậm chí…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g166-ex1",
+      "n3g-g166-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-66",
      "origin": {
@@ -6584,7 +7751,11 @@
      "meaningVi": "ngay cả…, dù có…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g167-ex1",
+      "n3g-g167-ex2",
+      "n3g-g167-ex3"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-68",
      "origin": {
@@ -6600,7 +7771,11 @@
      "meaningVi": "… vô cùng, … không chịu nổi",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g168-ex1",
+      "n3g-g168-ex2",
+      "n3g-g168-ex3"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-69",
      "origin": {
@@ -6626,7 +7801,10 @@
      "meaningVi": "không đời nào…, không thể nào…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g169-ex1",
+      "n3g-g169-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-71",
      "origin": {
@@ -6642,7 +7820,10 @@
      "meaningVi": "không… (mà)…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g170-ex1",
+      "n3g-g170-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-72",
      "origin": {
@@ -6658,7 +7839,10 @@
      "meaningVi": "giả vờ…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g171-ex1",
+      "n3g-g171-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-73",
      "origin": {
@@ -6674,7 +7858,10 @@
      "meaningVi": "(hồi xưa) thường hay…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g172-ex1",
+      "n3g-g172-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-74",
      "origin": {
@@ -6690,7 +7877,10 @@
      "meaningVi": "hiếm khi…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g173-ex1",
+      "n3g-g173-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-76",
      "origin": {
@@ -6706,7 +7896,10 @@
      "meaningVi": "có lúc…, đôi khi…",
      "usage": null,
      "cautionNote": null,
-     "examples": [],
+     "examples": [
+      "n3g-g174-ex1",
+      "n3g-g174-ex2"
+     ],
      "exercises": [],
      "sourceId": "n3pdf-g-07-77",
      "origin": {

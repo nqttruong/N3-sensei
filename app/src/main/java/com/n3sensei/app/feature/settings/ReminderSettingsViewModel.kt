@@ -6,17 +6,21 @@ import com.n3sensei.app.core.ui.state.STOP_TIMEOUT_MILLIS
 import com.n3sensei.app.domain.reminder.LockScreenPrivacy
 import com.n3sensei.app.domain.reminder.ReminderContent
 import com.n3sensei.app.domain.reminder.ReminderFrequency
+import com.n3sensei.app.domain.reminder.ReminderLessonCatalog
+import com.n3sensei.app.domain.reminder.ReminderLessons
 import com.n3sensei.app.domain.reminder.ReminderNotifier
 import com.n3sensei.app.domain.reminder.ReminderOutcome
 import com.n3sensei.app.domain.reminder.ReminderRunner
 import com.n3sensei.app.domain.reminder.ReminderScheduler
 import com.n3sensei.app.domain.reminder.ReminderSettings
+import com.n3sensei.app.domain.repository.ContentRepository
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -32,7 +36,12 @@ class ReminderSettingsViewModel(
     private val scheduler: ReminderScheduler,
     private val notifier: ReminderNotifier,
     private val runner: ReminderRunner,
+    /** The lessons to choose from (for the per-kind summary); none without content. */
+    content: ContentRepository? = null,
 ) : ViewModel() {
+
+    val lessonCatalog: StateFlow<ReminderLessonCatalog> = (content?.let { ReminderLessonCatalog.observe(it) } ?: flowOf(ReminderLessonCatalog.EMPTY))
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), ReminderLessonCatalog.EMPTY)
 
     val settings: StateFlow<ReminderSettings?> = preferencesRepository.preferences
         .map { it.reminderSettings }
@@ -83,6 +92,12 @@ class ReminderSettingsViewModel(
         val next = if (kind in it.content) it.content - kind else it.content + kind
         if (next.isEmpty()) it else it.copy(content = next)
     }
+
+    /** "Tất cả nội dung": every kind, every lesson. */
+    fun chooseAllContent() = update { it.copy(content = ReminderContent.entries.toSet(), lessons = ReminderLessons()) }
+
+    /** "Chỉ nội dung đang cần ôn": due and marked items only. */
+    fun chooseReviewOnly() = update { it.copy(reviewOnly = true) }
 
     fun sendTest() {
         viewModelScope.launch { _testOutcome.value = runner.showNow() }

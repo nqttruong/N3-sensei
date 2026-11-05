@@ -309,7 +309,8 @@ class EndToEndTest {
             waitForText("意")
             composeRule.onAllNodes(hasText("意") and hasClickAction()).onFirst().performClick()
             waitForText("Ý, ý nghĩ, tâm ý")
-            composeRule.onNodeWithText(string(R.string.kanji_example_words)).performScrollTo()
+            // The section title counts the words (注意, 意味, 決意).
+            composeRule.onNodeWithText(string(R.string.examples_header, string(R.string.kanji_example_words), 3)).performScrollTo()
             waitForText("Chú ý")
             waitForText("Quyết tâm")
         }

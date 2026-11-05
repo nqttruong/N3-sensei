@@ -1,5 +1,6 @@
 package com.n3sensei.app.domain.reminder
 
+import com.n3sensei.app.domain.furigana.Furigana
 import com.n3sensei.app.domain.model.ItemQuery
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
@@ -24,10 +25,15 @@ data class ReminderMessage(
     /** Due items of all types right now. */
     val dueCount: Int,
     val settings: ReminderSettings,
+    /** A short extra line: a word with the kanji, an example of the grammar point; null when none. */
+    val example: ReminderExample? = null,
 ) {
     /** The word, for a vocabulary reminder. */
     val vocabulary: Vocabulary? get() = (item as? PracticeItem.VocabularyItem)?.vocabulary
 }
+
+/** One line of example: Japanese, its reading when known, and its Vietnamese meaning. */
+data class ReminderExample(val japanese: String, val reading: String?, val meaning: String?)
 
 /** Platform side of reminders: posting notifications. */
 interface ReminderNotifier {
@@ -132,19 +138,50 @@ class ReminderRunner(
         kinds: Set<ReminderContent> = settings.content,
     ): ReminderMessage? {
         val now = clock.instant()
+        val catalog = ReminderLessonCatalog.observe(content).first()
         val types = kinds.map { it.type }.toSet()
+        // Only the kinds and lessons chosen in the settings.
+        fun chosen(ref: ItemRef) = ref.type in types && catalog.allows(ref, settings.lessons)
         val due = progress.getDueItems(now, DUE_SCAN_LIMIT)
-        val groups = buildList {
-            add(ReminderReason.DUE to due.filter { it.type in types })
-            add(ReminderReason.MARKED to marked(types))
-            if (!settings.reviewOnly) add(ReminderReason.NEW to progress.getNewItems(NEW_SCAN_LIMIT).filter { it.type in types })
+        val dueChosen = due.filter(::chosen)
+        val markedChosen = marked(types).filter(::chosen)
+        val newChosen = if (settings.reviewOnly) emptyList() else types.flatMap { type -> catalog.newItems[type].orEmpty().filter(::chosen).take(NEW_SCAN_LIMIT) }
+        val lastShown = history.lastShown((dueChosen + markedChosen + newChosen).toSet())
+
+        // Kinds take turns, starting after the kind of the last reminder; within a kind the usual
+        // order (due, marked, new; rested first). A kind with nothing rested gives its turn away.
+        val order = rotation(ReminderContent.entries.map { it.type }.filter { it in types }, avoid?.type)
+        val perKind = order.map { type ->
+            pick(
+                listOf(
+                    ReminderReason.DUE to dueChosen.filter { it.type == type },
+                    ReminderReason.MARKED to markedChosen.filter { it.type == type },
+                    ReminderReason.NEW to newChosen.filter { it.type == type },
+                ),
+                lastShown, now, avoid,
+            )
         }
-        val lastShown = history.lastShown(groups.flatMap { it.second }.toSet())
-        for ((reason, ref) in pick(groups, lastShown, now, avoid)) {
+        val candidates = perKind.flatMap { list -> list.filter { isRested(it.second, lastShown, now) && it.second != avoid } } +
+            pick(listOf(ReminderReason.DUE to dueChosen, ReminderReason.MARKED to markedChosen, ReminderReason.NEW to newChosen), lastShown, now, avoid)
+        val tried = HashSet<ItemRef>()
+        for ((reason, ref) in candidates) {
+            if (!tried.add(ref)) continue
+            // An item deleted or no longer in the content is skipped.
             val item = content.getPracticeItem(ref) ?: continue
-            return ReminderMessage(item, reason, due.size, settings)
+            return ReminderMessage(item, reason, due.size, settings, example(item))
         }
         return null
+    }
+
+    /** A word written with the kanji, or an example sentence of the grammar point, when the content has one. */
+    private suspend fun example(item: PracticeItem): ReminderExample? = when (item) {
+        is PracticeItem.KanjiItem -> item.words.firstOrNull()?.let { w ->
+            ReminderExample(w.japanese, w.furigana?.let { runCatching { Furigana.readingText(it) }.getOrNull() }, w.meaningVi.ifBlank { null })
+        }
+        is PracticeItem.GrammarItem -> content.getGrammarDetail(item.grammar.id)?.examples?.firstOrNull()?.let { e ->
+            ReminderExample(e.japanese, null, e.translationVi.ifBlank { null })
+        }
+        is PracticeItem.VocabularyItem -> null
     }
 
     private suspend fun marked(types: Set<ItemType>): List<ItemRef> = buildList {
@@ -166,6 +203,15 @@ class ReminderRunner(
          * keep the group's own order: most overdue, course order). Then every recently shown
          * item, longest ago first, as a fallback. [avoid] (the last reminder) goes last.
          */
+        /** The kinds in turn, the one after [last] first. */
+        fun rotation(kinds: List<ItemType>, last: ItemType?): List<ItemType> {
+            val i = kinds.indexOf(last)
+            return if (i < 0) kinds else kinds.drop(i + 1) + kinds.take(i + 1)
+        }
+
+        fun isRested(ref: ItemRef, lastShown: Map<ItemRef, Instant>, now: Instant): Boolean =
+            lastShown[ref]?.let { Duration.between(it, now) >= REPEAT_AFTER || it.isAfter(now) } ?: true
+
         fun pick(
             groups: List<Pair<ReminderReason, List<ItemRef>>>,
             lastShown: Map<ItemRef, Instant>,
@@ -174,7 +220,7 @@ class ReminderRunner(
         ): List<Pair<ReminderReason, ItemRef>> {
             val seen = HashSet<ItemRef>()
             val all = groups.flatMap { (reason, refs) -> refs.filter { seen.add(it) }.map { reason to it } }
-            fun rested(ref: ItemRef) = lastShown[ref]?.let { Duration.between(it, now) >= REPEAT_AFTER || it.isAfter(now) } ?: true
+            fun rested(ref: ItemRef) = isRested(ref, lastShown, now)
             val byAge = compareBy<Pair<ReminderReason, ItemRef>> { lastShown[it.second] ?: Instant.MIN }
             val fresh = all.filter { rested(it.second) && it.second != avoid }
                 .sortedWith(compareBy<Pair<ReminderReason, ItemRef>> { it.first.ordinal }.then(byAge))

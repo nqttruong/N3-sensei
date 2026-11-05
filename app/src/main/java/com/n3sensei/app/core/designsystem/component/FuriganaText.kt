@@ -15,7 +15,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.text
-import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -44,6 +46,9 @@ fun FuriganaText(
     style: TextStyle = MaterialTheme.typography.bodyLarge,
     color: Color = Color.Unspecified,
     showFurigana: Boolean = LocalShowFurigana.current,
+    /** Parts of the base text to emphasize (e.g. the word an example illustrates). */
+    highlight: List<IntRange> = emptyList(),
+    highlightColor: Color = MaterialTheme.colorScheme.primary,
 ) {
     val segments = remember(markup) {
         // Content is validated on import; fall back to the raw text rather than crash.
@@ -54,8 +59,20 @@ fun FuriganaText(
     val contentColor = LocalContentColor.current
     val textColor = if (color != Color.Unspecified) color else contentColor
 
+    fun highlighted(start: Int, length: Int) = highlight.any { it.first < start + length && start <= it.last }
+    val emphasis = SpanStyle(color = highlightColor, fontWeight = FontWeight.Bold)
+
     if (!showFurigana || segments.none { it.reading != null }) {
-        Text(text = baseText, style = baseStyle, color = textColor, modifier = modifier)
+        // The language is part of the text, so TalkBack reads it with a Japanese voice.
+        val text = if (highlight.isEmpty()) japaneseText(baseText) else buildAnnotatedString {
+            append(japaneseText(baseText))
+            highlight.forEach { r ->
+                val start = r.first.coerceIn(0, baseText.length)
+                val end = (r.last + 1).coerceIn(start, baseText.length)
+                addStyle(emphasis, start, end)
+            }
+        }
+        Text(text = text, style = baseStyle, color = textColor, modifier = modifier)
         return
     }
 
@@ -68,12 +85,18 @@ fun FuriganaText(
         modifier = modifier.clearAndSetSemantics { text = japaneseText(baseText) },
         horizontalArrangement = Arrangement.Start,
     ) {
+        var offset = 0
         segments.forEach { segment ->
             if (segment.reading != null) {
-                RubyCell(segment.text, segment.reading, baseStyle, rubyStyle, textColor)
+                val on = highlighted(offset, segment.text.length)
+                RubyCell(segment.text, segment.reading, baseStyle.emphasized(on), rubyStyle, if (on) highlightColor else textColor)
             } else {
-                segment.text.forEach { char -> RubyCell(char.toString(), null, baseStyle, rubyStyle, textColor) }
+                segment.text.forEachIndexed { i, char ->
+                    val on = highlighted(offset + i, 1)
+                    RubyCell(char.toString(), null, baseStyle.emphasized(on), rubyStyle, if (on) highlightColor else textColor)
+                }
             }
+            offset += segment.text.length
         }
     }
 }
@@ -91,6 +114,8 @@ private fun RubyCell(base: String, reading: String?, baseStyle: TextStyle, rubyS
         Text(text = base, style = baseStyle, color = color, textAlign = TextAlign.Center)
     }
 }
+
+private fun TextStyle.emphasized(on: Boolean): TextStyle = if (on) copy(fontWeight = FontWeight.Bold) else this
 
 private fun TextUnit.scaled(factor: Float): TextUnit = if (isSpecified) this * factor else this
 

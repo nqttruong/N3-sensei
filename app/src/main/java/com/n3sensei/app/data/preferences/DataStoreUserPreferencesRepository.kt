@@ -2,6 +2,8 @@ package com.n3sensei.app.data.preferences
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.MutablePreferences
+import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
@@ -10,6 +12,8 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.domain.reminder.ReminderContent
+import com.n3sensei.app.domain.reminder.LessonSelection
+import com.n3sensei.app.domain.reminder.ReminderLessons
 import com.n3sensei.app.domain.reminder.ReminderSettings
 import com.n3sensei.app.domain.widget.WidgetSettings
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
@@ -43,6 +47,11 @@ class DataStoreUserPreferencesRepository(
         val REMINDER_CONTENT = stringPreferencesKey("reminder_content")
         val REMINDER_REVIEW_ONLY = booleanPreferencesKey("reminder_review_only")
         val REMINDER_ERROR_REVIEWS = booleanPreferencesKey("reminder_error_reviews")
+
+        /** Lesson keys per kind; absent = every lesson (LessonSelection.All), present (maybe empty) = only these. */
+        val REMINDER_LESSONS_VOCABULARY = stringSetPreferencesKey("reminder_lessons_vocabulary")
+        val REMINDER_LESSONS_KANJI = stringSetPreferencesKey("reminder_lessons_kanji")
+        val REMINDER_LESSONS_GRAMMAR = stringSetPreferencesKey("reminder_lessons_grammar")
         val WIDGET_MODE = stringPreferencesKey("widget_mode")
         val DAILY_STUDY_MINUTES = intPreferencesKey("daily_study_minutes")
         val WIDGET_LESSON = intPreferencesKey("widget_lesson")
@@ -96,7 +105,21 @@ class DataStoreUserPreferencesRepository(
                 ?.toSet()?.ifEmpty { null } ?: d.content,
             reviewOnly = prefs[Keys.REMINDER_REVIEW_ONLY] ?: d.reviewOnly,
             errorReviews = prefs[Keys.REMINDER_ERROR_REVIEWS] ?: d.errorReviews,
+            lessons = ReminderLessons(
+                vocabulary = selection(prefs[Keys.REMINDER_LESSONS_VOCABULARY]),
+                kanji = selection(prefs[Keys.REMINDER_LESSONS_KANJI]),
+                grammar = selection(prefs[Keys.REMINDER_LESSONS_GRAMMAR]),
+            ),
         )
+    }
+
+    private fun selection(keys: Set<String>?): LessonSelection = keys?.let { LessonSelection.Only(it) } ?: LessonSelection.All
+
+    private fun write(prefs: MutablePreferences, key: Preferences.Key<Set<String>>, selection: LessonSelection) {
+        when (selection) {
+            LessonSelection.All -> prefs.remove(key)
+            is LessonSelection.Only -> prefs[key] = selection.keys
+        }
     }
 
     private inline fun <reified E : Enum<E>> enumOrDefault(name: String?, default: E): E =
@@ -115,6 +138,9 @@ class DataStoreUserPreferencesRepository(
             it[Keys.REMINDER_CONTENT] = settings.content.sortedBy { c -> c.ordinal }.joinToString(",") { c -> c.name }
             it[Keys.REMINDER_REVIEW_ONLY] = settings.reviewOnly
             it[Keys.REMINDER_ERROR_REVIEWS] = settings.errorReviews
+            write(it, Keys.REMINDER_LESSONS_VOCABULARY, settings.lessons.vocabulary)
+            write(it, Keys.REMINDER_LESSONS_KANJI, settings.lessons.kanji)
+            write(it, Keys.REMINDER_LESSONS_GRAMMAR, settings.lessons.grammar)
         }
     }
 

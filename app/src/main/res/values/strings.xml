@@ -220,7 +220,11 @@
 
     <!-- Shared detail -->
     <string name="detail_examples">Ví dụ</string>
-    <string name="detail_no_examples">Chưa có ví dụ.</string>
+    <string name="examples_header">%1$s (%2$d)</string>
+    <string name="examples_expand">Mở ví dụ</string>
+    <string name="examples_collapse">Thu gọn ví dụ</string>
+    <string name="examples_state_expanded">Đang mở</string>
+    <string name="examples_state_collapsed">Đã thu gọn</string>
     <string name="source_line">Nguồn: %1$s · Giấy phép: %2$s</string>
     <string name="source_license_unverified">%1$s (chưa xác minh quyền phân phối)</string>
 
@@ -462,7 +466,6 @@
     <string name="reminder_max_per_day">Tối đa mỗi ngày</string>
     <string name="reminder_max_value">%1$d thông báo</string>
     <string name="reminder_max_unlimited">Không giới hạn</string>
-    <string name="reminder_scope">Nội dung nhắc</string>
     <string name="reminder_review_only">Chỉ mục cần ôn</string>
     <string name="reminder_review_only_description">Chỉ nhắc mục đến hạn ôn hoặc đã đánh dấu cần chú ý, không nhắc mục mới.</string>
     <string name="reminder_frequency_daily">Mỗi ngày một lần</string>
@@ -1016,4 +1019,26 @@
     <string name="skill_open_errors">%1$d lỗi chưa khắc phục</string>
     <string name="skill_open_notebook">Xem trong sổ lỗi sai</string>
     <string name="skill_no_data">Chưa có câu %1$s nào được chấm.</string>
+
+    <!-- Nội dung nhắc học theo bài -->
+    <string name="reminder_example_word">Từ: %1$s</string>
+    <string name="reminder_example_sentence">Ví dụ: %1$s</string>
+    <string name="reminder_kinds">Nội dung nhắc học</string>
+    <string name="reminder_kinds_all">Tất cả nội dung</string>
+    <string name="reminder_kinds_review_only">Chỉ nội dung đang cần ôn</string>
+    <string name="reminder_lessons_all">Tất cả bài</string>
+    <string name="reminder_lessons_some">%1$d/%2$d bài</string>
+    <string name="reminder_lessons_none">Chưa chọn bài nào: sẽ không nhắc loại này</string>
+    <string name="reminder_lessons_choose">Chọn bài</string>
+    <string name="reminder_lessons_title">Chọn bài để nhắc</string>
+    <string name="reminder_lessons_select_all">Chọn tất cả</string>
+    <string name="reminder_lessons_clear">Bỏ chọn tất cả</string>
+    <string name="reminder_lessons_hint">“Tất cả bài” gồm cả bài được thêm sau này. Lịch sử đã nhắc vẫn được giữ khi bạn đổi lựa chọn.</string>
+    <string name="reminder_lessons_empty">Chưa có bài nào thuộc loại này trong ứng dụng.</string>
+    <string name="reminder_lesson_label">Bài %1$s</string>
+    <string name="reminder_lesson_my_words">Từ của tôi</string>
+    <string name="reminder_lesson_count_vocabulary">%1$d từ</string>
+    <string name="reminder_lesson_count_kanji">%1$d chữ</string>
+    <string name="reminder_lesson_count_grammar">%1$d mẫu</string>
+    <string name="reminder_kind_off">Loại này đang tắt.</string>
 </resources>

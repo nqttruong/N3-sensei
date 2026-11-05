@@ -13,7 +13,7 @@
 | 5. Chưa đủ thông tin | 0 | |
 | Thẻ so sánh ("Dễ nhầm…") | 11 | Không phải mẫu; ghi lại các thẻ được so sánh |
 
-64 mục mới (`n3g-g111`…`n3g-g174`, theo thứ tự PDF) chỉ có **tên mẫu, cách chia, nghĩa ngắn** lấy từ thẻ (`pdf_new_points.py`); giải thích, mẹo nhớ, câu ví dụ của thẻ không được đóng gói (chưa xác minh quyền). Nguồn mỗi mục: "N3.pdf · Ngữ pháp, nhóm NN thẻ K", `licenseVerified = false`.
+64 mục mới (`n3g-g111`…`n3g-g174`, theo thứ tự PDF) chỉ có **tên mẫu, cách chia, nghĩa ngắn** lấy từ thẻ (`pdf_new_points.py`); giải thích, mẹo nhớ, câu ví dụ của thẻ không được đóng gói (chưa xác minh quyền). Nguồn mỗi mục: "N3.pdf · Ngữ pháp, nhóm NN thẻ K", `licenseVerified = false`. Từ phiên bản 4, mỗi mục này có 2–3 câu ví dụ N3 Sensei tự soạn, có furigana, nguồn riêng `n3-grammar-examples`; 110 mẫu đầu giữ nguyên 2 ví dụ của mình. Xem [EXAMPLES.md](EXAMPLES.md).
 
 Thứ tự: 110 mẫu theo danh mục Mimikara N3, rồi 64 mẫu PDF; cắt thành **25 bài 7 mẫu** (bài 25: 6 mẫu). ID của 110 mẫu không đổi → tiến độ, lịch ôn, đánh dấu giữ nguyên khi app cài bản 2 thay bản 1 (có test với bản 1 thật). Bài `n3g-lNN` nay chứa 7 mẫu thay vì 10; không dữ liệu người học nào gắn với bài.
 

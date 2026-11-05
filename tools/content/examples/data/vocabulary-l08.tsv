@@ -1,0 +1,45 @@
+# Mimikara N3 · bài 8 (副詞): một câu ví dụ cho mỗi từ. Cột: item_id, câu, furigana (annotate.py điền, đã soát tay), dịch.
+mimikara-n3-v591	今日は非常に寒いので、暖かい服を着てください。	{今日|きょう}は{非常|ひじょう}に{寒|さむ}いので、{暖|あたた}かい{服|ふく}を{着|き}てください。	Hôm nay trời rất lạnh nên hãy mặc quần áo ấm.
+mimikara-n3-v592	先日は大変にお世話になりました。	{先日|せんじつ}は{大変|たいへん}にお{世話|せわ}になりました。	Hôm trước tôi đã được anh giúp đỡ rất nhiều.
+mimikara-n3-v593	宿題はほとんど終わった。	{宿題|しゅくだい}はほとんど{終|お}わった。	Bài tập về nhà tôi đã làm gần xong.
+mimikara-n3-v594	駅までは大体十分ぐらいです。	{駅|えき}までは{大体|だいたい}{十分|じゅっぷん}ぐらいです。	Đến ga mất khoảng mười phút.
+mimikara-n3-v595	この問題はかなり難しい。	この{問題|もんだい}はかなり{難|むずか}しい。	Bài này khá khó.
+mimikara-n3-v596	しばらく会わないうちに、ずいぶん背が伸びたね。	しばらく{会|あ}わないうちに、ずいぶん{背|せ}が{伸|の}びたね。	Lâu không gặp, cháu đã cao lên đáng kể nhỉ.
+mimikara-n3-v597	この店のカレーはけっこうおいしい。	この{店|みせ}のカレーはけっこうおいしい。	Món cà ri của quán này khá ngon.
+mimikara-n3-v599	もっとゆっくり話してください。	もっとゆっくり{話|はな}してください。	Xin hãy nói chậm hơn nữa.
+mimikara-n3-v600	朝ご飯をしっかり食べてから出かけよう。	{朝|あさ}ご{飯|はん}をしっかり{食|た}べてから{出|で}かけよう。	Hãy ăn sáng đầy đủ rồi mới đi.
+mimikara-n3-v601	お腹がいっぱいで、もう食べられない。	お{腹|なか}がいっぱいで、もう{食|た}べられない。	Tôi no căng bụng rồi, không ăn thêm được nữa.
+mimikara-n3-v602	走って、ぎりぎり電車に間に合った。	{走|はし}って、ぎりぎり{電車|でんしゃ}に{間|ま}に{合|あ}った。	Tôi chạy nên vừa kịp sát nút chuyến tàu.
+mimikara-n3-v603	このくつは私の足にぴったりだ。	このくつは{私|わたし}の{足|あし}にぴったりだ。	Đôi giày này vừa khít chân tôi.
+mimikara-n3-v604	日曜日はたいてい家で過ごします。	{日曜日|にちようび}はたいてい{家|いえ}で{過|す}ごします。	Chủ nhật tôi thường ở nhà.
+mimikara-n3-v605	二人は同時に「はい」と答えた。	{二人|ふたり}は{同時|どうじ}に「はい」と{答|こた}えた。	Hai người cùng lúc trả lời "Vâng".
+mimikara-n3-v606	休むときは、前もって連絡してください。	{休|やす}むときは、{前|まえ}もって{連絡|れんらく}してください。	Khi nghỉ thì hãy báo trước.
+mimikara-n3-v607	家に着いたら、すぐに電話します。	{家|いえ}に{着|つ}いたら、すぐに{電話|でんわ}します。	Về đến nhà tôi sẽ gọi điện ngay.
+mimikara-n3-v608	もうすぐ夏休みだ。	もうすぐ{夏休|なつやす}みだ。	Sắp đến kỳ nghỉ hè rồi.
+mimikara-n3-v609	突然、電気が消えた。	{突然|とつぜん}、{電気|でんき}が{消|き}えた。	Đột nhiên đèn tắt phụt.
+mimikara-n3-v610	楽しい時間はあっという間に過ぎてしまう。	{楽|たの}しい{時間|じかん}はあっという{間|ま}に{過|す}ぎてしまう。	Thời gian vui vẻ trôi qua trong chớp mắt.
+mimikara-n3-v611	いつの間にか外が暗くなっていた。	いつの{間|ま}にか{外|そと}が{暗|くら}くなっていた。	Bên ngoài trời đã tối lúc nào không hay.
+mimikara-n3-v612	しばらくここで待っていてください。	しばらくここで{待|ま}っていてください。	Xin hãy đợi ở đây một lát.
+mimikara-n3-v613	朝からずっと雨が降っている。	{朝|あさ}からずっと{雨|あめ}が{降|ふ}っている。	Trời mưa suốt từ sáng.
+mimikara-n3-v614	彼は相変わらず元気そうだった。	{彼|かれ}は{相変|あいか}わらず{元気|げんき}そうだった。	Anh ấy trông vẫn khỏe như mọi khi.
+mimikara-n3-v615	会場に客が次々に入ってきた。	{会場|かいじょう}に{客|きゃく}が{次々|つぎつぎ}に{入|はい}ってきた。	Khách lần lượt bước vào hội trường.
+mimikara-n3-v616	練習すれば、どんどん上手になるよ。	{練習|れんしゅう}すれば、どんどん{上手|じょうず}になるよ。	Cứ luyện tập thì sẽ ngày càng giỏi lên đấy.
+mimikara-n3-v617	雨はますます強くなってきた。	{雨|あめ}はますます{強|つよ}くなってきた。	Mưa ngày càng nặng hạt hơn.
+mimikara-n3-v618	三回目の試験で、やっと合格できた。	{三|さん}{回|かい}{目|め}の{試験|しけん}で、やっと{合格|ごうかく}できた。	Đến lần thi thứ ba, cuối cùng tôi cũng đã đỗ.
+mimikara-n3-v619	待っていたが、彼はとうとう来なかった。	{待|ま}っていたが、{彼|かれ}はとうとう{来|こ}なかった。	Tôi đã chờ nhưng rốt cuộc anh ấy không đến.
+mimikara-n3-v620	十年かかって、ついに新しい薬が完成した。	{十|じゅう}{年|ねん}かかって、ついに{新|あたら}しい{薬|くすり}が{完成|かんせい}した。	Mất mười năm, cuối cùng loại thuốc mới đã hoàn thành.
+mimikara-n3-v621	「手伝ってくれる？」「もちろん、いいよ。」	「{手伝|てつだ}ってくれる？」「もちろん、いいよ。」	"Giúp tớ được không?" "Tất nhiên rồi."
+mimikara-n3-v622	天気予報のとおり、やはり雨が降ってきた。	{天気|てんき}{予報|よほう}のとおり、やはり{雨|あめ}が{降|ふ}ってきた。	Đúng như dự báo thời tiết, trời quả nhiên đã mưa.
+mimikara-n3-v623	あんなに練習したんだから、きっと勝てるよ。	あんなに{練習|れんしゅう}したんだから、きっと{勝|か}てるよ。	Đã luyện tập nhiều như thế thì nhất định sẽ thắng.
+mimikara-n3-v624	日本に来たら、ぜひ私の町に遊びに来てください。	{日本|にほん}に{来|き}たら、ぜひ{私|わたし}の{町|まち}に{遊|あそ}びに{来|き}てください。	Nếu đến Nhật, nhất định hãy đến chơi thị trấn của tôi nhé.
+mimikara-n3-v625	なるべく早く返事をください。	なるべく{早|はや}く{返事|へんじ}をください。	Hãy trả lời tôi càng sớm càng tốt.
+mimikara-n3-v626	難しいと思っていたが、試験は案外簡単だった。	{難|むずか}しいと{思|おも}っていたが、{試験|しけん}は{案外|あんがい}{簡単|かんたん}だった。	Tôi cứ tưởng khó, nhưng bài thi lại dễ không ngờ.
+mimikara-n3-v627	もしかすると、明日は雪が降るかもしれない。	もしかすると、{明日|あした}は{雪|ゆき}が{降|ふ}るかもしれない。	Không chừng mai sẽ có tuyết.
+mimikara-n3-v628	まさか彼が犯人だとは思わなかった。	まさか{彼|かれ}が{犯人|はんにん}だとは{思|おも}わなかった。	Tôi không thể ngờ anh ta lại là thủ phạm.
+mimikara-n3-v629	うっかりして、かばんを電車に忘れてしまった。	うっかりして、かばんを{電車|でんしゃ}に{忘|わす}れてしまった。	Sơ ý một chút mà tôi để quên cặp trên tàu.
+mimikara-n3-v630	ダイエット中なのに、ついケーキを食べてしまった。	ダイエット{中|ちゅう}なのに、ついケーキを{食|た}べてしまった。	Đang ăn kiêng mà tôi lỡ ăn bánh ngọt mất rồi.
+mimikara-n3-v631	あまりにおかしくて、思わず笑ってしまった。	あまりにおかしくて、{思|おも}わず{笑|わら}ってしまった。	Buồn cười quá nên tôi bất giác bật cười.
+mimikara-n3-v632	子どもが無事だと聞いて、ほっとした。	{子|こ}どもが{無事|ぶじ}だと{聞|き}いて、ほっとした。	Nghe tin con bình an vô sự, tôi thở phào nhẹ nhõm.
+mimikara-n3-v633	電車がなかなか来なくて、いらいらした。	{電車|でんしゃ}がなかなか{来|こ}なくて、いらいらした。	Tàu mãi không đến nên tôi bực bội.
+mimikara-n3-v634	休みの日は、家でのんびり過ごしたい。	{休|やす}みの{日|ひ}は、{家|いえ}でのんびり{過|す}ごしたい。	Ngày nghỉ tôi muốn ở nhà thong thả nghỉ ngơi.
+mimikara-n3-v635	実は、来月会社を辞めることになりました。	{実|じつ}は、{来月|らいげつ}{会社|かいしゃ}を{辞|や}めることになりました。	Thật ra, tháng sau tôi sẽ nghỉ việc ở công ty.

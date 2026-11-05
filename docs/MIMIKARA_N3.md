@@ -27,7 +27,8 @@ cp local-content/mimikara-n3/pack-candidate.json app/src/main/assets/content/mim
 | Kanji | `expression` (giữ nguyên, kể cả dạng nhiều cách viết `代わる・替わる・換わる`) |
 | Hiragana | `reading` |
 | Meaning | `meaningVi` |
-| — | `furigana`, `partOfSpeech`, ví dụ, chủ đề: để trống (bảng không có) |
+| — | `furigana`, `partOfSpeech`, chủ đề: để trống (bảng không có) |
+| — | ví dụ: bảng không có; từ phiên bản 2 có 870 câu ví dụ N3 Sensei tự soạn, nguồn riêng, xem [EXAMPLES.md](EXAMPLES.md) |
 | tên tệp | `jlptLevel` = N3; nguồn có tên tệp gốc, `licenseVerified = false` |
 
 ## Báo cáo

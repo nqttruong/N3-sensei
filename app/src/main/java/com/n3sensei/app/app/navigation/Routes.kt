@@ -143,3 +143,6 @@ data class ReviewResultRoute(
 
 @Serializable data object ReminderSettingsRoute
 @Serializable data object WidgetSettingsRoute
+
+/** The lessons one kind of study reminder (an ItemType name) is taken from. */
+@Serializable data class ReminderLessonsRoute(val type: String)

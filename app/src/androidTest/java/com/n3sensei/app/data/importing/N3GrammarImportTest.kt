@@ -55,14 +55,14 @@ class N3GrammarImportTest {
     private val v1 = InstrumentationRegistry.getInstrumentation().context.assets
         .open("content-history/n3-grammar-v1.json").use { it.readBytes().toString(Charsets.UTF_8) }
 
-    private fun bumped(version: Int) = json.replaceFirst("\"version\": 3", "\"version\": $version")
+    private fun bumped(version: Int) = json.replaceFirst("\"version\": 4", "\"version\": $version")
     private fun query(q: ItemQuery) = runBlocking { content.observeGrammarItems(q).first().map { it.item } }
 
     @Test
     fun allPatternsImported_withExamplesAndSource() = runBlocking {
         assertEquals(ImportOutcome.IMPORTED, importer.import(json).outcome)
         assertEquals(174, db.countRows("grammar"))
-        assertEquals(220, db.countRows("example_sentences"))
+        assertEquals(220 + 140, db.countRows("example_sentences"))
         val detail = content.getGrammarDetail("n3g-g001")!!
         assertEquals("〜ことにしている", detail.grammar.pattern)
         assertEquals(2, detail.examples.size)
@@ -72,7 +72,9 @@ class N3GrammarImportTest {
         val fromPdf = content.getGrammarDetail("n3g-g111")!!
         assertEquals("〜ため（に）", fromPdf.grammar.pattern)
         assertEquals("V普通形 + ため（に）／Nの + ため（に）", fromPdf.grammar.structure)
-        assertTrue(fromPdf.examples.isEmpty())
+        // No example in the PDF data; the self-written ones added in version 4.
+        assertEquals("大雨のため、電車が止まっています。", fromPdf.examples.first().japanese)
+        assertEquals(2, fromPdf.examples.size)
         assertEquals("N3.pdf · Ngữ pháp, nhóm 01 thẻ 1 (tên mẫu, cách chia, nghĩa ngắn)", fromPdf.source.name)
     }
 
@@ -97,9 +99,9 @@ class N3GrammarImportTest {
         db.progressDao().upsert(progress)
         db.progressDao().insertMark(ItemMarkEntity(ItemType.GRAMMAR, "n3g-g092", 9))
         assertEquals(ImportOutcome.UP_TO_DATE, importer.import(json, onlyIfNewer = true).outcome)
-        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(4)).outcome)
+        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(5)).outcome)
         assertEquals(174, db.countRows("grammar"))
-        assertEquals(220, db.countRows("example_sentences"))
+        assertEquals(220 + 140, db.countRows("example_sentences"))
         assertEquals(progress, db.progressDao().get(ItemType.GRAMMAR, "n3g-g039"))
         assertEquals(listOf("n3g-g092"), query(ItemQuery(markedOnly = true)).map { it.id })
     }
@@ -111,8 +113,8 @@ class N3GrammarImportTest {
         db.openHelper.writableDatabase.execSQL(
             "CREATE TRIGGER fail_g060 BEFORE INSERT ON grammar WHEN NEW.id = 'n3g-g060' BEGIN SELECT RAISE(ABORT, 'disk full (test)'); END",
         )
-        assertEquals(ImportOutcome.FAILED, importer.import(bumped(4)).outcome)
-        assertEquals(3, db.contentPackDao().getPack("n3-grammar")!!.version)
+        assertEquals(ImportOutcome.FAILED, importer.import(bumped(5)).outcome)
+        assertEquals(4, db.contentPackDao().getPack("n3-grammar")!!.version)
         assertEquals(174, db.countRows("grammar"))
         assertEquals(1, db.countRows("learning_progress"))
     }

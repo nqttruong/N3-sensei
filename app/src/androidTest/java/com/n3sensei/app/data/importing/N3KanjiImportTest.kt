@@ -58,14 +58,14 @@ class N3KanjiImportTest {
     }
 
     private fun kanjiId(character: String) = "n3k-k%05x".format(character.codePointAt(0))
-    private fun bumped(version: Int) = json.replaceFirst("\"version\": 2", "\"version\": $version")
+    private fun bumped(version: Int) = json.replaceFirst("\"version\": 3", "\"version\": $version")
     private fun kanjiQuery(q: ItemQuery) = runBlocking { content.observeKanjiItems(q).first().map { it.item } }
 
     @Test
     fun kanjiImport_writesOnlyKanjiAndTheirWords_neverVocabulary() = runBlocking {
         assertEquals(ImportOutcome.IMPORTED, importer.import(json).outcome)
         assertEquals(393, db.countRows("kanji"))
-        assertEquals(1271, db.countRows("kanji_examples"))
+        assertEquals(1271 + 7, db.countRows("kanji_examples"))
         // Mimikara's 880 words, untouched; none added by the kanji pack.
         assertEquals(880, db.countRows("vocabulary"))
         assertEquals(880, content.observeVocabularyItems(ItemQuery()).first().size)
@@ -81,10 +81,10 @@ class N3KanjiImportTest {
     @Test
     fun vocabularyImport_doesNotTouchKanji() = runBlocking {
         importer.import(json)
-        val mimikara = asset(AndroidContentImportRepository.MIMIKARA_PACK_ASSET).replaceFirst("\"version\": 1", "\"version\": 2")
+        val mimikara = asset(AndroidContentImportRepository.MIMIKARA_PACK_ASSET).replaceFirst("\"version\": 2", "\"version\": 3")
         assertEquals(ImportOutcome.IMPORTED, importer.import(mimikara).outcome)
         assertEquals(393, db.countRows("kanji"))
-        assertEquals(1271, db.countRows("kanji_examples"))
+        assertEquals(1271 + 7, db.countRows("kanji_examples"))
         assertEquals(3, content.getKanjiDetail(kanjiId("意"))!!.examples.size)
     }
 
@@ -103,7 +103,8 @@ class N3KanjiImportTest {
         assertTrue(skin.none { it.id == vocabulary.id })
         assertEquals("da", vocabulary.meaningVi)
         // Words the PDF prints under 坂 belong to 板: shown there, same ids.
-        assertTrue(content.getKanjiDetail(kanjiId("坂"))!!.examples.isEmpty())
+        // 坂 itself has no word in the PDF: the words added for it in version 3.
+        assertEquals(listOf("坂", "坂道", "上り坂"), content.getKanjiDetail(kanjiId("坂"))!!.examples.map { it.japanese })
         assertEquals("n3k-x-11-013", content.getKanjiDetail(kanjiId("板"))!!.examples.single { it.japanese == "黒板" }.id)
     }
 
@@ -124,10 +125,11 @@ class N3KanjiImportTest {
         db.progressDao().upsert(progress)
         db.progressDao().insertMark(ItemMarkEntity(ItemType.KANJI, kanjiId("波"), 9))
         assertEquals(ImportOutcome.UP_TO_DATE, importer.import(json, onlyIfNewer = true).outcome)
-        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(3)).outcome)
+        assertEquals(ImportOutcome.IMPORTED, importer.import(bumped(4)).outcome)
         assertEquals(393, db.countRows("kanji"))
-        assertEquals(1272, db.countRows("example_sentences"))
-        assertEquals(1271, db.countRows("kanji_examples"))
+        // The kanji's 1 272 + 7 words, next to the 870 example sentences of the vocabulary pack.
+        assertEquals(1272 + 7 + 870, db.countRows("example_sentences"))
+        assertEquals(1271 + 7, db.countRows("kanji_examples"))
         assertEquals(progress, db.progressDao().get(ItemType.KANJI, kanjiId("意")))
         assertEquals(listOf(kanjiId("波")), kanjiQuery(ItemQuery(markedOnly = true)).map { it.id })
     }
@@ -139,8 +141,8 @@ class N3KanjiImportTest {
         db.openHelper.writableDatabase.execSQL(
             "CREATE TRIGGER fail_kanji BEFORE INSERT ON kanji WHEN NEW.character = '必' BEGIN SELECT RAISE(ABORT, 'disk full (test)'); END",
         )
-        assertEquals(ImportOutcome.FAILED, importer.import(bumped(3)).outcome)
-        assertEquals(2, db.contentPackDao().getPack("n3-kanji")!!.version)
+        assertEquals(ImportOutcome.FAILED, importer.import(bumped(4)).outcome)
+        assertEquals(3, db.contentPackDao().getPack("n3-kanji")!!.version)
         assertEquals(393, db.countRows("kanji"))
         assertEquals(1, db.countRows("learning_progress"))
     }

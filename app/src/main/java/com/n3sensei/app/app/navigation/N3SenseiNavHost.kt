@@ -89,6 +89,8 @@ import com.n3sensei.app.feature.review.ReviewViewModel
 import com.n3sensei.app.feature.reviewsession.ReviewSessionScreen
 import com.n3sensei.app.feature.reviewsession.ReviewSessionViewModel
 import com.n3sensei.app.feature.settings.BackupViewModel
+import com.n3sensei.app.feature.settings.ReminderLessonsScreen
+import com.n3sensei.app.feature.settings.ReminderLessonsViewModel
 import com.n3sensei.app.feature.settings.ReminderSettingsScreen
 import com.n3sensei.app.feature.settings.ReminderSettingsViewModel
 import com.n3sensei.app.feature.settings.ReviewSettingsScreen
@@ -520,8 +522,15 @@ fun N3SenseiNavHost(
         composable<ReminderSettingsRoute> {
             ReminderSettingsScreen(
                 viewModel = appViewModel {
-                    ReminderSettingsViewModel(userPreferencesRepository, reminderScheduler, reminderNotifier, reminderRunner)
+                    ReminderSettingsViewModel(userPreferencesRepository, reminderScheduler, reminderNotifier, reminderRunner, contentRepository)
                 },
+                onChooseLessons = { navController.navigate(ReminderLessonsRoute(it.name)) },
+            )
+        }
+        composable<ReminderLessonsRoute> { entry ->
+            val type = ItemType.entries.firstOrNull { it.name == entry.toRoute<ReminderLessonsRoute>().type } ?: ItemType.VOCABULARY
+            ReminderLessonsScreen(
+                viewModel = appViewModel { ReminderLessonsViewModel(type, userPreferencesRepository, contentRepository) },
             )
         }
         composable<ReviewSettingsRoute> {

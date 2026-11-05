@@ -29,7 +29,7 @@ import com.n3sensei.app.core.designsystem.component.GlyphSize
 import com.n3sensei.app.core.designsystem.component.GlyphTile
 import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.core.designsystem.theme.japaneseText
-import com.n3sensei.app.core.ui.content.ExampleSentenceItem
+import com.n3sensei.app.core.ui.content.ExamplesSection
 import com.n3sensei.app.core.ui.content.ItemActions
 import com.n3sensei.app.core.ui.content.LocationSection
 import com.n3sensei.app.core.ui.content.LocationTag
@@ -37,6 +37,7 @@ import com.n3sensei.app.core.ui.content.SourceNote
 import com.n3sensei.app.core.ui.content.VocabularyCard
 import com.n3sensei.app.core.ui.state.DetailLocation
 import com.n3sensei.app.core.ui.state.UiStateContent
+import com.n3sensei.app.domain.example.ExampleHighlight
 import com.n3sensei.app.domain.model.KanjiDetail
 
 @Composable
@@ -101,11 +102,9 @@ private fun KanjiDetailContent(detail: KanjiDetail, location: DetailLocation?, o
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         // The kanji's own example words (its group in N3.pdf); not vocabulary items.
-        DetailSection(stringResource(R.string.kanji_example_words)) {
-            if (detail.examples.isEmpty()) {
-                Text(stringResource(R.string.detail_no_examples), color = MaterialTheme.colorScheme.onSurfaceVariant)
-            }
-            detail.examples.forEach { ExampleSentenceItem(it) }
+        // No section when the kanji has no word. The kanji is emphasized in each word.
+        ExamplesSection(stringResource(R.string.kanji_example_words), detail.examples) {
+            ExampleHighlight.ofKanji(it.japanese, kanji.character)
         }
         // Vocabulary items the learner linked to this kanji: separate from its example words.
         if (detail.linkedVocabulary.isNotEmpty()) {

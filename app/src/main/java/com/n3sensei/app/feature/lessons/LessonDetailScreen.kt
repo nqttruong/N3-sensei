@@ -36,8 +36,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -51,6 +51,7 @@ import com.n3sensei.app.core.ui.content.ItemStatusBadge
 import com.n3sensei.app.core.ui.content.VocabularyCard
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.course.CourseLesson
+import com.n3sensei.app.domain.example.ExampleHighlight
 import com.n3sensei.app.domain.model.GrammarDetail
 import com.n3sensei.app.domain.model.GrammarPoint
 import com.n3sensei.app.domain.model.Kanji
@@ -282,7 +283,7 @@ private fun GrammarRow(tracked: TrackedItem<GrammarPoint>, detail: Expansion<Gra
                     Expansion.Failed -> Text(stringResource(R.string.course_load_failed), color = MaterialTheme.colorScheme.error)
                     is Expansion.Loaded -> if (detail.value.examples.isNotEmpty()) {
                         Text(stringResource(R.string.detail_examples), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
-                        detail.value.examples.forEach { ExampleSentenceItem(it) }
+                        detail.value.examples.forEach { ExampleSentenceItem(it, highlight = ExampleHighlight.ofGrammar(it.japanese, g.pattern)) }
                     }
                 }
                 TextButton(onClick = onOpen) { Text(stringResource(R.string.course_open_grammar)) }

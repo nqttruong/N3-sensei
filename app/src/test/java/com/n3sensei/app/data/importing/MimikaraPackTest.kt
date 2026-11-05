@@ -53,9 +53,11 @@ class MimikaraPackTest {
         with(word(1)) { assertEquals(listOf("男性", "だんせい", "đàn ông"), listOf(expression, reading, meaningVi)) }
         with(word(437)) { assertEquals(listOf("代わる・替わる・換わる", "かわる"), listOf(expression, reading)) }
         with(word(592)) { assertEquals("khủng khiếp, rất nhiều", meaningVi) }
-        // Nothing invented: no furigana, part of speech or examples in the sheet.
+        // Nothing invented in the sheet's own fields: no furigana or part of speech.
         assertTrue(vocabulary.all { it.furigana == null && it.partOfSpeech == null })
-        assertTrue(result.bundle!!.vocabularyExamples.isEmpty())
+        // The sheet has no examples: every example is a self-written addition with its own source.
+        assertTrue(result.bundle!!.examples.all { it.sourceId == EXAMPLES_SOURCE })
+        assertTrue(vocabulary.all { it.sourceId == SHEET_SOURCE })
     }
 
     @Test
@@ -72,10 +74,21 @@ class MimikaraPackTest {
 
     @Test
     fun sourceIsNamed_andLicenseIsNotClaimed() {
-        val source = result.bundle!!.sources.single()
-        assertTrue(source.name.contains("Mimikara"))
-        assertFalse(source.licenseVerified)
-        assertNull(source.url)
+        val sources = result.bundle!!.sources.associateBy { it.id }
+        assertEquals(setOf(SHEET_SOURCE, EXAMPLES_SOURCE), sources.keys)
+        val sheet = sources.getValue(SHEET_SOURCE)
+        assertTrue(sheet.name.contains("Mimikara"))
+        assertFalse(sheet.licenseVerified)
+        assertNull(sheet.url)
+        // The added examples say they are self-written and unreviewed.
+        val examples = sources.getValue(EXAMPLES_SOURCE)
+        assertTrue(examples.name.contains("tự soạn"))
+        assertFalse(examples.licenseVerified)
         assertTrue(vocabulary.all { it.jlptLevel == "N3" })
+    }
+
+    private companion object {
+        const val SHEET_SOURCE = "mimikara-n3-sheet"
+        const val EXAMPLES_SOURCE = "mimikara-n3-vocab-examples"
     }
 }

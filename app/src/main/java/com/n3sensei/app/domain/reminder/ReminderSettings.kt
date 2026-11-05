@@ -59,6 +59,8 @@ data class ReminderSettings(
     val reviewOnly: Boolean = false,
     /** One notification a day when exam errors are due for review (see ErrorReviewReminder). */
     val errorReviews: Boolean = false,
+    /** Lessons each kind of content is taken from; every lesson by default. */
+    val lessons: ReminderLessons = ReminderLessons(),
 ) {
     init {
         require(startHour in 0..23 && endHour in 0..23) { "Hours must be 0..23" }

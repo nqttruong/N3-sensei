@@ -1,0 +1,51 @@
+# Mimikara N3 · bài 11 (カタカナＢ): một câu ví dụ cho mỗi từ. Cột: item_id, câu, furigana (annotate.py điền, đã soát tay), dịch.
+mimikara-n3-v796	彼は仕事のパートナーとしてとても信頼できる。	{彼|かれ}は{仕事|しごと}のパートナーとしてとても{信頼|しんらい}できる。	Anh ấy là một đối tác công việc rất đáng tin cậy.
+mimikara-n3-v797	彼女はチームのリーダーに選ばれた。	{彼女|かのじょ}はチームのリーダーに{選|えら}ばれた。	Cô ấy được chọn làm trưởng nhóm.
+mimikara-n3-v798	週末は公園の掃除のボランティアをしている。	{週末|しゅうまつ}は{公園|こうえん}の{掃除|そうじ}のボランティアをしている。	Cuối tuần tôi làm tình nguyện dọn dẹp công viên.
+mimikara-n3-v799	家族とのコミュニケーションを大切にしている。	{家族|かぞく}とのコミュニケーションを{大切|たいせつ}にしている。	Tôi coi trọng việc giao tiếp với gia đình.
+mimikara-n3-v800	彼はユーモアがあって、話がおもしろい。	{彼|かれ}はユーモアがあって、{話|はなし}がおもしろい。	Anh ấy có khiếu hài hước nên nói chuyện rất thú vị.
+mimikara-n3-v801	試験に落ちて、ショックを受けた。	{試験|しけん}に{落|お}ちて、ショックを{受|う}けた。	Thi trượt nên tôi bị sốc.
+mimikara-n3-v802	仕事のストレスで眠れない日が続いている。	{仕事|しごと}のストレスで{眠|ねむ}れない{日|ひ}が{続|つづ}いている。	Vì căng thẳng công việc nên tôi mất ngủ nhiều ngày liền.
+mimikara-n3-v803	健康のために、バランスのいい食事を心がけている。	{健康|けんこう}のために、バランスのいい{食事|しょくじ}を{心|こころ}がけている。	Vì sức khỏe, tôi chú ý ăn uống cân bằng.
+mimikara-n3-v804	このクラスは私には少しレベルが高い。	このクラスは{私|わたし}には{少|すこ}しレベルが{高|たか}い。	Lớp này có trình độ hơi cao so với tôi.
+mimikara-n3-v805	新しい仕事で給料がアップした。	{新|あたら}しい{仕事|しごと}で{給料|きゅうりょう}がアップした。	Chuyển sang công việc mới, lương của tôi đã tăng lên.
+mimikara-n3-v806	今月は売り上げがダウンしてしまった。	{今月|こんげつ}は{売|う}り{上|あ}げがダウンしてしまった。	Tháng này doanh thu bị giảm xuống.
+mimikara-n3-v807	留学の経験は、きっと将来プラスになる。	{留学|りゅうがく}の{経験|けいけん}は、きっと{将来|しょうらい}プラスになる。	Kinh nghiệm du học chắc chắn sẽ có ích cho tương lai.
+mimikara-n3-v808	遅刻が多いと、評価にマイナスになる。	{遅刻|ちこく}が{多|おお}いと、{評価|ひょうか}にマイナスになる。	Đi muộn nhiều sẽ ảnh hưởng xấu đến đánh giá.
+mimikara-n3-v809	この町には、静かなイメージがある。	この{町|まち}には、{静|しず}かなイメージがある。	Thị trấn này mang lại hình ảnh yên tĩnh.
+mimikara-n3-v810	写真のコンテストに作品を出した。	{写真|しゃしん}のコンテストに{作品|さくひん}を{出|だ}した。	Tôi đã gửi tác phẩm dự cuộc thi ảnh.
+mimikara-n3-v811	その事件はマスコミで大きく取り上げられた。	その{事件|じけん}はマスコミで{大|おお}きく{取|と}り{上|あ}げられた。	Vụ việc đó được giới truyền thông đưa tin rầm rộ.
+mimikara-n3-v812	他人のプライバシーを守ることは大切だ。	{他人|たにん}のプライバシーを{守|まも}ることは{大切|たいせつ}だ。	Tôn trọng sự riêng tư của người khác là điều quan trọng.
+mimikara-n3-v813	会社のオフィスは駅のすぐ前にある。	{会社|かいしゃ}のオフィスは{駅|えき}のすぐ{前|まえ}にある。	Văn phòng công ty nằm ngay trước nhà ga.
+mimikara-n3-v814	ゲームのルールを説明します。	ゲームのルールを{説明|せつめい}します。	Tôi sẽ giải thích luật chơi.
+mimikara-n3-v815	電車の中で電話するのはマナー違反だ。	{電車|でんしゃ}の{中|なか}で{電話|でんわ}するのはマナー{違反|いはん}だ。	Gọi điện thoại trên tàu là vi phạm phép lịch sự.
+mimikara-n3-v816	小さなミスが大きな問題になることもある。	{小|ちい}さなミスが{大|おお}きな{問題|もんだい}になることもある。	Một lỗi nhỏ đôi khi cũng trở thành vấn đề lớn.
+mimikara-n3-v817	来週のスケジュールを確認してください。	{来週|らいしゅう}のスケジュールを{確認|かくにん}してください。	Hãy kiểm tra lịch trình tuần sau.
+mimikara-n3-v818	この本のタイトルは何ですか。	この{本|ほん}のタイトルは{何|なん}ですか。	Tựa đề của cuốn sách này là gì?
+mimikara-n3-v819	今日の会議のテーマは「働き方」です。	{今日|きょう}の{会議|かいぎ}のテーマは「{働|はたら}き{方|かた}」です。	Chủ đề cuộc họp hôm nay là "cách làm việc".
+mimikara-n3-v820	この映画はストーリーがとてもおもしろい。	この{映画|えいが}はストーリーがとてもおもしろい。	Bộ phim này có cốt truyện rất hay.
+mimikara-n3-v821	彼女の新しい曲が大ヒットした。	{彼女|かのじょ}の{新|あたら}しい{曲|きょく}が{大|だい}ヒットした。	Bài hát mới của cô ấy đã trở thành một bản hit lớn.
+mimikara-n3-v822	このバッグは有名なブランドの物だ。	このバッグは{有名|ゆうめい}なブランドの{物|もの}だ。	Chiếc túi này là của một thương hiệu nổi tiếng.
+mimikara-n3-v823	旅行先で車をレンタルした。	{旅行|りょこう}{先|さき}で{車|くるま}をレンタルした。	Tôi đã thuê xe ô tô ở nơi đi du lịch.
+mimikara-n3-v824	ペットボトルはリサイクルできる。		Chai nhựa có thể tái chế.
+mimikara-n3-v825	商品のラベルに値段が書いてある。	{商品|しょうひん}のラベルに{値段|ねだん}が{書|か}いてある。	Giá được ghi trên nhãn sản phẩm.
+mimikara-n3-v826	彼女は私の好きなタイプの人だ。	{彼女|かのじょ}は{私|わたし}の{好|す}きなタイプの{人|ひと}だ。	Cô ấy là kiểu người tôi thích.
+mimikara-n3-v827	彼はスタイルがよくて、何を着ても似合う。	{彼|かれ}はスタイルがよくて、{何|なに}を{着|き}ても{似合|にあ}う。	Anh ấy có vóc dáng đẹp nên mặc gì cũng hợp.
+mimikara-n3-v828	目覚まし時計を六時にセットした。	{目覚|めざ}まし{時計|とけい}を{六|ろく}{時|じ}にセットした。	Tôi đã đặt đồng hồ báo thức lúc 6 giờ.
+mimikara-n3-v829	パソコンがウイルスに感染してしまった。	パソコンがウイルスに{感染|かんせん}してしまった。	Máy tính của tôi đã bị nhiễm virus.
+mimikara-n3-v830	この工場では、ロボットが車を作っている。	この{工場|こうじょう}では、ロボットが{車|くるま}を{作|つく}っている。	Ở nhà máy này, robot đang sản xuất ô tô.
+mimikara-n3-v831	太陽のエネルギーを利用して電気を作る。	{太陽|たいよう}のエネルギーを{利用|りよう}して{電気|でんき}を{作|つく}る。	Tận dụng năng lượng mặt trời để tạo ra điện.
+mimikara-n3-v832	最近はデジタルカメラで写真を撮る人が多い。	{最近|さいきん}はデジタルカメラで{写真|しゃしん}を{撮|と}る{人|ひと}が{多|おお}い。	Gần đây nhiều người chụp ảnh bằng máy ảnh kỹ thuật số.
+mimikara-n3-v833	マイクを使って、後ろの席の人にも聞こえるように話した。	マイクを{使|つか}って、{後|うし}ろの{席|せき}の{人|ひと}にも{聞|き}こえるように{話|はな}した。	Tôi dùng micro để nói cho cả người ngồi phía sau cũng nghe được.
+mimikara-n3-v834	子どもが飛び出してきたので、急ブレーキをかけた。	{子|こ}どもが{飛|と}び{出|だ}してきたので、{急|きゅう}ブレーキをかけた。	Một đứa trẻ lao ra nên tôi phải phanh gấp.
+mimikara-n3-v835	壁を白いペンキで塗った。	{壁|かべ}を{白|しろ}いペンキで{塗|ぬ}った。	Tôi đã sơn bức tường bằng sơn trắng.
+mimikara-n3-v836	ご飯が炊けたら、みんなで食べよう。	ご{飯|はん}が{炊|た}けたら、みんなで{食|た}べよう。	Cơm chín rồi thì cả nhà cùng ăn nhé.
+mimikara-n3-v837	毎朝、炊飯器でご飯を炊く。	{毎朝|まいあさ}、{炊飯|すいはん}{器|き}でご{飯|はん}を{炊|た}く。	Sáng nào tôi cũng nấu cơm bằng nồi cơm điện.
+mimikara-n3-v838	じゃがいもがよく煮えたら、火を止めます。	じゃがいもがよく{煮|に}えたら、{火|ひ}を{止|と}めます。	Khoai tây chín mềm thì tắt bếp.
+mimikara-n3-v839	野菜と肉を三十分ぐらい煮てください。	{野菜|やさい}と{肉|にく}を{三十分|さんじゅっぷん}ぐらい{煮|に}てください。	Hãy ninh rau và thịt khoảng 30 phút.
+mimikara-n3-v840	フライパンで野菜を炒めた。	フライパンで{野菜|やさい}を{炒|いた}めた。	Tôi xào rau bằng chảo.
+mimikara-n3-v841	魚がおいしそうに焼けた。	{魚|さかな}がおいしそうに{焼|や}けた。	Cá đã nướng xong trông rất ngon.
+mimikara-n3-v842	週末にケーキを焼いた。	{週末|しゅうまつ}にケーキを{焼|や}いた。	Cuối tuần tôi đã nướng bánh.
+mimikara-n3-v843	ほうれん草をさっとゆでて、サラダにした。	ほうれん{草|そう}をさっとゆでて、サラダにした。	Tôi luộc sơ rau chân vịt rồi làm món salad.
+mimikara-n3-v844	天ぷらを油で揚げた。	{天|てん}ぷらを{油|あぶら}で{揚|あ}げた。	Tôi rán ngập dầu món tempura.
+mimikara-n3-v845	蒸したじゃがいもにバターをつけて食べた。	{蒸|む}したじゃがいもにバターをつけて{食|た}べた。	Tôi ăn khoai tây hấp chấm bơ.

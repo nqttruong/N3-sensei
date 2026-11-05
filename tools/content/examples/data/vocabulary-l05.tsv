@@ -1,0 +1,99 @@
+# Mimikara N3 · bài 5 (動詞Ｂ): một câu ví dụ cho mỗi từ. Cột: item_id, câu, furigana (annotate.py điền, đã soát tay), dịch.
+mimikara-n3-v411	昨日注文した本が、もう届いた。	{昨日|きのう}{注文|ちゅうもん}した{本|ほん}が、もう{届|とど}いた。	Cuốn sách đặt hôm qua đã được giao đến rồi.
+mimikara-n3-v412	拾った財布を交番に届けた。	{拾|ひろ}った{財布|さいふ}を{交番|こうばん}に{届|とど}けた。	Tôi đã mang chiếc ví nhặt được đến đồn cảnh sát.
+mimikara-n3-v413	蚊に刺されたところをかいてはいけない。	{蚊|か}に{刺|さ}されたところをかいてはいけない。	Không được gãi chỗ bị muỗi đốt.
+mimikara-n3-v414	電車が揺れたので、近くの手すりをつかんだ。	{電車|でんしゃ}が{揺|ゆ}れたので、{近|ちか}くの{手|て}すりをつかんだ。	Tàu rung lắc nên tôi chộp lấy tay vịn gần đó.
+mimikara-n3-v415	子どもは母親の手を強く握った。	{子|こ}どもは{母親|ははおや}の{手|て}を{強|つよ}く{握|にぎ}った。	Đứa bé nắm chặt tay mẹ.
+mimikara-n3-v416	けがをしたところを手で抑えた。	けがをしたところを{手|て}で{抑|おさ}えた。	Tôi lấy tay giữ chặt chỗ bị thương.
+mimikara-n3-v417	台風が日本に近づいている。	{台風|たいふう}が{日本|にほん}に{近|ちか}づいている。	Cơn bão đang tiến gần Nhật Bản.
+mimikara-n3-v418	小さい字なので、本を目に近づけて読んだ。	{小|ちい}さい{字|じ}なので、{本|ほん}を{目|め}に{近|ちか}づけて{読|よ}んだ。	Chữ nhỏ nên tôi đưa sách lại gần mắt để đọc.
+mimikara-n3-v420	みんなで力を合わせて、問題を解決しよう。	みんなで{力|ちから}を{合|あ}わせて、{問題|もんだい}を{解決|かいけつ}しよう。	Mọi người hãy cùng hợp sức giải quyết vấn đề.
+mimikara-n3-v421	飛んできたボールが頭に当たった。	{飛|と}んできたボールが{頭|あたま}に{当|あ}たった。	Quả bóng bay tới trúng vào đầu tôi.
+mimikara-n3-v422	ボールを的に当てるのは難しい。	ボールを{的|まと}に{当|あ}てるのは{難|むずか}しい。	Ném bóng trúng đích thật khó.
+mimikara-n3-v423	去年と比べて、今年は雨が少ない。	{去年|きょねん}と{比|くら}べて、{今年|ことし}は{雨|あめ}が{少|すく}ない。	So với năm ngoái, năm nay ít mưa hơn.
+mimikara-n3-v424	その帽子、よく似合っていますね。	その{帽子|ぼうし}、よく{似合|にあ}っていますね。	Cái mũ đó hợp với bạn lắm.
+mimikara-n3-v425	彼女はお母さんによく似ている。	{彼女|かのじょ}はお{母|かあ}さんによく{似|に}ている。	Cô ấy rất giống mẹ.
+mimikara-n3-v426	この料理は、有名な店の味に似せて作った。	この{料理|りょうり}は、{有名|ゆうめい}な{店|みせ}の{味|あじ}に{似|に}せて{作|つく}った。	Món này tôi làm bắt chước hương vị của một quán nổi tiếng.
+mimikara-n3-v427	ここで道が二つに分かれている。	ここで{道|みち}が{二|ふた}つに{分|わ}かれている。	Con đường chia làm hai ngả ở đây.
+mimikara-n3-v428	ケーキを四つに分けて食べた。	ケーキを{四|よっ}つに{分|わ}けて{食|た}べた。	Chúng tôi chia bánh làm bốn phần để ăn.
+mimikara-n3-v429	スープが薄いので、塩を少し足した。	スープが{薄|うす}いので、{塩|しお}を{少|すこ}し{足|た}した。	Súp nhạt nên tôi thêm một chút muối.
+mimikara-n3-v430	十から三を引くと七になる。	{十|じゅう}から{三|さん}を{引|ひ}くと{七|なな}になる。	Mười trừ ba bằng bảy.
+mimikara-n3-v431	最近、外国人の観光客が増えた。	{最近|さいきん}、{外国|がいこく}{人|じん}の{観光|かんこう}{客|きゃく}が{増|ふ}えた。	Gần đây khách du lịch nước ngoài đã tăng lên.
+mimikara-n3-v432	日本語の練習の時間を増やしたい。	{日本語|にほんご}の{練習|れんしゅう}の{時間|じかん}を{増|ふ}やしたい。	Tôi muốn tăng thời gian luyện tiếng Nhật.
+mimikara-n3-v433	運動を始めてから、体重が三キロ減った。	{運動|うんどう}を{始|はじ}めてから、{体重|たいじゅう}が{三|さん}キロ{減|へ}った。	Từ khi bắt đầu tập thể dục, tôi đã giảm ba cân.
+mimikara-n3-v434	健康のために、お酒の量を減らした。	{健康|けんこう}のために、お{酒|さけ}の{量|りょう}を{減|へ}らした。	Vì sức khỏe, tôi đã giảm lượng rượu uống.
+mimikara-n3-v435	この町は十年前とすっかり変わった。	この{町|まち}は{十|じゅう}{年|ねん}{前|まえ}とすっかり{変|か}わった。	Thị trấn này đã thay đổi hoàn toàn so với mười năm trước.
+mimikara-n3-v436	髪型を変えたら、気分も変わった。	{髪型|かみがた}を{変|か}えたら、{気分|きぶん}も{変|か}わった。	Đổi kiểu tóc xong thì tâm trạng cũng khác hẳn.
+mimikara-n3-v437	今日から担当が田中さんに代わります。	{今日|きょう}から{担当|たんとう}が{田中|たなか}さんに{代|か}わります。	Từ hôm nay người phụ trách sẽ đổi sang anh Tanaka.
+mimikara-n3-v438	部屋の空気を入れ替えるために、窓を開けた。	{部屋|へや}の{空気|くうき}を{入|い}れ{替|か}えるために、{窓|まど}を{開|あ}けた。	Tôi mở cửa sổ để thay đổi không khí trong phòng.
+mimikara-n3-v439	貸したお金がやっと返ってきた。	{貸|か}したお{金|かね}がやっと{返|かえ}ってきた。	Số tiền cho mượn cuối cùng cũng đã được trả lại.
+mimikara-n3-v440	図書館に本を返しに行く。	{図書館|としょかん}に{本|ほん}を{返|かえ}しに{行|い}く。	Tôi đi trả sách cho thư viện.
+mimikara-n3-v441	電車でお年寄りに席を譲った。	{電車|でんしゃ}でお{年寄|としよ}りに{席|せき}を{譲|ゆず}った。	Tôi đã nhường ghế cho người già trên tàu.
+mimikara-n3-v442	手伝ってくれて、本当に助かりました。	{手伝|てつだ}ってくれて、{本当|ほんとう}に{助|たす}かりました。	Cảm ơn bạn đã giúp, thật đỡ cho tôi quá.
+mimikara-n3-v443	川に落ちた子どもを助けた。	{川|かわ}に{落|お}ちた{子|こ}どもを{助|たす}けた。	Tôi đã cứu đứa trẻ bị rơi xuống sông.
+mimikara-n3-v444	小さい子をいじめてはいけない。	{小|ちい}さい{子|こ}をいじめてはいけない。	Không được bắt nạt trẻ nhỏ.
+mimikara-n3-v446	電車の中で財布を盗まれた。	{電車|でんしゃ}の{中|なか}で{財布|さいふ}を{盗|ぬす}まれた。	Tôi bị lấy cắp ví trên tàu.
+mimikara-n3-v447	指にとげが刺さってしまった。	{指|ゆび}にとげが{刺|さ}さってしまった。	Tôi bị dằm đâm vào ngón tay.
+mimikara-n3-v448	蜂に腕を刺された。	{蜂|はち}に{腕|うで}を{刺|さ}された。	Tôi bị ong đốt vào cánh tay.
+mimikara-n3-v449	昔、この城で多くの人が殺されたそうだ。	{昔|むかし}、この{城|しろ}で{多|おお}くの{人|ひと}が{殺|ころ}されたそうだ。	Nghe nói ngày xưa nhiều người đã bị giết ở tòa thành này.
+mimikara-n3-v450	猫がベッドの下に隠れている。	{猫|ねこ}がベッドの{下|した}に{隠|かく}れている。	Con mèo đang trốn dưới gầm giường.
+mimikara-n3-v451	母へのプレゼントを引き出しに隠した。	{母|はは}へのプレゼントを{引|ひ}き{出|だ}しに{隠|かく}した。	Tôi giấu món quà tặng mẹ vào ngăn kéo.
+mimikara-n3-v452	大雪で道が雪に埋まってしまった。	{大雪|おおゆき}で{道|みち}が{雪|ゆき}に{埋|う}まってしまった。	Vì tuyết lớn nên con đường bị tuyết vùi lấp.
+mimikara-n3-v453	犬が庭に骨を埋めている。	{犬|いぬ}が{庭|にわ}に{骨|ほね}を{埋|う}めている。	Con chó đang chôn khúc xương trong vườn.
+mimikara-n3-v454	日本は海に囲まれている。	{日本|にほん}は{海|うみ}に{囲|かこ}まれている。	Nhật Bản được biển bao quanh.
+mimikara-n3-v455	鼻が詰まって、匂いが分からない。	{鼻|はな}が{詰|つ}まって、{匂|にお}いが{分|わ}からない。	Bị nghẹt mũi nên tôi không ngửi thấy mùi gì.
+mimikara-n3-v456	お弁当箱にご飯とおかずを詰めた。	お{弁当|べんとう}{箱|ばこ}にご{飯|はん}とおかずを{詰|つ}めた。	Tôi xếp cơm và thức ăn vào hộp cơm.
+mimikara-n3-v457	教科書の二十ページを開いてください。	{教科書|きょうかしょ}の{二|に}{十|じゅう}ページを{開|ひら}いてください。	Hãy mở sách giáo khoa trang 20.
+mimikara-n3-v458	本を閉じて、先生の話を聞いた。	{本|ほん}を{閉|と}じて、{先生|せんせい}の{話|はなし}を{聞|き}いた。	Tôi gấp sách lại và nghe thầy nói.
+mimikara-n3-v459	鳥が空を飛んでいる。	{鳥|とり}が{空|そら}を{飛|と}んでいる。	Chim đang bay trên bầu trời.
+mimikara-n3-v460	風で帽子が飛ばされた。	{風|かぜ}で{帽子|ぼうし}が{飛|と}ばされた。	Mũ của tôi bị gió thổi bay.
+mimikara-n3-v461	駅で友達に手を振った。	{駅|えき}で{友達|ともだち}に{手|て}を{振|ふ}った。	Tôi vẫy tay chào bạn ở nhà ga.
+mimikara-n3-v462	カレンダーをめくって、来月の予定を確認した。	カレンダーをめくって、{来月|らいげつ}の{予定|よてい}を{確認|かくにん}した。	Tôi lật lịch để kiểm tra kế hoạch tháng sau.
+mimikara-n3-v463	最近、駅前でよく外国人を見かける。	{最近|さいきん}、{駅前|えきまえ}でよく{外国|がいこく}{人|じん}を{見|み}かける。	Gần đây tôi hay bắt gặp người nước ngoài ở trước nhà ga.
+mimikara-n3-v464	出かける前に、窓が閉まっているか確かめた。	{出|で}かける{前|まえ}に、{窓|まど}が{閉|し}まっているか{確|たし}かめた。	Trước khi ra ngoài, tôi kiểm tra lại xem cửa sổ đã đóng chưa.
+mimikara-n3-v465	新しい方法を試してみよう。	{新|あたら}しい{方法|ほうほう}を{試|ため}してみよう。	Hãy thử phương pháp mới xem.
+mimikara-n3-v466	同じ失敗を繰り返さないようにしよう。	{同|おな}じ{失敗|しっぱい}を{繰|く}り{返|かえ}さないようにしよう。	Hãy cố gắng đừng lặp lại sai lầm cũ.
+mimikara-n3-v467	この文を日本語に訳してください。	この{文|ぶん}を{日本語|にほんご}に{訳|やく}してください。	Hãy dịch câu này sang tiếng Nhật.
+mimikara-n3-v468	卒業式は体育館で行われる。	{卒業|そつぎょう}{式|しき}は{体育館|たいいくかん}で{行|おこな}われる。	Lễ tốt nghiệp được tổ chức ở nhà thể chất.
+mimikara-n3-v469	この答えは間違っている。	この{答|こた}えは{間違|まちが}っている。	Câu trả lời này sai rồi.
+mimikara-n3-v470	電車を乗り間違えて、遅刻した。	{電車|でんしゃ}を{乗|の}り{間違|まちが}えて、{遅刻|ちこく}した。	Tôi lên nhầm tàu nên bị muộn.
+mimikara-n3-v471	約束を破った彼を許すことはできない。	{約束|やくそく}を{破|やぶ}った{彼|かれ}を{許|ゆる}すことはできない。	Tôi không thể tha thứ cho anh ta vì đã thất hứa.
+mimikara-n3-v472	日本の生活にもう慣れましたか。	{日本|にほん}の{生活|せいかつ}にもう{慣|な}れましたか。	Bạn đã quen với cuộc sống ở Nhật chưa?
+mimikara-n3-v473	走る前に、軽く体を慣らしておこう。	{走|はし}る{前|まえ}に、{軽|かる}く{体|からだ}を{慣|な}らしておこう。	Trước khi chạy, hãy khởi động nhẹ cho cơ thể quen.
+mimikara-n3-v474	電車の中でずっと立っていたので、疲れた。	{電車|でんしゃ}の{中|なか}でずっと{立|た}っていたので、{疲|つか}れた。	Tôi đứng suốt trên tàu nên thấy mệt.
+mimikara-n3-v475	キャンプ場でテントを立てた。	キャンプ{場|じょう}でテントを{立|た}てた。	Chúng tôi dựng lều ở khu cắm trại.
+mimikara-n3-v476	家の前に新しいビルが建った。	{家|いえ}の{前|まえ}に{新|あたら}しいビルが{建|た}った。	Trước nhà tôi đã mọc lên một tòa nhà mới.
+mimikara-n3-v477	いつか海の近くに家を建てたい。	いつか{海|うみ}の{近|ちか}くに{家|いえ}を{建|た}てたい。	Một ngày nào đó tôi muốn xây nhà gần biển.
+mimikara-n3-v478	私は自然の多い田舎で育った。	{私|わたし}は{自然|しぜん}の{多|おお}い{田舎|いなか}で{育|そだ}った。	Tôi lớn lên ở vùng quê nhiều thiên nhiên.
+mimikara-n3-v479	母は一人で三人の子どもを育てた。	{母|はは}は{一人|ひとり}で{三|さん}{人|にん}の{子|こ}どもを{育|そだ}てた。	Mẹ tôi một mình nuôi dạy ba đứa con.
+mimikara-n3-v480	庭に草がたくさん生えている。	{庭|にわ}に{草|くさ}がたくさん{生|は}えている。	Cỏ mọc đầy trong vườn.
+mimikara-n3-v481	父はひげを生やしている。	{父|ちち}はひげを{生|は}やしている。	Bố tôi để râu.
+mimikara-n3-v482	雨の中を歩いたので、靴が汚れた。	{雨|あめ}の{中|なか}を{歩|ある}いたので、{靴|くつ}が{汚|よご}れた。	Đi bộ trong mưa nên giày bị bẩn.
+mimikara-n3-v483	借りた本を汚さないように気をつけた。	{借|か}りた{本|ほん}を{汚|よご}さないように{気|き}をつけた。	Tôi cẩn thận để không làm bẩn cuốn sách đi mượn.
+mimikara-n3-v484	落としたら、時計が壊れてしまった。	{落|お}としたら、{時計|とけい}が{壊|こわ}れてしまった。	Làm rơi nên chiếc đồng hồ bị hỏng mất rồi.
+mimikara-n3-v485	弟が私のおもちゃを壊した。	{弟|おとうと}が{私|わたし}のおもちゃを{壊|こわ}した。	Em trai tôi làm hỏng đồ chơi của tôi.
+mimikara-n3-v486	地震で窓ガラスが割れた。	{地震|じしん}で{窓|まど}ガラスが{割|わ}れた。	Kính cửa sổ bị vỡ do động đất.
+mimikara-n3-v487	皿を割ってしまって、母に謝った。	{皿|さら}を{割|わ}ってしまって、{母|はは}に{謝|あやま}った。	Tôi làm vỡ đĩa nên đã xin lỗi mẹ.
+mimikara-n3-v488	強い風で木の枝が折れた。	{強|つよ}い{風|かぜ}で{木|き}の{枝|えだ}が{折|お}れた。	Cành cây bị gãy do gió mạnh.
+mimikara-n3-v489	スキーで転んで、足の骨を折った。	スキーで{転|ころ}んで、{足|あし}の{骨|ほね}を{折|お}った。	Tôi bị ngã khi trượt tuyết và gãy xương chân.
+mimikara-n3-v490	ズボンが破れてしまった。	ズボンが{破|やぶ}れてしまった。	Quần của tôi bị rách mất rồi.
+mimikara-n3-v491	彼は手紙を読まずに破ってしまった。	{彼|かれ}は{手紙|てがみ}を{読|よ}まずに{破|やぶ}ってしまった。	Anh ta xé lá thư mà không đọc.
+mimikara-n3-v492	あの角を右に曲がると、駅があります。	あの{角|かど}を{右|みぎ}に{曲|ま}がると、{駅|えき}があります。	Rẽ phải ở góc kia là đến nhà ga.
+mimikara-n3-v493	ひざを曲げて、ゆっくり座ってください。	ひざを{曲|ま}げて、ゆっくり{座|すわ}ってください。	Hãy gập đầu gối và từ từ ngồi xuống.
+mimikara-n3-v494	シャツのボタンが外れている。	シャツのボタンが{外|はず}れている。	Cúc áo sơ mi bị bung ra.
+mimikara-n3-v495	眼鏡を外して、顔を洗った。	{眼鏡|めがね}を{外|はず}して、{顔|かお}を{洗|あら}った。	Tôi tháo kính ra rồi rửa mặt.
+mimikara-n3-v496	地震で家が大きく揺れた。	{地震|じしん}で{家|いえ}が{大|おお}きく{揺|ゆ}れた。	Ngôi nhà rung lắc mạnh vì động đất.
+mimikara-n3-v497	風が木の枝を揺らしている。	{風|かぜ}が{木|き}の{枝|えだ}を{揺|ゆ}らしている。	Gió đang lay động cành cây.
+mimikara-n3-v498	この川はゆっくり流れている。	この{川|かわ}はゆっくり{流|なが}れている。	Con sông này chảy chầm chậm.
+mimikara-n3-v499	トイレの水を流すのを忘れないでください。	トイレの{水|みず}を{流|なが}すのを{忘|わす}れないでください。	Đừng quên xả nước nhà vệ sinh.
+mimikara-n3-v500	傘を忘れて、雨に濡れてしまった。	{傘|かさ}を{忘|わす}れて、{雨|あめ}に{濡|ぬ}れてしまった。	Quên ô nên tôi bị mưa ướt hết.
+mimikara-n3-v501	タオルを水で濡らして、顔をふいた。	タオルを{水|みず}で{濡|ぬ}らして、{顔|かお}をふいた。	Tôi làm ướt khăn bằng nước rồi lau mặt.
+mimikara-n3-v502	初めての町で道に迷ってしまった。	{初|はじ}めての{町|まち}で{道|みち}に{迷|まよ}ってしまった。	Tôi bị lạc đường ở thị trấn lần đầu đến.
+mimikara-n3-v503	どの大学に進学するか悩んでいる。	どの{大学|だいがく}に{進学|しんがく}するか{悩|なや}んでいる。	Tôi đang băn khoăn không biết nên học lên trường đại học nào.
+mimikara-n3-v504	寝坊して、慌てて家を出た。	{寝坊|ねぼう}して、{慌|あわ}てて{家|いえ}を{出|で}た。	Tôi ngủ quên nên vội vàng ra khỏi nhà.
+mimikara-n3-v505	夜中に大きな音で目が覚めた。	{夜中|よなか}に{大|おお}きな{音|おと}で{目|め}が{覚|さ}めた。	Nửa đêm tôi bị tỉnh giấc vì tiếng động lớn.
+mimikara-n3-v506	赤ちゃんが目を覚まして、泣き始めた。	{赤|あか}ちゃんが{目|め}を{覚|さ}まして、{泣|な}き{始|はじ}めた。	Em bé tỉnh dậy và bắt đầu khóc.
+mimikara-n3-v507	昨日はよく眠れなかった。	{昨日|きのう}はよく{眠|ねむ}れなかった。	Hôm qua tôi không ngủ ngon được.
+mimikara-n3-v508	試験に合格するように、神社で祈った。	{試験|しけん}に{合格|ごうかく}するように、{神社|じんじゃ}で{祈|いの}った。	Tôi đã cầu nguyện ở đền để thi đỗ.
+mimikara-n3-v509	家族みんなで祖母の誕生日を祝った。	{家族|かぞく}みんなで{祖母|そぼ}の{誕生|たんじょう}{日|び}を{祝|いわ}った。	Cả nhà đã cùng chúc mừng sinh nhật bà.
+mimikara-n3-v510	朝晩、少し寒さを感じるようになった。	{朝晩|あさばん}、{少|すこ}し{寒|さむ}さを{感|かん}じるようになった。	Sáng tối đã bắt đầu thấy hơi lạnh.
