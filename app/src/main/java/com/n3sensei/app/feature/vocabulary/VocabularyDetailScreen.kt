@@ -16,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleResumeEffect
@@ -37,6 +38,10 @@ import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.example.ExampleHighlight
 import com.n3sensei.app.domain.model.VocabularyDetail
 
+object VocabularyDetailTags {
+    const val SAVED_NOTE = "vocabulary_saved_note"
+}
+
 @Composable
 fun VocabularyDetailScreen(
     viewModel: VocabularyDetailViewModel,
@@ -55,7 +60,17 @@ fun VocabularyDetailScreen(
     val location by viewModel.location.collectAsStateWithLifecycle()
     UiStateContent(state = state, onRetry = viewModel::refresh, modifier = modifier) { detail ->
         VocabularyDetailContent(detail, location, onOpenKanji) {
-            ItemActions(scheduleInfo, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.vocabulary.lessonId) })
+            if (detail.saved) {
+                // Saved from "Dịch nhanh", not studied: no "Cần học lại" and no practice from here.
+                Text(
+                    stringResource(R.string.vocabulary_saved_note),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.testTag(VocabularyDetailTags.SAVED_NOTE),
+                )
+            } else {
+                ItemActions(scheduleInfo, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.vocabulary.lessonId) })
+            }
             OutlinedButton(onClick = onEdit) { Text(stringResource(R.string.edit_action)) }
         }
     }
@@ -80,17 +95,38 @@ private fun VocabularyDetailContent(detail: VocabularyDetail, location: DetailLo
             Text(japaneseText(vocabulary.expression), style = MaterialTheme.typography.displaySmall.japanese())
         }
         actions()
-        DetailText(
-            stringResource(R.string.vocabulary_reading),
-            vocabulary.reading,
-            style = MaterialTheme.typography.titleLarge.japanese(),
-        )
+        // No reading for a word without one (an English or Vietnamese bookmark).
+        if (vocabulary.reading.isNotBlank()) {
+            DetailText(
+                stringResource(R.string.vocabulary_reading),
+                vocabulary.reading,
+                style = MaterialTheme.typography.titleLarge.japanese(),
+            )
+        }
         DetailText(
             stringResource(R.string.vocabulary_meaning),
             vocabulary.meaningVi,
             style = MaterialTheme.typography.titleLarge,
         )
         vocabulary.partOfSpeech?.let { DetailText(stringResource(R.string.vocabulary_part_of_speech), it) }
+        if (detail.translations.isNotEmpty()) {
+            DetailSection(stringResource(R.string.vocabulary_translations)) {
+                Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                    detail.translations.forEach { t ->
+                        val label = when (t.language) {
+                            "en" -> stringResource(R.string.quick_translate_language_en)
+                            "ja" -> stringResource(R.string.quick_translate_language_ja)
+                            else -> stringResource(R.string.quick_translate_language_vi)
+                        }
+                        val reading = t.reading?.takeIf { it.isNotBlank() }?.let { " ($it)" }.orEmpty()
+                        Text(
+                            japaneseText("$label: ${t.text}$reading"),
+                            style = MaterialTheme.typography.bodyLarge.japanese(),
+                        )
+                    }
+                }
+            }
+        }
         if (detail.tags.isNotEmpty()) {
             DetailSection(stringResource(R.string.vocabulary_tags)) {
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {

@@ -106,7 +106,7 @@ fun ContentEditScreen(
             OutlinedTextField(
                 value = state.values[field].orEmpty(),
                 onValueChange = { viewModel.onChange(field, it) },
-                label = { Text(stringResource(field.labelRes()) + if (field.required) " *" else "") },
+                label = { Text(stringResource(field.labelRes()) + if (field.required && !(field == EditableField.WORD_READING && item?.readingOptional == true)) " *" else "") },
                 isError = error != null,
                 supportingText = when {
                     error != null -> { { Text(stringResource(error.messageRes())) } }

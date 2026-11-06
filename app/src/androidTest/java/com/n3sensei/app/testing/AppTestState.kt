@@ -7,6 +7,7 @@ import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.reminder.ReminderSettings
 import com.n3sensei.app.domain.srs.ReviewSettings
 import kotlinx.coroutines.runBlocking
+import com.n3sensei.app.domain.translate.QuickTranslateSettings
 
 /**
  * Puts the real app container (same database file and DataStore the app uses) into a known
@@ -40,6 +41,7 @@ object AppTestState {
             setShowFurigana(true)
             setReviewSettings(ReviewSettings())
             setReminderSettings(ReminderSettings())
+            setQuickTranslateSettings(QuickTranslateSettings())
         }
         container.reminderScheduler.apply(ReminderSettings())
     }

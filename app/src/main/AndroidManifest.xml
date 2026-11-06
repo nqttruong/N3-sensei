@@ -6,12 +6,26 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <!--
-        Added by WorkManager but not needed: reminders use no network constraint and no
-        foreground service. RECEIVE_BOOT_COMPLETED and WAKE_LOCK stay (rescheduling after a
-        reboot, running the job). The app has no INTERNET permission at all.
+        "Dịch nhanh" (ML Kit on-device translation): the network is used only to download a
+        language model from Google when the learner asks for it; translation itself runs on the
+        device. ACCESS_NETWORK_STATE tells "offline" apart from a failed download. Both are
+        also declared by ML Kit itself.
     -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" tools:node="remove" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--
+        Added by WorkManager but not needed: reminders use no foreground service.
+        RECEIVE_BOOT_COMPLETED and WAKE_LOCK stay (rescheduling after a reboot, running the job).
+    -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" tools:node="remove" />
+
+    <!-- "Dịch nhanh" pronunciation: reach the device's speech engine (package visibility, Android 11+). -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
 
     <application
         android:name=".N3SenseiApplication"
@@ -31,6 +45,27 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+            "Dịch nhanh" in other apps' text selection menu (ACTION_PROCESS_TEXT, text/plain).
+            Exported so the system can open it from any app; it only shows the text it is given
+            and returns nothing. Empty taskAffinity and excludeFromRecents: it never joins
+            N3 Sensei's task or the recent apps; it closes back to the source app.
+        -->
+        <activity
+            android:name=".app.translate.QuickTranslateActivity"
+            android:exported="true"
+            android:label="@string/quick_translate_action"
+            android:theme="@style/Theme.N3Sensei.QuickTranslate"
+            android:taskAffinity=""
+            android:excludeFromRecents="true"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
 

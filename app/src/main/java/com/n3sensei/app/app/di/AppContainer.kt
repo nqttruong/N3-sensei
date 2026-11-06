@@ -46,6 +46,12 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
+import com.n3sensei.app.domain.translate.LanguageDetector
+import com.n3sensei.app.domain.translate.ScriptLanguageDetector
+import com.n3sensei.app.data.translate.ContentDictionaryProvider
+import com.n3sensei.app.data.translate.MlKitMachineTranslator
+import com.n3sensei.app.domain.translate.TranslationOrchestrator
+import com.n3sensei.app.domain.translate.TranslationRepository
 
 /**
  * Manual dependency container, created once in [com.n3sensei.app.N3SenseiApplication] and
@@ -70,6 +76,8 @@ interface AppContainer {
     val examRepository: ExamRepository
     val errorRepository: ErrorRepository
     val widgetUpdater: WidgetUpdater
+    val languageDetector: LanguageDetector
+    val translationRepository: TranslationRepository
     val clock: Clock
 }
 
@@ -124,6 +132,13 @@ class DefaultAppContainer(context: Context) : AppContainer {
     override val errorRepository: ErrorRepository by lazy { OfflineErrorRepository(database, clock) }
 
     override val widgetContentPicker: WidgetContentPicker by lazy { WidgetContentPicker(contentRepository, progressRepository, clock) }
+
+    override val languageDetector: LanguageDetector by lazy { ScriptLanguageDetector() }
+
+    /** Dictionary first (N3 Sensei's content), ML Kit on-device translation for the rest. */
+    override val translationRepository: TranslationRepository by lazy {
+        TranslationOrchestrator(ContentDictionaryProvider(database.contentDao()), MlKitMachineTranslator(appContext))
+    }
 
     /** Widget refreshes outlive the screen that asked for them. */
     private val widgetScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)

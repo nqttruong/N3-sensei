@@ -23,12 +23,50 @@ data class VocabularyKanjiLinkEntity(
     @ColumnInfo(name = "created_at") val createdAt: Long,
 )
 
-/** When one of the learner's own words ("Từ của tôi") was added and last changed. */
-@Entity(tableName = "user_words")
+/**
+ * One of the learner's own words ("Từ của tôi"): when it was added and last changed, and whether
+ * it is studied.
+ *
+ * - [studyState] `STUDYING` (words added by hand, and every word before schema 14): reviewed,
+ *   practised and reminded like any word. `SAVED` (bookmarked from "Dịch nhanh"): listed,
+ *   searchable and editable, but in no automatic study flow until the learner studies it.
+ * - [sourceLanguage] / [sourceKey]: for a bookmark, the language of the selected text and its
+ *   identity (normalized text, plus the reading when one tells homographs apart); unique, so a
+ *   bookmark never makes a second entry. Null for words added by hand.
+ */
+@Entity(
+    tableName = "user_words",
+    indices = [Index(value = ["source_language", "source_key"], unique = true)],
+)
 data class UserWordEntity(
     @PrimaryKey @ColumnInfo(name = "vocabulary_id") val vocabularyId: String,
     @ColumnInfo(name = "created_at") val createdAt: Long,
     @ColumnInfo(name = "updated_at") val updatedAt: Long,
+    @ColumnInfo(name = "study_state", defaultValue = STUDYING) val studyState: String = STUDYING,
+    @ColumnInfo(name = "source_language") val sourceLanguage: String? = null,
+    @ColumnInfo(name = "source_key") val sourceKey: String? = null,
+) {
+    companion object {
+        const val STUDYING = "STUDYING"
+        const val SAVED = "SAVED"
+    }
+}
+
+/**
+ * A translation kept with one of the learner's words (a "Dịch nhanh" bookmark): English or
+ * Japanese (with its kana reading when known), in the order shown. No foreign key, like the other
+ * learner tables; deleted with the word. The key makes the same translation impossible twice.
+ */
+@Entity(tableName = "user_word_translations", primaryKeys = ["vocabulary_id", "language", "text"])
+data class UserWordTranslationEntity(
+    @ColumnInfo(name = "vocabulary_id") val vocabularyId: String,
+    /** ISO 639-1: "en", "ja" or "vi". */
+    val language: String,
+    val text: String,
+    val reading: String?,
+    val meaning: String?,
+    @ColumnInfo(name = "sort_order") val sortOrder: Int,
+    @ColumnInfo(name = "created_at") val createdAt: Long,
 )
 
 /**

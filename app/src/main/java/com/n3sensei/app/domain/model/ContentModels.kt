@@ -90,7 +90,14 @@ data class VocabularyDetail(
     val source: ContentSource,
     /** Kanji the learner linked this word to. */
     val linkedKanji: List<Kanji> = emptyList(),
+    /** Saved from "Dịch nhanh" and not studied yet: no marking or practice from here. */
+    val saved: Boolean = false,
+    /** Translations kept with a "Dịch nhanh" bookmark (English, Japanese). */
+    val translations: List<WordTranslation> = emptyList(),
 )
+
+/** A translation kept with one of the learner's words. [language]: "en", "ja", "vi". */
+data class WordTranslation(val language: String, val text: String, val reading: String?)
 
 data class KanjiDetail(
     val kanji: Kanji,

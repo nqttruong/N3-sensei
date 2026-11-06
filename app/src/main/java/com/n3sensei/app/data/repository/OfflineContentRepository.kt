@@ -54,6 +54,7 @@ class OfflineContentRepository(
         return contentDao.observeVocabularyItems(
             query.lessonId, query.tagId, query.status?.name, query.markedOnly, text.pattern, text.raw, text.limit,
             query.userWordsOnly,
+            query.includeSaved,
         ).map { rows -> rows.map { it.toDomain() } }
     }
 

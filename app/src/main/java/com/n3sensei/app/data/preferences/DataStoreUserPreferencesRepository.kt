@@ -20,6 +20,7 @@ import com.n3sensei.app.domain.repository.UserPreferencesRepository
 import com.n3sensei.app.domain.srs.DailyLimits
 import com.n3sensei.app.domain.srs.ReviewLadder
 import com.n3sensei.app.domain.srs.ReviewSettings
+import com.n3sensei.app.domain.translate.QuickTranslateSettings
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
@@ -59,6 +60,8 @@ class DataStoreUserPreferencesRepository(
         val WIDGET_SHOW_MEANING = booleanPreferencesKey("widget_show_meaning")
         val WIDGET_TAP = stringPreferencesKey("widget_tap")
         val REMINDER_LOCK_SCREEN = stringPreferencesKey("reminder_lock_screen")
+        val QUICK_TRANSLATE_ENABLED = booleanPreferencesKey("quick_translate_enabled")
+        val QUICK_TRANSLATE_MODE = stringPreferencesKey("quick_translate_mode")
     }
 
     private val defaults = UserPreferences()
@@ -79,6 +82,7 @@ class DataStoreUserPreferencesRepository(
                 reminderSettings = readReminder(prefs),
                 widgetSettings = readWidget(prefs),
                 dailyStudyMinutes = prefs[Keys.DAILY_STUDY_MINUTES]?.takeIf { it in 1..600 } ?: UserPreferences.DEFAULT_DAILY_STUDY_MINUTES,
+                quickTranslate = readQuickTranslate(prefs),
             )
         }
 
@@ -157,6 +161,22 @@ class DataStoreUserPreferencesRepository(
 
     override suspend fun setDailyStudyMinutes(minutes: Int) {
         dataStore.edit { it[Keys.DAILY_STUDY_MINUTES] = minutes.coerceIn(1, 600) }
+    }
+
+    override suspend fun setQuickTranslateSettings(settings: QuickTranslateSettings) {
+        dataStore.edit {
+            it[Keys.QUICK_TRANSLATE_ENABLED] = settings.enabled
+            it[Keys.QUICK_TRANSLATE_MODE] = settings.mode.name
+        }
+    }
+
+    /** Absent or unknown values (an older app, a hand-edited file): the defaults (on, both languages). */
+    private fun readQuickTranslate(prefs: Preferences): QuickTranslateSettings {
+        val d = QuickTranslateSettings()
+        return QuickTranslateSettings(
+            enabled = prefs[Keys.QUICK_TRANSLATE_ENABLED] ?: d.enabled,
+            mode = enumOrDefault(prefs[Keys.QUICK_TRANSLATE_MODE], d.mode),
+        )
     }
 
     override suspend fun setWidgetSettings(settings: WidgetSettings) {

@@ -8,6 +8,10 @@ import com.n3sensei.app.domain.edit.KanjiExample
 import com.n3sensei.app.domain.edit.KanjiChoice
 import com.n3sensei.app.domain.edit.SaveResult
 import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.translate.BookmarkEntry
+import com.n3sensei.app.domain.translate.BookmarkResult
+import com.n3sensei.app.domain.translate.Language
+import kotlinx.coroutines.flow.Flow
 
 /**
  * The learner's changes to content: edits of pack items (kept apart from the pack and applied
@@ -56,4 +60,14 @@ interface UserContentRepository {
 
     /** Edits and links whose item is no longer in any installed pack (kept; they apply again if it returns). */
     suspend fun countOrphans(): Int
+
+    /**
+     * Saves a "Dịch nhanh" bookmark into "Từ của tôi" as a word **saved, not studied**: no
+     * progress, mark, review or reminder is created. Saving the same entry again (same
+     * [BookmarkEntry.key]) adds only what it lacks and never makes a second word.
+     */
+    suspend fun saveBookmark(entry: BookmarkEntry): BookmarkResult
+
+    /** The id of the saved word for this bookmark identity, live; null while not saved. */
+    fun observeBookmark(sourceLanguage: Language, key: String): Flow<String?>
 }

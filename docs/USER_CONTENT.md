@@ -31,7 +31,24 @@ Mục biến mất khỏi gói mới: chỉnh sửa **được giữ** (mồ cô
 - Chi tiết Kanji / Từ vựng → **Sửa**: form theo các trường trên, kiểm tra dữ liệu (bắt buộc, kana, số nét 1–40, độ dài), hiện "Bản gốc: …" cho trường đã sửa, **Khôi phục bản gốc** (có hỏi lại). Lỗi lưu hiện thông báo, dữ liệu cũ giữ nguyên.
 - Học → Từ vựng → **Thêm từ của tôi**: từ, cách đọc, nghĩa, từ loại, ghi chú. Từ trùng chữ viết + cách đọc với một từ đã có (mọi gói) bị từ chối, có nêu tên gói. Từ của tôi có nút **Xóa từ này** (xóa cả lịch ôn và đánh dấu; lịch sử ôn giữ lại).
 
+## Bookmark của "Dịch nhanh" (schema v14)
+
+- Bấm bookmark trong hộp thoại Dịch nhanh lưu **một** từ vào "Từ của tôi" cho cả mục, kèm mọi bản dịch đang có (Anh và Nhật cùng một mục ở chế độ "Cả hai"). Các bản dịch nằm ở `user_word_translations`.
+- **Định danh** (`user_words.source_language` + `source_key`, UNIQUE): văn bản đã chuẩn hóa, thêm cách đọc khi từ tiếng Nhật có đúng một cách đọc (生 なま ≠ 生 せい).
+  - Lưu lại chỉ bổ sung bản dịch, nghĩa hoặc ví dụ còn thiếu; không tạo từ thứ hai, không ghi đè chỉnh sửa của người dùng, không xóa.
+  - Ghi trong một transaction: lỗi giữa chừng thì không còn gì sót lại.
+- **Không gán giá trị giả**: từ tiếng Anh/Việt có `reading` rỗng (không kana giả), `jlpt_level` rỗng (không gán "N3"). Form sửa chỉ bắt buộc kana cho từ có chữ Nhật **đang học**; mục "Đã lưu" (ví dụ 実験 do máy dịch, không biết cách đọc) sửa được mà không cần kana.
+- **Chữ đã chọn luôn còn**: bookmark một từ tiếng Anh có bản dịch Nhật thì mục đứng tên bằng chữ Nhật, còn chữ tiếng Anh được lưu thành bản dịch tiếng Anh (thấy ở chi tiết, tìm được).
+- **Đã lưu (`SAVED`) và Đang học (`STUDYING`)**:
+  - Từ thêm tay, và mọi từ có trước v14, là `STUDYING`, giữ nguyên hành vi cũ.
+  - Bookmark là `SAVED`: có trong danh sách và tìm kiếm "Từ của tôi" (nhãn "Đã lưu"), xem, sửa và xóa được.
+  - Từ `SAVED` **không** có trong:
+    - thẻ mới của phiên ôn (`ProgressDao.getNewRefs`), số "còn mới" (`observeNewAvailable`), thống kê theo loại (`AnalyticsDao.observeStatusByType`);
+    - nhắc học (`ReminderLessonCatalog`), widget, luyện tập/flashcard (các truy vấn `ItemQuery` mặc định `includeSaved = false`).
+  - Màn chi tiết của từ `SAVED` không có "Cần học lại" và "Luyện bài này". Bookmark không tạo tiến độ, đánh dấu, lịch sử ôn hay lịch sử nhắc học.
+  - Chức năng "Đưa vào học" (`SAVED` → `STUDYING`) chưa có: cần đặc tả riêng. Dữ liệu không có ràng buộc nào cản trở việc đó.
+
 ## Giới hạn hiện tại
 
 - Từ người dùng thêm **không liên kết được với một Kanji**: schema không có quan hệ Từ vựng ↔ Kanji (cần thêm một bảng nếu muốn).
-- Sao lưu/khôi phục (Cài đặt) **chưa chứa** chỉnh sửa và "Từ của tôi": các dữ liệu này còn khi cập nhật app nhưng mất nếu gỡ app.
+- Sao lưu/khôi phục (Cài đặt) **chưa chứa** chỉnh sửa và "Từ của tôi" (kể cả bookmark và bản dịch của chúng): các dữ liệu này còn khi cập nhật app nhưng mất nếu gỡ app.

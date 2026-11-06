@@ -4,9 +4,9 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
@@ -23,6 +23,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
@@ -30,9 +31,16 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.SectionHeader
 import com.n3sensei.app.core.ui.content.intervalLabel
+import com.n3sensei.app.core.ui.content.labelRes
 import com.n3sensei.app.core.ui.state.UiStateContent
 import com.n3sensei.app.domain.model.ThemeMode
+import com.n3sensei.app.domain.translate.TranslationMode
 import com.n3sensei.app.domain.widget.WidgetMode
+
+object SettingsTags {
+    const val QUICK_TRANSLATE_ENABLED = "settings_quick_translate_enabled"
+    fun quickTranslateMode(mode: TranslationMode) = "settings_quick_translate_mode_${mode.name}"
+}
 
 @Composable
 fun SettingsScreen(
@@ -150,6 +158,30 @@ fun SettingsScreen(
                 supportingContent = { Text(stringResource(R.string.widget_settings_summary, widgetModeName(prefs.widgetSettings.mode))) },
                 modifier = Modifier.clickable(role = Role.Button, onClick = onOpenWidgetSettings),
             )
+            HorizontalDivider()
+
+            SectionHeader(stringResource(R.string.settings_quick_translate), Modifier.padding(horizontal = 16.dp))
+            val quick = prefs.quickTranslate
+            ListItem(
+                headlineContent = { Text(stringResource(R.string.settings_quick_translate_enabled)) },
+                supportingContent = { Text(stringResource(R.string.settings_quick_translate_enabled_description)) },
+                trailingContent = { Switch(checked = quick.enabled, onCheckedChange = null) },
+                modifier = Modifier
+                    .toggleable(value = quick.enabled, role = Role.Switch, onValueChange = viewModel::setQuickTranslateEnabled)
+                    .testTag(SettingsTags.QUICK_TRANSLATE_ENABLED),
+            )
+            ListItem(headlineContent = { Text(stringResource(R.string.settings_quick_translate_mode), style = MaterialTheme.typography.titleSmall) })
+            Column(Modifier.selectableGroup()) {
+                TranslationMode.entries.forEach { mode ->
+                    ListItem(
+                        headlineContent = { Text(stringResource(mode.labelRes())) },
+                        leadingContent = { RadioButton(selected = quick.mode == mode, onClick = null) },
+                        modifier = Modifier
+                            .selectable(selected = quick.mode == mode, role = Role.RadioButton, onClick = { viewModel.setQuickTranslateMode(mode) })
+                            .testTag(SettingsTags.quickTranslateMode(mode)),
+                    )
+                }
+            }
             HorizontalDivider()
 
             BackupSettingsSection(

@@ -4,6 +4,7 @@ import com.n3sensei.app.domain.edit.ContentEditValidator.Result.Invalid
 import com.n3sensei.app.domain.edit.ContentEditValidator.Result.Valid
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import org.junit.Assert.assertTrue
 
 class ContentEditValidatorTest {
 
@@ -69,5 +70,22 @@ class ContentEditValidatorTest {
             assertEquals(it, mapOf(ExampleField.FURIGANA to FieldError.FURIGANA_MISMATCH), KanjiExampleValidator.validate("経", ExampleDraft("経験", it, "x")).second)
         }
         assertEquals(mapOf(ExampleField.FURIGANA to FieldError.NOT_KANA), KanjiExampleValidator.validate("経", ExampleDraft("経験", "keiken", "x")).second)
+    }
+
+    @Test
+    fun aReading_isRequiredForAJapaneseWordOnly() {
+        val english = mapOf(
+            EditableField.WORD_EXPRESSION to "experience", EditableField.WORD_READING to "", EditableField.WORD_MEANING to "kinh nghiệm",
+        )
+        val (ok, errors) = ContentEditValidator.validateAll(english)
+        assertTrue(errors.isEmpty())
+        assertEquals("", ok[EditableField.WORD_READING])
+        // A Japanese word still needs its kana, and kana it must be.
+        val japanese = english + (EditableField.WORD_EXPRESSION to "経験")
+        assertEquals(FieldError.REQUIRED, ContentEditValidator.validateAll(japanese).second[EditableField.WORD_READING])
+        assertEquals(FieldError.NOT_KANA, ContentEditValidator.validateAll(japanese + (EditableField.WORD_READING to "keiken")).second[EditableField.WORD_READING])
+        // A saved, not studied, Japanese word may have no reading (none is known); wrong kana is still wrong.
+        assertTrue(ContentEditValidator.validateAll(japanese, readingOptional = true).second.isEmpty())
+        assertEquals(FieldError.NOT_KANA, ContentEditValidator.validateAll(japanese + (EditableField.WORD_READING to "keiken"), readingOptional = true).second[EditableField.WORD_READING])
     }
 }

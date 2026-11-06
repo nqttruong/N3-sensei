@@ -46,6 +46,7 @@ fun VocabularyListScreen(
                 onClick = { onOpenVocabulary(tracked.item.id) },
                 status = tracked.status,
                 isMarked = tracked.isMarked,
+                isSaved = tracked.isSaved,
                 // In "Từ của tôi" every word is the learner's: the tag would say only that.
                 location = if (viewModel.myWords) null else locations.of(ItemRef(ItemType.VOCABULARY, tracked.item.id)),
             )

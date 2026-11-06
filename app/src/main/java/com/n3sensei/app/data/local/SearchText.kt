@@ -2,6 +2,7 @@ package com.n3sensei.app.data.local
 
 import com.n3sensei.app.data.local.entity.GrammarEntity
 import com.n3sensei.app.data.local.entity.KanjiEntity
+import com.n3sensei.app.data.local.entity.UserWordTranslationEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import java.text.Normalizer
 import java.util.Locale
@@ -48,6 +49,10 @@ object SearchText {
 
 internal fun VocabularyEntity.withSearchText() =
     copy(searchText = SearchText.of(expression, reading, meaningVi))
+
+/** A learner's word with the translations of its bookmark, so it is found by them too ("experience"). */
+internal fun VocabularyEntity.withSearchText(translations: List<UserWordTranslationEntity>) =
+    copy(searchText = SearchText.of(expression, reading, meaningVi, *translations.flatMap { listOf(it.text, it.reading) }.toTypedArray()))
 
 internal fun KanjiEntity.withSearchText() =
     copy(searchText = SearchText.of(character, onReadings.joinToString(" "), kunReadings.joinToString(" "), hanViet, meaningVi))

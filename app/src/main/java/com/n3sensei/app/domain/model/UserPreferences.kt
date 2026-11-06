@@ -1,5 +1,6 @@
 package com.n3sensei.app.domain.model
 
+import com.n3sensei.app.domain.translate.QuickTranslateSettings
 import com.n3sensei.app.domain.widget.WidgetSettings
 import com.n3sensei.app.domain.reminder.ReminderSettings
 import com.n3sensei.app.domain.srs.ReviewSettings
@@ -16,6 +17,7 @@ data class UserPreferences(
     val widgetSettings: WidgetSettings = WidgetSettings(),
     /** Time the learner plans to study a day, in minutes: the daily plan never goes over it. */
     val dailyStudyMinutes: Int = DEFAULT_DAILY_STUDY_MINUTES,
+    val quickTranslate: QuickTranslateSettings = QuickTranslateSettings(),
 ) {
     companion object {
         const val DEFAULT_DAILY_STUDY_MINUTES = 20

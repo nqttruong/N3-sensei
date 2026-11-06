@@ -28,12 +28,14 @@ fun VocabularyCard(
     isMarked: Boolean = false,
     /** Where the word is studied; null where the screen already says it (a lesson, a group). */
     location: ItemLocation? = null,
+    isSaved: Boolean = false,
 ) {
     N3Card(onClick = onClick, modifier = modifier, contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp)) {
         Row {
             Column(modifier = Modifier.weight(1f)) {
                 Text(japaneseText(vocabulary.expression), style = MaterialTheme.typography.titleLarge.japanese())
-                if (vocabulary.reading != vocabulary.expression) {
+                // No reading line for a word without one (an English bookmark).
+                if (vocabulary.reading.isNotBlank() && vocabulary.reading != vocabulary.expression) {
                     Text(
                         japaneseText(vocabulary.reading),
                         style = MaterialTheme.typography.bodyMedium.japanese(),
@@ -43,7 +45,7 @@ fun VocabularyCard(
                 Text(vocabulary.meaningVi, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.padding(top = 4.dp))
                 location?.let { LocationTag(it, Modifier.padding(top = 6.dp)) }
             }
-            ItemStatusBadge(status, isMarked)
+            ItemStatusBadge(status, isMarked, isSaved = isSaved)
         }
     }
 }

@@ -26,5 +26,5 @@ class VocabularyListViewModel(
     override val tags: StateFlow<List<Tag>> = (if (myWords) flowOf(emptyList()) else contentRepository.observeTags())
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), emptyList())
 
-    override fun observe(query: ItemQuery): Flow<List<TrackedItem<Vocabulary>>> = contentRepository.observeVocabularyItems(query)
+    override fun observe(query: ItemQuery): Flow<List<TrackedItem<Vocabulary>>> = contentRepository.observeVocabularyItems(query.copy(includeSaved = true))
 }

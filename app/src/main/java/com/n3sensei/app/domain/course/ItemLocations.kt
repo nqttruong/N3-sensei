@@ -102,7 +102,7 @@ class ItemLocations(
         fun observe(contentRepository: ContentRepository): Flow<ItemLocations> = combine(
             contentRepository.observeLessons(),
             contentRepository.observeKanjiItems(ItemQuery()),
-            contentRepository.observeVocabularyItems(ItemQuery()),
+            contentRepository.observeVocabularyItems(ItemQuery(includeSaved = true)),
             contentRepository.observeGrammarItems(ItemQuery()),
         ) { lessons, kanji, vocabulary, grammar -> build(lessons, kanji, vocabulary, grammar) }
     }

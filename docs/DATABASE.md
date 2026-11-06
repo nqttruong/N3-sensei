@@ -1,6 +1,6 @@
 # Database N3 Sensei
 
-Room 2.6.1, file `n3sensei.db`, schema version **4**. Schema export: `app/schemas/com.n3sensei.app.data.local.N3Database/<version>.json` (commit vào Git).
+Room 2.6.1, file `n3sensei.db`, schema version **14**. Schema export: `app/schemas/com.n3sensei.app.data.local.N3Database/<version>.json` (commit vào Git).
 
 ## Hai nhóm dữ liệu
 
@@ -96,6 +96,14 @@ Danh sách không có văn bản tìm kiếm trả về đầy đủ. Có văn b
 - **1 → 2** (`N3Migrations.MIGRATION_1_2`): tạo `item_marks`, `grammar_exercises`; thêm cột `search_text` vào `vocabulary`, `kanji`, `grammar` và **tính lại cho mọi dòng đã có** bằng chính `SearchText` của app. Đã kiểm tra bằng test: dữ liệu ghi theo schema v1 (nội dung + tiến độ) còn nguyên sau migration, tìm kiếm không dấu tìm thấy dòng cũ, bảng đánh dấu dùng được; tắt bước tính lại thì test thất bại.
 - **2 → 3** (`MIGRATION_2_3`): `review_records` thêm `request_id` (UNIQUE, NULL cho dòng cũ) và `was_new` (tính lại: bản ghi sớm nhất của mỗi mục = 1). Đã kiểm tra bằng test với lịch sử ghi theo schema v2.
 - **3 → 4** (`MIGRATION_3_4`): tạo bảng `review_sessions` (chỉ thêm, không đổi bảng cũ). Đã kiểm tra bằng test: tiến độ ghi theo schema v3 còn nguyên, ghi và đọc phiên qua Room được.
+- **13 → 14** (`MIGRATION_13_14`), bookmark của "Dịch nhanh", chỉ thêm:
+  - `user_words` thêm `study_state` (`STUDYING` mặc định, nên mọi từ cũ là `STUDYING`), `source_language` và `source_key` (NULL cho từ cũ, UNIQUE theo cặp);
+  - tạo bảng `user_word_translations` (khóa `vocabulary_id, language, text`).
+
+  Test (`learnerWordsAndTheirStudyWrittenWithV13Schema_…`) kiểm tra:
+  - từ, ghi chú, ví dụ, tiến độ (kể cả ngày ôn), lịch sử ôn, đánh dấu và lịch sử nhắc học ghi theo v13 còn nguyên;
+  - từ cũ là `STUDYING`;
+  - database từ chối bookmark trùng khóa.
 - Lưu ý: nếu sửa entity mà quên tăng version, Room sẽ ghi đè JSON của version hiện tại. Khi review cần xem diff thư mục `app/schemas/`.
 
 ## Nhập nội dung

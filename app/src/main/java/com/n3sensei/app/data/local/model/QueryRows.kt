@@ -10,6 +10,7 @@ import com.n3sensei.app.data.local.entity.GrammarExerciseEntity
 import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.LessonEntity
 import com.n3sensei.app.data.local.entity.TagEntity
+import com.n3sensei.app.data.local.entity.UserWordTranslationEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ProgressState
@@ -28,6 +29,9 @@ data class VocabularyDetailRow(
     val tags: List<TagEntity>,
     val source: ContentSourceEntity,
     val linkedKanji: List<KanjiEntity>,
+    /** A "Dịch nhanh" bookmark not studied yet. */
+    val saved: Boolean = false,
+    val translations: List<UserWordTranslationEntity> = emptyList(),
 )
 
 data class KanjiDetailRow(
@@ -50,6 +54,8 @@ data class VocabularyItemRow(
     @Embedded val vocabulary: VocabularyEntity,
     @ColumnInfo(name = "is_marked") val isMarked: Boolean,
     @ColumnInfo(name = "progress_state") val progressState: ProgressState?,
+    /** A "Dịch nhanh" bookmark not studied yet. */
+    @ColumnInfo(name = "is_saved") val isSaved: Boolean = false,
 )
 
 data class KanjiItemRow(

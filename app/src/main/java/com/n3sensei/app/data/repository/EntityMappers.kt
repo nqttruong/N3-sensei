@@ -12,8 +12,8 @@ import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.data.local.model.ContentPackRow
 import com.n3sensei.app.data.local.model.GrammarDetailRow
 import com.n3sensei.app.data.local.model.GrammarItemRow
-import com.n3sensei.app.data.local.model.KanjiItemRow
 import com.n3sensei.app.data.local.model.KanjiDetailRow
+import com.n3sensei.app.data.local.model.KanjiItemRow
 import com.n3sensei.app.data.local.model.LessonSummaryRow
 import com.n3sensei.app.data.local.model.VocabularyDetailRow
 import com.n3sensei.app.data.local.model.VocabularyItemRow
@@ -34,6 +34,7 @@ import com.n3sensei.app.domain.model.Tag
 import com.n3sensei.app.domain.model.TrackedItem
 import com.n3sensei.app.domain.model.Vocabulary
 import com.n3sensei.app.domain.model.VocabularyDetail
+import com.n3sensei.app.domain.model.WordTranslation
 import java.time.Instant
 
 internal fun LessonSummaryRow.toDomain() = LessonSummary(
@@ -94,6 +95,8 @@ internal fun VocabularyDetailRow.toDomain() = VocabularyDetail(
     tags = tags.map { it.toDomain() },
     source = source.toDomain(),
     linkedKanji = linkedKanji.map { it.toDomain() },
+    saved = saved,
+    translations = translations.map { WordTranslation(it.language, it.text, it.reading) },
 )
 
 internal fun KanjiDetailRow.toDomain() =
@@ -104,7 +107,7 @@ internal fun GrammarDetailRow.toDomain() =
 
 internal fun GrammarExerciseEntity.toDomain() = GrammarExercise(id, prompt, options, answerIndex, explanationVi)
 
-internal fun VocabularyItemRow.toDomain() = TrackedItem(vocabulary.toDomain(), LearningStatus.from(progressState), isMarked)
+internal fun VocabularyItemRow.toDomain() = TrackedItem(vocabulary.toDomain(), LearningStatus.from(progressState), isMarked, isSaved)
 
 internal fun KanjiItemRow.toDomain() = TrackedItem(kanji.toDomain(), LearningStatus.from(progressState), isMarked)
 

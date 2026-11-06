@@ -78,6 +78,9 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.androidx.glance.appwidget)
+    // "Dịch nhanh": on-device translation (models downloaded once from Google, see docs/QUICK_TRANSLATE.md).
+    implementation(libs.mlkit.translate)
+    implementation(libs.kotlinx.coroutines.play.services)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 

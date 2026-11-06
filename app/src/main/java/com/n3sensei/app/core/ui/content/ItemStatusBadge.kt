@@ -28,7 +28,13 @@ fun ItemStatusBadge(
     status: LearningStatus,
     isMarked: Boolean,
     modifier: Modifier = Modifier,
+    /** Saved from "Dịch nhanh", not studied yet: said instead of a learning status. */
+    isSaved: Boolean = false,
 ) {
+    if (isSaved) {
+        Text(stringResource(R.string.status_saved), style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.tertiary, modifier = modifier)
+        return
+    }
     if (!isMarked && status == LearningStatus.NEW) return
     Column(modifier = modifier, horizontalAlignment = Alignment.End, verticalArrangement = Arrangement.spacedBy(4.dp)) {
         if (isMarked) {

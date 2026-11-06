@@ -24,6 +24,8 @@ data class TrackedItem<out T>(
     val item: T,
     val status: LearningStatus,
     val isMarked: Boolean,
+    /** One of the learner's "Dịch nhanh" bookmarks, saved but not studied yet. */
+    val isSaved: Boolean = false,
 )
 
 /** Learner state of one item, shown on detail screens. */
@@ -52,4 +54,10 @@ data class ItemQuery(
      * packs may not use) and a row in `user_words`, written only by that action.
      */
     val userWordsOnly: Boolean = false,
+    /**
+     * Also words saved from "Dịch nhanh" but not studied yet (vocabulary only). Only for lists
+     * the learner browses ("Từ của tôi", Học → Từ vựng, where an item is); never for what builds
+     * a study session, a reminder or the widget, which leave saved words out.
+     */
+    val includeSaved: Boolean = false,
 )

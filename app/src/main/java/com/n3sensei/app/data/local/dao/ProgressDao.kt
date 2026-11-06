@@ -108,6 +108,7 @@ abstract class ProgressDao {
             SELECT 'VOCABULARY' AS item_type, v.id AS item_id, l.pack_id AS pack, l.number AS lesson, 0 AS kind, v.sort_order AS pos
             FROM vocabulary v JOIN lessons l ON l.id = v.lesson_id
             WHERE NOT EXISTS (SELECT 1 FROM learning_progress p WHERE p.item_type = 'VOCABULARY' AND p.item_id = v.id)
+                AND $STUDIED_WORD
             UNION ALL
             SELECT 'KANJI', k.id, l.pack_id, l.number, 1, k.sort_order
             FROM kanji k JOIN lessons l ON l.id = k.lesson_id
@@ -149,7 +150,7 @@ abstract class ProgressDao {
         """
         SELECT
             (SELECT COUNT(*) FROM vocabulary v WHERE NOT EXISTS
-                (SELECT 1 FROM learning_progress p WHERE p.item_type = 'VOCABULARY' AND p.item_id = v.id))
+                (SELECT 1 FROM learning_progress p WHERE p.item_type = 'VOCABULARY' AND p.item_id = v.id) AND $STUDIED_WORD)
             + (SELECT COUNT(*) FROM kanji k WHERE NOT EXISTS
                 (SELECT 1 FROM learning_progress p WHERE p.item_type = 'KANJI' AND p.item_id = k.id))
             + (SELECT COUNT(*) FROM grammar g WHERE NOT EXISTS

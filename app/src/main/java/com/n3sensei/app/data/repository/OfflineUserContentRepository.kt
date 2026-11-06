@@ -6,25 +6,33 @@ import com.n3sensei.app.data.local.dao.KanjiChoiceRow
 import com.n3sensei.app.data.local.dao.UserContentDao
 import com.n3sensei.app.data.local.entity.ExampleSentenceEntity
 import com.n3sensei.app.data.local.entity.UserContentEditEntity
+import com.n3sensei.app.data.local.entity.UserWordEntity
+import com.n3sensei.app.data.local.entity.UserWordTranslationEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.domain.edit.ContentEditValidator
 import com.n3sensei.app.domain.edit.EditableField
 import com.n3sensei.app.domain.edit.EditableItem
 import com.n3sensei.app.domain.edit.ExampleDraft
 import com.n3sensei.app.domain.edit.ExampleSaveResult
-import com.n3sensei.app.domain.edit.KanjiExample
-import com.n3sensei.app.domain.edit.KanjiExampleValidator
-import com.n3sensei.app.domain.edit.ValidExample
 import com.n3sensei.app.domain.edit.FieldKind
 import com.n3sensei.app.domain.edit.KanjiChoice
+import com.n3sensei.app.domain.edit.KanjiExample
+import com.n3sensei.app.domain.edit.KanjiExampleValidator
 import com.n3sensei.app.domain.edit.SaveResult
 import com.n3sensei.app.domain.edit.UserWords
+import com.n3sensei.app.domain.edit.ValidExample
 import com.n3sensei.app.domain.furigana.Furigana
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.repository.UserContentRepository
-import kotlinx.coroutines.CancellationException
+import com.n3sensei.app.domain.translate.BookmarkEntry
+import com.n3sensei.app.domain.translate.BookmarkResult
+import com.n3sensei.app.domain.translate.Language
 import java.time.Clock
 import java.util.UUID
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
 class OfflineUserContentRepository(
     private val dao: UserContentDao,
@@ -67,6 +75,7 @@ class OfflineUserContentRepository(
             item(type, id, row.expression, own, fields, edits, { read(row, it) }, { read(base, it) }).copy(
                 linkedKanji = dao.linkedKanji(id).map { it.toChoice() },
                 hasProgress = dao.countProgress(type, id) > 0,
+                readingOptional = own && isSavedOnly(id),
             )
         }
     }
@@ -98,7 +107,8 @@ class OfflineUserContentRepository(
         linkedKanji: Set<String>?,
         allowDuplicate: Boolean,
     ): SaveResult = guarded {
-        val (valid, errors) = ContentEditValidator.validateAll(values)
+        val readingOptional = type == ItemType.VOCABULARY && isSavedOnly(id)
+        val (valid, errors) = ContentEditValidator.validateAll(values, readingOptional)
         if (errors.isNotEmpty()) return@guarded SaveResult.Invalid(errors)
         val now = clock.millis()
         val changes = { allowed: List<EditableField> ->
@@ -132,6 +142,9 @@ class OfflineUserContentRepository(
             }
         }
     }
+
+    /** A "Dịch nhanh" bookmark not studied (`SAVED`): never in flashcards, so a reading is optional. */
+    private suspend fun isSavedOnly(id: String): Boolean = dao.getUserWord(id)?.studyState == UserWordEntity.SAVED
 
     /** Null when saved; otherwise the result to return (duplicate). */
     private suspend fun saveOwnWord(row: VocabularyEntity, valid: Map<EditableField, String>, allowDuplicate: Boolean, now: Long): SaveResult? {
@@ -243,4 +256,41 @@ class OfflineUserContentRepository(
     } catch (e: Exception) {
         null
     }
+
+    /** One bookmark at a time (two quick taps never race to create two words). */
+    private val bookmarkWrites = Mutex()
+
+    override suspend fun saveBookmark(entry: BookmarkEntry): BookmarkResult = try {
+        bookmarkWrites.withLock {
+            val now = clock.millis()
+            val japanese = entry.japanese
+            val row = VocabularyEntity(
+                id = newId(), lessonId = UserWords.LESSON_ID, sourceId = UserWords.SOURCE_ID,
+                expression = entry.headword,
+                // Kana only for a Japanese word whose reading is known; never made up for English.
+                reading = japanese?.reading.orEmpty(),
+                furigana = null,
+                meaningVi = entry.meaningVi.orEmpty(),
+                partOfSpeech = null,
+                // Unknown level: empty, never a made-up "N3".
+                jlptLevel = "",
+                sortOrder = 0,
+                note = null,
+            )
+            val translations = entry.translations.map { t ->
+                UserWordTranslationEntity(row.id, t.language.code, t.text, t.reading, null, 0, now)
+            }
+            val (id, created) = dao.saveBookmark(
+                row, entry.sourceLanguage.code, entry.key, translations,
+                entry.example?.let { it.japanese to it.translationVi }, now,
+            )
+            BookmarkResult.Saved(id, created)
+        }
+    } catch (e: CancellationException) {
+        throw e
+    } catch (e: Exception) {
+        BookmarkResult.Failed
+    }
+
+    override fun observeBookmark(sourceLanguage: Language, key: String): Flow<String?> = dao.observeBookmark(sourceLanguage.code, key)
 }

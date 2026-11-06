@@ -4,25 +4,30 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.n3sensei.app.core.ui.state.STOP_TIMEOUT_MILLIS
 import com.n3sensei.app.core.ui.state.UiState
+import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.importing.ImportCheck
 import com.n3sensei.app.domain.importing.ImportPreview
 import com.n3sensei.app.domain.importing.ImportReport
 import com.n3sensei.app.domain.model.ContentPackInfo
-import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.domain.repository.ContentImportRepository
 import com.n3sensei.app.domain.repository.ContentRepository
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
+import com.n3sensei.app.domain.translate.QuickTranslateSettings
+import com.n3sensei.app.domain.translate.TranslationMode
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 
 data class SettingsUiState(
     val preferences: UserPreferences,
@@ -59,6 +64,23 @@ class SettingsViewModel(
     fun setShowFurigana(show: Boolean) {
         viewModelScope.launch { preferencesRepository.setShowFurigana(show) }
     }
+
+    /** One write at a time, so two quick taps never undo each other. */
+    private val quickTranslateWrites = Mutex()
+
+    private fun updateQuickTranslate(change: (QuickTranslateSettings) -> QuickTranslateSettings) {
+        viewModelScope.launch {
+            quickTranslateWrites.withLock {
+                val current = preferencesRepository.preferences.first().quickTranslate
+                preferencesRepository.setQuickTranslateSettings(change(current))
+            }
+        }
+    }
+
+    /** Also shows or hides "Dịch nhanh" in other apps' text selection menu (applied by the app). */
+    fun setQuickTranslateEnabled(enabled: Boolean) = updateQuickTranslate { it.copy(enabled = enabled) }
+
+    fun setQuickTranslateMode(mode: TranslationMode) = updateQuickTranslate { it.copy(mode = mode) }
 
     private val _importState = MutableStateFlow<ImportUiState>(ImportUiState.Idle)
     val importState: StateFlow<ImportUiState> = _importState.asStateFlow()

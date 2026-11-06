@@ -46,6 +46,7 @@ import com.n3sensei.app.data.local.entity.TagEntity
 import com.n3sensei.app.data.local.entity.UserContentEditEntity
 import com.n3sensei.app.data.local.entity.UserKanjiExampleEntity
 import com.n3sensei.app.data.local.entity.UserWordEntity
+import com.n3sensei.app.data.local.entity.UserWordTranslationEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.data.local.entity.VocabularyExampleCrossRef
 import com.n3sensei.app.data.local.entity.VocabularyKanjiLinkEntity
@@ -73,6 +74,7 @@ import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
         UserContentEditEntity::class,
         VocabularyKanjiLinkEntity::class,
         UserWordEntity::class,
+        UserWordTranslationEntity::class,
         UserKanjiExampleEntity::class,
         ReminderHistoryEntity::class,
         ExamSetEntity::class,
@@ -105,7 +107,7 @@ abstract class N3Database : RoomDatabase() {
     abstract fun errorDao(): ErrorDao
 
     companion object {
-        const val VERSION = 13
+        const val VERSION = 14
         const val NAME = "n3sensei.db"
 
         /**

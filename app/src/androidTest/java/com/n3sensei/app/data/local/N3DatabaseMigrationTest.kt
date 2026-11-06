@@ -468,4 +468,62 @@ class N3DatabaseMigrationTest {
         }
         instrumentation.targetContext.deleteDatabase(name)
     }
+
+    @Test
+    fun learnerWordsAndTheirStudyWrittenWithV13Schema_surviveTheMigrationTo14_asStudied() = runTest {
+        val name = "migration-test-data-v13"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 13).apply {
+            execSQL("INSERT INTO content_sources VALUES ('user-words', 'Bạn tự thêm', NULL, 'x', NULL, 1)")
+            execSQL("INSERT INTO content_packs VALUES ('user-words', 'Từ của tôi', 1, 'user-words', 0, 0)")
+            execSQL("INSERT INTO lessons VALUES ('user-words-l1', 'user-words', 1, 'Từ của tôi', 'N3', NULL)")
+            execSQL(
+                "INSERT INTO vocabulary (id, lesson_id, source_id, expression, reading, furigana, meaning_vi, part_of_speech, " +
+                    "jlpt_level, sort_order, note, search_text) VALUES ('user-w-1', 'user-words-l1', 'user-words', '経由', 'けいゆ', NULL, 'đi qua', NULL, 'N3', 0, 'ghi chú', 'x')",
+            )
+            execSQL("INSERT INTO user_words VALUES ('user-w-1', 100, 200)")
+            execSQL("INSERT INTO example_sentences VALUES ('user-x-1', 'user-words', 'user-words', '東京経由で行く。', NULL, 'Đi qua Tokyo.')")
+            execSQL("INSERT INTO vocabulary_examples VALUES ('user-w-1', 'user-x-1', 0)")
+            execSQL(
+                "INSERT INTO learning_progress (item_type, item_id, state, step_index, interval_minutes, due_at, last_reviewed_at, " +
+                    "review_count, lapse_count, created_at, updated_at) VALUES ('VOCABULARY', 'user-w-1', 'REVIEW', 3, 2880, 987654, 1000, 4, 1, 100, 1000)",
+            )
+            execSQL("INSERT INTO review_records VALUES (1, 'VOCABULARY', 'user-w-1', 'GOOD', 1000, 1440, 2880, 987654, 'req-1', 0)")
+            execSQL("INSERT INTO item_marks VALUES ('VOCABULARY', 'user-w-1', 500)")
+            execSQL("INSERT INTO reminder_history VALUES ('VOCABULARY', 'user-w-1', 700, 3)")
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 14, true, N3Migrations.MIGRATION_13_14).use { db ->
+            // The existing word is studied, not a bookmark; nothing else of it changed.
+            db.query("SELECT vocabulary_id, created_at, updated_at, study_state, source_language, source_key FROM user_words").use { c ->
+                assertTrue(c.moveToFirst())
+                assertEquals("user-w-1", c.getString(0))
+                assertEquals(100, c.getLong(1))
+                assertEquals(200, c.getLong(2))
+                assertEquals("STUDYING", c.getString(3))
+                assertTrue(c.isNull(4) && c.isNull(5))
+            }
+            db.query("SELECT expression, reading, meaning_vi, note, jlpt_level FROM vocabulary WHERE id = 'user-w-1'").use { c ->
+                assertTrue(c.moveToFirst())
+                assertEquals(listOf("経由", "けいゆ", "đi qua", "ghi chú", "N3"), (0..4).map { c.getString(it) })
+            }
+            db.query("SELECT state, due_at, review_count FROM learning_progress WHERE item_id = 'user-w-1'").use { c ->
+                assertTrue(c.moveToFirst())
+                assertEquals("REVIEW", c.getString(0))
+                assertEquals(987654, c.getLong(1)) // the next review date is unchanged
+                assertEquals(4, c.getInt(2))
+            }
+            listOf("review_records", "item_marks", "reminder_history", "vocabulary_examples", "example_sentences").forEach { table ->
+                db.query("SELECT COUNT(*) FROM $table").use { c -> c.moveToFirst(); assertEquals(table, 1, c.getInt(0)) }
+            }
+            db.query("SELECT COUNT(*) FROM user_word_translations").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+            // A second bookmark with the same identity is refused by the database itself.
+            db.execSQL("INSERT INTO user_words (vocabulary_id, created_at, updated_at, study_state, source_language, source_key) VALUES ('user-w-2', 1, 1, 'SAVED', 'en', 'bank')")
+            val duplicate = runCatching {
+                db.execSQL("INSERT INTO user_words (vocabulary_id, created_at, updated_at, study_state, source_language, source_key) VALUES ('user-w-3', 1, 1, 'SAVED', 'en', 'bank')")
+            }
+            assertTrue(duplicate.isFailure)
+        }
+        instrumentation.targetContext.deleteDatabase(name)
+    }
 }

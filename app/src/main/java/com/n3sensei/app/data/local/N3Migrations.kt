@@ -237,7 +237,28 @@ object N3Migrations {
         }
     }
 
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13)
+    /**
+     * 13 → 14: "Dịch nhanh" bookmarks. `user_words` says whether a word is studied: every existing
+     * word gets `STUDYING` (the column default), so nothing changes for them; bookmarks are added
+     * as `SAVED`. `source_language`/`source_key` (null for existing words) identify a bookmark,
+     * unique together. `user_word_translations` keeps a bookmark's English/Japanese translations
+     * (empty). Only additions: no row, progress, history or example is changed.
+     */
+    val MIGRATION_13_14 = object : Migration(13, 14) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("ALTER TABLE `user_words` ADD COLUMN `study_state` TEXT NOT NULL DEFAULT 'STUDYING'")
+            db.execSQL("ALTER TABLE `user_words` ADD COLUMN `source_language` TEXT")
+            db.execSQL("ALTER TABLE `user_words` ADD COLUMN `source_key` TEXT")
+            db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_user_words_source_language_source_key` ON `user_words` (`source_language`, `source_key`)")
+            db.execSQL(
+                "CREATE TABLE IF NOT EXISTS `user_word_translations` (`vocabulary_id` TEXT NOT NULL, `language` TEXT NOT NULL, " +
+                    "`text` TEXT NOT NULL, `reading` TEXT, `meaning` TEXT, `sort_order` INTEGER NOT NULL, `created_at` INTEGER NOT NULL, " +
+                    "PRIMARY KEY(`vocabulary_id`, `language`, `text`))",
+            )
+        }
+    }
+
+    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14)
 
     private fun String.toReadings(): String = StringListCodec.decode(this).joinToString(" ")
 

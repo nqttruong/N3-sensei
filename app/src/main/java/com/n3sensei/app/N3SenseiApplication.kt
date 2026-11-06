@@ -6,6 +6,11 @@ import android.os.StrictMode
 import com.n3sensei.app.app.di.AppContainer
 import com.n3sensei.app.app.reminder.AndroidReminderNotifier
 import com.n3sensei.app.app.di.DefaultAppContainer
+import com.n3sensei.app.app.translate.QuickTranslateMenu
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 
 class N3SenseiApplication : Application() {
 
@@ -17,7 +22,12 @@ class N3SenseiApplication : Application() {
         if (applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE != 0) enableStrictModeLogging()
         container = DefaultAppContainer(this)
         AndroidReminderNotifier.ensureChannel(this)
+        // Settings → Dịch nhanh on/off, applied to the text selection menu entry.
+        appScope.launch { QuickTranslateMenu.follow(this@N3SenseiApplication, container.userPreferencesRepository) }
     }
+
+    /** Work that lives as long as the process (off the main thread). */
+    private val appScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
 
     /**
      * Debug builds only: logs (tag StrictMode) disk or network access on the main thread and

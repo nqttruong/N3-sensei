@@ -9,6 +9,7 @@ import com.n3sensei.app.domain.srs.ReviewSettings
 import com.n3sensei.app.domain.widget.WidgetSettings
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
+import com.n3sensei.app.domain.translate.QuickTranslateSettings
 
 /** Preferences kept in memory, for tests that must not touch the app's DataStore. */
 class InMemoryPreferencesRepository(initial: UserPreferences = UserPreferences()) : UserPreferencesRepository {
@@ -21,6 +22,7 @@ class InMemoryPreferencesRepository(initial: UserPreferences = UserPreferences()
     override suspend fun setReminderSettings(settings: ReminderSettings) = preferences.update { it.copy(reminderSettings = settings) }
     override suspend fun setWidgetSettings(settings: WidgetSettings) = preferences.update { it.copy(widgetSettings = settings) }
     override suspend fun setDailyStudyMinutes(minutes: Int) = preferences.update { it.copy(dailyStudyMinutes = minutes) }
+    override suspend fun setQuickTranslateSettings(settings: QuickTranslateSettings) = preferences.update { it.copy(quickTranslate = settings) }
 }
 
 class RecordingReminderScheduler : ReminderScheduler {

@@ -5,6 +5,7 @@ import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.domain.reminder.ReminderSettings
 import com.n3sensei.app.domain.srs.ReviewSettings
+import com.n3sensei.app.domain.translate.QuickTranslateSettings
 import kotlinx.coroutines.flow.Flow
 
 interface UserPreferencesRepository {
@@ -22,4 +23,6 @@ interface UserPreferencesRepository {
     suspend fun setWidgetSettings(settings: WidgetSettings)
 
     suspend fun setDailyStudyMinutes(minutes: Int)
+
+    suspend fun setQuickTranslateSettings(settings: QuickTranslateSettings)
 }

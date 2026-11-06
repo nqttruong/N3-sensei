@@ -188,7 +188,7 @@ interface AnalyticsDao {
             COALESCE(SUM(CASE WHEN p.state = 'MASTERED' THEN 1 ELSE 0 END), 0) AS mastered
         FROM vocabulary v JOIN lessons l ON l.id = v.lesson_id JOIN content_packs cp ON cp.id = l.pack_id
         LEFT JOIN learning_progress p ON p.item_type = 'VOCABULARY' AND p.item_id = v.id
-        WHERE cp.is_seed = 0
+        WHERE cp.is_seed = 0 AND $STUDIED_WORD
         UNION ALL
         SELECT 'KANJI',
             COALESCE(SUM(CASE WHEN p.item_id IS NULL THEN 1 ELSE 0 END), 0),

@@ -117,8 +117,15 @@ object ContentEditValidator {
         }
     }
 
-    /** Validates every field of a form; returns the normalized values or the errors. */
-    fun validateAll(values: Map<EditableField, String>): Pair<Map<EditableField, String>, Map<EditableField, FieldError>> {
+    private fun isJapanese(c: Char): Boolean = c in '\u3040'..'\u30FF' || c in '\u4E00'..'\u9FFF' || c in '\u3400'..'\u4DBF' || c == '々'
+
+    /**
+     * Validates every field of a form; returns the normalized values or the errors.
+     *
+     * @param readingOptional a word saved from "Dịch nhanh" and not studied: its reading may stay
+     *   empty when the app has none (a machine-translated word), so nothing is made up to save it.
+     */
+    fun validateAll(values: Map<EditableField, String>, readingOptional: Boolean = false): Pair<Map<EditableField, String>, Map<EditableField, FieldError>> {
         val ok = mutableMapOf<EditableField, String>()
         val errors = mutableMapOf<EditableField, FieldError>()
         values.forEach { (field, raw) ->
@@ -126,6 +133,13 @@ object ContentEditValidator {
                 is Result.Valid -> ok[field] = r.value
                 is Result.Invalid -> errors[field] = r.error
             }
+        }
+        // A kana reading is required for a Japanese word only: a word with no Japanese in it (an
+        // English or Vietnamese "Dịch nhanh" bookmark) has none, and none is made up.
+        val expression = ok[EditableField.WORD_EXPRESSION]
+        if (errors[EditableField.WORD_READING] == FieldError.REQUIRED && (readingOptional || expression != null && expression.none(::isJapanese))) {
+            errors.remove(EditableField.WORD_READING)
+            ok[EditableField.WORD_READING] = ""
         }
         val ja = ok[EditableField.WORD_EXAMPLE_JA]
         val vi = ok[EditableField.WORD_EXAMPLE_VI]
@@ -234,6 +248,8 @@ data class EditableItem(
     val linkedKanji: List<KanjiChoice> = emptyList(),
     /** The item has a schedule (deleting it loses the schedule). */
     val hasProgress: Boolean = false,
+    /** A saved, not studied, word: its reading may stay empty ([ContentEditValidator.validateAll]). */
+    val readingOptional: Boolean = false,
 )
 
 sealed interface SaveResult {

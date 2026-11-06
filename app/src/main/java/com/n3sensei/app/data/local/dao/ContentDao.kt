@@ -9,12 +9,14 @@ import com.n3sensei.app.data.local.entity.GrammarEntity
 import com.n3sensei.app.data.local.entity.GrammarExerciseEntity
 import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.TagEntity
+import com.n3sensei.app.data.local.entity.UserWordEntity
+import com.n3sensei.app.data.local.entity.UserWordTranslationEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
+import com.n3sensei.app.data.local.model.ContentTotalsRow
 import com.n3sensei.app.data.local.model.GrammarDetailRow
 import com.n3sensei.app.data.local.model.GrammarItemRow
-import com.n3sensei.app.data.local.model.KanjiItemRow
-import com.n3sensei.app.data.local.model.ContentTotalsRow
 import com.n3sensei.app.data.local.model.KanjiDetailRow
+import com.n3sensei.app.data.local.model.KanjiItemRow
 import com.n3sensei.app.data.local.model.LessonSummaryRow
 import com.n3sensei.app.data.local.model.VocabularyDetailRow
 import com.n3sensei.app.data.local.model.VocabularyItemRow
@@ -91,6 +93,12 @@ abstract class ContentDao {
 
     @Query("SELECT * FROM content_sources WHERE id = :id")
     abstract suspend fun getSource(id: String): ContentSourceEntity?
+
+    @Query("SELECT study_state FROM user_words WHERE vocabulary_id = :id")
+    abstract suspend fun getStudyState(id: String): String?
+
+    @Query("SELECT * FROM user_word_translations WHERE vocabulary_id = :id ORDER BY sort_order, language, text")
+    abstract suspend fun getTranslations(id: String): List<UserWordTranslationEntity>
 
     @Query(
         """
@@ -169,7 +177,11 @@ abstract class ContentDao {
     open suspend fun getVocabularyDetail(id: String): VocabularyDetailRow? {
         val vocabulary = getVocabulary(id) ?: return null
         val source = getSource(vocabulary.sourceId) ?: return null
-        return VocabularyDetailRow(vocabulary, getVocabularyExamples(id), getVocabularyTags(id), source, getLinkedKanji(id))
+        return VocabularyDetailRow(
+            vocabulary, getVocabularyExamples(id), getVocabularyTags(id), source, getLinkedKanji(id),
+            saved = getStudyState(id) == UserWordEntity.SAVED,
+            translations = getTranslations(id),
+        )
     }
 
     @Transaction
@@ -249,7 +261,8 @@ abstract class ContentDao {
         """
         SELECT v.*,
             (m.item_id IS NOT NULL) AS is_marked,
-            p.state AS progress_state
+            p.state AS progress_state,
+            EXISTS (SELECT 1 FROM user_words s WHERE s.vocabulary_id = v.id AND s.study_state = 'SAVED') AS is_saved
         FROM vocabulary v
         JOIN lessons l ON l.id = v.lesson_id
         LEFT JOIN learning_progress p ON p.item_type = 'VOCABULARY' AND p.item_id = v.id
@@ -262,6 +275,7 @@ abstract class ContentDao {
             AND (:pattern IS NULL OR v.search_text LIKE :pattern ESCAPE '\')
             AND (:userWordsOnly = 0 OR (v.lesson_id = 'user-words-l1' AND v.id LIKE 'user-w-%'
                 AND EXISTS (SELECT 1 FROM user_words u WHERE u.vocabulary_id = v.id)))
+            AND (:includeSaved = 1 OR $STUDIED_WORD)
         ORDER BY CASE WHEN v.expression = :query OR v.reading = :query THEN 0 ELSE 1 END,
             l.pack_id, l.number, v.sort_order
         LIMIT :limit
@@ -277,6 +291,8 @@ abstract class ContentDao {
         limit: Int,
         // Literals above match UserWords.LESSON_ID and UserWords.ID_PREFIX.
         userWordsOnly: Boolean = false,
+        /** Also "Dịch nhanh" bookmarks not studied yet (lists of words only, never study flows). */
+        includeSaved: Boolean = false,
     ): Flow<List<VocabularyItemRow>>
 
     @Query(
@@ -330,4 +346,46 @@ abstract class ContentDao {
         query: String?,
         limit: Int,
     ): Flow<List<GrammarItemRow>>
+
+    // --- "Dịch nhanh" dictionary lookups. Candidates only: the caller keeps exact matches. ---
+
+    /** Words written or read [text], or with [text] among several forms (`代わる・替わる`). */
+    @Query(
+        """
+        SELECT * FROM vocabulary
+        WHERE expression = :text OR reading = :text
+            OR (instr(expression, '・') > 0 AND instr(expression, :text) > 0)
+            OR (instr(reading, '・') > 0 AND instr(reading, :text) > 0)
+        ORDER BY id
+        """,
+    )
+    abstract suspend fun vocabularyByJapanese(text: String): List<VocabularyEntity>
+
+    /** Words whose normalized text contains [normalizedQuery] (a prefilter for meaning lookups). */
+    @Query("SELECT * FROM vocabulary WHERE search_text LIKE '%' || :normalizedQuery || '%' ESCAPE '\\' ORDER BY id")
+    abstract suspend fun vocabularyContaining(normalizedQuery: String): List<VocabularyEntity>
+
+    @Query("SELECT * FROM kanji WHERE character = :character ORDER BY id")
+    abstract suspend fun kanjiByCharacter(character: String): List<KanjiEntity>
+
+    /** The kanji's example words (N3.pdf groups and the learner's own), each once. */
+    @Query(
+        """
+        SELECT DISTINCT e.* FROM example_sentences e
+        WHERE e.id IN (SELECT example_id FROM kanji_examples UNION SELECT example_id FROM user_kanji_examples)
+        ORDER BY e.id
+        """,
+    )
+    abstract suspend fun kanjiWords(): List<ExampleSentenceEntity>
+
+    /** Changes whenever content or the learner's words or edits change. */
+    @Query(
+        """
+        SELECT (SELECT IFNULL(group_concat(id || ':' || version, ','), '') FROM (SELECT id, version FROM content_packs ORDER BY id))
+            || '|' || (SELECT COUNT(*) || ':' || IFNULL(MAX(updated_at), 0) FROM user_words)
+            || '|' || (SELECT COUNT(*) || ':' || IFNULL(MAX(updated_at), 0) FROM user_content_edits)
+            || '|' || (SELECT COUNT(*) FROM user_kanji_examples)
+        """,
+    )
+    abstract suspend fun dictionaryVersion(): String
 }

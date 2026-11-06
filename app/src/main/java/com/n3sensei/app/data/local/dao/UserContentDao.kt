@@ -17,12 +17,14 @@ import com.n3sensei.app.data.local.entity.LessonEntity
 import com.n3sensei.app.data.local.entity.UserContentEditEntity
 import com.n3sensei.app.data.local.entity.UserKanjiExampleEntity
 import com.n3sensei.app.data.local.entity.UserWordEntity
+import com.n3sensei.app.data.local.entity.UserWordTranslationEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.data.local.entity.VocabularyExampleCrossRef
 import com.n3sensei.app.data.local.entity.VocabularyKanjiLinkEntity
 import com.n3sensei.app.data.local.withSearchText
 import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.model.ItemType
+import kotlinx.coroutines.flow.Flow
 
 /** A word's owner, for "already in pack X". */
 data class WordOwner(val id: String, val packTitle: String)
@@ -357,7 +359,8 @@ abstract class UserContentDao {
      */
     @Transaction
     open suspend fun updateUserWord(row: VocabularyEntity, example: Pair<String, String>?, now: Long) {
-        updateVocabulary(row.withSearchText())
+        // A bookmark's translations stay searchable after an edit.
+        updateVocabulary(row.withSearchText(translationsOf(row.id)))
         setExample(row.id, example)
         getUserWord(row.id)?.let { upsertUserWord(it.copy(updatedAt = now)) }
     }
@@ -406,9 +409,70 @@ abstract class UserContentDao {
         setExample(id, null)
         deleteVocabulary(id)
         deleteUserWordMeta(id)
+        deleteTranslations(id)
         deleteAllLinks(id)
         deleteProgress(ItemType.VOCABULARY, id)
         deleteMark(ItemType.VOCABULARY, id)
         return true
+    }
+
+    // ---- "Dịch nhanh" bookmarks ------------------------------------------------------------
+
+    @Query("SELECT * FROM user_words WHERE source_language = :language AND source_key = :key")
+    abstract suspend fun bookmark(language: String, key: String): UserWordEntity?
+
+    /** The bookmarked word with this identity, live (null while not saved, or after its deletion). */
+    @Query("SELECT vocabulary_id FROM user_words WHERE source_language = :language AND source_key = :key")
+    abstract fun observeBookmark(language: String, key: String): Flow<String?>
+
+    @Query("SELECT * FROM user_word_translations WHERE vocabulary_id = :id ORDER BY sort_order, language, text")
+    abstract suspend fun translationsOf(id: String): List<UserWordTranslationEntity>
+
+    /** Adds translations; one the word already has (same language and text) is left as it is. */
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    abstract suspend fun insertTranslations(rows: List<UserWordTranslationEntity>)
+
+    @Query("DELETE FROM user_word_translations WHERE vocabulary_id = :id")
+    abstract suspend fun deleteTranslations(id: String)
+
+    @Query("UPDATE vocabulary SET search_text = :searchText WHERE id = :id")
+    abstract suspend fun setSearchText(id: String, searchText: String)
+
+    /** Sets the meaning only where there is none (a bookmark saved before its meaning was known). */
+    @Query("UPDATE vocabulary SET meaning_vi = :meaning WHERE id = :id AND meaning_vi = ''")
+    abstract suspend fun fillMissingMeaning(id: String, meaning: String)
+
+    /**
+     * Saves a bookmark in one transaction: either all of it (word, `user_words` as SAVED, its
+     * translations, example, search text) or nothing. An entry with the same identity
+     * ([bookmark] key) only gets what it lacks: new translations, a meaning or example it has not
+     * got; the learner's own edits and its study state are never overwritten. Returns its id.
+     */
+    @Transaction
+    open suspend fun saveBookmark(
+        row: VocabularyEntity,
+        language: String,
+        key: String,
+        translations: List<UserWordTranslationEntity>,
+        example: Pair<String, String>?,
+        now: Long,
+    ): Pair<String, Boolean> {
+        val existing = bookmark(language, key)
+        val id = existing?.vocabularyId ?: row.id
+        if (existing == null) {
+            ensureUserPack(now)
+            insertVocabulary(row.copy(lessonId = UserWords.LESSON_ID, sourceId = UserWords.SOURCE_ID, sortOrder = maxSortOrder(UserWords.LESSON_ID) + 1))
+            upsertUserWord(UserWordEntity(id, now, now, UserWordEntity.SAVED, language, key))
+            setExample(id, example)
+        } else {
+            if (row.meaningVi.isNotEmpty()) fillMissingMeaning(id, row.meaningVi)
+            if (example != null && examplesOf(id).isEmpty()) setExample(id, example)
+            upsertUserWord(existing.copy(updatedAt = now))
+        }
+        val next = (translationsOf(id).maxOfOrNull { it.sortOrder } ?: -1) + 1
+        insertTranslations(translations.mapIndexed { i, t -> t.copy(vocabularyId = id, sortOrder = next + i, createdAt = now) })
+        val word = getVocabulary(id) ?: error("bookmark $id vanished")
+        setSearchText(id, word.withSearchText(translationsOf(id)).searchText)
+        return id to (existing == null)
     }
 }
