@@ -5,11 +5,14 @@ import com.n3sensei.app.data.local.N3Database
 import com.n3sensei.app.data.local.entity.ItemMarkEntity
 import com.n3sensei.app.data.local.entity.LearningProgressEntity
 import com.n3sensei.app.domain.model.ItemQuery
+import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.domain.model.ProgressState
+import com.n3sensei.app.domain.practice.PracticeItem
 import com.n3sensei.app.domain.repository.ContentRepository
 import com.n3sensei.app.testing.SeedData
+import com.n3sensei.app.testing.countRows
 import com.n3sensei.app.testing.inMemoryDatabase
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -233,5 +236,22 @@ class OfflineContentRepositoryTest {
         assertEquals(SeedData.PACK_ID, pack.id)
         assertEquals(2, pack.lessonCount)
         assertTrue(pack.isSeed)
+    }
+
+    @Test
+    fun flashcards_carryExactlyTheExamplesLinkedToTheirOwnId() = runTest {
+        suspend fun word(id: String) = repository.getPracticeItem(ItemRef(ItemType.VOCABULARY, id)) as PracticeItem.VocabularyItem
+        val keiken = word(SeedData.V_KEIKEN)
+        assertEquals(listOf("seed-ex01"), keiken.examples.map { it.id })
+        assertEquals("{日本|にほん}で{働|はたら}いた{経験|けいけん}があります。", keiken.examples.single().furigana)
+        assertEquals("Tôi có kinh nghiệm làm việc ở Nhật.", keiken.examples.single().translationVi)
+        // ex02 is shared with a kanji: still only once, on its own word.
+        assertEquals(listOf("seed-ex02"), word(SeedData.V_FUERU).examples.map { it.id })
+        // A word without examples gets none (nothing borrowed from another item).
+        assertTrue(word(SeedData.V_SHIKKARI).examples.isEmpty())
+        val grammar = repository.getPracticeItem(ItemRef(ItemType.GRAMMAR, SeedData.G_TABAKARI)) as PracticeItem.GrammarItem
+        assertEquals(listOf("seed-ex04"), grammar.examples.map { it.id })
+        // Reading the cards changed nothing in the content.
+        assertEquals(4, db.countRows("example_sentences"))
     }
 }

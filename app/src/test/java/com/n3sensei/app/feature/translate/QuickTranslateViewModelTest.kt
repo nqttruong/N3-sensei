@@ -279,8 +279,8 @@ class QuickTranslateViewModelTest {
         assertEquals(Utterance("経験", Language.JAPANESE), state.sourceUtterance)
         val english = state.utteranceFor(Language.ENGLISH)!!
         assertEquals(Utterance("experience", Language.ENGLISH), english)
-        // The Vietnamese meaning has no speaker.
-        assertNull(state.utteranceFor(Language.VIETNAMESE))
+        // The popup's Vietnamese row is read with the Vietnamese voice.
+        assertEquals(Utterance("kinh nghiệm", Language.VIETNAMESE), state.utteranceFor(Language.VIETNAMESE))
         vm.speak(english)
         assertEquals(listOf(english), speaker.spoken)
         // Tapping the same speaker again stops it.

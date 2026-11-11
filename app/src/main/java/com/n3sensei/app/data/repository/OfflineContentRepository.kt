@@ -82,9 +82,14 @@ class OfflineContentRepository(
         contentDao.observeGrammar(lessonId).map { rows -> rows.map { it.toDomain() } }
 
     override suspend fun getPracticeItem(ref: ItemRef): PracticeItem? = when (ref.type) {
-        ItemType.VOCABULARY -> contentDao.getVocabulary(ref.id)?.let { PracticeItem.VocabularyItem(it.toDomain()) }
+        // Examples linked to this record's id only, as on its detail screen.
+        ItemType.VOCABULARY -> contentDao.getVocabulary(ref.id)?.let { v ->
+            PracticeItem.VocabularyItem(v.toDomain(), contentDao.getVocabularyExamples(v.id).map { it.toDomain() })
+        }
         ItemType.KANJI -> contentDao.getKanji(ref.id)?.let { PracticeItem.KanjiItem(it.toDomain(), getKanjiWords(it.id)) }
-        ItemType.GRAMMAR -> contentDao.getGrammar(ref.id)?.let { PracticeItem.GrammarItem(it.toDomain()) }
+        ItemType.GRAMMAR -> contentDao.getGrammar(ref.id)?.let { g ->
+            PracticeItem.GrammarItem(g.toDomain(), contentDao.getGrammarExamples(g.id).map { it.toDomain() })
+        }
     }
 
     /** The pack's example words, then the learner's own examples, then the learner's linked words. */

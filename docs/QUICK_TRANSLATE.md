@@ -1,8 +1,8 @@
 # Dịch nhanh khi bôi đen
 
-Bôi đen chữ trong ứng dụng khác → **Dịch nhanh** → hộp thoại N3 Sensei. Mã nguồn:
-- `app/translate/`: Activity, bật/tắt mục trong menu.
-- `feature/translate/`: giao diện, ViewModel.
+Bôi đen chữ trong ứng dụng khác → **Dịch nhanh** → một popup nhỏ nổi trên ứng dụng đó, kéo được, ứng dụng phía sau vẫn dùng bình thường. Mã nguồn:
+- `app/translate/`: Activity lối vào (xin quyền), cửa sổ overlay (`QuickTranslateOverlay`), kéo thả và giới hạn vị trí (`OverlayGeometry`), bật/tắt mục trong menu.
+- `feature/translate/`: giao diện popup, màn xin quyền, ViewModel.
 - `domain/translate/`: văn bản, nhận diện ngôn ngữ, mô hình dịch, bộ điều phối.
 - `data/translate/`: từ điển nội dung, ML Kit.
 
@@ -17,14 +17,38 @@ Bôi đen chữ trong ứng dụng khác → **Dịch nhanh** → hộp thoại 
 | 5 | Phát âm bằng Android TextToSpeech (một loa mỗi ngôn ngữ, không đọc giọng sai) | Xong |
 | 6 | Một bookmark lưu chung vào "Từ của tôi" ở trạng thái "Đã lưu", ngoài mọi luồng học tự động (schema v14) | Xong; xem [USER_CONTENT.md](USER_CONTENT.md) |
 | 7 | Kiểm thử E2E trên emulator (Chrome), hồi quy, nâng cấp APK 13 → 14, đo hiệu năng; sửa các lỗi tìm thấy | Xong; xem "Kiểm thử PR7" |
+| 8 | Thay hộp thoại bằng popup nổi kéo được (`TYPE_APPLICATION_OVERLAY`), ứng dụng phía sau vẫn tương tác được | Xong; xem "Popup nổi" |
 
 ## Cách dùng
 
 1. Trong ứng dụng khác (Chrome, ghi chú…), bôi đen chữ (tối đa 200 ký tự) → menu chọn chữ → **Dịch nhanh**. Trong Chrome, mục này nằm trong nút **⋮** của thanh chọn chữ (có thể phải cuộn menu).
-2. Hộp thoại hiện văn bản, ngôn ngữ nhận diện được (đổi được: Việt / Anh / Nhật) và chế độ dịch (Anh / Nhật / Cả hai). Lựa chọn trong hộp thoại chỉ áp dụng cho lần này; Cài đặt không đổi.
-3. Kết quả ghi rõ nguồn: **Từ điển N3 Sensei** hoặc **Dịch máy trên thiết bị**. Từ có trong nội dung app có thêm cách đọc, "Ví dụ và cách dùng" (mở ra khi bấm).
-4. Loa cạnh văn bản và cạnh bản dịch Anh/Nhật: đọc bằng giọng đúng ngôn ngữ.
-5. Nút bookmark: lưu vào "Từ của tôi". Nút X, Back hoặc chạm ra ngoài: đóng, trở về ứng dụng cũ. Văn bản ở ứng dụng cũ không bị thay đổi (kể cả ô nhập liệu).
+2. Lần đầu: N3 Sensei giải thích và mở màn hình hệ thống để bật **Hiển thị trên ứng dụng khác**. Quay lại mà chưa bật: báo chưa có quyền; "Để sau" đóng lại, không hiện gì.
+3. Popup nhỏ hiện ở góc phải phía trên (hoặc chỗ người dùng kéo tới lần trước):
+   - Đầu popup: biểu tượng dịch, chữ đã chọn, **một** bookmark chung, nút X.
+   - Thân: một hàng cho mỗi ngôn ngữ đích theo Cài đặt (`VI và 🔊`, `JA と 🔊`). Chế độ một ngôn ngữ: một hàng.
+   - Không có: chọn ngôn ngữ, chọn chế độ, nguồn dịch, ví dụ, cách dùng, cách đọc, IPA, romaji.
+4. Kéo popup bằng biểu tượng dịch hoặc chữ ở đầu popup. Bookmark, loa và X không phải vùng kéo.
+5. Trong lúc popup mở: cuộn, chạm, bấm link, bôi đen tiếp trong ứng dụng phía sau như bình thường. Chạm ra ngoài, cuộn, đổi ứng dụng: popup **không** đóng. Chỉ nút X đóng popup.
+6. Bôi đen và chọn Dịch nhanh lần nữa: chính popup đang mở cập nhật từ mới (không có popup thứ hai), giữ nguyên vị trí. Văn bản ở ứng dụng nguồn không bị thay đổi.
+
+## Popup nổi
+
+- **Cửa sổ**: một cửa sổ `TYPE_APPLICATION_OVERLAY`, kích thước `WRAP_CONTENT` (220–280 dp ngang, cao theo nội dung), do Application sở hữu (không phải Activity). Cờ:
+  - `FLAG_NOT_FOCUSABLE`: ứng dụng phía sau giữ focus và bàn phím; popup không bao giờ mở bàn phím.
+  - `FLAG_NOT_TOUCH_MODAL`: chạm ngoài khung popup đi thẳng tới ứng dụng phía sau.
+  - `FLAG_LAYOUT_IN_SCREEN`: toạ độ x/y theo màn hình.
+  - Không dùng `FLAG_DIM_BEHIND`, `FLAG_WATCH_OUTSIDE_TOUCH`, `FLAG_NOT_TOUCHABLE`; không có lớp trong suốt toàn màn hình.
+- **Lối vào**: `QuickTranslateActivity` chỉ chuyển chữ cho popup rồi `finish()` ngay; khi chưa có quyền thì hiện màn giải thích và kiểm tra lại quyền thật ở `onResume`.
+- **Vòng đời**: tối đa một popup. Đóng (X) thì dừng đọc, gỡ cửa sổ, giải phóng bộ đọc TTS và bộ dịch (xoá `ViewModelStore`). Quyền bị thu hồi khi đang mở: popup tự đóng (theo dõi `AppOpsManager`). Không dùng Service: tiến trình có cửa sổ overlay đang hiện được hệ thống giữ ở mức "perceptible", và không có loại foreground service nào hợp với một popup dịch.
+- **Kéo thả**: toạ độ thô của ngón tay (`rawX/rawY`), qua `touchSlop` mới bắt đầu kéo (chạm nhẹ không làm dịch chuyển), rồi bám theo ngón tay; `WindowManager.updateViewLayout` mỗi lần di chuyển, không recompose nội dung dịch.
+- **Giới hạn vị trí**: popup luôn nằm trọn trong vùng an toàn (trừ status bar, thanh điều hướng, display cutout; Android 11+ dùng `WindowMetrics`, Android 8–10 dùng kích thước thanh hệ thống). Vị trí được nhớ theo tỷ lệ khoảng trống, nên khi xoay màn hình hay đổi kích thước thì giữ đúng vị trí tương đối. Vị trí chỉ nhớ trong lúc tiến trình còn sống.
+- **Giới hạn Android**:
+  - Hệ thống có thể dừng tiến trình (thiếu bộ nhớ nghiêm trọng, người dùng buộc dừng): popup mất theo; lần sau mở lại ở vị trí mặc định.
+  - Thu hồi quyền: hệ thống ẩn cửa sổ ngay, app đóng popup.
+  - Ứng dụng nguồn có thể bỏ vùng bôi đen sau khi chọn Dịch nhanh (do ứng dụng đó quyết định).
+  - Back không đóng popup (cửa sổ không nhận focus); đóng bằng X.
+  - Android 11+ mở danh sách "Hiển thị trên ứng dụng khác" thay vì thẳng trang của N3 Sensei.
+  - Một ứng dụng gọi Dịch nhanh bằng `FLAG_ACTIVITY_NEW_TASK` hai lần cách nhau vài mili-giây có thể bị hệ thống gộp lần thứ hai (đưa task cũ lên thay vì giao văn bản mới). Chrome và các app gọi bằng `startActivityForResult` không gặp.
 
 ## Cài đặt (Cài đặt → Dịch nhanh)
 
@@ -34,15 +58,16 @@ Bôi đen chữ trong ứng dụng khác → **Dịch nhanh** → hộp thoại 
 
 ## Gói ngôn ngữ (dịch ngoại tuyến)
 
-- Lần đầu cần dịch máy, hộp thoại báo cần tải gói và dung lượng (Việt khoảng 36 MB, Nhật khoảng 48 MB). **Chỉ tải khi người dùng bấm "Tải gói ngôn ngữ"**.
-- Mọi gói cần cho lần dịch đó được bắt đầu tải **cùng lúc**; đóng hộp thoại giữa chừng thì việc tải vẫn tiếp tục và gói có sẵn ở lần sau.
-- Mất mạng khi chưa có gói: báo "không có mạng" và có nút **Thử lại** (giữ quyền tải người dùng đã cho).
+- Lần đầu cần dịch máy, popup báo ngắn gói cần tải và dung lượng ("Cần gói VI, JA (~84 MB)"; Việt khoảng 36 MB, Nhật khoảng 48 MB). **Chỉ tải khi người dùng bấm "Tải"**; mở popup lần sau không tải lại.
+- Mọi gói cần cho lần dịch đó được bắt đầu tải **cùng lúc**; đóng popup giữa chừng thì việc tải vẫn tiếp tục và gói có sẵn ở lần sau.
+- Mất mạng khi chưa có gói: báo "Không có mạng." và có nút **Thử lại** (giữ quyền tải người dùng đã cho).
 - Có gói rồi thì dịch hoàn toàn không cần mạng. Gói nằm trong dữ liệu riêng của app (`no_backup/`), mất khi gỡ app hoặc xoá dữ liệu.
 
 ## Phát âm
 
-- Dùng bộ đọc văn bản (TTS) của máy. Thiếu giọng của một ngôn ngữ: báo "Thiết bị chưa có giọng đọc…" kèm nút **Cài giọng đọc** (mở màn hình tải giọng của bộ đọc). Không bao giờ đọc bằng giọng ngôn ngữ khác.
-- Một số giọng của Google TTS là giọng **qua mạng** (`…-server`): bộ đọc vẫn báo "có giọng", nhưng khi mất mạng có thể đọc lỗi. Khi đó hộp thoại báo "Không đọc được bằng giọng …; giọng này có thể cần mạng hoặc chưa được tải về máy" và gợi ý cài giọng. Trên emulator (Google TTS) quan sát được: tiếng Anh dùng giọng trên máy; tiếng Việt và tiếng Nhật dùng giọng qua mạng, rồi bộ đọc tự tải giọng tiếng Nhật trên máy sau vài lần dùng.
+- Dùng bộ đọc văn bản (TTS) của máy; mỗi hàng một loa: Việt, Anh, Nhật (tiếng Nhật đọc theo kana của từ điển nếu có, không bao giờ đọc romaji). Mỗi lần đọc thay lần trước, không chồng tiếng. Đóng popup thì dừng đọc.
+- Thiếu giọng của một ngôn ngữ: loa của hàng đó bị mờ (không đọc bằng giọng ngôn ngữ khác).
+- Một số giọng của Google TTS là giọng **qua mạng** (`…-server`): bộ đọc vẫn báo "có giọng", nhưng khi mất mạng có thể đọc lỗi; popup báo ngắn "Không đọc được giọng …". Trên emulator (Google TTS) quan sát được: tiếng Anh dùng giọng trên máy; tiếng Việt và tiếng Nhật dùng giọng qua mạng, rồi bộ đọc tự tải giọng tiếng Nhật trên máy sau vài lần dùng.
 
 ## Lưu vào "Từ của tôi"
 
@@ -56,6 +81,7 @@ Bôi đen chữ trong ứng dụng khác → **Dịch nhanh** → hộp thoại 
 - Chỉ có trong ứng dụng có menu chọn chữ chuẩn của Android (Chrome, phần lớn ô nhập liệu). Ứng dụng tự vẽ menu riêng, trò chơi, PDF dạng ảnh: không có.
 - Tối đa 200 ký tự (đếm theo code point): dài hơn thì báo độ dài, không cắt.
 - Văn bản chỉ được đọc; N3 Sensei không trả văn bản thay thế về ứng dụng gốc.
+- `ACTION_PROCESS_TEXT` không cho biết vị trí chữ trên màn hình, nên popup không thể đặt ngay cạnh chữ đã chọn.
 
 ## Nguồn dữ liệu
 

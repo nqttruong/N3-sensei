@@ -31,8 +31,9 @@ enum class SubmitOutcome {
 }
 
 /**
- * Review counts. Every item counts once whatever its type; [dueByType] breaks the total down.
- * [overdue] is the part of the due items that fell due before today's local midnight.
+ * Review counts. Every item counts once whatever its type; the `…ByType` maps break the totals
+ * down (a missing type counts 0). [overdue] is the part of the due items that fell due before
+ * today's local midnight.
  */
 data class ReviewOverview(
     val dueByType: Map<ItemType, Int>,
@@ -40,6 +41,13 @@ data class ReviewOverview(
     val today: TodayCounts,
     /** Items never answered, before applying the daily new-item limit. */
     val newAvailable: Int,
+    val overdueByType: Map<ItemType, Int> = emptyMap(),
+    /** Distinct items answered today (local day), new or review. */
+    val doneTodayByType: Map<ItemType, Int> = emptyMap(),
+    val newByType: Map<ItemType, Int> = emptyMap(),
+    /** Items whose last answer was "Quên" (due or not yet). */
+    val forgottenByType: Map<ItemType, Int> = emptyMap(),
 ) {
     val due: Int get() = dueByType.values.sum()
+    val forgotten: Int get() = forgottenByType.values.sum()
 }

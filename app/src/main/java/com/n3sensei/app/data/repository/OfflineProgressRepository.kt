@@ -2,18 +2,20 @@ package com.n3sensei.app.data.repository
 
 import com.n3sensei.app.data.local.dao.ProgressDao
 import com.n3sensei.app.data.local.entity.ItemMarkEntity
+import com.n3sensei.app.data.local.model.TypeCountRow
 import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ItemUserState
 import com.n3sensei.app.domain.model.LearningProgress
 import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.domain.model.ProgressSummary
-import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.model.ReviewOverview
+import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.model.ReviewRecord
 import com.n3sensei.app.domain.model.SubmitOutcome
+import com.n3sensei.app.domain.repository.ProgressRepository
 import com.n3sensei.app.domain.srs.ScheduledReview
 import com.n3sensei.app.domain.srs.TodayCounts
-import com.n3sensei.app.domain.repository.ProgressRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
@@ -52,19 +54,41 @@ class OfflineProgressRepository(
     override suspend fun getNewItems(limit: Int): List<ItemRef> =
         progressDao.getNewRefs(limit.coerceAtLeast(0)).map { ItemRef(it.itemType, it.itemId) }
 
+    override suspend fun getDueItemsOfType(now: Instant, type: ItemType, limit: Int): List<ItemRef> =
+        progressDao.getDueRefsOfType(now.toEpochMilli(), type, limit.coerceAtLeast(0)).map { ItemRef(it.itemType, it.itemId) }
+
+    override suspend fun getNewItemsOfType(type: ItemType, limit: Int): List<ItemRef> =
+        progressDao.getNewRefsOfType(type, limit.coerceAtLeast(0)).map { ItemRef(it.itemType, it.itemId) }
+
+    override suspend fun getForgottenItemsOfType(type: ItemType, limit: Int): List<ItemRef> =
+        progressDao.getForgottenRefsOfType(type, limit.coerceAtLeast(0)).map { ItemRef(it.itemType, it.itemId) }
+
     override fun observeReviewOverview(now: Instant, dayStart: Instant, dayEnd: Instant): Flow<ReviewOverview> = combine(
-        progressDao.observeDueByType(now.toEpochMilli()),
-        progressDao.observeOverdueCount(dayStart.toEpochMilli()),
-        progressDao.observeTodayCounts(dayStart.toEpochMilli(), dayEnd.toEpochMilli()),
-        progressDao.observeNewAvailable(),
-    ) { due, overdue, today, newAvailable ->
+        combine(
+            progressDao.observeDueByType(now.toEpochMilli()),
+            progressDao.observeOverdueByType(dayStart.toEpochMilli()),
+            progressDao.observeTodayCounts(dayStart.toEpochMilli(), dayEnd.toEpochMilli()),
+            progressDao.observeNewByType(),
+        ) { due, overdue, today, new -> Triple(due to overdue, today, new) },
+        progressDao.observeDoneByType(dayStart.toEpochMilli(), dayEnd.toEpochMilli()),
+        progressDao.observeForgottenByType(),
+    ) { (dueOverdue, today, new), done, forgotten ->
+        val (due, overdue) = dueOverdue
+        val overdueByType = overdue.byType()
+        val newByType = new.byType()
         ReviewOverview(
-            dueByType = due.associate { it.itemType to it.count },
-            overdue = overdue,
+            dueByType = due.byType(),
+            overdue = overdueByType.values.sum(),
             today = TodayCounts(today.newAnswered, today.reviewsAnswered),
-            newAvailable = newAvailable,
+            newAvailable = newByType.values.sum(),
+            overdueByType = overdueByType,
+            doneTodayByType = done.byType(),
+            newByType = newByType,
+            forgottenByType = forgotten.byType(),
         )
     }
+
+    private fun List<TypeCountRow>.byType(): Map<ItemType, Int> = filter { it.count > 0 }.associate { it.itemType to it.count }
 
     override suspend fun setMarked(item: ItemRef, marked: Boolean) {
         if (marked) {

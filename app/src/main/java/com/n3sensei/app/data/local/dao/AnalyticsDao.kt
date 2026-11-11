@@ -46,6 +46,26 @@ data class ActivityRow(
     val easy: Int,
 )
 
+/** [ActivityRow] for one content type. */
+data class TypeActivityRow(
+    @ColumnInfo(name = "item_type") val itemType: ItemType,
+    val answers: Int,
+    @ColumnInfo(name = "distinct_items") val distinctItems: Int,
+    @ColumnInfo(name = "distinct_reviewed") val distinctReviewed: Int,
+    val again: Int,
+    val hard: Int,
+    val good: Int,
+    val easy: Int,
+)
+
+/** [BucketRow] for one content type. */
+data class TypeBucketRow(
+    @ColumnInfo(name = "item_type") val itemType: ItemType,
+    @ColumnInfo(name = "bucket_start") val bucketStart: Long,
+    val answers: Int,
+    @ColumnInfo(name = "new_items") val newItems: Int,
+)
+
 data class DueRow(val due: Int, val overdue: Int)
 
 data class BucketRow(
@@ -109,6 +129,34 @@ interface AnalyticsDao {
         """,
     )
     fun observeActivity(from: Long, to: Long): Flow<ActivityRow>
+
+    /** [observeActivity] for each content type (types without answers are left out). */
+    @Query(
+        """
+        SELECT r.item_type, COUNT(*) AS answers,
+            COUNT(DISTINCT r.item_id) AS distinct_items,
+            COUNT(DISTINCT CASE WHEN r.was_new = 0 THEN r.item_id END) AS distinct_reviewed,
+            COALESCE(SUM(CASE WHEN r.was_new = 0 AND r.rating = 'AGAIN' THEN 1 ELSE 0 END), 0) AS again,
+            COALESCE(SUM(CASE WHEN r.was_new = 0 AND r.rating = 'HARD' THEN 1 ELSE 0 END), 0) AS hard,
+            COALESCE(SUM(CASE WHEN r.was_new = 0 AND r.rating = 'GOOD' THEN 1 ELSE 0 END), 0) AS good,
+            COALESCE(SUM(CASE WHEN r.was_new = 0 AND r.rating = 'EASY' THEN 1 ELSE 0 END), 0) AS easy
+        FROM review_records r
+        WHERE $IN_PERIOD AND $VALID_RECORD
+        GROUP BY r.item_type
+        """,
+    )
+    fun observeActivityByType(from: Long, to: Long): Flow<List<TypeActivityRow>>
+
+    /** [observeBuckets] for each content type. */
+    @Query(
+        """
+        SELECT r.item_type, $BUCKET AS bucket_start, COUNT(*) AS answers, COALESCE(SUM(r.was_new), 0) AS new_items
+        FROM review_records r
+        WHERE r.reviewed_at >= :from AND r.reviewed_at < :to AND $VALID_RECORD
+        GROUP BY r.item_type, bucket_start ORDER BY bucket_start
+        """,
+    )
+    fun observeBucketsByType(from: Long, to: Long): Flow<List<TypeBucketRow>>
 
     /** Items due now, and the part already due before [dayStart] (local midnight). */
     @Query(

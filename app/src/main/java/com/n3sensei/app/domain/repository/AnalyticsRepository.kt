@@ -5,6 +5,7 @@ import com.n3sensei.app.domain.analytics.DueCounts
 import com.n3sensei.app.domain.analytics.PriorityItem
 import com.n3sensei.app.domain.analytics.StatusByType
 import com.n3sensei.app.domain.analytics.TimeBucket
+import com.n3sensei.app.domain.analytics.TypeActivity
 import com.n3sensei.app.domain.analytics.TroubleItem
 import com.n3sensei.app.domain.forecast.ScheduledItem
 import com.n3sensei.app.domain.model.ItemType
@@ -33,6 +34,12 @@ interface AnalyticsRepository {
 
     /** Answers per content type in [from, to). */
     fun observeAnswersByType(from: Instant?, to: Instant): Flow<Map<ItemType, Int>>
+
+    /** Answers, items and review ratings of each type in [from, to) (every type present, zero when none). */
+    fun observeActivityByType(from: Instant?, to: Instant): Flow<Map<ItemType, TypeActivity>>
+
+    /** [observeTimeBuckets] split by content type (types without answers are left out). */
+    fun observeTimeBucketsByType(from: Instant, to: Instant): Flow<Map<ItemType, List<TimeBucket>>>
 
     fun observePriorityItems(now: Instant, limit: Int): Flow<List<PriorityItem>>
 

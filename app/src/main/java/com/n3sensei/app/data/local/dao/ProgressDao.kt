@@ -25,6 +25,12 @@ private const val CONTENT_EXISTS = """
     OR (p.item_type = 'GRAMMAR' AND EXISTS (SELECT 1 FROM grammar g WHERE g.id = p.item_id)))
 """
 
+// The item's most recent answer (latest time, then latest row) was "Quên".
+private const val LAST_ANSWER_FORGOTTEN = """
+    (SELECT r.rating FROM review_records r WHERE r.item_type = p.item_type AND r.item_id = p.item_id
+        ORDER BY r.reviewed_at DESC, r.id DESC LIMIT 1) = 'AGAIN'
+"""
+
 @Dao
 abstract class ProgressDao {
 
@@ -133,8 +139,98 @@ abstract class ProgressDao {
     )
     abstract fun observeDueByType(now: Long): Flow<List<TypeCountRow>>
 
-    @Query("SELECT COUNT(*) FROM learning_progress p WHERE p.due_at IS NOT NULL AND p.due_at < :dayStart AND $CONTENT_EXISTS")
-    abstract fun observeOverdueCount(dayStart: Long): Flow<Int>
+    /** [getDueRefs] for one type: its own schedule, oldest due first. */
+    @Query(
+        """
+        SELECT p.item_type, p.item_id FROM learning_progress p
+        WHERE p.item_type = :type AND p.due_at IS NOT NULL AND p.due_at <= :now AND $CONTENT_EXISTS
+        ORDER BY p.due_at, p.item_id
+        LIMIT :limit
+        """,
+    )
+    abstract suspend fun getDueRefsOfType(now: Long, type: ItemType, limit: Int): List<ItemRefRow>
+
+    /** [getNewRefs] for one type, in course order. */
+    @Query(
+        """
+        SELECT item_type, item_id FROM (
+            SELECT 'VOCABULARY' AS item_type, v.id AS item_id, l.pack_id AS pack, l.number AS lesson, v.sort_order AS pos
+            FROM vocabulary v JOIN lessons l ON l.id = v.lesson_id
+            WHERE NOT EXISTS (SELECT 1 FROM learning_progress p WHERE p.item_type = 'VOCABULARY' AND p.item_id = v.id)
+                AND $STUDIED_WORD
+            UNION ALL
+            SELECT 'KANJI', k.id, l.pack_id, l.number, k.sort_order
+            FROM kanji k JOIN lessons l ON l.id = k.lesson_id
+            WHERE NOT EXISTS (SELECT 1 FROM learning_progress p WHERE p.item_type = 'KANJI' AND p.item_id = k.id)
+            UNION ALL
+            SELECT 'GRAMMAR', g.id, l.pack_id, l.number, g.sort_order
+            FROM grammar g JOIN lessons l ON l.id = g.lesson_id
+            WHERE NOT EXISTS (SELECT 1 FROM learning_progress p WHERE p.item_type = 'GRAMMAR' AND p.item_id = g.id)
+        )
+        WHERE item_type = :type
+        ORDER BY pack, lesson, pos
+        LIMIT :limit
+        """,
+    )
+    abstract suspend fun getNewRefsOfType(type: ItemType, limit: Int): List<ItemRefRow>
+
+    /**
+     * Items of [type] whose last answer was "Quên" (AGAIN), due or not yet; those due first,
+     * the earliest due first.
+     */
+    @Query(
+        """
+        SELECT p.item_type, p.item_id FROM learning_progress p
+        WHERE p.item_type = :type AND $CONTENT_EXISTS AND $LAST_ANSWER_FORGOTTEN
+        ORDER BY p.due_at IS NULL, p.due_at, p.item_id
+        LIMIT :limit
+        """,
+    )
+    abstract suspend fun getForgottenRefsOfType(type: ItemType, limit: Int): List<ItemRefRow>
+
+    @Query(
+        """
+        SELECT p.item_type, COUNT(*) AS count FROM learning_progress p
+        WHERE $CONTENT_EXISTS AND $LAST_ANSWER_FORGOTTEN
+        GROUP BY p.item_type
+        """,
+    )
+    abstract fun observeForgottenByType(): Flow<List<TypeCountRow>>
+
+    @Query(
+        """
+        SELECT p.item_type, COUNT(*) AS count FROM learning_progress p
+        WHERE p.due_at IS NOT NULL AND p.due_at < :dayStart AND $CONTENT_EXISTS
+        GROUP BY p.item_type
+        """,
+    )
+    abstract fun observeOverdueByType(dayStart: Long): Flow<List<TypeCountRow>>
+
+    /** Distinct items of each type answered in [dayStart, dayEnd) (new or review). */
+    @Query(
+        """
+        SELECT r.item_type, COUNT(DISTINCT r.item_id) AS count FROM review_records r
+        WHERE r.reviewed_at >= :dayStart AND r.reviewed_at < :dayEnd
+        GROUP BY r.item_type
+        """,
+    )
+    abstract fun observeDoneByType(dayStart: Long, dayEnd: Long): Flow<List<TypeCountRow>>
+
+    /** [observeNewAvailable] broken down by type. */
+    @Query(
+        """
+        SELECT 'VOCABULARY' AS item_type, COUNT(*) AS count FROM vocabulary v WHERE NOT EXISTS
+            (SELECT 1 FROM learning_progress p WHERE p.item_type = 'VOCABULARY' AND p.item_id = v.id) AND $STUDIED_WORD
+        UNION ALL
+        SELECT 'KANJI', COUNT(*) FROM kanji k WHERE NOT EXISTS
+            (SELECT 1 FROM learning_progress p WHERE p.item_type = 'KANJI' AND p.item_id = k.id)
+        UNION ALL
+        SELECT 'GRAMMAR', COUNT(*) FROM grammar g WHERE NOT EXISTS
+            (SELECT 1 FROM learning_progress p WHERE p.item_type = 'GRAMMAR' AND p.item_id = g.id)
+        """,
+    )
+    abstract fun observeNewByType(): Flow<List<TypeCountRow>>
+
 
     @Query(
         """
@@ -146,18 +242,6 @@ abstract class ProgressDao {
     )
     abstract fun observeTodayCounts(dayStart: Long, dayEnd: Long): Flow<TodayCountsRow>
 
-    @Query(
-        """
-        SELECT
-            (SELECT COUNT(*) FROM vocabulary v WHERE NOT EXISTS
-                (SELECT 1 FROM learning_progress p WHERE p.item_type = 'VOCABULARY' AND p.item_id = v.id) AND $STUDIED_WORD)
-            + (SELECT COUNT(*) FROM kanji k WHERE NOT EXISTS
-                (SELECT 1 FROM learning_progress p WHERE p.item_type = 'KANJI' AND p.item_id = k.id))
-            + (SELECT COUNT(*) FROM grammar g WHERE NOT EXISTS
-                (SELECT 1 FROM learning_progress p WHERE p.item_type = 'GRAMMAR' AND p.item_id = g.id))
-        """,
-    )
-    abstract fun observeNewAvailable(): Flow<Int>
 
     @Query(
         """

@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.n3sensei.app.core.ui.state.UiState
 import com.n3sensei.app.domain.forecast.ReviewSessionRepository
 import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningProgress
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.practice.PracticeItem
@@ -13,7 +14,9 @@ import com.n3sensei.app.domain.repository.ContentRepository
 import com.n3sensei.app.domain.repository.ProgressRepository
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
 import com.n3sensei.app.domain.srs.ReviewInterval
+import com.n3sensei.app.domain.srs.ReviewMode
 import com.n3sensei.app.domain.srs.ReviewQueuePlanner
+import com.n3sensei.app.domain.srs.ReviewScope
 import com.n3sensei.app.domain.srs.ReviewSettings
 import com.n3sensei.app.domain.srs.ReviewTime
 import com.n3sensei.app.domain.srs.SpacedRepetitionScheduler
@@ -55,6 +58,9 @@ sealed interface CardReason {
      */
     data class Due(val dueAt: Instant, val step: Int, val steps: Int, val lapses: Int, val overdue: Boolean) : CardReason
 
+    /** Asked again because its last answer was "Quên" (it may not be due yet). */
+    data class Forgotten(val lapses: Int) : CardReason
+
     companion object {
         fun of(progress: LearningProgress?, steps: Int, startOfToday: Instant): CardReason {
             val due = progress?.dueAt ?: return New
@@ -79,8 +85,10 @@ data class ReviewSessionUiState(
 }
 
 /**
- * Scheduled review session. The queue is built once at the start (due items, then new items,
- * within today's limits); every answer is saved immediately through [SubmitReviewUseCase].
+ * Scheduled review session over [scope]: one type or all three, due and new items, due only, or
+ * the items last forgotten. The queue is built once at the start, within today's limits; a mixed
+ * queue takes the types in turn ([ReviewQueuePlanner.interleave]). Every answer is saved
+ * immediately through [SubmitReviewUseCase], on the item's own schedule (type and id).
  */
 class ReviewSessionViewModel(
     private val contentRepository: ContentRepository,
@@ -90,6 +98,7 @@ class ReviewSessionViewModel(
     private val sessions: ReviewSessionRepository,
     private val clock: Clock,
     private val newRequestId: () -> String = { UUID.randomUUID().toString() },
+    val scope: ReviewScope = ReviewScope.ALL,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow<UiState<ReviewSessionUiState>>(UiState.Loading)
@@ -125,9 +134,17 @@ class ReviewSessionViewModel(
             .observeReviewOverview(now, ReviewTime.startOfDay(now, zone), ReviewTime.startOfNextDay(now, zone))
             .first()
         val limits = settings.limits
-        val due = progressRepository.getDueItems(now, ReviewQueuePlanner.remainingReviews(limits, overview.today))
-        val newItems = progressRepository.getNewItems(ReviewQueuePlanner.remainingNew(limits, overview.today))
-        val queue = ReviewQueuePlanner.plan(due, newItems, limits, overview.today)
+        val reviews = ReviewQueuePlanner.remainingReviews(limits, overview.today)
+        val news = ReviewQueuePlanner.remainingNew(limits, overview.today)
+        val types = ItemType.entries.filter(scope::includes)
+        suspend fun inTurns(limit: Int, fetch: suspend (ItemType) -> List<ItemRef>): List<ItemRef> =
+            if (limit == 0) emptyList() else ReviewQueuePlanner.interleave(types.associateWith { fetch(it) })
+        val asked = when (scope.mode) {
+            ReviewMode.FORGOTTEN -> inTurns(reviews) { progressRepository.getForgottenItemsOfType(it, reviews) }
+            else -> inTurns(reviews) { progressRepository.getDueItemsOfType(now, it, reviews) }
+        }
+        val newItems = if (scope.mode == ReviewMode.SCHEDULED) inTurns(news) { progressRepository.getNewItemsOfType(it, news) } else emptyList()
+        val queue = ReviewQueuePlanner.plan(asked, newItems, limits, overview.today)
 
         val scheduler = SpacedRepetitionScheduler(settings.ladder)
         var missing = 0
@@ -137,7 +154,11 @@ class ReviewSessionViewModel(
             SessionCard(
                 ref, item, progress, newRequestId(),
                 hints = ReviewRating.entries.associateWith { scheduler.preview(progress, it) },
-                reason = CardReason.of(progress, settings.ladder.size, ReviewTime.startOfDay(now, zone)),
+                reason = if (scope.mode == ReviewMode.FORGOTTEN) {
+                    CardReason.Forgotten(progress?.lapseCount ?: 0)
+                } else {
+                    CardReason.of(progress, settings.ladder.size, ReviewTime.startOfDay(now, zone))
+                },
             )
         }
         if (cards.isEmpty()) return UiState.Empty

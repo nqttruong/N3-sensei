@@ -6,6 +6,7 @@ import com.n3sensei.app.data.local.entity.LearningProgressEntity
 import com.n3sensei.app.domain.analytics.LearningAnalytics
 import com.n3sensei.app.domain.analytics.StatsPeriod
 import com.n3sensei.app.domain.analytics.StatusCounts
+import com.n3sensei.app.domain.analytics.TypeActivity
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ProgressState
 import com.n3sensei.app.domain.model.ReviewRating
@@ -175,5 +176,25 @@ class AnalyticsRepositoryTest {
         assertTrue(repository.observeAnswersByType(from, to).first().values.all { it == 0 })
         assertTrue(repository.observeSchedule().first().isEmpty())
         assertTrue(repository.observePriorityItems(fixture.now, 5).first().isEmpty())
+    }
+
+    @Test
+    fun activityAndDailyHistory_areSplitByType() = runTest {
+        val (from, to) = range(StatsPeriod.TODAY)
+        val byType = repository.observeActivityByType(from, to).first()
+        assertEquals(TypeActivity(answers = 3, distinctItems = 2, distinctReviewedItems = 1, reviewRatings = mapOf(ReviewRating.AGAIN to 1, ReviewRating.GOOD to 1)), byType[ItemType.VOCABULARY])
+        assertEquals(TypeActivity(answers = 1, distinctItems = 1, distinctReviewedItems = 0, reviewRatings = emptyMap()), byType[ItemType.KANJI])
+        assertEquals(TypeActivity(answers = 1, distinctItems = 1, distinctReviewedItems = 1, reviewRatings = mapOf(ReviewRating.HARD to 1)), byType[ItemType.GRAMMAR])
+        // The same totals as the whole, the removed item never counted.
+        assertEquals(repository.observeActivity(from, to).first().answers, byType.values.sumOf { it.answers })
+        assertEquals(0.5, LearningAnalytics.recallRate(byType.getValue(ItemType.VOCABULARY).reviewRatings)!!, 1e-9)
+        assertEquals(null, LearningAnalytics.recallRate(byType.getValue(ItemType.KANJI).reviewRatings))
+
+        val weekFrom = today.minusDays(6).atStartOfDay(zone).toInstant()
+        val buckets = repository.observeTimeBucketsByType(weekFrom, to).first()
+        fun days(type: ItemType) = LearningAnalytics.dailySeries(buckets[type].orEmpty(), zone, today, 7).map { it.answers }
+        assertEquals(listOf(0, 0, 0, 0, 0, 1, 3), days(ItemType.VOCABULARY))
+        assertEquals(listOf(0, 0, 0, 0, 0, 0, 1), days(ItemType.KANJI)) // 23:59 stays on today
+        assertEquals(listOf(0, 0, 0, 1, 0, 0, 1), days(ItemType.GRAMMAR))
     }
 }

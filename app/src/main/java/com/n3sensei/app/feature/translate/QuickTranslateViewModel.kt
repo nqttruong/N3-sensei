@@ -38,7 +38,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-/** Where the translation of the dialog stands. */
+/** Where the translation of the popup stands. */
 sealed interface TranslationUiState {
     /** Nothing to translate: no text, language not chosen yet, or "Dịch nhanh" turned off. */
     data object Idle : TranslationUiState
@@ -83,7 +83,7 @@ sealed interface TranslationUiState {
     }
 }
 
-/** The dialog's one bookmark. */
+/** The popup's one bookmark. */
 data class BookmarkUiState(
     /** Something to save (a meaning or a translation); otherwise no bookmark is shown. */
     val available: Boolean = false,
@@ -94,16 +94,16 @@ data class BookmarkUiState(
     val failed: Boolean = false,
 )
 
-/** What the dialog shows. */
+/** What the popup shows. */
 data class QuickTranslateUiState(
     val selected: SelectedText,
     /** Null when there is no text to detect. */
     val detection: LanguageDetection?,
-    /** The learner's own choice of source language in this dialog, if any. */
+    /** The learner's own choice of source language in this popup, if any. */
     val chosenSource: Language?,
     /** Mode of Settings → Dịch nhanh. */
     val settingsMode: TranslationMode,
-    /** The learner's own choice of mode in this dialog, if any (Settings keep theirs). */
+    /** The learner's own choice of mode in this popup, if any (Settings keep theirs). */
     val chosenMode: TranslationMode?,
     val enabled: Boolean,
     val translation: TranslationUiState = TranslationUiState.Idle,
@@ -130,25 +130,25 @@ data class QuickTranslateUiState(
         get() = (selected as? SelectedText.Ready)?.let { ready -> source?.let { Utterance(ready.text, it) } }
 
     /**
-     * What the speaker of a result row reads: the English translation, or the Japanese one
-     * (its dictionary kana when there is one, else the Japanese text; never romaji). Null when
-     * there is nothing to read in that language.
+     * What the speaker of a result row reads: the Vietnamese meaning, the English translation, or
+     * the Japanese one (its dictionary kana when there is one, else the Japanese text; never
+     * romaji). Null when there is nothing to read in that language.
      */
     fun utteranceFor(language: Language): Utterance? = when (language) {
+        Language.VIETNAMESE -> result?.vietnameseMeaning?.valuesOrEmpty?.firstOrNull()?.let { Utterance(it.value, Language.VIETNAMESE) }
         Language.ENGLISH -> result?.englishTranslation?.valuesOrEmpty?.firstOrNull()?.let { Utterance(it.value, Language.ENGLISH) }
         Language.JAPANESE -> result?.japaneseTranslation?.valuesOrEmpty?.firstOrNull()?.let { Utterance(it.value.reading ?: it.value.text, Language.JAPANESE) }
-        Language.VIETNAMESE -> null
     }
 }
 
 /**
- * State of the "Dịch nhanh" dialog: the selected text, its detected language, the mode from
- * Settings and the translation. Choices made in the dialog (source language, mode) last for
- * this dialog only and never change the settings.
+ * State of the "Dịch nhanh" popup: the selected text, its detected language, the mode from
+ * Settings and the translation. Choices made in the popup (source language, mode) last for
+ * this popup only and never change the settings.
  *
  * Each change of text, source, mode or download permission starts a new translation and cancels
  * the one running, so an older result never replaces a newer one. Models are downloaded only
- * after [downloadModels]. Closing the dialog cancels everything and frees the translators.
+ * after [downloadModels]. Closing the popup cancels everything and frees the translators.
  */
 @OptIn(ExperimentalCoroutinesApi::class)
 class QuickTranslateViewModel(
@@ -243,7 +243,7 @@ class QuickTranslateViewModel(
         bookmarkFailed.value = false
         viewModelScope.launch {
             try {
-                // A save is never cut short by the dialog closing: the transaction (milliseconds)
+                // A save is never cut short by the popup closing: the transaction (milliseconds)
                 // completes, so a tap is never silently lost.
                 bookmarkFailed.value = withContext(NonCancellable) { userContent.saveBookmark(current) } is BookmarkResult.Failed
             } finally {
@@ -284,10 +284,10 @@ class QuickTranslateViewModel(
         if (speaker.state.value.speaking == utterance) speaker.stop() else speaker.speak(utterance)
     }
 
-    /** The dialog is no longer visible. */
+    /** The popup is no longer visible. */
     fun stopSpeaking() = speaker.stop()
 
-    /** The learner agreed to download the missing language models (for this dialog). */
+    /** The learner agreed to download the missing language models (for this popup). */
     fun downloadModels() {
         attempt.update { it.copy(allowDownload = true) }
     }

@@ -6,9 +6,12 @@ import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ReviewOverview
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.model.UserPreferences
+import com.n3sensei.app.domain.practice.PracticeItem
 import com.n3sensei.app.domain.srs.DailyLimits
 import com.n3sensei.app.domain.srs.IntervalUnit
 import com.n3sensei.app.domain.srs.ReviewInterval
+import com.n3sensei.app.domain.srs.ReviewMode
+import com.n3sensei.app.domain.srs.ReviewScope
 import com.n3sensei.app.domain.srs.ReviewSettings
 import com.n3sensei.app.domain.srs.ReviewTime
 import com.n3sensei.app.domain.srs.SubmitReviewUseCase
@@ -45,9 +48,25 @@ class ReviewSessionViewModelTest {
 
     private val sessions = FakeReviewSessionRepository()
 
-    private fun viewModel() = ReviewSessionViewModel(
-        content, progress, prefs, SubmitReviewUseCase(progress), sessions, clock, newRequestId = { "req-${nextId++}" },
+    private fun viewModel(scope: ReviewScope = ReviewScope.ALL) = ReviewSessionViewModel(
+        content, progress, prefs, SubmitReviewUseCase(progress), sessions, clock, newRequestId = { "req-${nextId++}" }, scope = scope,
     )
+
+    private fun k(id: String) = ItemRef(ItemType.KANJI, id)
+    private fun g(id: String) = ItemRef(ItemType.GRAMMAR, id)
+
+    /** Three words, two kanji and one grammar pattern, all due; one new item of each type. */
+    private fun allTypes() {
+        content.vocabulary.value = listOf("v1", "v2", "v3", "v4").map { TestContent.vocabulary(it, "l1", "語$it") }
+        content.kanji.value = listOf(TestContent.kanji("k1", "l1", "経"), TestContent.kanji("k2", "l1", "験"))
+        content.grammar.value = listOf(TestContent.grammar("g1", "l1", "〜ばかり"), TestContent.grammar("g2", "l1", "〜ところ"))
+        progress.dueItems = listOf(v("v1"), v("v2"), v("v3"), k("k1"), g("g1"))
+        progress.newItems = listOf(v("v4"), k("k2"), g("g2"))
+    }
+
+    private fun limits(new: Int, reviews: Int) {
+        prefs.preferences.value = prefs.preferences.value.copy(reviewSettings = ReviewSettings(limits = DailyLimits(newPerDay = new, reviewsPerDay = reviews)))
+    }
 
     private fun ReviewSessionViewModel.ui() = (state.value as UiState.Success).data
 
@@ -192,5 +211,78 @@ class ReviewSessionViewModelTest {
         assertEquals(2, session.answered)
         assertTrue(session.finished)
         assertEquals(2, progress.progress.getValue(v("v1")).stepIndex)
+    }
+
+    @Test
+    fun aMixedSession_takesTheTypesInTurns_soNoTypeFillsIt() {
+        allTypes()
+        limits(new = 3, reviews = 3)
+        // Three reviews: one word, one kanji, one pattern (not three words); then one new of each.
+        assertEquals(listOf("v1", "k1", "g1", "v4", "k2", "g2"), viewModel().ui().cards.map { it.ref.id })
+    }
+
+    @Test
+    fun oneTypeOnly_asksThatTypeAlone_onItsOwnSchedule() {
+        allTypes()
+        assertEquals(listOf("k1", "k2"), viewModel(ReviewScope(type = ItemType.KANJI)).ui().cards.map { it.ref.id })
+        assertEquals(listOf("g1", "g2"), viewModel(ReviewScope(type = ItemType.GRAMMAR)).ui().cards.map { it.ref.id })
+        assertEquals(listOf("v1", "v2", "v3", "v4"), viewModel(ReviewScope(type = ItemType.VOCABULARY)).ui().cards.map { it.ref.id })
+    }
+
+    @Test
+    fun dueOnly_leavesNewItemsOut() {
+        allTypes()
+        val ui = viewModel(ReviewScope(mode = ReviewMode.DUE_ONLY)).ui()
+        assertEquals(listOf("v1", "k1", "g1", "v2", "v3"), ui.cards.map { it.ref.id })
+        assertTrue(ui.cards.none { it.ref in listOf(v("v4"), k("k2"), g("g2")) })
+    }
+
+    @Test
+    fun forgotten_asksTheLastForgottenItems_evenNotYetDue_andRatesThemOnTheirSchedule() {
+        allTypes()
+        val later = clock.instant().plusSeconds(600)
+        progress.forgottenItems = listOf(k("k1"), g("g1"))
+        progress.progress[g("g1")] = TestContent.progress(g("g1"), stepIndex = 0, dueAt = later, lapses = 1) // not due yet
+        val vm = viewModel(ReviewScope(mode = ReviewMode.FORGOTTEN))
+        val ui = vm.ui()
+        assertEquals(listOf("k1", "g1"), ui.cards.map { it.ref.id })
+        assertEquals(CardReason.Forgotten(lapses = 1), ui.cards.last().reason)
+        // The interval shown is the scheduler's own (not a fixed label).
+        assertEquals(ReviewInterval(1, IntervalUnit.HOURS), ui.cards.first().hints[ReviewRating.GOOD])
+        vm.revealAnswer()
+        vm.rate(ReviewRating.GOOD)
+        assertEquals(k("k1"), progress.records.single().item)
+        // Only the kanji's own schedule was written.
+        assertEquals(setOf(k("k1"), g("g1")), progress.progress.keys)
+    }
+
+    @Test
+    fun aGrammarCard_carriesItsExamples() {
+        allTypes()
+        content.grammarExamples["g1"] = listOf(com.n3sensei.app.domain.model.ExampleSentence("e1", "来たばかりです。", null, "Vừa mới đến."))
+        val card = viewModel(ReviewScope(type = ItemType.GRAMMAR)).ui().cards.first()
+        assertEquals(listOf("来たばかりです。"), (card.item as PracticeItem.GrammarItem).examples.map { it.japanese })
+    }
+
+    @Test
+    fun revealingTheAnswer_recordsNothing_onlyARatingDoes() {
+        progress.newItems = listOf(v("v1"))
+        val vm = viewModel()
+        vm.revealAnswer()
+        vm.revealAnswer() // turned over again: still nothing
+        assertTrue(progress.records.isEmpty())
+        assertEquals(0, progress.submitCalls)
+        assertTrue(vm.ui().isAnswerRevealed)
+        vm.rate(ReviewRating.HARD)
+        assertEquals(listOf(ReviewRating.HARD), progress.records.map { it.rating })
+    }
+
+    @Test
+    fun aWordCard_carriesItsOwnExamples() {
+        content.vocabularyExamples["v1"] = listOf(com.n3sensei.app.domain.model.ExampleSentence("e1", "経験があります。", null, "Có kinh nghiệm."))
+        progress.newItems = listOf(v("v1"), v("v2"))
+        val cards = viewModel().ui().cards
+        assertEquals(listOf("e1"), (cards[0].item as PracticeItem.VocabularyItem).examples.map { it.id })
+        assertTrue((cards[1].item as PracticeItem.VocabularyItem).examples.isEmpty())
     }
 }

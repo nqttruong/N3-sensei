@@ -7,6 +7,7 @@ import com.n3sensei.app.domain.analytics.PriorityItem
 import com.n3sensei.app.domain.analytics.StatusByType
 import com.n3sensei.app.domain.analytics.StatusCounts
 import com.n3sensei.app.domain.analytics.TimeBucket
+import com.n3sensei.app.domain.analytics.TypeActivity
 import com.n3sensei.app.domain.analytics.TroubleItem
 import com.n3sensei.app.domain.forecast.ScheduledItem
 import com.n3sensei.app.domain.model.ItemRef
@@ -62,6 +63,29 @@ class OfflineAnalyticsRepository(private val dao: AnalyticsDao) : AnalyticsRepos
         dao.observeAnswersByType(from.orAllTime(), to.toEpochMilli()).map { rows ->
             val counts = rows.associate { it.itemType to it.count }
             ItemType.entries.associateWith { counts[it] ?: 0 }
+        }
+
+    override fun observeActivityByType(from: Instant?, to: Instant): Flow<Map<ItemType, TypeActivity>> =
+        dao.observeActivityByType(from.orAllTime(), to.toEpochMilli()).map { rows ->
+            val byType = rows.associate { r ->
+                r.itemType to TypeActivity(
+                    answers = r.answers,
+                    distinctItems = r.distinctItems,
+                    distinctReviewedItems = r.distinctReviewed,
+                    reviewRatings = mapOf(
+                        ReviewRating.AGAIN to r.again,
+                        ReviewRating.HARD to r.hard,
+                        ReviewRating.GOOD to r.good,
+                        ReviewRating.EASY to r.easy,
+                    ).filterValues { it > 0 },
+                )
+            }
+            ItemType.entries.associateWith { byType[it] ?: TypeActivity.EMPTY }
+        }
+
+    override fun observeTimeBucketsByType(from: Instant, to: Instant): Flow<Map<ItemType, List<TimeBucket>>> =
+        dao.observeBucketsByType(from.toEpochMilli(), to.toEpochMilli()).map { rows ->
+            rows.groupBy({ it.itemType }) { TimeBucket(Instant.ofEpochMilli(it.bucketStart), it.answers, it.newItems) }
         }
 
     override fun observePriorityItems(now: Instant, limit: Int): Flow<List<PriorityItem>> =

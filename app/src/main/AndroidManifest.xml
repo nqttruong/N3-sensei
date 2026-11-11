@@ -15,6 +15,13 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!--
+        "Dịch nhanh" popup: a small floating window over the app where the text was selected
+        ("Hiển thị trên ứng dụng khác"), granted by the learner in system settings before the first
+        popup. Used for that popup only; no service, no screen reading.
+    -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!--
         Added by WorkManager but not needed: reminders use no foreground service.
         RECEIVE_BOOT_COMPLETED and WAKE_LOCK stay (rescheduling after a reboot, running the job).
     -->
@@ -50,9 +57,10 @@
 
         <!--
             "Dịch nhanh" in other apps' text selection menu (ACTION_PROCESS_TEXT, text/plain).
-            Exported so the system can open it from any app; it only shows the text it is given
-            and returns nothing. Empty taskAffinity and excludeFromRecents: it never joins
-            N3 Sensei's task or the recent apps; it closes back to the source app.
+            Exported so the system can open it from any app; it hands the text to the floating
+            popup and finishes at once (or first asks for the overlay permission). It returns
+            nothing. Empty taskAffinity and excludeFromRecents: it never joins N3 Sensei's task
+            or the recent apps.
         -->
         <activity
             android:name=".app.translate.QuickTranslateActivity"

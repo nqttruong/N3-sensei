@@ -7,6 +7,7 @@ import com.n3sensei.app.domain.analytics.StatusByType
 import com.n3sensei.app.domain.analytics.StatusCounts
 import com.n3sensei.app.domain.analytics.TimeBucket
 import com.n3sensei.app.domain.analytics.TroubleItem
+import com.n3sensei.app.domain.analytics.TypeActivity
 import com.n3sensei.app.domain.forecast.ReviewSessionRepository
 import com.n3sensei.app.domain.forecast.ReviewSessionSummary
 import com.n3sensei.app.domain.forecast.ScheduledItem
@@ -37,6 +38,8 @@ class FakeAnalyticsRepository : AnalyticsRepository {
     override fun observeDueBuckets(from: Instant, to: Instant) = flowOf(emptyList<TimeBucket>())
     override fun observeTroubleItems(from: Instant?, to: Instant, limit: Int) = flowOf(emptyList<TroubleItem>())
     override fun observeAnswersByType(from: Instant?, to: Instant) = flowOf(answersByType)
+    override fun observeActivityByType(from: Instant?, to: Instant) = flowOf(ItemType.entries.associateWith { TypeActivity.EMPTY })
+    override fun observeTimeBucketsByType(from: Instant, to: Instant) = flowOf(emptyMap<ItemType, List<TimeBucket>>())
     override fun observePriorityItems(now: Instant, limit: Int) = flowOf(priority.take(limit))
     override fun observeSchedule() = flowOf(schedule)
 }

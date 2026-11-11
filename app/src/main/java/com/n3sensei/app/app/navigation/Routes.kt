@@ -1,5 +1,8 @@
 package com.n3sensei.app.app.navigation
 
+import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.srs.ReviewMode
+import com.n3sensei.app.domain.srs.ReviewScope
 import kotlinx.serialization.Serializable
 
 // Every navigation route in the app is declared here, and only here.
@@ -123,8 +126,23 @@ data class PracticeResultRoute(
 @Serializable data object ReviewRoute
 
 /** Scheduled review session; answers are saved to the schedule. */
-@Serializable data object ReviewSessionRoute
+/**
+ * A review session over one content type ([type], an `ItemType` name; null = all three mixed)
+ * in [mode] (a `ReviewMode` name). Names, not enums, so an unknown value from an older back
+ * stack falls back to the usual session.
+ */
+@Serializable
+data class ReviewSessionRoute(val type: String? = null, val mode: String = ReviewMode.SCHEDULED.name) {
+    constructor(scope: ReviewScope) : this(scope.type?.name, scope.mode.name)
 
+    val scope: ReviewScope
+        get() = ReviewScope(
+            type = type?.let { name -> ItemType.entries.firstOrNull { it.name == name } },
+            mode = ReviewMode.entries.firstOrNull { it.name == mode } ?: ReviewMode.SCHEDULED,
+        )
+}
+
+/** The end of a review session; [type] and [mode] are the session's, for "Ôn tiếp". */
 @Serializable
 data class ReviewResultRoute(
     val total: Int,
@@ -133,6 +151,8 @@ data class ReviewResultRoute(
     val good: Int,
     val easy: Int,
     val durationSeconds: Long,
+    val type: String? = null,
+    val mode: String = ReviewMode.SCHEDULED.name,
 )
 
 @Serializable data object StatsRoute

@@ -1,6 +1,5 @@
 package com.n3sensei.app.feature
 
-import android.content.Intent
 import androidx.compose.ui.test.hasClickAction
 import androidx.compose.ui.test.hasContentDescription
 import androidx.compose.ui.test.hasText
@@ -16,11 +15,11 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.n3sensei.app.MainActivity
 import com.n3sensei.app.R
 import com.n3sensei.app.app.navigation.TopLevelDestination
-import com.n3sensei.app.app.translate.QuickTranslateActivity
 import com.n3sensei.app.feature.translate.QuickTranslateTags
 import com.n3sensei.app.feature.vocabulary.VocabularyDetailTags
 import com.n3sensei.app.testing.AppTestState
 import com.n3sensei.app.testing.countRows
+import com.n3sensei.app.testing.OverlayTesting
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -29,7 +28,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 /**
- * The dialog's bookmark saves the word into "Từ của tôi" as "Đã lưu", where it is listed with
+ * The popup's bookmark saves the word into "Từ của tôi" as "Đã lưu", where it is listed with
  * that label and offers neither "Cần học lại" nor practice (SEED TEST DATA).
  */
 @RunWith(AndroidJUnit4::class)
@@ -44,23 +43,26 @@ class BookmarkUiTest {
     private val db get() = AppTestState.appContainer.database
 
     @After
-    fun tearDown() = AppTestState.reset(seedContent = false)
+    fun tearDown() {
+        OverlayTesting.close()
+        AppTestState.reset(seedContent = false)
+    }
 
     @Test
     fun bookmark_savesOnce_asSaved_listedInMyWords_withoutStudyActions() {
         AppTestState.reset(seedContent = true)
-        val intent = Intent(Intent.ACTION_PROCESS_TEXT).setClass(context, QuickTranslateActivity::class.java).setType("text/plain")
-            .putExtra(Intent.EXTRA_PROCESS_TEXT, "経験")
-        ActivityScenario.launch<QuickTranslateActivity>(intent).use {
-            waitForText("kinh nghiệm")
-            composeRule.onNodeWithTag(QuickTranslateTags.BOOKMARK).performClick()
-            composeRule.waitUntil(10_000) {
-                composeRule.onAllNodes(hasContentDescription(string(R.string.quick_translate_bookmarked))).fetchSemanticsNodes().isNotEmpty()
-            }
-            // Tapping the saved bookmark again makes no second entry.
-            composeRule.onNodeWithTag(QuickTranslateTags.BOOKMARK).performClick()
-            composeRule.waitForIdle()
+        OverlayTesting.permission(true)
+        assertTrue(OverlayTesting.show("経験"))
+        waitForText("kinh nghiệm")
+        composeRule.onNodeWithTag(QuickTranslateTags.BOOKMARK).performClick()
+        composeRule.waitUntil(10_000) {
+            composeRule.onAllNodes(hasContentDescription(string(R.string.quick_translate_bookmarked))).fetchSemanticsNodes().isNotEmpty()
         }
+        // Saving keeps the popup open; tapping the saved bookmark again makes no second entry.
+        assertTrue(OverlayTesting.isShowing)
+        composeRule.onNodeWithTag(QuickTranslateTags.BOOKMARK).performClick()
+        composeRule.waitForIdle()
+        OverlayTesting.close()
         assertEquals(1, db.countRows("user_words"))
         db.openHelper.readableDatabase.query("SELECT study_state FROM user_words").use { it.moveToFirst(); assertEquals("SAVED", it.getString(0)) }
         // Bookmarking scheduled nothing.

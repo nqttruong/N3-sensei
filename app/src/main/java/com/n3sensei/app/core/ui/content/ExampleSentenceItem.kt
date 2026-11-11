@@ -25,6 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.FuriganaText
@@ -37,13 +38,21 @@ import com.n3sensei.app.domain.model.ExampleSentence
  * [highlight]: ranges of the Japanese to emphasize, see [com.n3sensei.app.domain.example.ExampleHighlight].
  */
 @Composable
-fun ExampleSentenceItem(example: ExampleSentence, modifier: Modifier = Modifier, highlight: List<IntRange> = emptyList()) {
+fun ExampleSentenceItem(
+    example: ExampleSentence,
+    modifier: Modifier = Modifier,
+    highlight: List<IntRange> = emptyList(),
+    /** The Japanese line's style (its furigana is half its size): larger on flashcards. */
+    japaneseStyle: TextStyle = MaterialTheme.typography.bodyLarge,
+    translationStyle: TextStyle = MaterialTheme.typography.bodyMedium,
+) {
     Column(modifier = modifier.padding(vertical = 6.dp)) {
         // Plain text is drawn by FuriganaText too, so the emphasis looks the same either way.
-        FuriganaText(example.furigana ?: example.japanese, style = MaterialTheme.typography.bodyLarge, highlight = highlight)
+        // Without furigana in the content, none is added (never guessed).
+        FuriganaText(example.furigana ?: example.japanese, style = japaneseStyle, highlight = highlight)
         Text(
             example.translationVi,
-            style = MaterialTheme.typography.bodyMedium,
+            style = translationStyle,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
     }

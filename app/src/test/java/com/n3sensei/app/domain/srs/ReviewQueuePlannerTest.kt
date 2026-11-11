@@ -32,4 +32,22 @@ class ReviewQueuePlannerTest {
         val queue = ReviewQueuePlanner.plan(listOf(v("a"), v("a")), listOf(v("a"), v("b")), DailyLimits(0, 100), TodayCounts(0, 0))
         assertEquals(listOf(v("a")), queue)
     }
+
+    private fun g(id: String) = ItemRef(ItemType.GRAMMAR, id)
+
+    @Test
+    fun interleave_takesTheTypesInTurns_keepingEachTypesOrder() {
+        val mixed = ReviewQueuePlanner.interleave(
+            mapOf(
+                ItemType.GRAMMAR to listOf(g("g1")),
+                ItemType.VOCABULARY to listOf(v("v1"), v("v2"), v("v3"), v("v4")),
+                ItemType.KANJI to listOf(k("k1"), k("k2")),
+            ),
+        )
+        // Vocabulary, kanji, grammar in turn; a type with nothing left gives its turns away.
+        assertEquals(listOf(v("v1"), k("k1"), g("g1"), v("v2"), k("k2"), v("v3"), v("v4")), mixed)
+        // So a limit of 3 takes one of each, not three words.
+        assertEquals(listOf(v("v1"), k("k1"), g("g1")), ReviewQueuePlanner.plan(mixed, emptyList(), DailyLimits(0, 3), TodayCounts(0, 0)))
+        assertEquals(emptyList<ItemRef>(), ReviewQueuePlanner.interleave(mapOf(ItemType.KANJI to emptyList())))
+    }
 }

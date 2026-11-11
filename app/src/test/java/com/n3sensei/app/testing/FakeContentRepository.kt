@@ -44,6 +44,7 @@ class FakeContentRepository : ContentRepository {
     /** Words of each kanji, by kanji id (none when absent). */
     val kanjiWords = mutableMapOf<String, List<KanjiWord>>()
     val grammarExamples = mutableMapOf<String, List<ExampleSentence>>()
+    val vocabularyExamples = mutableMapOf<String, List<ExampleSentence>>()
     var kanjiWordCalls = 0
 
     var failDetails = false
@@ -95,9 +96,9 @@ class FakeContentRepository : ContentRepository {
     override fun observeGrammar(lessonId: String?) = grammar.map { it.inLesson(lessonId) { g -> g.lessonId } }
 
     override suspend fun getPracticeItem(ref: ItemRef): PracticeItem? = when (ref.type) {
-        ItemType.VOCABULARY -> vocabulary.value.firstOrNull { it.id == ref.id }?.let { PracticeItem.VocabularyItem(it) }
+        ItemType.VOCABULARY -> vocabulary.value.firstOrNull { it.id == ref.id }?.let { PracticeItem.VocabularyItem(it, vocabularyExamples[it.id].orEmpty()) }
         ItemType.KANJI -> kanji.value.firstOrNull { it.id == ref.id }?.let { PracticeItem.KanjiItem(it, kanjiWords[it.id].orEmpty()) }
-        ItemType.GRAMMAR -> grammar.value.firstOrNull { it.id == ref.id }?.let { PracticeItem.GrammarItem(it) }
+        ItemType.GRAMMAR -> grammar.value.firstOrNull { it.id == ref.id }?.let { PracticeItem.GrammarItem(it, grammarExamples[it.id].orEmpty()) }
     }
 
     override suspend fun getKanjiWords(kanjiId: String): List<KanjiWord> {
@@ -107,7 +108,7 @@ class FakeContentRepository : ContentRepository {
 
     override suspend fun getVocabularyDetail(id: String): VocabularyDetail? {
         if (failDetails) error("database unavailable")
-        return vocabulary.value.firstOrNull { it.id == id }?.let { VocabularyDetail(it, emptyList(), emptyList(), TestContent.source) }
+        return vocabulary.value.firstOrNull { it.id == id }?.let { VocabularyDetail(it, vocabularyExamples[id].orEmpty(), emptyList(), TestContent.source) }
     }
 
     override suspend fun getKanjiDetail(id: String): KanjiDetail? =

@@ -168,7 +168,7 @@ class BookmarkIsolationTest {
     fun savedWords_areInMyWords_butInNoStudyFlow() = runBlocking {
         val studyBefore = studyRows()
         val newBefore = newRefs()
-        val availableBefore = db.progressDao().observeNewAvailable().first()
+        val availableBefore = db.progressDao().observeNewByType().first().sumOf { it.count }
         val statusBefore = db.analyticsDao().observeStatusByType().first().single { it.itemType == ItemType.VOCABULARY }
         val saved = setOf(save(kinhNghiem), save(bank))
 
@@ -180,7 +180,7 @@ class BookmarkIsolationTest {
 
         // New cards of a review session, the "new" count and the statistics: unchanged.
         assertEquals(newBefore, newRefs())
-        assertEquals(availableBefore, db.progressDao().observeNewAvailable().first())
+        assertEquals(availableBefore, db.progressDao().observeNewByType().first().sumOf { it.count })
         assertEquals(statusBefore, db.analyticsDao().observeStatusByType().first().single { it.itemType == ItemType.VOCABULARY })
         assertTrue(progress.getNewItems(100_000).none { it.id in saved })
         // Practice / flashcards of "Từ của tôi": the studied word only.

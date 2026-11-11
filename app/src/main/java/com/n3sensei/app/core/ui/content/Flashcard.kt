@@ -1,5 +1,6 @@
 package com.n3sensei.app.core.ui.content
 
+import androidx.annotation.StringRes
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition
@@ -31,13 +32,18 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
@@ -56,7 +62,9 @@ import com.n3sensei.app.core.designsystem.theme.LocalReduceMotion
 import com.n3sensei.app.core.designsystem.theme.N3Motion
 import com.n3sensei.app.core.designsystem.theme.japanese
 import com.n3sensei.app.core.designsystem.theme.japaneseText
+import com.n3sensei.app.domain.example.ExampleHighlight
 import com.n3sensei.app.domain.furigana.Furigana
+import com.n3sensei.app.domain.model.ExampleSentence
 import com.n3sensei.app.domain.model.KanjiWord
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.practice.PracticeItem
@@ -142,7 +150,7 @@ fun FlashcardSession(
                         verticalArrangement = Arrangement.spacedBy(12.dp),
                     ) {
                         Tag(stringResource(face.item.typeLabel()), tone = TagTone.Accent)
-                        CardFront(face.item)
+                        CardFront(face.item, revealed = showBack)
                         if (showBack) {
                             // A short rule between question and answer, as on a printed card.
                             HorizontalDivider(Modifier.width(64.dp), color = MaterialTheme.colorScheme.outlineVariant)
@@ -195,35 +203,68 @@ private fun PracticeItem.typeLabel(): Int = when (this) {
     is PracticeItem.GrammarItem -> R.string.practice_type_grammar
 }
 
+/**
+ * The question: only the word, the kanji or the pattern, large; nothing of the answer. A grammar
+ * card also asks what the pattern means and how it is used (gone once the answer shows).
+ */
 @Composable
-private fun CardFront(item: PracticeItem) {
+private fun CardFront(item: PracticeItem, revealed: Boolean) {
     val text = when (item) {
         is PracticeItem.VocabularyItem -> item.vocabulary.expression
         is PracticeItem.KanjiItem -> item.kanji.character
         is PracticeItem.GrammarItem -> item.grammar.pattern
     }
     // The kanji is the whole question: the largest text in the app, in the serif face.
-    val style = if (item is PracticeItem.KanjiItem) {
-        MaterialTheme.typography.displayLarge.copy(fontSize = 104.sp, lineHeight = 120.sp)
-    } else {
-        MaterialTheme.typography.displaySmall
+    val style = when (item) {
+        is PracticeItem.KanjiItem -> MaterialTheme.typography.displayLarge.copy(fontSize = 104.sp, lineHeight = 120.sp)
+        is PracticeItem.VocabularyItem -> MaterialTheme.typography.displayMedium
+        is PracticeItem.GrammarItem -> MaterialTheme.typography.displaySmall
     }
-    Text(japaneseText(text), style = style.japanese(), textAlign = TextAlign.Center)
+    Text(japaneseText(text), style = style.japanese(), textAlign = TextAlign.Center, modifier = Modifier.testTag(FlashcardTags.FRONT))
+    if (item is PracticeItem.GrammarItem && !revealed) {
+        Text(
+            stringResource(R.string.flashcard_grammar_prompt),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.testTag(FlashcardTags.PROMPT),
+        )
+    }
 }
 
+object FlashcardTags {
+    const val FRONT = "flashcard_front"
+    const val PROMPT = "flashcard_prompt"
+    const val EXAMPLES = "flashcard_examples"
+    const val NO_EXAMPLES = "flashcard_no_examples"
+    const val MORE_EXAMPLES = "flashcard_more_examples"
+}
+
+/** Examples shown before "Xem thêm": enough to learn from, short enough for a card. */
+private const val VISIBLE_EXAMPLES = 3
+
+/**
+ * The answer, from the content as stored (never filled in): a word's reading, meaning, part of
+ * speech, examples and note; a pattern's meaning, structure, examples, usage and caution. A part
+ * the content does not have is left out, except the examples, which say there are none.
+ */
 @Composable
 private fun CardBack(item: PracticeItem) {
     val center = Modifier.fillMaxWidth()
     when (item) {
         is PracticeItem.VocabularyItem -> {
             val v = item.vocabulary
-            // Furigana already shows the reading; plain kana only when there is no markup.
+            // Furigana already shows the reading; plain kana only when there is no markup, and
+            // nothing when the word is written in kana already.
             if (v.furigana != null && LocalShowFurigana.current) {
                 FuriganaText(v.furigana, style = MaterialTheme.typography.headlineSmall)
-            } else {
+            } else if (v.reading.isNotBlank() && v.reading != v.expression) {
                 Text(japaneseText(v.reading), style = MaterialTheme.typography.titleLarge.japanese(), textAlign = TextAlign.Center, modifier = center)
             }
-            Text(v.meaningVi, style = MaterialTheme.typography.titleLarge, textAlign = TextAlign.Center, modifier = center)
+            Text(v.meaningVi, style = MaterialTheme.typography.headlineSmall, textAlign = TextAlign.Center, modifier = center)
+            v.partOfSpeech?.takeIf { it.isNotBlank() }?.let { Tag(it) }
+            ExamplesBlock(item.examples, R.string.flashcard_no_examples_word) { ExampleHighlight.ofVocabulary(it.japanese, v.expression, v.reading) }
+            v.note?.takeIf { it.isNotBlank() }?.let { AnswerSection(R.string.flashcard_note) { BodyText(it) } }
         }
         is PracticeItem.KanjiItem -> {
             val k = item.kanji
@@ -247,8 +288,78 @@ private fun CardBack(item: PracticeItem) {
         }
         is PracticeItem.GrammarItem -> {
             val g = item.grammar
-            Text(g.meaningVi, style = MaterialTheme.typography.titleLarge, textAlign = TextAlign.Center, modifier = center)
-            Text(japaneseText(g.structure), style = MaterialTheme.typography.bodyLarge.japanese(), textAlign = TextAlign.Center, modifier = center)
+            Text(g.meaningVi, style = MaterialTheme.typography.headlineSmall, textAlign = TextAlign.Center, modifier = center)
+            // How the pattern attaches (the content's structure line: forms and conjugation).
+            g.structure.takeIf { it.isNotBlank() }?.let {
+                AnswerSection(R.string.flashcard_structure) { Text(japaneseText(it), style = MaterialTheme.typography.titleMedium.japanese()) }
+            }
+            ExamplesBlock(item.examples, R.string.flashcard_no_examples_grammar) { ExampleHighlight.ofGrammar(it.japanese, g.pattern) }
+            // Why a sentence takes this pattern: the pattern's usage as written in the content
+            // (the content has no explanation per example, so none is made up).
+            g.usage.takeIf { it.isNotBlank() }?.let { AnswerSection(R.string.flashcard_usage) { BodyText(it) } }
+            g.cautionNote?.takeIf { it.isNotBlank() }?.let { AnswerSection(R.string.flashcard_caution) { BodyText(it) } }
+        }
+    }
+}
+
+/** A labelled part of the answer, aligned to the start (long text reads better than centred). */
+@Composable
+private fun AnswerSection(@StringRes label: Int, content: @Composable () -> Unit) {
+    Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        Text(stringResource(label), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+        content()
+    }
+}
+
+@Composable
+private fun BodyText(text: String) = Text(text, style = MaterialTheme.typography.bodyLarge)
+
+/**
+ * The examples on their own light background: the Japanese large (furigana when the content has
+ * it, so not too small), the Vietnamese under it, the word or pattern emphasized. The first
+ * [VISIBLE_EXAMPLES], then "Xem thêm" for the rest; a line saying there is none when the content
+ * has none.
+ */
+@Composable
+private fun ExamplesBlock(examples: List<ExampleSentence>, @StringRes noneText: Int, highlight: (ExampleSentence) -> List<IntRange>) {
+    var expanded by remember(examples) { mutableStateOf(false) }
+    Surface(
+        color = MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.45f),
+        shape = MaterialTheme.shapes.medium,
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag(FlashcardTags.EXAMPLES),
+    ) {
+        Column(Modifier.padding(horizontal = 14.dp, vertical = 10.dp)) {
+            Text(
+                stringResource(R.string.flashcard_examples, examples.size),
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.primary,
+            )
+            if (examples.isEmpty()) {
+                Text(
+                    stringResource(noneText),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 6.dp).testTag(FlashcardTags.NO_EXAMPLES),
+                )
+            }
+            val shown = if (expanded) examples else examples.take(VISIBLE_EXAMPLES)
+            shown.forEachIndexed { i, example ->
+                if (i > 0) HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+                ExampleSentenceItem(
+                    example,
+                    highlight = highlight(example),
+                    japaneseStyle = MaterialTheme.typography.titleLarge.japanese(),
+                    translationStyle = MaterialTheme.typography.bodyLarge,
+                )
+            }
+            val hidden = examples.size - VISIBLE_EXAMPLES
+            if (hidden > 0) {
+                TextButton(onClick = { expanded = !expanded }, modifier = Modifier.testTag(FlashcardTags.MORE_EXAMPLES)) {
+                    Text(stringResource(if (expanded) R.string.flashcard_fewer_examples else R.string.flashcard_more_examples, hidden))
+                }
+            }
         }
     }
 }

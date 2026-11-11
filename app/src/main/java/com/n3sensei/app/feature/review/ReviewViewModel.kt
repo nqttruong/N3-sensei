@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.n3sensei.app.core.ui.state.STOP_TIMEOUT_MILLIS
 import com.n3sensei.app.core.ui.state.UiState
 import com.n3sensei.app.core.ui.state.ticks
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ReviewOverview
 import com.n3sensei.app.domain.repository.ErrorRepository
 import com.n3sensei.app.domain.repository.ProgressRepository
@@ -25,15 +26,63 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import java.time.Clock
 
+/** One content type on the Review screen: its own counts and the session it would start. */
+data class TypeReview(
+    val type: ItemType,
+    val due: Int,
+    /** Part of [due] that fell due before today's local midnight. */
+    val overdue: Int,
+    /** Distinct items of this type answered today. */
+    val doneToday: Int,
+    val newAvailable: Int,
+    /** Cards a session of this type alone would contain now (today's limits applied). */
+    val sessionSize: Int,
+)
+
 data class ReviewUiState(
     val overview: ReviewOverview,
     val limits: DailyLimits,
     /** New items a session would include now (limit applied). */
     val newToday: Int,
-    /** Cards a session started now would contain. */
+    /** Cards a mixed session started now would contain. */
     val sessionSize: Int,
+    val types: List<TypeReview> = emptyList(),
+    /** Cards of a mixed session of due items only. */
+    val dueOnlySize: Int = 0,
+    /** Cards of a session of the items last forgotten. */
+    val forgottenSize: Int = 0,
 ) {
     val limitReached: Boolean get() = sessionSize == 0 && (overview.due > 0 || overview.newAvailable > 0)
+
+    companion object {
+        /** The screen's numbers from the overview and today's limits (pure: unit-tested). */
+        fun of(overview: ReviewOverview, limits: DailyLimits): ReviewUiState {
+            val reviews = ReviewQueuePlanner.remainingReviews(limits, overview.today)
+            val news = ReviewQueuePlanner.remainingNew(limits, overview.today)
+            val newToday = minOf(overview.newAvailable, news)
+            val types = ItemType.entries.map { type ->
+                val due = overview.dueByType[type] ?: 0
+                val new = overview.newByType[type] ?: 0
+                TypeReview(
+                    type = type,
+                    due = due,
+                    overdue = overview.overdueByType[type] ?: 0,
+                    doneToday = overview.doneTodayByType[type] ?: 0,
+                    newAvailable = new,
+                    sessionSize = minOf(due, reviews) + minOf(new, news),
+                )
+            }
+            return ReviewUiState(
+                overview = overview,
+                limits = limits,
+                newToday = newToday,
+                sessionSize = minOf(overview.due, reviews) + newToday,
+                types = types,
+                dueOnlySize = minOf(overview.due, reviews),
+                forgottenSize = minOf(overview.forgotten, reviews),
+            )
+        }
+    }
 }
 
 @OptIn(ExperimentalCoroutinesApi::class)
@@ -53,11 +102,7 @@ class ReviewViewModel(
         .flatMapLatest { (now, limits) ->
             val zone = clock.zone
             progressRepository.observeReviewOverview(now, ReviewTime.startOfDay(now, zone), ReviewTime.startOfNextDay(now, zone))
-                .map { overview ->
-                    val reviews = minOf(overview.due, ReviewQueuePlanner.remainingReviews(limits, overview.today))
-                    val newToday = minOf(overview.newAvailable, ReviewQueuePlanner.remainingNew(limits, overview.today))
-                    UiState.Success(ReviewUiState(overview, limits, newToday, reviews + newToday))
-                }
+                .map { overview -> UiState.Success(ReviewUiState.of(overview, limits)) }
         }
         .onStart<UiState<ReviewUiState>> { emit(UiState.Loading) }
         .catch { emit(UiState.Error(it)) }

@@ -12,6 +12,8 @@ import com.n3sensei.app.domain.analytics.StatsPeriod
 import com.n3sensei.app.domain.analytics.StatusByType
 import com.n3sensei.app.domain.analytics.Streak
 import com.n3sensei.app.domain.analytics.TroubleItem
+import com.n3sensei.app.domain.analytics.TypeActivity
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.repository.AnalyticsRepository
 import com.n3sensei.app.domain.srs.ReviewTime
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -27,6 +29,15 @@ import kotlinx.coroutines.flow.stateIn
 import java.time.Clock
 import java.time.Instant
 
+/** One content type in the period: its answers, recall rate and the last days' answers. */
+data class TypeStats(
+    val activity: TypeActivity,
+    /** Null when the type had no review answers in the period. */
+    val recallRate: Double?,
+    /** Answers per local day, the last [StatsViewModel.TYPE_HISTORY_DAYS] days, oldest first. */
+    val daily: List<DayActivity>,
+)
+
 data class StatsUiState(
     val period: StatsPeriod,
     val activity: ActivityTotals,
@@ -40,6 +51,8 @@ data class StatsUiState(
     val overdue: Int,
     /** Estimated items due on each of the next 7 days, today first. */
     val forecast: List<DayActivity>,
+    /** Vocabulary, kanji and grammar apart (every type present). */
+    val byType: Map<ItemType, TypeStats> = emptyMap(),
 ) {
     val hasContent: Boolean get() = statusByType.values.any { it.total > 0 }
     val hasHistory: Boolean get() = streak.longest > 0
@@ -88,6 +101,20 @@ class StatsViewModel(
                 LearningAnalytics.streak(LearningAnalytics.studyDays(studyBuckets, zone), today),
             )
         }
+        val historyFrom = today.minusDays((TYPE_HISTORY_DAYS - 1).toLong()).atStartOfDay(zone).toInstant()
+        val byType = combine(
+            analytics.observeActivityByType(from, to),
+            analytics.observeTimeBucketsByType(historyFrom, to),
+        ) { activity, buckets ->
+            ItemType.entries.associateWith { type ->
+                val a = activity[type] ?: TypeActivity.EMPTY
+                TypeStats(
+                    activity = a,
+                    recallRate = LearningAnalytics.recallRate(a.reviewRatings),
+                    daily = LearningAnalytics.dailySeries(buckets[type].orEmpty(), zone, today, TYPE_HISTORY_DAYS),
+                )
+            }
+        }
         combine(
             history,
             analytics.observeStatusByType(),
@@ -95,7 +122,8 @@ class StatsViewModel(
             combine(analytics.observeDue(now, dayStart), analytics.observeDueBuckets(now.plusMillis(1), forecastEnd)) { due, buckets ->
                 due to LearningAnalytics.forecast(buckets, due.due, zone, today, FORECAST_DAYS)
             },
-        ) { (activity, daily, streak), status, trouble, (due, forecast) ->
+            byType,
+        ) { (activity, daily, streak), status, trouble, (due, forecast), types ->
             UiState.Success(
                 StatsUiState(
                     period = period,
@@ -108,6 +136,7 @@ class StatsViewModel(
                     due = due.due,
                     overdue = due.overdue,
                     forecast = forecast,
+                    byType = types,
                 ),
             )
         }
@@ -116,5 +145,6 @@ class StatsViewModel(
     companion object {
         const val TROUBLE_LIMIT = 10
         const val FORECAST_DAYS = 7
+        const val TYPE_HISTORY_DAYS = 7
     }
 }

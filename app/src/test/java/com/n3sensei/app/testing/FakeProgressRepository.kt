@@ -1,6 +1,7 @@
 package com.n3sensei.app.testing
 
 import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ItemUserState
 import com.n3sensei.app.domain.model.LearningProgress
 import com.n3sensei.app.domain.model.LearningStatus
@@ -31,8 +32,10 @@ class FakeProgressRepository(
     val records = mutableListOf<ReviewRecord>()
     var summaryRequestedAt: Instant? = null
 
+    /** Due, new and last-forgotten items, each list in its query order (all types). */
     var dueItems: List<ItemRef> = emptyList()
     var newItems: List<ItemRef> = emptyList()
+    var forgottenItems: List<ItemRef> = emptyList()
     var overview = ReviewOverview(emptyMap(), 0, TodayCounts(0, 0), 0)
 
     /** Number of upcoming submitReview calls that throw, to simulate a failed write. */
@@ -67,6 +70,9 @@ class FakeProgressRepository(
     override suspend fun getProgress(item: ItemRef): LearningProgress? = progress[item]
     override suspend fun getDueItems(now: Instant, limit: Int): List<ItemRef> = dueItems.take(limit)
     override suspend fun getNewItems(limit: Int): List<ItemRef> = newItems.take(limit)
+    override suspend fun getDueItemsOfType(now: Instant, type: ItemType, limit: Int) = dueItems.filter { it.type == type }.take(limit)
+    override suspend fun getNewItemsOfType(type: ItemType, limit: Int) = newItems.filter { it.type == type }.take(limit)
+    override suspend fun getForgottenItemsOfType(type: ItemType, limit: Int) = forgottenItems.filter { it.type == type }.take(limit)
     override fun observeReviewOverview(now: Instant, dayStart: Instant, dayEnd: Instant): Flow<ReviewOverview> = flowOf(overview)
 
     override fun observeSummary(now: Instant): Flow<ProgressSummary> {

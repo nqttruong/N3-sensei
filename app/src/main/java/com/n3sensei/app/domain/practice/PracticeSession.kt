@@ -1,5 +1,6 @@
 package com.n3sensei.app.domain.practice
 
+import com.n3sensei.app.domain.model.ExampleSentence
 import com.n3sensei.app.domain.model.GrammarPoint
 import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
@@ -12,7 +13,8 @@ import com.n3sensei.app.domain.model.Vocabulary
 sealed interface PracticeItem {
     val ref: ItemRef
 
-    data class VocabularyItem(val vocabulary: Vocabulary) : PracticeItem {
+    /** [examples]: the word's own example sentences (linked by its id), in the content's order. */
+    data class VocabularyItem(val vocabulary: Vocabulary, val examples: List<ExampleSentence> = emptyList()) : PracticeItem {
         override val ref = ItemRef(ItemType.VOCABULARY, vocabulary.id)
     }
 
@@ -21,7 +23,8 @@ sealed interface PracticeItem {
         override val ref = ItemRef(ItemType.KANJI, kanji.id)
     }
 
-    data class GrammarItem(val grammar: GrammarPoint) : PracticeItem {
+    /** [examples]: the pattern's example sentences from the content, shown with the answer. */
+    data class GrammarItem(val grammar: GrammarPoint, val examples: List<ExampleSentence> = emptyList()) : PracticeItem {
         override val ref = ItemRef(ItemType.GRAMMAR, grammar.id)
     }
 }

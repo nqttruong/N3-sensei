@@ -2,67 +2,55 @@ package com.n3sensei.app.app.translate
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.core.net.toUri
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.lifecycle.viewmodel.initializer
-import androidx.lifecycle.viewmodel.viewModelFactory
 import com.n3sensei.app.N3SenseiApplication
-import com.n3sensei.app.app.tts.AndroidTtsEngine
-import com.n3sensei.app.app.tts.TtsSpeaker
 import com.n3sensei.app.core.designsystem.theme.N3SenseiTheme
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.translate.SelectedText
-import com.n3sensei.app.feature.translate.QuickTranslateScreen
-import com.n3sensei.app.feature.translate.QuickTranslateViewModel
+import com.n3sensei.app.feature.translate.OverlayPermissionScreen
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 
 /**
  * "Dịch nhanh" in the text selection menu of other apps (Intent.ACTION_PROCESS_TEXT).
  *
- * A floating window over the source app (theme `Theme.N3Sensei.QuickTranslate`): it shows the
- * selected text and closes with X, Back or a tap outside, back to that app. It never starts
- * MainActivity, never returns text (no setResult: the source text is left as it is), never
- * touches the clipboard and never logs the text.
+ * Only an entry point: the selected text goes to the floating popup ([QuickTranslateOverlay])
+ * and this activity finishes at once, so the app behind is back in front and usable. Before the
+ * first popup, "Hiển thị trên ứng dụng khác" must be granted: the activity then explains why and
+ * opens the system screen; back from it, the permission is checked for real before anything is
+ * shown. Declining closes it, with nothing shown.
  *
- * Task: started for a result, it opens on top of the source app's task and leaves with it;
- * started as a new task, the empty `taskAffinity` keeps it out of N3 Sensei's own task and
- * `excludeFromRecents` out of the recent apps. Standard launch mode: a new selection is a new
- * instance; [onNewIntent] still replaces the text if a caller reuses the instance.
+ * It never starts MainActivity, never returns text (no setResult: the source text is left as it
+ * is), never touches the clipboard and never logs the text. The empty `taskAffinity` and
+ * `excludeFromRecents` keep it out of N3 Sensei's task and of the recent apps.
  */
 class QuickTranslateActivity : ComponentActivity() {
 
-    private val container get() = (application as N3SenseiApplication).container
+    private val application get() = getApplication() as N3SenseiApplication
+    private val overlay get() = application.quickTranslateOverlay
 
-    private val viewModel: QuickTranslateViewModel by viewModels {
-        viewModelFactory {
-            initializer {
-                // One speech engine per dialog, from the application context (never this activity).
-                QuickTranslateViewModel(
-                    container.userPreferencesRepository,
-                    container.languageDetector,
-                    container.translationRepository,
-                    TtsSpeaker(AndroidTtsEngine.factory(applicationContext)),
-                    container.userContentRepository,
-                )
-            }
-        }
-    }
+    /** Back from the system permission screen without granting it. */
+    private var stillDenied by mutableStateOf(false)
+    private var askedForPermission = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // After a rotation the same text comes back and the dialog's choices are kept.
-        viewModel.show(read(intent))
-        val preferences = container.userPreferencesRepository.preferences
+        askedForPermission = savedInstanceState?.getBoolean(ASKED) ?: false
+        if (handOver()) return
+        val preferences = application.container.userPreferencesRepository.preferences
         setContent {
-            // The app's light/dark choice, as in the app itself; drawn once it is known (milliseconds).
             val themeMode by remember { preferences.map { it.themeMode }.catch { emit(ThemeMode.SYSTEM) } }
                 .collectAsStateWithLifecycle(initialValue = null)
             val mode = themeMode ?: return@setContent
@@ -71,52 +59,59 @@ class QuickTranslateActivity : ComponentActivity() {
                 ThemeMode.DARK -> true
                 ThemeMode.SYSTEM -> isSystemInDarkTheme()
             }
-            val state by viewModel.state.collectAsStateWithLifecycle()
-            val shown = state ?: return@setContent
             N3SenseiTheme(darkTheme = dark) {
-                QuickTranslateScreen(
-                    state = shown,
-                    onChooseSource = viewModel::chooseSource,
-                    onChooseMode = viewModel::chooseMode,
-                    onClose = ::finish,
-                    onDownloadModels = viewModel::downloadModels,
-                    onToggleDetails = viewModel::toggleDetails,
-                    onSpeak = viewModel::speak,
-                    onInstallVoices = ::openVoiceInstaller,
-                    onBookmark = viewModel::bookmark,
-                    onRetry = viewModel::retry,
-                )
+                OverlayPermissionScreen(stillDenied = stillDenied, onOpenSettings = ::openPermissionScreen, onLater = ::finish)
             }
         }
-        sizeWindow()
+        val metrics = resources.displayMetrics
+        window.setLayout(
+            minOf((metrics.widthPixels * WIDTH_FRACTION).toInt(), (MAX_WIDTH_DP * metrics.density).toInt()),
+            WindowManager.LayoutParams.WRAP_CONTENT,
+        )
     }
 
-    /** Reading stops as soon as the dialog is no longer seen; the engine is freed when it closes. */
-    override fun onStop() {
-        super.onStop()
-        viewModel.stopSpeaking()
-    }
-
-    /** The speech engine's own voice download screen; nothing happens if the device has none. */
-    private fun openVoiceInstaller() {
-        try {
-            startActivity(AndroidTtsEngine.installVoicesIntent())
-        } catch (e: ActivityNotFoundException) {
-            // No engine screen to open: the dialog keeps saying the voice is missing.
-        }
+    /** Back from the system screen: shown only if the permission is really granted now. */
+    override fun onResume() {
+        super.onResume()
+        if (askedForPermission && !handOver()) stillDenied = true
     }
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)
-        viewModel.show(read(intent))
+        handOver()
     }
 
-    /** A dialog width: most of a phone's width, at most 560 dp on large screens; height follows the content. */
-    private fun sizeWindow() {
-        val metrics = resources.displayMetrics
-        val width = minOf((metrics.widthPixels * WIDTH_FRACTION).toInt(), (MAX_WIDTH_DP * metrics.density).toInt())
-        window.setLayout(width, WindowManager.LayoutParams.WRAP_CONTENT)
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean(ASKED, askedForPermission)
+    }
+
+    /** Gives the text to the popup and finishes; false (staying open) without the permission. */
+    private fun handOver(): Boolean {
+        if (!overlay.show(read(intent))) return false
+        finish()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            overrideActivityTransition(OVERRIDE_TRANSITION_CLOSE, 0, 0)
+        } else {
+            @Suppress("DEPRECATION")
+            overridePendingTransition(0, 0)
+        }
+        return true
+    }
+
+    private fun openPermissionScreen() {
+        askedForPermission = true
+        val forThisApp = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, "package:$packageName".toUri())
+        try {
+            startActivity(forThisApp)
+        } catch (e: ActivityNotFoundException) {
+            try {
+                startActivity(Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION))
+            } catch (e: ActivityNotFoundException) {
+                stillDenied = true // no such screen on this device: nothing else to open
+            }
+        }
     }
 
     private fun read(intent: Intent?): SelectedText =
@@ -130,6 +125,7 @@ class QuickTranslateActivity : ComponentActivity() {
         }
 
     private companion object {
+        const val ASKED = "asked_for_overlay_permission"
         const val WIDTH_FRACTION = 0.92f
         const val MAX_WIDTH_DP = 560
     }

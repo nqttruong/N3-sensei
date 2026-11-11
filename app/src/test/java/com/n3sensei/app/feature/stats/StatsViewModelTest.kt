@@ -8,6 +8,7 @@ import com.n3sensei.app.domain.analytics.StatusByType
 import com.n3sensei.app.domain.analytics.StatusCounts
 import com.n3sensei.app.domain.analytics.TimeBucket
 import com.n3sensei.app.domain.analytics.TroubleItem
+import com.n3sensei.app.domain.analytics.TypeActivity
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.repository.AnalyticsRepository
@@ -55,6 +56,10 @@ class StatsViewModelTest {
         override fun observeDueBuckets(from: Instant, to: Instant) = flowOf(emptyList<TimeBucket>())
         override fun observeTroubleItems(from: Instant?, to: Instant, limit: Int) = flowOf(emptyList<TroubleItem>())
         override fun observeAnswersByType(from: Instant?, to: Instant) = flowOf(ItemType.entries.associateWith { 0 })
+        var typeActivity: Map<ItemType, TypeActivity> = ItemType.entries.associateWith { TypeActivity.EMPTY }
+        var typeBuckets: Map<ItemType, List<TimeBucket>> = emptyMap()
+        override fun observeActivityByType(from: Instant?, to: Instant) = flowOf(typeActivity)
+        override fun observeTimeBucketsByType(from: Instant, to: Instant) = flowOf(typeBuckets)
         override fun observePriorityItems(now: Instant, limit: Int) = flowOf(emptyList<com.n3sensei.app.domain.analytics.PriorityItem>())
         override fun observeSchedule() = flowOf(emptyList<com.n3sensei.app.domain.forecast.ScheduledItem>())
     }
@@ -105,5 +110,32 @@ class StatsViewModelTest {
         assertTrue(ui.hasContent)
         assertEquals(3, ui.due)
         assertEquals(1, ui.overdue)
+    }
+
+    @Test
+    fun eachType_hasItsOwnAnswers_recallRate_andDailyHistory() = runTest {
+        analytics.typeActivity = mapOf(
+            ItemType.VOCABULARY to TypeActivity(answers = 10, distinctItems = 8, distinctReviewedItems = 5, reviewRatings = mapOf(ReviewRating.AGAIN to 1, ReviewRating.GOOD to 3)),
+            ItemType.KANJI to TypeActivity(answers = 4, distinctItems = 4, distinctReviewedItems = 2, reviewRatings = mapOf(ReviewRating.AGAIN to 2, ReviewRating.EASY to 2)),
+            ItemType.GRAMMAR to TypeActivity.EMPTY,
+        )
+        // Two kanji answers today (local), one yesterday.
+        analytics.typeBuckets = mapOf(
+            ItemType.KANJI to listOf(
+                TimeBucket(Instant.parse("2026-10-11T02:00:00Z"), answers = 2, newItems = 0),
+                TimeBucket(Instant.parse("2026-10-10T02:00:00Z"), answers = 1, newItems = 1),
+            ),
+        )
+        viewModel.state.launchIn(backgroundScope)
+        runCurrent()
+        val byType = ui().byType
+        assertEquals(0.75, byType.getValue(ItemType.VOCABULARY).recallRate!!, 1e-9)
+        assertEquals(0.5, byType.getValue(ItemType.KANJI).recallRate!!, 1e-9)
+        assertNull(byType.getValue(ItemType.GRAMMAR).recallRate) // no review answer: no rate, not 0 %
+        assertEquals(5, byType.getValue(ItemType.VOCABULARY).activity.distinctReviewedItems)
+        val kanjiDays = byType.getValue(ItemType.KANJI).daily
+        assertEquals(StatsViewModel.TYPE_HISTORY_DAYS, kanjiDays.size)
+        assertEquals(listOf(1, 2), kanjiDays.takeLast(2).map { it.answers })
+        assertTrue(byType.getValue(ItemType.GRAMMAR).daily.all { it.answers == 0 })
     }
 }

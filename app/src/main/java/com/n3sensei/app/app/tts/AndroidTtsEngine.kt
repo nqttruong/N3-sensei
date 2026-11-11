@@ -1,7 +1,6 @@
 package com.n3sensei.app.app.tts
 
 import android.content.Context
-import android.content.Intent
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import com.n3sensei.app.domain.translate.VoiceAvailability
@@ -48,8 +47,5 @@ class AndroidTtsEngine(context: Context, listener: TtsEngineListener) : TtsEngin
 
     companion object {
         fun factory(context: Context): (TtsEngineListener) -> TtsEngine = { listener -> AndroidTtsEngine(context, listener) }
-
-        /** Opens the engine's voice download screen (the learner chooses what to install). */
-        fun installVoicesIntent(): Intent = Intent(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     }
 }

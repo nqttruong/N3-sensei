@@ -38,6 +38,18 @@ data class DueCounts(val due: Int, val overdue: Int)
 /** Answers that fell into one 15-minute block (UTC-aligned); converted to local days in Kotlin. */
 data class TimeBucket(val start: Instant, val answers: Int, val newItems: Int)
 
+/** One content type's answers in a period; [reviewRatings] are review answers only (as in [ActivityTotals]). */
+data class TypeActivity(
+    val answers: Int,
+    val distinctItems: Int,
+    val distinctReviewedItems: Int,
+    val reviewRatings: Map<ReviewRating, Int>,
+) {
+    companion object {
+        val EMPTY = TypeActivity(0, 0, 0, emptyMap())
+    }
+}
+
 /** Items of one type by learning state; seed/test content excluded. */
 data class StatusCounts(val new: Int, val learning: Int, val review: Int, val mastered: Int) {
     val total: Int get() = new + learning + review + mastered

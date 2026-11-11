@@ -7,6 +7,7 @@ import com.n3sensei.app.app.di.AppContainer
 import com.n3sensei.app.app.reminder.AndroidReminderNotifier
 import com.n3sensei.app.app.di.DefaultAppContainer
 import com.n3sensei.app.app.translate.QuickTranslateMenu
+import com.n3sensei.app.app.translate.QuickTranslateOverlay
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -16,6 +17,9 @@ class N3SenseiApplication : Application() {
 
     lateinit var container: AppContainer
         private set
+
+    /** The floating "Dịch nhanh" popup (one per process). */
+    val quickTranslateOverlay: QuickTranslateOverlay by lazy { QuickTranslateOverlay(this) { container } }
 
     override fun onCreate() {
         super.onCreate()

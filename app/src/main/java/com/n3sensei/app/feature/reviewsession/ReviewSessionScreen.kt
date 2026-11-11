@@ -76,4 +76,5 @@ private fun reasonText(reason: CardReason): String = when (reason) {
         val base = stringResource(if (reason.overdue) R.string.review_reason_overdue else R.string.review_reason_due, time, reason.step, reason.steps)
         if (reason.lapses > 0) stringResource(R.string.review_reason_with_lapses, base, reason.lapses) else base
     }
+    is CardReason.Forgotten -> stringResource(R.string.review_reason_forgotten, reason.lapses)
 }

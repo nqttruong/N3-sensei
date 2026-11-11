@@ -158,4 +158,63 @@ class ReviewSchedulingRepositoryTest {
         assertEquals(ProgressState.MASTERED, repository.getProgress(keiken)!!.state)
         assertEquals(1, repository.observeSummary(t).first().mastered)
     }
+
+    private val tabakari = ItemRef(ItemType.GRAMMAR, SeedData.G_TABAKARI)
+
+    @Test
+    fun eachType_hasItsOwnQueue_andAnswersTouchOnlyTheirOwnSchedule() = runTest {
+        answer(keiken, ReviewRating.AGAIN, "2026-10-11T08:00") // due 08:20
+        answer(kei, ReviewRating.AGAIN, "2026-10-11T08:00") // due 08:20
+        answer(tabakari, ReviewRating.GOOD, "2026-10-11T08:00") // due 09:00
+        val now = at("2026-10-11T09:30")
+        assertEquals(listOf(keiken), repository.getDueItemsOfType(now, ItemType.VOCABULARY, 10))
+        assertEquals(listOf(kei), repository.getDueItemsOfType(now, ItemType.KANJI, 10))
+        assertEquals(listOf(tabakari), repository.getDueItemsOfType(now, ItemType.GRAMMAR, 10))
+        assertEquals(listOf(SeedData.K_ZOU), repository.getNewItemsOfType(ItemType.KANJI, 10).map { it.id })
+        assertEquals(listOf(SeedData.V_FUERU, SeedData.V_TODOKERU), repository.getNewItemsOfType(ItemType.VOCABULARY, 2).map { it.id })
+        assertTrue(repository.getNewItemsOfType(ItemType.GRAMMAR, 10).isEmpty())
+
+        // A kanji answer moves the kanji's schedule only.
+        val wordBefore = repository.getProgress(keiken)
+        val grammarBefore = repository.getProgress(tabakari)
+        answer(kei, ReviewRating.GOOD, "2026-10-11T09:30")
+        assertEquals(wordBefore, repository.getProgress(keiken))
+        assertEquals(grammarBefore, repository.getProgress(tabakari))
+        assertEquals(1, db.countRows("learning_progress WHERE item_type = 'KANJI'"))
+        assertEquals(3, db.countRows("learning_progress"))
+    }
+
+    @Test
+    fun forgotten_isTheLastAnswer_andGoesAwayOnceRemembered() = runTest {
+        answer(kei, ReviewRating.AGAIN, "2026-10-11T08:00")
+        answer(keiken, ReviewRating.AGAIN, "2026-10-11T08:00")
+        answer(keiken, ReviewRating.GOOD, "2026-10-11T08:30") // remembered since
+        answer(tabakari, ReviewRating.GOOD, "2026-10-11T08:00")
+        assertEquals(listOf(kei), repository.getForgottenItemsOfType(ItemType.KANJI, 10))
+        assertTrue(repository.getForgottenItemsOfType(ItemType.VOCABULARY, 10).isEmpty())
+        assertTrue(repository.getForgottenItemsOfType(ItemType.GRAMMAR, 10).isEmpty())
+        val now = at("2026-10-11T08:40")
+        val overview = repository.observeReviewOverview(now, ReviewTime.startOfDay(now, zone), ReviewTime.startOfNextDay(now, zone)).first()
+        assertEquals(mapOf(ItemType.KANJI to 1), overview.forgottenByType)
+        answer(kei, ReviewRating.HARD, "2026-10-11T08:40")
+        assertTrue(repository.getForgottenItemsOfType(ItemType.KANJI, 10).isEmpty())
+    }
+
+    @Test
+    fun overview_breaksDueOverdueDoneAndNew_downByType() = runTest {
+        answer(keiken, ReviewRating.AGAIN, "2026-10-10T23:30") // due 23:50 yesterday → overdue
+        answer(kei, ReviewRating.GOOD, "2026-10-11T00:10") // due 01:10 today
+        answer(kei, ReviewRating.AGAIN, "2026-10-11T01:20", requestId = "kei-2") // due 01:40 today
+        answer(tabakari, ReviewRating.EASY, "2026-10-11T01:00") // due tomorrow
+
+        val now = at("2026-10-11T02:00")
+        val overview = repository.observeReviewOverview(now, ReviewTime.startOfDay(now, zone), ReviewTime.startOfNextDay(now, zone)).first()
+        assertEquals(mapOf(ItemType.VOCABULARY to 1, ItemType.KANJI to 1), overview.dueByType)
+        assertEquals(mapOf(ItemType.VOCABULARY to 1), overview.overdueByType)
+        assertEquals(1, overview.overdue)
+        // Distinct items answered today: kei twice counts once; keiken was yesterday.
+        assertEquals(mapOf(ItemType.KANJI to 1, ItemType.GRAMMAR to 1), overview.doneTodayByType)
+        assertEquals(mapOf(ItemType.VOCABULARY to 3, ItemType.KANJI to 1), overview.newByType)
+        assertEquals(4, overview.newAvailable)
+    }
 }

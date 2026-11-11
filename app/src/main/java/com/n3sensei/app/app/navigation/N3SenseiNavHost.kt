@@ -143,7 +143,7 @@ fun N3SenseiNavHost(
                 viewModel = appViewModel { DashboardViewModel(analyticsRepository, reviewSessionRepository, userPreferencesRepository, clock) },
                 proverbViewModel = appViewModel { ProverbViewModel(proverbRepository, clock) },
                 onOpenReview = { navController.navigateToTopLevel(TopLevelDestination.REVIEW) },
-                onStartSession = { navController.navigate(ReviewSessionRoute) },
+                onStartSession = { navController.navigate(ReviewSessionRoute()) },
                 onOpenLessons = { navController.navigateToLessons() },
                 onOpenItem = { navController.navigateToItem(it) },
             )
@@ -440,7 +440,7 @@ fun N3SenseiNavHost(
                             is PlanTask.ReviewErrors -> navController.navigate(ErrorReviewRoute(skill = task.skill?.name, limit = task.count))
                             is PlanTask.StudyWeakItems -> viewModel.practice(task.refs) { navController.navigate(PracticeRoute(markedOnly = true)) }
                             is PlanTask.TakeSectionExam -> navController.navigate(ExamIntroRoute(task.examSetId))
-                            is PlanTask.ReviewFlashcards -> navController.navigate(ReviewSessionRoute)
+                            is PlanTask.ReviewFlashcards -> navController.navigate(ReviewSessionRoute())
                         }
                     },
                     onOpenSkill = { navController.navigate(SkillDetailRoute(it.name)) },
@@ -464,22 +464,24 @@ fun N3SenseiNavHost(
             ReviewScreen(
                 viewModel = appViewModel { ReviewViewModel(progressRepository, userPreferencesRepository, clock, errorRepository) },
                 onStartErrorReview = { navController.navigate(ErrorReviewRoute()) },
-                onStartSession = { navController.navigate(ReviewSessionRoute) },
+                onStartSession = { navController.navigate(ReviewSessionRoute(it)) },
                 onOpenLessons = { navController.navigateToLessons() },
                 onPracticeMarked = { navController.navigate(PracticeRoute(markedOnly = true)) },
             )
         }
-        composable<ReviewSessionRoute> {
+        composable<ReviewSessionRoute> { entry ->
+            val route = entry.toRoute<ReviewSessionRoute>()
             ReviewSessionScreen(
                 viewModel = appViewModel {
                     ReviewSessionViewModel(
                         contentRepository, progressRepository, userPreferencesRepository,
                         SubmitReviewUseCase(progressRepository), reviewSessionRepository, clock,
+                        scope = route.scope,
                     )
                 },
                 onFinished = { result ->
                     navController.navigate(
-                        ReviewResultRoute(result.total, result.again, result.hard, result.good, result.easy, result.durationSeconds),
+                        ReviewResultRoute(result.total, result.again, result.hard, result.good, result.easy, result.durationSeconds, route.type, route.mode),
                     ) { popUpTo<ReviewSessionRoute> { inclusive = true } }
                 },
             )
@@ -489,7 +491,7 @@ fun N3SenseiNavHost(
             PracticeResultScreen(
                 result = PracticeResult(route.total, route.again, route.hard, route.good, route.easy, route.durationSeconds),
                 onPracticeAgain = {
-                    navController.navigate(ReviewSessionRoute) { popUpTo<ReviewResultRoute> { inclusive = true } }
+                    navController.navigate(ReviewSessionRoute(route.type, route.mode)) { popUpTo<ReviewResultRoute> { inclusive = true } }
                 },
                 onBackToLesson = { navController.popBackStack() },
                 backLabelRes = R.string.review_result_back,

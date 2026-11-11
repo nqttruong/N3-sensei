@@ -1,11 +1,12 @@
 package com.n3sensei.app.domain.repository
 
 import com.n3sensei.app.domain.model.ItemRef
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ItemUserState
 import com.n3sensei.app.domain.model.LearningProgress
 import com.n3sensei.app.domain.model.ProgressSummary
-import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.model.ReviewOverview
+import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.model.ReviewRecord
 import com.n3sensei.app.domain.model.SubmitOutcome
 import com.n3sensei.app.domain.srs.ScheduledReview
@@ -56,6 +57,15 @@ interface ProgressRepository {
 
     /** Items never answered, in course order (pack, lesson, type, position). */
     suspend fun getNewItems(limit: Int): List<ItemRef>
+
+    /** Due items of one [type] only (its own schedule), oldest due first. */
+    suspend fun getDueItemsOfType(now: Instant, type: ItemType, limit: Int): List<ItemRef>
+
+    /** Never-answered items of one [type], in course order. */
+    suspend fun getNewItemsOfType(type: ItemType, limit: Int): List<ItemRef>
+
+    /** Items of [type] whose last answer was "Quên", due or not yet; the due ones first. */
+    suspend fun getForgottenItemsOfType(type: ItemType, limit: Int): List<ItemRef>
 
     /** Counts for the Review screen; [dayStart]/[dayEnd] bound "today" in local time. */
     fun observeReviewOverview(now: Instant, dayStart: Instant, dayEnd: Instant): Flow<ReviewOverview>

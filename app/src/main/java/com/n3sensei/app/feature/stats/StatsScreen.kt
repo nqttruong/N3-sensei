@@ -29,6 +29,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
@@ -106,6 +107,7 @@ fun StatsScreen(
                 ActivityCard(ui)
                 DueCard(ui, onOpenReview)
                 RecallCard(ui)
+                ByTypeCard(ui)
                 DailyCard(ui.daily)
                 (dashboard as? UiState.Success)?.data?.let { d -> DashboardTrendCard(d, dashboardViewModel::selectTrendUnit, units = listOf(TrendUnit.WEEK, TrendUnit.MONTH)) }
                 ForecastCard(ui.forecast)
@@ -164,6 +166,58 @@ private fun DueCard(ui: StatsUiState, onOpenReview: () -> Unit) {
             FilledTonalButton(onClick = onOpenReview, enabled = ui.due > 0) { Text(stringResource(R.string.stats_open_review)) }
         }
     }
+}
+
+/** Vocabulary, kanji and grammar apart: reviews and recall in the period, answers of the last days. */
+@Composable
+private fun ByTypeCard(ui: StatsUiState) {
+    if (ui.byType.isEmpty()) return
+    val names = ItemType.entries.associateWith {
+        stringResource(
+            when (it) {
+                ItemType.VOCABULARY -> R.string.totals_vocabulary
+                ItemType.KANJI -> R.string.totals_kanji
+                ItemType.GRAMMAR -> R.string.totals_grammar
+            },
+        )
+    }
+    StatsCard(R.string.stats_by_type) {
+        ItemType.entries.forEach { type ->
+            val t = ui.byType[type] ?: return@forEach
+            Text(names.getValue(type), style = MaterialTheme.typography.titleSmall, modifier = Modifier.testTag(StatsTags.byType(type)))
+            Row(Modifier.fillMaxWidth()) {
+                StatItem(t.activity.distinctReviewedItems.toString(), stringResource(R.string.stats_items_reviewed), Modifier.weight(1f))
+                StatItem(t.activity.answers.toString(), stringResource(R.string.stats_type_answers), Modifier.weight(1f))
+                StatItem(
+                    t.recallRate?.let { stringResource(R.string.stats_recall_value, (it * 100).roundToInt()) } ?: stringResource(R.string.stats_recall_none),
+                    stringResource(R.string.stats_recall),
+                    Modifier.weight(1f),
+                )
+            }
+        }
+        // Answers per day and type, newest day first.
+        Text(stringResource(R.string.stats_by_type_history, StatsViewModel.TYPE_HISTORY_DAYS), style = MaterialTheme.typography.titleSmall)
+        val days = ui.byType.values.first().daily.map { it.date }.reversed()
+        Row(Modifier.fillMaxWidth()) {
+            Text(stringResource(R.string.stats_by_type_day), style = MaterialTheme.typography.labelMedium, modifier = Modifier.weight(1.2f))
+            ItemType.entries.forEach { Text(names.getValue(it), style = MaterialTheme.typography.labelMedium, modifier = Modifier.weight(1f)) }
+        }
+        days.forEach { date ->
+            Row(Modifier.fillMaxWidth()) {
+                Text(date.format(dayFormat), style = MaterialTheme.typography.bodySmall, modifier = Modifier.weight(1.2f))
+                ItemType.entries.forEach { type ->
+                    val answers = ui.byType[type]?.daily?.firstOrNull { it.date == date }?.answers ?: 0
+                    Text(answers.toString(), style = MaterialTheme.typography.bodySmall, modifier = Modifier.weight(1f))
+                }
+            }
+        }
+        Note(stringResource(R.string.stats_by_type_rule))
+    }
+}
+
+
+object StatsTags {
+    fun byType(type: ItemType) = "stats_by_type_${type.name}"
 }
 
 @Composable

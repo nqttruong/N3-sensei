@@ -5,6 +5,8 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasClickAction
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
+import androidx.compose.ui.test.onAllNodesWithText
+import androidx.compose.ui.test.onFirst
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -15,9 +17,11 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.n3sensei.app.MainActivity
 import com.n3sensei.app.R
 import com.n3sensei.app.app.navigation.TopLevelDestination
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.testing.AnalyticsFixture
 import com.n3sensei.app.testing.AppTestState
 import kotlinx.coroutines.runBlocking
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -102,7 +106,10 @@ class StatisticsEndToEndTest {
             composeRule.onNodeWithTag(TopLevelDestination.STATS.testTag).performClick()
             waitFor(string(R.string.common_no_content))
             composeRule.onNodeWithText(string(R.string.stats_no_activity)).performScrollTo().assertIsDisplayed()
-            composeRule.onNodeWithText(string(R.string.stats_recall_none)).performScrollTo().assertIsDisplayed()
+            // "—" for the recall rate, and again for each type (no review answer of any type yet).
+            val none = composeRule.onAllNodesWithText(string(R.string.stats_recall_none))
+            none.onFirst().performScrollTo().assertIsDisplayed()
+            assertEquals(1 + ItemType.entries.size, none.fetchSemanticsNodes().size)
             composeRule.onNodeWithText(string(R.string.stats_chart_empty, 7)).performScrollTo().assertIsDisplayed()
             composeRule.onNodeWithText(string(R.string.stats_trouble_empty)).performScrollTo().assertIsDisplayed()
         }
