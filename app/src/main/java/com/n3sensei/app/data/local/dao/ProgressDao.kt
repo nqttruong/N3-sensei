@@ -68,6 +68,10 @@ abstract class ProgressDao {
     @Insert
     abstract suspend fun insertRecord(record: ReviewRecordEntity): Long
 
+    /** Android sync reads learner events only; it never writes remote state into Room progress. */
+    @Query("SELECT * FROM review_records WHERE id > :afterId AND request_id IS NOT NULL ORDER BY id LIMIT :limit")
+    abstract suspend fun syncEventsAfter(afterId: Long, limit: Int): List<ReviewRecordEntity>
+
     /** Progress update and its history record succeed or fail together. */
     @Transaction
     open suspend fun recordReview(progress: LearningProgressEntity, record: ReviewRecordEntity): Long {

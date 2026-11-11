@@ -89,6 +89,7 @@ import com.n3sensei.app.feature.review.ReviewViewModel
 import com.n3sensei.app.feature.reviewsession.ReviewSessionScreen
 import com.n3sensei.app.feature.reviewsession.ReviewSessionViewModel
 import com.n3sensei.app.feature.settings.BackupViewModel
+import com.n3sensei.app.feature.settings.AndroidSyncViewModel
 import com.n3sensei.app.feature.settings.ReminderLessonsScreen
 import com.n3sensei.app.feature.settings.ReminderLessonsViewModel
 import com.n3sensei.app.feature.settings.ReminderSettingsScreen
@@ -513,6 +514,7 @@ fun N3SenseiNavHost(
             SettingsScreen(
                 viewModel = appViewModel { SettingsViewModel(userPreferencesRepository, contentRepository, contentImportRepository) },
                 backupViewModel = appViewModel { BackupViewModel(backupRepository, clock) },
+                syncViewModel = appViewModel { AndroidSyncViewModel(syncRepository) },
                 onOpenReviewSettings = { navController.navigate(ReviewSettingsRoute) },
                 onOpenReminderSettings = { navController.navigate(ReminderSettingsRoute) },
                 onOpenWidgetSettings = { navController.navigate(WidgetSettingsRoute) },

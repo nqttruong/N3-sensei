@@ -13,14 +13,19 @@ import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
@@ -46,6 +51,7 @@ object SettingsTags {
 fun SettingsScreen(
     viewModel: SettingsViewModel,
     backupViewModel: BackupViewModel,
+    syncViewModel: AndroidSyncViewModel,
     onOpenReviewSettings: () -> Unit,
     onOpenReminderSettings: () -> Unit,
     onOpenWidgetSettings: () -> Unit,
@@ -132,6 +138,9 @@ fun SettingsScreen(
                 },
                 modifier = Modifier.clickable(role = Role.Button, onClick = onOpenReviewSettings),
             )
+            HorizontalDivider()
+
+            AndroidSyncSettingsSection(syncViewModel)
             HorizontalDivider()
 
             val reminders = prefs.reminderSettings
@@ -226,6 +235,37 @@ fun SettingsScreen(
                 modifier = Modifier.padding(16.dp),
             )
         }
+    }
+}
+
+@Composable
+private fun AndroidSyncSettingsSection(viewModel: AndroidSyncViewModel) {
+    val syncState by viewModel.state.collectAsStateWithLifecycle()
+    var serverUrl by remember(syncState.serverUrl) { mutableStateOf(syncState.serverUrl) }
+    var pairingKey by remember { mutableStateOf("") }
+    SectionHeader("Đồng bộ JLPT AI Review", Modifier.padding(horizontal = 16.dp))
+    Column(Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
+        Text("Ghép nối thiết bị để gửi lịch sử ôn. Tiến độ SRS trong Room không bị máy chủ ghi đè.", style = MaterialTheme.typography.bodySmall)
+        OutlinedTextField(serverUrl, { serverUrl = it }, label = { Text("URL máy chủ HTTPS") }, singleLine = true, readOnly = syncState.paired, modifier = Modifier.padding(top = 8.dp))
+        if (!syncState.paired) {
+            OutlinedTextField(pairingKey, { pairingKey = it }, label = { Text("Khóa ghép nối") }, singleLine = true)
+            Button(
+                enabled = !syncState.running && serverUrl.isNotBlank() && pairingKey.length >= 32,
+                onClick = {
+                    viewModel.pair(serverUrl, pairingKey, android.os.Build.MODEL)
+                    pairingKey = ""
+                },
+                modifier = Modifier.padding(top = 8.dp),
+            ) { Text("Ghép nối thiết bị") }
+        } else {
+            Button(
+                enabled = !syncState.running,
+                onClick = viewModel::pushReviews,
+                modifier = Modifier.padding(top = 8.dp),
+            ) { Text("Đồng bộ sự kiện ôn") }
+        }
+        if (syncState.running) CircularProgressIndicator(Modifier.padding(top = 8.dp).size(24.dp))
+        if (syncState.status.isNotBlank()) Text(syncState.status, modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.bodySmall)
     }
 }
 

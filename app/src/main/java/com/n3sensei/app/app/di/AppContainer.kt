@@ -22,6 +22,7 @@ import com.n3sensei.app.data.repository.OfflineProgressRepository
 import com.n3sensei.app.data.repository.OfflineReviewSessionRepository
 import com.n3sensei.app.data.repository.OfflineUserContentRepository
 import com.n3sensei.app.data.repository.RoomReminderHistory
+import com.n3sensei.app.data.sync.AndroidSyncClient
 import com.n3sensei.app.domain.backup.BackupRepository
 import com.n3sensei.app.domain.forecast.ReviewSessionRepository
 import com.n3sensei.app.domain.integrity.DatabaseRecoveryRepository
@@ -38,6 +39,7 @@ import com.n3sensei.app.domain.repository.ExamRepository
 import com.n3sensei.app.domain.repository.ProgressRepository
 import com.n3sensei.app.domain.repository.UserContentRepository
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
+import com.n3sensei.app.domain.repository.SyncRepository
 import com.n3sensei.app.domain.widget.WidgetContentPicker
 import com.n3sensei.app.domain.widget.WidgetUpdater
 import java.io.File
@@ -58,6 +60,7 @@ import com.n3sensei.app.domain.translate.TranslationRepository
  * scoped to the application. Every class receives its dependencies through its constructor.
  */
 interface AppContainer {
+    val database: N3Database
     val contentRepository: ContentRepository
     val userContentRepository: UserContentRepository
     val progressRepository: ProgressRepository
@@ -78,6 +81,7 @@ interface AppContainer {
     val widgetUpdater: WidgetUpdater
     val languageDetector: LanguageDetector
     val translationRepository: TranslationRepository
+    val syncRepository: SyncRepository
     val clock: Clock
 }
 
@@ -92,7 +96,7 @@ class DefaultAppContainer(context: Context) : AppContainer {
 
     override val databaseRecoveryRepository: DatabaseRecoveryRepository get() = databaseRecovery
 
-    internal val database: N3Database by lazy { N3Database.create(appContext, onCorruption = databaseRecovery::record) }
+    override val database: N3Database by lazy { N3Database.create(appContext, onCorruption = databaseRecovery::record) }
 
     override val contentRepository: ContentRepository by lazy {
         OfflineContentRepository(database.contentDao(), database.contentPackDao())
@@ -130,6 +134,8 @@ class DefaultAppContainer(context: Context) : AppContainer {
     override val examRepository: ExamRepository by lazy { OfflineExamRepository(database, clock) }
 
     override val errorRepository: ErrorRepository by lazy { OfflineErrorRepository(database, clock) }
+
+    override val syncRepository: SyncRepository by lazy { AndroidSyncClient(appContext, database.progressDao()) }
 
     override val widgetContentPicker: WidgetContentPicker by lazy { WidgetContentPicker(contentRepository, progressRepository, clock) }
 
