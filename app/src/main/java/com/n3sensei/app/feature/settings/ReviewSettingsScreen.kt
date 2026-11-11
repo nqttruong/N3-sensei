@@ -30,6 +30,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.liveRegion
@@ -41,6 +42,8 @@ import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.InfoBanner
 import com.n3sensei.app.core.designsystem.component.SectionHeader
 import com.n3sensei.app.core.ui.state.LoadingContent
+import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.srs.DailyLimits
 import com.n3sensei.app.domain.srs.IntervalUnit
 import com.n3sensei.app.domain.srs.ReviewLadder
 
@@ -81,19 +84,36 @@ fun ReviewSettingsScreen(
             TextButton(onClick = viewModel::addStep) { Text(stringResource(R.string.review_settings_add_step)) }
         }
 
+        // One independent cap per type: no total, no sharing between them.
+        SectionHeader(stringResource(R.string.review_settings_new_items))
+        Text(
+            stringResource(R.string.review_settings_new_items_description, DailyLimits.MAX_NEW_PER_TYPE),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        ItemType.entries.forEach { type ->
+            OutlinedTextField(
+                value = current.newPerDay[type].orEmpty(),
+                onValueChange = { viewModel.setNewPerDay(type, it) },
+                label = { Text(stringResource(R.string.review_settings_new_per_day_of, typeName(type))) },
+                supportingText = { Text(stringResource(R.string.review_settings_new_per_day_range, DailyLimits.MAX_NEW_PER_TYPE)) },
+                isError = current.problems.any { it is SettingsProblem.InvalidNewPerDay && it.type == type },
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag(ReviewSettingsTags.newPerDay(type)),
+            )
+        }
+        TextButton(onClick = viewModel::resetNewPerDay, modifier = Modifier.testTag(ReviewSettingsTags.RESET_NEW)) {
+            Text(stringResource(R.string.review_settings_new_items_reset, DailyLimits.DEFAULT_NEW_VOCABULARY, DailyLimits.DEFAULT_NEW_KANJI, DailyLimits.DEFAULT_NEW_GRAMMAR))
+        }
+
         SectionHeader(stringResource(R.string.review_settings_daily_goal))
         Text(
             stringResource(R.string.review_settings_daily_goal_description),
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-        OutlinedTextField(
-            value = current.newPerDay,
-            onValueChange = viewModel::setNewPerDay,
-            label = { Text(stringResource(R.string.review_settings_new_per_day)) },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            modifier = Modifier.fillMaxWidth(),
         )
         OutlinedTextField(
             value = current.reviewsPerDay,
@@ -158,4 +178,19 @@ private fun problemText(problem: SettingsProblem): String = when (problem) {
     is SettingsProblem.NotIncreasing -> stringResource(R.string.review_settings_error_order, problem.step + 1)
     is SettingsProblem.TooLong -> stringResource(R.string.review_settings_error_too_long, problem.step + 1)
     SettingsProblem.InvalidLimits -> stringResource(R.string.review_settings_error_limits)
+    is SettingsProblem.InvalidNewPerDay -> stringResource(R.string.review_settings_error_new_per_day, typeName(problem.type), DailyLimits.MAX_NEW_PER_TYPE)
+}
+
+@Composable
+private fun typeName(type: ItemType): String = stringResource(
+    when (type) {
+        ItemType.VOCABULARY -> R.string.totals_vocabulary
+        ItemType.KANJI -> R.string.totals_kanji
+        ItemType.GRAMMAR -> R.string.totals_grammar
+    },
+)
+
+object ReviewSettingsTags {
+    const val RESET_NEW = "review_settings_reset_new"
+    fun newPerDay(type: ItemType) = "review_settings_new_${type.name}"
 }

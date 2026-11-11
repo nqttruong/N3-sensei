@@ -8,6 +8,7 @@ import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningProgress
 import com.n3sensei.app.domain.model.ReviewRating
+import com.n3sensei.app.domain.model.SubmitOutcome
 import com.n3sensei.app.domain.practice.PracticeItem
 import com.n3sensei.app.domain.practice.PracticeResult
 import com.n3sensei.app.domain.repository.ContentRepository
@@ -79,6 +80,8 @@ data class ReviewSessionUiState(
     val ratings: List<ReviewRating> = emptyList(),
     /** Due or new items that no longer exist in the content. */
     val skippedMissing: Int = 0,
+    /** Cards not saved because their type reached today's new-item limit meanwhile (another session). */
+    val skippedLimit: Int = 0,
     val result: PracticeResult? = null,
 ) {
     val current: SessionCard? get() = cards.getOrNull(index)
@@ -135,15 +138,26 @@ class ReviewSessionViewModel(
             .first()
         val limits = settings.limits
         val reviews = ReviewQueuePlanner.remainingReviews(limits, overview.today)
-        val news = ReviewQueuePlanner.remainingNew(limits, overview.today)
-        val types = ItemType.entries.filter(scope::includes)
-        suspend fun inTurns(limit: Int, fetch: suspend (ItemType) -> List<ItemRef>): List<ItemRef> =
-            if (limit == 0) emptyList() else ReviewQueuePlanner.interleave(types.associateWith { fetch(it) })
-        val asked = when (scope.mode) {
-            ReviewMode.FORGOTTEN -> inTurns(reviews) { progressRepository.getForgottenItemsOfType(it, reviews) }
-            else -> inTurns(reviews) { progressRepository.getDueItemsOfType(now, it, reviews) }
+        val type = scope.type
+        // Due (or last forgotten) items: one type's own queue, or all types in their usual
+        // order (oldest due first), within today's review allowance.
+        val asked = when {
+            reviews == 0 -> emptyList()
+            scope.mode == ReviewMode.FORGOTTEN && type == null -> progressRepository.getForgottenItems(reviews)
+            scope.mode == ReviewMode.FORGOTTEN -> progressRepository.getForgottenItemsOfType(type!!, reviews)
+            type == null -> progressRepository.getDueItems(now, reviews)
+            else -> progressRepository.getDueItemsOfType(now, type, reviews)
         }
-        val newItems = if (scope.mode == ReviewMode.SCHEDULED) inTurns(news) { progressRepository.getNewItemsOfType(it, news) } else emptyList()
+        // New items: each type up to its own allowance left today, in its own course order;
+        // one type's allowance never moves to another.
+        val newItems = if (scope.mode != ReviewMode.SCHEDULED) {
+            emptyList()
+        } else {
+            ItemType.entries.filter(scope::includes).flatMap { t ->
+                val left = ReviewQueuePlanner.remainingNew(limits, overview.today, t)
+                if (left == 0) emptyList() else progressRepository.getNewItemsOfType(t, left)
+            }
+        }
         val queue = ReviewQueuePlanner.plan(asked, newItems, limits, overview.today)
 
         val scheduler = SpacedRepetitionScheduler(settings.ladder)
@@ -181,8 +195,10 @@ class ReviewSessionViewModel(
         viewModelScope.launch {
             try {
                 // APPLIED or DUPLICATE: either way this answer is stored exactly once.
-                submitReview(card.ref, card.requestId, rating, settings, clock.instant(), clock.zone)
-                advance(rating)
+                // NEW_LIMIT_REACHED: another session introduced this type's last new item of
+                // today in the meantime; nothing was saved, the card is left for another day.
+                val outcome = submitReview(card.ref, card.requestId, rating, settings, clock.instant(), clock.zone)
+                advance(rating.takeIf { outcome != SubmitOutcome.NEW_LIMIT_REACHED })
                 recordSessionProgress()
             } catch (e: CancellationException) {
                 throw e
@@ -213,14 +229,16 @@ class ReviewSessionViewModel(
             false
         }
 
-    private fun advance(rating: ReviewRating) = _state.update { s ->
+    /** Next card; [rating] null when the card was not saved (its type's new-item limit was reached). */
+    private fun advance(rating: ReviewRating?) = _state.update { s ->
         if (s !is UiState.Success) return@update s
         val ui = s.data
-        val ratings = ui.ratings + rating
+        val ratings = ui.ratings + listOfNotNull(rating)
+        val skipped = ui.skippedLimit + if (rating == null) 1 else 0
         val next = ui.index + 1
         val result = if (next >= ui.cards.size) {
             PracticeResult(
-                total = ui.cards.size,
+                total = ui.cards.size - skipped,
                 again = ratings.count { it == ReviewRating.AGAIN },
                 hard = ratings.count { it == ReviewRating.HARD },
                 good = ratings.count { it == ReviewRating.GOOD },
@@ -230,6 +248,6 @@ class ReviewSessionViewModel(
         } else {
             null
         }
-        UiState.Success(ui.copy(index = next, isAnswerRevealed = false, isSubmitting = false, ratings = ratings, result = result))
+        UiState.Success(ui.copy(index = next, isAnswerRevealed = false, isSubmitting = false, ratings = ratings, result = result, skippedLimit = skipped))
     }
 }

@@ -5,6 +5,7 @@ import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ItemUserState
 import com.n3sensei.app.domain.model.LearningProgress
 import com.n3sensei.app.domain.model.LearningStatus
+import com.n3sensei.app.domain.model.NewItemLimit
 import com.n3sensei.app.domain.model.ProgressSummary
 import com.n3sensei.app.domain.model.ReviewOverview
 import com.n3sensei.app.domain.model.ReviewRating
@@ -53,6 +54,7 @@ class FakeProgressRepository(
     override suspend fun submitReview(
         item: ItemRef,
         requestId: String,
+        newItemLimit: NewItemLimit?,
         compute: (current: LearningProgress?) -> ScheduledReview,
     ): SubmitOutcome {
         submitCalls++
@@ -61,6 +63,13 @@ class FakeProgressRepository(
             error("disk full")
         }
         if (records.any { it.requestId == requestId }) return SubmitOutcome.DUPLICATE
+        // Same rule as the database: a first answer only while its type's cap for the day is not reached.
+        if (progress[item] == null && newItemLimit != null) {
+            val introduced = records.count {
+                it.wasNew && it.item.type == item.type && !it.reviewedAt.isBefore(newItemLimit.dayStart) && it.reviewedAt.isBefore(newItemLimit.dayEnd)
+            }
+            if (introduced >= newItemLimit.limit) return SubmitOutcome.NEW_LIMIT_REACHED
+        }
         val scheduled = compute(progress[item])
         progress[item] = scheduled.progress
         records += scheduled.record
@@ -73,6 +82,7 @@ class FakeProgressRepository(
     override suspend fun getDueItemsOfType(now: Instant, type: ItemType, limit: Int) = dueItems.filter { it.type == type }.take(limit)
     override suspend fun getNewItemsOfType(type: ItemType, limit: Int) = newItems.filter { it.type == type }.take(limit)
     override suspend fun getForgottenItemsOfType(type: ItemType, limit: Int) = forgottenItems.filter { it.type == type }.take(limit)
+    override suspend fun getForgottenItems(limit: Int) = forgottenItems.take(limit)
     override fun observeReviewOverview(now: Instant, dayStart: Instant, dayEnd: Instant): Flow<ReviewOverview> = flowOf(overview)
 
     override fun observeSummary(now: Instant): Flow<ProgressSummary> {

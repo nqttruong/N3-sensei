@@ -73,8 +73,12 @@ data class SettingsDto(
 data class ReviewSettingsDto(
     /** Same text as stored in DataStore, e.g. `20m,1h,1d,2d,1w,2w,1mo`. */
     val intervals: String? = null,
+    /** The shared cap of older versions; written as the vocabulary cap so they can still read new files. */
     val newPerDay: Int? = null,
     val reviewsPerDay: Int? = null,
+    val newVocabularyPerDay: Int? = null,
+    val newKanjiPerDay: Int? = null,
+    val newGrammarPerDay: Int? = null,
 )
 
 @Serializable

@@ -36,7 +36,11 @@ class DataStoreUserPreferencesRepository(
         val THEME_MODE = stringPreferencesKey("theme_mode")
         val SHOW_FURIGANA = booleanPreferencesKey("show_furigana")
         val REVIEW_INTERVALS = stringPreferencesKey("review_intervals")
+        /** The single shared cap of older versions: read once as the vocabulary cap, never written now. */
         val NEW_PER_DAY = intPreferencesKey("new_per_day")
+        val NEW_VOCABULARY_PER_DAY = intPreferencesKey("new_vocabulary_per_day")
+        val NEW_KANJI_PER_DAY = intPreferencesKey("new_kanji_per_day")
+        val NEW_GRAMMAR_PER_DAY = intPreferencesKey("new_grammar_per_day")
         val REVIEWS_PER_DAY = intPreferencesKey("reviews_per_day")
         val REMINDER_ENABLED = booleanPreferencesKey("reminder_enabled")
         val REMINDER_START_HOUR = intPreferencesKey("reminder_start_hour")
@@ -86,11 +90,19 @@ class DataStoreUserPreferencesRepository(
             )
         }
 
-    /** Out-of-range stored values (e.g. edited by hand) fall back to the defaults. */
+    /**
+     * Out-of-range stored values (e.g. edited by hand) fall back to the defaults. Settings saved
+     * before per-type caps have only the shared cap: it becomes the vocabulary cap (clamped to the
+     * new range), and kanji and grammar start at their defaults.
+     */
     private fun readLimits(prefs: Preferences): DailyLimits {
-        val newPerDay = prefs[Keys.NEW_PER_DAY]?.takeIf { it in 0..DailyLimits.MAX_NEW } ?: DailyLimits.DEFAULT_NEW
+        val perType = 0..DailyLimits.MAX_NEW_PER_TYPE
+        val legacy = prefs[Keys.NEW_PER_DAY]?.takeIf { it in 0..DailyLimits.LEGACY_MAX_NEW }?.coerceAtMost(DailyLimits.MAX_NEW_PER_TYPE)
+        val vocabulary = prefs[Keys.NEW_VOCABULARY_PER_DAY]?.takeIf { it in perType } ?: legacy ?: DailyLimits.DEFAULT_NEW_VOCABULARY
+        val kanji = prefs[Keys.NEW_KANJI_PER_DAY]?.takeIf { it in perType } ?: DailyLimits.DEFAULT_NEW_KANJI
+        val grammar = prefs[Keys.NEW_GRAMMAR_PER_DAY]?.takeIf { it in perType } ?: DailyLimits.DEFAULT_NEW_GRAMMAR
         val reviews = prefs[Keys.REVIEWS_PER_DAY]?.takeIf { it in 1..DailyLimits.MAX_REVIEWS } ?: DailyLimits.DEFAULT_REVIEWS
-        return DailyLimits(newPerDay, reviews)
+        return DailyLimits(vocabulary, kanji, grammar, reviews)
     }
 
     private fun readReminder(prefs: Preferences): ReminderSettings {
@@ -192,7 +204,9 @@ class DataStoreUserPreferencesRepository(
     override suspend fun setReviewSettings(settings: ReviewSettings) {
         dataStore.edit {
             it[Keys.REVIEW_INTERVALS] = settings.ladder.encode()
-            it[Keys.NEW_PER_DAY] = settings.limits.newPerDay
+            it[Keys.NEW_VOCABULARY_PER_DAY] = settings.limits.newVocabulary
+            it[Keys.NEW_KANJI_PER_DAY] = settings.limits.newKanji
+            it[Keys.NEW_GRAMMAR_PER_DAY] = settings.limits.newGrammar
             it[Keys.REVIEWS_PER_DAY] = settings.limits.reviewsPerDay
         }
     }

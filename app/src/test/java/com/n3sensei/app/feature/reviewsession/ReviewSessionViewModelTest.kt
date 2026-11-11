@@ -65,7 +65,7 @@ class ReviewSessionViewModelTest {
     }
 
     private fun limits(new: Int, reviews: Int) {
-        prefs.preferences.value = prefs.preferences.value.copy(reviewSettings = ReviewSettings(limits = DailyLimits(newPerDay = new, reviewsPerDay = reviews)))
+        prefs.preferences.value = prefs.preferences.value.copy(reviewSettings = ReviewSettings(limits = DailyLimits(newVocabulary = new, newKanji = new, newGrammar = new, reviewsPerDay = reviews)))
     }
 
     private fun ReviewSessionViewModel.ui() = (state.value as UiState.Success).data
@@ -76,7 +76,7 @@ class ReviewSessionViewModelTest {
     fun queue_isDueFirstThenNew_withinLimits_andShowsIntervalHints() {
         progress.dueItems = listOf(ItemRef(ItemType.KANJI, "k1"))
         progress.newItems = listOf(v("v1"), v("v2"))
-        prefs.preferences.value = prefs.preferences.value.copy(reviewSettings = ReviewSettings(limits = DailyLimits(newPerDay = 1, reviewsPerDay = 10)))
+        prefs.preferences.value = prefs.preferences.value.copy(reviewSettings = ReviewSettings(limits = DailyLimits(newVocabulary = 1, newKanji = 1, newGrammar = 1, reviewsPerDay = 10)))
 
         val ui = viewModel().ui()
         assertEquals(listOf("k1", "v1"), ui.cards.map { it.ref.id })
@@ -105,7 +105,8 @@ class ReviewSessionViewModelTest {
     @Test
     fun limitsAlreadyUsedToday_giveEmptySession() {
         progress.newItems = listOf(v("v1"))
-        progress.overview = ReviewOverview(emptyMap(), 0, TodayCounts(newAnswered = 20, reviewsAnswered = 0), newAvailable = 1)
+        // Vocabulary introduced its 20 today (its default cap).
+        progress.overview = ReviewOverview(emptyMap(), 0, TodayCounts(newAnswered = 20, reviewsAnswered = 0, newByType = mapOf(ItemType.VOCABULARY to 20)), newAvailable = 1)
         assertEquals(UiState.Empty, viewModel().state.value)
     }
 
@@ -214,11 +215,44 @@ class ReviewSessionViewModelTest {
     }
 
     @Test
-    fun aMixedSession_takesTheTypesInTurns_soNoTypeFillsIt() {
+    fun aMixedSession_keepsTheDueOrder_andTakesNewItemsWithinEachTypesOwnLimit() {
         allTypes()
-        limits(new = 3, reviews = 3)
-        // Three reviews: one word, one kanji, one pattern (not three words); then one new of each.
-        assertEquals(listOf("v1", "k1", "g1", "v4", "k2", "g2"), viewModel().ui().cards.map { it.ref.id })
+        limits(new = 1, reviews = 3)
+        // Due: oldest first whatever the type (unchanged); new: one of each type, nobody's share moved.
+        assertEquals(listOf("v1", "v2", "v3", "v4", "k2", "g2"), viewModel().ui().cards.map { it.ref.id })
+        // Kanji turned off: words and grammar keep theirs.
+        prefs.preferences.value = prefs.preferences.value.copy(
+            reviewSettings = ReviewSettings(limits = DailyLimits(newVocabulary = 1, newKanji = 0, newGrammar = 1, reviewsPerDay = 3)),
+        )
+        assertEquals(listOf("v1", "v2", "v3", "v4", "g2"), viewModel().ui().cards.map { it.ref.id })
+    }
+
+    @Test
+    fun whatATypeIntroducedToday_onlyReducesThatType() {
+        allTypes()
+        progress.overview = ReviewOverview(emptyMap(), 0, TodayCounts(10, 0, mapOf(ItemType.GRAMMAR to 10)), newAvailable = 3)
+        limits(new = 10, reviews = 200)
+        val ids = viewModel(ReviewScope(mode = ReviewMode.SCHEDULED)).ui().cards.map { it.ref.id }
+        assertTrue("g2" !in ids) // grammar used its 10 today
+        assertTrue("v4" in ids && "k2" in ids)
+    }
+
+    @Test
+    fun aTypeThatReachedItsLimitInAnotherSession_meanwhile_isSkipped_notSaved() {
+        allTypes()
+        prefs.preferences.value = prefs.preferences.value.copy(reviewSettings = ReviewSettings(limits = DailyLimits(newVocabulary = 0, newKanji = 1, newGrammar = 0)))
+        progress.progress[k("k1")] = TestContent.progress(k("k1"), stepIndex = 1, dueAt = clock.instant().minusSeconds(60))
+        val vm = viewModel(ReviewScope(type = ItemType.KANJI))
+        assertEquals(listOf("k1", "k2"), vm.ui().cards.map { it.ref.id }) // one due kanji, one new
+        // Another session introduces a kanji first.
+        kotlinx.coroutines.runBlocking { SubmitReviewUseCase(progress)(k("k9"), "other-session", ReviewRating.GOOD, prefs.preferences.value.reviewSettings, clock.instant(), clock.zone) }
+        vm.revealAnswer(); vm.rate(ReviewRating.GOOD) // k1: due, saved
+        vm.revealAnswer(); vm.rate(ReviewRating.GOOD) // k2: new, kanji cap reached → skipped
+        val ui = vm.ui()
+        assertEquals(1, ui.skippedLimit)
+        assertEquals(listOf("k9", "k1"), progress.records.map { it.item.id })
+        assertEquals(null, progress.progress[k("k2")])
+        assertEquals(1, ui.result!!.total)
     }
 
     @Test
@@ -233,7 +267,7 @@ class ReviewSessionViewModelTest {
     fun dueOnly_leavesNewItemsOut() {
         allTypes()
         val ui = viewModel(ReviewScope(mode = ReviewMode.DUE_ONLY)).ui()
-        assertEquals(listOf("v1", "k1", "g1", "v2", "v3"), ui.cards.map { it.ref.id })
+        assertEquals(listOf("v1", "v2", "v3", "k1", "g1"), ui.cards.map { it.ref.id })
         assertTrue(ui.cards.none { it.ref in listOf(v("v4"), k("k2"), g("g2")) })
     }
 

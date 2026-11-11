@@ -4,6 +4,7 @@ import com.n3sensei.app.domain.model.ItemRef
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ItemUserState
 import com.n3sensei.app.domain.model.LearningProgress
+import com.n3sensei.app.domain.model.NewItemLimit
 import com.n3sensei.app.domain.model.ProgressSummary
 import com.n3sensei.app.domain.model.ReviewOverview
 import com.n3sensei.app.domain.model.ReviewRating
@@ -42,11 +43,14 @@ interface ProgressRepository {
     /**
      * Applies one answer atomically: reads the current progress, lets [compute] (the domain
      * scheduler) derive the new progress and record, and writes both in one transaction.
-     * A second call with the same [requestId] (double tap, retry) changes nothing.
+     * A second call with the same [requestId] (double tap, retry) changes nothing. With
+     * [newItemLimit], a first answer to a never-answered item is refused (nothing written) once
+     * its type introduced that many items in the day, counted inside the same transaction.
      */
     suspend fun submitReview(
         item: ItemRef,
         requestId: String,
+        newItemLimit: NewItemLimit? = null,
         compute: (current: LearningProgress?) -> ScheduledReview,
     ): SubmitOutcome
 
@@ -66,6 +70,9 @@ interface ProgressRepository {
 
     /** Items of [type] whose last answer was "Quên", due or not yet; the due ones first. */
     suspend fun getForgottenItemsOfType(type: ItemType, limit: Int): List<ItemRef>
+
+    /** [getForgottenItemsOfType] for all types together: the due ones first, the earliest due first. */
+    suspend fun getForgottenItems(limit: Int): List<ItemRef>
 
     /** Counts for the Review screen; [dayStart]/[dayEnd] bound "today" in local time. */
     fun observeReviewOverview(now: Instant, dayStart: Instant, dayEnd: Instant): Flow<ReviewOverview>

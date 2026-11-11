@@ -35,6 +35,9 @@ data class TypeReview(
     /** Distinct items of this type answered today. */
     val doneToday: Int,
     val newAvailable: Int,
+    /** Items of this type introduced today, and this type's own daily cap. */
+    val newToday: Int = 0,
+    val newLimit: Int = 0,
     /** Cards a session of this type alone would contain now (today's limits applied). */
     val sessionSize: Int,
 )
@@ -58,18 +61,20 @@ data class ReviewUiState(
         /** The screen's numbers from the overview and today's limits (pure: unit-tested). */
         fun of(overview: ReviewOverview, limits: DailyLimits): ReviewUiState {
             val reviews = ReviewQueuePlanner.remainingReviews(limits, overview.today)
-            val news = ReviewQueuePlanner.remainingNew(limits, overview.today)
-            val newToday = minOf(overview.newAvailable, news)
+            // Each type's own allowance: what one type uses or leaves never changes another's.
+            val newByType = ItemType.entries.associateWith { minOf(overview.newByType[it] ?: 0, ReviewQueuePlanner.remainingNew(limits, overview.today, it)) }
+            val newToday = newByType.values.sum()
             val types = ItemType.entries.map { type ->
                 val due = overview.dueByType[type] ?: 0
-                val new = overview.newByType[type] ?: 0
                 TypeReview(
                     type = type,
                     due = due,
                     overdue = overview.overdueByType[type] ?: 0,
                     doneToday = overview.doneTodayByType[type] ?: 0,
-                    newAvailable = new,
-                    sessionSize = minOf(due, reviews) + minOf(new, news),
+                    newAvailable = overview.newByType[type] ?: 0,
+                    newToday = overview.today.newByType[type] ?: 0,
+                    newLimit = limits.newPerDay(type),
+                    sessionSize = minOf(due, reviews) + newByType.getValue(type),
                 )
             }
             return ReviewUiState(

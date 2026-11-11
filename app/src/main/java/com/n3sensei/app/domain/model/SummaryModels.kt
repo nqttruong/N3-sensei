@@ -28,7 +28,19 @@ enum class SubmitOutcome {
 
     /** The same answer (request id) was already saved; nothing changed. */
     DUPLICATE,
+
+    /**
+     * A first answer to a new item whose type already introduced its daily number of new items
+     * (checked inside the write, so two sessions at once cannot go over); nothing was saved.
+     */
+    NEW_LIMIT_REACHED,
 }
+
+/**
+ * Today's cap for a new item's type and the local day it is counted in: a first answer is
+ * saved only while fewer than [limit] items of that type were introduced in [dayStart, dayEnd).
+ */
+data class NewItemLimit(val limit: Int, val dayStart: java.time.Instant, val dayEnd: java.time.Instant)
 
 /**
  * Review counts. Every item counts once whatever its type; the `…ByType` maps break the totals

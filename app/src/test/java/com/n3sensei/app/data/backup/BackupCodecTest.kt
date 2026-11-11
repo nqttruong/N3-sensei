@@ -46,7 +46,7 @@ class BackupCodecTest {
         sessions = listOf(SessionBackup("s1", 1_000, 4_000, 3, 2, false)),
         settings = SettingsBackup(
             ThemeMode.DARK, false,
-            ReviewSettings(ReviewLadder.decodeOrNull("10m,1d,3d")!!, DailyLimits(5, 50)),
+            ReviewSettings(ReviewLadder.decodeOrNull("10m,1d,3d")!!, DailyLimits(newVocabulary = 5, reviewsPerDay = 50)),
             ReminderBackup.from(ReminderSettings(startHour = 22, endHour = 6, frequency = ReminderFrequency.ONCE_A_DAY, showMeaning = false, lockScreen = LockScreenPrivacy.HIDE_ALL)),
         ),
     )
@@ -193,7 +193,9 @@ class BackupCodecTest {
     @Test
     fun outOfRangeValues_areRejectedPerEntry() {
         assertEquals("stepIndex", ok(sampleWith("\"stepIndex\":3", "\"stepIndex\":12")).issues.single().detail)
-        assertEquals(BackupIssueCode.INVALID_SETTINGS, ok(sampleWith("\"newPerDay\":5", "\"newPerDay\":999")).issues.single().code)
+        // Each type's cap on its own: 0..100.
+        assertEquals(BackupIssueCode.INVALID_SETTINGS, ok(sampleWith("\"newKanjiPerDay\":10", "\"newKanjiPerDay\":101")).issues.single().code)
+        assertEquals(BackupIssueCode.INVALID_SETTINGS, ok(sampleWith("\"newVocabularyPerDay\":5", "\"newVocabularyPerDay\":999")).issues.single().code)
         assertEquals(BackupIssueCode.INVALID_SETTINGS, ok(sampleWith("\"startHour\":22", "\"startHour\":24")).issues.single().code)
     }
 
@@ -212,7 +214,9 @@ class BackupCodecTest {
         val settings = decoded.data.settings!!
         assertEquals(ThemeMode.DARK, settings.themeMode)
         assertEquals("10m,1d,3d", settings.review.ladder.encode())
-        assertEquals(DailyLimits(5, 50), settings.review.limits)
+        // A file from before per-type caps: its shared cap becomes the vocabulary cap; kanji and
+        // grammar take their defaults; reviews as they were.
+        assertEquals(DailyLimits(newVocabulary = 5, newKanji = 10, newGrammar = 10, reviewsPerDay = 50), settings.review.limits)
         assertEquals(ReminderBackup(7, 22, ReminderFrequency.EVERY_2_HOURS, true, false, LockScreenPrivacy.HIDE_ALL), settings.reminder)
         assertTrue(decoded.issues.isEmpty())
     }

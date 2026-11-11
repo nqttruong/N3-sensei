@@ -61,7 +61,7 @@ class BackupRepositoryTest {
         onboardingCompleted = true,
         themeMode = ThemeMode.DARK,
         showFurigana = false,
-        reviewSettings = ReviewSettings(ReviewLadder.decodeOrNull("10m,1d,3d,1w")!!, DailyLimits(7, 70)),
+        reviewSettings = ReviewSettings(ReviewLadder.decodeOrNull("10m,1d,3d,1w")!!, DailyLimits(newVocabulary = 7, newKanji = 3, newGrammar = 0, reviewsPerDay = 70)),
         reminderSettings = ReminderSettings(true, 6, 23, ReminderFrequency.EVERY_6_HOURS, false, false, LockScreenPrivacy.HIDE_ALL),
     )
 

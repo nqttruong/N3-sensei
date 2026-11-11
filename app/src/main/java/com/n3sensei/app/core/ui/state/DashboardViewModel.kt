@@ -94,7 +94,7 @@ class DashboardViewModel(
                     sessions.observeRecent(SESSION_LIMIT),
                 ) { r, buckets, schedule, recent ->
                     val newAvailable = r.status.values.sumOf { it.new }
-                    val assumptions = ForecastAssumptions(settings.limits.newPerDay, newAvailable)
+                    val assumptions = ForecastAssumptions(settings.limits.newPerDayTotal, newAvailable)
                     val pace = LearningAnalytics.dailySeries(buckets, zone, today, ProgressEstimator.WINDOW_DAYS)
                     UiState.Success(
                         DashboardUiState(
@@ -111,7 +111,7 @@ class DashboardViewModel(
                                 remaining = newAvailable,
                                 newItemsByDay = pace.map { it.newItems },
                                 studyDays = pace.count { it.answers > 0 },
-                                newPerDaySetting = settings.limits.newPerDay,
+                                newPerDaySetting = settings.limits.newPerDayTotal,
                             ),
                             sessions = recent,
                         ),

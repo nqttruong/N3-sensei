@@ -63,7 +63,7 @@ class DashboardEndToEndTest {
     @Test
     fun realNumbers_matchHandCount() {
         launch(fixture = true).use {
-            // Seed pack: 7 items, 4 started → 3 new left; default limits 20 new / 200 reviews.
+            // Seed pack: 7 items, 4 started → 3 new left; default limits 20 vocabulary + 10 kanji + 10 grammar new (40 in all) / 200 reviews.
             shown(string(R.string.dashboard_goal_new, 2, 5)) // r4, r5 today
             shown(string(R.string.dashboard_goal_reviews, 3, 5)) // r2 r3 r9 + 2 due
             shown("増える") // overdue, listed first
@@ -73,10 +73,10 @@ class DashboardEndToEndTest {
             assertTrue(composeRule.onAllNodes(hasText(string(R.string.dashboard_forecast_rule_scheduled, 2))).fetchSemanticsNodes().isEmpty())
             openStats()
             shown(string(R.string.dashboard_forecast_rule_scheduled, 2))
-            shown(string(R.string.dashboard_forecast_rule_estimate, 20, 3))
+            shown(string(R.string.dashboard_forecast_rule_estimate, 40, 3))
             // 3 study days and 4 new items in 28 days: not enough for a pace estimate.
             shown(string(R.string.dashboard_progress_not_enough, ProgressEstimator.MIN_STUDY_DAYS, ProgressEstimator.MIN_NEW_ITEMS, 3, 4))
-            shown(string(R.string.dashboard_progress_settings, 20, 1, 3))
+            shown(string(R.string.dashboard_progress_settings, 40, 1, 3))
             shown(string(R.string.dashboard_sessions_empty))
         }
     }

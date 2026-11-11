@@ -2,6 +2,7 @@ package com.n3sensei.app.feature.settings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
 import com.n3sensei.app.domain.srs.DailyLimits
 import com.n3sensei.app.domain.srs.IntervalUnit
@@ -25,11 +26,13 @@ sealed interface SettingsProblem {
     data class NotIncreasing(val step: Int) : SettingsProblem
     data class TooLong(val step: Int) : SettingsProblem
     data object InvalidLimits : SettingsProblem
+    data class InvalidNewPerDay(val type: ItemType) : SettingsProblem
 }
 
 data class ReviewSettingsDraft(
     val steps: List<StepDraft>,
-    val newPerDay: String,
+    /** Daily new-item cap of each type, as typed (each on its own, 0..100). */
+    val newPerDay: Map<ItemType, String>,
     val reviewsPerDay: String,
     val problems: List<SettingsProblem> = emptyList(),
     val saved: Boolean = false,
@@ -66,7 +69,11 @@ class ReviewSettingsViewModel(
 
     fun removeStep(index: Int) = edit { d -> d.copy(steps = d.steps.filterIndexed { i, _ -> i != index }) }
 
-    fun setNewPerDay(text: String) = edit { it.copy(newPerDay = text.filter(Char::isDigit).take(4)) }
+    /** Changes [type]'s cap only; the other two stay as they are. */
+    fun setNewPerDay(type: ItemType, text: String) = edit { it.copy(newPerDay = it.newPerDay + (type to text.filter(Char::isDigit).take(3))) }
+
+    /** Puts the three daily new-item caps back to 20 / 10 / 10 (nothing else changes; saved with Lưu). */
+    fun resetNewPerDay() = edit { it.copy(newPerDay = DailyLimits().toNewDraft()) }
 
     fun setReviewsPerDay(text: String) = edit { it.copy(reviewsPerDay = text.filter(Char::isDigit).take(4)) }
 
@@ -112,18 +119,30 @@ class ReviewSettingsViewModel(
                     }
                 }
             }
-            val newPerDay = draft.newPerDay.toIntOrNull()?.takeIf { it in 0..DailyLimits.MAX_NEW }
+            // Each type checked on its own: no limit on their sum.
+            val newPerDay = ItemType.entries.associateWith { type ->
+                draft.newPerDay[type]?.toIntOrNull()?.takeIf { it in 0..DailyLimits.MAX_NEW_PER_TYPE }
+            }
+            newPerDay.filterValues { it == null }.keys.forEach { problems += SettingsProblem.InvalidNewPerDay(it) }
             val reviewsPerDay = draft.reviewsPerDay.toIntOrNull()?.takeIf { it in 1..DailyLimits.MAX_REVIEWS }
-            if (newPerDay == null || reviewsPerDay == null) problems += SettingsProblem.InvalidLimits
+            if (reviewsPerDay == null) problems += SettingsProblem.InvalidLimits
             if (problems.isNotEmpty()) return null to problems
-            return ReviewSettings(ReviewLadder.of(intervals), DailyLimits(newPerDay!!, reviewsPerDay!!)) to emptyList()
+            val limits = DailyLimits(
+                newVocabulary = newPerDay.getValue(ItemType.VOCABULARY)!!,
+                newKanji = newPerDay.getValue(ItemType.KANJI)!!,
+                newGrammar = newPerDay.getValue(ItemType.GRAMMAR)!!,
+                reviewsPerDay = reviewsPerDay!!,
+            )
+            return ReviewSettings(ReviewLadder.of(intervals), limits) to emptyList()
         }
+
+        private fun DailyLimits.toNewDraft(): Map<ItemType, String> = ItemType.entries.associateWith { newPerDay(it).toString() }
 
         const val MAX_AMOUNT = 999
 
         private fun ReviewSettings.toDraft() = ReviewSettingsDraft(
             steps = ladder.intervals.map { StepDraft(it.amount.toString(), it.unit) },
-            newPerDay = limits.newPerDay.toString(),
+            newPerDay = limits.toNewDraft(),
             reviewsPerDay = limits.reviewsPerDay.toString(),
         )
     }

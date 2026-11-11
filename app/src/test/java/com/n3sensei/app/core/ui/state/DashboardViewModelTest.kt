@@ -43,7 +43,7 @@ class DashboardViewModelTest {
     private val analytics = FakeAnalyticsRepository()
     private val sessions = FakeReviewSessionRepository()
     private val prefs = FakeUserPreferencesRepository(
-        UserPreferences(onboardingCompleted = true, reviewSettings = ReviewSettings(limits = DailyLimits(newPerDay = 10, reviewsPerDay = 100))),
+        UserPreferences(onboardingCompleted = true, reviewSettings = ReviewSettings(limits = DailyLimits(newVocabulary = 10, newKanji = 0, newGrammar = 0, reviewsPerDay = 100))),
     )
     private val viewModel by lazy { DashboardViewModel(analytics, sessions, prefs, clock) }
     private fun ui() = (viewModel.state.value as UiState.Success).data

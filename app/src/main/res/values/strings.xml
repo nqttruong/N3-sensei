@@ -376,11 +376,11 @@
     <string name="review_overview_new">Mục mới có thể học hôm nay: %1$d (còn %2$d mục chưa học)</string>
     <string name="review_overview_today">Hôm nay: đã ôn %1$d / %2$d, đã học mới %3$d / %4$d</string>
     <string name="review_start">Bắt đầu ôn tập (%1$d)</string>
-    <string name="review_mixed_note">Phiên kết hợp xen kẽ từ vựng, Kanji và ngữ pháp, để không loại nào chiếm hết lượt ôn.</string>
+    <string name="review_mixed_note">Mỗi loại có giới hạn mục mới riêng mỗi ngày (Cài đặt → Ôn tập); loại này đủ không làm giảm loại khác.</string>
     <string name="review_type_due">Đến hạn</string>
     <string name="review_type_overdue">Quá hạn</string>
     <string name="review_type_done_today">Xong hôm nay</string>
-    <string name="review_type_new">Mục mới chưa học: %1$d</string>
+    <string name="review_type_new_today">Mục mới hôm nay: %1$d / %2$d · còn %3$d mục chưa học</string>
     <string name="review_type_start">Ôn %1$s (%2$d)</string>
     <string name="review_more_title">Lựa chọn khác</string>
     <string name="review_due_only">Chỉ ôn mục đến hạn (%1$d)</string>
@@ -401,7 +401,7 @@
 
 
     <string name="settings_review">Ôn tập</string>
-    <string name="settings_review_summary">Khoảng ôn: %1$s · Mới %2$d/ngày · Ôn %3$d/ngày</string>
+    <string name="settings_review_summary">Khoảng ôn: %1$s · Mới mỗi ngày: từ vựng %2$d, Kanji %3$d, ngữ pháp %4$d · Ôn %5$d/ngày</string>
     <string name="review_settings_title">Cài đặt ôn tập</string>
     <string name="review_settings_intervals">Các bậc khoảng ôn</string>
     <string name="review_settings_step">Bậc %1$d</string>
@@ -411,9 +411,14 @@
     <string name="review_settings_reset">Khôi phục mặc định</string>
     <string name="review_settings_save">Lưu</string>
     <string name="review_settings_saved">Đã lưu cài đặt ôn tập.</string>
+    <string name="review_settings_new_items">Mục mới mỗi ngày</string>
+    <string name="review_settings_new_items_description">Mỗi loại có giới hạn riêng, từ 0 đến %1$d; 0 là không học mục mới của loại đó. Ba giới hạn độc lập: không có tổng chung, loại này dùng hết hay còn thừa không ảnh hưởng loại khác.</string>
+    <string name="review_settings_new_per_day_of">%1$s mới mỗi ngày</string>
+    <string name="review_settings_new_per_day_range">0–%1$d</string>
+    <string name="review_settings_new_items_reset">Đặt lại mặc định (%1$d / %2$d / %3$d)</string>
+    <string name="review_settings_error_new_per_day">%1$s mới mỗi ngày phải từ 0 đến %2$d.</string>
     <string name="review_settings_daily_goal">Mục tiêu hằng ngày</string>
-    <string name="review_settings_daily_goal_description">Hai số này là mục tiêu hôm nay trên Trang chủ và cũng là giới hạn của phiên ôn: phiên ôn không đưa thêm mục mới hay lượt ôn khi đã đủ.</string>
-    <string name="review_settings_new_per_day">Số mục mới mỗi ngày (0–200)</string>
+    <string name="review_settings_daily_goal_description">Số lượt ôn mỗi ngày (chung cho cả ba loại) cùng với số mục mới ở trên là mục tiêu hôm nay trên Trang chủ và là giới hạn của phiên ôn: phiên ôn không đưa thêm mục mới hay lượt ôn khi đã đủ.</string>
     <string name="review_settings_reviews_per_day">Số lượt ôn mỗi ngày (1–2000)</string>
     <string name="review_settings_rule_time">Phút và giờ tính theo thời gian trôi qua. Ngày, tuần và tháng tính theo lịch, theo múi giờ của máy: “1 ngày” là cùng giờ ngày hôm sau; “1 tháng” là cùng ngày tháng sau (31/1 + 1 tháng = 28 hoặc 29/2).</string>
     <string name="review_settings_rule_change">Thay đổi chỉ áp dụng từ lần trả lời tiếp theo của mỗi mục; ngày đến hạn đã lên lịch được giữ nguyên. Nếu bớt bậc, mục đang ở bậc đã xóa sẽ dùng bậc cuối cùng.</string>
@@ -423,7 +428,7 @@
     <string name="review_settings_error_order">Bậc %1$d phải dài hơn bậc trước.</string>
     <string name="review_settings_error_too_long">Bậc %1$d dài quá 1 năm.</string>
     <string name="review_settings_error_amount">Bậc %1$d: số phải từ 1 đến 999.</string>
-    <string name="review_settings_error_limits">Giới hạn mỗi ngày không hợp lệ.</string>
+    <string name="review_settings_error_limits">Số lượt ôn mỗi ngày không hợp lệ.</string>
     <!-- Study reminders -->
     <string name="reminder_channel_name">Nhắc học</string>
     <string name="reminder_channel_description">Thông báo một mục cần học theo khung giờ và tần suất bạn chọn.</string>
@@ -659,6 +664,7 @@
     <string name="backup_issue_DATABASE_ERROR">Lỗi cơ sở dữ liệu; mọi thay đổi đã được hủy</string>
     <string name="backup_issue_SETTINGS_ERROR">Không lưu được cài đặt (dữ liệu học đã được khôi phục)</string>
     <!-- Why a card is in the review session -->
+    <string name="review_session_skipped_limit">%1$d thẻ mới được bỏ qua: loại đó đã đủ số mục mới hôm nay (ở một phiên ôn khác). Chưa lưu gì cho các thẻ này.</string>
     <string name="review_reason_new">Mục mới: lần đầu học mục này</string>
     <string name="review_reason_due">Đến hạn lúc %1$s · bậc %2$d/%3$d</string>
     <string name="review_reason_overdue">Quá hạn từ %1$s · bậc %2$d/%3$d</string>

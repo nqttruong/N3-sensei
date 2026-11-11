@@ -78,23 +78,37 @@ abstract class ProgressDao {
     @Query("SELECT COUNT(*) FROM review_records WHERE request_id = :requestId")
     abstract suspend fun countRecordsWithRequest(requestId: String): Int
 
+    /** Items of [type] introduced (first answered) in [dayStart, dayEnd). */
+    @Query("SELECT COUNT(*) FROM review_records WHERE was_new = 1 AND item_type = :type AND reviewed_at >= :dayStart AND reviewed_at < :dayEnd")
+    abstract suspend fun countNewOfType(type: ItemType, dayStart: Long, dayEnd: Long): Int
+
+    enum class ApplyResult { APPLIED, DUPLICATE, NEW_LIMIT_REACHED }
+
     /**
-     * Read-compute-write of one answer in a single transaction. Returns false (and writes
-     * nothing) when [requestId] was already recorded. The unique index on request_id backs
-     * this up if two transactions race.
+     * Read-compute-write of one answer in a single transaction. Writes nothing when
+     * [requestId] was already recorded (the unique index on request_id backs this up if two
+     * transactions race), or when the item has no progress yet (a first answer) and its type
+     * already introduced [newLimit] items in [dayStart, dayEnd): the count and the write are in
+     * the same transaction, which SQLite runs one at a time, so concurrent sessions cannot go
+     * over the cap.
      */
     @Transaction
     open suspend fun applyReview(
         type: ItemType,
         id: String,
         requestId: String,
+        newLimit: Int?,
+        dayStart: Long,
+        dayEnd: Long,
         compute: (LearningProgressEntity?) -> Pair<LearningProgressEntity, ReviewRecordEntity>,
-    ): Boolean {
-        if (countRecordsWithRequest(requestId) > 0) return false
-        val (progress, record) = compute(get(type, id))
+    ): ApplyResult {
+        if (countRecordsWithRequest(requestId) > 0) return ApplyResult.DUPLICATE
+        val current = get(type, id)
+        if (current == null && newLimit != null && countNewOfType(type, dayStart, dayEnd) >= newLimit) return ApplyResult.NEW_LIMIT_REACHED
+        val (progress, record) = compute(current)
         insertRecord(record)
         upsert(progress)
-        return true
+        return ApplyResult.APPLIED
     }
 
     @Query(
@@ -196,6 +210,27 @@ abstract class ProgressDao {
         """,
     )
     abstract fun observeForgottenByType(): Flow<List<TypeCountRow>>
+
+    /** [getForgottenRefsOfType] for all types together, in the same order (due ones first, earliest due first). */
+    @Query(
+        """
+        SELECT p.item_type, p.item_id FROM learning_progress p
+        WHERE $CONTENT_EXISTS AND $LAST_ANSWER_FORGOTTEN
+        ORDER BY p.due_at IS NULL, p.due_at, p.item_type, p.item_id
+        LIMIT :limit
+        """,
+    )
+    abstract suspend fun getForgottenRefs(limit: Int): List<ItemRefRow>
+
+    /** Items of each type introduced (first answered) in [dayStart, dayEnd). */
+    @Query(
+        """
+        SELECT item_type, COUNT(*) AS count FROM review_records
+        WHERE was_new = 1 AND reviewed_at >= :dayStart AND reviewed_at < :dayEnd
+        GROUP BY item_type
+        """,
+    )
+    abstract fun observeNewByTypeBetween(dayStart: Long, dayEnd: Long): Flow<List<TypeCountRow>>
 
     @Query(
         """

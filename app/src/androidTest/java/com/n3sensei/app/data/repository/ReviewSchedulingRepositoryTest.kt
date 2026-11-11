@@ -136,7 +136,7 @@ class ReviewSchedulingRepositoryTest {
         val yesterday = repository.observeReviewOverview(
             yesterdayNight, ReviewTime.startOfDay(yesterdayNight, zone), ReviewTime.startOfNextDay(yesterdayNight, zone),
         ).first()
-        assertEquals(TodayCounts(newAnswered = 2, reviewsAnswered = 0), yesterday.today)
+        assertEquals(TodayCounts(newAnswered = 2, reviewsAnswered = 0, newByType = mapOf(ItemType.VOCABULARY to 1, ItemType.KANJI to 1)), yesterday.today)
     }
 
     @Test

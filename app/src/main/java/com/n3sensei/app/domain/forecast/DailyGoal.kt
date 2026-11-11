@@ -18,15 +18,15 @@ data class DailyGoal(val newItems: GoalPart, val reviews: GoalPart) {
 
 /**
  * Today's goal from the daily limits and real data:
- * - new items: the daily new limit, but never more than what has been started today plus what
- *   is still available;
+ * - new items: the three per-type caps added up (what a day can bring at most), but never more
+ *   than what has been started today plus what is still available;
  * - reviews: reviews answered today plus everything due now, capped by the daily review limit.
  *   The target can grow during the day when items fall due (e.g. after "Quên").
  */
 object DailyGoalCalculator {
     fun goal(limits: DailyLimits, newDoneToday: Int, newAvailable: Int, reviewsDoneToday: Int, dueNow: Int): DailyGoal =
         DailyGoal(
-            newItems = GoalPart(newDoneToday, minOf(limits.newPerDay, newDoneToday + newAvailable)),
+            newItems = GoalPart(newDoneToday, minOf(limits.newPerDayTotal, newDoneToday + newAvailable)),
             reviews = GoalPart(reviewsDoneToday, minOf(limits.reviewsPerDay, reviewsDoneToday + dueNow)),
         )
 }

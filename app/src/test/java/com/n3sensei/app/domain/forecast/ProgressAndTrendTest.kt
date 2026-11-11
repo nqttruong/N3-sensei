@@ -92,7 +92,7 @@ class ProgressAndTrendTest {
 
     @Test
     fun dailyGoal_isCappedByLimitsAndAvailableWork() {
-        val limits = DailyLimits(newPerDay = 20, reviewsPerDay = 50)
+        val limits = DailyLimits(newVocabulary = 20, newKanji = 0, newGrammar = 0, reviewsPerDay = 50)
         val goal = DailyGoalCalculator.goal(limits, newDoneToday = 5, newAvailable = 3, reviewsDoneToday = 10, dueNow = 60)
         assertEquals(GoalPart(5, 8), goal.newItems) // only 3 new items left
         assertEquals(GoalPart(10, 50), goal.reviews) // capped by the daily limit
@@ -105,7 +105,7 @@ class ProgressAndTrendTest {
 
     @Test
     fun dailyGoal_sessionSize_isWhatAReviewSessionWouldHoldNow() {
-        val limits = DailyLimits(newPerDay = 20, reviewsPerDay = 50)
+        val limits = DailyLimits(newVocabulary = 20, newKanji = 0, newGrammar = 0, reviewsPerDay = 50)
         // 3 new left + min(60 due, 50 − 10 done) = 43, the same rule as the session queue.
         assertEquals(43, DailyGoalCalculator.goal(limits, newDoneToday = 5, newAvailable = 3, reviewsDoneToday = 10, dueNow = 60).sessionSize)
         assertEquals(0, DailyGoalCalculator.goal(limits, newDoneToday = 20, newAvailable = 9, reviewsDoneToday = 50, dueNow = 9).sessionSize)

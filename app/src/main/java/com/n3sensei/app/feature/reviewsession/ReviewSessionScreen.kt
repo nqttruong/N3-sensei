@@ -60,6 +60,13 @@ fun ReviewSessionScreen(
                     } else if (ui.skippedMissing > 0 && ui.index == 0) {
                         Text(stringResource(R.string.review_session_skipped), style = MaterialTheme.typography.bodySmall)
                     }
+                    if (ui.skippedLimit > 0) {
+                        Text(
+                            stringResource(R.string.review_session_skipped_limit, ui.skippedLimit),
+                            style = MaterialTheme.typography.bodySmall,
+                            modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite },
+                        )
+                    }
                 },
             )
         }

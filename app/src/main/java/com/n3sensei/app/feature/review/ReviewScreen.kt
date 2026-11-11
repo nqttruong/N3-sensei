@@ -95,7 +95,7 @@ fun ReviewScreen(
                         overview.today.reviewsAnswered,
                         ui.limits.reviewsPerDay,
                         overview.today.newAnswered,
-                        ui.limits.newPerDay,
+                        ui.limits.newPerDayTotal,
                     ),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -169,7 +169,11 @@ private fun TypeCard(review: TypeReview, onStart: () -> Unit) {
             StatItem(review.overdue.toString(), stringResource(R.string.review_type_overdue), Modifier.weight(1f))
             StatItem(review.doneToday.toString(), stringResource(R.string.review_type_done_today), Modifier.weight(1f))
         }
-        Text(stringResource(R.string.review_type_new, review.newAvailable), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(
+            stringResource(R.string.review_type_new_today, review.newToday, review.newLimit, review.newAvailable),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
         FilledTonalButton(
             onClick = onStart,
             enabled = review.sessionSize > 0,

@@ -8,6 +8,7 @@ import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ItemUserState
 import com.n3sensei.app.domain.model.LearningProgress
 import com.n3sensei.app.domain.model.LearningStatus
+import com.n3sensei.app.domain.model.NewItemLimit
 import com.n3sensei.app.domain.model.ProgressSummary
 import com.n3sensei.app.domain.model.ReviewOverview
 import com.n3sensei.app.domain.model.ReviewRating
@@ -35,15 +36,25 @@ class OfflineProgressRepository(
     override suspend fun submitReview(
         item: ItemRef,
         requestId: String,
+        newItemLimit: NewItemLimit?,
         compute: (current: LearningProgress?) -> ScheduledReview,
     ): SubmitOutcome {
-        val applied = progressDao.applyReview(item.type, item.id, requestId) { current ->
+        val result = progressDao.applyReview(
+            item.type, item.id, requestId,
+            newLimit = newItemLimit?.limit,
+            dayStart = newItemLimit?.dayStart?.toEpochMilli() ?: 0,
+            dayEnd = newItemLimit?.dayEnd?.toEpochMilli() ?: 0,
+        ) { current ->
             val scheduled = compute(current?.toDomain())
             require(scheduled.progress.item == item && scheduled.record.item == item) { "Scheduled review for another item" }
             require(scheduled.record.requestId == requestId) { "Record must carry the request id" }
             scheduled.progress.toEntity() to scheduled.record.toEntity()
         }
-        return if (applied) SubmitOutcome.APPLIED else SubmitOutcome.DUPLICATE
+        return when (result) {
+            ProgressDao.ApplyResult.APPLIED -> SubmitOutcome.APPLIED
+            ProgressDao.ApplyResult.DUPLICATE -> SubmitOutcome.DUPLICATE
+            ProgressDao.ApplyResult.NEW_LIMIT_REACHED -> SubmitOutcome.NEW_LIMIT_REACHED
+        }
     }
 
     override suspend fun getProgress(item: ItemRef): LearningProgress? = progressDao.get(item.type, item.id)?.toDomain()
@@ -63,6 +74,9 @@ class OfflineProgressRepository(
     override suspend fun getForgottenItemsOfType(type: ItemType, limit: Int): List<ItemRef> =
         progressDao.getForgottenRefsOfType(type, limit.coerceAtLeast(0)).map { ItemRef(it.itemType, it.itemId) }
 
+    override suspend fun getForgottenItems(limit: Int): List<ItemRef> =
+        progressDao.getForgottenRefs(limit.coerceAtLeast(0)).map { ItemRef(it.itemType, it.itemId) }
+
     override fun observeReviewOverview(now: Instant, dayStart: Instant, dayEnd: Instant): Flow<ReviewOverview> = combine(
         combine(
             progressDao.observeDueByType(now.toEpochMilli()),
@@ -72,14 +86,15 @@ class OfflineProgressRepository(
         ) { due, overdue, today, new -> Triple(due to overdue, today, new) },
         progressDao.observeDoneByType(dayStart.toEpochMilli(), dayEnd.toEpochMilli()),
         progressDao.observeForgottenByType(),
-    ) { (dueOverdue, today, new), done, forgotten ->
+        progressDao.observeNewByTypeBetween(dayStart.toEpochMilli(), dayEnd.toEpochMilli()),
+    ) { (dueOverdue, today, new), done, forgotten, newToday ->
         val (due, overdue) = dueOverdue
         val overdueByType = overdue.byType()
         val newByType = new.byType()
         ReviewOverview(
             dueByType = due.byType(),
             overdue = overdueByType.values.sum(),
-            today = TodayCounts(today.newAnswered, today.reviewsAnswered),
+            today = TodayCounts(today.newAnswered, today.reviewsAnswered, newToday.byType()),
             newAvailable = newByType.values.sum(),
             overdueByType = overdueByType,
             doneTodayByType = done.byType(),

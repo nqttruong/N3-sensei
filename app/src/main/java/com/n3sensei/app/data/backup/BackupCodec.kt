@@ -380,13 +380,20 @@ object BackupCodec {
         val review = required(d.review, "review")
         val ladder = ReviewLadder.decodeOrNull(required(review.intervals, "review.intervals"))
             ?: throw Invalid(BackupIssueCode.INVALID_VALUE, "review.intervals")
-        val newPerDay = required(review.newPerDay, "review.newPerDay").also { check(it in 0..DailyLimits.MAX_NEW, "review.newPerDay") }
+        // Older files carry only the shared cap: it becomes the vocabulary cap (clamped), kanji
+        // and grammar take their defaults.
+        val perType = 0..DailyLimits.MAX_NEW_PER_TYPE
+        val vocabulary = review.newVocabularyPerDay?.also { check(it in perType, "review.newVocabularyPerDay") }
+            ?: required(review.newPerDay, "review.newPerDay").also { check(it in 0..DailyLimits.LEGACY_MAX_NEW, "review.newPerDay") }
+                .coerceAtMost(DailyLimits.MAX_NEW_PER_TYPE)
+        val kanji = review.newKanjiPerDay?.also { check(it in perType, "review.newKanjiPerDay") } ?: DailyLimits.DEFAULT_NEW_KANJI
+        val grammar = review.newGrammarPerDay?.also { check(it in perType, "review.newGrammarPerDay") } ?: DailyLimits.DEFAULT_NEW_GRAMMAR
         val reviewsPerDay = required(review.reviewsPerDay, "review.reviewsPerDay").also { check(it in 1..DailyLimits.MAX_REVIEWS, "review.reviewsPerDay") }
         val r = required(d.reminder, "reminder")
         return SettingsBackup(
             themeMode = enumField(d.themeMode, "themeMode"),
             showFurigana = required(d.showFurigana, "showFurigana"),
-            review = ReviewSettings(ladder, DailyLimits(newPerDay, reviewsPerDay)),
+            review = ReviewSettings(ladder, DailyLimits(vocabulary, kanji, grammar, reviewsPerDay)),
             reminder = ReminderBackup(
                 startHour = required(r.startHour, "reminder.startHour").also { check(it in 0..23, "reminder.startHour") },
                 endHour = required(r.endHour, "reminder.endHour").also { check(it in 0..23, "reminder.endHour") },
@@ -416,7 +423,14 @@ object BackupCodec {
     private fun SettingsBackup.toDto() = SettingsDto(
         themeMode = themeMode.name,
         showFurigana = showFurigana,
-        review = ReviewSettingsDto(review.ladder.encode(), review.limits.newPerDay, review.limits.reviewsPerDay),
+        review = ReviewSettingsDto(
+            intervals = review.ladder.encode(),
+            newPerDay = review.limits.newVocabulary,
+            reviewsPerDay = review.limits.reviewsPerDay,
+            newVocabularyPerDay = review.limits.newVocabulary,
+            newKanjiPerDay = review.limits.newKanji,
+            newGrammarPerDay = review.limits.newGrammar,
+        ),
         reminder = ReminderDto(
             reminder.startHour, reminder.endHour, reminder.frequency.name,
             reminder.showReading, reminder.showMeaning, reminder.lockScreen.name,

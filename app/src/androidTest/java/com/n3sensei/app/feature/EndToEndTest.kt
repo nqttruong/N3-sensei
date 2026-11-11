@@ -214,7 +214,7 @@ class EndToEndTest {
 
             // Practice results are not saved to the review schedule.
             openTab(TopLevelDestination.REVIEW)
-            waitForText(string(R.string.review_overview_today, 0, 200, 0, 20))
+            waitForText(string(R.string.review_overview_today, 0, 200, 0, 40))
         }
     }
 
@@ -423,6 +423,8 @@ class EndToEndTest {
             // 意 opens Học → Bài học: lesson 1, Kanji tab.
             val kanjiPlace = string(R.string.location_in_course, string(R.string.course_lesson_title, 1), string(R.string.totals_kanji))
             waitForText(kanjiPlace, substring = true)
+            // The first card's text can show before 意's card is composed: wait for the card itself.
+            composeRule.waitUntil(5_000) { composeRule.onAllNodes(hasText("意") and hasClickAction()).fetchSemanticsNodes().isNotEmpty() }
             composeRule.onAllNodes(hasText("意") and hasClickAction()).onFirst().performClick()
             waitForText(string(R.string.location_section))
             composeRule.onNodeWithText(string(R.string.location_section)).performScrollTo().assertIsDisplayed()
@@ -529,7 +531,7 @@ class EndToEndTest {
     fun reviewSession_savesEveryAnswer_andProgressSurvivesRestart() {
         launch().use {
             openTab(TopLevelDestination.REVIEW)
-            // 7 seed items are new; the default limit allows 20 new items a day.
+            // 7 seed items are new; the default limits allow 20 / 10 / 10 new items a day per type.
             waitForText(string(R.string.review_start, 7))
             clickable(string(R.string.review_start, 7)).performClick()
             waitForText(string(R.string.review_session_saved_note))
@@ -541,13 +543,13 @@ class EndToEndTest {
             }
             waitForText(string(R.string.review_result_saved))
             composeRule.onNodeWithText(string(R.string.review_result_back)).performClick()
-            waitForText(string(R.string.review_overview_today, 0, 200, 7, 20))
+            waitForText(string(R.string.review_overview_today, 0, 200, 7, 40))
             composeRule.onNodeWithText(string(R.string.review_start, 0)).assertIsNotEnabled()
         }
         // Relaunch: progress is read back from Room.
         ActivityScenario.launch(MainActivity::class.java).use {
             openTab(TopLevelDestination.REVIEW)
-            waitForText(string(R.string.review_overview_today, 0, 200, 7, 20))
+            waitForText(string(R.string.review_overview_today, 0, 200, 7, 40))
             openTab(TopLevelDestination.LEARN)
             clickable(string(R.string.vocabulary_title)).performClick()
             awaitClickable(string(R.string.vocabulary_all)).performClick()

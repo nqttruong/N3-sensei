@@ -123,7 +123,9 @@ fun SettingsScreen(
                         stringResource(
                             R.string.settings_review_summary,
                             review.ladder.intervals.map { intervalLabel(it) }.joinToString(" → "),
-                            review.limits.newPerDay,
+                            review.limits.newVocabulary,
+                            review.limits.newKanji,
+                            review.limits.newGrammar,
                             review.limits.reviewsPerDay,
                         ),
                     )

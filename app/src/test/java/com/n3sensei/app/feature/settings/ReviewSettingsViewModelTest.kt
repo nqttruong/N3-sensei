@@ -1,5 +1,6 @@
 package com.n3sensei.app.feature.settings
 
+import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.domain.srs.IntervalUnit
 import com.n3sensei.app.domain.srs.ReviewLadder
@@ -26,7 +27,7 @@ class ReviewSettingsViewModelTest {
         assertEquals(7, draft().steps.size)
         assertEquals("20", draft().steps.first().amount)
         assertEquals(IntervalUnit.MONTHS, draft().steps.last().unit)
-        assertEquals("20", draft().newPerDay)
+        assertEquals(mapOf(ItemType.VOCABULARY to "20", ItemType.KANJI to "10", ItemType.GRAMMAR to "10"), draft().newPerDay)
     }
 
     @Test
@@ -34,12 +35,15 @@ class ReviewSettingsViewModelTest {
         viewModel.setAmount(0, "10")
         viewModel.setUnit(6, IntervalUnit.WEEKS)
         viewModel.setAmount(6, "4")
-        viewModel.setNewPerDay("5")
+        viewModel.setNewPerDay(ItemType.VOCABULARY, "5")
         viewModel.save()
 
         val saved = prefs.preferences.value.reviewSettings
         assertEquals("10m,1h,1d,2d,1w,2w,4w", saved.ladder.encode())
-        assertEquals(5, saved.limits.newPerDay)
+        assertEquals(5, saved.limits.newVocabulary)
+        // The other two kept their defaults.
+        assertEquals(10, saved.limits.newKanji)
+        assertEquals(10, saved.limits.newGrammar)
         assertTrue(draft().saved)
     }
 
@@ -77,5 +81,26 @@ class ReviewSettingsViewModelTest {
         assertEquals(IntervalUnit.MONTHS, draft().steps.last().unit)
         viewModel.save()
         assertEquals("20m,1h,1d,2d,1w,2w,1mo,2mo", prefs.preferences.value.reviewSettings.ladder.encode())
+    }
+
+    @Test
+    fun theThreeCaps_changeIndependently_withNoLimitOnTheirSum_andResetTo20_10_10() {
+        viewModel.setNewPerDay(ItemType.KANJI, "100")
+        viewModel.setNewPerDay(ItemType.GRAMMAR, "0")
+        assertEquals(mapOf(ItemType.VOCABULARY to "20", ItemType.KANJI to "100", ItemType.GRAMMAR to "0"), draft().newPerDay)
+        viewModel.setNewPerDay(ItemType.VOCABULARY, "100")
+        viewModel.save()
+        val saved = prefs.preferences.value.reviewSettings.limits
+        assertEquals(listOf(100, 100, 0), listOf(saved.newVocabulary, saved.newKanji, saved.newGrammar)) // 200 in all: accepted
+        viewModel.resetNewPerDay()
+        assertEquals(mapOf(ItemType.VOCABULARY to "20", ItemType.KANJI to "10", ItemType.GRAMMAR to "10"), draft().newPerDay)
+    }
+
+    @Test
+    fun aCapOver100_isRefused_forThatTypeOnly() {
+        viewModel.setNewPerDay(ItemType.GRAMMAR, "150")
+        viewModel.save()
+        assertEquals(listOf(SettingsProblem.InvalidNewPerDay(ItemType.GRAMMAR)), draft().problems)
+        assertEquals(10, prefs.preferences.value.reviewSettings.limits.newGrammar) // nothing saved
     }
 }
