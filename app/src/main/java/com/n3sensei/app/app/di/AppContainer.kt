@@ -135,7 +135,7 @@ class DefaultAppContainer(context: Context) : AppContainer {
 
     override val errorRepository: ErrorRepository by lazy { OfflineErrorRepository(database, clock) }
 
-    override val syncRepository: SyncRepository by lazy { AndroidSyncClient(appContext, database.progressDao()) }
+    override val syncRepository: SyncRepository by lazy { AndroidSyncClient(appContext, database) }
 
     override val widgetContentPicker: WidgetContentPicker by lazy { WidgetContentPicker(contentRepository, progressRepository, clock) }
 

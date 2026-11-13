@@ -258,7 +258,38 @@ object N3Migrations {
         }
     }
 
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14)
+    /** 14 → 15: isolated JLPT AI Review mirror, checkpoint and append-only outbox. */
+    val MIGRATION_14_15 = object : Migration(14, 15) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("CREATE TABLE IF NOT EXISTS `synced_exams` (`id` TEXT NOT NULL, `server_id` TEXT NOT NULL, `title` TEXT NOT NULL, `category` TEXT NOT NULL, `jlpt_level` TEXT NOT NULL, `description` TEXT, `source_url` TEXT, `status` TEXT NOT NULL, `is_deleted` INTEGER NOT NULL, `updated_cursor` INTEGER NOT NULL, PRIMARY KEY(`id`))")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_exams_updated_cursor` ON `synced_exams` (`updated_cursor`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `synced_passages` (`id` TEXT NOT NULL, `server_id` TEXT NOT NULL, `exam_id` TEXT NOT NULL, `text` TEXT NOT NULL, `is_deleted` INTEGER NOT NULL, `updated_cursor` INTEGER NOT NULL, PRIMARY KEY(`id`))")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_passages_exam_id` ON `synced_passages` (`exam_id`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `synced_questions` (`id` TEXT NOT NULL, `server_id` TEXT NOT NULL, `exam_id` TEXT NOT NULL, `passage_id` TEXT, `question_number` INTEGER NOT NULL, `question_type` TEXT NOT NULL, `content` TEXT NOT NULL, `options` TEXT NOT NULL, `answer_index` INTEGER, `answer_verified` INTEGER NOT NULL, `is_deleted` INTEGER NOT NULL, `updated_cursor` INTEGER NOT NULL, PRIMARY KEY(`id`))")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_questions_exam_id` ON `synced_questions` (`exam_id`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_questions_passage_id` ON `synced_questions` (`passage_id`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_questions_updated_cursor` ON `synced_questions` (`updated_cursor`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `synced_explanations` (`id` TEXT NOT NULL, `server_id` TEXT NOT NULL, `question_id` TEXT NOT NULL, `schema_version` TEXT NOT NULL, `explanation_json` TEXT NOT NULL, `available` INTEGER NOT NULL, `updated_cursor` INTEGER NOT NULL, PRIMARY KEY(`id`))")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_explanations_question_id` ON `synced_explanations` (`question_id`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `synced_attempts` (`id` TEXT NOT NULL, `server_id` TEXT NOT NULL, `exam_id` TEXT NOT NULL, `started_at` TEXT, `completed_at` TEXT, `total_questions` INTEGER NOT NULL, `source` TEXT, `updated_cursor` INTEGER NOT NULL, `is_deleted` INTEGER NOT NULL, PRIMARY KEY(`id`))")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_attempts_exam_id` ON `synced_attempts` (`exam_id`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `synced_knowledge` (`id` TEXT NOT NULL, `server_id` TEXT NOT NULL, `knowledge_type` TEXT NOT NULL, `jlpt_level` TEXT NOT NULL, `title` TEXT NOT NULL, `content` TEXT NOT NULL, `details_json` TEXT NOT NULL, `linked_question_ids_json` TEXT NOT NULL, `status` TEXT NOT NULL, `merged_into_id` TEXT, `version` INTEGER NOT NULL, `updated_cursor` INTEGER NOT NULL, `is_deleted` INTEGER NOT NULL, PRIMARY KEY(`id`))")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_knowledge_knowledge_type` ON `synced_knowledge` (`knowledge_type`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_knowledge_status` ON `synced_knowledge` (`status`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `synced_attempt_answers` (`server_id` TEXT NOT NULL, `attempt_id` TEXT NOT NULL, `question_id` TEXT NOT NULL, `question_number` INTEGER NOT NULL, `selected_index` INTEGER, `correct_index` INTEGER, `is_correct` INTEGER, `updated_cursor` INTEGER NOT NULL, `is_deleted` INTEGER NOT NULL, PRIMARY KEY(`attempt_id`, `question_id`))")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_attempt_answers_question_id` ON `synced_attempt_answers` (`question_id`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_attempt_answers_is_correct` ON `synced_attempt_answers` (`is_correct`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `synced_review_items` (`id` TEXT NOT NULL, `server_id` TEXT NOT NULL, `review_type` TEXT NOT NULL, `status` TEXT NOT NULL, `source_question_id` TEXT, `source_question_ids_json` TEXT NOT NULL, `knowledge_id` TEXT, `related_knowledge_id` TEXT, `source_explanation_id` TEXT, `remote_version` INTEGER NOT NULL, `updated_cursor` INTEGER NOT NULL, `local_step_index` INTEGER, `local_interval_minutes` INTEGER NOT NULL, `local_due_at` INTEGER, `local_last_reviewed_at` INTEGER, `local_review_count` INTEGER NOT NULL, `is_deleted` INTEGER NOT NULL, PRIMARY KEY(`id`))")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_review_items_status` ON `synced_review_items` (`status`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_review_items_local_due_at` ON `synced_review_items` (`local_due_at`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `synced_review_events` (`request_id` TEXT NOT NULL, `item_type` TEXT NOT NULL, `item_id` TEXT NOT NULL, `rating` TEXT NOT NULL, `reviewed_at` INTEGER NOT NULL, `interval_before_minutes` INTEGER NOT NULL, `interval_after_minutes` INTEGER NOT NULL, `due_at_after` INTEGER NOT NULL, `created_at` INTEGER NOT NULL, `uploaded_at` INTEGER, `attempt_count` INTEGER NOT NULL, `last_error` TEXT, PRIMARY KEY(`request_id`))")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_review_events_uploaded_at` ON `synced_review_events` (`uploaded_at`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_synced_review_events_item_id` ON `synced_review_events` (`item_id`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `sync_checkpoints` (`id` TEXT NOT NULL, `cursor` INTEGER NOT NULL, `schema_version` TEXT NOT NULL, `last_success_at` INTEGER, `last_error` TEXT, `downloaded_count` INTEGER NOT NULL, `last_upload_at` INTEGER, PRIMARY KEY(`id`))")
+        }
+    }
+
+    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14, MIGRATION_14_15)
 
     private fun String.toReadings(): String = StringListCodec.decode(this).joinToString(" ")
 

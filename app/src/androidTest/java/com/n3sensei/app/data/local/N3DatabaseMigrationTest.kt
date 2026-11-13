@@ -60,6 +60,26 @@ class N3DatabaseMigrationTest {
     }
 
     @Test
+    fun v14ToV15_addsSyncTablesAndPreservesExistingSrsRows() {
+        val name = "migration-test-sync-v14"
+        instrumentation.targetContext.deleteDatabase(name)
+        helper.createDatabase(name, 14).apply {
+            execSQL("INSERT INTO learning_progress VALUES ('VOCABULARY','legacy-word','REVIEW',2,1440,123456,654321,7,1,10,20)")
+            execSQL("INSERT INTO review_records (item_type,item_id,rating,reviewed_at,interval_before_minutes,interval_after_minutes,due_at_after,request_id,was_new) VALUES ('VOCABULARY','legacy-word','GOOD',654321,60,1440,123456,'legacy-event',0)")
+            close()
+        }
+        helper.runMigrationsAndValidate(name, 15, true, N3Migrations.MIGRATION_14_15).use { db ->
+            db.query("SELECT interval_minutes, due_at, review_count FROM learning_progress WHERE item_id='legacy-word'").use { c ->
+                assertTrue(c.moveToFirst()); assertEquals(1440L, c.getLong(0)); assertEquals(123456L, c.getLong(1)); assertEquals(7, c.getInt(2))
+            }
+            db.query("SELECT COUNT(*) FROM review_records WHERE request_id='legacy-event'").use { c -> assertTrue(c.moveToFirst()); assertEquals(1, c.getInt(0)) }
+            listOf("synced_exams", "synced_questions", "synced_knowledge", "synced_review_items", "synced_review_events", "sync_checkpoints")
+                .forEach { table -> db.query("SELECT COUNT(*) FROM `$table`").use { c -> assertTrue(c.moveToFirst()); assertEquals(0, c.getInt(0)) } }
+        }
+        instrumentation.targetContext.deleteDatabase(name)
+    }
+
+    @Test
     fun everyExportedVersion_migratesToCurrentAndMatchesSchema() {
         exportedVersions().forEach { version ->
             val name = "migration-test-v$version"

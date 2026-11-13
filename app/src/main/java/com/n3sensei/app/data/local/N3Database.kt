@@ -16,6 +16,7 @@ import com.n3sensei.app.data.local.dao.ProgressDao
 import com.n3sensei.app.data.local.dao.ReminderHistoryDao
 import com.n3sensei.app.data.local.dao.ReviewSessionDao
 import com.n3sensei.app.data.local.dao.UserContentDao
+import com.n3sensei.app.data.local.dao.SyncDao
 import com.n3sensei.app.data.local.entity.ContentPackEntity
 import com.n3sensei.app.data.local.entity.ContentSourceEntity
 import com.n3sensei.app.data.local.entity.ErrorRecordEntity
@@ -51,6 +52,16 @@ import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.data.local.entity.VocabularyExampleCrossRef
 import com.n3sensei.app.data.local.entity.VocabularyKanjiLinkEntity
 import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
+import com.n3sensei.app.data.local.entity.SyncedExamEntity
+import com.n3sensei.app.data.local.entity.SyncedPassageEntity
+import com.n3sensei.app.data.local.entity.SyncedQuestionEntity
+import com.n3sensei.app.data.local.entity.SyncedExplanationEntity
+import com.n3sensei.app.data.local.entity.SyncedAttemptEntity
+import com.n3sensei.app.data.local.entity.SyncedKnowledgeEntity
+import com.n3sensei.app.data.local.entity.SyncedAttemptAnswerEntity
+import com.n3sensei.app.data.local.entity.SyncedReviewItemEntity
+import com.n3sensei.app.data.local.entity.SyncedReviewEventEntity
+import com.n3sensei.app.data.local.entity.SyncCheckpointEntity
 
 @Database(
     entities = [
@@ -89,6 +100,16 @@ import com.n3sensei.app.data.local.entity.VocabularyTagCrossRef
         ErrorReviewLogEntity::class,
         ErrorRecordEntity::class,
         ReviewItemEntity::class,
+        SyncedExamEntity::class,
+        SyncedPassageEntity::class,
+        SyncedQuestionEntity::class,
+        SyncedExplanationEntity::class,
+        SyncedAttemptEntity::class,
+        SyncedKnowledgeEntity::class,
+        SyncedAttemptAnswerEntity::class,
+        SyncedReviewItemEntity::class,
+        SyncedReviewEventEntity::class,
+        SyncCheckpointEntity::class,
     ],
     version = N3Database.VERSION,
     exportSchema = true,
@@ -105,9 +126,10 @@ abstract class N3Database : RoomDatabase() {
     abstract fun reminderHistoryDao(): ReminderHistoryDao
     abstract fun examDao(): ExamDao
     abstract fun errorDao(): ErrorDao
+    abstract fun syncDao(): SyncDao
 
     companion object {
-        const val VERSION = 14
+        const val VERSION = 15
         const val NAME = "n3sensei.db"
 
         /**
