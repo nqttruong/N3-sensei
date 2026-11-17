@@ -1,0 +1,85 @@
+{
+  "description": "A group without questions.",
+  "base": "docs/contrast/contrast-pack.sample.json",
+  "patch": [
+    {
+      "op": "replace",
+      "path": "/groups/1/questions",
+      "value": []
+    }
+  ],
+  "expect": {
+    "build": [
+      {
+        "severity": "ERROR",
+        "code": "NO_QUESTIONS",
+        "path": "groups[1].questions"
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      }
+    ],
+    "import": [
+      {
+        "severity": "ERROR",
+        "code": "NO_QUESTIONS",
+        "path": "groups[1].questions"
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      }
+    ]
+  }
+}

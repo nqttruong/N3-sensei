@@ -1,0 +1,59 @@
+{
+  "description": "Fingerprint cases (sourceSchemaVersion 1). Expected hashes were computed with coreutils sha256sum on the canonical string written by hand (printf '%s' 'GRAMMAR<US>1<US>…' | sha256sum), not with either implementation. Python (test_contrast_tools.py) and Kotlin (ContrastSharedFixturesTest) must both reproduce them.",
+  "cases": [
+    {
+      "name": "grammar n3g-g001 as stored",
+      "type": "GRAMMAR",
+      "fields": { "pattern": "〜ことにしている", "structure": "Vる／Vない ＋ ことにしている", "meaningVi": "(tôi) có thói quen/nguyên tắc là…" },
+      "expected": "sha256:17c66fa0705aaed1701a46aa9248f716e19e03a884428007a7b7b793178bba1f"
+    },
+    {
+      "name": "surrounding spaces are trimmed",
+      "type": "GRAMMAR",
+      "fields": { "pattern": "  〜ことにしている", "structure": "Vる／Vない ＋ ことにしている ", "meaningVi": "\t(tôi) có thói quen/nguyên tắc là…\n" },
+      "expected": "sha256:17c66fa0705aaed1701a46aa9248f716e19e03a884428007a7b7b793178bba1f"
+    },
+    {
+      "name": "key order of fields does not matter",
+      "type": "GRAMMAR",
+      "fields": { "meaningVi": "(tôi) có thói quen/nguyên tắc là…", "structure": "Vる／Vない ＋ ことにしている", "pattern": "〜ことにしている" },
+      "expected": "sha256:17c66fa0705aaed1701a46aa9248f716e19e03a884428007a7b7b793178bba1f"
+    },
+    {
+      "name": "fields outside the fingerprint set are ignored",
+      "type": "GRAMMAR",
+      "fields": { "pattern": "〜ことにしている", "structure": "Vる／Vない ＋ ことにしている", "meaningVi": "(tôi) có thói quen/nguyên tắc là…", "usage": "ignored" },
+      "expected": "sha256:17c66fa0705aaed1701a46aa9248f716e19e03a884428007a7b7b793178bba1f"
+    },
+    {
+      "name": "kanji with on/kun lists (dots and dashes kept)",
+      "type": "KANJI",
+      "fields": { "character": "積", "onReadings": ["セキ"], "kunReadings": ["つ.む", "-づ.み", "つ.もる", "つ.もり"], "meaningVi": "Tích lũy" },
+      "expected": "sha256:f17f69471a2cb466c2adfcf2a7d36f0410f85b42312781cbea8062a17baf5768"
+    },
+    {
+      "name": "decomposed Vietnamese (NFD) gives the NFC fingerprint",
+      "type": "KANJI",
+      "fields": { "character": "積", "onReadings": ["セキ"], "kunReadings": ["つ.む", "-づ.み", "つ.もる", "つ.もり"], "meaningVi": "Tích lũy" },
+      "expected": "sha256:f17f69471a2cb466c2adfcf2a7d36f0410f85b42312781cbea8062a17baf5768"
+    },
+    {
+      "name": "reading order matters",
+      "type": "KANJI",
+      "fields": { "character": "積", "onReadings": ["セキ"], "kunReadings": ["-づ.み", "つ.む", "つ.もる", "つ.もり"], "meaningVi": "Tích lũy" },
+      "expected": "sha256:4b46b39973147ad5abc80cf9615535434516a7d10a19423c53c108874bc918d1"
+    },
+    {
+      "name": "empty kun list",
+      "type": "KANJI",
+      "fields": { "character": "績", "onReadings": ["セキ"], "kunReadings": [], "meaningVi": "Thành tích" },
+      "expected": "sha256:33396523843e1c56c4b22cf1ec5b6a2f2c9cb0e436f105960f6e8bc408c6c760"
+    },
+    {
+      "name": "vocabulary",
+      "type": "VOCABULARY",
+      "fields": { "expression": "冷める", "reading": "さめる", "meaningVi": "bị nguội" },
+      "expected": "sha256:75749f0af3a9311c29d1c30534f454152ab91a7dca13c8ca04f3984c184001a5"
+    }
+  ]
+}

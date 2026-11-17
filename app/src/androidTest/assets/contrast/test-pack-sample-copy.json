@@ -1,0 +1,597 @@
+{
+  "$schema": "./contrast-pack.schema.json",
+  "format": "n3sensei-contrast-pack",
+  "schemaVersion": 1,
+  "pack": {
+    "id": "contrast-n3",
+    "title": "Contrast Lab N3 (mẫu đặc tả)",
+    "description": "Gói mẫu dùng để đặc tả định dạng: một nhóm ngữ pháp đầy đủ bốn dạng bài, một nhóm từ vựng và một nhóm Kanji rút gọn.",
+    "jlptLevel": "N3",
+    "contentVersion": 1,
+    "publishedAt": "2026-11-17",
+    "license": {
+      "text": "Giải thích, ví dụ và câu hỏi do N3 Sensei soạn với hỗ trợ của AI, đã qua người kiểm duyệt nội dung; chưa qua kiểm duyệt chuyên môn của giáo viên.",
+      "licenseVerified": false
+    }
+  },
+  "sourcePacks": [
+    { "id": "n3-grammar", "version": 4 },
+    { "id": "mimikara-n3-vocab", "version": 2 },
+    { "id": "n3-kanji", "version": 3 }
+  ],
+  "groups": [
+    {
+      "id": "cg-g-koto-ni-shiteiru-naru",
+      "revision": 1,
+      "status": "PUBLISHED",
+      "contentType": "GRAMMAR",
+      "jlptLevel": "N3",
+      "title": "〜ことにしている và 〜ことになっている",
+      "summaryVi": "Cả hai đều nói về một việc được làm đều đặn theo một quyết định. Điểm khác là ai đã quyết định: chính người nói (ことにしている) hay người khác, tổ chức, quy định (ことになっている).",
+      "updatedAt": "2026-11-17",
+      "approval": {
+        "authoredBy": "reviewer-01",
+        "approvedBy": "reviewer-01",
+        "approvedAt": "2026-11-17",
+        "approvedRevision": 1,
+        "aiAssisted": true,
+        "acknowledgedWarnings": []
+      },
+      "items": [
+        {
+          "id": "ci-g-koto-ni-shiteiru",
+          "label": "〜ことにしている",
+          "source": {
+            "sourceType": "GRAMMAR",
+            "sourceContentId": "n3g-g001",
+            "sourcePackId": "n3-grammar",
+            "sourceSchemaVersion": 1,
+            "sourceSnapshot": {
+              "pattern": "〜ことにしている",
+              "structure": "Vる／Vない ＋ ことにしている",
+              "meaningVi": "(tôi) có thói quen/nguyên tắc là…"
+            },
+            "sourceFingerprint": "sha256:17c66fa0705aaed1701a46aa9248f716e19e03a884428007a7b7b793178bba1f"
+          },
+          "grammar": {
+            "meaningVi": "Tôi (tự mình) có thói quen / nguyên tắc là…",
+            "connection": "Vる／Vない ＋ ことにしている",
+            "nuanceVi": "Quyết định do chính người nói đặt ra và đang duy trì. Thường có chủ ngữ là 私 (hoặc ẩn). Nhấn mạnh ý chí cá nhân."
+          }
+        },
+        {
+          "id": "ci-g-koto-ni-natteiru",
+          "label": "〜ことになっている",
+          "source": {
+            "sourceType": "GRAMMAR",
+            "sourceContentId": "n3g-g002",
+            "sourcePackId": "n3-grammar",
+            "sourceSchemaVersion": 1,
+            "sourceSnapshot": {
+              "pattern": "〜ことになっている",
+              "structure": "Vる／Vない ＋ ことになっている",
+              "meaningVi": "theo quy định thì…, đã được định sẵn là…"
+            },
+            "sourceFingerprint": "sha256:427e8c5d006e32704b5a0ebef168ae79de64623b69d6f8ddd2ced569034ffddd"
+          },
+          "grammar": {
+            "meaningVi": "Theo quy định / theo kế hoạch đã định thì…",
+            "connection": "Vる／Vない ＋ ことになっている",
+            "nuanceVi": "Quyết định đến từ bên ngoài người nói: luật, nội quy, công ty, lịch đã chốt. Người nói chỉ truyền đạt lại. Hay đi với 〜では、規則で、法律で."
+          }
+        }
+      ],
+      "theory": [
+        {
+          "id": "ct-g-koto-1",
+          "titleVi": "Khác nhau ở người ra quyết định",
+          "bodyVi": "する là chủ động làm: 〜ことにする = tự quyết định, và 〜ことにしている = đã tự quyết định và vẫn đang giữ. なる là tự trở thành: 〜ことになる = việc được quyết định (không phải do mình), và 〜ことになっている = quyết định đó đang có hiệu lực như một quy định."
+        },
+        {
+          "id": "ct-g-koto-2",
+          "titleVi": "Cách kiểm tra nhanh",
+          "bodyVi": "Thêm được 「私は自分で決めて」 (tôi tự quyết) vào đầu câu mà vẫn tự nhiên thì dùng ことにしている. Thêm được 「規則で」 (theo nội quy) hoặc 「〜では」 (ở nơi…) thì dùng ことになっている."
+        }
+      ],
+      "comparison": [
+        {
+          "aspectVi": "Ai quyết định",
+          "values": {
+            "ci-g-koto-ni-shiteiru": "Chính người nói",
+            "ci-g-koto-ni-natteiru": "Người khác, tổ chức, luật lệ"
+          }
+        },
+        {
+          "aspectVi": "Từ hay đi kèm",
+          "values": {
+            "ci-g-koto-ni-shiteiru": "私は、毎日、〜ために (mục đích cá nhân)",
+            "ci-g-koto-ni-natteiru": "〜では、規則で、法律で、予定では"
+          }
+        },
+        {
+          "aspectVi": "Sắc thái",
+          "values": {
+            "ci-g-koto-ni-shiteiru": "Thói quen, nguyên tắc cá nhân",
+            "ci-g-koto-ni-natteiru": "Quy định, lịch đã chốt, truyền đạt khách quan"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "id": "cx-g-koto-a1",
+          "itemId": "ci-g-koto-ni-shiteiru",
+          "japanese": "私は寝る前に日記を書くことにしている。",
+          "furigana": "{私|わたし}は{寝|ね}る{前|まえ}に{日記|にっき}を{書|か}くことにしている。",
+          "translationVi": "Tôi có thói quen viết nhật ký trước khi ngủ (tự mình đặt ra)."
+        },
+        {
+          "id": "cx-g-koto-a2",
+          "itemId": "ci-g-koto-ni-shiteiru",
+          "japanese": "甘い物は週に一回だけ食べることにしている。",
+          "furigana": "{甘|あま}い{物|もの}は{週|しゅう}に{一回|いっかい}だけ{食|た}べることにしている。",
+          "translationVi": "Tôi tự đặt nguyên tắc chỉ ăn đồ ngọt mỗi tuần một lần."
+        },
+        {
+          "id": "cx-g-koto-b1",
+          "itemId": "ci-g-koto-ni-natteiru",
+          "japanese": "この会社では、毎週金曜日に会議をすることになっている。",
+          "furigana": "この{会社|かいしゃ}では、{毎週|まいしゅう}{金曜日|きんようび}に{会議|かいぎ}をすることになっている。",
+          "translationVi": "Ở công ty này, theo quy định thứ Sáu hằng tuần sẽ họp."
+        },
+        {
+          "id": "cx-g-koto-b2",
+          "itemId": "ci-g-koto-ni-natteiru",
+          "japanese": "図書館の本は二週間以内に返すことになっている。",
+          "furigana": "{図書館|としょかん}の{本|ほん}は{二週間|にしゅうかん}{以内|いない}に{返|かえ}すことになっている。",
+          "translationVi": "Theo quy định, sách thư viện phải trả trong vòng hai tuần."
+        }
+      ],
+      "memoryTips": [
+        {
+          "id": "cm-g-koto-1",
+          "textVi": "する = mình làm, nên にしている là mình đặt ra. なる = tự thành, nên になっている là đã được định sẵn cho mình."
+        }
+      ],
+      "commonMistakes": [
+        {
+          "id": "ce-g-koto-1",
+          "situationVi": "Muốn nói thói quen do chính mình đặt ra.",
+          "wrong": {
+            "japanese": "私は健康のために、毎朝走ることになっている。",
+            "furigana": "{私|わたし}は{健康|けんこう}のために、{毎朝|まいあさ}{走|はし}ることになっている。"
+          },
+          "correct": {
+            "japanese": "私は健康のために、毎朝走ることにしている。",
+            "furigana": "{私|わたし}は{健康|けんこう}のために、{毎朝|まいあさ}{走|はし}ることにしている。"
+          },
+          "explanationVi": "健康のために là mục đích cá nhân, do mình tự quyết, nên dùng ことにしている. Dùng ことになっている nghe như có ai bắt mình chạy.",
+          "expectedItemId": "ci-g-koto-ni-shiteiru",
+          "confusedWithItemId": "ci-g-koto-ni-natteiru"
+        },
+        {
+          "id": "ce-g-koto-2",
+          "situationVi": "Nói về nội quy của trường.",
+          "wrong": {
+            "japanese": "学校の規則で、制服を着ることにしている。",
+            "furigana": "{学校|がっこう}の{規則|きそく}で、{制服|せいふく}を{着|き}ることにしている。"
+          },
+          "correct": {
+            "japanese": "学校の規則で、制服を着ることになっている。",
+            "furigana": "{学校|がっこう}の{規則|きそく}で、{制服|せいふく}を{着|き}ることになっている。"
+          },
+          "explanationVi": "規則で (theo nội quy) cho biết người quyết định là nhà trường, nên dùng ことになっている.",
+          "expectedItemId": "ci-g-koto-ni-natteiru",
+          "confusedWithItemId": "ci-g-koto-ni-shiteiru"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cq-g-koto-mc1",
+          "revision": 1,
+          "type": "MULTIPLE_CHOICE",
+          "difficulty": 1,
+          "targetItemId": "ci-g-koto-ni-natteiru",
+          "instructionVi": "Câu nào diễn tả một quy định do nơi ở đặt ra (không phải do người nói tự quyết)?",
+          "options": [
+            {
+              "id": "a",
+              "text": "毎晩、十時に寝ることにしている。",
+              "furigana": "{毎晩|まいばん}、{十時|じゅうじ}に{寝|ね}ることにしている。",
+              "itemId": "ci-g-koto-ni-shiteiru",
+              "feedbackVi": "Đây là thói quen người nói tự đặt ra."
+            },
+            {
+              "id": "b",
+              "text": "この寮では、十時に寝ることになっている。",
+              "furigana": "この{寮|りょう}では、{十時|じゅうじ}に{寝|ね}ることになっている。",
+              "itemId": "ci-g-koto-ni-natteiru"
+            },
+            {
+              "id": "c",
+              "text": "毎晩、十時に寝ることにした。",
+              "furigana": "{毎晩|まいばん}、{十時|じゅうじ}に{寝|ね}ることにした。",
+              "feedbackVi": "ことにした là vừa tự quyết định (một lần), không phải quy định."
+            }
+          ],
+          "correctOptionId": "b",
+          "explanationVi": "この寮では (ở ký túc xá này) cho biết quy định do nơi ở đặt ra, nên dùng ことになっている."
+        },
+        {
+          "id": "cq-g-koto-fb1",
+          "revision": 1,
+          "type": "FILL_IN_THE_BLANK",
+          "difficulty": 1,
+          "targetItemId": "ci-g-koto-ni-natteiru",
+          "instructionVi": "Chọn cách nói phù hợp để điền vào chỗ trống.",
+          "prompt": {
+            "japanese": "日本では、車は道の左側を走る＿＿＿。",
+            "furigana": "{日本|にほん}では、{車|くるま}は{道|みち}の{左側|ひだりがわ}を{走|はし}る＿＿＿。",
+            "translationVi": "Ở Nhật, (theo luật) xe chạy bên trái đường."
+          },
+          "options": [
+            { "id": "a", "text": "ことにしている", "itemId": "ci-g-koto-ni-shiteiru" },
+            { "id": "b", "text": "ことになっている", "itemId": "ci-g-koto-ni-natteiru" }
+          ],
+          "correctOptionId": "b",
+          "explanationVi": "Luật giao thông do nhà nước đặt ra, không phải do người nói quyết định, nên dùng ことになっている."
+        },
+        {
+          "id": "cq-g-koto-fb2",
+          "revision": 1,
+          "type": "FILL_IN_THE_BLANK",
+          "difficulty": 1,
+          "targetItemId": "ci-g-koto-ni-shiteiru",
+          "instructionVi": "Chọn cách nói phù hợp để điền vào chỗ trống.",
+          "prompt": {
+            "japanese": "最近太ってきたので、夜九時以降は何も食べない＿＿＿。",
+            "furigana": "{最近|さいきん}{太|ふと}ってきたので、{夜|よる}{九時|くじ}{以降|いこう}は{何|なに}も{食|た}べない＿＿＿。",
+            "translationVi": "Dạo này tôi tăng cân nên (tự đặt ra) sau chín giờ tối không ăn gì."
+          },
+          "options": [
+            { "id": "a", "text": "ことにしている", "itemId": "ci-g-koto-ni-shiteiru" },
+            { "id": "b", "text": "ことになっている", "itemId": "ci-g-koto-ni-natteiru" }
+          ],
+          "correctOptionId": "a",
+          "explanationVi": "Lý do là của bản thân (太ってきたので) và người nói tự quyết, nên dùng ことにしている."
+        },
+        {
+          "id": "cq-g-koto-ed1",
+          "revision": 1,
+          "type": "ERROR_DETECTION",
+          "difficulty": 2,
+          "targetItemId": "ci-g-koto-ni-shiteiru",
+          "instructionVi": "Người nói tự đặt ra thói quen này. Chọn phần sai trong câu.",
+          "prompt": {
+            "japanese": "私は健康のために、毎日野菜を食べることになっている。",
+            "furigana": "{私|わたし}は{健康|けんこう}のために、{毎日|まいにち}{野菜|やさい}を{食|た}べることになっている。",
+            "translationVi": "Vì sức khỏe, tôi (tự đặt ra) mỗi ngày ăn rau."
+          },
+          "options": [
+            { "id": "a", "text": "私は", "furigana": "{私|わたし}は" },
+            { "id": "b", "text": "健康のために、", "furigana": "{健康|けんこう}のために、" },
+            { "id": "c", "text": "毎日野菜を食べる", "furigana": "{毎日|まいにち}{野菜|やさい}を{食|た}べる" },
+            { "id": "d", "text": "ことになっている。", "itemId": "ci-g-koto-ni-natteiru" }
+          ],
+          "correctOptionId": "d",
+          "correction": {
+            "text": "ことにしている。",
+            "itemId": "ci-g-koto-ni-shiteiru"
+          },
+          "explanationVi": "Thói quen do người nói tự đặt ra (健康のために) phải dùng ことにしている. ことになっている nghĩa là có người khác quy định."
+        },
+        {
+          "id": "cq-g-koto-cs1",
+          "revision": 1,
+          "type": "CONTEXT_SELECTION",
+          "difficulty": 2,
+          "targetItemId": "ci-g-koto-ni-natteiru",
+          "instructionVi": "Chọn câu tự nhiên nhất trong tình huống sau.",
+          "context": {
+            "descriptionVi": "Bạn giải thích cho đồng nghiệp mới rằng ở công ty, nhân viên phải nộp báo cáo vào thứ Sáu hằng tuần."
+          },
+          "options": [
+            {
+              "id": "a",
+              "text": "毎週金曜日に報告書を出すことになっています。",
+              "furigana": "{毎週|まいしゅう}{金曜日|きんようび}に{報告書|ほうこくしょ}を{出|だ}すことになっています。",
+              "itemId": "ci-g-koto-ni-natteiru"
+            },
+            {
+              "id": "b",
+              "text": "毎週金曜日に報告書を出すことにしています。",
+              "furigana": "{毎週|まいしゅう}{金曜日|きんようび}に{報告書|ほうこくしょ}を{出|だ}すことにしています。",
+              "itemId": "ci-g-koto-ni-shiteiru",
+              "feedbackVi": "Câu này nghe như thói quen riêng của bạn, không phải quy định của công ty."
+            },
+            {
+              "id": "c",
+              "text": "毎週金曜日に報告書を出すことにしました。",
+              "furigana": "{毎週|まいしゅう}{金曜日|きんようび}に{報告書|ほうこくしょ}を{出|だ}すことにしました。",
+              "feedbackVi": "ことにしました là bạn vừa tự quyết định."
+            }
+          ],
+          "correctOptionId": "a",
+          "explanationVi": "Quy định của công ty là quyết định từ bên ngoài người nói, nên dùng ことになっています."
+        }
+      ]
+    },
+    {
+      "id": "cg-v-sameru-cold-awake",
+      "revision": 1,
+      "status": "PUBLISHED",
+      "contentType": "VOCABULARY",
+      "jlptLevel": "N3",
+      "title": "冷める và 覚める (cùng đọc さめる)",
+      "summaryVi": "Hai động từ cùng cách đọc さめる nhưng khác chữ và nghĩa: 冷める là nguội đi (nhiệt độ, cảm xúc), còn 覚める là tỉnh ra (giấc ngủ, cơn say, ảo tưởng).",
+      "updatedAt": "2026-11-17",
+      "approval": {
+        "authoredBy": "reviewer-01",
+        "approvedBy": "reviewer-01",
+        "approvedAt": "2026-11-17",
+        "approvedRevision": 1,
+        "aiAssisted": true,
+        "acknowledgedWarnings": [
+          { "code": "QUESTION_TYPES_INCOMPLETE", "target": "cg-v-sameru-cold-awake" }
+        ]
+      },
+      "items": [
+        {
+          "id": "ci-v-sameru-cold",
+          "label": "冷める",
+          "labelFurigana": "{冷|さ}める",
+          "source": {
+            "sourceType": "VOCABULARY",
+            "sourceContentId": "mimikara-n3-v211",
+            "sourcePackId": "mimikara-n3-vocab",
+            "sourceSchemaVersion": 1,
+            "sourceSnapshot": { "expression": "冷める", "reading": "さめる", "meaningVi": "bị nguội" },
+            "sourceFingerprint": "sha256:75749f0af3a9311c29d1c30534f454152ab91a7dca13c8ca04f3984c184001a5"
+          },
+          "vocabulary": {
+            "reading": "さめる",
+            "meaningVi": "nguội đi; (cảm xúc) nguội lạnh",
+            "usageVi": "Vật nóng mất nhiệt; hứng thú, tình cảm giảm đi.",
+            "collocations": [
+              { "japanese": "料理が冷める", "furigana": "{料理|りょうり}が{冷|さ}める", "meaningVi": "thức ăn nguội" },
+              { "japanese": "熱が冷める", "furigana": "{熱|ねつ}が{冷|さ}める", "meaningVi": "nhiệt tình nguội đi" }
+            ]
+          }
+        },
+        {
+          "id": "ci-v-sameru-awake",
+          "label": "覚める",
+          "labelFurigana": "{覚|さ}める",
+          "source": {
+            "sourceType": "VOCABULARY",
+            "sourceContentId": "mimikara-n3-v505",
+            "sourcePackId": "mimikara-n3-vocab",
+            "sourceSchemaVersion": 1,
+            "sourceSnapshot": { "expression": "覚める", "reading": "さめる", "meaningVi": "thức dậy" },
+            "sourceFingerprint": "sha256:141e3c205496242d0b460cadfa80a2d299fcb2a8a24ffba8ca3b633f7909666e"
+          },
+          "vocabulary": {
+            "reading": "さめる",
+            "meaningVi": "tỉnh ra, thức giấc",
+            "usageVi": "Thoát khỏi trạng thái ngủ, say hay mê muội.",
+            "collocations": [
+              { "japanese": "目が覚める", "furigana": "{目|め}が{覚|さ}める", "meaningVi": "tỉnh giấc" },
+              { "japanese": "酔いが覚める", "furigana": "{酔|よ}いが{覚|さ}める", "meaningVi": "tỉnh rượu" }
+            ]
+          }
+        }
+      ],
+      "theory": [
+        {
+          "id": "ct-v-sameru-1",
+          "titleVi": "Nhìn chữ Hán để đoán nghĩa",
+          "bodyVi": "冷 (lạnh) → 冷める: nhiệt độ hay cảm xúc giảm. 覚 (giác, tỉnh giác) → 覚める: ý thức quay lại."
+        }
+      ],
+      "comparison": [
+        {
+          "aspectVi": "Chủ ngữ thường gặp",
+          "values": {
+            "ci-v-sameru-cold": "料理、お茶、熱、愛情",
+            "ci-v-sameru-awake": "目、酔い、夢"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "id": "cx-v-sameru-a1",
+          "itemId": "ci-v-sameru-cold",
+          "japanese": "スープが冷めないうちに飲んでください。",
+          "furigana": "スープが{冷|さ}めないうちに{飲|の}んでください。",
+          "translationVi": "Hãy uống súp khi còn chưa nguội."
+        },
+        {
+          "id": "cx-v-sameru-b1",
+          "itemId": "ci-v-sameru-awake",
+          "japanese": "夜中に目が覚めた。",
+          "furigana": "{夜中|よなか}に{目|め}が{覚|さ}めた。",
+          "translationVi": "Nửa đêm tôi tỉnh giấc."
+        }
+      ],
+      "memoryTips": [
+        { "id": "cm-v-sameru-1", "textVi": "Thức ăn có 冷 (lạnh) thì nguội; con mắt có 覚 (giác) thì tỉnh." }
+      ],
+      "commonMistakes": [
+        {
+          "id": "ce-v-sameru-1",
+          "situationVi": "Nói về việc tỉnh giấc.",
+          "wrong": { "japanese": "朝五時に目が冷めた。", "furigana": "{朝|あさ}{五時|ごじ}に{目|め}が{冷|さ}めた。" },
+          "correct": { "japanese": "朝五時に目が覚めた。", "furigana": "{朝|あさ}{五時|ごじ}に{目|め}が{覚|さ}めた。" },
+          "explanationVi": "目が さめる (tỉnh giấc) viết bằng 覚. Gõ さめる trên máy dễ chọn nhầm 冷める.",
+          "expectedItemId": "ci-v-sameru-awake",
+          "confusedWithItemId": "ci-v-sameru-cold"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cq-v-sameru-fb1",
+          "revision": 1,
+          "type": "FILL_IN_THE_BLANK",
+          "difficulty": 1,
+          "targetItemId": "ci-v-sameru-cold",
+          "instructionVi": "Chọn chữ đúng để điền vào chỗ trống.",
+          "prompt": {
+            "japanese": "コーヒーが＿＿＿前に飲もう。",
+            "furigana": "コーヒーが＿＿＿{前|まえ}に{飲|の}もう。",
+            "translationVi": "Uống cà phê trước khi nó nguội đi nào."
+          },
+          "options": [
+            { "id": "a", "text": "冷める", "furigana": "{冷|さ}める", "itemId": "ci-v-sameru-cold" },
+            { "id": "b", "text": "覚める", "furigana": "{覚|さ}める", "itemId": "ci-v-sameru-awake" }
+          ],
+          "correctOptionId": "a",
+          "explanationVi": "Cà phê mất nhiệt nên dùng 冷める."
+        },
+        {
+          "id": "cq-v-sameru-cs1",
+          "revision": 1,
+          "type": "CONTEXT_SELECTION",
+          "difficulty": 1,
+          "targetItemId": "ci-v-sameru-awake",
+          "instructionVi": "Chọn câu đúng trong tình huống sau.",
+          "context": { "descriptionVi": "Sáng nay chuông báo thức không kêu nhưng bạn vẫn tự tỉnh dậy lúc 6 giờ." },
+          "options": [
+            { "id": "a", "text": "今朝は六時に目が覚めた。", "furigana": "{今朝|けさ}は{六時|ろくじ}に{目|め}が{覚|さ}めた。", "itemId": "ci-v-sameru-awake" },
+            { "id": "b", "text": "今朝は六時に目が冷めた。", "furigana": "{今朝|けさ}は{六時|ろくじ}に{目|め}が{冷|さ}めた。", "itemId": "ci-v-sameru-cold" },
+            { "id": "c", "text": "今朝は六時に目が冷えた。", "furigana": "{今朝|けさ}は{六時|ろくじ}に{目|め}が{冷|ひ}えた。", "feedbackVi": "冷える là bị lạnh đi, không dùng cho việc tỉnh giấc." }
+          ],
+          "correctOptionId": "a",
+          "explanationVi": "目が覚める là tỉnh giấc."
+        }
+      ]
+    },
+    {
+      "id": "cg-k-seki-accumulate-achieve",
+      "revision": 1,
+      "status": "PUBLISHED",
+      "contentType": "KANJI",
+      "jlptLevel": "N3",
+      "title": "積 và 績 (cùng âm セキ, Hán Việt TÍCH)",
+      "summaryVi": "Hai chữ cùng phần bên phải 責 nên cùng âm セキ, chỉ khác bộ bên trái: 禾 (lúa) trong 積, 糸 (sợi chỉ) trong 績.",
+      "updatedAt": "2026-11-17",
+      "approval": {
+        "authoredBy": "reviewer-01",
+        "approvedBy": "reviewer-01",
+        "approvedAt": "2026-11-17",
+        "approvedRevision": 1,
+        "aiAssisted": true,
+        "acknowledgedWarnings": [
+          { "code": "QUESTION_TYPES_INCOMPLETE", "target": "cg-k-seki-accumulate-achieve" },
+          { "code": "FURIGANA_MISSING", "target": "cq-k-seki-mc1/a" },
+          { "code": "FURIGANA_MISSING", "target": "cq-k-seki-mc1/b" },
+          { "code": "FURIGANA_MISSING", "target": "cq-k-seki-mc1/c" }
+        ]
+      },
+      "items": [
+        {
+          "id": "ci-k-seki-accumulate",
+          "label": "積",
+          "source": {
+            "sourceType": "KANJI",
+            "sourceContentId": "n3k-k07a4d",
+            "sourcePackId": "n3-kanji",
+            "sourceSchemaVersion": 1,
+            "sourceSnapshot": { "character": "積", "onReadings": ["セキ"], "kunReadings": ["つ.む", "-づ.み", "つ.もる", "つ.もり"], "meaningVi": "Tích lũy" },
+            "sourceFingerprint": "sha256:f17f69471a2cb466c2adfcf2a7d36f0410f85b42312781cbea8062a17baf5768"
+          },
+          "kanji": {
+            "meaningVi": "chất đống, tích lũy",
+            "hanViet": "TÍCH",
+            "onReadings": ["セキ"],
+            "kunReadings": ["つ.む", "つ.もる"],
+            "radical": { "character": "禾", "nameVi": "Hòa (cây lúa)" },
+            "shapeNoteVi": "Bên trái là 禾: lúa gặt về chất thành đống."
+          }
+        },
+        {
+          "id": "ci-k-seki-achieve",
+          "label": "績",
+          "source": {
+            "sourceType": "KANJI",
+            "sourceContentId": "n3k-k07e3e",
+            "sourcePackId": "n3-kanji",
+            "sourceSchemaVersion": 1,
+            "sourceSnapshot": { "character": "績", "onReadings": ["セキ"], "kunReadings": [], "meaningVi": "Thành tích" },
+            "sourceFingerprint": "sha256:33396523843e1c56c4b22cf1ec5b6a2f2c9cb0e436f105960f6e8bc408c6c760"
+          },
+          "kanji": {
+            "meaningVi": "thành tích, kết quả công việc",
+            "hanViet": "TÍCH",
+            "onReadings": ["セキ"],
+            "kunReadings": [],
+            "radical": { "character": "糸", "nameVi": "Mịch (sợi chỉ)" },
+            "shapeNoteVi": "Bên trái là 糸: kéo sợi từng chút thành tấm vải, như kết quả làm việc tích góp lại."
+          }
+        }
+      ],
+      "theory": [
+        {
+          "id": "ct-k-seki-1",
+          "titleVi": "Nhìn bộ bên trái",
+          "bodyVi": "Phần 責 cho âm セキ ở cả hai chữ. Nghĩa nằm ở bộ bên trái: 禾 → chồng chất (積む、面積), 糸 → thành quả (成績、実績)."
+        }
+      ],
+      "comparison": [
+        {
+          "aspectVi": "Từ thường gặp",
+          "values": {
+            "ci-k-seki-accumulate": "積む、積もる、面積、積極的",
+            "ci-k-seki-achieve": "成績、実績、業績"
+          }
+        }
+      ],
+      "examples": [
+        {
+          "id": "cx-k-seki-a1",
+          "itemId": "ci-k-seki-accumulate",
+          "japanese": "雪が積もった。",
+          "furigana": "{雪|ゆき}が{積|つ}もった。",
+          "translationVi": "Tuyết đã phủ dày."
+        },
+        {
+          "id": "cx-k-seki-b1",
+          "itemId": "ci-k-seki-achieve",
+          "japanese": "成績が上がった。",
+          "furigana": "{成績|せいせき}が{上|あ}がった。",
+          "translationVi": "Thành tích đã tăng lên."
+        }
+      ],
+      "memoryTips": [
+        { "id": "cm-k-seki-1", "textVi": "Lúa (禾) thì chất đống: 積. Chỉ (糸) dệt thành sản phẩm: 績." }
+      ],
+      "commonMistakes": [
+        {
+          "id": "ce-k-seki-1",
+          "situationVi": "Viết từ せいせき (thành tích).",
+          "wrong": { "japanese": "成積", "furigana": "{成積|せいせき}" },
+          "correct": { "japanese": "成績", "furigana": "{成績|せいせき}" },
+          "explanationVi": "Thành tích là kết quả làm ra, nên dùng 績 (bộ 糸).",
+          "expectedItemId": "ci-k-seki-achieve",
+          "confusedWithItemId": "ci-k-seki-accumulate"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cq-k-seki-mc1",
+          "revision": 1,
+          "type": "MULTIPLE_CHOICE",
+          "difficulty": 1,
+          "targetItemId": "ci-k-seki-achieve",
+          "instructionVi": "Chọn cách viết đúng của せいせき (thành tích).",
+          "options": [
+            { "id": "a", "text": "成積", "itemId": "ci-k-seki-accumulate" },
+            { "id": "b", "text": "成績", "itemId": "ci-k-seki-achieve" },
+            { "id": "c", "text": "成責", "feedbackVi": "責 (trách) là phần cho âm, đứng một mình không mang nghĩa thành tích." }
+          ],
+          "correctOptionId": "b",
+          "explanationVi": "成績 viết với 績 (bộ 糸): kết quả làm ra."
+        }
+      ]
+    }
+  ],
+  "retiredGroups": []
+}

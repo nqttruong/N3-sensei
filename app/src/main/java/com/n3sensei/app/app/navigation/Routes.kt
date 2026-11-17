@@ -56,6 +56,15 @@ import kotlinx.serialization.Serializable
 /** "Phân tích JLPT": exam figures, error analysis, progress and today's plan. */
 @Serializable data object ExamDashboardRoute
 
+/** Contrast Lab (M5): home of the confusable groups, in the Learn tab. */
+@Serializable data object ContrastHomeRoute
+
+/** Contrast Lab library: search and filters over the published groups. */
+@Serializable data object ContrastLibraryRoute
+
+/** Contrast Lab compare / learning screen of one group (read only). */
+@Serializable data class ContrastGroupRoute(val groupId: String)
+
 /** One skill of the exams in detail (an ExamSkill name). */
 @Serializable data class SkillDetailRoute(val skill: String)
 

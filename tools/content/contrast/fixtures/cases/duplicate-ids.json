@@ -1,0 +1,112 @@
+{
+  "description": "A question id and an example id reused in another group.",
+  "base": "docs/contrast/contrast-pack.sample.json",
+  "patch": [
+    {
+      "op": "replace",
+      "path": "/groups/1/questions/0/id",
+      "value": "cq-g-koto-mc1"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/examples/0/id",
+      "value": "cx-g-koto-a1"
+    }
+  ],
+  "expect": {
+    "build": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "DUPLICATE_ID",
+        "path": "groups[1].questions[0].id"
+      },
+      {
+        "severity": "ERROR",
+        "code": "DUPLICATE_ID",
+        "path": "groups[1].examples[0].id"
+      }
+    ],
+    "import": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "DUPLICATE_ID",
+        "path": "groups[1].questions[0].id"
+      },
+      {
+        "severity": "ERROR",
+        "code": "DUPLICATE_ID",
+        "path": "groups[1].examples[0].id"
+      }
+    ]
+  }
+}

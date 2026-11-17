@@ -1,0 +1,110 @@
+{
+  "description": "Pack title and a group summary removed.",
+  "base": "docs/contrast/contrast-pack.sample.json",
+  "patch": [
+    {
+      "op": "remove",
+      "path": "/pack/title"
+    },
+    {
+      "op": "remove",
+      "path": "/groups/1/summaryVi"
+    }
+  ],
+  "expect": {
+    "build": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "MISSING_METADATA",
+        "path": "pack.title"
+      },
+      {
+        "severity": "ERROR",
+        "code": "MISSING_METADATA",
+        "path": "groups[1].summaryVi"
+      }
+    ],
+    "import": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "MISSING_METADATA",
+        "path": "pack.title"
+      },
+      {
+        "severity": "ERROR",
+        "code": "MISSING_METADATA",
+        "path": "groups[1].summaryVi"
+      }
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "description": "sources.json plus a second grammar row with the same snapshot as n3g-g001 (to make a reference ambiguous).",
+  "records": [
+    {
+      "type": "GRAMMAR",
+      "id": "n3g-g001",
+      "packId": "n3-grammar",
+      "packVersion": 4,
+      "fields": {
+        "pattern": "〜ことにしている",
+        "structure": "Vる／Vない ＋ ことにしている",
+        "meaningVi": "(tôi) có thói quen/nguyên tắc là…"
+      }
+    },
+    {
+      "type": "GRAMMAR",
+      "id": "n3g-g002",
+      "packId": "n3-grammar",
+      "packVersion": 4,
+      "fields": {
+        "pattern": "〜ことになっている",
+        "structure": "Vる／Vない ＋ ことになっている",
+        "meaningVi": "theo quy định thì…, đã được định sẵn là…"
+      }
+    },
+    {
+      "type": "VOCABULARY",
+      "id": "mimikara-n3-v211",
+      "packId": "mimikara-n3-vocab",
+      "packVersion": 2,
+      "fields": {
+        "expression": "冷める",
+        "reading": "さめる",
+        "meaningVi": "bị nguội"
+      }
+    },
+    {
+      "type": "VOCABULARY",
+      "id": "mimikara-n3-v505",
+      "packId": "mimikara-n3-vocab",
+      "packVersion": 2,
+      "fields": {
+        "expression": "覚める",
+        "reading": "さめる",
+        "meaningVi": "thức dậy"
+      }
+    },
+    {
+      "type": "KANJI",
+      "id": "n3k-k07a4d",
+      "packId": "n3-kanji",
+      "packVersion": 3,
+      "fields": {
+        "character": "積",
+        "onReadings": [
+          "セキ"
+        ],
+        "kunReadings": [
+          "つ.む",
+          "-づ.み",
+          "つ.もる",
+          "つ.もり"
+        ],
+        "meaningVi": "Tích lũy"
+      }
+    },
+    {
+      "type": "KANJI",
+      "id": "n3k-k07e3e",
+      "packId": "n3-kanji",
+      "packVersion": 3,
+      "fields": {
+        "character": "績",
+        "onReadings": [
+          "セキ"
+        ],
+        "kunReadings": [],
+        "meaningVi": "Thành tích"
+      }
+    },
+    {
+      "type": "GRAMMAR",
+      "id": "n3g-g001-copy",
+      "packId": "n3-grammar",
+      "packVersion": 4,
+      "fields": {
+        "pattern": "〜ことにしている",
+        "structure": "Vる／Vない ＋ ことにしている",
+        "meaningVi": "(tôi) có thói quen/nguyên tắc là…"
+      }
+    }
+  ]
+}

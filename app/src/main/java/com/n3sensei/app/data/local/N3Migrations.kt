@@ -289,7 +289,46 @@ object N3Migrations {
         }
     }
 
-    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14, MIGRATION_14_15)
+    /**
+     * 15 → 16: Contrast Lab tables only (CREATE TABLE / CREATE INDEX, copied from schemas/16.json).
+     * Content tables cascade inside themselves; learner tables (sessions, attempts, progress,
+     * reviews) have no foreign key. No existing table is altered, no row is touched.
+     */
+    val MIGRATION_15_16 = object : Migration(15, 16) {
+        override fun migrate(db: SupportSQLiteDatabase) {
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_packs` (`id` TEXT NOT NULL, `title` TEXT NOT NULL, `jlpt_level` TEXT NOT NULL, `content_version` INTEGER NOT NULL, `schema_version` INTEGER NOT NULL, `published_at` TEXT NOT NULL, `license_text` TEXT NOT NULL, `license_verified` INTEGER NOT NULL, `installed_at` INTEGER NOT NULL, PRIMARY KEY(`id`))")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_groups` (`id` TEXT NOT NULL, `pack_id` TEXT NOT NULL, `content_type` TEXT NOT NULL, `jlpt_level` TEXT NOT NULL, `title` TEXT NOT NULL, `summary_vi` TEXT NOT NULL, `revision` INTEGER NOT NULL, `sort_order` INTEGER NOT NULL, `search_text` TEXT NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`pack_id`) REFERENCES `contrast_packs`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_contrast_groups_pack_id` ON `contrast_groups` (`pack_id`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_contrast_groups_content_type_sort_order` ON `contrast_groups` (`content_type`, `sort_order`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_items` (`id` TEXT NOT NULL, `group_id` TEXT NOT NULL, `sort_order` INTEGER NOT NULL, `label` TEXT NOT NULL, `label_furigana` TEXT, `source_type` TEXT NOT NULL, `source_content_id` TEXT NOT NULL, `source_pack_id` TEXT NOT NULL, `source_schema_version` INTEGER NOT NULL, `source_snapshot_json` TEXT NOT NULL, `source_fingerprint` TEXT NOT NULL, `details_json` TEXT NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`group_id`) REFERENCES `contrast_groups`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )")
+            db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_contrast_items_group_id_sort_order` ON `contrast_items` (`group_id`, `sort_order`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_contrast_items_source_type_source_content_id` ON `contrast_items` (`source_type`, `source_content_id`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_notes` (`group_id` TEXT NOT NULL, `kind` TEXT NOT NULL, `sort_order` INTEGER NOT NULL, `payload_json` TEXT NOT NULL, PRIMARY KEY(`group_id`, `kind`, `sort_order`), FOREIGN KEY(`group_id`) REFERENCES `contrast_groups`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_examples` (`id` TEXT NOT NULL, `group_id` TEXT NOT NULL, `sort_order` INTEGER NOT NULL, `item_id` TEXT NOT NULL, `japanese` TEXT NOT NULL, `furigana` TEXT, `translation_vi` TEXT NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`group_id`) REFERENCES `contrast_groups`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )")
+            db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_contrast_examples_group_id_sort_order` ON `contrast_examples` (`group_id`, `sort_order`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_questions` (`id` TEXT NOT NULL, `group_id` TEXT NOT NULL, `sort_order` INTEGER NOT NULL, `revision` INTEGER NOT NULL, `type` TEXT NOT NULL, `difficulty` INTEGER NOT NULL, `target_item_id` TEXT NOT NULL, `instruction_vi` TEXT NOT NULL, `prompt_json` TEXT, `context_json` TEXT, `correction_json` TEXT, `correct_option_id` TEXT NOT NULL, `explanation_vi` TEXT NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`group_id`) REFERENCES `contrast_groups`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )")
+            db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_contrast_questions_group_id_sort_order` ON `contrast_questions` (`group_id`, `sort_order`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_contrast_questions_group_id_type` ON `contrast_questions` (`group_id`, `type`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_options` (`question_id` TEXT NOT NULL, `option_id` TEXT NOT NULL, `sort_order` INTEGER NOT NULL, `text` TEXT NOT NULL, `furigana` TEXT, `item_id` TEXT, `feedback_vi` TEXT, PRIMARY KEY(`question_id`, `option_id`), FOREIGN KEY(`question_id`) REFERENCES `contrast_questions`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_retired_groups` (`pack_id` TEXT NOT NULL, `group_id` TEXT NOT NULL, `retired_in_version` INTEGER NOT NULL, `reason_vi` TEXT NOT NULL, `replaced_by` TEXT, PRIMARY KEY(`pack_id`, `group_id`), FOREIGN KEY(`pack_id`) REFERENCES `contrast_packs`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_contrast_retired_groups_group_id` ON `contrast_retired_groups` (`group_id`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_progress` (`group_id` TEXT NOT NULL, `step_index` INTEGER NOT NULL, `due_at` INTEGER NOT NULL, `last_reviewed_at` INTEGER NOT NULL, `review_count` INTEGER NOT NULL, `lapse_count` INTEGER NOT NULL, `created_at` INTEGER NOT NULL, `updated_at` INTEGER NOT NULL, PRIMARY KEY(`group_id`))")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_contrast_progress_due_at` ON `contrast_progress` (`due_at`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_reviews` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `group_id` TEXT NOT NULL, `session_id` TEXT NOT NULL, `reviewed_at` INTEGER NOT NULL, `answered` INTEGER NOT NULL, `correct` INTEGER NOT NULL, `incorrect` INTEGER NOT NULL, `skipped` INTEGER NOT NULL, `rating` TEXT NOT NULL, `step_before` INTEGER, `step_after` INTEGER NOT NULL, `due_at_after` INTEGER NOT NULL, `content_version` INTEGER NOT NULL)")
+            db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_contrast_reviews_session_id_group_id` ON `contrast_reviews` (`session_id`, `group_id`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_contrast_reviews_group_id_reviewed_at` ON `contrast_reviews` (`group_id`, `reviewed_at`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_sessions` (`id` TEXT NOT NULL, `scope_kind` TEXT NOT NULL, `scope_value` TEXT, `status` TEXT NOT NULL, `started_at` INTEGER NOT NULL, `last_activity_at` INTEGER NOT NULL, `content_version` INTEGER NOT NULL, PRIMARY KEY(`id`))")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_contrast_sessions_status` ON `contrast_sessions` (`status`)")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_session_items` (`session_id` TEXT NOT NULL, `position` INTEGER NOT NULL, `group_id` TEXT NOT NULL, `question_id` TEXT NOT NULL, `question_revision` INTEGER NOT NULL, `block_index` INTEGER, PRIMARY KEY(`session_id`, `position`))")
+            db.execSQL("CREATE TABLE IF NOT EXISTS `contrast_attempts` (`request_id` TEXT NOT NULL, `session_id` TEXT NOT NULL, `position` INTEGER NOT NULL, `group_id` TEXT NOT NULL, `group_revision` INTEGER NOT NULL, `question_id` TEXT NOT NULL, `question_revision` INTEGER NOT NULL, `question_type` TEXT NOT NULL, `content_pack_id` TEXT NOT NULL, `content_version` INTEGER NOT NULL, `outcome` TEXT NOT NULL, `chosen_option_id` TEXT, `correct_option_id` TEXT NOT NULL, `expected_item_id` TEXT, `chosen_item_id` TEXT, `chosen_text` TEXT, `correct_text` TEXT NOT NULL, `answered_at` INTEGER NOT NULL, PRIMARY KEY(`request_id`))")
+            db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_contrast_attempts_session_id_position` ON `contrast_attempts` (`session_id`, `position`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_contrast_attempts_group_id_answered_at` ON `contrast_attempts` (`group_id`, `answered_at`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_contrast_attempts_question_id` ON `contrast_attempts` (`question_id`)")
+            db.execSQL("CREATE INDEX IF NOT EXISTS `index_contrast_attempts_answered_at` ON `contrast_attempts` (`answered_at`)")
+        }
+    }
+
+    val ALL: Array<Migration> = arrayOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11, MIGRATION_11_12, MIGRATION_12_13, MIGRATION_13_14, MIGRATION_14_15, MIGRATION_15_16)
 
     private fun String.toReadings(): String = StringListCodec.decode(this).joinToString(" ")
 

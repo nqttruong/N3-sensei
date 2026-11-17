@@ -1,0 +1,116 @@
+{
+  "description": "A kanji detail block in a vocabulary group (its source is then not checked).",
+  "base": "docs/contrast/contrast-pack.sample.json",
+  "patch": [
+    {
+      "op": "remove",
+      "path": "/groups/1/items/0/vocabulary"
+    },
+    {
+      "op": "add",
+      "path": "/groups/1/items/0/kanji",
+      "value": {
+        "meaningVi": "chất đống, tích lũy",
+        "hanViet": "TÍCH",
+        "onReadings": [
+          "セキ"
+        ],
+        "kunReadings": [
+          "つ.む",
+          "つ.もる"
+        ],
+        "radical": {
+          "character": "禾",
+          "nameVi": "Hòa (cây lúa)"
+        },
+        "shapeNoteVi": "Bên trái là 禾: lúa gặt về chất thành đống."
+      }
+    }
+  ],
+  "expect": {
+    "build": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "ITEM_TYPE_MISMATCH",
+        "path": "groups[1].items[0]"
+      }
+    ],
+    "import": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "ITEM_TYPE_MISMATCH",
+        "path": "groups[1].items[0]"
+      }
+    ]
+  }
+}

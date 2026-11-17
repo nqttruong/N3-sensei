@@ -1,0 +1,57 @@
+{
+  "description": "Version 2 drops a group without retiring it.",
+  "base": "docs/contrast/contrast-pack.sample.json",
+  "patch": [
+    {
+      "op": "replace",
+      "path": "/pack/contentVersion",
+      "value": 2
+    },
+    {
+      "op": "remove",
+      "path": "/groups/2"
+    }
+  ],
+  "previous": {
+    "base": "docs/contrast/contrast-pack.sample.json",
+    "patch": []
+  },
+  "expect": {
+    "build": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "GROUP_DISAPPEARED",
+        "path": "groups[id=cg-k-seki-accumulate-achieve]"
+      }
+    ],
+    "import": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "WARNING",
+        "code": "GROUP_DISAPPEARED",
+        "path": "groups[id=cg-k-seki-accumulate-achieve]"
+      }
+    ]
+  }
+}

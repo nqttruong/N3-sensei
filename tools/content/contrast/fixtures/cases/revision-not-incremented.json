@@ -1,0 +1,121 @@
+{
+  "description": "Version 2 edits a group summary and a question explanation without raising their revisions.",
+  "base": "docs/contrast/contrast-pack.sample.json",
+  "patch": [
+    {
+      "op": "replace",
+      "path": "/pack/contentVersion",
+      "value": 2
+    },
+    {
+      "op": "replace",
+      "path": "/groups/0/summaryVi",
+      "value": "Tóm tắt đã sửa."
+    },
+    {
+      "op": "replace",
+      "path": "/groups/0/questions/0/explanationVi",
+      "value": "Giải thích đã sửa."
+    }
+  ],
+  "previous": {
+    "base": "docs/contrast/contrast-pack.sample.json",
+    "patch": []
+  },
+  "expect": {
+    "build": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "REVISION_NOT_INCREMENTED",
+        "path": "groups[0].revision"
+      },
+      {
+        "severity": "ERROR",
+        "code": "REVISION_NOT_INCREMENTED",
+        "path": "groups[0].questions[0].revision"
+      }
+    ],
+    "import": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "REVISION_NOT_INCREMENTED",
+        "path": "groups[0].revision"
+      },
+      {
+        "severity": "ERROR",
+        "code": "REVISION_NOT_INCREMENTED",
+        "path": "groups[0].questions[0].revision"
+      }
+    ]
+  }
+}

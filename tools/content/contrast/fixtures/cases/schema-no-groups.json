@@ -1,0 +1,37 @@
+{
+  "description": "A pack without any group.",
+  "base": "docs/contrast/contrast-pack.sample.json",
+  "patch": [
+    {
+      "op": "replace",
+      "path": "/groups",
+      "value": []
+    }
+  ],
+  "expect": {
+    "build": [
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "SCHEMA_VIOLATION",
+        "path": "groups"
+      }
+    ],
+    "import": [
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "SCHEMA_VIOLATION",
+        "path": "groups"
+      }
+    ]
+  }
+}

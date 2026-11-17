@@ -110,6 +110,13 @@ import com.n3sensei.app.feature.vocabulary.VocabularyDetailViewModel
 import com.n3sensei.app.feature.vocabulary.VocabularyGroupScreen
 import com.n3sensei.app.feature.vocabulary.VocabularyGroupViewModel
 import com.n3sensei.app.feature.vocabulary.VocabularyGroupsScreen
+import com.n3sensei.app.feature.contrast.ContrastGroupScreen
+import com.n3sensei.app.feature.contrast.ContrastHomeScreen
+import com.n3sensei.app.feature.contrast.ContrastHomeViewModel
+import com.n3sensei.app.feature.contrast.ContrastLearningViewModel
+import com.n3sensei.app.feature.contrast.ContrastLibraryScreen
+import com.n3sensei.app.feature.contrast.ContrastLibraryViewModel
+import com.n3sensei.app.feature.contrast.SourceLinks
 import com.n3sensei.app.feature.vocabulary.VocabularyGroupsViewModel
 import com.n3sensei.app.feature.vocabulary.VocabularyListScreen
 import com.n3sensei.app.feature.vocabulary.VocabularyListViewModel
@@ -163,6 +170,35 @@ fun N3SenseiNavHost(
                     onOpenExams = { navController.navigate(ExamListRoute) },
                     onOpenErrors = { navController.navigate(ErrorNotebookRoute()) },
                     onOpenJlpt = { navController.navigate(ExamDashboardRoute) },
+                    onOpenContrast = { navController.navigate(ContrastHomeRoute) },
+                )
+            }
+            composable<ContrastHomeRoute> {
+                ContrastHomeScreen(
+                    viewModel = appViewModel { ContrastHomeViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, clock) },
+                    onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
+                    onOpenLibrary = { navController.navigate(ContrastLibraryRoute) },
+                )
+            }
+            composable<ContrastLibraryRoute> {
+                ContrastLibraryScreen(
+                    viewModel = appSavedStateViewModel { saved ->
+                        ContrastLibraryViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, clock, saved)
+                    },
+                    onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
+                )
+            }
+            composable<ContrastGroupRoute> { entry ->
+                val groupId = entry.toRoute<ContrastGroupRoute>().groupId
+                ContrastGroupScreen(
+                    viewModel = appViewModel {
+                        ContrastLearningViewModel(groupId, contrastContentRepository, contrastSourceResolver, contrastPracticeRepository, contrastProgressRepository, clock)
+                    },
+                    links = SourceLinks(
+                        openGrammar = { navController.navigate(GrammarDetailRoute(it)) },
+                        openVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
+                        openKanji = { navController.navigate(KanjiDetailRoute(it)) },
+                    ),
                 )
             }
             composable<ExamListRoute> {

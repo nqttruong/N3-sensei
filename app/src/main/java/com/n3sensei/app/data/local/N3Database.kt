@@ -9,6 +9,7 @@ import androidx.sqlite.db.framework.FrameworkSQLiteOpenHelperFactory
 import com.n3sensei.app.data.local.dao.AnalyticsDao
 import com.n3sensei.app.data.local.dao.BackupDao
 import com.n3sensei.app.data.local.dao.ContentDao
+import com.n3sensei.app.data.local.dao.ContrastDao
 import com.n3sensei.app.data.local.dao.ContentPackDao
 import com.n3sensei.app.data.local.dao.ErrorDao
 import com.n3sensei.app.data.local.dao.ExamDao
@@ -62,6 +63,19 @@ import com.n3sensei.app.data.local.entity.SyncedAttemptAnswerEntity
 import com.n3sensei.app.data.local.entity.SyncedReviewItemEntity
 import com.n3sensei.app.data.local.entity.SyncedReviewEventEntity
 import com.n3sensei.app.data.local.entity.SyncCheckpointEntity
+import com.n3sensei.app.data.local.entity.ContrastPackEntity
+import com.n3sensei.app.data.local.entity.ContrastGroupEntity
+import com.n3sensei.app.data.local.entity.ContrastItemEntity
+import com.n3sensei.app.data.local.entity.ContrastNoteEntity
+import com.n3sensei.app.data.local.entity.ContrastExampleEntity
+import com.n3sensei.app.data.local.entity.ContrastQuestionEntity
+import com.n3sensei.app.data.local.entity.ContrastOptionEntity
+import com.n3sensei.app.data.local.entity.ContrastRetiredGroupEntity
+import com.n3sensei.app.data.local.entity.ContrastProgressEntity
+import com.n3sensei.app.data.local.entity.ContrastReviewEntity
+import com.n3sensei.app.data.local.entity.ContrastSessionEntity
+import com.n3sensei.app.data.local.entity.ContrastSessionItemEntity
+import com.n3sensei.app.data.local.entity.ContrastAttemptEntity
 
 @Database(
     entities = [
@@ -110,6 +124,19 @@ import com.n3sensei.app.data.local.entity.SyncCheckpointEntity
         SyncedReviewItemEntity::class,
         SyncedReviewEventEntity::class,
         SyncCheckpointEntity::class,
+        ContrastPackEntity::class,
+        ContrastGroupEntity::class,
+        ContrastItemEntity::class,
+        ContrastNoteEntity::class,
+        ContrastExampleEntity::class,
+        ContrastQuestionEntity::class,
+        ContrastOptionEntity::class,
+        ContrastRetiredGroupEntity::class,
+        ContrastProgressEntity::class,
+        ContrastReviewEntity::class,
+        ContrastSessionEntity::class,
+        ContrastSessionItemEntity::class,
+        ContrastAttemptEntity::class,
     ],
     version = N3Database.VERSION,
     exportSchema = true,
@@ -127,9 +154,10 @@ abstract class N3Database : RoomDatabase() {
     abstract fun examDao(): ExamDao
     abstract fun errorDao(): ErrorDao
     abstract fun syncDao(): SyncDao
+    abstract fun contrastDao(): ContrastDao
 
     companion object {
-        const val VERSION = 15
+        const val VERSION = 16
         const val NAME = "n3sensei.db"
 
         /**

@@ -9,6 +9,15 @@ import com.n3sensei.app.app.widget.GlanceWidgetUpdater
 import com.n3sensei.app.data.backup.AndroidBackupRepository
 import com.n3sensei.app.data.importing.AndroidContentImportRepository
 import com.n3sensei.app.data.importing.ContentPackImporter
+import com.n3sensei.app.data.importing.ContrastContentImporter
+import com.n3sensei.app.data.repository.OfflineContrastContentRepository
+import com.n3sensei.app.data.repository.OfflineContrastPracticeRepository
+import com.n3sensei.app.data.repository.OfflineContrastProgressRepository
+import com.n3sensei.app.data.repository.RoomContrastSourceResolver
+import com.n3sensei.app.domain.repository.ContrastContentRepository
+import com.n3sensei.app.domain.repository.ContrastPracticeRepository
+import com.n3sensei.app.domain.repository.ContrastProgressRepository
+import com.n3sensei.app.domain.repository.ContrastSourceResolver
 import com.n3sensei.app.data.local.DatabaseCorruptionRecorder
 import com.n3sensei.app.data.local.N3Database
 import com.n3sensei.app.data.preferences.DataStoreReminderStateStore
@@ -83,6 +92,10 @@ interface AppContainer {
     val languageDetector: LanguageDetector
     val translationRepository: TranslationRepository
     val syncRepository: SyncRepository
+    val contrastContentRepository: ContrastContentRepository
+    val contrastSourceResolver: ContrastSourceResolver
+    val contrastPracticeRepository: ContrastPracticeRepository
+    val contrastProgressRepository: ContrastProgressRepository
     val clock: Clock
 }
 
@@ -143,6 +156,15 @@ class DefaultAppContainer(context: Context) : AppContainer {
 
     override val syncRepository: SyncRepository by lazy { AndroidSyncClient(appContext, database) }
 
+    // Contrast Lab (Room v16). Content is installed by contentImportRepository (bundled packs only).
+    override val contrastContentRepository: ContrastContentRepository by lazy { OfflineContrastContentRepository(database.contrastDao()) }
+
+    override val contrastSourceResolver: ContrastSourceResolver by lazy { RoomContrastSourceResolver(database.contrastDao()) }
+
+    override val contrastPracticeRepository: ContrastPracticeRepository by lazy { OfflineContrastPracticeRepository(database.contrastDao()) }
+
+    override val contrastProgressRepository: ContrastProgressRepository by lazy { OfflineContrastProgressRepository(database.contrastDao()) }
+
     override val widgetContentPicker: WidgetContentPicker by lazy { WidgetContentPicker(contentRepository, progressRepository, clock) }
 
     override val languageDetector: LanguageDetector by lazy { ScriptLanguageDetector() }
@@ -175,7 +197,7 @@ class DefaultAppContainer(context: Context) : AppContainer {
 
     /** Concrete type is internal so tests can switch off the bundled pack. */
     internal val androidContentImportRepository: AndroidContentImportRepository by lazy {
-        AndroidContentImportRepository(appContext, ContentPackImporter(database.contentPackDao(), clock))
+        AndroidContentImportRepository(appContext, ContentPackImporter(database.contentPackDao(), clock), contrastImporter = ContrastContentImporter(database.contrastDao(), clock))
     }
 
     override val contentImportRepository: ContentImportRepository get() = androidContentImportRepository

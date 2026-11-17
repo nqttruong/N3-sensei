@@ -1,0 +1,27 @@
+{
+  "description": "schemaVersion 2: nothing else is checked.",
+  "base": "docs/contrast/contrast-pack.sample.json",
+  "patch": [
+    {
+      "op": "replace",
+      "path": "/schemaVersion",
+      "value": 2
+    }
+  ],
+  "expect": {
+    "build": [
+      {
+        "severity": "ERROR",
+        "code": "UNSUPPORTED_FORMAT",
+        "path": "schemaVersion"
+      }
+    ],
+    "import": [
+      {
+        "severity": "ERROR",
+        "code": "UNSUPPORTED_FORMAT",
+        "path": "schemaVersion"
+      }
+    ]
+  }
+}

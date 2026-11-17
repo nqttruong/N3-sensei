@@ -1,0 +1,127 @@
+{
+  "description": "Group 2's first item renamed to an item id of group 1 (references in group 2 follow).",
+  "base": "docs/contrast/contrast-pack.sample.json",
+  "patch": [
+    {
+      "op": "replace",
+      "path": "/groups/1/items/0/id",
+      "value": "ci-g-koto-ni-shiteiru"
+    },
+    {
+      "op": "move",
+      "from": "/groups/1/comparison/0/values/ci-v-sameru-cold",
+      "path": "/groups/1/comparison/0/values/ci-g-koto-ni-shiteiru"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/examples/0/itemId",
+      "value": "ci-g-koto-ni-shiteiru"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/commonMistakes/0/confusedWithItemId",
+      "value": "ci-g-koto-ni-shiteiru"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/questions/0/targetItemId",
+      "value": "ci-g-koto-ni-shiteiru"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/questions/0/options/0/itemId",
+      "value": "ci-g-koto-ni-shiteiru"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/questions/1/options/1/itemId",
+      "value": "ci-g-koto-ni-shiteiru"
+    }
+  ],
+  "expect": {
+    "build": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "DUPLICATE_ITEM_ID",
+        "path": "groups[1].items[0].id"
+      }
+    ],
+    "import": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "DUPLICATE_ITEM_ID",
+        "path": "groups[1].items[0].id"
+      }
+    ]
+  }
+}

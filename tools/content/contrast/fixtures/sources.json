@@ -1,0 +1,82 @@
+{
+  "description": "Real source rows used by docs/contrast/contrast-pack.sample.json, as the importer stores them (copied from app/src/main/assets/content: n3-grammar v4, mimikara-n3-vocab v2, n3-kanji v3). Fixtures stay hermetic when the source packs change.",
+  "records": [
+    {
+      "type": "GRAMMAR",
+      "id": "n3g-g001",
+      "packId": "n3-grammar",
+      "packVersion": 4,
+      "fields": {
+        "pattern": "〜ことにしている",
+        "structure": "Vる／Vない ＋ ことにしている",
+        "meaningVi": "(tôi) có thói quen/nguyên tắc là…"
+      }
+    },
+    {
+      "type": "GRAMMAR",
+      "id": "n3g-g002",
+      "packId": "n3-grammar",
+      "packVersion": 4,
+      "fields": {
+        "pattern": "〜ことになっている",
+        "structure": "Vる／Vない ＋ ことになっている",
+        "meaningVi": "theo quy định thì…, đã được định sẵn là…"
+      }
+    },
+    {
+      "type": "VOCABULARY",
+      "id": "mimikara-n3-v211",
+      "packId": "mimikara-n3-vocab",
+      "packVersion": 2,
+      "fields": {
+        "expression": "冷める",
+        "reading": "さめる",
+        "meaningVi": "bị nguội"
+      }
+    },
+    {
+      "type": "VOCABULARY",
+      "id": "mimikara-n3-v505",
+      "packId": "mimikara-n3-vocab",
+      "packVersion": 2,
+      "fields": {
+        "expression": "覚める",
+        "reading": "さめる",
+        "meaningVi": "thức dậy"
+      }
+    },
+    {
+      "type": "KANJI",
+      "id": "n3k-k07a4d",
+      "packId": "n3-kanji",
+      "packVersion": 3,
+      "fields": {
+        "character": "積",
+        "onReadings": [
+          "セキ"
+        ],
+        "kunReadings": [
+          "つ.む",
+          "-づ.み",
+          "つ.もる",
+          "つ.もり"
+        ],
+        "meaningVi": "Tích lũy"
+      }
+    },
+    {
+      "type": "KANJI",
+      "id": "n3k-k07e3e",
+      "packId": "n3-kanji",
+      "packVersion": 3,
+      "fields": {
+        "character": "績",
+        "onReadings": [
+          "セキ"
+        ],
+        "kunReadings": [],
+        "meaningVi": "Thành tích"
+      }
+    }
+  ]
+}

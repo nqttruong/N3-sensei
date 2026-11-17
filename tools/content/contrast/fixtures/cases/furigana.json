@@ -1,0 +1,142 @@
+{
+  "description": "Furigana not matching its text, malformed, missing where required (ERROR) and missing on an option (WARNING, unacknowledged).",
+  "base": "docs/contrast/contrast-pack.sample.json",
+  "patch": [
+    {
+      "op": "replace",
+      "path": "/groups/0/examples/0/furigana",
+      "value": "{私|わたし}は{寝|ね}る{前|まえ}に{日記|にっき}を{書|か}くことにした。"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/0/questions/1/prompt/furigana",
+      "value": "{日本|にほん}では、{車|くるま}は{道|みち}の{左側|ひだりがわ}を{走|はし}る＿＿＿。}"
+    },
+    {
+      "op": "remove",
+      "path": "/groups/0/examples/1/furigana"
+    },
+    {
+      "op": "remove",
+      "path": "/groups/0/questions/0/options/0/furigana"
+    }
+  ],
+  "expect": {
+    "build": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "FURIGANA_MISMATCH",
+        "path": "groups[0].examples[0].furigana"
+      },
+      {
+        "severity": "ERROR",
+        "code": "FURIGANA_INVALID",
+        "path": "groups[0].questions[1].prompt.furigana"
+      },
+      {
+        "severity": "ERROR",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[0].examples[1].furigana"
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[0].questions[0].options[0].furigana",
+        "acknowledged": false
+      }
+    ],
+    "import": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "FURIGANA_MISMATCH",
+        "path": "groups[0].examples[0].furigana"
+      },
+      {
+        "severity": "ERROR",
+        "code": "FURIGANA_INVALID",
+        "path": "groups[0].questions[1].prompt.furigana"
+      },
+      {
+        "severity": "ERROR",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[0].examples[1].furigana"
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[0].questions[0].options[0].furigana",
+        "acknowledged": false
+      }
+    ]
+  }
+}

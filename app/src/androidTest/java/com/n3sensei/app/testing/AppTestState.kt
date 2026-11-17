@@ -33,6 +33,12 @@ object AppTestState {
     ) = runBlocking {
         container.androidContentImportRepository.bundledContentEnabled = bundledContent
         container.database.clearAllTables()
+        // clearAllTables() ends with VACUUM, which rewrites the whole database into the WAL. Since
+        // schema v16 an empty database is large enough for that WAL to pass Android's truncate size,
+        // so the next connection opened by the screen under test would run wal_checkpoint(TRUNCATE)
+        // and wait up to the 2.5 s busy timeout behind Room's trigger transaction. Truncate it here,
+        // while nothing else uses the database.
+        container.database.openHelper.writableDatabase.query("PRAGMA wal_checkpoint(TRUNCATE)").use { it.moveToFirst() }
         // A notice left by an earlier corrupt-database run would cover every screen.
         container.databaseRecovery.dismiss()
         if (seedContent) container.database.contentPackDao().replacePack(SeedData.bundle(isSeed = !seedCountsAsRealContent))

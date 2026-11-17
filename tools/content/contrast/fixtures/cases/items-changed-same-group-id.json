@@ -1,0 +1,161 @@
+{
+  "description": "Version 2 replaces an item of a group (new item id, references follow, revisions raised) but keeps the group id: a group with other items needs a new id. The question whose target moved also changes its answer (build).",
+  "base": "docs/contrast/contrast-pack.sample.json",
+  "patch": [
+    {
+      "op": "replace",
+      "path": "/pack/contentVersion",
+      "value": 2
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/revision",
+      "value": 2
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/approval/approvedRevision",
+      "value": 2
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/items/1/id",
+      "value": "ci-v-sameru-wake"
+    },
+    {
+      "op": "move",
+      "from": "/groups/1/comparison/0/values/ci-v-sameru-awake",
+      "path": "/groups/1/comparison/0/values/ci-v-sameru-wake"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/examples/1/itemId",
+      "value": "ci-v-sameru-wake"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/commonMistakes/0/expectedItemId",
+      "value": "ci-v-sameru-wake"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/questions/0/options/1/itemId",
+      "value": "ci-v-sameru-wake"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/questions/0/revision",
+      "value": 2
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/questions/1/targetItemId",
+      "value": "ci-v-sameru-wake"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/questions/1/options/0/itemId",
+      "value": "ci-v-sameru-wake"
+    },
+    {
+      "op": "replace",
+      "path": "/groups/1/questions/1/revision",
+      "value": 2
+    }
+  ],
+  "previous": {
+    "base": "docs/contrast/contrast-pack.sample.json",
+    "patch": []
+  },
+  "expect": {
+    "build": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "ITEMS_CHANGED_SAME_GROUP_ID",
+        "path": "groups[1].items"
+      },
+      {
+        "severity": "ERROR",
+        "code": "ANSWER_CHANGED_SAME_ID",
+        "path": "groups[1].questions[1]"
+      }
+    ],
+    "import": [
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[1].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "QUESTION_TYPES_INCOMPLETE",
+        "path": "groups[2].questions",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[0].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[1].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "WARNING",
+        "code": "FURIGANA_MISSING",
+        "path": "groups[2].questions[0].options[2].furigana",
+        "acknowledged": true
+      },
+      {
+        "severity": "INFO",
+        "code": "LICENSE_UNVERIFIED",
+        "path": "pack.license.licenseVerified"
+      },
+      {
+        "severity": "ERROR",
+        "code": "ITEMS_CHANGED_SAME_GROUP_ID",
+        "path": "groups[1].items"
+      }
+    ]
+  }
+}

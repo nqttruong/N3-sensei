@@ -1,0 +1,425 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://n3sensei.local/schemas/contrast-pack/1",
+  "title": "N3 Sensei Contrast Lab content pack, schemaVersion 1",
+  "description": "Cấu trúc JSON. Các quy tắc chéo (id tham chiếu, furigana khớp văn bản, fingerprint khớp nguồn, đáp án thuộc options...) do validator kiểm tra; xem docs/CONTRAST_LAB_CONTENT_SCHEMA.md mục Validation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "schemaVersion", "pack", "sourcePacks", "groups"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "format": { "const": "n3sensei-contrast-pack" },
+    "schemaVersion": { "const": 1 },
+    "pack": { "$ref": "#/$defs/pack" },
+    "sourcePacks": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/sourcePack" }
+    },
+    "groups": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/group" }
+    },
+    "retiredGroups": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/retiredGroup" }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,79}$" },
+    "optionId": { "type": "string", "pattern": "^[a-z0-9]{1,8}$" },
+    "date": { "type": "string", "format": "date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "text": { "type": "string", "minLength": 1, "pattern": "\\S" },
+    "furigana": {
+      "description": "Văn bản xen {chữ gốc|cách đọc}, giống CONTENT_FORMAT.md. Ghép phần chữ gốc phải bằng đúng văn bản tương ứng.",
+      "type": "string",
+      "minLength": 1
+    },
+    "jlptLevel": { "enum": ["N5", "N4", "N3", "N2", "N1"] },
+    "contentType": { "enum": ["GRAMMAR", "VOCABULARY", "KANJI"] },
+    "status": { "enum": ["DRAFT", "AI_GENERATED", "REVIEWING", "APPROVED", "PUBLISHED", "ARCHIVED"] },
+    "questionType": { "enum": ["MULTIPLE_CHOICE", "ERROR_DETECTION", "FILL_IN_THE_BLANK", "CONTEXT_SELECTION"] },
+
+    "pack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "jlptLevel", "contentVersion", "publishedAt", "license"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "$ref": "#/$defs/text" },
+        "description": { "$ref": "#/$defs/text" },
+        "jlptLevel": { "$ref": "#/$defs/jlptLevel" },
+        "contentVersion": { "type": "integer", "minimum": 1 },
+        "publishedAt": { "$ref": "#/$defs/date" },
+        "license": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["text", "licenseVerified"],
+          "properties": {
+            "text": { "$ref": "#/$defs/text" },
+            "licenseVerified": { "type": "boolean" }
+          }
+        }
+      }
+    },
+
+    "sourcePack": {
+      "description": "Phiên bản gói nguồn đã dùng để kiểm tra tham chiếu khi tạo gói.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "version": { "type": "integer", "minimum": 1 }
+      }
+    },
+
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authoredBy", "approvedBy", "approvedAt", "approvedRevision", "aiAssisted", "acknowledgedWarnings"],
+      "properties": {
+        "authoredBy": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,39}$", "description": "Mã người soạn (người chịu trách nhiệm bản nháp). Bằng approvedBy = tự duyệt (được phép, được báo cáo công khai)." },
+        "approvedBy": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,39}$", "description": "Mã người duyệt (không phải tên thật hay email). Bản phát hành chỉ nhận mã có trong danh sách người duyệt của công cụ." },
+        "approvedAt": { "$ref": "#/$defs/date" },
+        "approvedRevision": { "type": "integer", "minimum": 1, "description": "Revision của nhóm đã được duyệt; phải bằng groups[].revision." },
+        "aiAssisted": { "type": "boolean" },
+        "acknowledgedWarnings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["code", "target"],
+            "properties": {
+              "code": { "type": "string", "pattern": "^[A-Z][A-Z_]+$" },
+              "target": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*(/[a-z0-9]{1,8})?$", "description": "Id nhóm, mục, ví dụ hoặc câu hỏi; với option: <questionId>/<optionId>." }
+            }
+          }
+        }
+      }
+    },
+
+    "group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "revision", "status", "contentType", "jlptLevel", "title", "summaryVi", "updatedAt", "items", "theory", "comparison", "examples", "memoryTips", "commonMistakes", "questions"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "revision": { "type": "integer", "minimum": 1 },
+        "status": { "$ref": "#/$defs/status" },
+        "contentType": { "$ref": "#/$defs/contentType" },
+        "jlptLevel": { "$ref": "#/$defs/jlptLevel" },
+        "title": { "$ref": "#/$defs/text" },
+        "summaryVi": { "$ref": "#/$defs/text" },
+        "updatedAt": { "$ref": "#/$defs/date" },
+        "approval": { "$ref": "#/$defs/approval" },
+        "items": { "type": "array", "minItems": 2, "maxItems": 4, "items": { "$ref": "#/$defs/item" } },
+        "theory": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/theory" } },
+        "comparison": { "type": "array", "items": { "$ref": "#/$defs/comparisonRow" } },
+        "examples": { "type": "array", "items": { "$ref": "#/$defs/example" } },
+        "memoryTips": { "type": "array", "items": { "$ref": "#/$defs/memoryTip" } },
+        "commonMistakes": { "type": "array", "items": { "$ref": "#/$defs/commonMistake" } },
+        "questions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/question" } }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "enum": ["APPROVED", "PUBLISHED"] } } },
+          "then": { "required": ["approval"] }
+        }
+      ]
+    },
+
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "source"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "label": { "$ref": "#/$defs/text" },
+        "labelFurigana": { "$ref": "#/$defs/furigana" },
+        "source": { "$ref": "#/$defs/sourceReference" },
+        "grammar": { "$ref": "#/$defs/grammarDetail" },
+        "vocabulary": { "$ref": "#/$defs/vocabularyDetail" },
+        "kanji": { "$ref": "#/$defs/kanjiDetail" }
+      },
+      "oneOf": [
+        { "required": ["grammar"], "not": { "anyOf": [{ "required": ["vocabulary"] }, { "required": ["kanji"] }] } },
+        { "required": ["vocabulary"], "not": { "anyOf": [{ "required": ["grammar"] }, { "required": ["kanji"] }] } },
+        { "required": ["kanji"], "not": { "anyOf": [{ "required": ["grammar"] }, { "required": ["vocabulary"] }] } }
+      ]
+    },
+
+    "sourceReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceType", "sourceContentId", "sourcePackId", "sourceSchemaVersion", "sourceSnapshot", "sourceFingerprint"],
+      "properties": {
+        "sourceType": { "$ref": "#/$defs/contentType" },
+        "sourceContentId": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "sourcePackId": { "$ref": "#/$defs/id" },
+        "sourceSchemaVersion": { "const": 1 },
+        "sourceSnapshot": { "type": "object" },
+        "sourceFingerprint": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "sourceType": { "const": "GRAMMAR" } } },
+          "then": { "properties": { "sourceSnapshot": { "$ref": "#/$defs/grammarSnapshot" } } }
+        },
+        {
+          "if": { "properties": { "sourceType": { "const": "VOCABULARY" } } },
+          "then": { "properties": { "sourceSnapshot": { "$ref": "#/$defs/vocabularySnapshot" } } }
+        },
+        {
+          "if": { "properties": { "sourceType": { "const": "KANJI" } } },
+          "then": { "properties": { "sourceSnapshot": { "$ref": "#/$defs/kanjiSnapshot" } } }
+        }
+      ]
+    },
+    "grammarSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["pattern", "structure", "meaningVi"],
+      "properties": {
+        "pattern": { "type": "string" },
+        "structure": { "type": "string" },
+        "meaningVi": { "type": "string" }
+      }
+    },
+    "vocabularySnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["expression", "reading", "meaningVi"],
+      "properties": {
+        "expression": { "type": "string" },
+        "reading": { "type": "string" },
+        "meaningVi": { "type": "string" }
+      }
+    },
+    "kanjiSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["character", "onReadings", "kunReadings", "meaningVi"],
+      "properties": {
+        "character": { "type": "string" },
+        "onReadings": { "type": "array", "items": { "type": "string" } },
+        "kunReadings": { "type": "array", "items": { "type": "string" } },
+        "meaningVi": { "type": "string" }
+      }
+    },
+
+    "grammarDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["meaningVi", "connection", "nuanceVi"],
+      "properties": {
+        "meaningVi": { "$ref": "#/$defs/text" },
+        "connection": { "$ref": "#/$defs/text" },
+        "nuanceVi": { "$ref": "#/$defs/text" }
+      }
+    },
+    "vocabularyDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reading", "meaningVi", "usageVi"],
+      "properties": {
+        "reading": { "type": "string", "pattern": "^[\\u3040-\\u30ffー・]+$" },
+        "meaningVi": { "$ref": "#/$defs/text" },
+        "usageVi": { "$ref": "#/$defs/text" },
+        "collocations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["japanese", "meaningVi"],
+            "properties": {
+              "japanese": { "$ref": "#/$defs/text" },
+              "furigana": { "$ref": "#/$defs/furigana" },
+              "meaningVi": { "$ref": "#/$defs/text" }
+            }
+          }
+        }
+      }
+    },
+    "kanjiDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["meaningVi", "onReadings", "kunReadings", "shapeNoteVi"],
+      "properties": {
+        "meaningVi": { "$ref": "#/$defs/text" },
+        "hanViet": { "$ref": "#/$defs/text" },
+        "onReadings": { "type": "array", "items": { "type": "string", "pattern": "^[\\u30a0-\\u30ff.\\-ー]+$" } },
+        "kunReadings": { "type": "array", "items": { "type": "string", "pattern": "^[\\u3040-\\u309f.\\-ー]+$" } },
+        "radical": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["character", "nameVi"],
+          "properties": {
+            "character": { "type": "string", "minLength": 1, "maxLength": 2 },
+            "nameVi": { "$ref": "#/$defs/text" }
+          }
+        },
+        "shapeNoteVi": { "$ref": "#/$defs/text" }
+      }
+    },
+
+    "theory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "titleVi", "bodyVi"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "titleVi": { "$ref": "#/$defs/text" },
+        "bodyVi": { "$ref": "#/$defs/text" }
+      }
+    },
+    "comparisonRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["aspectVi", "values"],
+      "properties": {
+        "aspectVi": { "$ref": "#/$defs/text" },
+        "values": {
+          "type": "object",
+          "minProperties": 2,
+          "propertyNames": { "$ref": "#/$defs/id" },
+          "additionalProperties": { "$ref": "#/$defs/text" }
+        }
+      }
+    },
+    "example": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "itemId", "japanese", "translationVi"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "itemId": { "$ref": "#/$defs/id" },
+        "japanese": { "$ref": "#/$defs/text" },
+        "furigana": { "$ref": "#/$defs/furigana" },
+        "translationVi": { "$ref": "#/$defs/text" }
+      }
+    },
+    "memoryTip": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "textVi"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "textVi": { "$ref": "#/$defs/text" }
+      }
+    },
+    "sentence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["japanese"],
+      "properties": {
+        "japanese": { "$ref": "#/$defs/text" },
+        "furigana": { "$ref": "#/$defs/furigana" }
+      }
+    },
+    "commonMistake": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "situationVi", "wrong", "correct", "explanationVi"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "situationVi": { "$ref": "#/$defs/text" },
+        "wrong": { "$ref": "#/$defs/sentence" },
+        "correct": { "$ref": "#/$defs/sentence" },
+        "explanationVi": { "$ref": "#/$defs/text" },
+        "expectedItemId": { "$ref": "#/$defs/id" },
+        "confusedWithItemId": { "$ref": "#/$defs/id" }
+      },
+      "dependentRequired": {
+        "expectedItemId": ["confusedWithItemId"],
+        "confusedWithItemId": ["expectedItemId"]
+      }
+    },
+
+    "option": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "text"],
+      "properties": {
+        "id": { "$ref": "#/$defs/optionId" },
+        "text": { "$ref": "#/$defs/text" },
+        "furigana": { "$ref": "#/$defs/furigana" },
+        "itemId": { "$ref": "#/$defs/id", "description": "Mục của nhóm mà lựa chọn này đại diện; dùng để ghi hướng nhầm A → B." },
+        "feedbackVi": { "$ref": "#/$defs/text" }
+      }
+    },
+    "prompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["japanese"],
+      "properties": {
+        "japanese": { "$ref": "#/$defs/text" },
+        "furigana": { "$ref": "#/$defs/furigana" },
+        "translationVi": { "$ref": "#/$defs/text" }
+      }
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "revision", "type", "difficulty", "targetItemId", "instructionVi", "options", "correctOptionId", "explanationVi"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "revision": { "type": "integer", "minimum": 1 },
+        "type": { "$ref": "#/$defs/questionType" },
+        "difficulty": { "type": "integer", "minimum": 1, "maximum": 3 },
+        "targetItemId": { "$ref": "#/$defs/id" },
+        "instructionVi": { "$ref": "#/$defs/text" },
+        "prompt": { "$ref": "#/$defs/prompt" },
+        "context": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["descriptionVi"],
+          "properties": {
+            "descriptionVi": { "$ref": "#/$defs/text" },
+            "japanese": { "$ref": "#/$defs/text" },
+            "furigana": { "$ref": "#/$defs/furigana" }
+          }
+        },
+        "options": { "type": "array", "minItems": 2, "maxItems": 6, "items": { "$ref": "#/$defs/option" } },
+        "correctOptionId": { "$ref": "#/$defs/optionId" },
+        "correction": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["text"],
+          "properties": {
+            "text": { "$ref": "#/$defs/text" },
+            "furigana": { "$ref": "#/$defs/furigana" },
+            "itemId": { "$ref": "#/$defs/id" }
+          }
+        },
+        "explanationVi": { "$ref": "#/$defs/text" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "FILL_IN_THE_BLANK" } } },
+          "then": { "required": ["prompt"], "properties": { "prompt": { "properties": { "japanese": { "pattern": "＿＿＿" } } } } }
+        },
+        {
+          "if": { "properties": { "type": { "const": "ERROR_DETECTION" } } },
+          "then": { "required": ["prompt", "correction"], "properties": { "options": { "minItems": 3 } } }
+        },
+        {
+          "if": { "properties": { "type": { "const": "CONTEXT_SELECTION" } } },
+          "then": { "required": ["context"] }
+        }
+      ]
+    },
+
+    "retiredGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "retiredInVersion", "reasonVi"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "retiredInVersion": { "type": "integer", "minimum": 1 },
+        "reasonVi": { "$ref": "#/$defs/text" },
+        "replacedBy": { "$ref": "#/$defs/id" }
+      }
+    }
+  }
+}

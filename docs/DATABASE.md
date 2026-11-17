@@ -104,6 +104,8 @@ Danh sách không có văn bản tìm kiếm trả về đầy đủ. Có văn b
   - từ, ghi chú, ví dụ, tiến độ (kể cả ngày ôn), lịch sử ôn, đánh dấu và lịch sử nhắc học ghi theo v13 còn nguyên;
   - từ cũ là `STUDYING`;
   - database từ chối bookmark trùng khóa.
+- **14 → 15** (`MIGRATION_14_15`): các bảng `synced_*` và `sync_checkpoints` của JLPT AI Review (chỉ thêm).
+- **15 → 16** (`MIGRATION_15_16`), Contrast Lab, chỉ thêm 13 bảng `contrast_*` và index của chúng; xem [CONTRAST_LAB_ARCHITECTURE.md §13](CONTRAST_LAB_ARCHITECTURE.md). `ContrastMigrationTest` điền dữ liệu có quan hệ (theo khóa ngoại, khóa ngoại được bật) vào **cả 45 bảng v15** dựa trên `15.json`, nâng cấp, rồi so sánh từng dòng, từng cột trước và sau; kiểm `foreign_key_check` và `integrity_check`, và mở lại bằng Room.
 - Lưu ý: nếu sửa entity mà quên tăng version, Room sẽ ghi đè JSON của version hiện tại. Khi review cần xem diff thư mục `app/schemas/`.
 
 ## Nhập nội dung

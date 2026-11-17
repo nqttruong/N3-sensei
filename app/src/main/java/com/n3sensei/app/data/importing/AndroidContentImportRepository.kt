@@ -19,7 +19,20 @@ class AndroidContentImportRepository(
     private val context: Context,
     private val importer: ContentPackImporter,
     private val bundledAssetPaths: List<String> = BUNDLED_PACK_ASSETS,
+    /** Contrast Lab packs (M4); installed only after every source pack above installed without failure. */
+    private val contrastImporter: ContrastContentImporter? = null,
+    private val contrastAssetPaths: List<String> = CONTRAST_BUNDLED_PACK_ASSETS,
+    private val readContrastAsset: (String) -> String? = { path -> context.assets.open(path).use { it.readBytes().toString(Charsets.UTF_8) } },
 ) : ContentImportRepository {
+
+    /**
+     * Results of the last Contrast installation, kept apart from [installBundledContent]'s list so a
+     * Contrast problem never shows up as (or blocks) a failure of the learning content. There is no
+     * Contrast UI yet (M5): failures are logged and retried at the next start (nothing was written).
+     */
+    @Volatile
+    var lastContrastReports: List<ContrastImportReport> = emptyList()
+        private set
 
     /** Switched off by instrumented tests that need a database with only their own data. */
     @Volatile
@@ -56,6 +69,41 @@ class AndroidContentImportRepository(
             }
             val report = if (text == null) ContentPackImporter.failed(IssueCode.READ_ERROR, path) else importer.import(text, onlyIfNewer = true)
             report.also { if (it.outcome == ImportOutcome.FAILED) Log.e(TAG, "Bundled content $path failed to install: ${it.issues}") }
+        }.also { reports -> installContrast(sourcesReady = reports.none { it.outcome == ImportOutcome.FAILED }) }
+    }
+
+    /**
+     * Contrast packs reference the grammar / vocabulary / kanji rows, so they are installed after
+     * the source packs and only when none of those failed (otherwise their sources would be judged
+     * against incomplete content; they are retried at the next start). Never throws: a Contrast
+     * failure leaves the installed Contrast content and every learning feature as they were.
+     */
+    private suspend fun installContrast(sourcesReady: Boolean) {
+        val contrast = contrastImporter ?: return
+        if (contrastAssetPaths.isEmpty()) return
+        if (!sourcesReady) {
+            Log.w(TAG, "Contrast packs not installed: a source pack failed")
+            lastContrastReports = emptyList()
+            return
+        }
+        lastContrastReports = contrastAssetPaths.map { path ->
+            val text = withContext(Dispatchers.IO) {
+                try {
+                    readContrastAsset(path)
+                } catch (e: IOException) {
+                    null
+                }
+            }
+            val report = if (text == null) {
+                ContrastImportReport(ContrastImportReport.Outcome.FAILED, null, null, null, emptyList(), ContrastImportReport.Failure.INVALID, databaseError = "unreadable asset $path")
+            } else {
+                try {
+                    contrast.import(text)
+                } catch (e: Exception) {
+                    ContrastImportReport(ContrastImportReport.Outcome.FAILED, null, null, null, emptyList(), ContrastImportReport.Failure.DATABASE, databaseError = e.toString())
+                }
+            }
+            report.also { if (it.outcome == ContrastImportReport.Outcome.FAILED) Log.e(TAG, "Contrast pack $path not installed: ${ContrastContentImporter.summary(it)}") }
         }
     }
 
@@ -82,6 +130,13 @@ class AndroidContentImportRepository(
 
         /** Packs shipped with the app, installed in this order (see docs/CONTENT_FORMAT.md). */
         val BUNDLED_PACK_ASSETS = listOf(BUNDLED_PACK_ASSET, MIMIKARA_PACK_ASSET, N3_GRAMMAR_PACK_ASSET, N3_KANJI_PACK_ASSET, N2_KANJI_PACK_ASSET)
+
+        /**
+         * Contrast Lab packs shipped with the app (installed after the packs above). EMPTY on purpose:
+         * only a pack built by tools/content/contrast/build_pack.py from drafts approved by a registered
+         * reviewer may be listed here; docs/contrast/contrast-pack.sample.json is not reviewed and is not shipped.
+         */
+        val CONTRAST_BUNDLED_PACK_ASSETS: List<String> = emptyList()
         private const val TAG = "ContentImport"
         private const val MAX_BYTES = 10 * 1024 * 1024
     }

@@ -30,6 +30,7 @@ fun LearnHubScreen(
     onOpenErrors: () -> Unit,
     modifier: Modifier = Modifier,
     onOpenJlpt: () -> Unit = {},
+    onOpenContrast: () -> Unit = {},
 ) {
     Column(modifier = modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
         LearnSectionItem("課", R.string.lessons_title, R.string.learn_lessons_description, onOpenLessons)
@@ -47,6 +48,8 @@ fun LearnHubScreen(
         LearnSectionItem("誤", R.string.mistakes_title, R.string.learn_errors_description, onOpenErrors)
         HorizontalDivider()
         LearnSectionItem("析", R.string.jlpt_dashboard_title, R.string.jlpt_dashboard_entry_description, onOpenJlpt)
+        HorizontalDivider()
+        LearnSectionItem("比", R.string.learn_contrast_title, R.string.learn_contrast_description, onOpenContrast)
     }
 }
 
