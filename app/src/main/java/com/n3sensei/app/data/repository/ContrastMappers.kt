@@ -313,18 +313,20 @@ internal fun ContrastReviewEntity.toDomain() = ContrastReview(
 internal object ContrastScopeCodec {
     fun kind(scope: PracticeScope): String = when (scope) {
         PracticeScope.Due -> "DUE"
+        PracticeScope.Review -> "REVIEW"
         is PracticeScope.Group -> "GROUP"
         is PracticeScope.Type -> "TYPE"
     }
 
     fun value(scope: PracticeScope): String? = when (scope) {
-        PracticeScope.Due -> null
+        PracticeScope.Due, PracticeScope.Review -> null
         is PracticeScope.Group -> scope.groupId
         is PracticeScope.Type -> scope.contentType.name
     }
 
     fun decode(kind: String, value: String?): PracticeScope = when (kind) {
         "DUE" -> PracticeScope.Due
+        "REVIEW" -> PracticeScope.Review
         "GROUP" -> PracticeScope.Group(requireNotNull(value))
         "TYPE" -> PracticeScope.Type(ContrastContentType.valueOf(requireNotNull(value)))
         else -> error("Unknown session scope $kind")

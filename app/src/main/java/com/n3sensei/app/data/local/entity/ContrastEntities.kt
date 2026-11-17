@@ -199,7 +199,7 @@ data class ContrastReviewEntity(
 @Entity(tableName = "contrast_sessions", indices = [Index("status")])
 data class ContrastSessionEntity(
     @PrimaryKey val id: String,
-    /** DUE, GROUP or TYPE; [scopeValue] is the group id or the content type. */
+    /** DUE, REVIEW (M7), GROUP or TYPE; [scopeValue] is the group id or the content type. */
     @ColumnInfo(name = "scope_kind") val scopeKind: String,
     @ColumnInfo(name = "scope_value") val scopeValue: String?,
     val status: SessionStatus,

@@ -3,6 +3,7 @@ package com.n3sensei.app.data.repository
 import com.n3sensei.app.data.local.SearchText
 import com.n3sensei.app.data.local.SqlLike
 import com.n3sensei.app.data.local.dao.ContrastDao
+import com.n3sensei.app.data.local.entity.ContrastAttemptEntity
 import com.n3sensei.app.domain.contrast.ContrastAttempt
 import com.n3sensei.app.domain.contrast.ContrastDetail
 import com.n3sensei.app.domain.contrast.ContrastFilter
@@ -17,7 +18,15 @@ import com.n3sensei.app.domain.contrast.RetiredGroup
 import com.n3sensei.app.domain.contrast.SessionItem
 import com.n3sensei.app.domain.contrast.SessionStatus
 import com.n3sensei.app.domain.contrast.validation.ValidatedContrastPack
+import com.n3sensei.app.domain.repository.AttemptFilter
+import com.n3sensei.app.domain.repository.ContrastAnalyticsRepository
 import com.n3sensei.app.domain.repository.ContrastContentRepository
+import com.n3sensei.app.domain.repository.DirectionCount
+import com.n3sensei.app.domain.repository.GroupOutcomes
+import com.n3sensei.app.domain.repository.MistakeSnapshot
+import com.n3sensei.app.domain.repository.OutcomeCounts
+import com.n3sensei.app.domain.repository.SessionOutcomes
+import com.n3sensei.app.domain.repository.TypeOutcomes
 import com.n3sensei.app.domain.repository.ContrastOverview
 import com.n3sensei.app.domain.repository.ContrastPracticeRepository
 import com.n3sensei.app.domain.repository.ContrastProgressRepository
@@ -120,4 +129,45 @@ class OfflineContrastProgressRepository(private val dao: ContrastDao) : Contrast
 
     override fun observeOverview(now: Instant): Flow<ContrastOverview> =
         dao.observeOverview(now.toEpochMilli()).map { ContrastOverview(it.dueCount, it.scheduledCount, it.nextDueAt?.let(Instant::ofEpochMilli)) }
+}
+
+/** M7 analytics: every aggregate is one SQL query over contrast_attempts (no attempt list in memory). */
+class OfflineContrastAnalyticsRepository(private val dao: ContrastDao) : ContrastAnalyticsRepository {
+
+    override fun observeChanges(): Flow<Int> = dao.observeAttemptCount()
+
+    override suspend fun totals(filter: AttemptFilter): OutcomeCounts =
+        dao.outcomeTotals(filter.groupId, filter.questionType, filter.contentType).let { OutcomeCounts(it.correct, it.incorrect, it.skipped) }
+
+    override suspend fun byGroup(filter: AttemptFilter): List<GroupOutcomes> =
+        dao.outcomesByGroup(filter.groupId, filter.questionType, filter.contentType).map {
+            GroupOutcomes(it.groupId, OutcomeCounts(it.correct, it.incorrect, it.skipped), it.lastWrongAt?.let(Instant::ofEpochMilli))
+        }
+
+    override suspend fun byQuestionType(filter: AttemptFilter): List<TypeOutcomes> =
+        dao.outcomesByQuestionType(filter.groupId, filter.questionType, filter.contentType).map {
+            TypeOutcomes(it.questionType, OutcomeCounts(it.correct, it.incorrect, it.skipped))
+        }
+
+    override suspend fun directions(filter: AttemptFilter): List<DirectionCount> =
+        dao.confusionDirections(filter.groupId, filter.questionType, filter.contentType).map {
+            DirectionCount(it.groupId, it.expectedItemId, it.chosenItemId, it.count, it.sessions, Instant.ofEpochMilli(it.lastAt), it.sessionsSince)
+        }
+
+    override suspend fun recentSessions(filter: AttemptFilter, limit: Int): List<SessionOutcomes> =
+        dao.recentSessionOutcomes(filter.groupId, filter.questionType, filter.contentType, limit).map {
+            SessionOutcomes(it.sessionId, Instant.ofEpochMilli(it.firstAt), OutcomeCounts(it.correct, it.incorrect, it.skipped))
+        }
+
+    override suspend fun latestExample(groupId: String, expectedItemId: String, chosenItemId: String): MistakeSnapshot? =
+        dao.latestConfusion(groupId, expectedItemId, chosenItemId)?.toSnapshot()
+
+    override suspend fun recentMistakes(filter: AttemptFilter, limit: Int): List<MistakeSnapshot> =
+        dao.recentIncorrect(filter.groupId, filter.questionType, filter.contentType, limit).map { it.toSnapshot() }
+
+    private fun ContrastAttemptEntity.toSnapshot() = MistakeSnapshot(
+        groupId, expectedItemId, chosenItemId, questionId, questionRevision, contentVersion, questionType, chosenText, correctText, Instant.ofEpochMilli(answeredAt),
+    )
+
+    override suspend fun lastAnsweredGroup(): String? = dao.lastAnsweredGroup()
 }

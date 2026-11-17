@@ -116,6 +116,16 @@ import com.n3sensei.app.feature.contrast.ContrastHomeViewModel
 import com.n3sensei.app.feature.contrast.ContrastLearningViewModel
 import com.n3sensei.app.feature.contrast.ContrastLibraryScreen
 import com.n3sensei.app.feature.contrast.ContrastLibraryViewModel
+import com.n3sensei.app.feature.contrast.ContrastErrorsScreen
+import com.n3sensei.app.feature.contrast.ContrastErrorsViewModel
+import com.n3sensei.app.feature.contrast.ContrastProgressScreen
+import com.n3sensei.app.feature.contrast.ContrastProgressViewModel
+import com.n3sensei.app.feature.contrast.ContrastReviewScreen
+import com.n3sensei.app.feature.contrast.ContrastReviewViewModel
+import com.n3sensei.app.feature.contrast.ContrastPracticeScreen
+import com.n3sensei.app.feature.contrast.ContrastPracticeViewModel
+import com.n3sensei.app.feature.contrast.ContrastSessionSummaryScreen
+import com.n3sensei.app.feature.contrast.ContrastSessionSummaryViewModel
 import com.n3sensei.app.feature.contrast.SourceLinks
 import com.n3sensei.app.feature.vocabulary.VocabularyGroupsViewModel
 import com.n3sensei.app.feature.vocabulary.VocabularyListScreen
@@ -175,9 +185,42 @@ fun N3SenseiNavHost(
             }
             composable<ContrastHomeRoute> {
                 ContrastHomeScreen(
-                    viewModel = appViewModel { ContrastHomeViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, clock) },
+                    viewModel = appViewModel { ContrastHomeViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, contrastAnalyticsRepository, clock) },
                     onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
                     onOpenLibrary = { navController.navigate(ContrastLibraryRoute) },
+                    onStartPractice = { navController.navigate(ContrastPracticeRoute()) },
+                    onResumePractice = { navController.navigate(ContrastPracticeRoute(resume = true)) },
+                    onOpenErrors = { navController.navigate(ContrastErrorsRoute) },
+                    onOpenReview = { navController.navigate(ContrastReviewRoute) },
+                    onOpenProgress = { navController.navigate(ContrastProgressRoute) },
+                )
+            }
+            composable<ContrastErrorsRoute> {
+                val retired = retiredGroupLabel()
+                ContrastErrorsScreen(
+                    viewModel = appSavedStateViewModel { saved -> ContrastErrorsViewModel(contrastContentRepository, contrastAnalyticsRepository, saved, retiredLabel = retired) },
+                    onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
+                )
+            }
+            composable<ContrastReviewRoute> {
+                val retired = retiredGroupLabel()
+                ContrastReviewScreen(
+                    viewModel = appViewModel {
+                        ContrastReviewViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, contrastAnalyticsRepository, clock, retiredLabel = retired)
+                    },
+                    // The M6 practice with due groups only: no second exercise screen.
+                    onStartReview = { navController.navigate(ContrastPracticeRoute(review = true)) },
+                    onResume = { navController.navigate(ContrastPracticeRoute(resume = true)) },
+                    onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
+                )
+            }
+            composable<ContrastProgressRoute> {
+                ContrastProgressScreen(
+                    viewModel = appViewModel {
+                        ContrastProgressViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, contrastAnalyticsRepository, clock)
+                    },
+                    onOpenReview = { navController.navigate(ContrastReviewRoute) },
+                    onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
                 )
             }
             composable<ContrastLibraryRoute> {
@@ -199,6 +242,28 @@ fun N3SenseiNavHost(
                         openVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
                         openKanji = { navController.navigate(KanjiDetailRoute(it)) },
                     ),
+                    onPractice = { navController.navigate(ContrastPracticeRoute(groupId = it)) },
+                )
+            }
+            composable<ContrastPracticeRoute> { entry ->
+                val route = entry.toRoute<ContrastPracticeRoute>()
+                ContrastPracticeScreen(
+                    viewModel = appSavedStateViewModel { saved ->
+                        ContrastPracticeViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, clock, saved, route.groupId, route.resume, review = route.review)
+                    },
+                    // Leaving keeps the session (every answer is already stored); nothing is marked skipped.
+                    onExit = { navController.popBackStack() },
+                    onFinished = { sessionId ->
+                        navController.navigate(ContrastSummaryRoute(sessionId)) { popUpTo<ContrastPracticeRoute> { inclusive = true } }
+                    },
+                )
+            }
+            composable<ContrastSummaryRoute> { entry ->
+                val sessionId = entry.toRoute<ContrastSummaryRoute>().sessionId
+                ContrastSessionSummaryScreen(
+                    viewModel = appViewModel { ContrastSessionSummaryViewModel(sessionId, contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, clock) },
+                    onOpenHome = { navController.navigate(ContrastHomeRoute) { popUpTo<ContrastHomeRoute> { inclusive = true } } },
+                    onOpenLibrary = { navController.navigate(ContrastLibraryRoute) { popUpTo<ContrastHomeRoute>() } },
                 )
             }
             composable<ExamListRoute> {
@@ -627,3 +692,10 @@ private fun NavHostController.mistakeActions(mark: (List<ItemRef>, () -> Unit) -
     onOpenLesson = { navigate(LessonDetailRoute(it)) },
     onPracticeWords = { refs -> mark(refs) { navigate(PracticeRoute(markedOnly = true)) } },
 )
+
+/** "Nhóm đã ngừng sử dụng (id)": the title of a group whose history remains after it left the pack. */
+@androidx.compose.runtime.Composable
+private fun retiredGroupLabel(): (String) -> String {
+    val resources = androidx.compose.ui.platform.LocalContext.current.resources
+    return { id -> resources.getString(com.n3sensei.app.R.string.contrast_group_retired_title, id) }
+}

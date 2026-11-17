@@ -11,6 +11,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -32,11 +33,19 @@ fun ContrastHomeScreen(
     viewModel: ContrastHomeViewModel,
     onOpenGroup: (String) -> Unit,
     onOpenLibrary: () -> Unit,
+    onStartPractice: () -> Unit,
+    onResumePractice: () -> Unit,
+    onOpenErrors: () -> Unit,
+    onOpenReview: () -> Unit,
+    onOpenProgress: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    ContrastHomeContent(state, onOpenGroup, onOpenLibrary, viewModel::retry, modifier)
+    ContrastHomeContent(state, onOpenGroup, onOpenLibrary, viewModel::retry, modifier, onStartPractice, onResumePractice, InsightLinks(onOpenErrors, onOpenReview, onOpenProgress))
 }
+
+/** M7 entries from Home. */
+data class InsightLinks(val errors: () -> Unit = {}, val review: () -> Unit = {}, val progress: () -> Unit = {})
 
 @Composable
 fun ContrastHomeContent(
@@ -45,6 +54,9 @@ fun ContrastHomeContent(
     onOpenLibrary: () -> Unit,
     onRetry: () -> Unit,
     modifier: Modifier = Modifier,
+    onStartPractice: () -> Unit = {},
+    onResumePractice: () -> Unit = {},
+    insights: InsightLinks = InsightLinks(),
 ) {
     Column(modifier.fillMaxSize().testTag(ContrastTags.HOME)) {
         Text(
@@ -53,14 +65,21 @@ fun ContrastHomeContent(
             modifier = Modifier.padding(horizontal = N3Spacing.screen, vertical = N3Spacing.s),
         )
         UiStateContent(state, emptyMessage = stringResource(R.string.contrast_empty), onRetry = onRetry) { data ->
-            HomeSections(data, onOpenGroup, onOpenLibrary)
+            HomeSections(data, onOpenGroup, onOpenLibrary, onStartPractice, onResumePractice, insights)
         }
     }
 }
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun HomeSections(data: ContrastHomeUiState, onOpenGroup: (String) -> Unit, onOpenLibrary: () -> Unit) {
+private fun HomeSections(
+    data: ContrastHomeUiState,
+    onOpenGroup: (String) -> Unit,
+    onOpenLibrary: () -> Unit,
+    onStartPractice: () -> Unit,
+    onResumePractice: () -> Unit,
+    insights: InsightLinks,
+) {
     Column(
         Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = N3Spacing.screen, vertical = N3Spacing.s),
         verticalArrangement = Arrangement.spacedBy(N3Spacing.m),
@@ -70,6 +89,19 @@ private fun HomeSections(data: ContrastHomeUiState, onOpenGroup: (String) -> Uni
             Figure(R.string.contrast_overview_learning, data.learning)
             Figure(R.string.contrast_overview_mastered, data.mastered)
             Figure(R.string.contrast_overview_due, data.due)
+        }
+        data.activeRemaining?.let { remaining ->
+            Button(onClick = onResumePractice, modifier = Modifier.fillMaxWidth().testTag(ContrastTags.RESUME)) {
+                Text(stringResource(R.string.contrast_continue_session, remaining))
+            }
+        }
+        OutlinedButton(onClick = onStartPractice, modifier = Modifier.fillMaxWidth().testTag(ContrastTags.START)) {
+            Text(stringResource(R.string.contrast_start_practice))
+        }
+        FlowRow(horizontalArrangement = Arrangement.spacedBy(N3Spacing.s), verticalArrangement = Arrangement.spacedBy(N3Spacing.s)) {
+            OutlinedButton(onClick = insights.review, modifier = Modifier.testTag(InsightTags.OPEN_REVIEW)) { Text(stringResource(R.string.contrast_open_review)) }
+            OutlinedButton(onClick = insights.errors, modifier = Modifier.testTag(InsightTags.OPEN_ERRORS)) { Text(stringResource(R.string.contrast_open_errors)) }
+            OutlinedButton(onClick = insights.progress, modifier = Modifier.testTag(InsightTags.OPEN_PROGRESS)) { Text(stringResource(R.string.contrast_open_progress)) }
         }
         data.continueGroup?.let { row ->
             SectionHeader(stringResource(R.string.contrast_continue_title))

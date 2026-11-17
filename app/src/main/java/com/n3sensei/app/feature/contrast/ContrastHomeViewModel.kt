@@ -3,11 +3,12 @@ package com.n3sensei.app.feature.contrast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.n3sensei.app.core.ui.state.UiState
-import com.n3sensei.app.domain.contrast.AnalyzeContrastMistakes
 import com.n3sensei.app.domain.contrast.ContrastConfig
 import com.n3sensei.app.domain.contrast.ContrastGroup
 import com.n3sensei.app.domain.contrast.ContrastMastery
 import com.n3sensei.app.domain.contrast.GetContrastProgress
+import com.n3sensei.app.domain.repository.AttemptFilter
+import com.n3sensei.app.domain.repository.ContrastAnalyticsRepository
 import com.n3sensei.app.domain.repository.ContrastContentRepository
 import com.n3sensei.app.domain.repository.ContrastPracticeRepository
 import com.n3sensei.app.domain.repository.ContrastProgressRepository
@@ -16,6 +17,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.mapLatest
 import kotlinx.coroutines.flow.onStart
@@ -38,27 +40,30 @@ data class ContrastHomeUiState(
     val dueGroups: List<ContrastGroupRow>,
     /** From real answers only; empty before any confusion. */
     val confusions: List<ConfusionRow>,
+    /** Questions left in the unfinished (ACTIVE, resumable) session; null when there is none. */
+    val activeRemaining: Int? = null,
 )
 
 /**
  * Contrast Lab home. Everything here is read: opening it never creates a session, an attempt or
- * a schedule. Empty when no reviewed pack is installed.
+ * a schedule. Empty when no reviewed pack is installed. The answer figures come from the M7 SQL
+ * aggregates ([ContrastAnalyticsRepository]); no attempt list is loaded into memory.
  */
 @OptIn(ExperimentalCoroutinesApi::class)
 class ContrastHomeViewModel(
     private val content: ContrastContentRepository,
     private val practice: ContrastPracticeRepository,
     private val progress: ContrastProgressRepository,
+    private val analytics: ContrastAnalyticsRepository,
     private val clock: Clock,
-    config: ContrastConfig = ContrastConfig(),
+    private val config: ContrastConfig = ContrastConfig(),
 ) : ViewModel() {
 
     private val getProgress = GetContrastProgress(content, practice, progress, config)
-    private val analyze = AnalyzeContrastMistakes(content, practice, config)
     private val reload = MutableStateFlow(0)
 
     val state: StateFlow<UiState<ContrastHomeUiState>> = reload
-        .flatMapLatest { content.observeGroups() }
+        .flatMapLatest { combine(content.observeGroups(), analytics.observeChanges()) { groups, _ -> groups } }
         .mapLatest { groups -> if (groups.isEmpty()) UiState.Empty else UiState.Success(build(groups)) }
         .onStart<UiState<ContrastHomeUiState>> { emit(UiState.Loading) }
         .catch { emit(UiState.Error(it)) }
@@ -73,13 +78,13 @@ class ContrastHomeViewModel(
         val zone = clock.zone
         val rows = groups.map { ContrastGroupRow.of(it, getProgress.ofGroup(it.id, zone), now) }
         val byId = rows.associateBy { it.group.id }
-        val lastAnswered = practice.attemptsBetween(null, null).asReversed().firstOrNull { it.groupId in byId }?.groupId
-        val report = analyze()
-        val confusions = report.confusions.filter { it.groupId in byId }.take(MAX_CONFUSIONS).map { c ->
+        val lastAnswered = analytics.lastAnsweredGroup()?.takeIf { it in byId }
+        val confusions = analytics.directions(AttemptFilter()).filter { it.groupId in byId }.take(MAX_CONFUSIONS).map { c ->
             val labels = content.getDetail(c.groupId)?.items.orEmpty().associate { it.id to it.label }
             ConfusionRow(c.groupId, byId.getValue(c.groupId).group.title, labels[c.expectedItemId] ?: c.expectedItemId, labels[c.chosenItemId] ?: c.chosenItemId, c.count)
         }
         val due = rows.filter { it.isDue }
+        val activeRemaining = activeRemaining(practice, content, config, now)
         return ContrastHomeUiState(
             available = rows.size,
             learning = rows.count { it.mastery == ContrastMastery.LEARNING || it.mastery == ContrastMastery.REVIEWING },
@@ -88,6 +93,7 @@ class ContrastHomeViewModel(
             continueGroup = lastAnswered?.let(byId::get),
             dueGroups = due.take(MAX_DUE),
             confusions = confusions,
+            activeRemaining = activeRemaining,
         )
     }
 

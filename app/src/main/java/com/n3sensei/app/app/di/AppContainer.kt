@@ -10,10 +10,12 @@ import com.n3sensei.app.data.backup.AndroidBackupRepository
 import com.n3sensei.app.data.importing.AndroidContentImportRepository
 import com.n3sensei.app.data.importing.ContentPackImporter
 import com.n3sensei.app.data.importing.ContrastContentImporter
+import com.n3sensei.app.data.repository.OfflineContrastAnalyticsRepository
 import com.n3sensei.app.data.repository.OfflineContrastContentRepository
 import com.n3sensei.app.data.repository.OfflineContrastPracticeRepository
 import com.n3sensei.app.data.repository.OfflineContrastProgressRepository
 import com.n3sensei.app.data.repository.RoomContrastSourceResolver
+import com.n3sensei.app.domain.repository.ContrastAnalyticsRepository
 import com.n3sensei.app.domain.repository.ContrastContentRepository
 import com.n3sensei.app.domain.repository.ContrastPracticeRepository
 import com.n3sensei.app.domain.repository.ContrastProgressRepository
@@ -96,6 +98,7 @@ interface AppContainer {
     val contrastSourceResolver: ContrastSourceResolver
     val contrastPracticeRepository: ContrastPracticeRepository
     val contrastProgressRepository: ContrastProgressRepository
+    val contrastAnalyticsRepository: ContrastAnalyticsRepository
     val clock: Clock
 }
 
@@ -164,6 +167,7 @@ class DefaultAppContainer(context: Context) : AppContainer {
     override val contrastPracticeRepository: ContrastPracticeRepository by lazy { OfflineContrastPracticeRepository(database.contrastDao()) }
 
     override val contrastProgressRepository: ContrastProgressRepository by lazy { OfflineContrastProgressRepository(database.contrastDao()) }
+    override val contrastAnalyticsRepository: ContrastAnalyticsRepository by lazy { OfflineContrastAnalyticsRepository(database.contrastDao()) }
 
     override val widgetContentPicker: WidgetContentPicker by lazy { WidgetContentPicker(contentRepository, progressRepository, clock) }
 

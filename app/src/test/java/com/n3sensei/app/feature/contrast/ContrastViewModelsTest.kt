@@ -11,6 +11,7 @@ import com.n3sensei.app.domain.contrast.ContrastGroup
 import com.n3sensei.app.domain.contrast.ContrastItem
 import com.n3sensei.app.domain.contrast.ContrastMastery
 import com.n3sensei.app.domain.contrast.ContrastQuestion
+import com.n3sensei.app.domain.contrast.FakeContrastAnalytics
 import com.n3sensei.app.domain.contrast.FakeContrastContent
 import com.n3sensei.app.domain.contrast.FakeContrastStore
 import com.n3sensei.app.domain.contrast.FakeSourceResolver
@@ -83,14 +84,14 @@ class ContrastViewModelsTest {
     @Test
     fun home_withoutAReviewedPack_isEmpty() = runTest {
         val empty = emptyContent()
-        val vm = ContrastHomeViewModel(empty, FakeContrastStore(empty), FakeContrastStore(empty), clock)
+        val vm = FakeContrastStore(empty).let { ContrastHomeViewModel(empty, it, it, FakeContrastAnalytics(empty, it), clock) }
         collect(vm.state)
         assertEquals(UiState.Empty, vm.state.value)
     }
 
     @Test
     fun home_showsRealFigures_andNothingIsWrittenByOpeningIt() = runTest {
-        val vm = ContrastHomeViewModel(content, store, store, clock)
+        val vm = ContrastHomeViewModel(content, store, store, FakeContrastAnalytics(content, store), clock)
         collect(vm.state)
         val data = (vm.state.value as UiState.Success).data
         assertEquals(listOf(3, 0, 0, 0), listOf(data.available, data.learning, data.mastered, data.due))
@@ -103,7 +104,7 @@ class ContrastViewModelsTest {
     fun home_afterPractice_continueDueAndConfusionsComeFromRealData() = runTest {
         learnGrammar()
         clock.advance(Duration.ofDays(2)) // the HARD block was scheduled for 1 day
-        val vm = ContrastHomeViewModel(content, store, store, clock)
+        val vm = ContrastHomeViewModel(content, store, store, FakeContrastAnalytics(content, store), clock)
         collect(vm.state)
         val data = (vm.state.value as UiState.Success).data
         assertEquals(1, data.learning)
@@ -116,7 +117,7 @@ class ContrastViewModelsTest {
 
     @Test
     fun home_repositoryError_isAnError_andRetryRecovers() = runTest {
-        val vm = ContrastHomeViewModel(failing, store, store, clock)
+        val vm = ContrastHomeViewModel(failing, store, store, FakeContrastAnalytics(content, store), clock)
         collect(vm.state)
         assertTrue(vm.state.value is UiState.Error)
     }

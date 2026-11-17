@@ -46,6 +46,7 @@ class StartOrResumePractice(
         val groupIds = when (scope) {
             is PracticeScope.Group -> listOf(scope.groupId)
             PracticeScope.Due -> dueThenNew(ContrastFilter(), now, zone)
+            PracticeScope.Review -> dueOnly(now)
             is PracticeScope.Type -> dueThenNew(ContrastFilter(contentType = scope.contentType), now, zone)
         }
         val questions = groupIds.associateWith { content.getQuestions(it) }
@@ -55,6 +56,11 @@ class StartOrResumePractice(
         val session = ContrastSession(newId(), scope, SessionStatus.ACTIVE, now, now, pack.contentVersion, items)
         practice.createSession(session)
         return StartPracticeResult.Started(session)
+    }
+
+    private suspend fun dueOnly(now: Instant): List<String> {
+        val published = content.observeGroups().first().map { it.id }.toSet()
+        return progress.dueGroups(now, config.maxGroupsPerSession).filter { it in published }
     }
 
     private suspend fun dueThenNew(filter: ContrastFilter, now: Instant, zone: ZoneId): List<String> {

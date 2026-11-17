@@ -14,11 +14,18 @@ class ContrastNavigationTest {
     @Test
     fun everyContrastScreenIsASubScreenOfLearn() {
         val contrast = AppScreen.entries.filter { it.name.startsWith("CONTRAST_") }
-        assertEquals(listOf(ContrastHomeRoute::class, ContrastLibraryRoute::class, ContrastGroupRoute::class), contrast.map { it.route })
+        assertEquals(
+            listOf(
+                ContrastHomeRoute::class, ContrastLibraryRoute::class, ContrastGroupRoute::class, ContrastPracticeRoute::class, ContrastSummaryRoute::class,
+                ContrastErrorsRoute::class, ContrastReviewRoute::class, ContrastProgressRoute::class,
+            ),
+            contrast.map { it.route },
+        )
         contrast.forEach {
             assertEquals(it.name, TopLevelDestination.LEARN, it.tab)
             assertEquals(it.name, false, it.isTabRoot)
-            assertEquals(it.name, false, it.isFocusSession)
+            // Only the practice itself hides the bottom bar, like the exam session.
+            assertEquals(it.name, it == AppScreen.CONTRAST_PRACTICE, it.isFocusSession)
         }
     }
 }

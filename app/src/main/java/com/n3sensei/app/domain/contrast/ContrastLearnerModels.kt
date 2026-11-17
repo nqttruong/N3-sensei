@@ -110,6 +110,12 @@ sealed interface PracticeScope {
     /** Due groups first, then new ones within the daily limit. */
     data object Due : PracticeScope
 
+    /**
+     * Review only (M7 "Ôn tập ngay"): the groups due now on Contrast's own schedule, no new group,
+     * so it never uses the daily new-group allowance.
+     */
+    data object Review : PracticeScope
+
     /** One group chosen by the learner (allowed even when not due). */
     data class Group(val groupId: String) : PracticeScope
 

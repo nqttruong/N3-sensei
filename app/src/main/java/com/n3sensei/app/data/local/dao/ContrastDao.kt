@@ -27,6 +27,7 @@ import com.n3sensei.app.data.local.entity.KanjiEntity
 import com.n3sensei.app.data.local.entity.UserContentEditEntity
 import com.n3sensei.app.data.local.entity.VocabularyEntity
 import com.n3sensei.app.domain.contrast.ContrastContentType
+import com.n3sensei.app.domain.contrast.ContrastQuestionType
 import com.n3sensei.app.domain.contrast.SessionStatus
 import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.repository.RecordAnswerResult
@@ -39,6 +40,46 @@ data class ContrastGroupWithItems(
     val items: List<ContrastItemEntity>,
     @Relation(entity = ContrastQuestionEntity::class, parentColumn = "id", entityColumn = "group_id", projection = ["id"])
     val questionIds: List<String>,
+)
+
+/** M7 aggregates over contrast_attempts (no schema change: plain queries on the v16 tables). */
+data class ContrastOutcomeRow(
+    val correct: Int,
+    val incorrect: Int,
+    val skipped: Int,
+)
+
+data class ContrastGroupOutcomeRow(
+    @ColumnInfo(name = "group_id") val groupId: String,
+    val correct: Int,
+    val incorrect: Int,
+    val skipped: Int,
+    @ColumnInfo(name = "last_wrong_at") val lastWrongAt: Long?,
+)
+
+data class ContrastTypeOutcomeRow(
+    @ColumnInfo(name = "question_type") val questionType: ContrastQuestionType,
+    val correct: Int,
+    val incorrect: Int,
+    val skipped: Int,
+)
+
+data class ContrastDirectionRow(
+    @ColumnInfo(name = "group_id") val groupId: String,
+    @ColumnInfo(name = "expected_item_id") val expectedItemId: String,
+    @ColumnInfo(name = "chosen_item_id") val chosenItemId: String,
+    val count: Int,
+    val sessions: Int,
+    @ColumnInfo(name = "last_at") val lastAt: Long,
+    @ColumnInfo(name = "sessions_since") val sessionsSince: Int,
+)
+
+data class ContrastSessionOutcomeRow(
+    @ColumnInfo(name = "session_id") val sessionId: String,
+    @ColumnInfo(name = "first_at") val firstAt: Long,
+    val correct: Int,
+    val incorrect: Int,
+    val skipped: Int,
 )
 
 data class ContrastLastAnswerRow(
@@ -341,4 +382,118 @@ abstract class ContrastDao {
         """,
     )
     abstract fun observeOverview(now: Long): Flow<ContrastOverviewRow>
+
+    // ---- M7 analytics: aggregates computed by SQLite ----
+
+    @Query("SELECT COUNT(*) FROM contrast_attempts")
+    abstract fun observeAttemptCount(): Flow<Int>
+
+    @Query(
+        """
+        SELECT COALESCE(SUM(a.outcome = 'CORRECT'), 0) AS correct, COALESCE(SUM(a.outcome = 'INCORRECT'), 0) AS incorrect,
+               COALESCE(SUM(a.outcome = 'SKIPPED'), 0) AS skipped
+        FROM contrast_attempts a
+        WHERE (:groupId IS NULL OR a.group_id = :groupId)
+          AND (:questionType IS NULL OR a.question_type = :questionType)
+          AND (:contentType IS NULL OR a.group_id IN (SELECT id FROM contrast_groups WHERE content_type = :contentType))
+        """,
+    )
+    abstract suspend fun outcomeTotals(groupId: String?, questionType: ContrastQuestionType?, contentType: ContrastContentType?): ContrastOutcomeRow
+
+    @Query(
+        """
+        SELECT a.group_id, SUM(a.outcome = 'CORRECT') AS correct, SUM(a.outcome = 'INCORRECT') AS incorrect, SUM(a.outcome = 'SKIPPED') AS skipped,
+               MAX(CASE WHEN a.outcome = 'INCORRECT' THEN a.answered_at END) AS last_wrong_at
+        FROM contrast_attempts a
+        WHERE (:groupId IS NULL OR a.group_id = :groupId)
+          AND (:questionType IS NULL OR a.question_type = :questionType)
+          AND (:contentType IS NULL OR a.group_id IN (SELECT id FROM contrast_groups WHERE content_type = :contentType))
+        GROUP BY a.group_id ORDER BY incorrect DESC, a.group_id
+        """,
+    )
+    abstract suspend fun outcomesByGroup(groupId: String?, questionType: ContrastQuestionType?, contentType: ContrastContentType?): List<ContrastGroupOutcomeRow>
+
+    @Query(
+        """
+        SELECT a.question_type, SUM(a.outcome = 'CORRECT') AS correct, SUM(a.outcome = 'INCORRECT') AS incorrect, SUM(a.outcome = 'SKIPPED') AS skipped
+        FROM contrast_attempts a
+        WHERE (:groupId IS NULL OR a.group_id = :groupId)
+          AND (:questionType IS NULL OR a.question_type = :questionType)
+          AND (:contentType IS NULL OR a.group_id IN (SELECT id FROM contrast_groups WHERE content_type = :contentType))
+        GROUP BY a.question_type ORDER BY incorrect DESC, a.question_type
+        """,
+    )
+    abstract suspend fun outcomesByQuestionType(groupId: String?, questionType: ContrastQuestionType?, contentType: ContrastContentType?): List<ContrastTypeOutcomeRow>
+
+    /**
+     * Directed confusions: same rule as ContrastAttempt.confusion (INCORRECT, both item ids known
+     * and different). sessions_since = later sessions of the group with a non-skipped answer,
+     * excluding the session of the last occurrence.
+     */
+    @Query(
+        """
+        WITH d AS (
+          SELECT a.group_id, a.expected_item_id, a.chosen_item_id, COUNT(*) AS count,
+                 COUNT(DISTINCT a.session_id) AS sessions, MAX(a.answered_at) AS last_at
+          FROM contrast_attempts a
+          WHERE a.outcome = 'INCORRECT' AND a.expected_item_id IS NOT NULL AND a.chosen_item_id IS NOT NULL
+            AND a.expected_item_id != a.chosen_item_id
+            AND (:groupId IS NULL OR a.group_id = :groupId)
+          AND (:questionType IS NULL OR a.question_type = :questionType)
+          AND (:contentType IS NULL OR a.group_id IN (SELECT id FROM contrast_groups WHERE content_type = :contentType))
+          GROUP BY a.group_id, a.expected_item_id, a.chosen_item_id
+        )
+        SELECT d.group_id, d.expected_item_id, d.chosen_item_id, d.count, d.sessions, d.last_at,
+          (SELECT COUNT(DISTINCT b.session_id) FROM contrast_attempts b
+           WHERE b.group_id = d.group_id AND b.answered_at > d.last_at AND b.outcome != 'SKIPPED'
+             AND b.session_id NOT IN (
+               SELECT c.session_id FROM contrast_attempts c
+               WHERE c.group_id = d.group_id AND c.answered_at = d.last_at AND c.outcome = 'INCORRECT'
+                 AND c.expected_item_id = d.expected_item_id AND c.chosen_item_id = d.chosen_item_id)
+          ) AS sessions_since
+        FROM d ORDER BY d.count DESC, d.last_at DESC, d.group_id, d.expected_item_id, d.chosen_item_id
+        """,
+    )
+    abstract suspend fun confusionDirections(groupId: String?, questionType: ContrastQuestionType?, contentType: ContrastContentType?): List<ContrastDirectionRow>
+
+    @Query(
+        """
+        SELECT a.session_id, MIN(a.answered_at) AS first_at, SUM(a.outcome = 'CORRECT') AS correct, SUM(a.outcome = 'INCORRECT') AS incorrect, SUM(a.outcome = 'SKIPPED') AS skipped
+        FROM contrast_attempts a
+        WHERE (:groupId IS NULL OR a.group_id = :groupId)
+          AND (:questionType IS NULL OR a.question_type = :questionType)
+          AND (:contentType IS NULL OR a.group_id IN (SELECT id FROM contrast_groups WHERE content_type = :contentType))
+        GROUP BY a.session_id ORDER BY first_at DESC, a.session_id LIMIT :limit
+        """,
+    )
+    abstract suspend fun recentSessionOutcomes(groupId: String?, questionType: ContrastQuestionType?, contentType: ContrastContentType?, limit: Int): List<ContrastSessionOutcomeRow>
+
+    @Query(
+        """
+        SELECT * FROM contrast_attempts
+        WHERE group_id = :groupId AND outcome = 'INCORRECT' AND expected_item_id = :expected AND chosen_item_id = :chosen
+        ORDER BY answered_at DESC, session_id DESC, position DESC LIMIT 1
+        """,
+    )
+    abstract suspend fun latestConfusion(groupId: String, expected: String, chosen: String): ContrastAttemptEntity?
+
+    /** The group of the most recent answer among the installed (published) groups; retired groups are skipped. */
+    @Query(
+        """
+        SELECT group_id FROM contrast_attempts WHERE group_id IN (SELECT id FROM contrast_groups)
+        ORDER BY answered_at DESC, session_id DESC, position DESC LIMIT 1
+        """,
+    )
+    abstract suspend fun lastAnsweredGroup(): String?
+
+    @Query(
+        """
+        SELECT a.* FROM contrast_attempts a
+        WHERE a.outcome = 'INCORRECT' AND (:groupId IS NULL OR a.group_id = :groupId)
+          AND (:questionType IS NULL OR a.question_type = :questionType)
+          AND (:contentType IS NULL OR a.group_id IN (SELECT id FROM contrast_groups WHERE content_type = :contentType))
+        ORDER BY a.answered_at DESC, a.session_id DESC, a.position DESC LIMIT :limit
+        """,
+    )
+    abstract suspend fun recentIncorrect(groupId: String?, questionType: ContrastQuestionType?, contentType: ContrastContentType?, limit: Int): List<ContrastAttemptEntity>
 }

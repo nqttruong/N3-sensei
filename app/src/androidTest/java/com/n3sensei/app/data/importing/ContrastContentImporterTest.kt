@@ -159,6 +159,35 @@ class ContrastContentImporterTest {
         assertEquals(before, contentSnapshot())
     }
 
+    /** M8 case 16: an update of every group where only one group is wrong writes none of them. */
+    @Test
+    fun anUpdateOfSeveralGroups_withOneWrongGroup_writesNoGroup() = runTest {
+        importer.import(sample)
+        learn()
+        val contentBefore = contentSnapshot()
+        val learner = learnerSnapshot()
+        val update = pack {
+            version(2)
+            (0..2).forEach { g -> bumpGroup(g, 2); group(g).put("summaryVi", "Tóm tắt mới của nhóm $g.") }
+            question(2, 0).put("correctOptionId", "zzz") // only the Kanji group is wrong
+        }
+        val report = importer.import(update)
+        assertEquals(ContrastImportReport.Outcome.FAILED to ContrastImportReport.Failure.INVALID, report.outcome to report.failure)
+        assertTrue(report.issues.all { it.severity != ContrastSeverity.ERROR || it.path.startsWith("groups[2]") })
+        assertEquals(contentBefore, contentSnapshot())
+        assertEquals(learner, learnerSnapshot())
+        assertEquals(1, contentBefore.getValue("contrast_packs").size)
+    }
+
+    /** M8 case 14: an approval without a reviewer is refused (the registered-reviewer list is checked by the release tooling). */
+    @Test
+    fun anApprovalWithoutAReviewer_isRefused() = runTest {
+        val report = importer.import(pack { group(0).getJSONObject("approval").put("approvedBy", "") })
+        assertEquals(ContrastImportReport.Outcome.FAILED, report.outcome)
+        assertTrue(report.issues.joinToString { "${it.code} ${it.path}" }, report.issues.any { it.severity == ContrastSeverity.ERROR && it.path.startsWith("groups[0].approval") })
+        assertNull(content.installedPack())
+    }
+
     @Test
     fun structuralErrors_unknownFields_andAcceptedAnswers_areRefused() = runTest {
         val report = importer.import(pack { question(0, 1).put("acceptedAnswers", JSONArray(listOf("ことになっている"))) })

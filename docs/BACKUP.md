@@ -27,6 +27,7 @@ Người dùng chọn nơi lưu và tệp để khôi phục bằng **Storage Ac
 | `review_records` (mọi câu trả lời, kèm `requestId`, `wasNew`) | Bật/tắt nhắc học: quyền thông báo thuộc từng máy |
 | `item_marks`, `review_sessions` | Đã xem giới thiệu, từ vừa nhắc, ID dòng nội bộ của database |
 | Cài đặt: giao diện, furigana, dãy bậc, giới hạn mỗi ngày, khung giờ/tần suất/nội dung/riêng tư của nhắc học | Thông tin cá nhân, tài khoản (app không có) |
+|  | **Dữ liệu Contrast Lab** (`contrast_sessions`, `contrast_session_items`, `contrast_attempts`, `contrast_progress`, `contrast_reviews`): quyết định D6 của [CONTRAST_LAB_ARCHITECTURE.md](CONTRAST_LAB_ARCHITECTURE.md), bản đầu không sửa định dạng sao lưu. Khôi phục chỉ gộp, không xóa nên không đụng tới các bảng này (test `ContrastM8IntegrityTest`). Màn Sao lưu ghi rõ giới hạn này. Chuyển máy trực tiếp của Android (device-transfer) vẫn chép cả database |
 
 Định dạng (JSON, UTF-8, thời điểm là epoch millis UTC):
 

@@ -256,3 +256,17 @@ Chi tiết: [CONTRAST_LAB_UI.md](CONTRAST_LAB_UI.md). Điểm tích hợp thực
 - Mục "Contrast Lab — Mới" đặt ở cuối LearnHub, để không đẩy các mục cũ xuống dưới.
 - `AppContainer` có thêm 4 repository Contrast (`lazy`).
 - Package giao diện là `feature/contrast`.
+
+## 15. Triển khai M6: luyện tập (2026-11-17)
+
+Chi tiết: [CONTRAST_LAB_PRACTICE.md](CONTRAST_LAB_PRACTICE.md).
+- Route `ContrastPracticeRoute(groupId?, resume)` (phiên tập trung) và `ContrastSummaryRoute(sessionId)` trong tab Học.
+- Dùng nguyên `StartOrResumePractice`, `SubmitContrastAnswer` và `GetPracticeResult`; không đổi domain hay Room v16.
+- Dạng điền chỗ trống là chọn đáp án (đúng contract, không có `acceptedAnswers`).
+
+## 16. Triển khai M7: phân tích lỗi, ôn tập, tiến độ (2026-11-17)
+
+Chi tiết: [CONTRAST_LAB_ANALYTICS_SRS.md](CONTRAST_LAB_ANALYTICS_SRS.md).
+- `ContrastAnalyticsRepository` (chỉ đọc, SQL tổng hợp) và 3 use case: `GetContrastErrorAnalysis`, `GetContrastReviewQueue`, `GetContrastProgressReport`. Ngưỡng nằm trong `ContrastAnalyticsPolicy`; `ContrastConfig` không đổi.
+- Thêm `PracticeScope.Review` (chỉ nhóm đến hạn, lưu là "REVIEW" trong `scope_kind`); không đổi schema v16.
+- Route `ContrastErrorsRoute`, `ContrastReviewRoute`, `ContrastProgressRoute` trong tab Học.

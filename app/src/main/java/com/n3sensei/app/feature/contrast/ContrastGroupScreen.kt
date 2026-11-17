@@ -5,9 +5,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -48,10 +50,11 @@ data class SourceLinks(
 fun ContrastGroupScreen(
     viewModel: ContrastLearningViewModel,
     links: SourceLinks,
+    onPractice: (groupId: String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    ContrastGroupContent(state, links, viewModel::retry, modifier)
+    ContrastGroupContent(state, links, viewModel::retry, modifier, onPractice)
 }
 
 @Composable
@@ -60,19 +63,20 @@ fun ContrastGroupContent(
     links: SourceLinks,
     onRetry: () -> Unit,
     modifier: Modifier = Modifier,
+    onPractice: ((groupId: String) -> Unit)? = null,
 ) {
     UiStateContent(state, modifier, onRetry = onRetry) { content ->
         when (content) {
             is ContrastLearningContent.Retired ->
                 MessageContent(stringResource(R.string.contrast_retired, content.retired.reasonVi), modifier.testTag(ContrastTags.GROUP))
-            is ContrastLearningContent.Group -> GroupBody(content, links, modifier)
+            is ContrastLearningContent.Group -> GroupBody(content, links, modifier, onPractice)
         }
     }
 }
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun GroupBody(content: ContrastLearningContent.Group, links: SourceLinks, modifier: Modifier) {
+private fun GroupBody(content: ContrastLearningContent.Group, links: SourceLinks, modifier: Modifier, onPractice: ((String) -> Unit)?) {
     val detail = content.detail
     val group = detail.group
     val labels = detail.items.associate { it.id to it.label }
@@ -88,6 +92,11 @@ private fun GroupBody(content: ContrastLearningContent.Group, links: SourceLinks
         }
         Text(stringResource(R.string.contrast_progress_label, masteryLabel(content.mastery.mastery)), style = MaterialTheme.typography.bodyMedium)
         Text(stringResource(R.string.contrast_progress_note), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        if (onPractice != null && group.questionCount > 0) {
+            Button(onClick = { onPractice(group.id) }, modifier = Modifier.fillMaxWidth().testTag(ContrastTags.PRACTICE_GROUP)) {
+                Text(stringResource(R.string.contrast_practice_group))
+            }
+        }
 
         SectionHeader(stringResource(R.string.contrast_section_overview))
         Text(group.summaryVi, style = MaterialTheme.typography.bodyLarge)

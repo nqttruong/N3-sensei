@@ -23,7 +23,7 @@ Kiến trúc như phần còn lại của app: Screen → ViewModel → use case
 
 | ViewModel | Nguồn | State |
 |---|---|---|
-| `ContrastHomeViewModel` | `observeGroups()` → `GetContrastProgress.ofGroup` (mastery), `attemptsBetween` (nhóm trả lời gần nhất), `AnalyzeContrastMistakes` (hay nhầm) | `UiState<ContrastHomeUiState>`: Loading / Empty (chưa có gói) / Success / Error (+ `retry()`) |
+| `ContrastHomeViewModel` | `observeGroups()` → `GetContrastProgress.ofGroup` (mastery), `ContrastAnalyticsRepository.lastAnsweredGroup` (nhóm đang phát hành trả lời gần nhất), `ContrastAnalyticsRepository.directions` (hay nhầm, truy vấn tổng hợp từ M8); tự cập nhật khi có câu trả lời mới (`observeChanges`) | `UiState<ContrastHomeUiState>`: Loading / Empty (chưa có gói) / Success / Error (+ `retry()`) |
 | `ContrastLibraryViewModel` | `observeGroups(ContrastFilter(query, type))` + mastery của từng nhóm | `UiState<ContrastLibraryUiState>`: Empty = chưa có gói; Success có `rows` (đã lọc) và `totalGroups` (phân biệt "không có nội dung" với "không khớp") |
 | `ContrastLearningViewModel` | `GetContrastGroupDetail` (nội dung + resolver Room) và `GetContrastProgress` | `UiState<ContrastLearningContent>`: `Group(detail, mastery, isDue)`, `Retired(retired)`, NotFound, Error |
 
@@ -54,7 +54,7 @@ Một nhóm có thể khớp hai bộ lọc (ví dụ đang học và đến h�
   - Trường rỗng không hiện. Số nét không có trong dữ liệu Contrast nên không hiện; không có giá trị giả.
 - **So sánh chi tiết:** mỗi khía cạnh một thẻ, giá trị của từng mục xếp dọc (không cần cuộn ngang).
 - Tiếp theo là **ví dụ** (`FuriganaText`, bản dịch, mục minh họa), **mẹo nhớ** và **lỗi thường gặp** (câu sai / đúng có furigana, giải thích, "Nhầm A thành B"), cuối cùng là ghi chú bản quyền chưa xác minh nếu có.
-- **Không có nút luyện tập:** M6 chưa có màn hình đích.
+- **Nút luyện tập** (M6): "Luyện tập nhóm này", chỉ hiện khi nhóm có câu hỏi.
 
 ## 5. Xác minh nguồn khi hiển thị
 
@@ -103,8 +103,8 @@ Nội dung Contrast đã duyệt luôn hiện. Không trạng thái nào xóa nh
 
 ## 10. Giới hạn của M5, phần dành cho M6 và M7
 
-- Không có phiên luyện tập (M6): Home không có nút "Ôn ngay"; nhóm đến hạn chỉ mở được lý thuyết.
+- (Cập nhật M6) Luyện tập đã có: Home có "Bắt đầu luyện tập" / "Tiếp tục phiên dang dở", màn So sánh có "Luyện tập nhóm này". Xem [CONTRAST_LAB_PRACTICE.md](CONTRAST_LAB_PRACTICE.md).
 - "Tiếp tục học" chỉ xuất hiện sau khi có câu trả lời, tức là sau M6.
-- Chỉ có phần "Hay nhầm" tóm tắt (3 cặp). Màn phân tích lỗi đầy đủ và giao diện lịch ôn thuộc M7.
+- (Cập nhật M7) Home có thêm "Ôn tập", "Phân tích lỗi", "Tiến độ". Xem [CONTRAST_LAB_ANALYTICS_SRS.md](CONTRAST_LAB_ANALYTICS_SRS.md).
 - Home tính mức thành thạo cho từng nhóm và đọc toàn bộ attempt. Với vài trăm nhóm thì đủ nhanh; nếu kho nội dung lớn hơn nhiều, nên thêm truy vấn tổng hợp trong SQL (M7).
 - Lỗi cài gói Contrast vẫn chỉ ghi log (M4); chưa có giao diện báo lỗi.

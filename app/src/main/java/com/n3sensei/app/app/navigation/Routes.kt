@@ -65,6 +65,21 @@ import kotlinx.serialization.Serializable
 /** Contrast Lab compare / learning screen of one group (read only). */
 @Serializable data class ContrastGroupRoute(val groupId: String)
 
+/** Contrast Lab practice (M6): one group, or due then new groups when [groupId] is null; [resume] continues the unfinished session; [review] = due groups only (M7). */
+@Serializable data class ContrastPracticeRoute(val groupId: String? = null, val resume: Boolean = false, val review: Boolean = false)
+
+/** Contrast Lab summary of one practice session. */
+@Serializable data class ContrastSummaryRoute(val sessionId: String)
+
+/** Contrast Lab error analysis (M7). */
+@Serializable data object ContrastErrorsRoute
+
+/** Contrast Lab review queue (M7, not the app's Review tab). */
+@Serializable data object ContrastReviewRoute
+
+/** Contrast Lab progress (M7, not the app's Statistics tab). */
+@Serializable data object ContrastProgressRoute
+
 /** One skill of the exams in detail (an ExamSkill name). */
 @Serializable data class SkillDetailRoute(val skill: String)
 
