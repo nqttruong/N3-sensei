@@ -1,0 +1,300 @@
+{
+  "id": "cg-g-kawarini-nikawatte",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜かわりに và 〜にかわって",
+  "summaryVi": "Cả hai nói 'thay cho'. かわり(に) nối với の hoặc động từ, tính từ, và còn nghĩa 'bù lại, đổi lại'. にかわって nối thẳng với danh từ, nghĩa 'thay mặt, thay thế ai/cái gì làm việc gì'.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-kawarini-nikawatte-kawari",
+      "label": "〜かわり（に）",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g086",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜かわり（に）",
+          "structure": "Vる・Vた・Aい・Aな・N の ＋ かわり（に）",
+          "meaningVi": "thay vì…; bù lại…; đổi lại…"
+        },
+        "sourceFingerprint": "sha256:aaab44d8ff5b3c2c6d81e6564e7bcca6c3684e93039cedeb82bd2ee44b70bbba"
+      },
+      "grammar": {
+        "meaningVi": "Thay vì…; bù lại…; đổi lại…",
+        "connection": "Vる・Vた・Aい・Aな・N の ＋ かわり（に）",
+        "nuanceVi": "(1) Thay thế: 私のかわりに (thay tôi); (2) Thay vì làm A thì làm B: 映画を見るかわりに本を読む; (3) Có mặt tốt bù cho mặt xấu: 給料が安いかわりに休みが多い."
+      }
+    },
+    {
+      "id": "ci-g-kawarini-nikawatte-nikawatte",
+      "label": "〜にかわって／〜にかわり",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g087",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜にかわって／〜にかわり",
+          "structure": "N ＋ にかわって／にかわり",
+          "meaningVi": "thay cho…, thay mặt…"
+        },
+        "sourceFingerprint": "sha256:cd9d2a6889c65038778a08e2535f292d597c7e7e9cba40af15f42c5013c47634"
+      },
+      "grammar": {
+        "meaningVi": "Thay cho…, thay mặt…",
+        "connection": "N ＋ にかわって／にかわり",
+        "nuanceVi": "Người hay vật N vốn làm việc gì thì nay có người/vật khác làm: 社長にかわって挨拶する、人間にかわってロボットが働く. Trang trọng."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-kawarini-nikawatte-1",
+      "titleVi": "Cách nối khác nhau",
+      "bodyVi": "Danh từ: 私のかわりに ／ 私にかわって. Động từ, tính từ: chỉ かわりに (安いかわりに). Thấy の trước chỗ trống → かわりに; thấy N trực tiếp + に → にかわって."
+    },
+    {
+      "id": "ct-g-kawarini-nikawatte-2",
+      "titleVi": "Nghĩa 'bù lại' chỉ có ở かわりに",
+      "bodyVi": "Hai mặt tốt xấu bù trừ nhau (この部屋は狭いかわりに家賃が安い), hay đổi công (宿題を手伝うかわりに、昼ご飯をおごって) chỉ dùng かわりに."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nối với danh từ",
+      "values": {
+        "ci-g-kawarini-nikawatte-kawari": "N の ＋ かわりに",
+        "ci-g-kawarini-nikawatte-nikawatte": "N ＋ にかわって"
+      }
+    },
+    {
+      "aspectVi": "Nối với động từ, tính từ",
+      "values": {
+        "ci-g-kawarini-nikawatte-kawari": "Được (安いかわりに)",
+        "ci-g-kawarini-nikawatte-nikawatte": "Không"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa 'bù lại, đổi lại'",
+      "values": {
+        "ci-g-kawarini-nikawatte-kawari": "Có",
+        "ci-g-kawarini-nikawatte-nikawatte": "Không"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-kawarini-nikawatte-1",
+      "itemId": "ci-g-kawarini-nikawatte-kawari",
+      "japanese": "今日は母のかわりに私が夕飯を作った。",
+      "furigana": "{今日|きょう}は{母|はは}のかわりに{私|わたし}が{夕飯|ゆうはん}を{作|つく}った。",
+      "translationVi": "Hôm nay tôi nấu bữa tối thay mẹ."
+    },
+    {
+      "id": "cx-g-kawarini-nikawatte-2",
+      "itemId": "ci-g-kawarini-nikawatte-kawari",
+      "japanese": "この店は値段が高いかわりに、味は最高だ。",
+      "furigana": "この{店|みせ}は{値段|ねだん}が{高|たか}いかわりに、{味|あじ}は{最高|さいこう}だ。",
+      "translationVi": "Quán này đắt nhưng bù lại vị thì tuyệt vời."
+    },
+    {
+      "id": "cx-g-kawarini-nikawatte-3",
+      "itemId": "ci-g-kawarini-nikawatte-nikawatte",
+      "japanese": "社長にかわって、副社長がご挨拶いたします。",
+      "furigana": "{社長|しゃちょう}にかわって、{副社長|ふくしゃちょう}がご{挨拶|あいさつ}いたします。",
+      "translationVi": "Thay mặt giám đốc, phó giám đốc xin phát biểu."
+    },
+    {
+      "id": "cx-g-kawarini-nikawatte-4",
+      "itemId": "ci-g-kawarini-nikawatte-nikawatte",
+      "japanese": "最近は手紙にかわって、メールがよく使われる。",
+      "furigana": "{最近|さいきん}は{手紙|てがみ}にかわって、メールがよく{使|つか}われる。",
+      "translationVi": "Gần đây email được dùng nhiều thay cho thư tay."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-kawarini-nikawatte-1",
+      "textVi": "Có の → かわりに. Có ý 'đổi lại / bù lại' → かわりに. Trang trọng, thay mặt ai → にかわって."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-kawarini-nikawatte-1",
+      "situationVi": "Nói căn hộ xa ga nhưng bù lại rộng.",
+      "wrong": {
+        "japanese": "このアパートは駅から遠いにかわって、広い。",
+        "furigana": "このアパートは{駅|えき}から{遠|とお}いにかわって、{広|ひろ}い。"
+      },
+      "correct": {
+        "japanese": "このアパートは駅から遠いかわりに、広い。",
+        "furigana": "このアパートは{駅|えき}から{遠|とお}いかわりに、{広|ひろ}い。"
+      },
+      "explanationVi": "Tính từ (遠い) và nghĩa bù trừ chỉ đi với かわりに.",
+      "expectedItemId": "ci-g-kawarini-nikawatte-kawari",
+      "confusedWithItemId": "ci-g-kawarini-nikawatte-nikawatte"
+    },
+    {
+      "id": "ce-g-kawarini-nikawatte-2",
+      "situationVi": "Thay mặt lớp trưởng phát biểu, nối với danh từ.",
+      "wrong": {
+        "japanese": "委員長のにかわって、私が話します。",
+        "furigana": "{委員長|いいんちょう}のにかわって、{私|わたし}が{話|はな}します。"
+      },
+      "correct": {
+        "japanese": "委員長にかわって、私が話します。",
+        "furigana": "{委員長|いいんちょう}にかわって、{私|わたし}が{話|はな}します。"
+      },
+      "explanationVi": "にかわって nối thẳng với danh từ, không có の. (Hoặc nói 委員長のかわりに.)",
+      "expectedItemId": "ci-g-kawarini-nikawatte-nikawatte",
+      "confusedWithItemId": "ci-g-kawarini-nikawatte-kawari"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-kawarini-nikawatte-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-kawarini-nikawatte-kawari",
+      "instructionVi": "Câu nào có nghĩa 'Tôi giúp bạn làm bài tập, đổi lại bạn mời tôi bữa trưa nhé'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "宿題を手伝うかわりに、お昼をおごってね。",
+          "furigana": "{宿題|しゅくだい}を{手伝|てつだ}うかわりに、お{昼|ひる}をおごってね。",
+          "itemId": "ci-g-kawarini-nikawatte-kawari"
+        },
+        {
+          "id": "b",
+          "text": "宿題を手伝うにかわって、お昼をおごってね。",
+          "furigana": "{宿題|しゅくだい}を{手伝|てつだ}うにかわって、お{昼|ひる}をおごってね。",
+          "itemId": "ci-g-kawarini-nikawatte-nikawatte",
+          "feedbackVi": "にかわって không nối với động từ và không có nghĩa 'đổi lại'."
+        },
+        {
+          "id": "c",
+          "text": "宿題を手伝うおかげで、お昼をおごってね。",
+          "furigana": "{宿題|しゅくだい}を{手伝|てつだ}うおかげで、お{昼|ひる}をおごってね。",
+          "feedbackVi": "おかげで là 'nhờ…', không phải đổi công."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Đổi công, nối với động từ → かわりに."
+    },
+    {
+      "id": "cq-g-kawarini-nikawatte-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-kawarini-nikawatte-nikawatte",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống (văn trang trọng).",
+      "prompt": {
+        "japanese": "工場では、人間＿＿＿ロボットが危険な作業をしている。",
+        "furigana": "{工場|こうじょう}では、{人間|にんげん}＿＿＿ロボットが{危険|きけん}な{作業|さぎょう}をしている。",
+        "translationVi": "Ở nhà máy, robot làm những công việc nguy hiểm thay cho con người."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "にかわって",
+          "itemId": "ci-g-kawarini-nikawatte-nikawatte"
+        },
+        {
+          "id": "b",
+          "text": "のかわりで",
+          "feedbackVi": "Không có cách nói のかわりで; phải là のかわりに."
+        },
+        {
+          "id": "c",
+          "text": "かわりに",
+          "itemId": "ci-g-kawarini-nikawatte-kawari",
+          "feedbackVi": "Danh từ phải có の: 人間のかわりに."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Danh từ nối thẳng → 人間にかわって."
+    },
+    {
+      "id": "cq-g-kawarini-nikawatte-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-kawarini-nikawatte-kawari",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "この仕事は給料が安いにかわって、休みが多い。",
+        "furigana": "この{仕事|しごと}は{給料|きゅうりょう}が{安|やす}いにかわって、{休|やす}みが{多|おお}い。",
+        "translationVi": "Công việc này lương thấp nhưng bù lại được nghỉ nhiều."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "この仕事は",
+          "furigana": "この{仕事|しごと}は"
+        },
+        {
+          "id": "b",
+          "text": "給料が安いにかわって、",
+          "furigana": "{給料|きゅうりょう}が{安|やす}いにかわって、",
+          "itemId": "ci-g-kawarini-nikawatte-nikawatte"
+        },
+        {
+          "id": "c",
+          "text": "休みが",
+          "furigana": "{休|やす}みが"
+        },
+        {
+          "id": "d",
+          "text": "多い。",
+          "furigana": "{多|おお}い。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "給料が安いかわりに、",
+        "furigana": "{給料|きゅうりょう}が{安|やす}いかわりに、",
+        "itemId": "ci-g-kawarini-nikawatte-kawari"
+      },
+      "explanationVi": "Nghĩa bù trừ và nối với tính từ (安い) chỉ dùng かわりに."
+    },
+    {
+      "id": "cq-g-kawarini-nikawatte-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-kawarini-nikawatte-nikawatte",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Trong buổi lễ, giám đốc vắng mặt và bạn (trưởng phòng) phát biểu thay. Bạn nói câu mở đầu trang trọng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "本日は社長にかわりまして、私がご挨拶申し上げます。",
+          "furigana": "{本日|ほんじつ}は{社長|しゃちょう}にかわりまして、{私|わたし}がご{挨拶|あいさつ}{申|もう}し{上|あ}げます。",
+          "itemId": "ci-g-kawarini-nikawatte-nikawatte"
+        },
+        {
+          "id": "b",
+          "text": "本日は社長にとって、私がご挨拶申し上げます。",
+          "furigana": "{本日|ほんじつ}は{社長|しゃちょう}にとって、{私|わたし}がご{挨拶|あいさつ}{申|もう}し{上|あ}げます。",
+          "feedbackVi": "にとって là 'đối với', sai nghĩa."
+        },
+        {
+          "id": "c",
+          "text": "本日は社長が安いかわりに、私がご挨拶申し上げます。",
+          "furigana": "{本日|ほんじつ}は{社長|しゃちょう}が{安|やす}いかわりに、{私|わたし}がご{挨拶|あいさつ}{申|もう}し{上|あ}げます。",
+          "itemId": "ci-g-kawarini-nikawatte-kawari",
+          "feedbackVi": "Câu vô nghĩa: không có quan hệ bù trừ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Thay mặt giám đốc, trang trọng → 社長にかわりまして (dạng lịch sự của にかわって)."
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "id": "cg-g-souda-denbun-youtai",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜そうだ (nghe nói) và 〜そうだ (trông có vẻ)",
+  "summaryVi": "Hai mẫu cùng viết là そうだ nhưng nghĩa và cách nối khác hẳn: そうだ truyền đạt (nghe nói) nối với thể thường, そうだ dáng vẻ (trông có vẻ) nối với thân động từ ます và tính từ bỏ い／な.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-souda-denbun-youtai-denbun",
+      "label": "〜そうだ（伝聞）",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g118",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜そうだ（伝聞）",
+          "structure": "V普通形／Aい／Aな／N + そうだ",
+          "meaningVi": "nghe nói là…, nghe đồn rằng…"
+        },
+        "sourceFingerprint": "sha256:937e6e0c3347fa31b3309e51c787e3a2df56dd7cd3b7a49da4e46fe9289d086e"
+      },
+      "grammar": {
+        "meaningVi": "Nghe nói là…, nghe đồn rằng…",
+        "connection": "V thể thường／Aい／Aな だ／N だ ＋ そうだ",
+        "nuanceVi": "Truyền lại thông tin nghe hoặc đọc được từ người khác, tin tức. Hay đi với 〜によると、〜では. Không có dạng phủ định そうではない cho nghĩa này."
+      }
+    },
+    {
+      "id": "ci-g-souda-denbun-youtai-youtai",
+      "label": "〜そうだ（様態）",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g119",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜そうだ（様態）",
+          "structure": "Vます + そうだ／Aい（bỏ い）+ そうだ／Aな + そうだ",
+          "meaningVi": "trông có vẻ…"
+        },
+        "sourceFingerprint": "sha256:1418f0a6da8a364a2b3d3e4069c7e9fbcfd88febc6a571695c785a2b0fb0d3ce"
+      },
+      "grammar": {
+        "meaningVi": "Trông có vẻ…, sắp…",
+        "connection": "Vます ＋ そうだ／Aい（bỏ い）＋ そうだ／Aな ＋ そうだ（いい→よさそう、ない→なさそう）",
+        "nuanceVi": "Phán đoán từ những gì chính mắt thấy, hoặc dấu hiệu sắp xảy ra (雨が降りそう). Có thể đi trước danh từ: おいしそうなケーキ."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-souda-denbun-youtai-1",
+      "titleVi": "Nhìn cách nối là biết nghĩa",
+      "bodyVi": "降るそうだ (thể thường) = nghe nói sẽ mưa. 降りそうだ (thân ます) = trông như sắp mưa. 高いそうだ = nghe nói đắt; 高そうだ = trông có vẻ đắt. 元気だそうだ = nghe nói khỏe; 元気そうだ = trông khỏe."
+    },
+    {
+      "id": "ct-g-souda-denbun-youtai-2",
+      "titleVi": "Nguồn thông tin",
+      "bodyVi": "伝聞: thông tin đến từ người khác (天気予報によると、ニュースで、友達の話では). 様態: thông tin đến từ mắt mình (見ると、顔を見て). Trong đề, cụm 〜によると gần như luôn đi với そうだ truyền đạt."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-g-souda-denbun-youtai-denbun": "Nghe nói, nghe đồn",
+        "ci-g-souda-denbun-youtai-youtai": "Trông có vẻ, sắp"
+      }
+    },
+    {
+      "aspectVi": "Cách nối với 降る／高い／元気",
+      "values": {
+        "ci-g-souda-denbun-youtai-denbun": "降るそうだ／高いそうだ／元気だそうだ",
+        "ci-g-souda-denbun-youtai-youtai": "降りそうだ／高そうだ／元気そうだ"
+      }
+    },
+    {
+      "aspectVi": "Đứng trước danh từ",
+      "values": {
+        "ci-g-souda-denbun-youtai-denbun": "Không (không nói ×降るそうな雨)",
+        "ci-g-souda-denbun-youtai-youtai": "Được: おいしそうなパン"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-souda-denbun-youtai-1",
+      "itemId": "ci-g-souda-denbun-youtai-denbun",
+      "japanese": "天気予報によると、明日は雪が降るそうだ。",
+      "furigana": "{天気予報|てんきよほう}によると、{明日|あした}は{雪|ゆき}が{降|ふ}るそうだ。",
+      "translationVi": "Theo dự báo thời tiết, nghe nói ngày mai có tuyết."
+    },
+    {
+      "id": "cx-g-souda-denbun-youtai-2",
+      "itemId": "ci-g-souda-denbun-youtai-denbun",
+      "japanese": "田中さんは来月結婚するそうです。",
+      "furigana": "{田中|たなか}さんは{来月|らいげつ}{結婚|けっこん}するそうです。",
+      "translationVi": "Nghe nói tháng sau anh Tanaka sẽ kết hôn."
+    },
+    {
+      "id": "cx-g-souda-denbun-youtai-3",
+      "itemId": "ci-g-souda-denbun-youtai-youtai",
+      "japanese": "空が暗くなってきた。雨が降りそうだ。",
+      "furigana": "{空|そら}が{暗|くら}くなってきた。{雨|あめ}が{降|ふ}りそうだ。",
+      "translationVi": "Trời tối dần rồi. Trông như sắp mưa."
+    },
+    {
+      "id": "cx-g-souda-denbun-youtai-4",
+      "itemId": "ci-g-souda-denbun-youtai-youtai",
+      "japanese": "このケーキはとてもおいしそうですね。",
+      "translationVi": "Cái bánh này trông ngon quá nhỉ."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-souda-denbun-youtai-1",
+      "textVi": "Nghe (耳) thì giữ nguyên câu rồi thêm そうだ; thấy (目) thì cắt đuôi rồi thêm そうだ."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-souda-denbun-youtai-1",
+      "situationVi": "Bạn đọc tin tức rằng giá xăng sẽ tăng.",
+      "wrong": {
+        "japanese": "ニュースによると、ガソリンが高そうだ。",
+        "furigana": "ニュースによると、ガソリンが{高|たか}そうだ。"
+      },
+      "correct": {
+        "japanese": "ニュースによると、ガソリンが高くなるそうだ。",
+        "furigana": "ニュースによると、ガソリンが{高|たか}くなるそうだ。"
+      },
+      "explanationVi": "ニュースによると cho biết thông tin nghe được, nên phải dùng そうだ truyền đạt nối với thể thường.",
+      "expectedItemId": "ci-g-souda-denbun-youtai-denbun",
+      "confusedWithItemId": "ci-g-souda-denbun-youtai-youtai"
+    },
+    {
+      "id": "ce-g-souda-denbun-youtai-2",
+      "situationVi": "Nhìn chiếc túi và đoán là đắt.",
+      "wrong": {
+        "japanese": "このかばんは高いそうですね。",
+        "furigana": "このかばんは{高|たか}いそうですね。"
+      },
+      "correct": {
+        "japanese": "このかばんは高そうですね。",
+        "furigana": "このかばんは{高|たか}そうですね。"
+      },
+      "explanationVi": "Đoán từ những gì nhìn thấy dùng そうだ dáng vẻ: 高い → 高そう.",
+      "expectedItemId": "ci-g-souda-denbun-youtai-youtai",
+      "confusedWithItemId": "ci-g-souda-denbun-youtai-denbun"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-souda-denbun-youtai-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-souda-denbun-youtai-denbun",
+      "instructionVi": "Câu nào có nghĩa \"Nghe nói cửa hàng kia rất ngon\"?",
+      "options": [
+        {
+          "id": "a",
+          "text": "あの店はおいしいそうだ。",
+          "furigana": "あの{店|みせ}はおいしいそうだ。",
+          "itemId": "ci-g-souda-denbun-youtai-denbun"
+        },
+        {
+          "id": "b",
+          "text": "あの店はおいしそうだ。",
+          "furigana": "あの{店|みせ}はおいしそうだ。",
+          "itemId": "ci-g-souda-denbun-youtai-youtai",
+          "feedbackVi": "おいしそう là 'trông có vẻ ngon' (nhìn thấy), không phải nghe nói."
+        },
+        {
+          "id": "c",
+          "text": "あの店はおいしいようにする。",
+          "furigana": "あの{店|みせ}はおいしいようにする。",
+          "feedbackVi": "ようにする là cố gắng làm sao cho…, không hợp nghĩa."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Nghe nói → thể thường おいしい + そうだ."
+    },
+    {
+      "id": "cq-g-souda-denbun-youtai-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-souda-denbun-youtai-youtai",
+      "instructionVi": "Chọn dạng đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "あ、棚の上の箱が落ち＿＿＿だ。気をつけて！",
+        "furigana": "あ、{棚|たな}の{上|うえ}の{箱|はこ}が{落|お}ち＿＿＿だ。{気|き}をつけて！",
+        "translationVi": "A, cái hộp trên kệ trông như sắp rơi. Cẩn thận!"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "そう",
+          "itemId": "ci-g-souda-denbun-youtai-youtai"
+        },
+        {
+          "id": "b",
+          "text": "るそう",
+          "itemId": "ci-g-souda-denbun-youtai-denbun",
+          "feedbackVi": "落ちるそうだ là 'nghe nói sẽ rơi', không hợp khi đang nhìn thấy cái hộp."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Nhìn thấy dấu hiệu sắp rơi → thân ます 落ち + そうだ."
+    },
+    {
+      "id": "cq-g-souda-denbun-youtai-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-souda-denbun-youtai-denbun",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "友達の話によると、その映画はとても面白そうだ。",
+        "furigana": "{友達|ともだち}の{話|はなし}によると、その{映画|えいが}はとても{面白|おもしろ}そうだ。",
+        "translationVi": "Theo lời bạn tôi, nghe nói bộ phim đó rất thú vị."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "友達の話によると、",
+          "furigana": "{友達|ともだち}の{話|はなし}によると、"
+        },
+        {
+          "id": "b",
+          "text": "その映画は",
+          "furigana": "その{映画|えいが}は"
+        },
+        {
+          "id": "c",
+          "text": "とても"
+        },
+        {
+          "id": "d",
+          "text": "面白そうだ。",
+          "furigana": "{面白|おもしろ}そうだ。",
+          "itemId": "ci-g-souda-denbun-youtai-youtai"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "面白いそうだ。",
+        "furigana": "{面白|おもしろ}いそうだ。",
+        "itemId": "ci-g-souda-denbun-youtai-denbun"
+      },
+      "explanationVi": "によると cho biết thông tin nghe từ bạn, nên dùng そうだ truyền đạt: 面白い + そうだ."
+    },
+    {
+      "id": "cq-g-souda-denbun-youtai-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-souda-denbun-youtai-youtai",
+      "instructionVi": "Chọn câu tự nhiên nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn nhìn thấy đồng nghiệp ngáp liên tục, mắt díp lại, và muốn hỏi thăm."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "大丈夫ですか。とても眠いそうですね。",
+          "furigana": "{大丈夫|だいじょうぶ}ですか。とても{眠|ねむ}いそうですね。",
+          "itemId": "ci-g-souda-denbun-youtai-denbun",
+          "feedbackVi": "眠いそうですね là 'nghe nói anh buồn ngủ', như đang kể lại lời người khác."
+        },
+        {
+          "id": "b",
+          "text": "大丈夫ですか。とても眠いらしいですね。",
+          "furigana": "{大丈夫|だいじょうぶ}ですか。とても{眠|ねむ}いらしいですね。",
+          "feedbackVi": "らしい dựa vào thông tin nghe được; nói về người đang đứng trước mặt thì nghe xa cách, không tự nhiên."
+        },
+        {
+          "id": "c",
+          "text": "大丈夫ですか。とても眠そうですね。",
+          "furigana": "{大丈夫|だいじょうぶ}ですか。とても{眠|ねむ}そうですね。",
+          "itemId": "ci-g-souda-denbun-youtai-youtai"
+        }
+      ],
+      "correctOptionId": "c",
+      "explanationVi": "Đoán từ những gì nhìn thấy trên mặt đồng nghiệp → そうだ dáng vẻ: 眠い → 眠そう."
+    }
+  ]
+}

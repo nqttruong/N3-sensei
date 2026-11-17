@@ -1,0 +1,294 @@
+{
+  "id": "cg-g-warini-kuseni",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜わりに（は） và 〜くせに",
+  "summaryVi": "Cả hai nói kết quả trái với điều mong đợi từ vế trước. わりに là nhận xét khách quan 'so với… thì lại', có thể khen hoặc chê; くせに là trách móc, coi thường một người cụ thể.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-warini-kuseni-wari",
+      "label": "〜わりに（は）",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g104",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜わりに（は）",
+          "structure": "Vthường・Aい・Aな・N の ＋ わりに（は）",
+          "meaningVi": "so với… thì (lại)…"
+        },
+        "sourceFingerprint": "sha256:9dc8c11fb75bf0791cf6e10442e31fa6f54ece46fcc93a28b42c9f07fb630a6f"
+      },
+      "grammar": {
+        "meaningVi": "So với… thì (lại)…",
+        "connection": "V thể thường・Aい・Aな な・N の ＋ わりに（は）",
+        "nuanceVi": "Đánh giá khác với mức thông thường của vế trước: 値段のわりにおいしい (khen), 年のわりに若く見える. Chủ ngữ có thể là người hay vật."
+      }
+    },
+    {
+      "id": "ci-g-warini-kuseni-kuse",
+      "label": "〜くせに",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g105",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜くせに",
+          "structure": "Vthường・Aい・Aな・N の ＋ くせに",
+          "meaningVi": "dù… vậy mà… (trách móc, coi thường)"
+        },
+        "sourceFingerprint": "sha256:582f140b1f61f3c717f8c4167ed67cdd9412be5b52a1f5548de73cd0f531555a"
+      },
+      "grammar": {
+        "meaningVi": "Dù… vậy mà… (trách móc, coi thường)",
+        "connection": "V thể thường・Aい・Aな な・N の ＋ くせに",
+        "nuanceVi": "Người nói bực bội, chê trách hành vi của một người: 知っているくせに教えてくれない. Chủ ngữ hai vế là cùng một người. Văn nói, không dùng cho vật, không dùng để khen."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-warini-kuseni-1",
+      "titleVi": "Khách quan hay trách móc",
+      "bodyVi": "わりに: so sánh với tiêu chuẩn, có thể là lời khen (このレストランは安いわりにおいしい). くせに: luôn là lời chê, khó chịu với người đó (子供のくせに生意気だ). Câu khen, câu về đồ vật → わりに."
+    },
+    {
+      "id": "ct-g-warini-kuseni-2",
+      "titleVi": "Khi nào không dùng くせに",
+      "bodyVi": "Không dùng くせに cho bản thân (người nói tự trách mình thì dùng のに), cho đồ vật, hay trong văn trang trọng. Hai vế của くせに phải cùng chủ ngữ."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Sắc thái",
+      "values": {
+        "ci-g-warini-kuseni-wari": "Nhận xét, có thể khen hoặc chê",
+        "ci-g-warini-kuseni-kuse": "Luôn trách móc, coi thường"
+      }
+    },
+    {
+      "aspectVi": "Chủ ngữ",
+      "values": {
+        "ci-g-warini-kuseni-wari": "Người hoặc vật",
+        "ci-g-warini-kuseni-kuse": "Chỉ người, cùng chủ ngữ hai vế"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ",
+      "values": {
+        "ci-g-warini-kuseni-wari": "この店は安いわりにおいしい",
+        "ci-g-warini-kuseni-kuse": "知っているくせに教えてくれない"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-warini-kuseni-1",
+      "itemId": "ci-g-warini-kuseni-wari",
+      "japanese": "この店は値段のわりに量が多い。",
+      "furigana": "この{店|みせ}は{値段|ねだん}のわりに{量|りょう}が{多|おお}い。",
+      "translationVi": "Quán này so với giá thì phần ăn lại nhiều."
+    },
+    {
+      "id": "cx-g-warini-kuseni-2",
+      "itemId": "ci-g-warini-kuseni-wari",
+      "japanese": "祖父は年のわりに元気だ。",
+      "furigana": "{祖父|そふ}は{年|とし}のわりに{元気|げんき}だ。",
+      "translationVi": "So với tuổi thì ông tôi lại khỏe."
+    },
+    {
+      "id": "cx-g-warini-kuseni-3",
+      "itemId": "ci-g-warini-kuseni-kuse",
+      "japanese": "彼は自分では何もしないくせに、文句ばかり言う。",
+      "furigana": "{彼|かれ}は{自分|じぶん}では{何|なに}もしないくせに、{文句|もんく}ばかり{言|い}う。",
+      "translationVi": "Anh ta tự mình chẳng làm gì vậy mà toàn phàn nàn."
+    },
+    {
+      "id": "cx-g-warini-kuseni-4",
+      "itemId": "ci-g-warini-kuseni-kuse",
+      "japanese": "知っているくせに、教えてくれないなんてひどい。",
+      "furigana": "{知|し}っているくせに、{教|おし}えてくれないなんてひどい。",
+      "translationVi": "Biết rõ vậy mà không chịu nói cho, thật quá đáng."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-warini-kuseni-1",
+      "textVi": "わりに = 'so với' (cái cân); くせに = 'vậy mà còn' (ngón tay chỉ trích)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-warini-kuseni-1",
+      "situationVi": "Khen chiếc máy tính nhẹ so với kích thước.",
+      "wrong": {
+        "japanese": "このパソコンは大きいくせに軽い。",
+        "furigana": "このパソコンは{大|おお}きいくせに{軽|かる}い。"
+      },
+      "correct": {
+        "japanese": "このパソコンは大きいわりに軽い。",
+        "furigana": "このパソコンは{大|おお}きいわりに{軽|かる}い。"
+      },
+      "explanationVi": "Chủ ngữ là đồ vật và câu mang ý khen → わりに. くせに chỉ dùng để trách người.",
+      "expectedItemId": "ci-g-warini-kuseni-wari",
+      "confusedWithItemId": "ci-g-warini-kuseni-kuse"
+    },
+    {
+      "id": "ce-g-warini-kuseni-2",
+      "situationVi": "Bực bội vì đồng nghiệp hứa rồi không làm.",
+      "wrong": {
+        "japanese": "彼は「やる」と言ったわりに、何もしなかった。",
+        "furigana": "{彼|かれ}は「やる」と{言|い}ったわりに、{何|なに}もしなかった。"
+      },
+      "correct": {
+        "japanese": "彼は「やる」と言ったくせに、何もしなかった。",
+        "furigana": "{彼|かれ}は「やる」と{言|い}ったくせに、{何|なに}もしなかった。"
+      },
+      "explanationVi": "Người nói đang trách hành vi của anh ta → くせに. (わりに nghe như nhận xét nhẹ nhàng.)",
+      "expectedItemId": "ci-g-warini-kuseni-kuse",
+      "confusedWithItemId": "ci-g-warini-kuseni-wari"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-warini-kuseni-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-warini-kuseni-wari",
+      "instructionVi": "Câu nào là lời khen?",
+      "options": [
+        {
+          "id": "a",
+          "text": "彼は初心者のわりに、とても上手だ。",
+          "furigana": "{彼|かれ}は{初心者|しょしんしゃ}のわりに、とても{上手|じょうず}だ。",
+          "itemId": "ci-g-warini-kuseni-wari"
+        },
+        {
+          "id": "b",
+          "text": "彼は初心者のくせに、とても上手だ。",
+          "furigana": "{彼|かれ}は{初心者|しょしんしゃ}のくせに、とても{上手|じょうず}だ。",
+          "itemId": "ci-g-warini-kuseni-kuse",
+          "feedbackVi": "くせに mang ý trách, không dùng để khen."
+        },
+        {
+          "id": "c",
+          "text": "彼は初心者のせいで、とても上手だ。",
+          "furigana": "{彼|かれ}は{初心者|しょしんしゃ}のせいで、とても{上手|じょうず}だ。",
+          "feedbackVi": "せいで chỉ nguyên nhân của kết quả xấu."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Khen 'so với người mới thì giỏi' → わりに."
+    },
+    {
+      "id": "cq-g-warini-kuseni-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-warini-kuseni-kuse",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống (bạn đang trách em trai).",
+      "prompt": {
+        "japanese": "自分で散らかした＿＿＿、全然片付けないんだから。",
+        "furigana": "{自分|じぶん}で{散|ち}らかした＿＿＿、{全然|ぜんぜん}{片付|かたづ}けないんだから。",
+        "translationVi": "Tự mình bày bừa ra vậy mà chẳng chịu dọn gì cả."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "くせに",
+          "itemId": "ci-g-warini-kuseni-kuse"
+        },
+        {
+          "id": "b",
+          "text": "わりに",
+          "itemId": "ci-g-warini-kuseni-wari",
+          "feedbackVi": "わりに là so sánh với tiêu chuẩn, không diễn tả sự bực bội."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Trách em trai, cùng chủ ngữ hai vế → くせに."
+    },
+    {
+      "id": "cq-g-warini-kuseni-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-warini-kuseni-wari",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "このアパートは駅に近いくせに、家賃が安い。",
+        "furigana": "このアパートは{駅|えき}に{近|ちか}いくせに、{家賃|やちん}が{安|やす}い。",
+        "translationVi": "Căn hộ này gần ga, so với vị trí đó thì tiền thuê rẻ."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "このアパートは"
+        },
+        {
+          "id": "b",
+          "text": "駅に近いくせに、",
+          "furigana": "{駅|えき}に{近|ちか}いくせに、",
+          "itemId": "ci-g-warini-kuseni-kuse"
+        },
+        {
+          "id": "c",
+          "text": "家賃が",
+          "furigana": "{家賃|やちん}が"
+        },
+        {
+          "id": "d",
+          "text": "安い。",
+          "furigana": "{安|やす}い。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "駅に近いわりに、",
+        "furigana": "{駅|えき}に{近|ちか}いわりに、",
+        "itemId": "ci-g-warini-kuseni-wari"
+      },
+      "explanationVi": "Chủ ngữ là căn hộ (vật) và câu là nhận xét tích cực → わりに."
+    },
+    {
+      "id": "cq-g-warini-kuseni-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-warini-kuseni-kuse",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn bực mình vì người bạn biết rõ giờ hẹn mà vẫn đến muộn một tiếng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "時間を知っていたくせに、どうして一時間も遅れたの？",
+          "furigana": "{時間|じかん}を{知|し}っていたくせに、どうして{一時間|いちじかん}も{遅|おく}れたの？",
+          "itemId": "ci-g-warini-kuseni-kuse"
+        },
+        {
+          "id": "b",
+          "text": "時間を知っていたわりに、どうして一時間も遅れたの？",
+          "furigana": "{時間|じかん}を{知|し}っていたわりに、どうして{一時間|いちじかん}も{遅|おく}れたの？",
+          "itemId": "ci-g-warini-kuseni-wari",
+          "feedbackVi": "わりに là nhận xét so sánh, không thể hiện sự bực bội như tình huống."
+        },
+        {
+          "id": "c",
+          "text": "時間を知っていたおかげで、どうして一時間も遅れたの？",
+          "furigana": "{時間|じかん}を{知|し}っていたおかげで、どうして{一時間|いちじかん}も{遅|おく}れたの？",
+          "feedbackVi": "おかげで dùng cho kết quả tốt."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Trách móc người bạn → くせに."
+    }
+  ]
+}

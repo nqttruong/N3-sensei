@@ -1,0 +1,389 @@
+{
+  "id": "cg-k-bou-nai-wasureru-nozomu",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "亡, 忘 và 望",
+  "summaryVi": "Ba chữ cùng có phần 亡 và âm ボウ. 亡 là mất, chết; thêm 心 (tim) ở dưới thành 忘 – quên (tim mất đi điều gì); 望 (亡 + 月 + 王) là trông mong, hy vọng.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-bou-nai-wasureru-nozomu-nai",
+      "label": "亡",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k04ea1",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "亡",
+          "onReadings": [
+            "ボウ",
+            "モウ"
+          ],
+          "kunReadings": [
+            "な.い",
+            "な.き-",
+            "ほろ.びる",
+            "ほろ.ぶ",
+            "ほろ.ぼす"
+          ],
+          "meaningVi": "Chết, mất"
+        },
+        "sourceFingerprint": "sha256:f6c8cdce9287b814d166919e7f0e92d3d938699dfdd3b4e568005b15217faa54"
+      },
+      "kanji": {
+        "meaningVi": "chết, mất",
+        "hanViet": "VONG",
+        "onReadings": [
+          "ボウ",
+          "モウ"
+        ],
+        "kunReadings": [
+          "な.い",
+          "な.き-",
+          "ほろ.びる",
+          "ほろ.ぶ",
+          "ほろ.ぼす"
+        ],
+        "radical": {
+          "character": "亠",
+          "nameVi": "Đầu (nắp)"
+        },
+        "shapeNoteVi": "Người trốn vào góc khuất → biến mất, chết. 亡くなる, 死亡."
+      }
+    },
+    {
+      "id": "ci-k-bou-nai-wasureru-nozomu-wasureru",
+      "label": "忘",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05fd8",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "忘",
+          "onReadings": [
+            "ボウ"
+          ],
+          "kunReadings": [
+            "わす.れる"
+          ],
+          "meaningVi": "Quên"
+        },
+        "sourceFingerprint": "sha256:0652fd65788726d4b27ef9fdcc2243adeb4bfde69dde068a4a39e1eb853ad3c4"
+      },
+      "kanji": {
+        "meaningVi": "quên",
+        "hanViet": "VONG",
+        "onReadings": [
+          "ボウ"
+        ],
+        "kunReadings": [
+          "わす.れる"
+        ],
+        "radical": {
+          "character": "心",
+          "nameVi": "Tâm (tim) ở dưới"
+        },
+        "shapeNoteVi": "亡 trên 心: điều trong tim bị mất → quên. 忘れる, 忘れ物, 忘年会."
+      }
+    },
+    {
+      "id": "ci-k-bou-nai-wasureru-nozomu-nozomu",
+      "label": "望",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k0671b",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "望",
+          "onReadings": [
+            "ボウ",
+            "モウ"
+          ],
+          "kunReadings": [
+            "のぞ.む",
+            "もち"
+          ],
+          "meaningVi": "Mong muốn, hy vọng; trông ra xa"
+        },
+        "sourceFingerprint": "sha256:88aa83018345ab70299a21aaa208949664c0344d9b9683bf4e232bb082212f9c"
+      },
+      "kanji": {
+        "meaningVi": "mong muốn, hy vọng; ngắm nhìn",
+        "hanViet": "VỌNG",
+        "onReadings": [
+          "ボウ",
+          "モウ"
+        ],
+        "kunReadings": [
+          "のぞ.む",
+          "もち"
+        ],
+        "radical": {
+          "character": "月",
+          "nameVi": "Nguyệt (trăng)"
+        },
+        "shapeNoteVi": "亡 + 月 + 王: người đứng ngóng trăng → trông mong. 希望, 望む, 失望."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-bou-nai-wasureru-nozomu-1",
+      "titleVi": "Nhìn phần thêm vào",
+      "bodyVi": "亡 một mình: chết, mất (亡くなる: qua đời – cách nói lịch sự). 心 ở dưới → 忘 (quên). 月 và 王 → 望 (hy vọng, ngóng trông). Ba chữ đều có âm ボウ: 死亡 (しぼう), 忘年会 (ぼうねんかい), 希望 (きぼう)."
+    },
+    {
+      "id": "ct-k-bou-nai-wasureru-nozomu-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "亡: 亡くなる (qua đời), 死亡 (tử vong). 忘: 忘れる (quên), 忘れ物 (đồ để quên), 忘年会 (tiệc tất niên). 望: 希望 (hy vọng), 望む (mong muốn), 失望 (thất vọng)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Phần thêm",
+      "values": {
+        "ci-k-bou-nai-wasureru-nozomu-nai": "Không có",
+        "ci-k-bou-nai-wasureru-nozomu-wasureru": "心 ở dưới",
+        "ci-k-bou-nai-wasureru-nozomu-nozomu": "月 và 王"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-bou-nai-wasureru-nozomu-nai": "Chết, mất",
+        "ci-k-bou-nai-wasureru-nozomu-wasureru": "Quên",
+        "ci-k-bou-nai-wasureru-nozomu-nozomu": "Mong muốn, hy vọng"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-bou-nai-wasureru-nozomu-nai": "亡くなる、死亡",
+        "ci-k-bou-nai-wasureru-nozomu-wasureru": "忘れる、忘れ物",
+        "ci-k-bou-nai-wasureru-nozomu-nozomu": "希望、望む"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-bou-nai-wasureru-nozomu-1",
+      "itemId": "ci-k-bou-nai-wasureru-nozomu-nai",
+      "japanese": "祖父は去年亡くなった。",
+      "furigana": "{祖父|そふ}は{去年|きょねん}{亡|な}くなった。",
+      "translationVi": "Ông tôi đã qua đời năm ngoái."
+    },
+    {
+      "id": "cx-k-bou-nai-wasureru-nozomu-2",
+      "itemId": "ci-k-bou-nai-wasureru-nozomu-nai",
+      "japanese": "その事故で死亡した人はいなかった。",
+      "furigana": "その{事故|じこ}で{死亡|しぼう}した{人|ひと}はいなかった。",
+      "translationVi": "Không có ai tử vong trong vụ tai nạn đó."
+    },
+    {
+      "id": "cx-k-bou-nai-wasureru-nozomu-3",
+      "itemId": "ci-k-bou-nai-wasureru-nozomu-wasureru",
+      "japanese": "電車に傘を忘れてしまった。",
+      "furigana": "{電車|でんしゃ}に{傘|かさ}を{忘|わす}れてしまった。",
+      "translationVi": "Tôi để quên ô trên tàu."
+    },
+    {
+      "id": "cx-k-bou-nai-wasureru-nozomu-4",
+      "itemId": "ci-k-bou-nai-wasureru-nozomu-wasureru",
+      "japanese": "十二月に会社の忘年会がある。",
+      "furigana": "{十二月|じゅうにがつ}に{会社|かいしゃ}の{忘年会|ぼうねんかい}がある。",
+      "translationVi": "Tháng mười hai có tiệc tất niên của công ty."
+    },
+    {
+      "id": "cx-k-bou-nai-wasureru-nozomu-5",
+      "itemId": "ci-k-bou-nai-wasureru-nozomu-nozomu",
+      "japanese": "第一希望の大学に合格した。",
+      "furigana": "{第一|だいいち}{希望|きぼう}の{大学|だいがく}に{合格|ごうかく}した。",
+      "translationVi": "Tôi đã đỗ trường đại học nguyện vọng một."
+    },
+    {
+      "id": "cx-k-bou-nai-wasureru-nozomu-6",
+      "itemId": "ci-k-bou-nai-wasureru-nozomu-nozomu",
+      "japanese": "多くの人が平和を望んでいる。",
+      "furigana": "{多|おお}くの{人|ひと}が{平和|へいわ}を{望|のぞ}んでいる。",
+      "translationVi": "Nhiều người mong muốn hòa bình."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-bou-nai-wasureru-nozomu-1",
+      "textVi": "Tim (心) mất (亡) điều gì → 忘 quên. Ngóng trăng (月) → 望 hy vọng."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-bou-nai-wasureru-nozomu-1",
+      "situationVi": "Viết 'hy vọng'.",
+      "wrong": {
+        "japanese": "将来の希忘を話した。",
+        "furigana": "{将来|しょうらい}の{希忘|きぼう}を{話|はな}した。"
+      },
+      "correct": {
+        "japanese": "将来の希望を話した。",
+        "furigana": "{将来|しょうらい}の{希望|きぼう}を{話|はな}した。"
+      },
+      "explanationVi": "Hy vọng → 望.",
+      "expectedItemId": "ci-k-bou-nai-wasureru-nozomu-nozomu",
+      "confusedWithItemId": "ci-k-bou-nai-wasureru-nozomu-wasureru"
+    },
+    {
+      "id": "ce-k-bou-nai-wasureru-nozomu-2",
+      "situationVi": "Viết 'đồ để quên'.",
+      "wrong": {
+        "japanese": "望れ物をしないように気をつけて。",
+        "furigana": "{望|のぞ}れ{物|もの}をしないように{気|き}をつけて。"
+      },
+      "correct": {
+        "japanese": "忘れ物をしないように気をつけて。",
+        "furigana": "{忘|わす}れ{物|もの}をしないように{気|き}をつけて。"
+      },
+      "explanationVi": "Quên → 忘 (có 心).",
+      "expectedItemId": "ci-k-bou-nai-wasureru-nozomu-wasureru",
+      "confusedWithItemId": "ci-k-bou-nai-wasureru-nozomu-nozomu"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-bou-nai-wasureru-nozomu-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-bou-nai-wasureru-nozomu-wasureru",
+      "instructionVi": "Chọn cách viết đúng của ぼうねんかい (tiệc tất niên – 'quên năm cũ').",
+      "options": [
+        {
+          "id": "a",
+          "text": "望年会",
+          "itemId": "ci-k-bou-nai-wasureru-nozomu-nozomu",
+          "feedbackVi": "望 là hy vọng."
+        },
+        {
+          "id": "b",
+          "text": "亡年会",
+          "itemId": "ci-k-bou-nai-wasureru-nozomu-nai",
+          "feedbackVi": "亡 là chết, mất."
+        },
+        {
+          "id": "c",
+          "text": "忘年会",
+          "itemId": "ci-k-bou-nai-wasureru-nozomu-wasureru"
+        }
+      ],
+      "correctOptionId": "c",
+      "explanationVi": "忘年会: tiệc để quên đi năm cũ → 忘."
+    },
+    {
+      "id": "cq-k-bou-nai-wasureru-nozomu-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-bou-nai-wasureru-nozomu-nai",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "恩師が＿＿＿くなったという知らせを受けた。",
+        "furigana": "{恩師|おんし}が＿＿＿くなったという{知|し}らせを{受|う}けた。",
+        "translationVi": "Tôi nhận được tin người thầy kính yêu đã qua đời."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "亡",
+          "itemId": "ci-k-bou-nai-wasureru-nozomu-nai"
+        },
+        {
+          "id": "b",
+          "text": "忘",
+          "itemId": "ci-k-bou-nai-wasureru-nozomu-wasureru"
+        },
+        {
+          "id": "c",
+          "text": "望",
+          "itemId": "ci-k-bou-nai-wasureru-nozomu-nozomu"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "亡くなる (qua đời) viết với 亡."
+    },
+    {
+      "id": "cq-k-bou-nai-wasureru-nozomu-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-bou-nai-wasureru-nozomu-nozomu",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "試合の結果に、ファンは失忘した。",
+        "furigana": "{試合|しあい}の{結果|けっか}に、ファンは{失忘|しつぼう}した。",
+        "translationVi": "Kết quả trận đấu làm người hâm mộ thất vọng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "試合の結果に、",
+          "furigana": "{試合|しあい}の{結果|けっか}に、"
+        },
+        {
+          "id": "b",
+          "text": "ファンは"
+        },
+        {
+          "id": "c",
+          "text": "失忘した。",
+          "furigana": "{失忘|しつぼう}した。",
+          "itemId": "ci-k-bou-nai-wasureru-nozomu-wasureru"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "失望した。",
+        "furigana": "{失望|しつぼう}した。",
+        "itemId": "ci-k-bou-nai-wasureru-nozomu-nozomu"
+      },
+      "explanationVi": "Thất vọng (mất hy vọng) → 失望."
+    },
+    {
+      "id": "cq-k-bou-nai-wasureru-nozomu-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-bou-nai-wasureru-nozomu-wasureru",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn nhắc em trai đừng quên mang bài tập."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "宿題を忘れないでね。",
+          "furigana": "{宿題|しゅくだい}を{忘|わす}れないでね。",
+          "itemId": "ci-k-bou-nai-wasureru-nozomu-wasureru"
+        },
+        {
+          "id": "b",
+          "text": "宿題を亡れないでね。",
+          "furigana": "{宿題|しゅくだい}を{亡|な}れないでね。",
+          "itemId": "ci-k-bou-nai-wasureru-nozomu-nai",
+          "feedbackVi": "Quên viết 忘れる (có 心)."
+        },
+        {
+          "id": "c",
+          "text": "宿題を望れないでね。",
+          "furigana": "{宿題|しゅくだい}を{望|のぞ}れないでね。",
+          "itemId": "ci-k-bou-nai-wasureru-nozomu-nozomu",
+          "feedbackVi": "Quên viết 忘れる; 望 là mong muốn."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "忘れる (quên) viết với 忘."
+    }
+  ]
+}

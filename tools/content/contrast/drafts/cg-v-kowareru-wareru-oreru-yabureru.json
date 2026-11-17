@@ -1,0 +1,427 @@
+{
+  "id": "cg-v-kowareru-wareru-oreru-yabureru",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "壊れる, 割れる, 折れる và 破れる",
+  "summaryVi": "Bốn tự động từ đều dịch là 'bị hỏng', nhưng mỗi từ đi với một kiểu hư hại: 壊れる (máy móc, đồ vật hỏng chung), 割れる (vật cứng vỡ ra từng mảnh: kính, bát), 折れる (vật dài bị gãy gập: cành cây, xương), 破れる (vật mỏng bị rách: giấy, vải).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-kowareru-wareru-oreru-yabureru-kowareru",
+      "label": "壊れる",
+      "labelFurigana": "{壊|こわ}れる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v484",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "壊れる",
+          "reading": "こわれる",
+          "meaningVi": "bị hỏng"
+        },
+        "sourceFingerprint": "sha256:e51f7bd6738a3938e246315dce0733541ea7d14908fef3cbebb1d750faf46806"
+      },
+      "vocabulary": {
+        "reading": "こわれる",
+        "meaningVi": "bị hỏng",
+        "usageVi": "Máy móc, đồ vật không dùng được nữa, hoặc vỡ nát nói chung: パソコンが壊れる.",
+        "collocations": [
+          {
+            "japanese": "時計が壊れる",
+            "furigana": "{時計|とけい}が{壊|こわ}れる",
+            "meaningVi": "đồng hồ hỏng"
+          },
+          {
+            "japanese": "家が壊れる",
+            "furigana": "{家|いえ}が{壊|こわ}れる",
+            "meaningVi": "nhà bị sập"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-kowareru-wareru-oreru-yabureru-wareru",
+      "label": "割れる",
+      "labelFurigana": "{割|わ}れる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v486",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "割れる",
+          "reading": "われる",
+          "meaningVi": "bị vỡ"
+        },
+        "sourceFingerprint": "sha256:48d0352846d6a5f87eb354b85e0741bc5ebfa9c243f7b186afa125e3624ab06b"
+      },
+      "vocabulary": {
+        "reading": "われる",
+        "meaningVi": "bị vỡ",
+        "usageVi": "Vật cứng (kính, sứ, đá) vỡ ra thành mảnh, nứt ra: 皿が割れる.",
+        "collocations": [
+          {
+            "japanese": "皿が割れる",
+            "furigana": "{皿|さら}が{割|わ}れる",
+            "meaningVi": "đĩa vỡ"
+          },
+          {
+            "japanese": "ガラスが割れる",
+            "furigana": "ガラスが{割|わ}れる",
+            "meaningVi": "kính vỡ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-kowareru-wareru-oreru-yabureru-oreru",
+      "label": "折れる",
+      "labelFurigana": "{折|お}れる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v488",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "折れる",
+          "reading": "おれる",
+          "meaningVi": "bị gãy"
+        },
+        "sourceFingerprint": "sha256:1f13801719e3566d3a1c7a041b314514efd4abd04c55df6721a6f77095b3fb35"
+      },
+      "vocabulary": {
+        "reading": "おれる",
+        "meaningVi": "bị gãy",
+        "usageVi": "Vật dài, mảnh bị gãy gập: 枝が折れる、骨が折れる.",
+        "collocations": [
+          {
+            "japanese": "骨が折れる",
+            "furigana": "{骨|ほね}が{折|お}れる",
+            "meaningVi": "gãy xương"
+          },
+          {
+            "japanese": "鉛筆の芯が折れる",
+            "furigana": "{鉛筆|えんぴつ}の{芯|しん}が{折|お}れる",
+            "meaningVi": "gãy ruột bút chì"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-kowareru-wareru-oreru-yabureru-yabureru",
+      "label": "破れる",
+      "labelFurigana": "{破|やぶ}れる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v490",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "破れる",
+          "reading": "やぶれる",
+          "meaningVi": "bị rách"
+        },
+        "sourceFingerprint": "sha256:1dfa07c7bdb81008841e599f053b064637fd53da4270e4e50c34b14b52d1213b"
+      },
+      "vocabulary": {
+        "reading": "やぶれる",
+        "meaningVi": "bị rách",
+        "usageVi": "Vật mỏng (giấy, vải, túi) bị rách, thủng: 袋が破れる.",
+        "collocations": [
+          {
+            "japanese": "ズボンが破れる",
+            "furigana": "ズボンが{破|やぶ}れる",
+            "meaningVi": "quần bị rách"
+          },
+          {
+            "japanese": "袋が破れる",
+            "furigana": "{袋|ふくろ}が{破|やぶ}れる",
+            "meaningVi": "túi bị rách"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-kowareru-wareru-oreru-yabureru-1",
+      "titleVi": "Nhìn vào vật bị hỏng",
+      "bodyVi": "Máy móc, đồ có cơ chế (時計、パソコン、エアコン) → 壊れる. Vật cứng, giòn (皿、コップ、ガラス、卵) → 割れる. Vật dài, mảnh (枝、骨、箸、傘の骨) → 折れる. Vật mỏng, mềm (紙、服、袋、障子) → 破れる."
+    },
+    {
+      "id": "ct-v-kowareru-wareru-oreru-yabureru-2",
+      "titleVi": "Tha động từ",
+      "bodyVi": "壊れる ↔ 壊す, 割れる ↔ 割る, 折れる ↔ 折る, 破れる ↔ 破る. Quy tắc chọn từ giống hệt cặp tự động từ."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Vật bị hỏng",
+      "values": {
+        "ci-v-kowareru-wareru-oreru-yabureru-kowareru": "Máy móc, đồ vật nói chung",
+        "ci-v-kowareru-wareru-oreru-yabureru-wareru": "Vật cứng, giòn",
+        "ci-v-kowareru-wareru-oreru-yabureru-oreru": "Vật dài, mảnh",
+        "ci-v-kowareru-wareru-oreru-yabureru-yabureru": "Vật mỏng, mềm"
+      }
+    },
+    {
+      "aspectVi": "Kiểu hư hại",
+      "values": {
+        "ci-v-kowareru-wareru-oreru-yabureru-kowareru": "Không hoạt động, sập",
+        "ci-v-kowareru-wareru-oreru-yabureru-wareru": "Vỡ thành mảnh, nứt",
+        "ci-v-kowareru-wareru-oreru-yabureru-oreru": "Gãy gập",
+        "ci-v-kowareru-wareru-oreru-yabureru-yabureru": "Rách, thủng"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ",
+      "values": {
+        "ci-v-kowareru-wareru-oreru-yabureru-kowareru": "パソコンが壊れた",
+        "ci-v-kowareru-wareru-oreru-yabureru-wareru": "コップが割れた",
+        "ci-v-kowareru-wareru-oreru-yabureru-oreru": "傘の骨が折れた",
+        "ci-v-kowareru-wareru-oreru-yabureru-yabureru": "紙が破れた"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-kowareru-wareru-oreru-yabureru-1",
+      "itemId": "ci-v-kowareru-wareru-oreru-yabureru-kowareru",
+      "japanese": "冷蔵庫が壊れて、食べ物が全部だめになった。",
+      "furigana": "{冷蔵庫|れいぞうこ}が{壊|こわ}れて、{食|た}べ{物|もの}が{全部|ぜんぶ}だめになった。",
+      "translationVi": "Tủ lạnh hỏng nên đồ ăn hỏng hết."
+    },
+    {
+      "id": "cx-v-kowareru-wareru-oreru-yabureru-2",
+      "itemId": "ci-v-kowareru-wareru-oreru-yabureru-kowareru",
+      "japanese": "大きな地震で、古い家がたくさん壊れた。",
+      "furigana": "{大|おお}きな{地震|じしん}で、{古|ふる}い{家|いえ}がたくさん{壊|こわ}れた。",
+      "translationVi": "Trận động đất lớn làm nhiều ngôi nhà cũ bị sập."
+    },
+    {
+      "id": "cx-v-kowareru-wareru-oreru-yabureru-3",
+      "itemId": "ci-v-kowareru-wareru-oreru-yabureru-wareru",
+      "japanese": "手が滑って、お皿が割れてしまった。",
+      "furigana": "{手|て}が{滑|すべ}って、お{皿|さら}が{割|わ}れてしまった。",
+      "translationVi": "Trượt tay làm vỡ mất cái đĩa."
+    },
+    {
+      "id": "cx-v-kowareru-wareru-oreru-yabureru-4",
+      "itemId": "ci-v-kowareru-wareru-oreru-yabureru-wareru",
+      "japanese": "ボールが当たって、窓ガラスが割れた。",
+      "furigana": "ボールが{当|あ}たって、{窓|まど}ガラスが{割|わ}れた。",
+      "translationVi": "Quả bóng đập vào làm vỡ kính cửa sổ."
+    },
+    {
+      "id": "cx-v-kowareru-wareru-oreru-yabureru-5",
+      "itemId": "ci-v-kowareru-wareru-oreru-yabureru-oreru",
+      "japanese": "強い風で木の枝が折れた。",
+      "furigana": "{強|つよ}い{風|かぜ}で{木|き}の{枝|えだ}が{折|お}れた。",
+      "translationVi": "Gió mạnh làm gãy cành cây."
+    },
+    {
+      "id": "cx-v-kowareru-wareru-oreru-yabureru-6",
+      "itemId": "ci-v-kowareru-wareru-oreru-yabureru-oreru",
+      "japanese": "スキーで転んで、足の骨が折れた。",
+      "furigana": "スキーで{転|ころ}んで、{足|あし}の{骨|ほね}が{折|お}れた。",
+      "translationVi": "Ngã khi trượt tuyết và gãy xương chân."
+    },
+    {
+      "id": "cx-v-kowareru-wareru-oreru-yabureru-7",
+      "itemId": "ci-v-kowareru-wareru-oreru-yabureru-yabureru",
+      "japanese": "重い物を入れたら、紙袋が破れた。",
+      "furigana": "{重|おも}い{物|もの}を{入|い}れたら、{紙袋|かみぶくろ}が{破|やぶ}れた。",
+      "translationVi": "Cho đồ nặng vào thì túi giấy bị rách."
+    },
+    {
+      "id": "cx-v-kowareru-wareru-oreru-yabureru-8",
+      "itemId": "ci-v-kowareru-wareru-oreru-yabureru-yabureru",
+      "japanese": "転んだときに、ズボンのひざが破れた。",
+      "furigana": "{転|ころ}んだときに、ズボンのひざが{破|やぶ}れた。",
+      "translationVi": "Lúc ngã, quần bị rách ở đầu gối."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-kowareru-wareru-oreru-yabureru-1",
+      "textVi": "Thử hình dung âm thanh: 割れる 'choang' (kính), 折れる 'rắc' (que gãy), 破れる 'roẹt' (giấy rách), 壊れる 'tịt' (máy hỏng)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-kowareru-wareru-oreru-yabureru-1",
+      "situationVi": "Nói chiếc cốc thủy tinh bị vỡ.",
+      "wrong": {
+        "japanese": "コップが壊れて、破片が床に散らばった。",
+        "furigana": "コップが{壊|こわ}れて、{破片|はへん}が{床|ゆか}に{散|ち}らばった。"
+      },
+      "correct": {
+        "japanese": "コップが割れて、破片が床に散らばった。",
+        "furigana": "コップが{割|わ}れて、{破片|はへん}が{床|ゆか}に{散|ち}らばった。"
+      },
+      "explanationVi": "Vật cứng vỡ thành mảnh → 割れる.",
+      "expectedItemId": "ci-v-kowareru-wareru-oreru-yabureru-wareru",
+      "confusedWithItemId": "ci-v-kowareru-wareru-oreru-yabureru-kowareru"
+    },
+    {
+      "id": "ce-v-kowareru-wareru-oreru-yabureru-2",
+      "situationVi": "Nói chiếc áo bị rách.",
+      "wrong": {
+        "japanese": "シャツが折れてしまった。",
+        "furigana": "シャツが{折|お}れてしまった。"
+      },
+      "correct": {
+        "japanese": "シャツが破れてしまった。",
+        "furigana": "シャツが{破|やぶ}れてしまった。"
+      },
+      "explanationVi": "Vải mỏng bị rách → 破れる.",
+      "expectedItemId": "ci-v-kowareru-wareru-oreru-yabureru-yabureru",
+      "confusedWithItemId": "ci-v-kowareru-wareru-oreru-yabureru-oreru"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-kowareru-wareru-oreru-yabureru-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-kowareru-wareru-oreru-yabureru-oreru",
+      "instructionVi": "Chọn câu đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "雪の重さで竹が折れた。",
+          "furigana": "{雪|ゆき}の{重|おも}さで{竹|たけ}が{折|お}れた。",
+          "itemId": "ci-v-kowareru-wareru-oreru-yabureru-oreru"
+        },
+        {
+          "id": "b",
+          "text": "雪の重さで竹が破れた。",
+          "furigana": "{雪|ゆき}の{重|おも}さで{竹|たけ}が{破|やぶ}れた。",
+          "itemId": "ci-v-kowareru-wareru-oreru-yabureru-yabureru",
+          "feedbackVi": "破れる dùng cho vật mỏng như giấy, vải."
+        },
+        {
+          "id": "c",
+          "text": "雪の重さで竹が割れた。",
+          "furigana": "{雪|ゆき}の{重|おも}さで{竹|たけ}が{割|わ}れた。",
+          "itemId": "ci-v-kowareru-wareru-oreru-yabureru-wareru",
+          "feedbackVi": "割れる là vỡ ra từng mảnh hoặc nứt dọc; cây tre bị đè gãy gập → 折れる."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Thân tre dài bị gãy gập → 折れる."
+    },
+    {
+      "id": "cq-v-kowareru-wareru-oreru-yabureru-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-kowareru-wareru-oreru-yabureru-kowareru",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "エアコンが＿＿＿しまったので、修理を頼んだ。",
+        "furigana": "エアコンが＿＿＿しまったので、{修理|しゅうり}を{頼|たの}んだ。",
+        "translationVi": "Máy điều hòa bị hỏng nên tôi đã gọi sửa."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "壊れて",
+          "furigana": "{壊|こわ}れて",
+          "itemId": "ci-v-kowareru-wareru-oreru-yabureru-kowareru"
+        },
+        {
+          "id": "b",
+          "text": "割れて",
+          "furigana": "{割|わ}れて",
+          "itemId": "ci-v-kowareru-wareru-oreru-yabureru-wareru"
+        },
+        {
+          "id": "c",
+          "text": "破れて",
+          "furigana": "{破|やぶ}れて",
+          "itemId": "ci-v-kowareru-wareru-oreru-yabureru-yabureru"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Máy móc không hoạt động → 壊れる."
+    },
+    {
+      "id": "cq-v-kowareru-wareru-oreru-yabureru-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-kowareru-wareru-oreru-yabureru-yabureru",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "古い手紙が割れていて、読みにくい。",
+        "furigana": "{古|ふる}い{手紙|てがみ}が{割|わ}れていて、{読|よ}みにくい。",
+        "translationVi": "Bức thư cũ bị rách nên khó đọc."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "古い手紙が",
+          "furigana": "{古|ふる}い{手紙|てがみ}が"
+        },
+        {
+          "id": "b",
+          "text": "割れていて、",
+          "furigana": "{割|わ}れていて、",
+          "itemId": "ci-v-kowareru-wareru-oreru-yabureru-wareru"
+        },
+        {
+          "id": "c",
+          "text": "読みにくい。",
+          "furigana": "{読|よ}みにくい。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "破れていて、",
+        "furigana": "{破|やぶ}れていて、",
+        "itemId": "ci-v-kowareru-wareru-oreru-yabureru-yabureru"
+      },
+      "explanationVi": "Giấy bị rách → 破れる."
+    },
+    {
+      "id": "cq-v-kowareru-wareru-oreru-yabureru-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-kowareru-wareru-oreru-yabureru-wareru",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn làm rơi quả trứng xuống sàn bếp."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "あっ、卵が割れちゃった。",
+          "furigana": "あっ、{卵|たまご}が{割|わ}れちゃった。",
+          "itemId": "ci-v-kowareru-wareru-oreru-yabureru-wareru"
+        },
+        {
+          "id": "b",
+          "text": "あっ、卵が折れちゃった。",
+          "furigana": "あっ、{卵|たまご}が{折|お}れちゃった。",
+          "itemId": "ci-v-kowareru-wareru-oreru-yabureru-oreru",
+          "feedbackVi": "折れる dùng cho vật dài bị gãy."
+        },
+        {
+          "id": "c",
+          "text": "あっ、卵が破れちゃった。",
+          "furigana": "あっ、{卵|たまご}が{破|やぶ}れちゃった。",
+          "itemId": "ci-v-kowareru-wareru-oreru-yabureru-yabureru",
+          "feedbackVi": "破れる dùng cho vật mỏng như giấy, vải."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Vỏ trứng cứng vỡ ra → 割れる."
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "id": "cg-v-hieru-sameru",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "冷える và 冷める",
+  "summaryVi": "Cùng chữ 冷 nhưng nghĩa khác: 冷える là trở nên lạnh (nhiệt độ hạ thấp xuống dưới mức bình thường: cơ thể, đồ uống trong tủ lạnh, thời tiết); 冷める là nguội đi (vật đang nóng trở về nhiệt độ thường; cảm xúc nguội lạnh).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-hieru-sameru-hieru",
+      "label": "冷える",
+      "labelFurigana": "{冷|ひ}える",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v209",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "冷える",
+          "reading": "ひえる",
+          "meaningVi": "bị lạnh"
+        },
+        "sourceFingerprint": "sha256:954393b4137922b91bc2a5fa6347f9bd84ea4d5dc3cbe4b8bef2369d5b236c00"
+      },
+      "vocabulary": {
+        "reading": "ひえる",
+        "meaningVi": "trở nên lạnh, bị lạnh",
+        "usageVi": "Nhiệt độ hạ xuống thành lạnh: ビールが冷える、体が冷える、今朝は冷える.",
+        "collocations": [
+          {
+            "japanese": "体が冷える",
+            "furigana": "{体|からだ}が{冷|ひ}える",
+            "meaningVi": "người bị lạnh"
+          },
+          {
+            "japanese": "よく冷えたビール",
+            "furigana": "よく{冷|ひ}えたビール",
+            "meaningVi": "bia ướp lạnh"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-hieru-sameru-sameru",
+      "label": "冷める",
+      "labelFurigana": "{冷|さ}める",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v211",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "冷める",
+          "reading": "さめる",
+          "meaningVi": "bị nguội"
+        },
+        "sourceFingerprint": "sha256:75749f0af3a9311c29d1c30534f454152ab91a7dca13c8ca04f3984c184001a5"
+      },
+      "vocabulary": {
+        "reading": "さめる",
+        "meaningVi": "nguội đi",
+        "usageVi": "Vật nóng mất nhiệt về mức bình thường; hứng thú giảm: スープが冷める.",
+        "collocations": [
+          {
+            "japanese": "お茶が冷める",
+            "furigana": "お{茶|ちゃ}が{冷|さ}める",
+            "meaningVi": "trà nguội"
+          },
+          {
+            "japanese": "興奮が冷める",
+            "furigana": "{興奮|こうふん}が{冷|さ}める",
+            "meaningVi": "cơn hưng phấn nguội đi"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-hieru-sameru-1",
+      "titleVi": "Từ nóng về thường, hay xuống lạnh",
+      "bodyVi": "冷める: điểm xuất phát là nóng (料理、お風呂、お茶), kết quả là không còn nóng – thường là điều không mong muốn. 冷える: kết quả là lạnh, thấp hơn bình thường (冷蔵庫で冷える、手足が冷える、夜は冷える)."
+    },
+    {
+      "id": "ct-v-hieru-sameru-2",
+      "titleVi": "Mẹo kiểm tra",
+      "bodyVi": "Muốn đồ uống mát lạnh: ビールを冷やす → ビールが冷える (tốt). Để quên bát mì: ラーメンが冷める (tiếc). Thời tiết, cơ thể chỉ dùng 冷える. Tha động từ: 冷やす ／ 冷ます."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Kết quả",
+      "values": {
+        "ci-v-hieru-sameru-hieru": "Lạnh (dưới mức thường)",
+        "ci-v-hieru-sameru-sameru": "Hết nóng (về mức thường)"
+      }
+    },
+    {
+      "aspectVi": "Chủ ngữ hay gặp",
+      "values": {
+        "ci-v-hieru-sameru-hieru": "ビール、体、手足、空気、天気",
+        "ci-v-hieru-sameru-sameru": "料理、お茶、お風呂、熱意"
+      }
+    },
+    {
+      "aspectVi": "Tha động từ",
+      "values": {
+        "ci-v-hieru-sameru-hieru": "冷やす (làm lạnh)",
+        "ci-v-hieru-sameru-sameru": "冷ます (để nguội)"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-hieru-sameru-1",
+      "itemId": "ci-v-hieru-sameru-hieru",
+      "japanese": "冷蔵庫に入れておいたジュースがよく冷えている。",
+      "furigana": "{冷蔵庫|れいぞうこ}に{入|い}れておいたジュースがよく{冷|ひ}えている。",
+      "translationVi": "Nước ép để trong tủ lạnh đã mát lạnh."
+    },
+    {
+      "id": "cx-v-hieru-sameru-2",
+      "itemId": "ci-v-hieru-sameru-hieru",
+      "japanese": "今夜は冷えるから、暖かくして寝てね。",
+      "furigana": "{今夜|こんや}は{冷|ひ}えるから、{暖|あたた}かくして{寝|ね}てね。",
+      "translationVi": "Đêm nay trời lạnh, đắp ấm rồi ngủ nhé."
+    },
+    {
+      "id": "cx-v-hieru-sameru-3",
+      "itemId": "ci-v-hieru-sameru-sameru",
+      "japanese": "お風呂が冷めないうちに入りなさい。",
+      "furigana": "お{風呂|ふろ}が{冷|さ}めないうちに{入|はい}りなさい。",
+      "translationVi": "Vào tắm đi trước khi nước bồn nguội."
+    },
+    {
+      "id": "cx-v-hieru-sameru-4",
+      "itemId": "ci-v-hieru-sameru-sameru",
+      "japanese": "話しているうちに、ラーメンが冷めてしまった。",
+      "furigana": "{話|はな}しているうちに、ラーメンが{冷|さ}めてしまった。",
+      "translationVi": "Mải nói chuyện nên bát ramen nguội mất."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-hieru-sameru-1",
+      "textVi": "冷える → 冷蔵庫 (tủ lạnh): lạnh đi. 冷める → cái nóng 'tỉnh' lại, hết nóng."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-hieru-sameru-1",
+      "situationVi": "Nói bia trong tủ lạnh đã lạnh.",
+      "wrong": {
+        "japanese": "ビールがよく冷めている。",
+        "furigana": "ビールがよく{冷|さ}めている。"
+      },
+      "correct": {
+        "japanese": "ビールがよく冷えている。",
+        "furigana": "ビールがよく{冷|ひ}えている。"
+      },
+      "explanationVi": "Bia được làm lạnh xuống dưới mức thường → 冷える.",
+      "expectedItemId": "ci-v-hieru-sameru-hieru",
+      "confusedWithItemId": "ci-v-hieru-sameru-sameru"
+    },
+    {
+      "id": "ce-v-hieru-sameru-2",
+      "situationVi": "Nói súp đã nguội.",
+      "wrong": {
+        "japanese": "スープが冷えてしまった。もう一度温めよう。",
+        "furigana": "スープが{冷|ひ}えてしまった。もう{一度|いちど}{温|あたた}めよう。"
+      },
+      "correct": {
+        "japanese": "スープが冷めてしまった。もう一度温めよう。",
+        "furigana": "スープが{冷|さ}めてしまった。もう{一度|いちど}{温|あたた}めよう。"
+      },
+      "explanationVi": "Súp nóng mất nhiệt → 冷める.",
+      "expectedItemId": "ci-v-hieru-sameru-sameru",
+      "confusedWithItemId": "ci-v-hieru-sameru-hieru"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-hieru-sameru-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-hieru-sameru-hieru",
+      "instructionVi": "Chọn câu đúng: 'Sáng nay trời lạnh thật.'",
+      "options": [
+        {
+          "id": "a",
+          "text": "今朝はずいぶん冷えますね。",
+          "furigana": "{今朝|けさ}はずいぶん{冷|ひ}えますね。",
+          "itemId": "ci-v-hieru-sameru-hieru"
+        },
+        {
+          "id": "b",
+          "text": "今朝はずいぶん冷めますね。",
+          "furigana": "{今朝|けさ}はずいぶん{冷|さ}めますね。",
+          "itemId": "ci-v-hieru-sameru-sameru",
+          "feedbackVi": "冷める dùng cho vật nóng nguội đi, không dùng cho thời tiết."
+        },
+        {
+          "id": "c",
+          "text": "今朝はずいぶん冷たいますね。",
+          "furigana": "{今朝|けさ}はずいぶん{冷|つめ}たいますね。",
+          "feedbackVi": "Sai cách chia: 冷たい là tính từ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Thời tiết trở lạnh → 冷える."
+    },
+    {
+      "id": "cq-v-hieru-sameru-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-hieru-sameru-sameru",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "コーヒーが＿＿＿しまったので、電子レンジで温めた。",
+        "furigana": "コーヒーが＿＿＿しまったので、{電子|でんし}レンジで{温|あたた}めた。",
+        "translationVi": "Cà phê nguội mất nên tôi hâm lại bằng lò vi sóng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "冷めて",
+          "furigana": "{冷|さ}めて",
+          "itemId": "ci-v-hieru-sameru-sameru"
+        },
+        {
+          "id": "b",
+          "text": "冷えて",
+          "furigana": "{冷|ひ}えて",
+          "itemId": "ci-v-hieru-sameru-hieru"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Cà phê nóng mất nhiệt → 冷める."
+    },
+    {
+      "id": "cq-v-hieru-sameru-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-hieru-sameru-hieru",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "長い時間外に立っていたので、手足が冷めてしまった。",
+        "furigana": "{長|なが}い{時間|じかん}{外|そと}に{立|た}っていたので、{手足|てあし}が{冷|さ}めてしまった。",
+        "translationVi": "Đứng ngoài trời lâu nên tay chân lạnh cóng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "長い時間",
+          "furigana": "{長|なが}い{時間|じかん}"
+        },
+        {
+          "id": "b",
+          "text": "外に立っていたので、",
+          "furigana": "{外|そと}に{立|た}っていたので、"
+        },
+        {
+          "id": "c",
+          "text": "手足が",
+          "furigana": "{手足|てあし}が"
+        },
+        {
+          "id": "d",
+          "text": "冷めてしまった。",
+          "furigana": "{冷|さ}めてしまった。",
+          "itemId": "ci-v-hieru-sameru-sameru"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "冷えてしまった。",
+        "furigana": "{冷|ひ}えてしまった。",
+        "itemId": "ci-v-hieru-sameru-hieru"
+      },
+      "explanationVi": "Cơ thể bị lạnh → 冷える."
+    },
+    {
+      "id": "cq-v-hieru-sameru-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-hieru-sameru-sameru",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn nấu xong bữa tối và gọi gia đình ra ăn ngay kẻo thức ăn hết nóng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ご飯が冷めないうちに食べよう。",
+          "furigana": "ご{飯|はん}が{冷|さ}めないうちに{食|た}べよう。",
+          "itemId": "ci-v-hieru-sameru-sameru"
+        },
+        {
+          "id": "b",
+          "text": "ご飯が冷えないうちに食べよう。",
+          "furigana": "ご{飯|はん}が{冷|ひ}えないうちに{食|た}べよう。",
+          "itemId": "ci-v-hieru-sameru-hieru",
+          "feedbackVi": "冷える là trở nên lạnh; với đồ ăn vừa nấu, ý 'hết nóng' dùng 冷める."
+        },
+        {
+          "id": "c",
+          "text": "ご飯が覚めないうちに食べよう。",
+          "furigana": "ご{飯|はん}が{覚|さ}めないうちに{食|た}べよう。",
+          "feedbackVi": "覚める là tỉnh giấc."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Đồ ăn nóng nguội đi → 冷める."
+    }
+  ]
+}

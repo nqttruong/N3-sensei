@@ -1,0 +1,386 @@
+{
+  "id": "cg-k-shoku-shoku-shiki",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "職, 織 và 識",
+  "summaryVi": "Ba chữ cùng có phần 戠 bên phải, chỉ khác bộ bên trái: 耳 (tai) → 職 – chức vụ, nghề; 糸 (sợi) → 織 – dệt, tổ chức; 言 (lời nói) → 識 – nhận biết, kiến thức.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-shoku-shoku-shiki-shigoto",
+      "label": "職",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k08077",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "職",
+          "onReadings": [
+            "ショク",
+            "ソク"
+          ],
+          "kunReadings": [],
+          "meaningVi": "Chức vụ, nghề nghiệp, công việc"
+        },
+        "sourceFingerprint": "sha256:64e207baaa85e43d38cbf936a599bd6f956bd441e094995ff81d0b60b56379d3"
+      },
+      "kanji": {
+        "meaningVi": "chức vụ, nghề nghiệp",
+        "hanViet": "CHỨC",
+        "onReadings": [
+          "ショク",
+          "ソク"
+        ],
+        "kunReadings": [],
+        "radical": {
+          "character": "耳",
+          "nameVi": "Nhĩ (tai)"
+        },
+        "shapeNoteVi": "耳 bên trái: người lắng nghe và làm tròn phận sự → chức vụ, nghề. 職業, 就職, 職場."
+      }
+    },
+    {
+      "id": "ci-k-shoku-shoku-shiki-oru",
+      "label": "織",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k07e54",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "織",
+          "onReadings": [
+            "ショク",
+            "シキ"
+          ],
+          "kunReadings": [
+            "お.る",
+            "お.り",
+            "おり",
+            "-おり",
+            "-お.り"
+          ],
+          "meaningVi": "Hành động dệt vải hoặc sự kết cấu, đan xen"
+        },
+        "sourceFingerprint": "sha256:c7128d7d1de0e97155d1e2e9c9a715647093b37c8a3af4d941a181e84ea44718"
+      },
+      "kanji": {
+        "meaningVi": "dệt; tổ chức",
+        "hanViet": "CHỨC",
+        "onReadings": [
+          "ショク",
+          "シキ"
+        ],
+        "kunReadings": [
+          "お.る",
+          "お.り",
+          "おり",
+          "-おり",
+          "-お.り"
+        ],
+        "radical": {
+          "character": "糸",
+          "nameVi": "Mịch (sợi chỉ)"
+        },
+        "shapeNoteVi": "糸 bên trái: kết sợi thành vải → dệt; kết người thành khối → 組織."
+      }
+    },
+    {
+      "id": "ci-k-shoku-shoku-shiki-shiru",
+      "label": "識",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k08b58",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "識",
+          "onReadings": [
+            "シキ"
+          ],
+          "kunReadings": [
+            "し.る",
+            "しる.す"
+          ],
+          "meaningVi": "Nhận biết, hiểu biết, tri thức, ý thức"
+        },
+        "sourceFingerprint": "sha256:6e64939e75107355a15afb015ee4db03ac721f8fb0cb79186c26f507fe894db9"
+      },
+      "kanji": {
+        "meaningVi": "nhận biết, kiến thức",
+        "hanViet": "THỨC",
+        "onReadings": [
+          "シキ"
+        ],
+        "kunReadings": [
+          "し.る",
+          "しる.す"
+        ],
+        "radical": {
+          "character": "言",
+          "nameVi": "Ngôn (lời nói)"
+        },
+        "shapeNoteVi": "言 bên trái: qua lời nói mà hiểu biết → nhận biết. 知識, 常識, 意識."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-shoku-shoku-shiki-1",
+      "titleVi": "Chỉ nhìn bộ trái",
+      "bodyVi": "Phần phải giống hệt nhau, nên bộ trái là tất cả: 耳 (tai) → 職; 糸 (sợi) → 織; 言 (lời nói) → 識. 職, 織 đọc ショク; 識, 織 đọc シキ (組織 そしき)."
+    },
+    {
+      "id": "ct-k-shoku-shoku-shiki-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "職: 職業 (nghề nghiệp), 就職 (tìm được việc), 職場 (nơi làm việc). 織: 組織 (tổ chức), 織る (dệt). 識: 知識 (kiến thức), 常識 (lẽ thường), 意識 (ý thức)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ trái",
+      "values": {
+        "ci-k-shoku-shoku-shiki-shigoto": "耳 (tai)",
+        "ci-k-shoku-shoku-shiki-oru": "糸 (sợi)",
+        "ci-k-shoku-shoku-shiki-shiru": "言 (lời nói)"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-shoku-shoku-shiki-shigoto": "Chức vụ, nghề",
+        "ci-k-shoku-shoku-shiki-oru": "Dệt, tổ chức",
+        "ci-k-shoku-shoku-shiki-shiru": "Nhận biết, kiến thức"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-shoku-shoku-shiki-shigoto": "職業、就職、職場",
+        "ci-k-shoku-shoku-shiki-oru": "組織、織る",
+        "ci-k-shoku-shoku-shiki-shiru": "知識、常識、意識"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-shoku-shoku-shiki-1",
+      "itemId": "ci-k-shoku-shoku-shiki-shigoto",
+      "japanese": "大学を卒業して、銀行に就職した。",
+      "furigana": "{大学|だいがく}を{卒業|そつぎょう}して、{銀行|ぎんこう}に{就職|しゅうしょく}した。",
+      "translationVi": "Tốt nghiệp đại học xong tôi vào làm ở ngân hàng."
+    },
+    {
+      "id": "cx-k-shoku-shoku-shiki-2",
+      "itemId": "ci-k-shoku-shoku-shiki-shigoto",
+      "japanese": "新しい職場にもう慣れましたか。",
+      "furigana": "{新|あたら}しい{職場|しょくば}にもう{慣|な}れましたか。",
+      "translationVi": "Anh đã quen nơi làm việc mới chưa?"
+    },
+    {
+      "id": "cx-k-shoku-shoku-shiki-3",
+      "itemId": "ci-k-shoku-shoku-shiki-oru",
+      "japanese": "この会社は大きな組織だ。",
+      "furigana": "この{会社|かいしゃ}は{大|おお}きな{組織|そしき}だ。",
+      "translationVi": "Công ty này là một tổ chức lớn."
+    },
+    {
+      "id": "cx-k-shoku-shoku-shiki-4",
+      "itemId": "ci-k-shoku-shoku-shiki-oru",
+      "japanese": "祖母は昔、布を織っていた。",
+      "furigana": "{祖母|そぼ}は{昔|むかし}、{布|ぬの}を{織|お}っていた。",
+      "translationVi": "Ngày xưa bà tôi dệt vải."
+    },
+    {
+      "id": "cx-k-shoku-shoku-shiki-5",
+      "itemId": "ci-k-shoku-shoku-shiki-shiru",
+      "japanese": "彼は歴史の知識が豊富だ。",
+      "furigana": "{彼|かれ}は{歴史|れきし}の{知識|ちしき}が{豊富|ほうふ}だ。",
+      "translationVi": "Anh ấy có kiến thức lịch sử phong phú."
+    },
+    {
+      "id": "cx-k-shoku-shoku-shiki-6",
+      "itemId": "ci-k-shoku-shoku-shiki-shiru",
+      "japanese": "時間を守るのは社会人の常識だ。",
+      "furigana": "{時間|じかん}を{守|まも}るのは{社会人|しゃかいじん}の{常識|じょうしき}だ。",
+      "translationVi": "Đúng giờ là lẽ thường của người đi làm."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-shoku-shoku-shiki-1",
+      "textVi": "Tai (耳) nghe việc → 職; sợi (糸) dệt → 織; lời (言) dạy → 識."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-shoku-shoku-shiki-1",
+      "situationVi": "Viết 'kiến thức'.",
+      "wrong": {
+        "japanese": "日本の文化について知職を深めたい。",
+        "furigana": "{日本|にほん}の{文化|ぶんか}について{知職|ちしょく}を{深|ふか}めたい。"
+      },
+      "correct": {
+        "japanese": "日本の文化について知識を深めたい。",
+        "furigana": "{日本|にほん}の{文化|ぶんか}について{知識|ちしき}を{深|ふか}めたい。"
+      },
+      "explanationVi": "Kiến thức → 識 (bộ 言).",
+      "expectedItemId": "ci-k-shoku-shoku-shiki-shiru",
+      "confusedWithItemId": "ci-k-shoku-shoku-shiki-shigoto"
+    },
+    {
+      "id": "ce-k-shoku-shoku-shiki-2",
+      "situationVi": "Viết 'tổ chức'.",
+      "wrong": {
+        "japanese": "国際組識で働きたい。",
+        "furigana": "{国際|こくさい}{組識|そしき}で{働|はたら}きたい。"
+      },
+      "correct": {
+        "japanese": "国際組織で働きたい。",
+        "furigana": "{国際|こくさい}{組織|そしき}で{働|はたら}きたい。"
+      },
+      "explanationVi": "Tổ chức (kết thành khối như dệt) → 織 (bộ 糸).",
+      "expectedItemId": "ci-k-shoku-shoku-shiki-oru",
+      "confusedWithItemId": "ci-k-shoku-shoku-shiki-shiru"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-shoku-shoku-shiki-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-shoku-shoku-shiki-shigoto",
+      "instructionVi": "Chọn cách viết đúng của しょくぎょう (nghề nghiệp).",
+      "options": [
+        {
+          "id": "a",
+          "text": "職業",
+          "itemId": "ci-k-shoku-shoku-shiki-shigoto"
+        },
+        {
+          "id": "b",
+          "text": "織業",
+          "itemId": "ci-k-shoku-shoku-shiki-oru",
+          "feedbackVi": "織 là dệt."
+        },
+        {
+          "id": "c",
+          "text": "識業",
+          "itemId": "ci-k-shoku-shoku-shiki-shiru",
+          "feedbackVi": "識 là nhận biết."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "職業 viết với 職 (bộ 耳)."
+    },
+    {
+      "id": "cq-k-shoku-shoku-shiki-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-shoku-shoku-shiki-shiru",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "環境問題に対する意＿＿＿が高まっている。",
+        "furigana": "{環境|かんきょう}{問題|もんだい}に{対|たい}する{意|い}＿＿＿が{高|たか}まっている。",
+        "translationVi": "Ý thức về vấn đề môi trường đang được nâng cao."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "識",
+          "itemId": "ci-k-shoku-shoku-shiki-shiru"
+        },
+        {
+          "id": "b",
+          "text": "職",
+          "itemId": "ci-k-shoku-shoku-shiki-shigoto"
+        },
+        {
+          "id": "c",
+          "text": "織",
+          "itemId": "ci-k-shoku-shoku-shiki-oru"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "意識 (ý thức) viết với 識."
+    },
+    {
+      "id": "cq-k-shoku-shoku-shiki-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-shoku-shoku-shiki-shigoto",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "彼はIT企業に転織した。",
+        "furigana": "{彼|かれ}はIT{企業|きぎょう}に{転織|てんしょく}した。",
+        "translationVi": "Anh ấy đổi việc sang một công ty IT."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "彼は",
+          "furigana": "{彼|かれ}は"
+        },
+        {
+          "id": "b",
+          "text": "IT企業に",
+          "furigana": "IT{企業|きぎょう}に"
+        },
+        {
+          "id": "c",
+          "text": "転織した。",
+          "furigana": "{転織|てんしょく}した。",
+          "itemId": "ci-k-shoku-shoku-shiki-oru"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "転職した。",
+        "furigana": "{転職|てんしょく}した。",
+        "itemId": "ci-k-shoku-shoku-shiki-shigoto"
+      },
+      "explanationVi": "Chuyển việc → 転職 (bộ 耳)."
+    },
+    {
+      "id": "cq-k-shoku-shoku-shiki-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-shoku-shoku-shiki-oru",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn giới thiệu rằng mình làm cho một tổ chức tình nguyện."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ボランティアの組織で働いています。",
+          "furigana": "ボランティアの{組織|そしき}で{働|はたら}いています。",
+          "itemId": "ci-k-shoku-shoku-shiki-oru"
+        },
+        {
+          "id": "b",
+          "text": "ボランティアの組職で働いています。",
+          "furigana": "ボランティアの{組職|そしょく}で{働|はたら}いています。",
+          "itemId": "ci-k-shoku-shoku-shiki-shigoto",
+          "feedbackVi": "組織 viết với 織 (bộ 糸)."
+        },
+        {
+          "id": "c",
+          "text": "ボランティアの組識で働いています。",
+          "furigana": "ボランティアの{組識|そしき}で{働|はたら}いています。",
+          "itemId": "ci-k-shoku-shoku-shiki-shiru",
+          "feedbackVi": "組織 viết với 織, không phải 識."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "組織 (tổ chức) viết với 織."
+    }
+  ]
+}

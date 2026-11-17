@@ -45,7 +45,29 @@ python3 tools/content/contrast/build_pack.py --drafts tools/content/contrast/dra
 - Nhóm APPROVED hoặc PUBLISHED được ghi thành PUBLISHED; nhóm ở trạng thái khác làm build thất bại (STATUS_NOT_PUBLISHED).
 - Build luôn ở chế độ strict. Chỉ ghi file khi không có ERROR và mọi WARNING biên tập đã được xác nhận.
 - Kết quả xác định: cùng đầu vào cho ra cùng byte (không chèn thời gian, `sourcePacks` sắp theo id).
-- Hiện **chưa có** thư mục `drafts/` và `releases/`, và **chưa có gói nào được đưa vào app**: gói mẫu chưa được người thật duyệt.
+- `drafts/` hiện có 69 bản nháp do AI soạn, đều ở `AI_GENERATED` và chưa được duyệt; `release.json` liệt kê thứ tự. Chưa có `releases/` và **chưa có gói nào được đưa vào app**. Xem [CONTRAST_LAB_CONTENT_GENERATION_REPORT.md](CONTRAST_LAB_CONTENT_GENERATION_REPORT.md).
+
+## Soạn nội dung: `drafts_tool.py`
+
+Bản nháp không viết tay bằng JSON. Nội dung được soạn trong `authoring/{grammar,vocabulary,kanji}_groups.py` bằng DSL `authoring/dsl.py`, rồi sinh ra `drafts/<groupId>.json` theo đúng định dạng gói hiện có.
+- Câu tiếng Nhật chỉ viết một lần, dưới dạng furigana; `japanese` được suy ra từ đó.
+- Snapshot và fingerprint nguồn được tính bằng `fingerprint.py` từ chính gói nguồn trong `app/src/main/assets/content`.
+
+```bash
+python3 tools/content/contrast/drafts_tool.py catalog              # C1: catalog chỉ đọc + hạn chế dữ liệu nguồn N3
+python3 tools/content/contrast/drafts_tool.py generate             # authoring → drafts/ + release.json (status AI_GENERATED)
+python3 tools/content/contrast/drafts_tool.py check [--report R]   # validator build + QA biên tập; bản nháp phải khớp nguồn soạn
+python3 tools/content/contrast/drafts_tool.py test-pack app/src/androidTest/assets/contrast/test-pack-n3-unreviewed.json
+```
+
+- **QA biên tập**, ngoài 40 mã validation:
+  - Không có Kanji nào nằm ngoài `{…|…}`.
+  - Không đặt furigana trên chữ không có Kanji; cách đọc phải là hiragana.
+  - Cách đọc từ ghép được so với từ điển lấy từ furigana của nguồn. Cách đọc một chữ được so với âm On/Kun của dữ liệu Kanji, có tính cả biến âm.
+  - Mỗi mục có ≥ 2 ví dụ; câu MC/CS có ≥ 3 lựa chọn.
+  - Mỗi lựa chọn sai có `itemId` hoặc `feedbackVi`.
+  - Không có hai nhóm trùng tập nguồn.
+- **Không bao giờ đặt APPROVED/PUBLISHED.** Gói TEST-ONLY ghi `approvedBy: chua-duyet-test-only`, chỉ để kiểm thử thiết bị; công cụ từ chối ghi nó vào `app/src/main`.
 
 ## Test
 

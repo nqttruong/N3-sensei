@@ -1,0 +1,385 @@
+{
+  "id": "cg-k-seki-tsumu-seiseki-sekinin",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "積, 績 và 責",
+  "summaryVi": "Ba chữ cùng đọc セキ và cùng có phần 責 bên phải. 積 (bộ 禾 lúa) là chất đống, tích lũy; 績 (bộ 糸 sợi) là thành tích; 責 đứng một mình là trách nhiệm, trách móc.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-seki-tsumu-seiseki-sekinin-tsumu",
+      "label": "積",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k07a4d",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "積",
+          "onReadings": [
+            "セキ"
+          ],
+          "kunReadings": [
+            "つ.む",
+            "-づ.み",
+            "つ.もる",
+            "つ.もり"
+          ],
+          "meaningVi": "Tích lũy"
+        },
+        "sourceFingerprint": "sha256:f17f69471a2cb466c2adfcf2a7d36f0410f85b42312781cbea8062a17baf5768"
+      },
+      "kanji": {
+        "meaningVi": "chất đống, tích lũy; diện tích",
+        "hanViet": "TÍCH",
+        "onReadings": [
+          "セキ"
+        ],
+        "kunReadings": [
+          "つ.む",
+          "-づ.み",
+          "つ.もる",
+          "つ.もり"
+        ],
+        "radical": {
+          "character": "禾",
+          "nameVi": "Hòa (cây lúa)"
+        },
+        "shapeNoteVi": "Bên trái là 禾: lúa gặt về chất thành đống → 積む, 面積, 積極的."
+      }
+    },
+    {
+      "id": "ci-k-seki-tsumu-seiseki-sekinin-seki",
+      "label": "績",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k07e3e",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "績",
+          "onReadings": [
+            "セキ"
+          ],
+          "kunReadings": [],
+          "meaningVi": "Thành tích"
+        },
+        "sourceFingerprint": "sha256:33396523843e1c56c4b22cf1ec5b6a2f2c9cb0e436f105960f6e8bc408c6c760"
+      },
+      "kanji": {
+        "meaningVi": "thành tích, kết quả công việc",
+        "hanViet": "TÍCH",
+        "onReadings": [
+          "セキ"
+        ],
+        "kunReadings": [],
+        "radical": {
+          "character": "糸",
+          "nameVi": "Mịch (sợi chỉ)"
+        },
+        "shapeNoteVi": "Bên trái là 糸: kéo sợi từng chút thành tấm vải, như kết quả làm việc tích góp → 成績, 業績, 実績."
+      }
+    },
+    {
+      "id": "ci-k-seki-tsumu-seiseki-sekinin-seme",
+      "label": "責",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k08cac",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "責",
+          "onReadings": [
+            "セキ"
+          ],
+          "kunReadings": [
+            "せ.める"
+          ],
+          "meaningVi": "Trách, khiển trách"
+        },
+        "sourceFingerprint": "sha256:6eab78a6b3a6d86f21714e8436c373f7ff240f6b282a57b6f15696b7346e0015"
+      },
+      "kanji": {
+        "meaningVi": "trách nhiệm; trách móc",
+        "hanViet": "TRÁCH",
+        "onReadings": [
+          "セキ"
+        ],
+        "kunReadings": [
+          "せ.める"
+        ],
+        "radical": {
+          "character": "貝",
+          "nameVi": "Bối (vỏ sò, tiền)"
+        },
+        "shapeNoteVi": "Không có bộ bên trái; phần dưới là 貝 (tiền): món nợ phải trả → 責任, 責める."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-seki-tsumu-seiseki-sekinin-1",
+      "titleVi": "Nhìn bộ bên trái",
+      "bodyVi": "Cùng phần 責 cho âm セキ, nghĩa do bộ bên trái quyết định: 禾 (lúa) → chất đống, tích lũy; 糸 (sợi) → thành quả dệt nên, thành tích; không có bộ → trách nhiệm."
+    },
+    {
+      "id": "ct-k-seki-tsumu-seiseki-sekinin-2",
+      "titleVi": "Từ hay gặp trong đề",
+      "bodyVi": "積: 面積 (diện tích), 積極的 (tích cực), 見積もり (báo giá), 積もる. 績: 成績 (thành tích học tập), 業績 (thành tích kinh doanh), 実績. 責: 責任 (trách nhiệm), 無責任, 責める."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ thủ",
+      "values": {
+        "ci-k-seki-tsumu-seiseki-sekinin-tsumu": "禾 (lúa)",
+        "ci-k-seki-tsumu-seiseki-sekinin-seki": "糸 (sợi)",
+        "ci-k-seki-tsumu-seiseki-sekinin-seme": "貝 ở dưới, không bộ trái"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-seki-tsumu-seiseki-sekinin-tsumu": "Chất, tích lũy",
+        "ci-k-seki-tsumu-seiseki-sekinin-seki": "Thành tích",
+        "ci-k-seki-tsumu-seiseki-sekinin-seme": "Trách nhiệm, trách móc"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-seki-tsumu-seiseki-sekinin-tsumu": "面積、積極的、積もる",
+        "ci-k-seki-tsumu-seiseki-sekinin-seki": "成績、業績、実績",
+        "ci-k-seki-tsumu-seiseki-sekinin-seme": "責任、責める"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-seki-tsumu-seiseki-sekinin-1",
+      "itemId": "ci-k-seki-tsumu-seiseki-sekinin-tsumu",
+      "japanese": "雪が三十センチも積もった。",
+      "furigana": "{雪|ゆき}が{三十|さんじゅう}センチも{積|つ}もった。",
+      "translationVi": "Tuyết tích tụ dày tới ba mươi phân."
+    },
+    {
+      "id": "cx-k-seki-tsumu-seiseki-sekinin-2",
+      "itemId": "ci-k-seki-tsumu-seiseki-sekinin-tsumu",
+      "japanese": "彼は何でも積極的に挑戦する。",
+      "furigana": "{彼|かれ}は{何|なん}でも{積極的|せっきょくてき}に{挑戦|ちょうせん}する。",
+      "translationVi": "Anh ấy việc gì cũng tích cực thử sức."
+    },
+    {
+      "id": "cx-k-seki-tsumu-seiseki-sekinin-3",
+      "itemId": "ci-k-seki-tsumu-seiseki-sekinin-seki",
+      "japanese": "今学期は数学の成績が上がった。",
+      "furigana": "{今学期|こんがっき}は{数学|すうがく}の{成績|せいせき}が{上|あ}がった。",
+      "translationVi": "Học kỳ này điểm toán của tôi tăng lên."
+    },
+    {
+      "id": "cx-k-seki-tsumu-seiseki-sekinin-4",
+      "itemId": "ci-k-seki-tsumu-seiseki-sekinin-seki",
+      "japanese": "今年は会社の業績がとてもいい。",
+      "furigana": "{今年|ことし}は{会社|かいしゃ}の{業績|ぎょうせき}がとてもいい。",
+      "translationVi": "Năm nay kết quả kinh doanh của công ty rất tốt."
+    },
+    {
+      "id": "cx-k-seki-tsumu-seiseki-sekinin-5",
+      "itemId": "ci-k-seki-tsumu-seiseki-sekinin-seme",
+      "japanese": "失敗の責任は私にあります。",
+      "furigana": "{失敗|しっぱい}の{責任|せきにん}は{私|わたし}にあります。",
+      "translationVi": "Trách nhiệm cho thất bại thuộc về tôi."
+    },
+    {
+      "id": "cx-k-seki-tsumu-seiseki-sekinin-6",
+      "itemId": "ci-k-seki-tsumu-seiseki-sekinin-seme",
+      "japanese": "子供のミスをあまり責めないでください。",
+      "furigana": "{子供|こども}のミスをあまり{責|せ}めないでください。",
+      "translationVi": "Xin đừng trách lỗi của con trẻ quá."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-seki-tsumu-seiseki-sekinin-1",
+      "textVi": "Lúa (禾) chất đống → 積. Sợi (糸) dệt thành quả → 績. Tiền (貝) phải trả → 責."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-seki-tsumu-seiseki-sekinin-1",
+      "situationVi": "Viết từ 'thành tích' (せいせき).",
+      "wrong": {
+        "japanese": "試験の成積が悪かった。",
+        "furigana": "{試験|しけん}の{成積|せいせき}が{悪|わる}かった。"
+      },
+      "correct": {
+        "japanese": "試験の成績が悪かった。",
+        "furigana": "{試験|しけん}の{成績|せいせき}が{悪|わる}かった。"
+      },
+      "explanationVi": "成績 viết với 績 (bộ 糸). 成積 không phải là từ.",
+      "expectedItemId": "ci-k-seki-tsumu-seiseki-sekinin-seki",
+      "confusedWithItemId": "ci-k-seki-tsumu-seiseki-sekinin-tsumu"
+    },
+    {
+      "id": "ce-k-seki-tsumu-seiseki-sekinin-2",
+      "situationVi": "Viết từ 'diện tích' (めんせき).",
+      "wrong": {
+        "japanese": "この部屋の面績は二十平方メートルだ。",
+        "furigana": "この{部屋|へや}の{面績|めんせき}は{二十|にじゅう}{平方|へいほう}メートルだ。"
+      },
+      "correct": {
+        "japanese": "この部屋の面積は二十平方メートルだ。",
+        "furigana": "この{部屋|へや}の{面積|めんせき}は{二十|にじゅう}{平方|へいほう}メートルだ。"
+      },
+      "explanationVi": "Diện tích là 面積 (chất đống, phép nhân) với 積.",
+      "expectedItemId": "ci-k-seki-tsumu-seiseki-sekinin-tsumu",
+      "confusedWithItemId": "ci-k-seki-tsumu-seiseki-sekinin-seki"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-seki-tsumu-seiseki-sekinin-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-seki-tsumu-seiseki-sekinin-seki",
+      "instructionVi": "Chọn cách viết đúng của せいせき (thành tích học tập).",
+      "options": [
+        {
+          "id": "a",
+          "text": "成積",
+          "itemId": "ci-k-seki-tsumu-seiseki-sekinin-tsumu",
+          "feedbackVi": "積 là chất đống, tích lũy."
+        },
+        {
+          "id": "b",
+          "text": "成績",
+          "itemId": "ci-k-seki-tsumu-seiseki-sekinin-seki"
+        },
+        {
+          "id": "c",
+          "text": "成責",
+          "itemId": "ci-k-seki-tsumu-seiseki-sekinin-seme",
+          "feedbackVi": "責 là trách nhiệm."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanationVi": "成績 viết với 績 (bộ 糸): kết quả làm ra."
+    },
+    {
+      "id": "cq-k-seki-tsumu-seiseki-sekinin-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-seki-tsumu-seiseki-sekinin-seme",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "このプロジェクトのリーダーは私ですから、失敗したら私の＿＿＿任です。",
+        "furigana": "このプロジェクトのリーダーは{私|わたし}ですから、{失敗|しっぱい}したら{私|わたし}の＿＿＿{任|にん}です。",
+        "translationVi": "Tôi là người phụ trách dự án này nên nếu thất bại thì là trách nhiệm của tôi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "責",
+          "itemId": "ci-k-seki-tsumu-seiseki-sekinin-seme"
+        },
+        {
+          "id": "b",
+          "text": "積",
+          "itemId": "ci-k-seki-tsumu-seiseki-sekinin-tsumu",
+          "feedbackVi": "積任 không phải là từ."
+        },
+        {
+          "id": "c",
+          "text": "績",
+          "itemId": "ci-k-seki-tsumu-seiseki-sekinin-seki",
+          "feedbackVi": "績任 không phải là từ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "責任 (trách nhiệm) viết với 責."
+    },
+    {
+      "id": "cq-k-seki-tsumu-seiseki-sekinin-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-seki-tsumu-seiseki-sekinin-tsumu",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "彼は何ごとにも績極的な人だ。",
+        "furigana": "{彼|かれ}は{何|なに}ごとにも{績極的|せっきょくてき}な{人|ひと}だ。",
+        "translationVi": "Anh ấy là người tích cực, việc gì cũng hăng hái làm."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "彼は",
+          "furigana": "{彼|かれ}は"
+        },
+        {
+          "id": "b",
+          "text": "何ごとにも",
+          "furigana": "{何|なに}ごとにも"
+        },
+        {
+          "id": "c",
+          "text": "績極的な",
+          "furigana": "{績極的|せっきょくてき}な",
+          "itemId": "ci-k-seki-tsumu-seiseki-sekinin-seki"
+        },
+        {
+          "id": "d",
+          "text": "人だ。",
+          "furigana": "{人|ひと}だ。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "積極的な",
+        "furigana": "{積極的|せっきょくてき}な",
+        "itemId": "ci-k-seki-tsumu-seiseki-sekinin-tsumu"
+      },
+      "explanationVi": "積極的 (tích cực) viết với 積."
+    },
+    {
+      "id": "cq-k-seki-tsumu-seiseki-sekinin-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-seki-tsumu-seiseki-sekinin-seki",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn báo cáo với cấp trên rằng doanh thu (kết quả kinh doanh) quý này tăng mạnh."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "今期の業績は大幅に伸びました。",
+          "furigana": "{今期|こんき}の{業績|ぎょうせき}は{大幅|おおはば}に{伸|の}びました。",
+          "itemId": "ci-k-seki-tsumu-seiseki-sekinin-seki"
+        },
+        {
+          "id": "b",
+          "text": "今期の業積は大幅に伸びました。",
+          "furigana": "{今期|こんき}の{業積|ぎょうせき}は{大幅|おおはば}に{伸|の}びました。",
+          "itemId": "ci-k-seki-tsumu-seiseki-sekinin-tsumu",
+          "feedbackVi": "業績 viết với 績, không phải 積."
+        },
+        {
+          "id": "c",
+          "text": "今期の業責は大幅に伸びました。",
+          "furigana": "{今期|こんき}の{業責|ぎょうせき}は{大幅|おおはば}に{伸|の}びました。",
+          "itemId": "ci-k-seki-tsumu-seiseki-sekinin-seme",
+          "feedbackVi": "業績 viết với 績, không phải 責."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "業績 (thành tích kinh doanh) viết với 績."
+    }
+  ]
+}

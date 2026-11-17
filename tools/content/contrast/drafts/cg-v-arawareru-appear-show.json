@@ -1,0 +1,322 @@
+{
+  "id": "cg-v-arawareru-appear-show",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "現れる và 表れる",
+  "summaryVi": "Cùng đọc là あらわれる. 現れる là xuất hiện (người, vật trước đó không thấy nay hiện ra), 表れる là biểu hiện ra (cảm xúc, suy nghĩ, kết quả thể hiện ra bên ngoài).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-arawareru-appear-show-appear",
+      "label": "現れる",
+      "labelFurigana": "{現|あらわ}れる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v788",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "現れる",
+          "reading": "あらわれる",
+          "meaningVi": "xuất hiện, được thẻ hiện"
+        },
+        "sourceFingerprint": "sha256:1c6092ad9459618eeb1af4bfcf3a4bfa14c151ae24ec1ab5ea4fe0edfcf9b92a"
+      },
+      "vocabulary": {
+        "reading": "あらわれる",
+        "meaningVi": "xuất hiện, hiện ra",
+        "usageVi": "Người, vật, hiện tượng vốn không có mặt nay hiện ra: 犯人が現れる、太陽が現れる.",
+        "collocations": [
+          {
+            "japanese": "犯人が現れる",
+            "furigana": "{犯人|はんにん}が{現|あらわ}れる",
+            "meaningVi": "thủ phạm xuất hiện"
+          },
+          {
+            "japanese": "雲の間から月が現れる",
+            "furigana": "{雲|くも}の{間|あいだ}から{月|つき}が{現|あらわ}れる",
+            "meaningVi": "trăng hiện ra giữa mây"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-arawareru-appear-show-show",
+      "label": "表れる",
+      "labelFurigana": "{表|あらわ}れる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v790",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "表れる",
+          "reading": "あらわれる",
+          "meaningVi": "biểu hiện (trên mặt)"
+        },
+        "sourceFingerprint": "sha256:70c28c3a8061297e967dc28aeb4780766ab3ec5fbea01ae9a89a89dafcaf41e3"
+      },
+      "vocabulary": {
+        "reading": "あらわれる",
+        "meaningVi": "biểu hiện ra, thể hiện ra",
+        "usageVi": "Thứ ở bên trong (cảm xúc, tính cách, hiệu quả) lộ ra ngoài: 顔に表れる、効果が表れる.",
+        "collocations": [
+          {
+            "japanese": "気持ちが顔に表れる",
+            "furigana": "{気持|きも}ちが{顔|かお}に{表|あらわ}れる",
+            "meaningVi": "cảm xúc hiện trên mặt"
+          },
+          {
+            "japanese": "効果が表れる",
+            "furigana": "{効果|こうか}が{表|あらわ}れる",
+            "meaningVi": "hiệu quả thể hiện ra"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-arawareru-appear-show-1",
+      "titleVi": "Hiện ra hay lộ ra",
+      "bodyVi": "Thứ có hình dạng cụ thể bước vào tầm nhìn (người, xe, mặt trời, ngôi sao mới) → 現れる (現 = hiện tại, xuất hiện). Thứ vô hình ở bên trong thể hiện ra (cảm xúc, tính cách, hiệu quả thuốc, kết quả nỗ lực) → 表れる (表 = biểu, bề mặt)."
+    },
+    {
+      "id": "ct-v-arawareru-appear-show-2",
+      "titleVi": "Tha động từ",
+      "bodyVi": "現れる ↔ 現す (姿を現す: lộ diện). 表れる ↔ 表す (気持ちを表す: biểu lộ cảm xúc)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-v-arawareru-appear-show-appear": "Xuất hiện (có hình dạng)",
+        "ci-v-arawareru-appear-show-show": "Biểu hiện (từ bên trong ra)"
+      }
+    },
+    {
+      "aspectVi": "Chủ ngữ hay gặp",
+      "values": {
+        "ci-v-arawareru-appear-show-appear": "人、犯人、太陽、星",
+        "ci-v-arawareru-appear-show-show": "気持ち、性格、効果、結果"
+      }
+    },
+    {
+      "aspectVi": "Từ Hán liên quan",
+      "values": {
+        "ci-v-arawareru-appear-show-appear": "出現 (xuất hiện)",
+        "ci-v-arawareru-appear-show-show": "表現 (biểu hiện), 表情"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-arawareru-appear-show-1",
+      "itemId": "ci-v-arawareru-appear-show-appear",
+      "japanese": "約束の時間を過ぎても、彼は現れなかった。",
+      "furigana": "{約束|やくそく}の{時間|じかん}を{過|す}ぎても、{彼|かれ}は{現|あらわ}れなかった。",
+      "translationVi": "Quá giờ hẹn mà anh ấy vẫn không xuất hiện."
+    },
+    {
+      "id": "cx-v-arawareru-appear-show-2",
+      "itemId": "ci-v-arawareru-appear-show-appear",
+      "japanese": "霧が晴れて、富士山が姿を現した。",
+      "furigana": "{霧|きり}が{晴|は}れて、{富士山|ふじさん}が{姿|すがた}を{現|あらわ}した。",
+      "translationVi": "Sương tan, núi Phú Sĩ hiện ra."
+    },
+    {
+      "id": "cx-v-arawareru-appear-show-3",
+      "itemId": "ci-v-arawareru-appear-show-show",
+      "japanese": "嬉しい気持ちが顔に表れている。",
+      "furigana": "{嬉|うれ}しい{気持|きも}ちが{顔|かお}に{表|あらわ}れている。",
+      "translationVi": "Niềm vui hiện rõ trên khuôn mặt."
+    },
+    {
+      "id": "cx-v-arawareru-appear-show-4",
+      "itemId": "ci-v-arawareru-appear-show-show",
+      "japanese": "薬を飲み始めて一週間で効果が表れた。",
+      "furigana": "{薬|くすり}を{飲|の}み{始|はじ}めて{一週間|いっしゅうかん}で{効果|こうか}が{表|あらわ}れた。",
+      "translationVi": "Bắt đầu uống thuốc được một tuần thì thấy hiệu quả."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-arawareru-appear-show-1",
+      "textVi": "現 → 出現 (người, vật xuất hiện). 表 → 表情 (nét mặt), 表現 (biểu hiện)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-arawareru-appear-show-1",
+      "situationVi": "Nói sự lo lắng hiện trên nét mặt.",
+      "wrong": {
+        "japanese": "不安な気持ちが顔に現れていた。",
+        "furigana": "{不安|ふあん}な{気持|きも}ちが{顔|かお}に{現|あらわ}れていた。"
+      },
+      "correct": {
+        "japanese": "不安な気持ちが顔に表れていた。",
+        "furigana": "{不安|ふあん}な{気持|きも}ちが{顔|かお}に{表|あらわ}れていた。"
+      },
+      "explanationVi": "Cảm xúc bên trong thể hiện ra → 表れる.",
+      "expectedItemId": "ci-v-arawareru-appear-show-show",
+      "confusedWithItemId": "ci-v-arawareru-appear-show-appear"
+    },
+    {
+      "id": "ce-v-arawareru-appear-show-2",
+      "situationVi": "Nói một con gấu xuất hiện trong làng.",
+      "wrong": {
+        "japanese": "村に熊が表れた。",
+        "furigana": "{村|むら}に{熊|くま}が{表|あらわ}れた。"
+      },
+      "correct": {
+        "japanese": "村に熊が現れた。",
+        "furigana": "{村|むら}に{熊|くま}が{現|あらわ}れた。"
+      },
+      "explanationVi": "Con vật cụ thể xuất hiện → 現れる.",
+      "expectedItemId": "ci-v-arawareru-appear-show-appear",
+      "confusedWithItemId": "ci-v-arawareru-appear-show-show"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-arawareru-appear-show-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-arawareru-appear-show-show",
+      "instructionVi": "Chọn câu viết đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "努力の結果が成績に表れた。",
+          "furigana": "{努力|どりょく}の{結果|けっか}が{成績|せいせき}に{表|あらわ}れた。",
+          "itemId": "ci-v-arawareru-appear-show-show"
+        },
+        {
+          "id": "b",
+          "text": "努力の結果が成績に現れた。",
+          "furigana": "{努力|どりょく}の{結果|けっか}が{成績|せいせき}に{現|あらわ}れた。",
+          "itemId": "ci-v-arawareru-appear-show-appear",
+          "feedbackVi": "Kết quả nỗ lực thể hiện ra (vô hình) → 表れる."
+        },
+        {
+          "id": "c",
+          "text": "努力の結果が成績に表した。",
+          "furigana": "{努力|どりょく}の{結果|けっか}が{成績|せいせき}に{表|あらわ}した。",
+          "feedbackVi": "表す là tha động từ, cần を."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Kết quả của nỗ lực thể hiện trong thành tích → 表れる."
+    },
+    {
+      "id": "cq-v-arawareru-appear-show-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-arawareru-appear-show-appear",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "暗い道で、突然知らない男が＿＿＿。",
+        "furigana": "{暗|くら}い{道|みち}で、{突然|とつぜん}{知|し}らない{男|おとこ}が＿＿＿。",
+        "translationVi": "Trên con đường tối, bỗng một người đàn ông lạ xuất hiện."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "現れた",
+          "furigana": "{現|あらわ}れた",
+          "itemId": "ci-v-arawareru-appear-show-appear"
+        },
+        {
+          "id": "b",
+          "text": "表れた",
+          "furigana": "{表|あらわ}れた",
+          "itemId": "ci-v-arawareru-appear-show-show"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Người xuất hiện → 現れる."
+    },
+    {
+      "id": "cq-v-arawareru-appear-show-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-arawareru-appear-show-appear",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "雨が止んだ後、空に虹が表れた。",
+        "furigana": "{雨|あめ}が{止|や}んだ{後|あと}、{空|そら}に{虹|にじ}が{表|あらわ}れた。",
+        "translationVi": "Sau cơn mưa, cầu vồng xuất hiện trên bầu trời."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "雨が止んだ後、",
+          "furigana": "{雨|あめ}が{止|や}んだ{後|あと}、"
+        },
+        {
+          "id": "b",
+          "text": "空に",
+          "furigana": "{空|そら}に"
+        },
+        {
+          "id": "c",
+          "text": "虹が",
+          "furigana": "{虹|にじ}が"
+        },
+        {
+          "id": "d",
+          "text": "表れた。",
+          "furigana": "{表|あらわ}れた。",
+          "itemId": "ci-v-arawareru-appear-show-show"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "現れた。",
+        "furigana": "{現|あらわ}れた。",
+        "itemId": "ci-v-arawareru-appear-show-appear"
+      },
+      "explanationVi": "Cầu vồng (hiện tượng có hình dạng) xuất hiện → 現れる."
+    },
+    {
+      "id": "cq-v-arawareru-appear-show-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-arawareru-appear-show-show",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn nhận xét rằng tính cách cẩn thận của bạn mình thể hiện rõ qua nét chữ."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "彼女の丁寧な性格は字に表れているね。",
+          "furigana": "{彼女|かのじょ}の{丁寧|ていねい}な{性格|せいかく}は{字|じ}に{表|あらわ}れているね。",
+          "itemId": "ci-v-arawareru-appear-show-show"
+        },
+        {
+          "id": "b",
+          "text": "彼女の丁寧な性格は字に現れているね。",
+          "furigana": "{彼女|かのじょ}の{丁寧|ていねい}な{性格|せいかく}は{字|じ}に{現|あらわ}れているね。",
+          "itemId": "ci-v-arawareru-appear-show-appear",
+          "feedbackVi": "Tính cách (vô hình) thể hiện ra → 表れる."
+        },
+        {
+          "id": "c",
+          "text": "彼女の丁寧な性格は字を表れているね。",
+          "furigana": "{彼女|かのじょ}の{丁寧|ていねい}な{性格|せいかく}は{字|じ}を{表|あらわ}れているね。",
+          "feedbackVi": "表れる là tự động từ, không đi với を."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tính cách thể hiện qua chữ viết → 表れる."
+    }
+  ]
+}

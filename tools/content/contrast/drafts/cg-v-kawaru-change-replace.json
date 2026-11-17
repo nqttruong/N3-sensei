@@ -1,0 +1,322 @@
+{
+  "id": "cg-v-kawaru-change-replace",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "変わる và 代わる",
+  "summaryVi": "Cùng đọc là かわる. 変わる là thay đổi (bản thân sự vật khác đi), 代わる là thay thế (người/vật khác đứng vào vị trí).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-kawaru-change-replace-change",
+      "label": "変わる",
+      "labelFurigana": "{変|か}わる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v435",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "変わる",
+          "reading": "かわる",
+          "meaningVi": "thay đổi"
+        },
+        "sourceFingerprint": "sha256:855c661fd35be9b94d95f6fe1bfd4fc900fa11e20adc2adcdba4b9a428c4f166"
+      },
+      "vocabulary": {
+        "reading": "かわる",
+        "meaningVi": "thay đổi, biến đổi",
+        "usageVi": "Trạng thái, tính chất của chính sự vật khác đi: 天気が変わる、考えが変わる.",
+        "collocations": [
+          {
+            "japanese": "季節が変わる",
+            "furigana": "{季節|きせつ}が{変|か}わる",
+            "meaningVi": "mùa thay đổi"
+          },
+          {
+            "japanese": "気持ちが変わる",
+            "furigana": "{気持|きも}ちが{変|か}わる",
+            "meaningVi": "thay lòng, đổi ý"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-kawaru-change-replace-replace",
+      "label": "代わる",
+      "labelFurigana": "{代|か}わる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v437",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "代わる・替わる・換わる",
+          "reading": "かわる",
+          "meaningVi": "thay"
+        },
+        "sourceFingerprint": "sha256:0be5fe5e410864a71716ffc2456884360debf0fe0dd98e97c223404b1443cc1d"
+      },
+      "vocabulary": {
+        "reading": "かわる",
+        "meaningVi": "thay, thay thế",
+        "usageVi": "Người/vật khác làm thay vai trò: 父に代わって、担当が代わる. (Nguồn ghi chung 代わる・替わる・換わる.)",
+        "collocations": [
+          {
+            "japanese": "担当者が代わる",
+            "furigana": "{担当者|たんとうしゃ}が{代|か}わる",
+            "meaningVi": "người phụ trách được thay"
+          },
+          {
+            "japanese": "社長に代わって",
+            "furigana": "{社長|しゃちょう}に{代|か}わって",
+            "meaningVi": "thay mặt giám đốc"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-kawaru-change-replace-1",
+      "titleVi": "Khác đi hay đổi người",
+      "bodyVi": "Sự vật vẫn là nó nhưng khác trước (色が変わる、町が変わった) → 変わる. Một thứ rút đi, thứ khác vào chỗ (選手が代わる、電話を代わる: chuyển máy cho người khác) → 代わる."
+    },
+    {
+      "id": "ct-v-kawaru-change-replace-2",
+      "titleVi": "Cụm hay gặp",
+      "bodyVi": "〜に代わって (thay cho), 電話代わりました (tôi đã cầm máy thay), 代わりに. 変わる có 変わった人 (người kỳ quặc), 生まれ変わる (đầu thai, lột xác)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-v-kawaru-change-replace-change": "Thay đổi (chính nó khác đi)",
+        "ci-v-kawaru-change-replace-replace": "Thay thế (cái khác vào chỗ)"
+      }
+    },
+    {
+      "aspectVi": "Cụm hay gặp",
+      "values": {
+        "ci-v-kawaru-change-replace-change": "天気が変わる、気が変わる",
+        "ci-v-kawaru-change-replace-replace": "〜に代わって、電話を代わる"
+      }
+    },
+    {
+      "aspectVi": "Từ Hán liên quan",
+      "values": {
+        "ci-v-kawaru-change-replace-change": "変化 (biến hóa)",
+        "ci-v-kawaru-change-replace-replace": "代理 (đại lý), 交代 (thay phiên)"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-kawaru-change-replace-1",
+      "itemId": "ci-v-kawaru-change-replace-change",
+      "japanese": "山の天気は変わりやすい。",
+      "furigana": "{山|やま}の{天気|てんき}は{変|か}わりやすい。",
+      "translationVi": "Thời tiết trên núi dễ thay đổi."
+    },
+    {
+      "id": "cx-v-kawaru-change-replace-2",
+      "itemId": "ci-v-kawaru-change-replace-change",
+      "japanese": "十年ぶりに帰ったら、町がすっかり変わっていた。",
+      "furigana": "{十年|じゅうねん}ぶりに{帰|かえ}ったら、{町|まち}がすっかり{変|か}わっていた。",
+      "translationVi": "Mười năm mới về, thị trấn đã thay đổi hoàn toàn."
+    },
+    {
+      "id": "cx-v-kawaru-change-replace-3",
+      "itemId": "ci-v-kawaru-change-replace-replace",
+      "japanese": "今日は母に代わって、私が料理を作る。",
+      "furigana": "{今日|きょう}は{母|はは}に{代|か}わって、{私|わたし}が{料理|りょうり}を{作|つく}る。",
+      "translationVi": "Hôm nay tôi nấu ăn thay mẹ."
+    },
+    {
+      "id": "cx-v-kawaru-change-replace-4",
+      "itemId": "ci-v-kawaru-change-replace-replace",
+      "japanese": "電話代わりました。田中です。",
+      "furigana": "{電話|でんわ}{代|か}わりました。{田中|たなか}です。",
+      "translationVi": "Tôi đã nhận máy thay đây, Tanaka xin nghe."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-kawaru-change-replace-1",
+      "textVi": "変 → 変化 (thay đổi). 代 → 代理, 交代 (người khác thay vào)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-kawaru-change-replace-1",
+      "situationVi": "Thay mặt bố phát biểu.",
+      "wrong": {
+        "japanese": "父に変わって、ご挨拶します。",
+        "furigana": "{父|ちち}に{変|か}わって、ご{挨拶|あいさつ}します。"
+      },
+      "correct": {
+        "japanese": "父に代わって、ご挨拶します。",
+        "furigana": "{父|ちち}に{代|か}わって、ご{挨拶|あいさつ}します。"
+      },
+      "explanationVi": "Thay mặt người khác → 代わる.",
+      "expectedItemId": "ci-v-kawaru-change-replace-replace",
+      "confusedWithItemId": "ci-v-kawaru-change-replace-change"
+    },
+    {
+      "id": "ce-v-kawaru-change-replace-2",
+      "situationVi": "Nói lá cây đổi màu.",
+      "wrong": {
+        "japanese": "秋になって、葉の色が代わった。",
+        "furigana": "{秋|あき}になって、{葉|は}の{色|いろ}が{代|か}わった。"
+      },
+      "correct": {
+        "japanese": "秋になって、葉の色が変わった。",
+        "furigana": "{秋|あき}になって、{葉|は}の{色|いろ}が{変|か}わった。"
+      },
+      "explanationVi": "Màu lá khác đi → 変わる.",
+      "expectedItemId": "ci-v-kawaru-change-replace-change",
+      "confusedWithItemId": "ci-v-kawaru-change-replace-replace"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-kawaru-change-replace-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-kawaru-change-replace-replace",
+      "instructionVi": "Chọn câu viết đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "後半から山田選手が田中選手に代わって出場した。",
+          "furigana": "{後半|こうはん}から{山田|やまだ}{選手|せんしゅ}が{田中|たなか}{選手|せんしゅ}に{代|か}わって{出場|しゅつじょう}した。",
+          "itemId": "ci-v-kawaru-change-replace-replace"
+        },
+        {
+          "id": "b",
+          "text": "後半から山田選手が田中選手に変わって出場した。",
+          "furigana": "{後半|こうはん}から{山田|やまだ}{選手|せんしゅ}が{田中|たなか}{選手|せんしゅ}に{変|か}わって{出場|しゅつじょう}した。",
+          "itemId": "ci-v-kawaru-change-replace-change",
+          "feedbackVi": "Một cầu thủ thay cho cầu thủ khác → 代わる."
+        },
+        {
+          "id": "c",
+          "text": "後半から山田選手が田中選手を変えて出場した。",
+          "furigana": "{後半|こうはん}から{山田|やまだ}{選手|せんしゅ}が{田中|たなか}{選手|せんしゅ}を{変|か}えて{出場|しゅつじょう}した。",
+          "feedbackVi": "変える là làm thay đổi, sai nghĩa."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Cầu thủ vào thay → 代わる."
+    },
+    {
+      "id": "cq-v-kawaru-change-replace-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-kawaru-change-replace-change",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "留学してから、物の考え方が大きく＿＿＿。",
+        "furigana": "{留学|りゅうがく}してから、{物|もの}の{考|かんが}え{方|かた}が{大|おお}きく＿＿＿。",
+        "translationVi": "Từ khi du học, cách suy nghĩ của tôi đã thay đổi nhiều."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "変わった",
+          "furigana": "{変|か}わった",
+          "itemId": "ci-v-kawaru-change-replace-change"
+        },
+        {
+          "id": "b",
+          "text": "代わった",
+          "furigana": "{代|か}わった",
+          "itemId": "ci-v-kawaru-change-replace-replace"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Cách suy nghĩ khác đi → 変わる."
+    },
+    {
+      "id": "cq-v-kawaru-change-replace-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-kawaru-change-replace-change",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "行くつもりだったが、気が代わって、家にいることにした。",
+        "furigana": "{行|い}くつもりだったが、{気|き}が{代|か}わって、{家|いえ}にいることにした。",
+        "translationVi": "Tôi định đi nhưng đổi ý nên ở nhà."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "行くつもりだったが、",
+          "furigana": "{行|い}くつもりだったが、"
+        },
+        {
+          "id": "b",
+          "text": "気が",
+          "furigana": "{気|き}が"
+        },
+        {
+          "id": "c",
+          "text": "代わって、",
+          "furigana": "{代|か}わって、",
+          "itemId": "ci-v-kawaru-change-replace-replace"
+        },
+        {
+          "id": "d",
+          "text": "家にいることにした。",
+          "furigana": "{家|いえ}にいることにした。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "変わって、",
+        "furigana": "{変|か}わって、",
+        "itemId": "ci-v-kawaru-change-replace-change"
+      },
+      "explanationVi": "Đổi ý (気が変わる) → 変わる."
+    },
+    {
+      "id": "cq-v-kawaru-change-replace-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-kawaru-change-replace-replace",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Đồng nghiệp nghe điện thoại rồi chuyển máy cho bạn. Bạn cầm máy và nói câu mở đầu."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "お電話代わりました。鈴木です。",
+          "furigana": "お{電話|でんわ}{代|か}わりました。{鈴木|すずき}です。",
+          "itemId": "ci-v-kawaru-change-replace-replace"
+        },
+        {
+          "id": "b",
+          "text": "お電話変わりました。鈴木です。",
+          "furigana": "お{電話|でんわ}{変|か}わりました。{鈴木|すずき}です。",
+          "itemId": "ci-v-kawaru-change-replace-change",
+          "feedbackVi": "Người nghe máy được thay → 代わる."
+        },
+        {
+          "id": "c",
+          "text": "お電話替えました。鈴木です。",
+          "furigana": "お{電話|でんわ}{替|か}えました。{鈴木|すずき}です。",
+          "feedbackVi": "替える là đổi, thay một thứ bằng thứ khác (tha động từ), không phải câu cố định khi nhận máy."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Câu cố định khi nhận máy thay người khác: お電話代わりました."
+    }
+  ]
+}

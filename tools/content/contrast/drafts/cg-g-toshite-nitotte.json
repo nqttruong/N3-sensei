@@ -1,0 +1,295 @@
+{
+  "id": "cg-g-toshite-nitotte",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜として và 〜にとって",
+  "summaryVi": "として nói 'với tư cách, vai trò là'; にとって nói 'đối với (từ lập trường của) ai'. Người học hay nhầm vì cả hai đều có thể dịch là 'đối với' hoặc 'là'.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-toshite-nitotte-toshite",
+      "label": "〜として",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g090",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜として",
+          "structure": "N ＋ として（は／も／の）",
+          "meaningVi": "với tư cách là…, như là…"
+        },
+        "sourceFingerprint": "sha256:b0bb8a2718ea70c34facfc6614901f55028dd08a929355a65d158e69fd50d7a1"
+      },
+      "grammar": {
+        "meaningVi": "Với tư cách là…, như là…",
+        "connection": "N ＋ として（は／も／の）",
+        "nuanceVi": "Nêu vai trò, tư cách, danh nghĩa của người hay vật khi hành động: 留学生として来日する、記念として贈る、趣味として楽しむ."
+      }
+    },
+    {
+      "id": "ci-g-toshite-nitotte-nitotte",
+      "label": "〜にとって",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g037",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜にとって",
+          "structure": "N ＋ にとって",
+          "meaningVi": "đối với… (từ lập trường của…)"
+        },
+        "sourceFingerprint": "sha256:10a48f0f5a007a9811e6da521236b5e9c0455c81a15f2311de60bf9953c20237"
+      },
+      "grammar": {
+        "meaningVi": "Đối với… (từ lập trường của…)",
+        "connection": "N ＋ にとって",
+        "nuanceVi": "Đánh giá từ góc nhìn của N; vế sau là tính từ đánh giá: 大切だ、難しい、ありがたい."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-toshite-nitotte-1",
+      "titleVi": "Vai trò hay góc nhìn",
+      "bodyVi": "Trả lời câu hỏi 'ở vai trò gì?' → として (医者として働く: làm việc với tư cách bác sĩ). Trả lời câu hỏi 'theo đánh giá của ai?' → にとって (医者にとって大切なこと: điều quan trọng đối với bác sĩ)."
+    },
+    {
+      "id": "ct-g-toshite-nitotte-2",
+      "titleVi": "Vế sau",
+      "bodyVi": "として thường đi với động từ hành động hoặc danh từ (として働く、としての責任). にとって đi với tính từ đánh giá (にとって難しい、大事だ), không đi với động từ hành động."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Ý nghĩa",
+      "values": {
+        "ci-g-toshite-nitotte-toshite": "Tư cách, vai trò",
+        "ci-g-toshite-nitotte-nitotte": "Lập trường đánh giá"
+      }
+    },
+    {
+      "aspectVi": "Vế sau",
+      "values": {
+        "ci-g-toshite-nitotte-toshite": "Động từ hành động, の + N",
+        "ci-g-toshite-nitotte-nitotte": "Tính từ đánh giá"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ",
+      "values": {
+        "ci-g-toshite-nitotte-toshite": "通訳として働く",
+        "ci-g-toshite-nitotte-nitotte": "私にとって大切な人"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-toshite-nitotte-1",
+      "itemId": "ci-g-toshite-nitotte-toshite",
+      "japanese": "彼は通訳として会議に参加した。",
+      "furigana": "{彼|かれ}は{通訳|つうやく}として{会議|かいぎ}に{参加|さんか}した。",
+      "translationVi": "Anh ấy tham dự cuộc họp với tư cách phiên dịch."
+    },
+    {
+      "id": "cx-g-toshite-nitotte-2",
+      "itemId": "ci-g-toshite-nitotte-toshite",
+      "japanese": "これは旅行の記念として買ったお皿です。",
+      "furigana": "これは{旅行|りょこう}の{記念|きねん}として{買|か}ったお{皿|さら}です。",
+      "translationVi": "Đây là chiếc đĩa tôi mua làm kỷ niệm chuyến du lịch."
+    },
+    {
+      "id": "cx-g-toshite-nitotte-3",
+      "itemId": "ci-g-toshite-nitotte-nitotte",
+      "japanese": "子供にとって、遊びは勉強と同じくらい大切だ。",
+      "furigana": "{子供|こども}にとって、{遊|あそ}びは{勉強|べんきょう}と{同|おな}じくらい{大切|たいせつ}だ。",
+      "translationVi": "Đối với trẻ con, vui chơi quan trọng ngang với học."
+    },
+    {
+      "id": "cx-g-toshite-nitotte-4",
+      "itemId": "ci-g-toshite-nitotte-nitotte",
+      "japanese": "外国人にとって、漢字を覚えるのは大変だ。",
+      "furigana": "{外国人|がいこくじん}にとって、{漢字|かんじ}を{覚|おぼ}えるのは{大変|たいへん}だ。",
+      "translationVi": "Đối với người nước ngoài, nhớ Kanji thật vất vả."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-toshite-nitotte-1",
+      "textVi": "として = 'đội mũ' một vai trò rồi hành động; にとって = 'đứng ở chỗ' của ai đó mà nhìn."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-toshite-nitotte-1",
+      "situationVi": "Nói mình đến Nhật với tư cách du học sinh.",
+      "wrong": {
+        "japanese": "私は留学生にとって日本に来ました。",
+        "furigana": "{私|わたし}は{留学生|りゅうがくせい}にとって{日本|にほん}に{来|き}ました。"
+      },
+      "correct": {
+        "japanese": "私は留学生として日本に来ました。",
+        "furigana": "{私|わたし}は{留学生|りゅうがくせい}として{日本|にほん}に{来|き}ました。"
+      },
+      "explanationVi": "Tư cách khi hành động (来ました) → として.",
+      "expectedItemId": "ci-g-toshite-nitotte-toshite",
+      "confusedWithItemId": "ci-g-toshite-nitotte-nitotte"
+    },
+    {
+      "id": "ce-g-toshite-nitotte-2",
+      "situationVi": "Nói gia đình quan trọng nhất đối với mình.",
+      "wrong": {
+        "japanese": "私として、家族が一番大切だ。",
+        "furigana": "{私|わたし}として、{家族|かぞく}が{一番|いちばん}{大切|たいせつ}だ。"
+      },
+      "correct": {
+        "japanese": "私にとって、家族が一番大切だ。",
+        "furigana": "{私|わたし}にとって、{家族|かぞく}が{一番|いちばん}{大切|たいせつ}だ。"
+      },
+      "explanationVi": "Đánh giá 大切だ từ lập trường của tôi → にとって. (私としては là 'về phần tôi thì (ý kiến)'.)",
+      "expectedItemId": "ci-g-toshite-nitotte-nitotte",
+      "confusedWithItemId": "ci-g-toshite-nitotte-toshite"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-toshite-nitotte-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-toshite-nitotte-toshite",
+      "instructionVi": "Chọn câu đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "趣味として写真を撮っている。",
+          "furigana": "{趣味|しゅみ}として{写真|しゃしん}を{撮|と}っている。",
+          "itemId": "ci-g-toshite-nitotte-toshite"
+        },
+        {
+          "id": "b",
+          "text": "趣味にとって写真を撮っている。",
+          "furigana": "{趣味|しゅみ}にとって{写真|しゃしん}を{撮|と}っている。",
+          "itemId": "ci-g-toshite-nitotte-nitotte",
+          "feedbackVi": "にとって không đi với hành động 撮っている."
+        },
+        {
+          "id": "c",
+          "text": "趣味に対して写真を撮っている。",
+          "furigana": "{趣味|しゅみ}に{対|たい}して{写真|しゃしん}を{撮|と}っている。",
+          "feedbackVi": "に対して là hướng tới đối tượng, sai nghĩa."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Chụp ảnh như một sở thích (vai trò) → として."
+    },
+    {
+      "id": "cq-g-toshite-nitotte-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-toshite-nitotte-nitotte",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "この仕事は、経験のない人＿＿＿難しすぎる。",
+        "furigana": "この{仕事|しごと}は、{経験|けいけん}のない{人|ひと}＿＿＿{難|むずか}しすぎる。",
+        "translationVi": "Công việc này quá khó đối với người chưa có kinh nghiệm."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "にとって",
+          "itemId": "ci-g-toshite-nitotte-nitotte"
+        },
+        {
+          "id": "b",
+          "text": "として",
+          "itemId": "ci-g-toshite-nitotte-toshite",
+          "feedbackVi": "Vế sau là đánh giá 難しすぎる, không phải hành động theo vai trò."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Đánh giá 'quá khó' từ góc nhìn người chưa có kinh nghiệm → にとって."
+    },
+    {
+      "id": "cq-g-toshite-nitotte-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-toshite-nitotte-toshite",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "彼女は看護師にとって病院で働いている。",
+        "furigana": "{彼女|かのじょ}は{看護師|かんごし}にとって{病院|びょういん}で{働|はたら}いている。",
+        "translationVi": "Cô ấy làm việc ở bệnh viện với tư cách y tá."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "彼女は",
+          "furigana": "{彼女|かのじょ}は"
+        },
+        {
+          "id": "b",
+          "text": "看護師にとって",
+          "furigana": "{看護師|かんごし}にとって",
+          "itemId": "ci-g-toshite-nitotte-nitotte"
+        },
+        {
+          "id": "c",
+          "text": "病院で",
+          "furigana": "{病院|びょういん}で"
+        },
+        {
+          "id": "d",
+          "text": "働いている。",
+          "furigana": "{働|はたら}いている。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "看護師として",
+        "furigana": "{看護師|かんごし}として",
+        "itemId": "ci-g-toshite-nitotte-toshite"
+      },
+      "explanationVi": "Tư cách khi làm việc → として."
+    },
+    {
+      "id": "cq-g-toshite-nitotte-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-toshite-nitotte-nitotte",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn nói với bạn bè rằng chiếc đồng hồ cũ của ông để lại là vật vô giá với bạn."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "この時計は私にとって宝物なんだ。",
+          "furigana": "この{時計|とけい}は{私|わたし}にとって{宝物|たからもの}なんだ。",
+          "itemId": "ci-g-toshite-nitotte-nitotte"
+        },
+        {
+          "id": "b",
+          "text": "この時計は私として宝物なんだ。",
+          "furigana": "この{時計|とけい}は{私|わたし}として{宝物|たからもの}なんだ。",
+          "itemId": "ci-g-toshite-nitotte-toshite",
+          "feedbackVi": "私として không diễn tả góc nhìn đánh giá."
+        },
+        {
+          "id": "c",
+          "text": "この時計は私に関して宝物なんだ。",
+          "furigana": "この{時計|とけい}は{私|わたし}に{関|かん}して{宝物|たからもの}なんだ。",
+          "feedbackVi": "に関して là 'về chủ đề', sai nghĩa."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Đánh giá từ lập trường của tôi → にとって."
+    }
+  ]
+}

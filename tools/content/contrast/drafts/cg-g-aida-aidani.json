@@ -1,0 +1,297 @@
+{
+  "id": "cg-g-aida-aidani",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜間（は） và 〜間に",
+  "summaryVi": "間 nói hành động kéo dài suốt cả khoảng thời gian; 間に nói một việc xảy ra (một lần) vào lúc nào đó trong khoảng thời gian ấy.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-aida-aidani-aida",
+      "label": "〜間（は）",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g152",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜間（は）",
+          "structure": "Nの／Aい／Aな／V普通形 + 間（は）",
+          "meaningVi": "suốt trong khi…"
+        },
+        "sourceFingerprint": "sha256:8c365ba6fd74ff56a518b89a1cb3076740f61b73c9965c1436be256726073ef7"
+      },
+      "grammar": {
+        "meaningVi": "Suốt trong khi…",
+        "connection": "N の／Aい／Aな な／V thể thường（hay Vている） ＋ 間（は）",
+        "nuanceVi": "Vế sau là trạng thái hoặc hành động kéo dài từ đầu đến cuối khoảng thời gian (ずっと…ている、…ていた)."
+      }
+    },
+    {
+      "id": "ci-g-aida-aidani-aidani",
+      "label": "〜間に",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g153",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜間に",
+          "structure": "Nの／Aい／Aな／V普通形 + 間に",
+          "meaningVi": "trong lúc… (thì một việc xảy ra)"
+        },
+        "sourceFingerprint": "sha256:2c772976589da8234840b27cd73c94ec8def5ee3f3410951a9894a3e74627e6d"
+      },
+      "grammar": {
+        "meaningVi": "Trong lúc… (thì một việc xảy ra)",
+        "connection": "N の／Aい／Aな な／V thể thường（hay Vている） ＋ 間に",
+        "nuanceVi": "Vế sau là hành động hay sự việc xảy ra một lần, kết thúc trong khoảng thời gian đó (…した、…てしまった)."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-aida-aidani-1",
+      "titleVi": "Nhìn động từ ở vế sau",
+      "bodyVi": "Vế sau kéo dài (ずっと寝ていた、待っていた) → 間. Vế sau là việc xảy ra một lần, có điểm kết thúc (泥棒が入った、メールが来た、掃除を済ませた) → 間に."
+    },
+    {
+      "id": "ct-g-aida-aidani-2",
+      "titleVi": "Phân biệt với うちに",
+      "bodyVi": "間に chỉ vị trí trong khoảng thời gian. うちに nhấn mạnh 'tranh thủ trước khi tình trạng thay đổi' (若いうちに). Câu có 若いうちに、温かいうちに thường không thay bằng 間に."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Vế sau",
+      "values": {
+        "ci-g-aida-aidani-aida": "Kéo dài suốt khoảng thời gian",
+        "ci-g-aida-aidani-aidani": "Xảy ra một lần trong khoảng thời gian"
+      }
+    },
+    {
+      "aspectVi": "Từ hay đi kèm",
+      "values": {
+        "ci-g-aida-aidani-aida": "ずっと、〜ている／〜ていた",
+        "ci-g-aida-aidani-aidani": "〜た、〜てしまった、もう"
+      }
+    },
+    {
+      "aspectVi": "Hình ảnh",
+      "values": {
+        "ci-g-aida-aidani-aida": "Một đường kéo dài",
+        "ci-g-aida-aidani-aidani": "Một điểm nằm trong đoạn"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-aida-aidani-1",
+      "itemId": "ci-g-aida-aidani-aida",
+      "japanese": "夏休みの間、ずっと祖母の家にいた。",
+      "furigana": "{夏休|なつやす}みの{間|あいだ}、ずっと{祖母|そぼ}の{家|いえ}にいた。",
+      "translationVi": "Suốt kỳ nghỉ hè, tôi ở nhà bà."
+    },
+    {
+      "id": "cx-g-aida-aidani-2",
+      "itemId": "ci-g-aida-aidani-aida",
+      "japanese": "母が料理をしている間、私は本を読んでいた。",
+      "furigana": "{母|はは}が{料理|りょうり}をしている{間|あいだ}、{私|わたし}は{本|ほん}を{読|よ}んでいた。",
+      "translationVi": "Trong suốt lúc mẹ nấu ăn, tôi đọc sách."
+    },
+    {
+      "id": "cx-g-aida-aidani-3",
+      "itemId": "ci-g-aida-aidani-aidani",
+      "japanese": "留守の間に、泥棒が入った。",
+      "furigana": "{留守|るす}の{間|あいだ}に、{泥棒|どろぼう}が{入|はい}った。",
+      "translationVi": "Trong lúc vắng nhà thì trộm vào."
+    },
+    {
+      "id": "cx-g-aida-aidani-4",
+      "itemId": "ci-g-aida-aidani-aidani",
+      "japanese": "子供が寝ている間に、掃除を済ませた。",
+      "furigana": "{子供|こども}が{寝|ね}ている{間|あいだ}に、{掃除|そうじ}を{済|す}ませた。",
+      "translationVi": "Tôi đã dọn dẹp xong trong lúc con đang ngủ."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-aida-aidani-1",
+      "textVi": "間 = cả đoạn đường; 間に = một điểm dừng trên đoạn đường đó. Thêm に là thêm 'một thời điểm'."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-aida-aidani-1",
+      "situationVi": "Kể rằng mình ngủ suốt chuyến tàu.",
+      "wrong": {
+        "japanese": "電車に乗っている間に、ずっと寝ていた。",
+        "furigana": "{電車|でんしゃ}に{乗|の}っている{間|あいだ}に、ずっと{寝|ね}ていた。"
+      },
+      "correct": {
+        "japanese": "電車に乗っている間、ずっと寝ていた。",
+        "furigana": "{電車|でんしゃ}に{乗|の}っている{間|あいだ}、ずっと{寝|ね}ていた。"
+      },
+      "explanationVi": "ずっと寝ていた là trạng thái kéo dài suốt chuyến đi, nên dùng 間 (không có に).",
+      "expectedItemId": "ci-g-aida-aidani-aida",
+      "confusedWithItemId": "ci-g-aida-aidani-aidani"
+    },
+    {
+      "id": "ce-g-aida-aidani-2",
+      "situationVi": "Ai đó gọi điện khi bạn đang tắm.",
+      "wrong": {
+        "japanese": "シャワーを浴びている間、電話がかかってきた。",
+        "furigana": "シャワーを{浴|あ}びている{間|あいだ}、{電話|でんわ}がかかってきた。"
+      },
+      "correct": {
+        "japanese": "シャワーを浴びている間に、電話がかかってきた。",
+        "furigana": "シャワーを{浴|あ}びている{間|あいだ}に、{電話|でんわ}がかかってきた。"
+      },
+      "explanationVi": "Cuộc gọi đến là việc xảy ra một lần trong lúc tắm, nên dùng 間に.",
+      "expectedItemId": "ci-g-aida-aidani-aidani",
+      "confusedWithItemId": "ci-g-aida-aidani-aida"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-aida-aidani-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-aida-aidani-aidani",
+      "instructionVi": "Chọn câu đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "日本にいる間に、富士山に登りたい。",
+          "furigana": "{日本|にほん}にいる{間|あいだ}に、{富士山|ふじさん}に{登|のぼ}りたい。",
+          "itemId": "ci-g-aida-aidani-aidani"
+        },
+        {
+          "id": "b",
+          "text": "日本にいる間、富士山に登りたい。",
+          "furigana": "{日本|にほん}にいる{間|あいだ}、{富士山|ふじさん}に{登|のぼ}りたい。",
+          "itemId": "ci-g-aida-aidani-aida",
+          "feedbackVi": "Leo núi Phú Sĩ là việc làm một lần, không kéo dài suốt thời gian ở Nhật."
+        },
+        {
+          "id": "c",
+          "text": "日本にいる間に、ずっと日本語を勉強していた。",
+          "furigana": "{日本|にほん}にいる{間|あいだ}に、ずっと{日本語|にほんご}を{勉強|べんきょう}していた。",
+          "feedbackVi": "ずっと…ていた là kéo dài suốt khoảng thời gian, phải dùng 間 không có に."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Muốn leo núi Phú Sĩ một lần vào lúc nào đó trong thời gian ở Nhật → 間に."
+    },
+    {
+      "id": "cq-g-aida-aidani-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-aida-aidani-aida",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "会議の＿＿＿、彼は一言も話さなかった。",
+        "furigana": "{会議|かいぎ}の＿＿＿、{彼|かれ}は{一言|ひとこと}も{話|はな}さなかった。",
+        "translationVi": "Suốt cuộc họp, anh ấy không nói một lời nào."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "間",
+          "furigana": "{間|あいだ}",
+          "itemId": "ci-g-aida-aidani-aida"
+        },
+        {
+          "id": "b",
+          "text": "間に",
+          "furigana": "{間|あいだ}に",
+          "itemId": "ci-g-aida-aidani-aidani",
+          "feedbackVi": "Không nói lời nào là trạng thái kéo dài suốt cuộc họp, không phải việc xảy ra một lần."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Trạng thái 'không nói gì' kéo dài từ đầu đến cuối cuộc họp → 間."
+    },
+    {
+      "id": "cq-g-aida-aidani-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-aida-aidani-aidani",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "私が買い物に行っている間、荷物が届いた。",
+        "furigana": "{私|わたし}が{買|か}い{物|もの}に{行|い}っている{間|あいだ}、{荷物|にもつ}が{届|とど}いた。",
+        "translationVi": "Trong lúc tôi đi mua sắm thì có bưu phẩm đến."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "私が",
+          "furigana": "{私|わたし}が"
+        },
+        {
+          "id": "b",
+          "text": "買い物に行っている",
+          "furigana": "{買|か}い{物|もの}に{行|い}っている"
+        },
+        {
+          "id": "c",
+          "text": "間、",
+          "furigana": "{間|あいだ}、",
+          "itemId": "ci-g-aida-aidani-aida"
+        },
+        {
+          "id": "d",
+          "text": "荷物が届いた。",
+          "furigana": "{荷物|にもつ}が{届|とど}いた。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "間に、",
+        "furigana": "{間|あいだ}に、",
+        "itemId": "ci-g-aida-aidani-aidani"
+      },
+      "explanationVi": "Bưu phẩm đến là việc xảy ra một lần trong khoảng thời gian đi mua sắm → 間に."
+    },
+    {
+      "id": "cq-g-aida-aidani-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-aida-aidani-aida",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn kể rằng trong toàn bộ thời gian sống ở Osaka (3 năm), bạn làm thêm ở một quán ăn."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "大阪に住んでいた間、ずっとレストランでアルバイトをしていた。",
+          "furigana": "{大阪|おおさか}に{住|す}んでいた{間|あいだ}、ずっとレストランでアルバイトをしていた。",
+          "itemId": "ci-g-aida-aidani-aida"
+        },
+        {
+          "id": "b",
+          "text": "大阪に住んでいた間に、ずっとレストランでアルバイトをしていた。",
+          "furigana": "{大阪|おおさか}に{住|す}んでいた{間|あいだ}に、ずっとレストランでアルバイトをしていた。",
+          "itemId": "ci-g-aida-aidani-aidani",
+          "feedbackVi": "ずっと…していた kéo dài suốt thời gian, không đi với 間に."
+        },
+        {
+          "id": "c",
+          "text": "大阪に住んでいるうちに、ずっとアルバイトをしたい。",
+          "furigana": "{大阪|おおさか}に{住|す}んでいるうちに、ずっとアルバイトをしたい。",
+          "feedbackVi": "うちに và thì tương lai không hợp với việc kể lại quá khứ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Làm thêm suốt cả thời gian sống ở Osaka → 間 + ずっと."
+    }
+  ]
+}

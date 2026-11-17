@@ -1,0 +1,295 @@
+{
+  "id": "cg-g-mama-ppanashi",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜まま và 〜っぱなし",
+  "summaryVi": "Cả hai nói một trạng thái được giữ nguyên. まま trung tính, nối được với danh từ, tính từ, động từ thể た／ない. っぱなし nối với thân ます, thường mang ý chê: làm rồi để đó không xử lý, hoặc làm liên tục suốt.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-mama-ppanashi-mama",
+      "label": "〜まま",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g149",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜まま",
+          "structure": "Vた／Vない／Nの／Aい／Aな + まま",
+          "meaningVi": "cứ để nguyên…, giữ nguyên…; theo đúng như…"
+        },
+        "sourceFingerprint": "sha256:c4fe6ccda87bf1d21cade6f18ef4546016aedfbbe5da0a8a457b0b87b7e60fc7"
+      },
+      "grammar": {
+        "meaningVi": "Cứ để nguyên…, giữ nguyên…",
+        "connection": "Vた／Vない／N の／Aい／Aな な ＋ まま",
+        "nuanceVi": "Giữ nguyên trạng thái cũ khi làm việc khác: 靴のまま入る、電気をつけたまま寝る、昔のまま. Trung tính, không nhất thiết là chê."
+      }
+    },
+    {
+      "id": "ci-g-mama-ppanashi-ppanashi",
+      "label": "〜っぱなし",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g150",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜っぱなし",
+          "structure": "Vます + っぱなし",
+          "meaningVi": "cứ để nguyên…; … suốt"
+        },
+        "sourceFingerprint": "sha256:8fdba01ab097243164235b662141b5519a7652e7aaed596b87933d34f39d6216"
+      },
+      "grammar": {
+        "meaningVi": "Cứ để nguyên…; … suốt",
+        "connection": "Vます（bỏ ます） ＋ っぱなし",
+        "nuanceVi": "(1) Làm xong rồi bỏ đó, không dọn, không tắt (thường bị chê): 出しっぱなし、開けっぱなし; (2) Một trạng thái kéo dài liên tục: 立ちっぱなし、負けっぱなし."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-mama-ppanashi-1",
+      "titleVi": "Cách nối khác nhau",
+      "bodyVi": "まま: Vた (つけたまま), Vない (言わないまま), N の (制服のまま), tính từ (若いまま). っぱなし: chỉ thân ます (つけっぱなし、立ちっぱなし). Danh từ hay tính từ đứng trước → chỉ まま."
+    },
+    {
+      "id": "ct-g-mama-ppanashi-2",
+      "titleVi": "Sắc thái",
+      "bodyVi": "っぱなし gần như luôn có ý phê phán hoặc than phiền (水を出しっぱなしにするな). まま có thể trung tính hay tích cực (昔のままの町並み: phố xá vẫn như xưa)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Cách nối",
+      "values": {
+        "ci-g-mama-ppanashi-mama": "Vた／Vない／N の／tính từ",
+        "ci-g-mama-ppanashi-ppanashi": "Chỉ Vます (bỏ ます)"
+      }
+    },
+    {
+      "aspectVi": "Sắc thái",
+      "values": {
+        "ci-g-mama-ppanashi-mama": "Trung tính",
+        "ci-g-mama-ppanashi-ppanashi": "Thường chê, than phiền"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa riêng",
+      "values": {
+        "ci-g-mama-ppanashi-mama": "Giữ nguyên như cũ (昔のまま)",
+        "ci-g-mama-ppanashi-ppanashi": "Làm liên tục suốt (立ちっぱなし)"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-mama-ppanashi-1",
+      "itemId": "ci-g-mama-ppanashi-mama",
+      "japanese": "日本の家には靴のまま入ってはいけない。",
+      "furigana": "{日本|にほん}の{家|いえ}には{靴|くつ}のまま{入|はい}ってはいけない。",
+      "translationVi": "Không được để nguyên giày mà vào nhà người Nhật."
+    },
+    {
+      "id": "cx-g-mama-ppanashi-2",
+      "itemId": "ci-g-mama-ppanashi-mama",
+      "japanese": "昨日はテレビをつけたまま寝てしまった。",
+      "furigana": "{昨日|きのう}はテレビをつけたまま{寝|ね}てしまった。",
+      "translationVi": "Hôm qua tôi lỡ ngủ quên mà vẫn để tivi bật."
+    },
+    {
+      "id": "cx-g-mama-ppanashi-3",
+      "itemId": "ci-g-mama-ppanashi-ppanashi",
+      "japanese": "誰だ、水を出しっぱなしにしたのは。",
+      "furigana": "{誰|だれ}だ、{水|みず}を{出|だ}しっぱなしにしたのは。",
+      "translationVi": "Ai để nước chảy mà không khóa thế này."
+    },
+    {
+      "id": "cx-g-mama-ppanashi-4",
+      "itemId": "ci-g-mama-ppanashi-ppanashi",
+      "japanese": "今日は一日中立ちっぱなしで、足が痛い。",
+      "furigana": "{今日|きょう}は{一日中|いちにちじゅう}{立|た}ちっぱなしで、{足|あし}が{痛|いた}い。",
+      "translationVi": "Hôm nay đứng suốt cả ngày nên đau chân."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-mama-ppanashi-1",
+      "textVi": "Thấy danh từ / tính từ trước chỗ trống → まま. Thấy lời trách 'bỏ đó' hay 'suốt cả ngày' với thân ます → っぱなし."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-mama-ppanashi-1",
+      "situationVi": "Ngợi khen thị trấn vẫn giữ nét xưa.",
+      "wrong": {
+        "japanese": "この町は百年前っぱなしだ。",
+        "furigana": "この{町|まち}は{百年前|ひゃくねんまえ}っぱなしだ。"
+      },
+      "correct": {
+        "japanese": "この町は百年前のままだ。",
+        "furigana": "この{町|まち}は{百年前|ひゃくねんまえ}のままだ。"
+      },
+      "explanationVi": "っぱなし không nối với danh từ và mang ý chê; 'vẫn như trăm năm trước' → N のまま.",
+      "expectedItemId": "ci-g-mama-ppanashi-mama",
+      "confusedWithItemId": "ci-g-mama-ppanashi-ppanashi"
+    },
+    {
+      "id": "ce-g-mama-ppanashi-2",
+      "situationVi": "Kể rằng đã ra ngoài mà để cửa mở.",
+      "wrong": {
+        "japanese": "ドアを開けまま出かけてしまった。",
+        "furigana": "ドアを{開|あ}けまま{出|で}かけてしまった。"
+      },
+      "correct": {
+        "japanese": "ドアを開けっぱなしで出かけてしまった。",
+        "furigana": "ドアを{開|あ}けっぱなしで{出|で}かけてしまった。"
+      },
+      "explanationVi": "Thân ます (開け) không nối với まま; dùng 開けっぱなし, hoặc nói 開けたまま (Vた + まま).",
+      "expectedItemId": "ci-g-mama-ppanashi-ppanashi",
+      "confusedWithItemId": "ci-g-mama-ppanashi-mama"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-mama-ppanashi-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-mama-ppanashi-mama",
+      "instructionVi": "Chọn câu đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "制服のまま遊びに行った。",
+          "furigana": "{制服|せいふく}のまま{遊|あそ}びに{行|い}った。",
+          "itemId": "ci-g-mama-ppanashi-mama"
+        },
+        {
+          "id": "b",
+          "text": "制服っぱなしで遊びに行った。",
+          "furigana": "{制服|せいふく}っぱなしで{遊|あそ}びに{行|い}った。",
+          "itemId": "ci-g-mama-ppanashi-ppanashi",
+          "feedbackVi": "っぱなし không nối với danh từ."
+        },
+        {
+          "id": "c",
+          "text": "制服のっぱなしで遊びに行った。",
+          "furigana": "{制服|せいふく}のっぱなしで{遊|あそ}びに{行|い}った。",
+          "feedbackVi": "Không có cách nói のっぱなし."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Danh từ + の + まま: cứ mặc nguyên đồng phục."
+    },
+    {
+      "id": "cq-g-mama-ppanashi-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-mama-ppanashi-ppanashi",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "窓を開け＿＿＿にして出かけたら、雨が入ってきた。",
+        "furigana": "{窓|まど}を{開|あ}け＿＿＿にして{出|で}かけたら、{雨|あめ}が{入|はい}ってきた。",
+        "translationVi": "Tôi ra ngoài mà để cửa sổ mở toang, thế là mưa hắt vào."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "っぱなし",
+          "itemId": "ci-g-mama-ppanashi-ppanashi"
+        },
+        {
+          "id": "b",
+          "text": "まま",
+          "itemId": "ci-g-mama-ppanashi-mama",
+          "feedbackVi": "まま cần Vた: 開けたまま; 開け + まま sai cách nối."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Thân ます 開け + っぱなし: mở rồi để đó, gây hậu quả xấu."
+    },
+    {
+      "id": "cq-g-mama-ppanashi-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-mama-ppanashi-mama",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "祖父は今も若いっぱなしで元気だ。",
+        "furigana": "{祖父|そふ}は{今|いま}も{若|わか}いっぱなしで{元気|げんき}だ。",
+        "translationVi": "Ông tôi vẫn khỏe như hồi trẻ."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "祖父は",
+          "furigana": "{祖父|そふ}は"
+        },
+        {
+          "id": "b",
+          "text": "今も",
+          "furigana": "{今|いま}も"
+        },
+        {
+          "id": "c",
+          "text": "若いっぱなしで",
+          "furigana": "{若|わか}いっぱなしで",
+          "itemId": "ci-g-mama-ppanashi-ppanashi"
+        },
+        {
+          "id": "d",
+          "text": "元気だ。",
+          "furigana": "{元気|げんき}だ。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "若いままで",
+        "furigana": "{若|わか}いままで",
+        "itemId": "ci-g-mama-ppanashi-mama"
+      },
+      "explanationVi": "Tính từ (若い) chỉ nối với まま; っぱなし chỉ nối với thân ます."
+    },
+    {
+      "id": "cq-g-mama-ppanashi-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-mama-ppanashi-ppanashi",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Mẹ bực mình vì con trai lại để đèn phòng tắm sáng mà không tắt."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "また電気をつけっぱなしにして！ちゃんと消しなさい。",
+          "furigana": "また{電気|でんき}をつけっぱなしにして！ちゃんと{消|け}しなさい。",
+          "itemId": "ci-g-mama-ppanashi-ppanashi"
+        },
+        {
+          "id": "b",
+          "text": "また電気をつけるままにして！ちゃんと消しなさい。",
+          "furigana": "また{電気|でんき}をつけるままにして！ちゃんと{消|け}しなさい。",
+          "itemId": "ci-g-mama-ppanashi-mama",
+          "feedbackVi": "まま cần Vた: つけたまま; つけるまま sai."
+        },
+        {
+          "id": "c",
+          "text": "また電気をつけかけて！ちゃんと消しなさい。",
+          "furigana": "また{電気|でんき}をつけかけて！ちゃんと{消|け}しなさい。",
+          "feedbackVi": "つけかける là bật dở, không đúng tình huống."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Bật rồi bỏ đó, có ý trách → つけっぱなし."
+    }
+  ]
+}

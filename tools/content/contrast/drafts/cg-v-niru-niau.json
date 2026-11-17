@@ -1,0 +1,317 @@
+{
+  "id": "cg-v-niru-niau",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "似る và 似合う",
+  "summaryVi": "似る là giống (hai thứ có điểm giống nhau, nhất là ngoại hình, tính cách), 似合う là hợp, xứng (quần áo, kiểu tóc hợp với người).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-niru-niau-niru",
+      "label": "似る",
+      "labelFurigana": "{似|に}る",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v425",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "似る",
+          "reading": "にる",
+          "meaningVi": "giống"
+        },
+        "sourceFingerprint": "sha256:f0e6dcc2025d7c890b274c7ec206a3ae48a7778812daf862536a0095f08242d9"
+      },
+      "vocabulary": {
+        "reading": "にる",
+        "meaningVi": "giống",
+        "usageVi": "A は B に似ている: A giống B. Thường dùng ở dạng 似ている／似た.",
+        "collocations": [
+          {
+            "japanese": "母に似ている",
+            "furigana": "{母|はは}に{似|に}ている",
+            "meaningVi": "giống mẹ"
+          },
+          {
+            "japanese": "よく似た二人",
+            "furigana": "よく{似|に}た{二人|ふたり}",
+            "meaningVi": "hai người rất giống nhau"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-niru-niau-niau",
+      "label": "似合う",
+      "labelFurigana": "{似合|にあ}う",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v424",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "似合う",
+          "reading": "にあう",
+          "meaningVi": "hợp"
+        },
+        "sourceFingerprint": "sha256:e10389f23b303e0fd05e67f3943fdd487c8ff19faa5b0407511e8de5ae47608f"
+      },
+      "vocabulary": {
+        "reading": "にあう",
+        "meaningVi": "hợp, xứng",
+        "usageVi": "Quần áo, màu sắc, kiểu tóc hợp với người: その服、よく似合うね.",
+        "collocations": [
+          {
+            "japanese": "着物が似合う",
+            "furigana": "{着物|きもの}が{似合|にあ}う",
+            "meaningVi": "mặc kimono hợp"
+          },
+          {
+            "japanese": "似合いの夫婦",
+            "furigana": "{似合|にあ}いの{夫婦|ふうふ}",
+            "meaningVi": "cặp vợ chồng xứng đôi"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-niru-niau-1",
+      "titleVi": "Giống hay hợp",
+      "bodyVi": "So sánh hai đối tượng có điểm chung (顔、声、性格) → 似る (thường 似ている). Đánh giá một thứ hợp với người (服、髪型、色、メガネ) → 似合う."
+    },
+    {
+      "id": "ct-v-niru-niau-2",
+      "titleVi": "Cách dùng ngữ pháp",
+      "bodyVi": "似る hầu như không dùng ở dạng hiện tại đơn để tả trạng thái; nói 父に似ている, không nói ×父に似る. 似合う dùng thẳng: 赤がよく似合う. Người được so sánh hay người mặc đi với に."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-v-niru-niau-niru": "Giống",
+        "ci-v-niru-niau-niau": "Hợp, xứng"
+      }
+    },
+    {
+      "aspectVi": "Cấu trúc",
+      "values": {
+        "ci-v-niru-niau-niru": "A は B に似ている",
+        "ci-v-niru-niau-niau": "(服) が (人) に似合う"
+      }
+    },
+    {
+      "aspectVi": "Dạng hay dùng",
+      "values": {
+        "ci-v-niru-niau-niru": "似ている、似た N",
+        "ci-v-niru-niau-niau": "似合う、似合っている"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-niru-niau-1",
+      "itemId": "ci-v-niru-niau-niru",
+      "japanese": "彼女は笑った顔がお母さんによく似ている。",
+      "furigana": "{彼女|かのじょ}は{笑|わら}った{顔|かお}がお{母|かあ}さんによく{似|に}ている。",
+      "translationVi": "Lúc cười trông cô ấy rất giống mẹ."
+    },
+    {
+      "id": "cx-v-niru-niau-2",
+      "itemId": "ci-v-niru-niau-niru",
+      "japanese": "この二つの漢字は形が似ているので、間違えやすい。",
+      "furigana": "この{二|ふた}つの{漢字|かんじ}は{形|かたち}が{似|に}ているので、{間違|まちが}えやすい。",
+      "translationVi": "Hai chữ Kanji này có hình dạng giống nhau nên dễ nhầm."
+    },
+    {
+      "id": "cx-v-niru-niau-3",
+      "itemId": "ci-v-niru-niau-niau",
+      "japanese": "その青いシャツ、君によく似合うよ。",
+      "furigana": "その{青|あお}いシャツ、{君|きみ}によく{似合|にあ}うよ。",
+      "translationVi": "Cái áo sơ mi xanh đó rất hợp với cậu đấy."
+    },
+    {
+      "id": "cx-v-niru-niau-4",
+      "itemId": "ci-v-niru-niau-niau",
+      "japanese": "短い髪も似合っていますね。",
+      "furigana": "{短|みじか}い{髪|かみ}も{似合|にあ}っていますね。",
+      "translationVi": "Tóc ngắn cũng hợp với chị đấy."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-niru-niau-1",
+      "textVi": "似合う = 似 (giống) + 合う (khớp): 'khớp với' người mặc → hợp."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-niru-niau-1",
+      "situationVi": "Khen bạn mặc yukata đẹp.",
+      "wrong": {
+        "japanese": "その浴衣、とても似ているね。",
+        "furigana": "その{浴衣|ゆかた}、とても{似|に}ているね。"
+      },
+      "correct": {
+        "japanese": "その浴衣、とても似合っているね。",
+        "furigana": "その{浴衣|ゆかた}、とても{似合|にあ}っているね。"
+      },
+      "explanationVi": "Quần áo hợp với người → 似合う.",
+      "expectedItemId": "ci-v-niru-niau-niau",
+      "confusedWithItemId": "ci-v-niru-niau-niru"
+    },
+    {
+      "id": "ce-v-niru-niau-2",
+      "situationVi": "Nói con trai giống bố.",
+      "wrong": {
+        "japanese": "息子は父親に似合っている。",
+        "furigana": "{息子|むすこ}は{父親|ちちおや}に{似合|にあ}っている。"
+      },
+      "correct": {
+        "japanese": "息子は父親に似ている。",
+        "furigana": "{息子|むすこ}は{父親|ちちおや}に{似|に}ている。"
+      },
+      "explanationVi": "Hai người có điểm giống → 似ている.",
+      "expectedItemId": "ci-v-niru-niau-niru",
+      "confusedWithItemId": "ci-v-niru-niau-niau"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-niru-niau-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-niru-niau-niau",
+      "instructionVi": "Chọn câu khen đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "その帽子、田中さんによく似合いますね。",
+          "furigana": "その{帽子|ぼうし}、{田中|たなか}さんによく{似合|にあ}いますね。",
+          "itemId": "ci-v-niru-niau-niau"
+        },
+        {
+          "id": "b",
+          "text": "その帽子、田中さんによく似ていますね。",
+          "furigana": "その{帽子|ぼうし}、{田中|たなか}さんによく{似|に}ていますね。",
+          "itemId": "ci-v-niru-niau-niru",
+          "feedbackVi": "Cái mũ giống anh Tanaka? Ý khen 'hợp' phải dùng 似合う."
+        },
+        {
+          "id": "c",
+          "text": "その帽子、田中さんによく合わせますね。",
+          "furigana": "その{帽子|ぼうし}、{田中|たなか}さんによく{合|あ}わせますね。",
+          "feedbackVi": "合わせる là kết hợp, điều chỉnh cho khớp, không dùng để khen."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Mũ hợp với người → 似合う."
+    },
+    {
+      "id": "cq-v-niru-niau-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-niru-niau-niru",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "日本語の「ありがとう」は、ポルトガル語の「オブリガード」と音が少し＿＿＿いる。",
+        "furigana": "{日本語|にほんご}の「ありがとう」は、ポルトガル{語|ご}の「オブリガード」と{音|おと}が{少|すこ}し＿＿＿いる。",
+        "translationVi": "Chữ ありがとう tiếng Nhật có âm hơi giống obrigado tiếng Bồ Đào Nha."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "似て",
+          "furigana": "{似|に}て",
+          "itemId": "ci-v-niru-niau-niru"
+        },
+        {
+          "id": "b",
+          "text": "似合って",
+          "furigana": "{似合|にあ}って",
+          "itemId": "ci-v-niru-niau-niau"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Hai từ có âm giống nhau → 似ている."
+    },
+    {
+      "id": "cq-v-niru-niau-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-niru-niau-niru",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "私の性格は父に似合っている。",
+        "furigana": "{私|わたし}の{性格|せいかく}は{父|ちち}に{似合|にあ}っている。",
+        "translationVi": "Tính cách của tôi giống bố."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "私の性格は",
+          "furigana": "{私|わたし}の{性格|せいかく}は"
+        },
+        {
+          "id": "b",
+          "text": "父に",
+          "furigana": "{父|ちち}に"
+        },
+        {
+          "id": "c",
+          "text": "似合っている。",
+          "furigana": "{似合|にあ}っている。",
+          "itemId": "ci-v-niru-niau-niau"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "似ている。",
+        "furigana": "{似|に}ている。",
+        "itemId": "ci-v-niru-niau-niru"
+      },
+      "explanationVi": "Hai người giống nhau về tính cách → 似ている."
+    },
+    {
+      "id": "cq-v-niru-niau-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-niru-niau-niau",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn đi mua sắm với bạn thân, bạn ấy thử chiếc váy đỏ và bạn thấy rất hợp."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "わあ、赤がすごく似合う！",
+          "furigana": "わあ、{赤|あか}がすごく{似合|にあ}う！",
+          "itemId": "ci-v-niru-niau-niau"
+        },
+        {
+          "id": "b",
+          "text": "わあ、赤がすごく似ている！",
+          "furigana": "わあ、{赤|あか}がすごく{似|に}ている！",
+          "itemId": "ci-v-niru-niau-niru",
+          "feedbackVi": "似ている là giống; màu đỏ không 'giống' bạn."
+        },
+        {
+          "id": "c",
+          "text": "わあ、赤がすごく間に合う！",
+          "furigana": "わあ、{赤|あか}がすごく{間|ま}に{合|あ}う！",
+          "feedbackVi": "間に合う là kịp giờ, sai nghĩa."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Màu sắc hợp với người → 似合う."
+    }
+  ]
+}

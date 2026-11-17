@@ -1,0 +1,294 @@
+{
+  "id": "cg-g-oki-ni-goto-ni",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜おきに và 〜ごとに",
+  "summaryVi": "Cả hai nói sự việc lặp lại đều đặn. ごとに là 'cứ mỗi (đơn vị)', おきに là 'cứ cách (bỏ qua) bao nhiêu'. Với ngày, '2日おき' khác '2日ごと'; với khoảng thời gian ngắn hay khoảng cách, hai cách nói thường trùng nghĩa.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-oki-ni-goto-ni-oki",
+      "label": "〜おきに",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g157",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜おきに",
+          "structure": "Số lượng + おきに",
+          "meaningVi": "cứ cách…"
+        },
+        "sourceFingerprint": "sha256:c0eeae69007f608bac17c8c7ef389779a07ca75b197149eb9ae60cf99bb084a0"
+      },
+      "grammar": {
+        "meaningVi": "Cứ cách…",
+        "connection": "Số lượng ＋ おきに",
+        "nuanceVi": "Đếm phần bị bỏ qua ở giữa: 一日おき = cách một ngày (ngày 1, 3, 5…). Với phút, giờ, mét (5分おき、10メートルおき) thường hiểu như ごとに."
+      }
+    },
+    {
+      "id": "ci-g-oki-ni-goto-ni-goto",
+      "label": "〜ごとに",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g158",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜ごとに",
+          "structure": "N／Vる + ごとに",
+          "meaningVi": "cứ mỗi…"
+        },
+        "sourceFingerprint": "sha256:95985a7f791e82718ab93951af9c8c6eb391f16dfd9639eb313f8f0b7780d5d1"
+      },
+      "grammar": {
+        "meaningVi": "Cứ mỗi…",
+        "connection": "N／Số lượng／Vる ＋ ごとに",
+        "nuanceVi": "Mỗi khi đủ một đơn vị thì việc xảy ra: 一日ごと = mỗi ngày; 一週間ごと = mỗi tuần. Còn đi với danh từ, động từ: 家ごとに、会うごとに."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-oki-ni-goto-ni-1",
+      "titleVi": "Ngày, tuần, tháng: khác nhau rõ",
+      "bodyVi": "一日おきに = ngày có ngày không (1, 3, 5). 一日ごとに = ngày nào cũng (1, 2, 3). 二日おきに = cứ cách hai ngày (1, 4, 7); 二日ごとに = cứ hai ngày một lần (1, 3, 5). Đề thi hay hỏi chỗ này."
+    },
+    {
+      "id": "ct-g-oki-ni-goto-ni-2",
+      "titleVi": "Chỗ chỉ ごとに dùng được",
+      "bodyVi": "ごとに đi được với danh từ không phải số lượng (国ごとに、クラスごとに) và với động từ (会うごとに: mỗi lần gặp). おきに chỉ đi với số lượng."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "一日〜",
+      "values": {
+        "ci-g-oki-ni-goto-ni-oki": "Cách một ngày (ngày có, ngày không)",
+        "ci-g-oki-ni-goto-ni-goto": "Mỗi ngày"
+      }
+    },
+    {
+      "aspectVi": "Đi với danh từ, động từ",
+      "values": {
+        "ci-g-oki-ni-goto-ni-oki": "Không",
+        "ci-g-oki-ni-goto-ni-goto": "Được: 国ごとに、会うごとに"
+      }
+    },
+    {
+      "aspectVi": "Khoảng thời gian ngắn",
+      "values": {
+        "ci-g-oki-ni-goto-ni-oki": "5分おき ≈ cứ 5 phút",
+        "ci-g-oki-ni-goto-ni-goto": "5分ごと ≈ cứ 5 phút"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-oki-ni-goto-ni-1",
+      "itemId": "ci-g-oki-ni-goto-ni-oki",
+      "japanese": "この薬は一日おきに飲んでください。",
+      "furigana": "この{薬|くすり}は{一日|いちにち}おきに{飲|の}んでください。",
+      "translationVi": "Thuốc này hãy uống cách ngày."
+    },
+    {
+      "id": "cx-g-oki-ni-goto-ni-2",
+      "itemId": "ci-g-oki-ni-goto-ni-oki",
+      "japanese": "道には十メートルおきに木が植えてある。",
+      "furigana": "{道|みち}には{十|じゅう}メートルおきに{木|き}が{植|う}えてある。",
+      "translationVi": "Trên đường cứ cách mười mét lại trồng một cây."
+    },
+    {
+      "id": "cx-g-oki-ni-goto-ni-3",
+      "itemId": "ci-g-oki-ni-goto-ni-goto",
+      "japanese": "オリンピックは四年ごとに開かれる。",
+      "furigana": "オリンピックは{四年|よねん}ごとに{開|ひら}かれる。",
+      "translationVi": "Thế vận hội được tổ chức bốn năm một lần."
+    },
+    {
+      "id": "cx-g-oki-ni-goto-ni-4",
+      "itemId": "ci-g-oki-ni-goto-ni-goto",
+      "japanese": "国ごとに文化や習慣が違う。",
+      "furigana": "{国|くに}ごとに{文化|ぶんか}や{習慣|しゅうかん}が{違|ちが}う。",
+      "translationVi": "Mỗi nước có văn hóa và phong tục khác nhau."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-oki-ni-goto-ni-1",
+      "textVi": "おき = 'đặt (置く) khoảng trống ở giữa'; ごと = 'mỗi (毎) một đơn vị'."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-oki-ni-goto-ni-1",
+      "situationVi": "Bác sĩ dặn uống thuốc ngày nào cũng uống.",
+      "wrong": {
+        "japanese": "この薬は一日おきに飲むこと。毎日忘れないで。",
+        "furigana": "この{薬|くすり}は{一日|いちにち}おきに{飲|の}むこと。{毎日|まいにち}{忘|わす}れないで。"
+      },
+      "correct": {
+        "japanese": "この薬は一日ごとに飲むこと。毎日忘れないで。",
+        "furigana": "この{薬|くすり}は{一日|いちにち}ごとに{飲|の}むこと。{毎日|まいにち}{忘|わす}れないで。"
+      },
+      "explanationVi": "毎日 (mỗi ngày) mâu thuẫn với 一日おき (cách ngày). Uống mỗi ngày → 一日ごとに (hay 毎日).",
+      "expectedItemId": "ci-g-oki-ni-goto-ni-goto",
+      "confusedWithItemId": "ci-g-oki-ni-goto-ni-oki"
+    },
+    {
+      "id": "ce-g-oki-ni-goto-ni-2",
+      "situationVi": "Nói về đặc điểm của từng lớp học.",
+      "wrong": {
+        "japanese": "クラスおきに雰囲気が違う。",
+        "furigana": "クラスおきに{雰囲気|ふんいき}が{違|ちが}う。"
+      },
+      "correct": {
+        "japanese": "クラスごとに雰囲気が違う。",
+        "furigana": "クラスごとに{雰囲気|ふんいき}が{違|ちが}う。"
+      },
+      "explanationVi": "おきに chỉ đi với số lượng; với danh từ như クラス dùng ごとに.",
+      "expectedItemId": "ci-g-oki-ni-goto-ni-goto",
+      "confusedWithItemId": "ci-g-oki-ni-goto-ni-oki"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-oki-ni-goto-ni-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-oki-ni-goto-ni-oki",
+      "instructionVi": "Lịch tập: thứ Hai, thứ Tư, thứ Sáu, Chủ nhật… (ngày có ngày không). Câu nào đúng?",
+      "options": [
+        {
+          "id": "a",
+          "text": "一日おきにジムに行っている。",
+          "furigana": "{一日|いちにち}おきにジムに{行|い}っている。",
+          "itemId": "ci-g-oki-ni-goto-ni-oki"
+        },
+        {
+          "id": "b",
+          "text": "一日ごとにジムに行っている。",
+          "furigana": "{一日|いちにち}ごとにジムに{行|い}っている。",
+          "itemId": "ci-g-oki-ni-goto-ni-goto",
+          "feedbackVi": "一日ごと là ngày nào cũng đi."
+        },
+        {
+          "id": "c",
+          "text": "二日おきにジムに行っている。",
+          "furigana": "{二日|ふつか}おきにジムに{行|い}っている。",
+          "feedbackVi": "二日おき là cách hai ngày (thứ Hai, thứ Năm, Chủ nhật…), không đúng lịch."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Ngày có ngày không = cách một ngày → 一日おきに."
+    },
+    {
+      "id": "cq-g-oki-ni-goto-ni-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-oki-ni-goto-ni-goto",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "彼女は会う＿＿＿きれいになっていく。",
+        "furigana": "{彼女|かのじょ}は{会|あ}う＿＿＿きれいになっていく。",
+        "translationVi": "Mỗi lần gặp, cô ấy lại đẹp hơn."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ごとに",
+          "itemId": "ci-g-oki-ni-goto-ni-goto"
+        },
+        {
+          "id": "b",
+          "text": "おきに",
+          "itemId": "ci-g-oki-ni-goto-ni-oki",
+          "feedbackVi": "おきに chỉ đi với số lượng, không đi với động từ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Động từ + ごとに: mỗi lần làm việc đó."
+    },
+    {
+      "id": "cq-g-oki-ni-goto-ni-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-oki-ni-goto-ni-goto",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "この市では、ゴミの出し方が地区おきに決められている。",
+        "furigana": "この{市|し}では、ゴミの{出|だ}し{方|かた}が{地区|ちく}おきに{決|き}められている。",
+        "translationVi": "Ở thành phố này, rác được phân loại theo từng khu."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "この市では、",
+          "furigana": "この{市|し}では、"
+        },
+        {
+          "id": "b",
+          "text": "ゴミの出し方が",
+          "furigana": "ゴミの{出|だ}し{方|かた}が"
+        },
+        {
+          "id": "c",
+          "text": "地区おきに",
+          "furigana": "{地区|ちく}おきに",
+          "itemId": "ci-g-oki-ni-goto-ni-oki"
+        },
+        {
+          "id": "d",
+          "text": "決められている。",
+          "furigana": "{決|き}められている。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "地区ごとに",
+        "furigana": "{地区|ちく}ごとに",
+        "itemId": "ci-g-oki-ni-goto-ni-goto"
+      },
+      "explanationVi": "Với danh từ (地区) chỉ dùng ごとに."
+    },
+    {
+      "id": "cq-g-oki-ni-goto-ni-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-oki-ni-goto-ni-oki",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn giải thích với bạn mới rằng xe buýt ở bến này cứ 15 phút có một chuyến."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "このバス停は十五分おきにバスが来ますよ。",
+          "furigana": "このバス{停|てい}は{十五分|じゅうごふん}おきにバスが{来|き}ますよ。",
+          "itemId": "ci-g-oki-ni-goto-ni-oki"
+        },
+        {
+          "id": "b",
+          "text": "このバス停は十五分間にバスが来ますよ。",
+          "furigana": "このバス{停|てい}は{十五分|じゅうごふん}{間|あいだ}にバスが{来|き}ますよ。",
+          "feedbackVi": "15分間に là 'trong khoảng 15 phút', không nói sự lặp lại đều đặn."
+        },
+        {
+          "id": "c",
+          "text": "このバス停は十五分ばかりバスが来ますよ。",
+          "furigana": "このバス{停|てい}は{十五分|じゅうごふん}ばかりバスが{来|き}ますよ。",
+          "feedbackVi": "ばかり sai nghĩa ở đây."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Khoảng thời gian ngắn lặp lại đều đặn → 15分おきに (15分ごとに cũng được)."
+    }
+  ]
+}

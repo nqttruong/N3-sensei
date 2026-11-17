@@ -1,0 +1,341 @@
+{
+  "id": "cg-g-tokoro-ru-teiru-ta",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜るところだ, 〜ているところだ và 〜たところだ",
+  "summaryVi": "Ba mẫu ところだ chỉ vị trí của hành động trên dòng thời gian: sắp làm (Vる), đang làm (Vている), vừa làm xong (Vた). Chỉ khác ở dạng động từ đứng trước.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-tokoro-ru-teiru-ta-ru",
+      "label": "〜るところだ",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g154",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜るところだ",
+          "structure": "Vる + ところだ",
+          "meaningVi": "sắp…"
+        },
+        "sourceFingerprint": "sha256:08e6d2f6c75b3201d73311511f9c10d1a8134c09d6d2f60afd6f223e7b512736"
+      },
+      "grammar": {
+        "meaningVi": "Sắp…, chuẩn bị…",
+        "connection": "Vる ＋ ところだ",
+        "nuanceVi": "Hành động chưa bắt đầu nhưng sắp bắt đầu ngay. Hay đi với 今から、これから、ちょうど."
+      }
+    },
+    {
+      "id": "ci-g-tokoro-ru-teiru-ta-teiru",
+      "label": "〜ているところだ",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g155",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜ているところだ",
+          "structure": "Vている + ところだ",
+          "meaningVi": "đang…"
+        },
+        "sourceFingerprint": "sha256:e72f11a69f9f65c6387f534a516d6fa567a00bed91b3ef947589c03eb541b551"
+      },
+      "grammar": {
+        "meaningVi": "Đang…",
+        "connection": "Vている ＋ ところだ",
+        "nuanceVi": "Hành động đang diễn ra đúng lúc nói. Nhấn mạnh 'đang giữa chừng', hay đi với 今、ちょうど."
+      }
+    },
+    {
+      "id": "ci-g-tokoro-ru-teiru-ta-ta",
+      "label": "〜たところだ",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g156",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜たところだ",
+          "structure": "Vた + ところだ",
+          "meaningVi": "vừa mới… xong"
+        },
+        "sourceFingerprint": "sha256:b8a5a6663d21254276387ff5dc29027b41f8200adf79e8a438dab5b127477fa3"
+      },
+      "grammar": {
+        "meaningVi": "Vừa mới… xong",
+        "connection": "Vた ＋ ところだ",
+        "nuanceVi": "Hành động vừa kết thúc ngay trước lúc nói (cảm nhận của người nói). Hay đi với 今、ちょうど、たった今."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-tokoro-ru-teiru-ta-1",
+      "titleVi": "Một hành động, ba thời điểm",
+      "bodyVi": "今から食べるところだ (chưa ăn, sắp ăn) → 今食べているところだ (đang ăn) → 今食べたところだ (ăn xong rồi). Dạng động từ trước ところ quyết định thời điểm."
+    },
+    {
+      "id": "ct-g-tokoro-ru-teiru-ta-2",
+      "titleVi": "Lưu ý khi dùng",
+      "bodyVi": "たところだ chỉ dùng cho việc vừa xong ngay trước lúc nói; với khoảng thời gian dài hơn (tuần trước, tháng trước) dùng たばかりだ. Không dùng ところだ với từ chỉ thời gian cụ thể đã lâu như 三日前に."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Thời điểm",
+      "values": {
+        "ci-g-tokoro-ru-teiru-ta-ru": "Trước khi bắt đầu",
+        "ci-g-tokoro-ru-teiru-ta-teiru": "Đang diễn ra",
+        "ci-g-tokoro-ru-teiru-ta-ta": "Ngay sau khi kết thúc"
+      }
+    },
+    {
+      "aspectVi": "Dạng động từ",
+      "values": {
+        "ci-g-tokoro-ru-teiru-ta-ru": "Vる (từ điển)",
+        "ci-g-tokoro-ru-teiru-ta-teiru": "Vている",
+        "ci-g-tokoro-ru-teiru-ta-ta": "Vた"
+      }
+    },
+    {
+      "aspectVi": "Từ hay đi kèm",
+      "values": {
+        "ci-g-tokoro-ru-teiru-ta-ru": "今から、これから",
+        "ci-g-tokoro-ru-teiru-ta-teiru": "今、ちょうど今",
+        "ci-g-tokoro-ru-teiru-ta-ta": "今、たった今"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-tokoro-ru-teiru-ta-1",
+      "itemId": "ci-g-tokoro-ru-teiru-ta-ru",
+      "japanese": "今から出かけるところです。",
+      "furigana": "{今|いま}から{出|で}かけるところです。",
+      "translationVi": "Bây giờ tôi chuẩn bị đi ra ngoài."
+    },
+    {
+      "id": "cx-g-tokoro-ru-teiru-ta-2",
+      "itemId": "ci-g-tokoro-ru-teiru-ta-ru",
+      "japanese": "今ちょうどあなたに電話をかけるところでした。",
+      "furigana": "{今|いま}ちょうどあなたに{電話|でんわ}をかけるところでした。",
+      "translationVi": "Tôi đang định gọi điện cho bạn đúng lúc này."
+    },
+    {
+      "id": "cx-g-tokoro-ru-teiru-ta-3",
+      "itemId": "ci-g-tokoro-ru-teiru-ta-teiru",
+      "japanese": "今、レポートを書いているところだから、後で話そう。",
+      "furigana": "{今|いま}、レポートを{書|か}いているところだから、{後|あと}で{話|はな}そう。",
+      "translationVi": "Giờ mình đang viết báo cáo, lát nữa nói chuyện nhé."
+    },
+    {
+      "id": "cx-g-tokoro-ru-teiru-ta-4",
+      "itemId": "ci-g-tokoro-ru-teiru-ta-teiru",
+      "japanese": "父は今、車を洗っているところです。",
+      "furigana": "{父|ちち}は{今|いま}、{車|くるま}を{洗|あら}っているところです。",
+      "translationVi": "Bây giờ bố tôi đang rửa xe."
+    },
+    {
+      "id": "cx-g-tokoro-ru-teiru-ta-5",
+      "itemId": "ci-g-tokoro-ru-teiru-ta-ta",
+      "japanese": "今駅に着いたところです。",
+      "furigana": "{今|いま}{駅|えき}に{着|つ}いたところです。",
+      "translationVi": "Tôi vừa mới tới ga."
+    },
+    {
+      "id": "cx-g-tokoro-ru-teiru-ta-6",
+      "itemId": "ci-g-tokoro-ru-teiru-ta-ta",
+      "japanese": "会議はたった今終わったところだ。",
+      "furigana": "{会議|かいぎ}はたった{今|いま}{終|お}わったところだ。",
+      "translationVi": "Cuộc họp vừa mới kết thúc ngay lúc này."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-tokoro-ru-teiru-ta-1",
+      "textVi": "る = mũi tên chưa bắn, ている = mũi tên đang bay, た = mũi tên vừa cắm vào đích."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-tokoro-ru-teiru-ta-1",
+      "situationVi": "Bạn gọi rủ đi ăn, nhưng bạn vừa ăn xong.",
+      "wrong": {
+        "japanese": "ごめん、今ご飯を食べるところなんだ。",
+        "furigana": "ごめん、{今|いま}ご{飯|はん}を{食|た}べるところなんだ。"
+      },
+      "correct": {
+        "japanese": "ごめん、今ご飯を食べたところなんだ。",
+        "furigana": "ごめん、{今|いま}ご{飯|はん}を{食|た}べたところなんだ。"
+      },
+      "explanationVi": "Đã ăn xong rồi thì dùng Vた + ところ. 食べるところ là 'sắp ăn'.",
+      "expectedItemId": "ci-g-tokoro-ru-teiru-ta-ta",
+      "confusedWithItemId": "ci-g-tokoro-ru-teiru-ta-ru"
+    },
+    {
+      "id": "ce-g-tokoro-ru-teiru-ta-2",
+      "situationVi": "Đang tắm thì có khách.",
+      "wrong": {
+        "japanese": "今シャワーを浴びたところなので、少し待ってください。",
+        "furigana": "{今|いま}シャワーを{浴|あ}びたところなので、{少|すこ}し{待|ま}ってください。"
+      },
+      "correct": {
+        "japanese": "今シャワーを浴びているところなので、少し待ってください。",
+        "furigana": "{今|いま}シャワーを{浴|あ}びているところなので、{少|すこ}し{待|ま}ってください。"
+      },
+      "explanationVi": "Đang tắm (chưa xong) thì dùng Vている + ところ.",
+      "expectedItemId": "ci-g-tokoro-ru-teiru-ta-teiru",
+      "confusedWithItemId": "ci-g-tokoro-ru-teiru-ta-ta"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-tokoro-ru-teiru-ta-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-tokoro-ru-teiru-ta-ru",
+      "instructionVi": "Đồng hồ sắp điểm 9 giờ, bộ phim chưa bắt đầu. Câu nào đúng?",
+      "options": [
+        {
+          "id": "a",
+          "text": "映画がもうすぐ始まるところだ。",
+          "furigana": "{映画|えいが}がもうすぐ{始|はじ}まるところだ。",
+          "itemId": "ci-g-tokoro-ru-teiru-ta-ru"
+        },
+        {
+          "id": "b",
+          "text": "映画がもうすぐ始まったところだ。",
+          "furigana": "{映画|えいが}がもうすぐ{始|はじ}まったところだ。",
+          "itemId": "ci-g-tokoro-ru-teiru-ta-ta",
+          "feedbackVi": "始まったところ là 'vừa bắt đầu', nhưng phim chưa bắt đầu; もうすぐ cũng không đi với dạng た."
+        },
+        {
+          "id": "c",
+          "text": "映画がもうすぐ始まっているところだ。",
+          "furigana": "{映画|えいが}がもうすぐ{始|はじ}まっているところだ。",
+          "itemId": "ci-g-tokoro-ru-teiru-ta-teiru",
+          "feedbackVi": "始まっている là đã bắt đầu và đang chiếu; không hợp với もうすぐ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Chưa bắt đầu, sắp bắt đầu → Vる + ところだ."
+    },
+    {
+      "id": "cq-g-tokoro-ru-teiru-ta-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-tokoro-ru-teiru-ta-teiru",
+      "instructionVi": "Chọn dạng đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "「もしもし、今話せる？」「ごめん、今運転し＿＿＿ところなんだ。」",
+        "furigana": "「もしもし、{今|いま}{話|はな}せる？」「ごめん、{今|いま}{運転|うんてん}し＿＿＿ところなんだ。」",
+        "translationVi": "— Alo, giờ nói chuyện được không? — Xin lỗi, mình đang lái xe."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ている",
+          "itemId": "ci-g-tokoro-ru-teiru-ta-teiru"
+        },
+        {
+          "id": "b",
+          "text": "た",
+          "itemId": "ci-g-tokoro-ru-teiru-ta-ta",
+          "feedbackVi": "運転したところ là vừa lái xong; người nói không thể nghe điện vì đang lái."
+        },
+        {
+          "id": "c",
+          "text": "る",
+          "itemId": "ci-g-tokoro-ru-teiru-ta-ru",
+          "feedbackVi": "運転するところ là sắp lái, chưa phải lý do không nói chuyện được."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Đang lái xe nên không nói chuyện được → Vている + ところ."
+    },
+    {
+      "id": "cq-g-tokoro-ru-teiru-ta-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-tokoro-ru-teiru-ta-ta",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "電車は今出るところなので、次の電車まで二十分待たなければならない。",
+        "furigana": "{電車|でんしゃ}は{今|いま}{出|で}るところなので、{次|つぎ}の{電車|でんしゃ}まで{二十分|にじゅっぷん}{待|ま}たなければならない。",
+        "translationVi": "Tàu vừa mới chạy mất nên phải đợi chuyến tiếp theo 20 phút."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "電車は",
+          "furigana": "{電車|でんしゃ}は"
+        },
+        {
+          "id": "b",
+          "text": "今出るところなので、",
+          "furigana": "{今|いま}{出|で}るところなので、",
+          "itemId": "ci-g-tokoro-ru-teiru-ta-ru"
+        },
+        {
+          "id": "c",
+          "text": "次の電車まで",
+          "furigana": "{次|つぎ}の{電車|でんしゃ}まで"
+        },
+        {
+          "id": "d",
+          "text": "二十分待たなければならない。",
+          "furigana": "{二十分|にじゅっぷん}{待|ま}たなければならない。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "今出たところなので、",
+        "furigana": "{今|いま}{出|で}たところなので、",
+        "itemId": "ci-g-tokoro-ru-teiru-ta-ta"
+      },
+      "explanationVi": "Tàu đã chạy rồi (nên phải đợi chuyến sau) → Vた + ところ: 出たところ."
+    },
+    {
+      "id": "cq-g-tokoro-ru-teiru-ta-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-tokoro-ru-teiru-ta-ta",
+      "instructionVi": "Chọn câu trả lời phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn vừa đến chỗ hẹn được một phút thì bạn của bạn tới và xin lỗi vì đến muộn. Bạn muốn nói mình cũng vừa mới tới."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "大丈夫、私も今来たところだよ。",
+          "furigana": "{大丈夫|だいじょうぶ}、{私|わたし}も{今|いま}{来|き}たところだよ。",
+          "itemId": "ci-g-tokoro-ru-teiru-ta-ta"
+        },
+        {
+          "id": "b",
+          "text": "大丈夫、私も今来るところだよ。",
+          "furigana": "{大丈夫|だいじょうぶ}、{私|わたし}も{今|いま}{来|く}るところだよ。",
+          "itemId": "ci-g-tokoro-ru-teiru-ta-ru",
+          "feedbackVi": "来るところ là 'sắp tới', nhưng bạn đã ở đó rồi."
+        },
+        {
+          "id": "c",
+          "text": "大丈夫、私も今来ているところだよ。",
+          "furigana": "{大丈夫|だいじょうぶ}、{私|わたし}も{今|いま}{来|き}ているところだよ。",
+          "itemId": "ci-g-tokoro-ru-teiru-ta-teiru",
+          "feedbackVi": "来ているところ không dùng để nói 'vừa tới'."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Vừa mới tới → Vた + ところだ."
+    }
+  ]
+}

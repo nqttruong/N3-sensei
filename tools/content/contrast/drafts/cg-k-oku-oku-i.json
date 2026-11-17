@@ -1,0 +1,368 @@
+{
+  "id": "cg-k-oku-oku-i",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "億, 憶 và 意",
+  "summaryVi": "Ba chữ cùng có phần 意. 意 là ý nghĩ; thêm 亻 (người) thành 億 – trăm triệu; thêm 忄 (tim) thành 憶 – ghi nhớ. 億 và 憶 cùng đọc オク.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-oku-oku-i-hyaku",
+      "label": "億",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05104",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "億",
+          "onReadings": [
+            "オク"
+          ],
+          "kunReadings": [],
+          "meaningVi": "Trăm triệu"
+        },
+        "sourceFingerprint": "sha256:950e6bc41fa572f31e555e01a9e82d111fed434f926ea75b8598732be0d6d234"
+      },
+      "kanji": {
+        "meaningVi": "trăm triệu",
+        "hanViet": "ỨC",
+        "onReadings": [
+          "オク"
+        ],
+        "kunReadings": [],
+        "radical": {
+          "character": "亻",
+          "nameVi": "Nhân đứng (người)"
+        },
+        "shapeNoteVi": "亻 + 意: số người nhiều đến mức chỉ có thể 'nghĩ' ra → trăm triệu. 一億, 億万長者."
+      }
+    },
+    {
+      "id": "ci-k-oku-oku-i-kioku",
+      "label": "憶",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k061b6",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "憶",
+          "onReadings": [
+            "オク"
+          ],
+          "kunReadings": [],
+          "meaningVi": "Kí ức"
+        },
+        "sourceFingerprint": "sha256:8df26bd29227ca2403b91872374eeded51bdbd50b202d401687e1a08463a1c78"
+      },
+      "kanji": {
+        "meaningVi": "ghi nhớ, ký ức",
+        "hanViet": "ỨC",
+        "onReadings": [
+          "オク"
+        ],
+        "kunReadings": [],
+        "radical": {
+          "character": "忄",
+          "nameVi": "Tâm đứng (tim)"
+        },
+        "shapeNoteVi": "忄 + 意: ý nghĩ được giữ trong tim → nhớ. 記憶, 記憶力."
+      }
+    },
+    {
+      "id": "ci-k-oku-oku-i-i",
+      "label": "意",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k0610f",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "意",
+          "onReadings": [
+            "イ"
+          ],
+          "kunReadings": [],
+          "meaningVi": "Ý, ý nghĩ, tâm ý"
+        },
+        "sourceFingerprint": "sha256:a1a45e97a1fe6cf5e86693d1f4fe5b3a28f69e2f6b00a22f3cd6dae55f8b32da"
+      },
+      "kanji": {
+        "meaningVi": "ý, ý nghĩ, tâm ý",
+        "hanViet": "Ý",
+        "onReadings": [
+          "イ"
+        ],
+        "kunReadings": [],
+        "radical": {
+          "character": "心",
+          "nameVi": "Tâm (tim) ở dưới"
+        },
+        "shapeNoteVi": "音 (âm thanh) trên 心 (tim): tiếng nói của trái tim → ý nghĩ. 意味, 注意, 意見."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-oku-oku-i-1",
+      "titleVi": "Một gốc, ba nghĩa",
+      "bodyVi": "意 (ý nghĩ) là gốc. Có 亻 bên trái → 億 (số lượng người khổng lồ: trăm triệu). Có 忄 bên trái → 憶 (giữ ý nghĩ trong lòng: nhớ). Chỉ một mình → 意."
+    },
+    {
+      "id": "ct-k-oku-oku-i-2",
+      "titleVi": "Âm đọc dễ nhầm",
+      "bodyVi": "億 và 憶 cùng âm オク, nên phải dựa vào nghĩa: tiền, dân số → 億 (一億円, 人口一億人). Trí nhớ → 憶 (記憶). 意 đọc イ (意味, 注意)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ thủ",
+      "values": {
+        "ci-k-oku-oku-i-hyaku": "亻 (người)",
+        "ci-k-oku-oku-i-kioku": "忄 (tim)",
+        "ci-k-oku-oku-i-i": "心 ở dưới, không bộ trái"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-oku-oku-i-hyaku": "Trăm triệu",
+        "ci-k-oku-oku-i-kioku": "Ghi nhớ",
+        "ci-k-oku-oku-i-i": "Ý, ý nghĩ"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-oku-oku-i-hyaku": "一億、億万長者",
+        "ci-k-oku-oku-i-kioku": "記憶、記憶力",
+        "ci-k-oku-oku-i-i": "意味、注意、意見"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-oku-oku-i-1",
+      "itemId": "ci-k-oku-oku-i-hyaku",
+      "japanese": "日本の人口は約一億二千万人だ。",
+      "furigana": "{日本|にほん}の{人口|じんこう}は{約|やく}{一億|いちおく}{二千万人|にせんまんにん}だ。",
+      "translationVi": "Dân số Nhật Bản khoảng 120 triệu người."
+    },
+    {
+      "id": "cx-k-oku-oku-i-2",
+      "itemId": "ci-k-oku-oku-i-hyaku",
+      "japanese": "宝くじで一億円当たったら何をしたい？",
+      "furigana": "{宝|たから}くじで{一億円|いちおくえん}{当|あ}たったら{何|なに}をしたい？",
+      "translationVi": "Nếu trúng xổ số một trăm triệu yên, cậu muốn làm gì?"
+    },
+    {
+      "id": "cx-k-oku-oku-i-3",
+      "itemId": "ci-k-oku-oku-i-kioku",
+      "japanese": "子供のころの記憶はあまりない。",
+      "furigana": "{子供|こども}のころの{記憶|きおく}はあまりない。",
+      "translationVi": "Tôi không còn nhiều ký ức thời thơ ấu."
+    },
+    {
+      "id": "cx-k-oku-oku-i-4",
+      "itemId": "ci-k-oku-oku-i-kioku",
+      "japanese": "祖母は年を取っても記憶力がいい。",
+      "furigana": "{祖母|そぼ}は{年|とし}を{取|と}っても{記憶力|きおくりょく}がいい。",
+      "translationVi": "Bà tôi có tuổi rồi mà trí nhớ vẫn tốt."
+    },
+    {
+      "id": "cx-k-oku-oku-i-5",
+      "itemId": "ci-k-oku-oku-i-i",
+      "japanese": "この言葉の意味が分かりますか。",
+      "furigana": "この{言葉|ことば}の{意味|いみ}が{分|わ}かりますか。",
+      "translationVi": "Bạn có hiểu nghĩa của từ này không?"
+    },
+    {
+      "id": "cx-k-oku-oku-i-6",
+      "itemId": "ci-k-oku-oku-i-i",
+      "japanese": "車に注意して道を渡ってください。",
+      "furigana": "{車|くるま}に{注意|ちゅうい}して{道|みち}を{渡|わた}ってください。",
+      "translationVi": "Hãy chú ý xe cộ khi qua đường."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-oku-oku-i-1",
+      "textVi": "Người (亻) đông như ý nghĩ → 億. Ý nghĩ cất trong tim (忄) → 憶."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-oku-oku-i-1",
+      "situationVi": "Viết 'ký ức' (きおく).",
+      "wrong": {
+        "japanese": "その日の記億がない。",
+        "furigana": "その{日|ひ}の{記億|きおく}がない。"
+      },
+      "correct": {
+        "japanese": "その日の記憶がない。",
+        "furigana": "その{日|ひ}の{記憶|きおく}がない。"
+      },
+      "explanationVi": "Trí nhớ, ký ức → 憶 (bộ 忄).",
+      "expectedItemId": "ci-k-oku-oku-i-kioku",
+      "confusedWithItemId": "ci-k-oku-oku-i-hyaku"
+    },
+    {
+      "id": "ce-k-oku-oku-i-2",
+      "situationVi": "Viết 'một trăm triệu yên'.",
+      "wrong": {
+        "japanese": "家の値段は一憶円だった。",
+        "furigana": "{家|いえ}の{値段|ねだん}は{一憶円|いちおくえん}だった。"
+      },
+      "correct": {
+        "japanese": "家の値段は一億円だった。",
+        "furigana": "{家|いえ}の{値段|ねだん}は{一億円|いちおくえん}だった。"
+      },
+      "explanationVi": "Số trăm triệu → 億 (bộ 亻).",
+      "expectedItemId": "ci-k-oku-oku-i-hyaku",
+      "confusedWithItemId": "ci-k-oku-oku-i-kioku"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-oku-oku-i-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-oku-oku-i-kioku",
+      "instructionVi": "Chọn cách viết đúng của きおく (ký ức, trí nhớ).",
+      "options": [
+        {
+          "id": "a",
+          "text": "記億",
+          "itemId": "ci-k-oku-oku-i-hyaku",
+          "feedbackVi": "億 là trăm triệu."
+        },
+        {
+          "id": "b",
+          "text": "記意",
+          "itemId": "ci-k-oku-oku-i-i",
+          "feedbackVi": "意 là ý nghĩ; từ này không tồn tại."
+        },
+        {
+          "id": "c",
+          "text": "記憶",
+          "itemId": "ci-k-oku-oku-i-kioku"
+        }
+      ],
+      "correctOptionId": "c",
+      "explanationVi": "記憶: ghi nhớ trong lòng → 憶 (bộ 忄)."
+    },
+    {
+      "id": "cq-k-oku-oku-i-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-oku-oku-i-hyaku",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "この映画は世界で十＿＿＿円以上の売り上げがあった。",
+        "furigana": "この{映画|えいが}は{世界|せかい}で{十|じゅう}＿＿＿{円|えん}{以上|いじょう}の{売|う}り{上|あ}げがあった。",
+        "translationVi": "Bộ phim này có doanh thu hơn một tỷ yên trên toàn thế giới."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "億",
+          "itemId": "ci-k-oku-oku-i-hyaku"
+        },
+        {
+          "id": "b",
+          "text": "憶",
+          "itemId": "ci-k-oku-oku-i-kioku"
+        },
+        {
+          "id": "c",
+          "text": "意",
+          "itemId": "ci-k-oku-oku-i-i"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Đơn vị số trăm triệu → 億 (十億 = một tỷ)."
+    },
+    {
+      "id": "cq-k-oku-oku-i-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-oku-oku-i-i",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "その言葉の憶味がよく分かった。",
+        "furigana": "その{言葉|ことば}の{憶味|おくみ}がよく{分|わ}かった。",
+        "translationVi": "Tôi hiểu rõ ý nghĩa của lời nói đó."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "その言葉の",
+          "furigana": "その{言葉|ことば}の"
+        },
+        {
+          "id": "b",
+          "text": "憶味が",
+          "furigana": "{憶味|おくみ}が",
+          "itemId": "ci-k-oku-oku-i-kioku"
+        },
+        {
+          "id": "c",
+          "text": "よく"
+        },
+        {
+          "id": "d",
+          "text": "分かった。",
+          "furigana": "{分|わ}かった。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "意味が",
+        "furigana": "{意味|いみ}が",
+        "itemId": "ci-k-oku-oku-i-i"
+      },
+      "explanationVi": "意味 (ý nghĩa) viết với 意."
+    },
+    {
+      "id": "cq-k-oku-oku-i-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-oku-oku-i-kioku",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn kể rằng sau tai nạn, anh ấy mất một phần trí nhớ."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "事故の後、彼は記憶の一部を失った。",
+          "furigana": "{事故|じこ}の{後|あと}、{彼|かれ}は{記憶|きおく}の{一部|いちぶ}を{失|うしな}った。",
+          "itemId": "ci-k-oku-oku-i-kioku"
+        },
+        {
+          "id": "b",
+          "text": "事故の後、彼は記億の一部を失った。",
+          "furigana": "{事故|じこ}の{後|あと}、{彼|かれ}は{記億|きおく}の{一部|いちぶ}を{失|うしな}った。",
+          "itemId": "ci-k-oku-oku-i-hyaku",
+          "feedbackVi": "記憶 viết với 憶 (bộ 忄), không phải 億."
+        },
+        {
+          "id": "c",
+          "text": "事故の後、彼は記意の一部を失った。",
+          "furigana": "{事故|じこ}の{後|あと}、{彼|かれ}は{記意|きおく}の{一部|いちぶ}を{失|うしな}った。",
+          "itemId": "ci-k-oku-oku-i-i",
+          "feedbackVi": "記憶 viết với 憶, không phải 意."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "記憶 (trí nhớ) viết với 憶."
+    }
+  ]
+}

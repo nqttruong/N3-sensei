@@ -1,0 +1,294 @@
+{
+  "id": "cg-g-nimotozuite-womotoni",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜にもとづいて và 〜をもとに",
+  "summaryVi": "Cả hai nghĩa 'dựa trên'. にもとづいて là làm theo, không lệch khỏi một căn cứ, quy tắc (luật, dữ liệu, kế hoạch); をもとに là lấy một thứ làm chất liệu, gốc rồi tạo ra cái mới (phim dựa trên tiểu thuyết).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-nimotozuite-womotoni-motozuite",
+      "label": "〜にもとづいて／〜にもとづき",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g093",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜にもとづいて／〜にもとづき",
+          "structure": "N ＋ にもとづいて／にもとづき／にもとづく N",
+          "meaningVi": "dựa trên…, căn cứ vào…"
+        },
+        "sourceFingerprint": "sha256:581e39c50f70c0d8d37b9624c371d106a0c508922134823d671cf5abb8af1018"
+      },
+      "grammar": {
+        "meaningVi": "Dựa trên…, căn cứ vào…",
+        "connection": "N ＋ にもとづいて／にもとづき／にもとづく N",
+        "nuanceVi": "Căn cứ được tuân theo, làm nền cho phán đoán, hành động: 法律に基づいて判断する、データに基づく分析、計画に基づいて進める."
+      }
+    },
+    {
+      "id": "ci-g-nimotozuite-womotoni-motoni",
+      "label": "〜をもとに（して）",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g094",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜をもとに（して）",
+          "structure": "N ＋ をもとに（して）／をもとにした N",
+          "meaningVi": "dựa vào… (làm chất liệu, gốc)"
+        },
+        "sourceFingerprint": "sha256:2a34b6b192c59c5859a58e267619ff736e62e472e78c8e215fe9c657777a5a59"
+      },
+      "grammar": {
+        "meaningVi": "Dựa vào… (làm chất liệu, gốc)",
+        "connection": "N ＋ をもとに（して）／をもとにした N",
+        "nuanceVi": "Lấy N làm nguyên liệu để sáng tác, tạo ra cái mới: 実話をもとにした映画、アンケートをもとに商品を開発する."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-nimotozuite-womotoni-1",
+      "titleVi": "Tuân theo hay lấy làm chất liệu",
+      "bodyVi": "Hành động là phán đoán, xử lý, tiến hành theo quy định → にもとづいて (規則に基づいて処分する). Hành động là tạo ra cái mới (作る、書く、映画化する) → をもとに (経験をもとに小説を書く)."
+    },
+    {
+      "id": "ct-g-nimotozuite-womotoni-2",
+      "titleVi": "Trợ từ đi kèm",
+      "bodyVi": "にもとづいて đi với に; をもとに đi với を. Lỗi hay gặp là lẫn trợ từ: ×をもとづいて、×にもとに."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Ý nghĩa",
+      "values": {
+        "ci-g-nimotozuite-womotoni-motozuite": "Căn cứ, tuân theo",
+        "ci-g-nimotozuite-womotoni-motoni": "Chất liệu, gốc để tạo ra"
+      }
+    },
+    {
+      "aspectVi": "Danh từ hay đi trước",
+      "values": {
+        "ci-g-nimotozuite-womotoni-motozuite": "法律、規則、データ、計画、事実",
+        "ci-g-nimotozuite-womotoni-motoni": "小説、実話、経験、アンケート"
+      }
+    },
+    {
+      "aspectVi": "Trợ từ",
+      "values": {
+        "ci-g-nimotozuite-womotoni-motozuite": "に ＋ もとづいて",
+        "ci-g-nimotozuite-womotoni-motoni": "を ＋ もとに"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-nimotozuite-womotoni-1",
+      "itemId": "ci-g-nimotozuite-womotoni-motozuite",
+      "japanese": "会社の規則に基づいて、処分が決められた。",
+      "furigana": "{会社|かいしゃ}の{規則|きそく}に{基|もと}づいて、{処分|しょぶん}が{決|き}められた。",
+      "translationVi": "Hình thức xử lý được quyết định dựa trên nội quy công ty."
+    },
+    {
+      "id": "cx-g-nimotozuite-womotoni-2",
+      "itemId": "ci-g-nimotozuite-womotoni-motozuite",
+      "japanese": "この報告書は調査データに基づいて書かれている。",
+      "furigana": "この{報告書|ほうこくしょ}は{調査|ちょうさ}データに{基|もと}づいて{書|か}かれている。",
+      "translationVi": "Bản báo cáo này được viết căn cứ vào dữ liệu điều tra."
+    },
+    {
+      "id": "cx-g-nimotozuite-womotoni-3",
+      "itemId": "ci-g-nimotozuite-womotoni-motoni",
+      "japanese": "この映画は実際にあった話をもとに作られた。",
+      "furigana": "この{映画|えいが}は{実際|じっさい}にあった{話|はなし}をもとに{作|つく}られた。",
+      "translationVi": "Bộ phim này được làm dựa trên câu chuyện có thật."
+    },
+    {
+      "id": "cx-g-nimotozuite-womotoni-4",
+      "itemId": "ci-g-nimotozuite-womotoni-motoni",
+      "japanese": "お客様の意見をもとに、新しい商品を開発した。",
+      "furigana": "お{客様|きゃくさま}の{意見|いけん}をもとに、{新|あたら}しい{商品|しょうひん}を{開発|かいはつ}した。",
+      "translationVi": "Chúng tôi phát triển sản phẩm mới dựa trên ý kiến khách hàng."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-nimotozuite-womotoni-1",
+      "textVi": "基づく: đứng 'trên nền móng' (基) – không được lệch. もとに: lấy 'nguyên liệu gốc' (元) – rồi biến thành cái khác."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-nimotozuite-womotoni-1",
+      "situationVi": "Bộ phim hoạt hình được làm dựa trên một cuốn truyện tranh.",
+      "wrong": {
+        "japanese": "このアニメは人気漫画に基づいて作られた。",
+        "furigana": "このアニメは{人気|にんき}{漫画|まんが}に{基|もと}づいて{作|つく}られた。"
+      },
+      "correct": {
+        "japanese": "このアニメは人気漫画をもとに作られた。",
+        "furigana": "このアニメは{人気|にんき}{漫画|まんが}をもとに{作|つく}られた。"
+      },
+      "explanationVi": "Lấy truyện tranh làm chất liệu để tạo ra phim → をもとに.",
+      "expectedItemId": "ci-g-nimotozuite-womotoni-motoni",
+      "confusedWithItemId": "ci-g-nimotozuite-womotoni-motozuite"
+    },
+    {
+      "id": "ce-g-nimotozuite-womotoni-2",
+      "situationVi": "Thẩm phán phán quyết theo luật.",
+      "wrong": {
+        "japanese": "裁判官は法律をもとに判断する。",
+        "furigana": "{裁判官|さいばんかん}は{法律|ほうりつ}をもとに{判断|はんだん}する。"
+      },
+      "correct": {
+        "japanese": "裁判官は法律に基づいて判断する。",
+        "furigana": "{裁判官|さいばんかん}は{法律|ほうりつ}に{基|もと}づいて{判断|はんだん}する。"
+      },
+      "explanationVi": "Phán quyết tuân theo luật, không phải lấy luật làm chất liệu sáng tác → に基づいて.",
+      "expectedItemId": "ci-g-nimotozuite-womotoni-motozuite",
+      "confusedWithItemId": "ci-g-nimotozuite-womotoni-motoni"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-nimotozuite-womotoni-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-nimotozuite-womotoni-motozuite",
+      "instructionVi": "Câu nào tự nhiên nhất?",
+      "options": [
+        {
+          "id": "a",
+          "text": "計画に基づいて、工事を進める。",
+          "furigana": "{計画|けいかく}に{基|もと}づいて、{工事|こうじ}を{進|すす}める。",
+          "itemId": "ci-g-nimotozuite-womotoni-motozuite"
+        },
+        {
+          "id": "b",
+          "text": "計画をもとづいて、工事を進める。",
+          "furigana": "{計画|けいかく}をもとづいて、{工事|こうじ}を{進|すす}める。",
+          "feedbackVi": "Sai trợ từ: phải là に基づいて."
+        },
+        {
+          "id": "c",
+          "text": "計画にもとにして、工事を進める。",
+          "furigana": "{計画|けいかく}にもとにして、{工事|こうじ}を{進|すす}める。",
+          "feedbackVi": "Sai trợ từ: phải là をもとにして."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tiến hành theo đúng kế hoạch → 計画に基づいて."
+    },
+    {
+      "id": "cq-g-nimotozuite-womotoni-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-nimotozuite-womotoni-motoni",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "祖母から聞いた戦争の話＿＿＿、小説を書いた。",
+        "furigana": "{祖母|そぼ}から{聞|き}いた{戦争|せんそう}の{話|はなし}＿＿＿、{小説|しょうせつ}を{書|か}いた。",
+        "translationVi": "Tôi viết tiểu thuyết dựa trên chuyện chiến tranh nghe từ bà."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "をもとに",
+          "itemId": "ci-g-nimotozuite-womotoni-motoni"
+        },
+        {
+          "id": "b",
+          "text": "に基づいて",
+          "furigana": "に{基|もと}づいて",
+          "itemId": "ci-g-nimotozuite-womotoni-motozuite",
+          "feedbackVi": "Chuyện bà kể là chất liệu để sáng tác, không phải căn cứ phải tuân theo."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Lấy câu chuyện làm chất liệu sáng tác tiểu thuyết → をもとに."
+    },
+    {
+      "id": "cq-g-nimotozuite-womotoni-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-nimotozuite-womotoni-motozuite",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "税金は前の年の収入を基づいて計算される。",
+        "furigana": "{税金|ぜいきん}は{前|まえ}の{年|とし}の{収入|しゅうにゅう}を{基|もと}づいて{計算|けいさん}される。",
+        "translationVi": "Thuế được tính căn cứ theo thu nhập năm trước."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "税金は",
+          "furigana": "{税金|ぜいきん}は"
+        },
+        {
+          "id": "b",
+          "text": "前の年の収入を",
+          "furigana": "{前|まえ}の{年|とし}の{収入|しゅうにゅう}を"
+        },
+        {
+          "id": "c",
+          "text": "基づいて",
+          "furigana": "{基|もと}づいて",
+          "itemId": "ci-g-nimotozuite-womotoni-motozuite"
+        },
+        {
+          "id": "d",
+          "text": "計算される。",
+          "furigana": "{計算|けいさん}される。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "前の年の収入に",
+        "furigana": "{前|まえ}の{年|とし}の{収入|しゅうにゅう}に",
+        "itemId": "ci-g-nimotozuite-womotoni-motozuite"
+      },
+      "explanationVi": "基づく đi với trợ từ に: 収入に基づいて."
+    },
+    {
+      "id": "cq-g-nimotozuite-womotoni-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-nimotozuite-womotoni-motoni",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn giới thiệu một trò chơi mà nhóm bạn tự làm, lấy cảm hứng và chất liệu từ truyền thuyết cổ của Nhật."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "このゲームは日本の昔話をもとにして作りました。",
+          "furigana": "このゲームは{日本|にほん}の{昔話|むかしばなし}をもとにして{作|つく}りました。",
+          "itemId": "ci-g-nimotozuite-womotoni-motoni"
+        },
+        {
+          "id": "b",
+          "text": "このゲームは日本の昔話に対して作りました。",
+          "furigana": "このゲームは{日本|にほん}の{昔話|むかしばなし}に{対|たい}して{作|つく}りました。",
+          "feedbackVi": "に対して là 'đối với, hướng tới', sai nghĩa."
+        },
+        {
+          "id": "c",
+          "text": "このゲームは日本の昔話を基づいて作りました。",
+          "furigana": "このゲームは{日本|にほん}の{昔話|むかしばなし}を{基|もと}づいて{作|つく}りました。",
+          "feedbackVi": "Sai trợ từ (を基づいて) và sai sắc thái: đây là sáng tác từ chất liệu."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Lấy truyện cổ làm chất liệu sáng tác → をもとにして."
+    }
+  ]
+}

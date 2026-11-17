@@ -1,0 +1,385 @@
+{
+  "id": "cg-k-shi-gi-eda",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "支, 技 và 枝",
+  "summaryVi": "Ba chữ cùng có phần 支. 支 là chống đỡ, chi (tiền); thêm 扌 (tay) thành 技 – kỹ năng (khéo tay); thêm 木 (cây) thành 枝 – cành cây (nhánh tách ra từ thân).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-shi-gi-eda-sasaeru",
+      "label": "支",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k0652f",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "支",
+          "onReadings": [
+            "シ"
+          ],
+          "kunReadings": [
+            "ささ.える",
+            "つか.える",
+            "か.う"
+          ],
+          "meaningVi": "Nâng đỡ"
+        },
+        "sourceFingerprint": "sha256:d070dd499c270b5d89290e5b456dd689950d7de805414e332abc56c03de7cd10"
+      },
+      "kanji": {
+        "meaningVi": "chống đỡ; chi ra; nhánh",
+        "hanViet": "CHI",
+        "onReadings": [
+          "シ"
+        ],
+        "kunReadings": [
+          "ささ.える",
+          "つか.える",
+          "か.う"
+        ],
+        "radical": {
+          "character": "支",
+          "nameVi": "Chi – chính là bộ thủ"
+        },
+        "shapeNoteVi": "Hình bàn tay cầm cành tre: chống đỡ, tách nhánh. 支える, 支出, 支店."
+      }
+    },
+    {
+      "id": "ci-k-shi-gi-eda-waza",
+      "label": "技",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k06280",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "技",
+          "onReadings": [
+            "ギ"
+          ],
+          "kunReadings": [
+            "わざ"
+          ],
+          "meaningVi": "Kỹ năng"
+        },
+        "sourceFingerprint": "sha256:f980e8e3c747c55b72bcf4ee30d161bc1d7ba504d17f1b4bc990323c5afa166a"
+      },
+      "kanji": {
+        "meaningVi": "kỹ năng, kỹ thuật",
+        "hanViet": "KĨ",
+        "onReadings": [
+          "ギ"
+        ],
+        "kunReadings": [
+          "わざ"
+        ],
+        "radical": {
+          "character": "扌",
+          "nameVi": "Thủ (tay)"
+        },
+        "shapeNoteVi": "扌 + 支: đôi tay khéo léo → kỹ năng. 技術, 演技, 競技."
+      }
+    },
+    {
+      "id": "ci-k-shi-gi-eda-eda",
+      "label": "枝",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k0679d",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "枝",
+          "onReadings": [
+            "シ"
+          ],
+          "kunReadings": [
+            "えだ"
+          ],
+          "meaningVi": "Cành cây"
+        },
+        "sourceFingerprint": "sha256:25c8ddd1e493a022e3e474140cbd21cccbe57c326e85ecaae5c41fd428266111"
+      },
+      "kanji": {
+        "meaningVi": "cành cây",
+        "hanViet": "CHI",
+        "onReadings": [
+          "シ"
+        ],
+        "kunReadings": [
+          "えだ"
+        ],
+        "radical": {
+          "character": "木",
+          "nameVi": "Mộc (cây)"
+        },
+        "shapeNoteVi": "木 + 支: nhánh tách ra từ thân cây → cành. 枝, 枝豆."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-shi-gi-eda-1",
+      "titleVi": "Bộ bên trái",
+      "bodyVi": "Không có bộ: 支 (chống đỡ, chi tiền, chi nhánh). 扌 (tay) → 技 (kỹ năng khéo tay). 木 (cây) → 枝 (cành cây). 支 và 枝 cùng âm シ; 技 đọc ギ."
+    },
+    {
+      "id": "ct-k-shi-gi-eda-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "支: 支える (nâng đỡ), 支出 (chi tiêu), 支店 (chi nhánh), 支払う (thanh toán). 技: 技術 (kỹ thuật), 演技 (diễn xuất), 競技 (môn thi đấu). 枝: 枝 (cành), 枝豆 (đậu nành non)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ bên trái",
+      "values": {
+        "ci-k-shi-gi-eda-sasaeru": "Không có",
+        "ci-k-shi-gi-eda-waza": "扌 (tay)",
+        "ci-k-shi-gi-eda-eda": "木 (cây)"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-shi-gi-eda-sasaeru": "Chống đỡ, chi",
+        "ci-k-shi-gi-eda-waza": "Kỹ năng",
+        "ci-k-shi-gi-eda-eda": "Cành cây"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-shi-gi-eda-sasaeru": "支える、支出、支店",
+        "ci-k-shi-gi-eda-waza": "技術、演技、競技",
+        "ci-k-shi-gi-eda-eda": "枝、枝豆"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-shi-gi-eda-1",
+      "itemId": "ci-k-shi-gi-eda-sasaeru",
+      "japanese": "家族が私を支えてくれた。",
+      "furigana": "{家族|かぞく}が{私|わたし}を{支|ささ}えてくれた。",
+      "translationVi": "Gia đình đã nâng đỡ tôi."
+    },
+    {
+      "id": "cx-k-shi-gi-eda-2",
+      "itemId": "ci-k-shi-gi-eda-sasaeru",
+      "japanese": "今月は支出が多すぎた。",
+      "furigana": "{今月|こんげつ}は{支出|ししゅつ}が{多|おお}すぎた。",
+      "translationVi": "Tháng này chi tiêu nhiều quá."
+    },
+    {
+      "id": "cx-k-shi-gi-eda-3",
+      "itemId": "ci-k-shi-gi-eda-waza",
+      "japanese": "この会社は高い技術を持っている。",
+      "furigana": "この{会社|かいしゃ}は{高|たか}い{技術|ぎじゅつ}を{持|も}っている。",
+      "translationVi": "Công ty này có kỹ thuật cao."
+    },
+    {
+      "id": "cx-k-shi-gi-eda-4",
+      "itemId": "ci-k-shi-gi-eda-waza",
+      "japanese": "あの俳優の演技はすばらしい。",
+      "furigana": "あの{俳優|はいゆう}の{演技|えんぎ}はすばらしい。",
+      "translationVi": "Diễn xuất của diễn viên đó thật tuyệt."
+    },
+    {
+      "id": "cx-k-shi-gi-eda-5",
+      "itemId": "ci-k-shi-gi-eda-eda",
+      "japanese": "雪の重さで木の枝が折れた。",
+      "furigana": "{雪|ゆき}の{重|おも}さで{木|き}の{枝|えだ}が{折|お}れた。",
+      "translationVi": "Sức nặng của tuyết làm gãy cành cây."
+    },
+    {
+      "id": "cx-k-shi-gi-eda-6",
+      "itemId": "ci-k-shi-gi-eda-eda",
+      "japanese": "夏はビールと枝豆が合う。",
+      "furigana": "{夏|なつ}はビールと{枝豆|えだまめ}が{合|あ}う。",
+      "translationVi": "Mùa hè bia rất hợp với đậu nành non."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-shi-gi-eda-1",
+      "textVi": "Tay (扌) khéo → 技; cây (木) mọc nhánh → 枝; chỉ 支 thì là cái chống đỡ."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-shi-gi-eda-1",
+      "situationVi": "Viết 'kỹ thuật'.",
+      "wrong": {
+        "japanese": "日本の支術はすばらしい。",
+        "furigana": "{日本|にほん}の{支術|しじゅつ}はすばらしい。"
+      },
+      "correct": {
+        "japanese": "日本の技術はすばらしい。",
+        "furigana": "{日本|にほん}の{技術|ぎじゅつ}はすばらしい。"
+      },
+      "explanationVi": "Kỹ thuật (khéo tay) → 技 (bộ 扌).",
+      "expectedItemId": "ci-k-shi-gi-eda-waza",
+      "confusedWithItemId": "ci-k-shi-gi-eda-sasaeru"
+    },
+    {
+      "id": "ce-k-shi-gi-eda-2",
+      "situationVi": "Viết 'cành cây'.",
+      "wrong": {
+        "japanese": "鳥が木の技にとまっている。",
+        "furigana": "{鳥|とり}が{木|き}の{技|わざ}にとまっている。"
+      },
+      "correct": {
+        "japanese": "鳥が木の枝にとまっている。",
+        "furigana": "{鳥|とり}が{木|き}の{枝|えだ}にとまっている。"
+      },
+      "explanationVi": "Cành cây → 枝 (bộ 木).",
+      "expectedItemId": "ci-k-shi-gi-eda-eda",
+      "confusedWithItemId": "ci-k-shi-gi-eda-waza"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-shi-gi-eda-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-shi-gi-eda-waza",
+      "instructionVi": "Chọn cách viết đúng của えんぎ (diễn xuất).",
+      "options": [
+        {
+          "id": "a",
+          "text": "演支",
+          "itemId": "ci-k-shi-gi-eda-sasaeru",
+          "feedbackVi": "支 là chống đỡ."
+        },
+        {
+          "id": "b",
+          "text": "演枝",
+          "itemId": "ci-k-shi-gi-eda-eda",
+          "feedbackVi": "枝 là cành cây."
+        },
+        {
+          "id": "c",
+          "text": "演技",
+          "itemId": "ci-k-shi-gi-eda-waza"
+        }
+      ],
+      "correctOptionId": "c",
+      "explanationVi": "演技: kỹ năng biểu diễn → 技 (bộ 扌)."
+    },
+    {
+      "id": "cq-k-shi-gi-eda-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-shi-gi-eda-sasaeru",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "会計でカードで＿＿＿払いをした。",
+        "furigana": "{会計|かいけい}でカードで＿＿＿{払|はら}いをした。",
+        "translationVi": "Tôi thanh toán bằng thẻ ở quầy tính tiền."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "支",
+          "itemId": "ci-k-shi-gi-eda-sasaeru"
+        },
+        {
+          "id": "b",
+          "text": "技",
+          "itemId": "ci-k-shi-gi-eda-waza"
+        },
+        {
+          "id": "c",
+          "text": "枝",
+          "itemId": "ci-k-shi-gi-eda-eda"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "支払い (thanh toán) viết với 支 (chi ra)."
+    },
+    {
+      "id": "cq-k-shi-gi-eda-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-shi-gi-eda-eda",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "強い風で桜の支が揺れている。",
+        "furigana": "{強|つよ}い{風|かぜ}で{桜|さくら}の{支|し}が{揺|ゆ}れている。",
+        "translationVi": "Gió mạnh làm cành hoa anh đào rung lắc."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "強い風で",
+          "furigana": "{強|つよ}い{風|かぜ}で"
+        },
+        {
+          "id": "b",
+          "text": "桜の",
+          "furigana": "{桜|さくら}の"
+        },
+        {
+          "id": "c",
+          "text": "支が",
+          "furigana": "{支|し}が",
+          "itemId": "ci-k-shi-gi-eda-sasaeru"
+        },
+        {
+          "id": "d",
+          "text": "揺れている。",
+          "furigana": "{揺|ゆ}れている。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "枝が",
+        "furigana": "{枝|えだ}が",
+        "itemId": "ci-k-shi-gi-eda-eda"
+      },
+      "explanationVi": "Cành cây → 枝."
+    },
+    {
+      "id": "cq-k-shi-gi-eda-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-shi-gi-eda-waza",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn khen kỹ thuật của một thợ gốm lâu năm."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "長年の経験で身につけた技術ですね。",
+          "furigana": "{長年|ながねん}の{経験|けいけん}で{身|み}につけた{技術|ぎじゅつ}ですね。",
+          "itemId": "ci-k-shi-gi-eda-waza"
+        },
+        {
+          "id": "b",
+          "text": "長年の経験で身につけた支術ですね。",
+          "furigana": "{長年|ながねん}の{経験|けいけん}で{身|み}につけた{支術|しじゅつ}ですね。",
+          "itemId": "ci-k-shi-gi-eda-sasaeru",
+          "feedbackVi": "技術 viết với 技, không phải 支."
+        },
+        {
+          "id": "c",
+          "text": "長年の経験で身につけた枝術ですね。",
+          "furigana": "{長年|ながねん}の{経験|けいけん}で{身|み}につけた{枝術|しじゅつ}ですね。",
+          "itemId": "ci-k-shi-gi-eda-eda",
+          "feedbackVi": "技術 viết với 技, không phải 枝."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "技術 (kỹ thuật) viết với 技."
+    }
+  ]
+}

@@ -1,0 +1,383 @@
+{
+  "id": "cg-k-soku-soku-soku",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "則, 側 và 測",
+  "summaryVi": "Ba chữ cùng đọc ソク và cùng có phần 則. 則 là quy tắc; thêm 亻 (người) thành 側 – phía, bên cạnh; thêm 氵 (nước) thành 測 – đo lường (đo mực nước).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-soku-soku-soku-kisoku",
+      "label": "則",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05247",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "則",
+          "onReadings": [
+            "ソク"
+          ],
+          "kunReadings": [
+            "のっと.る",
+            "のり",
+            "すなわち"
+          ],
+          "meaningVi": "Quy tắc"
+        },
+        "sourceFingerprint": "sha256:5a68714302be61d07a0c5b23b5a608361417274c2249178471211edb7063f87e"
+      },
+      "kanji": {
+        "meaningVi": "quy tắc, phép tắc",
+        "hanViet": "TẮC",
+        "onReadings": [
+          "ソク"
+        ],
+        "kunReadings": [
+          "のっと.る",
+          "のり",
+          "すなわち"
+        ],
+        "radical": {
+          "character": "刂",
+          "nameVi": "Đao (con dao)"
+        },
+        "shapeNoteVi": "貝 + 刂: khắc luật lên đồ đồng bằng dao → quy tắc. 規則, 原則."
+      }
+    },
+    {
+      "id": "ci-k-soku-soku-soku-gawa",
+      "label": "側",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05074",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "側",
+          "onReadings": [
+            "ソク"
+          ],
+          "kunReadings": [
+            "かわ",
+            "がわ",
+            "そば"
+          ],
+          "meaningVi": "Phía, bên cạnh"
+        },
+        "sourceFingerprint": "sha256:2b9ac8327542eb3d997477b3c8d25ce9ca4f1d82617e76d73cca111a48e7a52c"
+      },
+      "kanji": {
+        "meaningVi": "phía, bên",
+        "hanViet": "TRẮC",
+        "onReadings": [
+          "ソク"
+        ],
+        "kunReadings": [
+          "かわ",
+          "がわ",
+          "そば"
+        ],
+        "radical": {
+          "character": "亻",
+          "nameVi": "Nhân đứng (người)"
+        },
+        "shapeNoteVi": "亻 + 則: người đứng ở một bên → phía, bên cạnh. 側, 右側, 側面."
+      }
+    },
+    {
+      "id": "ci-k-soku-soku-soku-hakaru",
+      "label": "測",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k06e2c",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "測",
+          "onReadings": [
+            "ソク"
+          ],
+          "kunReadings": [
+            "はか.る"
+          ],
+          "meaningVi": "Đo lường, ước lượng, phỏng đoán"
+        },
+        "sourceFingerprint": "sha256:e0af955bb42ab832149bcd4a2ae95a91d4cae8ec03f637cd514c7632c0f3f0d0"
+      },
+      "kanji": {
+        "meaningVi": "đo lường, ước lượng",
+        "hanViet": "TRẮC",
+        "onReadings": [
+          "ソク"
+        ],
+        "kunReadings": [
+          "はか.る"
+        ],
+        "radical": {
+          "character": "氵",
+          "nameVi": "Thủy (nước)"
+        },
+        "shapeNoteVi": "氵 + 則: đo mực nước theo quy chuẩn → đo. 測る, 測定, 予測."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-soku-soku-soku-1",
+      "titleVi": "Bộ bên trái",
+      "bodyVi": "Không có bộ: 則 (quy tắc). 亻 (người) → 側 (phía bên). 氵 (nước) → 測 (đo lường). Ba chữ đọc ソク giống nhau nên phải nhớ nghĩa của từ ghép."
+    },
+    {
+      "id": "ct-k-soku-soku-soku-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "則: 規則 (quy tắc), 原則 (nguyên tắc). 側: 右側 (bên phải), 内側 (bên trong), 側面 (mặt bên). 測: 測る (đo), 予測 (dự đoán), 測定 (đo đạc)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ bên trái",
+      "values": {
+        "ci-k-soku-soku-soku-kisoku": "Không có (刂 bên phải)",
+        "ci-k-soku-soku-soku-gawa": "亻 (người)",
+        "ci-k-soku-soku-soku-hakaru": "氵 (nước)"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-soku-soku-soku-kisoku": "Quy tắc",
+        "ci-k-soku-soku-soku-gawa": "Phía, bên",
+        "ci-k-soku-soku-soku-hakaru": "Đo lường"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-soku-soku-soku-kisoku": "規則、原則",
+        "ci-k-soku-soku-soku-gawa": "右側、内側、側面",
+        "ci-k-soku-soku-soku-hakaru": "測る、予測、測定"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-soku-soku-soku-1",
+      "itemId": "ci-k-soku-soku-soku-kisoku",
+      "japanese": "学校の規則を守ってください。",
+      "furigana": "{学校|がっこう}の{規則|きそく}を{守|まも}ってください。",
+      "translationVi": "Hãy tuân thủ nội quy của trường."
+    },
+    {
+      "id": "cx-k-soku-soku-soku-2",
+      "itemId": "ci-k-soku-soku-soku-kisoku",
+      "japanese": "原則として、遅刻は認めません。",
+      "furigana": "{原則|げんそく}として、{遅刻|ちこく}は{認|みと}めません。",
+      "translationVi": "Về nguyên tắc, không chấp nhận đi muộn."
+    },
+    {
+      "id": "cx-k-soku-soku-soku-3",
+      "itemId": "ci-k-soku-soku-soku-gawa",
+      "japanese": "日本では車は道の左側を走る。",
+      "furigana": "{日本|にほん}では{車|くるま}は{道|みち}の{左側|ひだりがわ}を{走|はし}る。",
+      "translationVi": "Ở Nhật xe chạy bên trái đường."
+    },
+    {
+      "id": "cx-k-soku-soku-soku-4",
+      "itemId": "ci-k-soku-soku-soku-gawa",
+      "japanese": "窓の内側が曇っている。",
+      "furigana": "{窓|まど}の{内側|うちがわ}が{曇|くも}っている。",
+      "translationVi": "Mặt trong cửa sổ bị mờ hơi nước."
+    },
+    {
+      "id": "cx-k-soku-soku-soku-5",
+      "itemId": "ci-k-soku-soku-soku-hakaru",
+      "japanese": "毎朝、体温を測っている。",
+      "furigana": "{毎朝|まいあさ}、{体温|たいおん}を{測|はか}っている。",
+      "translationVi": "Sáng nào tôi cũng đo nhiệt độ cơ thể."
+    },
+    {
+      "id": "cx-k-soku-soku-soku-6",
+      "itemId": "ci-k-soku-soku-soku-hakaru",
+      "japanese": "専門家は来年の景気を予測した。",
+      "furigana": "{専門家|せんもんか}は{来年|らいねん}の{景気|けいき}を{予測|よそく}した。",
+      "translationVi": "Các chuyên gia đã dự đoán tình hình kinh tế năm sau."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-soku-soku-soku-1",
+      "textVi": "Người (亻) đứng bên → 側; nước (氵) đo mực → 測; dao (刂) khắc luật → 則."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-soku-soku-soku-1",
+      "situationVi": "Viết 'nội quy'.",
+      "wrong": {
+        "japanese": "会社の規側に従う。",
+        "furigana": "{会社|かいしゃ}の{規側|きそく}に{従|したが}う。"
+      },
+      "correct": {
+        "japanese": "会社の規則に従う。",
+        "furigana": "{会社|かいしゃ}の{規則|きそく}に{従|したが}う。"
+      },
+      "explanationVi": "Quy tắc → 則.",
+      "expectedItemId": "ci-k-soku-soku-soku-kisoku",
+      "confusedWithItemId": "ci-k-soku-soku-soku-gawa"
+    },
+    {
+      "id": "ce-k-soku-soku-soku-2",
+      "situationVi": "Viết 'dự đoán'.",
+      "wrong": {
+        "japanese": "結果を予則するのは難しい。",
+        "furigana": "{結果|けっか}を{予則|よそく}するのは{難|むずか}しい。"
+      },
+      "correct": {
+        "japanese": "結果を予測するのは難しい。",
+        "furigana": "{結果|けっか}を{予測|よそく}するのは{難|むずか}しい。"
+      },
+      "explanationVi": "Dự đoán (đo trước) → 測.",
+      "expectedItemId": "ci-k-soku-soku-soku-hakaru",
+      "confusedWithItemId": "ci-k-soku-soku-soku-kisoku"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-soku-soku-soku-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-soku-soku-soku-gawa",
+      "instructionVi": "Chọn cách viết đúng của みぎがわ (bên phải).",
+      "options": [
+        {
+          "id": "a",
+          "text": "右測",
+          "itemId": "ci-k-soku-soku-soku-hakaru",
+          "feedbackVi": "測 là đo lường."
+        },
+        {
+          "id": "b",
+          "text": "右則",
+          "itemId": "ci-k-soku-soku-soku-kisoku",
+          "feedbackVi": "則 là quy tắc."
+        },
+        {
+          "id": "c",
+          "text": "右側",
+          "itemId": "ci-k-soku-soku-soku-gawa"
+        }
+      ],
+      "correctOptionId": "c",
+      "explanationVi": "右側: phía bên phải → 側 (bộ 亻)."
+    },
+    {
+      "id": "cq-k-soku-soku-soku-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-soku-soku-soku-hakaru",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "病院で血圧を＿＿＿ってもらった。",
+        "furigana": "{病院|びょういん}で{血圧|けつあつ}を＿＿＿ってもらった。",
+        "translationVi": "Tôi được đo huyết áp ở bệnh viện."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "測",
+          "itemId": "ci-k-soku-soku-soku-hakaru"
+        },
+        {
+          "id": "b",
+          "text": "則",
+          "itemId": "ci-k-soku-soku-soku-kisoku"
+        },
+        {
+          "id": "c",
+          "text": "側",
+          "itemId": "ci-k-soku-soku-soku-gawa"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "測る (đo) viết với 測."
+    },
+    {
+      "id": "cq-k-soku-soku-soku-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-soku-soku-soku-gawa",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "エスカレーターでは、左測に立つ人が多い。",
+        "furigana": "エスカレーターでは、{左測|ひだりそく}に{立|た}つ{人|ひと}が{多|おお}い。",
+        "translationVi": "Ở thang cuốn, người ta đứng bên trái."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "エスカレーターでは、"
+        },
+        {
+          "id": "b",
+          "text": "左測に",
+          "furigana": "{左測|ひだりそく}に",
+          "itemId": "ci-k-soku-soku-soku-hakaru"
+        },
+        {
+          "id": "c",
+          "text": "立つ人が多い。",
+          "furigana": "{立|た}つ{人|ひと}が{多|おお}い。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "左側に",
+        "furigana": "{左側|ひだりがわ}に",
+        "itemId": "ci-k-soku-soku-soku-gawa"
+      },
+      "explanationVi": "Bên trái → 左側."
+    },
+    {
+      "id": "cq-k-soku-soku-soku-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-soku-soku-soku-kisoku",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn giải thích với bạn mới rằng ký túc xá có nội quy về giờ đóng cửa."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "この寮には門限の規則があるよ。",
+          "furigana": "この{寮|りょう}には{門限|もんげん}の{規則|きそく}があるよ。",
+          "itemId": "ci-k-soku-soku-soku-kisoku"
+        },
+        {
+          "id": "b",
+          "text": "この寮には門限の規側があるよ。",
+          "furigana": "この{寮|りょう}には{門限|もんげん}の{規側|きそく}があるよ。",
+          "itemId": "ci-k-soku-soku-soku-gawa",
+          "feedbackVi": "規則 viết với 則, không phải 側."
+        },
+        {
+          "id": "c",
+          "text": "この寮には門限の規測があるよ。",
+          "furigana": "この{寮|りょう}には{門限|もんげん}の{規測|きそく}があるよ。",
+          "itemId": "ci-k-soku-soku-soku-hakaru",
+          "feedbackVi": "規則 viết với 則, không phải 測."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "規則 (nội quy) viết với 則."
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "id": "cg-g-muki-muke",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜向き và 〜向け",
+  "summaryVi": "向き là 'phù hợp với' (tự nhiên hợp với ai, cái gì), còn 向け là 'dành cho, làm ra cho' (được làm ra với mục đích hướng tới đối tượng đó).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-muki-muke-muki",
+      "label": "〜向き",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g070",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜向き",
+          "structure": "N ＋ 向き（だ／の N）",
+          "meaningVi": "phù hợp với…, hợp với…"
+        },
+        "sourceFingerprint": "sha256:1e4b1bde9cc81cb1acbab6ccaa2fcd2d3ae5b2f6eb38cdcb8c4f6933770656f4"
+      },
+      "grammar": {
+        "meaningVi": "Phù hợp với…, hợp với…",
+        "connection": "N ＋ 向き（だ／の N）",
+        "nuanceVi": "Đặc điểm sẵn có của sự vật hợp với đối tượng, dù không được làm riêng cho họ: この料理は子供向きだ (hợp với trẻ). Có dạng phủ định 向きではない、不向き."
+      }
+    },
+    {
+      "id": "ci-g-muki-muke-muke",
+      "label": "〜向け",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g071",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜向け",
+          "structure": "N ＋ 向け（だ／の N／に）",
+          "meaningVi": "dành cho…, hướng tới…"
+        },
+        "sourceFingerprint": "sha256:49dd0dab253bdfae571744d02e35857b8dda8926700eb5debf0bba6eb01e0843"
+      },
+      "grammar": {
+        "meaningVi": "Dành cho…, hướng tới…",
+        "connection": "N ＋ 向け（だ／の N／に）",
+        "nuanceVi": "Được sản xuất, thiết kế với chủ đích cho đối tượng: 子供向けの番組、外国人向けのパンフレット、海外向けに輸出する."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-muki-muke-1",
+      "titleVi": "Tự nhiên hợp hay được làm cho",
+      "bodyVi": "Câu hỏi kiểm tra: người làm ra có nhắm đến đối tượng đó không? Có (chương trình làm cho trẻ em, tài liệu viết cho người nước ngoài) → 向け. Không, chỉ là tính chất hợp (món này không cay nên hợp với trẻ) → 向き."
+    },
+    {
+      "id": "ct-g-muki-muke-2",
+      "titleVi": "Dạng phủ định và cách nối",
+      "bodyVi": "向き có 向きではない、不向き (không hợp). 向け hay đi với に + động từ: 海外向けに作る. Cả hai nối thẳng với danh từ."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Ý nghĩa",
+      "values": {
+        "ci-g-muki-muke-muki": "Hợp với (tính chất sẵn có)",
+        "ci-g-muki-muke-muke": "Dành cho (mục đích khi làm ra)"
+      }
+    },
+    {
+      "aspectVi": "Câu kiểm tra",
+      "values": {
+        "ci-g-muki-muke-muki": "Có hợp không?",
+        "ci-g-muki-muke-muke": "Làm ra cho ai?"
+      }
+    },
+    {
+      "aspectVi": "Dạng hay gặp",
+      "values": {
+        "ci-g-muki-muke-muki": "初心者向き、不向き",
+        "ci-g-muki-muke-muke": "子供向けの番組、海外向けに輸出する"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-muki-muke-1",
+      "itemId": "ci-g-muki-muke-muki",
+      "japanese": "この山は低くて道も広いので、初心者向きだ。",
+      "furigana": "この{山|やま}は{低|ひく}くて{道|みち}も{広|ひろ}いので、{初心者|しょしんしゃ}{向|む}きだ。",
+      "translationVi": "Ngọn núi này thấp, đường rộng nên hợp với người mới."
+    },
+    {
+      "id": "cx-g-muki-muke-2",
+      "itemId": "ci-g-muki-muke-muki",
+      "japanese": "細かい作業が苦手な私は、この仕事に不向きだ。",
+      "furigana": "{細|こま}かい{作業|さぎょう}が{苦手|にがて}な{私|わたし}は、この{仕事|しごと}に{不向|ふむ}きだ。",
+      "translationVi": "Tôi vốn kém việc tỉ mỉ nên không hợp với công việc này."
+    },
+    {
+      "id": "cx-g-muki-muke-3",
+      "itemId": "ci-g-muki-muke-muke",
+      "japanese": "これは外国人向けに書かれた日本の歴史の本です。",
+      "furigana": "これは{外国人|がいこくじん}{向|む}けに{書|か}かれた{日本|にほん}の{歴史|れきし}の{本|ほん}です。",
+      "translationVi": "Đây là cuốn sách lịch sử Nhật viết dành cho người nước ngoài."
+    },
+    {
+      "id": "cx-g-muki-muke-4",
+      "itemId": "ci-g-muki-muke-muke",
+      "japanese": "この会社は高齢者向けのスマートフォンを作っている。",
+      "furigana": "この{会社|かいしゃ}は{高齢者|こうれいしゃ}{向|む}けのスマートフォンを{作|つく}っている。",
+      "translationVi": "Công ty này sản xuất điện thoại dành cho người cao tuổi."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-muki-muke-1",
+      "textVi": "向け: 'hướng mũi tên tới' khách hàng khi sản xuất. 向き: 'quay mặt vừa vặn' với ai đó, tự nhiên hợp."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-muki-muke-1",
+      "situationVi": "Giới thiệu một chương trình TV được làm riêng cho trẻ em.",
+      "wrong": {
+        "japanese": "これは子供向きに作られた番組です。",
+        "furigana": "これは{子供|こども}{向|む}きに{作|つく}られた{番組|ばんぐみ}です。"
+      },
+      "correct": {
+        "japanese": "これは子供向けに作られた番組です。",
+        "furigana": "これは{子供|こども}{向|む}けに{作|つく}られた{番組|ばんぐみ}です。"
+      },
+      "explanationVi": "作られた (được làm ra) cho thấy mục đích nhắm vào trẻ em → 向け.",
+      "expectedItemId": "ci-g-muki-muke-muke",
+      "confusedWithItemId": "ci-g-muki-muke-muki"
+    },
+    {
+      "id": "ce-g-muki-muke-2",
+      "situationVi": "Nói căn hộ nhỏ này hợp với người sống một mình.",
+      "wrong": {
+        "japanese": "この部屋は狭いので、一人暮らし向けだ。",
+        "furigana": "この{部屋|へや}は{狭|せま}いので、{一人暮|ひとりぐ}らし{向|む}けだ。"
+      },
+      "correct": {
+        "japanese": "この部屋は狭いので、一人暮らし向きだ。",
+        "furigana": "この{部屋|へや}は{狭|せま}いので、{一人暮|ひとりぐ}らし{向|む}きだ。"
+      },
+      "explanationVi": "Lý do là đặc điểm sẵn có (phòng hẹp) nên hợp với người ở một mình → 向き. Không phải phòng được xây riêng cho họ.",
+      "expectedItemId": "ci-g-muki-muke-muki",
+      "confusedWithItemId": "ci-g-muki-muke-muke"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-muki-muke-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-muki-muke-muke",
+      "instructionVi": "Câu nào nói về sản phẩm được làm riêng cho thị trường nước ngoài?",
+      "options": [
+        {
+          "id": "a",
+          "text": "これは海外向けの製品です。",
+          "furigana": "これは{海外|かいがい}{向|む}けの{製品|せいひん}です。",
+          "itemId": "ci-g-muki-muke-muke"
+        },
+        {
+          "id": "b",
+          "text": "これは海外向きの製品です。",
+          "furigana": "これは{海外|かいがい}{向|む}きの{製品|せいひん}です。",
+          "itemId": "ci-g-muki-muke-muki",
+          "feedbackVi": "向き chỉ sự phù hợp tự nhiên, không nói lên mục đích sản xuất."
+        },
+        {
+          "id": "c",
+          "text": "これは海外向かいの製品です。",
+          "furigana": "これは{海外|かいがい}{向|む}かいの{製品|せいひん}です。",
+          "feedbackVi": "向かい là 'phía đối diện', không dùng ở đây."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Sản xuất nhắm vào thị trường nước ngoài → 海外向け."
+    },
+    {
+      "id": "cq-g-muki-muke-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-muki-muke-muki",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "この料理は辛くないので、子供＿＿＿だ。",
+        "furigana": "この{料理|りょうり}は{辛|から}くないので、{子供|こども}＿＿＿だ。",
+        "translationVi": "Món này không cay nên hợp với trẻ con."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "向き",
+          "furigana": "{向|む}き",
+          "itemId": "ci-g-muki-muke-muki"
+        },
+        {
+          "id": "b",
+          "text": "向け",
+          "furigana": "{向|む}け",
+          "itemId": "ci-g-muki-muke-muke",
+          "feedbackVi": "Món ăn không được làm riêng cho trẻ; chỉ vì không cay nên hợp."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Đặc điểm sẵn có (không cay) phù hợp với trẻ → 向き."
+    },
+    {
+      "id": "cq-g-muki-muke-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-muki-muke-muke",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "市は外国人観光客向きの地図を作った。",
+        "furigana": "{市|し}は{外国人|がいこくじん}{観光客|かんこうきゃく}{向|む}きの{地図|ちず}を{作|つく}った。",
+        "translationVi": "Thành phố đã làm bản đồ dành cho du khách nước ngoài."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "市は",
+          "furigana": "{市|し}は"
+        },
+        {
+          "id": "b",
+          "text": "外国人観光客",
+          "furigana": "{外国人|がいこくじん}{観光客|かんこうきゃく}"
+        },
+        {
+          "id": "c",
+          "text": "向きの",
+          "furigana": "{向|む}きの",
+          "itemId": "ci-g-muki-muke-muki"
+        },
+        {
+          "id": "d",
+          "text": "地図を作った。",
+          "furigana": "{地図|ちず}を{作|つく}った。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "向けの",
+        "furigana": "{向|む}けの",
+        "itemId": "ci-g-muki-muke-muke"
+      },
+      "explanationVi": "Bản đồ được thành phố làm ra nhắm vào du khách nước ngoài → 向け."
+    },
+    {
+      "id": "cq-g-muki-muke-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-muki-muke-muki",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn bè hỏi nên chọn đôi giày nào để đi bộ đường dài. Bạn thấy đôi giày thể thao bình thường của mình nhẹ và êm nên hợp với việc đi bộ lâu."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "この靴は軽くて柔らかいから、長く歩くのに向いているよ。",
+          "furigana": "この{靴|くつ}は{軽|かる}くて{柔|やわ}らかいから、{長|なが}く{歩|ある}くのに{向|む}いているよ。",
+          "itemId": "ci-g-muki-muke-muki"
+        },
+        {
+          "id": "b",
+          "text": "この靴は軽くて柔らかいから、長く歩く人向けに作られたよ。",
+          "furigana": "この{靴|くつ}は{軽|かる}くて{柔|やわ}らかいから、{長|なが}く{歩|ある}く{人|ひと}{向|む}けに{作|つく}られたよ。",
+          "itemId": "ci-g-muki-muke-muke",
+          "feedbackVi": "Bạn không biết giày được làm cho ai; câu này khẳng định mục đích sản xuất."
+        },
+        {
+          "id": "c",
+          "text": "この靴は軽くて柔らかいから、長く歩くことになっているよ。",
+          "furigana": "この{靴|くつ}は{軽|かる}くて{柔|やわ}らかいから、{長|なが}く{歩|ある}くことになっているよ。",
+          "feedbackVi": "ことになっている là 'theo quy định', không hợp."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Chỉ là đặc điểm sẵn có phù hợp → 向き (動詞 向いている)."
+    }
+  ]
+}

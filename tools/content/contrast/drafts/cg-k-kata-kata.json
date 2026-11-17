@@ -1,0 +1,326 @@
+{
+  "id": "cg-k-kata-kata",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "型 và 形",
+  "summaryVi": "Hai chữ cùng đọc かた／ケイ và cùng có phần 开. 型 (có 土 ở dưới) là khuôn mẫu, kiểu, loại; 形 (có 彡) là hình dạng, hình dáng bên ngoài.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-kata-kata-kata",
+      "label": "型",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k0578b",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "型",
+          "onReadings": [
+            "ケイ"
+          ],
+          "kunReadings": [
+            "かた",
+            "-がた"
+          ],
+          "meaningVi": "Khuôn, kiểu mẫu"
+        },
+        "sourceFingerprint": "sha256:4211d286f73578f0061825e72bc13d3407fe2e6aa75bcff177a576987bf13775"
+      },
+      "kanji": {
+        "meaningVi": "khuôn, kiểu mẫu, loại",
+        "hanViet": "HÌNH",
+        "onReadings": [
+          "ケイ"
+        ],
+        "kunReadings": [
+          "かた",
+          "-がた"
+        ],
+        "radical": {
+          "character": "土",
+          "nameVi": "Thổ (đất) ở dưới"
+        },
+        "shapeNoteVi": "刑 + 土: khuôn đất để đúc → khuôn mẫu, kiểu. 新型, 大型, 血液型."
+      }
+    },
+    {
+      "id": "ci-k-kata-kata-katachi",
+      "label": "形",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05f62",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "形",
+          "onReadings": [
+            "ケイ",
+            "ギョウ"
+          ],
+          "kunReadings": [
+            "かた",
+            "-がた",
+            "かたち",
+            "なり"
+          ],
+          "meaningVi": "Hình dạng"
+        },
+        "sourceFingerprint": "sha256:a6437b485cafa2b939a46354518c534ad3ab0281529dfcdaee7c5257fa1fc047"
+      },
+      "kanji": {
+        "meaningVi": "hình dạng",
+        "hanViet": "HÌNH",
+        "onReadings": [
+          "ケイ",
+          "ギョウ"
+        ],
+        "kunReadings": [
+          "かた",
+          "-がた",
+          "かたち",
+          "なり"
+        ],
+        "radical": {
+          "character": "彡",
+          "nameVi": "Sam (nét lông, hoa văn)"
+        },
+        "shapeNoteVi": "开 + 彡: đường nét trang trí → hình dạng. 形, 人形, 図形."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-kata-kata-1",
+      "titleVi": "Khuôn mẫu hay hình dạng",
+      "bodyVi": "Kiểu, loại, mẫu dùng để phân loại hay đúc ra nhiều cái giống nhau (新型のスマホ, 大型車, 血液型) → 型. Hình dáng bên ngoài của một vật (丸い形, 人形, 三角形) → 形."
+    },
+    {
+      "id": "ct-k-kata-kata-2",
+      "titleVi": "Mẹo hình chữ",
+      "bodyVi": "型 có 土 (đất) ở dưới: khuôn bằng đất. 形 có 彡 (ba nét xiên) bên phải: đường nét tạo hình. Hỏi 'loại nào?' → 型; hỏi 'hình gì?' → 形."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ phận nhận biết",
+      "values": {
+        "ci-k-kata-kata-kata": "土 ở dưới",
+        "ci-k-kata-kata-katachi": "彡 bên phải"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-kata-kata-kata": "Khuôn, kiểu, loại",
+        "ci-k-kata-kata-katachi": "Hình dạng"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-kata-kata-kata": "新型、大型、血液型",
+        "ci-k-kata-kata-katachi": "形、人形、三角形"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-kata-kata-1",
+      "itemId": "ci-k-kata-kata-kata",
+      "japanese": "新型のスマートフォンが発売された。",
+      "furigana": "{新型|しんがた}のスマートフォンが{発売|はつばい}された。",
+      "translationVi": "Mẫu điện thoại thông minh mới đã được bán ra."
+    },
+    {
+      "id": "cx-k-kata-kata-2",
+      "itemId": "ci-k-kata-kata-kata",
+      "japanese": "あなたの血液型は何ですか。",
+      "furigana": "あなたの{血液型|けつえきがた}は{何|なん}ですか。",
+      "translationVi": "Nhóm máu của bạn là gì?"
+    },
+    {
+      "id": "cx-k-kata-kata-3",
+      "itemId": "ci-k-kata-kata-katachi",
+      "japanese": "このクッキーは星の形をしている。",
+      "furigana": "このクッキーは{星|ほし}の{形|かたち}をしている。",
+      "translationVi": "Chiếc bánh quy này có hình ngôi sao."
+    },
+    {
+      "id": "cx-k-kata-kata-4",
+      "itemId": "ci-k-kata-kata-katachi",
+      "japanese": "娘は人形と遊ぶのが好きだ。",
+      "furigana": "{娘|むすめ}は{人形|にんぎょう}と{遊|あそ}ぶのが{好|す}きだ。",
+      "translationVi": "Con gái tôi thích chơi búp bê."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-kata-kata-1",
+      "textVi": "Đất (土) làm khuôn → 型 (kiểu mẫu). Nét vẽ (彡) tạo hình → 形 (hình dạng)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-kata-kata-1",
+      "situationVi": "Viết 'nhóm máu'.",
+      "wrong": {
+        "japanese": "血液形を調べた。",
+        "furigana": "{血液形|けつえきけい}を{調|しら}べた。"
+      },
+      "correct": {
+        "japanese": "血液型を調べた。",
+        "furigana": "{血液型|けつえきがた}を{調|しら}べた。"
+      },
+      "explanationVi": "Nhóm máu là phân loại → 型.",
+      "expectedItemId": "ci-k-kata-kata-kata",
+      "confusedWithItemId": "ci-k-kata-kata-katachi"
+    },
+    {
+      "id": "ce-k-kata-kata-2",
+      "situationVi": "Viết 'hình tròn'.",
+      "wrong": {
+        "japanese": "丸い型のテーブルを買った。",
+        "furigana": "{丸|まる}い{型|かた}のテーブルを{買|か}った。"
+      },
+      "correct": {
+        "japanese": "丸い形のテーブルを買った。",
+        "furigana": "{丸|まる}い{形|かたち}のテーブルを{買|か}った。"
+      },
+      "explanationVi": "Hình dáng bên ngoài → 形.",
+      "expectedItemId": "ci-k-kata-kata-katachi",
+      "confusedWithItemId": "ci-k-kata-kata-kata"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-kata-kata-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-kata-kata-kata",
+      "instructionVi": "Chọn cách viết đúng của おおがた (cỡ lớn, loại lớn).",
+      "options": [
+        {
+          "id": "a",
+          "text": "大形",
+          "itemId": "ci-k-kata-kata-katachi",
+          "feedbackVi": "形 là hình dạng; 'cỡ lớn' như 大型車 viết 型."
+        },
+        {
+          "id": "b",
+          "text": "大型",
+          "itemId": "ci-k-kata-kata-kata"
+        },
+        {
+          "id": "c",
+          "text": "大方",
+          "feedbackVi": "大方 (おおかた) là 'phần lớn', nghĩa khác."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanationVi": "大型 (loại lớn) viết với 型."
+    },
+    {
+      "id": "cq-k-kata-kata-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-kata-kata-katachi",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "三角＿＿＿の面積を求めなさい。",
+        "furigana": "{三角|さんかく}＿＿＿の{面積|めんせき}を{求|もと}めなさい。",
+        "translationVi": "Hãy tính diện tích hình tam giác."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "形",
+          "itemId": "ci-k-kata-kata-katachi"
+        },
+        {
+          "id": "b",
+          "text": "型",
+          "itemId": "ci-k-kata-kata-kata"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "三角形 (hình tam giác) viết với 形."
+    },
+    {
+      "id": "cq-k-kata-kata-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-kata-kata-kata",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "新形の車は来年の春に発売される。",
+        "furigana": "{新形|しんけい}の{車|くるま}は{来年|らいねん}の{春|はる}に{発売|はつばい}される。",
+        "translationVi": "Mẫu xe mới sẽ được bán vào mùa xuân năm sau."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "新形の",
+          "furigana": "{新形|しんけい}の",
+          "itemId": "ci-k-kata-kata-katachi"
+        },
+        {
+          "id": "b",
+          "text": "車は",
+          "furigana": "{車|くるま}は"
+        },
+        {
+          "id": "c",
+          "text": "来年の春に発売される。",
+          "furigana": "{来年|らいねん}の{春|はる}に{発売|はつばい}される。"
+        }
+      ],
+      "correctOptionId": "a",
+      "correction": {
+        "text": "新型の",
+        "furigana": "{新型|しんがた}の",
+        "itemId": "ci-k-kata-kata-kata"
+      },
+      "explanationVi": "Mẫu (kiểu) mới → 新型."
+    },
+    {
+      "id": "cq-k-kata-kata-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-kata-kata-katachi",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn tả chiếc bánh sinh nhật có hình trái tim."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ハートの形のケーキを作った。",
+          "furigana": "ハートの{形|かたち}のケーキを{作|つく}った。",
+          "itemId": "ci-k-kata-kata-katachi"
+        },
+        {
+          "id": "b",
+          "text": "ハートの型のケーキを作った。",
+          "furigana": "ハートの{型|かた}のケーキを{作|つく}った。",
+          "itemId": "ci-k-kata-kata-kata",
+          "feedbackVi": "Tả hình dáng của chiếc bánh → 形. (型 là cái khuôn để làm bánh.)"
+        },
+        {
+          "id": "c",
+          "text": "ハートの方のケーキを作った。",
+          "furigana": "ハートの{方|かた}のケーキを{作|つく}った。",
+          "feedbackVi": "方 là phía, cách; không phải hình dạng."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Hình dáng trái tim → 形."
+    }
+  ]
+}

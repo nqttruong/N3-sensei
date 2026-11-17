@@ -43,6 +43,13 @@ data class ContrastGroupWithItems(
 )
 
 /** M7 aggregates over contrast_attempts (no schema change: plain queries on the v16 tables). */
+/** A published group found by source ids (entry points from lessons and item pages). */
+data class ContrastGroupLinkRow(
+    val id: String,
+    val title: String,
+    @ColumnInfo(name = "content_type") val contentType: ContrastContentType,
+)
+
 data class ContrastOutcomeRow(
     val correct: Int,
     val incorrect: Int,
@@ -163,6 +170,20 @@ abstract class ContrastDao {
         """,
     )
     abstract fun observeGroups(type: ContrastContentType?, level: String?, pattern: String?): Flow<List<ContrastGroupWithItems>>
+
+    /** Installed (published) groups with an item pointing to one of the given source rows; read-only. */
+    @Query(
+        """
+        SELECT DISTINCT g.id, g.title, g.content_type FROM contrast_groups g
+        JOIN contrast_packs p ON p.id = g.pack_id
+        JOIN contrast_items i ON i.group_id = g.id
+        WHERE (i.source_type = 'GRAMMAR' AND i.source_content_id IN (:grammar))
+           OR (i.source_type = 'VOCABULARY' AND i.source_content_id IN (:vocabulary))
+           OR (i.source_type = 'KANJI' AND i.source_content_id IN (:kanji))
+        ORDER BY p.id, g.sort_order
+        """,
+    )
+    abstract fun observeGroupsForSources(grammar: List<String>, vocabulary: List<String>, kanji: List<String>): Flow<List<ContrastGroupLinkRow>>
 
     @Transaction
     @Query("SELECT * FROM contrast_groups WHERE id = :groupId")

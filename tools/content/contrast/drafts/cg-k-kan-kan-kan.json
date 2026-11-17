@@ -1,0 +1,374 @@
+{
+  "id": "cg-k-kan-kan-kan",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "官, 管 và 館",
+  "summaryVi": "Ba chữ cùng đọc カン và cùng có phần 官. 官 là quan chức, cơ quan nhà nước; thêm ⺮ (tre) thành 管 – ống, quản lý; thêm 食 (ăn) thành 館 – tòa nhà, hội quán (nơi ăn ở, đón khách).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-kan-kan-kan-kan",
+      "label": "官",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05b98",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "官",
+          "onReadings": [
+            "カン"
+          ],
+          "kunReadings": [],
+          "meaningVi": "Chức quan, cơ quan"
+        },
+        "sourceFingerprint": "sha256:6cf2c298f629be71afbc9f1997e6003b6363631886f43eda5c74ee402c1b62cd"
+      },
+      "kanji": {
+        "meaningVi": "quan chức, cơ quan nhà nước",
+        "hanViet": "QUAN",
+        "onReadings": [
+          "カン"
+        ],
+        "kunReadings": [],
+        "radical": {
+          "character": "宀",
+          "nameVi": "Miên (mái nhà)"
+        },
+        "shapeNoteVi": "Mái nhà (宀) che chỗ làm việc của quan → quan chức. 警察官, 外交官."
+      }
+    },
+    {
+      "id": "ci-k-kan-kan-kan-kuda",
+      "label": "管",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k07ba1",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "管",
+          "onReadings": [
+            "カン"
+          ],
+          "kunReadings": [
+            "くだ"
+          ],
+          "meaningVi": "Ống; quản lý"
+        },
+        "sourceFingerprint": "sha256:a4eae6cfc3e71d98b016e2bf73efdea1525040f00ddbe7ab97f522ce52c82587"
+      },
+      "kanji": {
+        "meaningVi": "ống; quản lý",
+        "hanViet": "QUẢN",
+        "onReadings": [
+          "カン"
+        ],
+        "kunReadings": [
+          "くだ"
+        ],
+        "radical": {
+          "character": "⺮",
+          "nameVi": "Trúc (tre)"
+        },
+        "shapeNoteVi": "⺮ + 官: ống tre; người nắm giữ ống sáo/chìa khóa → quản lý. 管理, 水道管, 保管."
+      }
+    },
+    {
+      "id": "ci-k-kan-kan-kan-yakata",
+      "label": "館",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k09928",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "館",
+          "onReadings": [
+            "カン"
+          ],
+          "kunReadings": [
+            "やかた",
+            "たて"
+          ],
+          "meaningVi": "Tòa nhà, cơ sở công cộng, viện, quán"
+        },
+        "sourceFingerprint": "sha256:24c6dd9907c92c467dfbe5ac5754bf304e36e0f1d71c09dd6db91cf6f3d4a192"
+      },
+      "kanji": {
+        "meaningVi": "tòa nhà, quán",
+        "hanViet": "QUÁN",
+        "onReadings": [
+          "カン"
+        ],
+        "kunReadings": [
+          "やかた",
+          "たて"
+        ],
+        "radical": {
+          "character": "食",
+          "nameVi": "Thực (ăn)"
+        },
+        "shapeNoteVi": "食 + 官: nơi quan khách ăn ở → tòa nhà công cộng lớn. 図書館, 美術館, 旅館."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-kan-kan-kan-1",
+      "titleVi": "Bộ thủ",
+      "bodyVi": "官 một mình: người làm việc cho nhà nước. ⺮ (tre) ở trên → 管 (ống tre, quản lý). 食 (ăn) bên trái → 館 (tòa nhà: thư viện, bảo tàng, lữ quán)."
+    },
+    {
+      "id": "ct-k-kan-kan-kan-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "官: 警察官 (cảnh sát), 外交官 (nhà ngoại giao), 官庁. 管: 管理 (quản lý), 保管 (bảo quản), 水道管 (ống nước). 館: 図書館 (thư viện), 美術館 (bảo tàng mỹ thuật), 旅館 (lữ quán), 映画館."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ thủ",
+      "values": {
+        "ci-k-kan-kan-kan-kan": "宀 (mái nhà)",
+        "ci-k-kan-kan-kan-kuda": "⺮ (tre) ở trên",
+        "ci-k-kan-kan-kan-yakata": "食 (ăn) bên trái"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-kan-kan-kan-kan": "Quan chức",
+        "ci-k-kan-kan-kan-kuda": "Ống, quản lý",
+        "ci-k-kan-kan-kan-yakata": "Tòa nhà công cộng"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-kan-kan-kan-kan": "警察官、外交官",
+        "ci-k-kan-kan-kan-kuda": "管理、保管",
+        "ci-k-kan-kan-kan-yakata": "図書館、美術館、旅館"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-kan-kan-kan-1",
+      "itemId": "ci-k-kan-kan-kan-kan",
+      "japanese": "父は警察官として働いている。",
+      "furigana": "{父|ちち}は{警察官|けいさつかん}として{働|はたら}いている。",
+      "translationVi": "Bố tôi làm cảnh sát."
+    },
+    {
+      "id": "cx-k-kan-kan-kan-2",
+      "itemId": "ci-k-kan-kan-kan-kan",
+      "japanese": "彼女は将来、外交官になりたいそうだ。",
+      "furigana": "{彼女|かのじょ}は{将来|しょうらい}、{外交官|がいこうかん}になりたいそうだ。",
+      "translationVi": "Nghe nói cô ấy muốn trở thành nhà ngoại giao."
+    },
+    {
+      "id": "cx-k-kan-kan-kan-3",
+      "itemId": "ci-k-kan-kan-kan-kuda",
+      "japanese": "このビルの管理は山田さんが担当している。",
+      "furigana": "このビルの{管理|かんり}は{山田|やまだ}さんが{担当|たんとう}している。",
+      "translationVi": "Anh Yamada phụ trách quản lý tòa nhà này."
+    },
+    {
+      "id": "cx-k-kan-kan-kan-4",
+      "itemId": "ci-k-kan-kan-kan-kuda",
+      "japanese": "冬は水道管が凍ることがある。",
+      "furigana": "{冬|ふゆ}は{水道管|すいどうかん}が{凍|こお}ることがある。",
+      "translationVi": "Mùa đông có khi ống nước bị đóng băng."
+    },
+    {
+      "id": "cx-k-kan-kan-kan-5",
+      "itemId": "ci-k-kan-kan-kan-yakata",
+      "japanese": "週末は図書館で勉強する。",
+      "furigana": "{週末|しゅうまつ}は{図書館|としょかん}で{勉強|べんきょう}する。",
+      "translationVi": "Cuối tuần tôi học ở thư viện."
+    },
+    {
+      "id": "cx-k-kan-kan-kan-6",
+      "itemId": "ci-k-kan-kan-kan-yakata",
+      "japanese": "京都で古い旅館に泊まった。",
+      "furigana": "{京都|きょうと}で{古|ふる}い{旅館|りょかん}に{泊|と}まった。",
+      "translationVi": "Ở Kyoto tôi đã trọ ở một lữ quán cổ."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-kan-kan-kan-1",
+      "textVi": "Có chỗ ăn (食) → tòa nhà đón khách 館; có ống tre (⺮) → 管; chỉ có mái nhà → quan 官."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-kan-kan-kan-1",
+      "situationVi": "Viết 'thư viện'.",
+      "wrong": {
+        "japanese": "図書管で本を借りた。",
+        "furigana": "{図書管|としょかん}で{本|ほん}を{借|か}りた。"
+      },
+      "correct": {
+        "japanese": "図書館で本を借りた。",
+        "furigana": "{図書館|としょかん}で{本|ほん}を{借|か}りた。"
+      },
+      "explanationVi": "Tòa nhà công cộng → 館 (bộ 食).",
+      "expectedItemId": "ci-k-kan-kan-kan-yakata",
+      "confusedWithItemId": "ci-k-kan-kan-kan-kuda"
+    },
+    {
+      "id": "ce-k-kan-kan-kan-2",
+      "situationVi": "Viết 'quản lý'.",
+      "wrong": {
+        "japanese": "商品の在庫を館理する。",
+        "furigana": "{商品|しょうひん}の{在庫|ざいこ}を{館理|かんり}する。"
+      },
+      "correct": {
+        "japanese": "商品の在庫を管理する。",
+        "furigana": "{商品|しょうひん}の{在庫|ざいこ}を{管理|かんり}する。"
+      },
+      "explanationVi": "Quản lý → 管.",
+      "expectedItemId": "ci-k-kan-kan-kan-kuda",
+      "confusedWithItemId": "ci-k-kan-kan-kan-yakata"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-kan-kan-kan-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-kan-kan-kan-yakata",
+      "instructionVi": "Chọn cách viết đúng của びじゅつかん (bảo tàng mỹ thuật).",
+      "options": [
+        {
+          "id": "a",
+          "text": "美術館",
+          "itemId": "ci-k-kan-kan-kan-yakata"
+        },
+        {
+          "id": "b",
+          "text": "美術管",
+          "itemId": "ci-k-kan-kan-kan-kuda",
+          "feedbackVi": "管 là ống, quản lý."
+        },
+        {
+          "id": "c",
+          "text": "美術官",
+          "itemId": "ci-k-kan-kan-kan-kan",
+          "feedbackVi": "官 là quan chức."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "美術館: tòa nhà trưng bày → 館."
+    },
+    {
+      "id": "cq-k-kan-kan-kan-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-kan-kan-kan-kan",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "道が分からなかったので、交番の警察＿＿＿に聞いた。",
+        "furigana": "{道|みち}が{分|わ}からなかったので、{交番|こうばん}の{警察|けいさつ}＿＿＿に{聞|き}いた。",
+        "translationVi": "Không biết đường nên tôi hỏi viên cảnh sát ở đồn."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "官",
+          "itemId": "ci-k-kan-kan-kan-kan"
+        },
+        {
+          "id": "b",
+          "text": "管",
+          "itemId": "ci-k-kan-kan-kan-kuda"
+        },
+        {
+          "id": "c",
+          "text": "館",
+          "itemId": "ci-k-kan-kan-kan-yakata"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "警察官 (viên cảnh sát) viết với 官."
+    },
+    {
+      "id": "cq-k-kan-kan-kan-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-kan-kan-kan-kuda",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "薬は涼しい場所で保館してください。",
+        "furigana": "{薬|くすり}は{涼|すず}しい{場所|ばしょ}で{保館|ほかん}してください。",
+        "translationVi": "Hãy bảo quản thuốc ở nơi mát."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "薬は",
+          "furigana": "{薬|くすり}は"
+        },
+        {
+          "id": "b",
+          "text": "涼しい場所で",
+          "furigana": "{涼|すず}しい{場所|ばしょ}で"
+        },
+        {
+          "id": "c",
+          "text": "保館してください。",
+          "furigana": "{保館|ほかん}してください。",
+          "itemId": "ci-k-kan-kan-kan-yakata"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "保管してください。",
+        "furigana": "{保管|ほかん}してください。",
+        "itemId": "ci-k-kan-kan-kan-kuda"
+      },
+      "explanationVi": "保管 (bảo quản) viết với 管."
+    },
+    {
+      "id": "cq-k-kan-kan-kan-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-kan-kan-kan-yakata",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn rủ bạn đi xem phim ở rạp gần ga."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "駅前の映画館に行かない？",
+          "furigana": "{駅前|えきまえ}の{映画館|えいがかん}に{行|い}かない？",
+          "itemId": "ci-k-kan-kan-kan-yakata"
+        },
+        {
+          "id": "b",
+          "text": "駅前の映画管に行かない？",
+          "furigana": "{駅前|えきまえ}の{映画管|えいがかん}に{行|い}かない？",
+          "itemId": "ci-k-kan-kan-kan-kuda",
+          "feedbackVi": "映画館 viết với 館, không phải 管."
+        },
+        {
+          "id": "c",
+          "text": "駅前の映画官に行かない？",
+          "furigana": "{駅前|えきまえ}の{映画官|えいがかん}に{行|い}かない？",
+          "itemId": "ci-k-kan-kan-kan-kan",
+          "feedbackVi": "映画館 viết với 館, không phải 官."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "映画館 (rạp chiếu phim) viết với 館."
+    }
+  ]
+}

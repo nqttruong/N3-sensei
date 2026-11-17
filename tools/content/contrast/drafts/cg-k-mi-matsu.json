@@ -1,0 +1,332 @@
+{
+  "id": "cg-k-mi-matsu",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "未 và 末",
+  "summaryVi": "Hai chữ chỉ khác độ dài của hai nét ngang: 未 (VỊ, chưa) có nét ngang trên ngắn hơn nét dưới; 末 (MẠT, cuối) có nét ngang trên dài hơn nét dưới.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-mi-matsu-mi",
+      "label": "未",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k0672a",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "未",
+          "onReadings": [
+            "ミ",
+            "ビ"
+          ],
+          "kunReadings": [
+            "いま.だ",
+            "ま.だ",
+            "ひつじ"
+          ],
+          "meaningVi": "Chưa"
+        },
+        "sourceFingerprint": "sha256:724c3f424d4c45d615c17b6d5816f5bcf2091af3f33081f71e16b7f5bf038c23"
+      },
+      "kanji": {
+        "meaningVi": "chưa",
+        "hanViet": "VỊ",
+        "onReadings": [
+          "ミ",
+          "ビ"
+        ],
+        "kunReadings": [
+          "いま.だ",
+          "ま.だ",
+          "ひつじ"
+        ],
+        "radical": {
+          "character": "木",
+          "nameVi": "Mộc (cây)"
+        },
+        "shapeNoteVi": "Nét ngang trên NGẮN: cành non chưa lớn → 'chưa'. 未来, 未満, 未定."
+      }
+    },
+    {
+      "id": "ci-k-mi-matsu-matsu",
+      "label": "末",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k0672b",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "末",
+          "onReadings": [
+            "マツ",
+            "バツ"
+          ],
+          "kunReadings": [
+            "すえ",
+            "うら",
+            "うれ"
+          ],
+          "meaningVi": "Cuối, kết thúc"
+        },
+        "sourceFingerprint": "sha256:edef054863c1a76b5b79f3a7301458fcf7f7cd809b76dae9136361b7de2650da"
+      },
+      "kanji": {
+        "meaningVi": "cuối, ngọn",
+        "hanViet": "MẠT",
+        "onReadings": [
+          "マツ",
+          "バツ"
+        ],
+        "kunReadings": [
+          "すえ",
+          "うら",
+          "うれ"
+        ],
+        "radical": {
+          "character": "木",
+          "nameVi": "Mộc (cây)"
+        },
+        "shapeNoteVi": "Nét ngang trên DÀI: đánh dấu ngọn cây, phần cuối → 'cuối'. 週末, 年末, 月末."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-mi-matsu-1",
+      "titleVi": "Phân biệt bằng nét ngang",
+      "bodyVi": "Cả hai dựa trên 木 (cây) thêm một nét ngang. Nét trên ngắn hơn (未): cây chưa lớn, 'chưa'. Nét trên dài hơn (末): đánh dấu ở ngọn, 'cuối'. Khi viết tay phải giữ đúng tỉ lệ."
+    },
+    {
+      "id": "ct-k-mi-matsu-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "未: 未来 (tương lai: thời gian chưa đến), 未満 (chưa đủ), 未定 (chưa định), 未成年. 末: 週末 (cuối tuần), 年末 (cuối năm), 月末, 期末, 末っ子 (con út)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nét ngang trên",
+      "values": {
+        "ci-k-mi-matsu-mi": "Ngắn hơn nét dưới",
+        "ci-k-mi-matsu-matsu": "Dài hơn nét dưới"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-mi-matsu-mi": "Chưa",
+        "ci-k-mi-matsu-matsu": "Cuối"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-mi-matsu-mi": "未来、未満、未定",
+        "ci-k-mi-matsu-matsu": "週末、年末、月末"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-mi-matsu-1",
+      "itemId": "ci-k-mi-matsu-mi",
+      "japanese": "十八歳未満の人はお酒を買えません。",
+      "furigana": "{十八歳|じゅうはっさい}{未満|みまん}の{人|ひと}はお{酒|さけ}を{買|か}えません。",
+      "translationVi": "Người chưa đủ 18 tuổi không mua được rượu."
+    },
+    {
+      "id": "cx-k-mi-matsu-2",
+      "itemId": "ci-k-mi-matsu-mi",
+      "japanese": "旅行の日程はまだ未定です。",
+      "furigana": "{旅行|りょこう}の{日程|にってい}はまだ{未定|みてい}です。",
+      "translationVi": "Lịch trình du lịch vẫn chưa định."
+    },
+    {
+      "id": "cx-k-mi-matsu-3",
+      "itemId": "ci-k-mi-matsu-matsu",
+      "japanese": "週末は家族と公園に行きます。",
+      "furigana": "{週末|しゅうまつ}は{家族|かぞく}と{公園|こうえん}に{行|い}きます。",
+      "translationVi": "Cuối tuần tôi đi công viên với gia đình."
+    },
+    {
+      "id": "cx-k-mi-matsu-4",
+      "itemId": "ci-k-mi-matsu-matsu",
+      "japanese": "年末は仕事が忙しい。",
+      "furigana": "{年末|ねんまつ}は{仕事|しごと}が{忙|いそが}しい。",
+      "translationVi": "Cuối năm công việc bận rộn."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-mi-matsu-1",
+      "textVi": "末: ngọn (trên) dài vì đã đến 'cuối'. 未: ngọn ngắn vì 'chưa' mọc tới."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-mi-matsu-1",
+      "situationVi": "Viết 'cuối tuần'.",
+      "wrong": {
+        "japanese": "週未に映画を見た。",
+        "furigana": "{週未|しゅうみ}に{映画|えいが}を{見|み}た。"
+      },
+      "correct": {
+        "japanese": "週末に映画を見た。",
+        "furigana": "{週末|しゅうまつ}に{映画|えいが}を{見|み}た。"
+      },
+      "explanationVi": "Cuối → 末 (nét ngang trên dài).",
+      "expectedItemId": "ci-k-mi-matsu-matsu",
+      "confusedWithItemId": "ci-k-mi-matsu-mi"
+    },
+    {
+      "id": "ce-k-mi-matsu-2",
+      "situationVi": "Viết 'tương lai'.",
+      "wrong": {
+        "japanese": "末来のことを考える。",
+        "furigana": "{末来|まつらい}のことを{考|かんが}える。"
+      },
+      "correct": {
+        "japanese": "未来のことを考える。",
+        "furigana": "{未来|みらい}のことを{考|かんが}える。"
+      },
+      "explanationVi": "Tương lai = thời gian chưa đến → 未.",
+      "expectedItemId": "ci-k-mi-matsu-mi",
+      "confusedWithItemId": "ci-k-mi-matsu-matsu"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-mi-matsu-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-mi-matsu-mi",
+      "instructionVi": "Chọn cách viết đúng của みらい (tương lai).",
+      "options": [
+        {
+          "id": "a",
+          "text": "未来",
+          "itemId": "ci-k-mi-matsu-mi"
+        },
+        {
+          "id": "b",
+          "text": "末来",
+          "itemId": "ci-k-mi-matsu-matsu",
+          "feedbackVi": "末 là cuối."
+        },
+        {
+          "id": "c",
+          "text": "味来",
+          "feedbackVi": "味 là vị (mùi vị)."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "未来: thời gian chưa đến → 未."
+    },
+    {
+      "id": "cq-k-mi-matsu-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-mi-matsu-matsu",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "家賃は毎月、月＿＿＿までに払ってください。",
+        "furigana": "{家賃|やちん}は{毎月|まいつき}、{月|げつ}＿＿＿までに{払|はら}ってください。",
+        "translationVi": "Hãy trả tiền nhà trước cuối mỗi tháng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "末",
+          "itemId": "ci-k-mi-matsu-matsu"
+        },
+        {
+          "id": "b",
+          "text": "未",
+          "itemId": "ci-k-mi-matsu-mi"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "月末 (cuối tháng) viết với 末."
+    },
+    {
+      "id": "cq-k-mi-matsu-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-mi-matsu-mi",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "結婚式の日はまだ末定です。",
+        "furigana": "{結婚式|けっこんしき}の{日|ひ}はまだ{末定|まつてい}です。",
+        "translationVi": "Ngày cưới vẫn chưa được quyết định."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "結婚式の",
+          "furigana": "{結婚式|けっこんしき}の"
+        },
+        {
+          "id": "b",
+          "text": "日は",
+          "furigana": "{日|ひ}は"
+        },
+        {
+          "id": "c",
+          "text": "まだ"
+        },
+        {
+          "id": "d",
+          "text": "末定です。",
+          "furigana": "{末定|まつてい}です。",
+          "itemId": "ci-k-mi-matsu-matsu"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "未定です。",
+        "furigana": "{未定|みてい}です。",
+        "itemId": "ci-k-mi-matsu-mi"
+      },
+      "explanationVi": "未定 (chưa định) viết với 未."
+    },
+    {
+      "id": "cq-k-mi-matsu-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-mi-matsu-matsu",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn nhắn cho bạn: cuối năm mình sẽ về quê."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "年末は実家に帰るよ。",
+          "furigana": "{年末|ねんまつ}は{実家|じっか}に{帰|かえ}るよ。",
+          "itemId": "ci-k-mi-matsu-matsu"
+        },
+        {
+          "id": "b",
+          "text": "年未は実家に帰るよ。",
+          "furigana": "{年未|ねんみ}は{実家|じっか}に{帰|かえ}るよ。",
+          "itemId": "ci-k-mi-matsu-mi",
+          "feedbackVi": "Cuối năm viết 年末."
+        },
+        {
+          "id": "c",
+          "text": "年味は実家に帰るよ。",
+          "furigana": "{年味|ねんみ}は{実家|じっか}に{帰|かえ}るよ。",
+          "feedbackVi": "味 là vị, không liên quan."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "年末 (cuối năm) viết với 末."
+    }
+  ]
+}

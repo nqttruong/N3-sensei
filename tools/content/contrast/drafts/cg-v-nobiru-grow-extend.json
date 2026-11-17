@@ -1,0 +1,321 @@
+{
+  "id": "cg-v-nobiru-grow-extend",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "伸びる và 延びる",
+  "summaryVi": "Cùng đọc là のびる. 伸びる là dài ra, cao lên, phát triển (tóc, chiều cao, thành tích); 延びる là bị kéo dài, bị hoãn (thời gian, thời hạn, đường kéo dài thêm).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-nobiru-grow-extend-grow",
+      "label": "伸びる",
+      "labelFurigana": "{伸|の}びる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v761",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "伸びる",
+          "reading": "のびる",
+          "meaningVi": "lớn lên, tăng thêm, dài ra"
+        },
+        "sourceFingerprint": "sha256:a33dad7ec2db35463d39196d85655579b2d3b74ee482c23bb6d8c0ed0c8a5195"
+      },
+      "vocabulary": {
+        "reading": "のびる",
+        "meaningVi": "dài ra, cao lên, tăng thêm",
+        "usageVi": "Vật thể dài ra hay năng lực, số liệu phát triển: 背が伸びる、売り上げが伸びる.",
+        "collocations": [
+          {
+            "japanese": "背が伸びる",
+            "furigana": "{背|せ}が{伸|の}びる",
+            "meaningVi": "cao lên"
+          },
+          {
+            "japanese": "成績が伸びる",
+            "furigana": "{成績|せいせき}が{伸|の}びる",
+            "meaningVi": "thành tích tiến bộ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-nobiru-grow-extend-extend",
+      "label": "延びる",
+      "labelFurigana": "{延|の}びる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v763",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "延びる",
+          "reading": "のびる",
+          "meaningVi": "bị trì hoãn, bị kéo dài"
+        },
+        "sourceFingerprint": "sha256:c8514d8434ec67f3f6cb79eaf480a2ba0c7cac83134dcdf1bac35915ed217bc9"
+      },
+      "vocabulary": {
+        "reading": "のびる",
+        "meaningVi": "bị kéo dài, bị hoãn",
+        "usageVi": "Thời gian, thời hạn, khoảng cách bị kéo dài hơn dự định: 会議が延びる、締め切りが延びる.",
+        "collocations": [
+          {
+            "japanese": "締め切りが延びる",
+            "furigana": "{締|し}め{切|き}りが{延|の}びる",
+            "meaningVi": "hạn chót được lùi"
+          },
+          {
+            "japanese": "寿命が延びる",
+            "furigana": "{寿命|じゅみょう}が{延|の}びる",
+            "meaningVi": "tuổi thọ kéo dài"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-nobiru-grow-extend-1",
+      "titleVi": "Phát triển hay kéo dài thời gian",
+      "bodyVi": "Thứ có thể đo bằng độ dài vật lý hoặc mức phát triển (tóc, cây, chiều cao, doanh số, năng lực) → 伸びる. Thời gian, lịch trình, thời hạn, tuyến đường được nối dài → 延びる."
+    },
+    {
+      "id": "ct-v-nobiru-grow-extend-2",
+      "titleVi": "Tha động từ",
+      "bodyVi": "伸びる ↔ 伸ばす (để dài: 髪を伸ばす; phát huy: 才能を伸ばす). 延びる ↔ 延ばす (hoãn, kéo dài: 出発を延ばす). Cặp tự/tha giữ nguyên chữ."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-v-nobiru-grow-extend-grow": "Dài ra, cao lên, phát triển",
+        "ci-v-nobiru-grow-extend-extend": "Kéo dài (thời gian), bị hoãn"
+      }
+    },
+    {
+      "aspectVi": "Chủ ngữ hay gặp",
+      "values": {
+        "ci-v-nobiru-grow-extend-grow": "背、髪、草、売り上げ、実力",
+        "ci-v-nobiru-grow-extend-extend": "会議、締め切り、出発、寿命、線路"
+      }
+    },
+    {
+      "aspectVi": "Từ Hán liên quan",
+      "values": {
+        "ci-v-nobiru-grow-extend-grow": "伸長 (tăng trưởng)",
+        "ci-v-nobiru-grow-extend-extend": "延期 (hoãn), 延長 (gia hạn)"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-nobiru-grow-extend-1",
+      "itemId": "ci-v-nobiru-grow-extend-grow",
+      "japanese": "一年で息子の背が十センチも伸びた。",
+      "furigana": "{一年|いちねん}で{息子|むすこ}の{背|せ}が{十|じゅう}センチも{伸|の}びた。",
+      "translationVi": "Trong một năm con trai tôi cao thêm tận mười phân."
+    },
+    {
+      "id": "cx-v-nobiru-grow-extend-2",
+      "itemId": "ci-v-nobiru-grow-extend-grow",
+      "japanese": "毎日練習したので、日本語の力がぐんと伸びた。",
+      "furigana": "{毎日|まいにち}{練習|れんしゅう}したので、{日本語|にほんご}の{力|ちから}がぐんと{伸|の}びた。",
+      "translationVi": "Luyện tập mỗi ngày nên trình độ tiếng Nhật tiến bộ vượt bậc."
+    },
+    {
+      "id": "cx-v-nobiru-grow-extend-3",
+      "itemId": "ci-v-nobiru-grow-extend-extend",
+      "japanese": "台風のため、出発が明日に延びた。",
+      "furigana": "{台風|たいふう}のため、{出発|しゅっぱつ}が{明日|あした}に{延|の}びた。",
+      "translationVi": "Vì bão nên chuyến khởi hành bị hoãn sang ngày mai."
+    },
+    {
+      "id": "cx-v-nobiru-grow-extend-4",
+      "itemId": "ci-v-nobiru-grow-extend-extend",
+      "japanese": "会議が一時間も延びて、疲れた。",
+      "furigana": "{会議|かいぎ}が{一時間|いちじかん}も{延|の}びて、{疲|つか}れた。",
+      "translationVi": "Cuộc họp bị kéo dài hẳn một tiếng, mệt quá."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-nobiru-grow-extend-1",
+      "textVi": "延 → 延期 (hoãn), 延長 (kéo dài thời gian). 伸 → duỗi ra, lớn lên."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-nobiru-grow-extend-1",
+      "situationVi": "Nói hạn nộp báo cáo được lùi đến tuần sau.",
+      "wrong": {
+        "japanese": "レポートの締め切りが来週まで伸びた。",
+        "furigana": "レポートの{締|し}め{切|き}りが{来週|らいしゅう}まで{伸|の}びた。"
+      },
+      "correct": {
+        "japanese": "レポートの締め切りが来週まで延びた。",
+        "furigana": "レポートの{締|し}め{切|き}りが{来週|らいしゅう}まで{延|の}びた。"
+      },
+      "explanationVi": "Thời hạn được kéo dài → 延びる.",
+      "expectedItemId": "ci-v-nobiru-grow-extend-extend",
+      "confusedWithItemId": "ci-v-nobiru-grow-extend-grow"
+    },
+    {
+      "id": "ce-v-nobiru-grow-extend-2",
+      "situationVi": "Nói tóc đã dài ra.",
+      "wrong": {
+        "japanese": "髪がずいぶん延びたね。",
+        "furigana": "{髪|かみ}がずいぶん{延|の}びたね。"
+      },
+      "correct": {
+        "japanese": "髪がずいぶん伸びたね。",
+        "furigana": "{髪|かみ}がずいぶん{伸|の}びたね。"
+      },
+      "explanationVi": "Tóc dài ra (độ dài vật lý) → 伸びる.",
+      "expectedItemId": "ci-v-nobiru-grow-extend-grow",
+      "confusedWithItemId": "ci-v-nobiru-grow-extend-extend"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-nobiru-grow-extend-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-nobiru-grow-extend-extend",
+      "instructionVi": "Chọn câu viết đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "雨で試合が来週に延びた。",
+          "furigana": "{雨|あめ}で{試合|しあい}が{来週|らいしゅう}に{延|の}びた。",
+          "itemId": "ci-v-nobiru-grow-extend-extend"
+        },
+        {
+          "id": "b",
+          "text": "雨で試合が来週に伸びた。",
+          "furigana": "{雨|あめ}で{試合|しあい}が{来週|らいしゅう}に{伸|の}びた。",
+          "itemId": "ci-v-nobiru-grow-extend-grow",
+          "feedbackVi": "伸びる dùng cho dài ra, phát triển; trận đấu bị hoãn → 延びる."
+        },
+        {
+          "id": "c",
+          "text": "雨で試合が来週に伸ばした。",
+          "furigana": "{雨|あめ}で{試合|しあい}が{来週|らいしゅう}に{伸|の}ばした。",
+          "feedbackVi": "伸ばす là tha động từ, cần を và sai chữ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Trận đấu bị hoãn → 延びる."
+    },
+    {
+      "id": "cq-v-nobiru-grow-extend-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-nobiru-grow-extend-grow",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "新商品のおかげで、今年は売り上げが大きく＿＿＿。",
+        "furigana": "{新商品|しんしょうひん}のおかげで、{今年|ことし}は{売|う}り{上|あ}げが{大|おお}きく＿＿＿。",
+        "translationVi": "Nhờ sản phẩm mới, doanh số năm nay tăng mạnh."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "伸びた",
+          "furigana": "{伸|の}びた",
+          "itemId": "ci-v-nobiru-grow-extend-grow"
+        },
+        {
+          "id": "b",
+          "text": "延びた",
+          "furigana": "{延|の}びた",
+          "itemId": "ci-v-nobiru-grow-extend-extend"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Doanh số phát triển → 伸びる."
+    },
+    {
+      "id": "cq-v-nobiru-grow-extend-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-nobiru-grow-extend-grow",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "夏は庭の草がすぐに延びる。",
+        "furigana": "{夏|なつ}は{庭|にわ}の{草|くさ}がすぐに{延|の}びる。",
+        "translationVi": "Vào mùa hè, cỏ trong vườn mọc dài ra rất nhanh."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "夏は",
+          "furigana": "{夏|なつ}は"
+        },
+        {
+          "id": "b",
+          "text": "庭の草が",
+          "furigana": "{庭|にわ}の{草|くさ}が"
+        },
+        {
+          "id": "c",
+          "text": "すぐに"
+        },
+        {
+          "id": "d",
+          "text": "延びる。",
+          "furigana": "{延|の}びる。",
+          "itemId": "ci-v-nobiru-grow-extend-extend"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "伸びる。",
+        "furigana": "{伸|の}びる。",
+        "itemId": "ci-v-nobiru-grow-extend-grow"
+      },
+      "explanationVi": "Cỏ mọc dài ra → 伸びる."
+    },
+    {
+      "id": "cq-v-nobiru-grow-extend-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-nobiru-grow-extend-extend",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn báo với gia đình rằng tuyến tàu điện ngầm sẽ được kéo dài tới gần nhà vào năm sau."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "来年、地下鉄がうちの近くまで延びるそうだよ。",
+          "furigana": "{来年|らいねん}、{地下鉄|ちかてつ}がうちの{近|ちか}くまで{延|の}びるそうだよ。",
+          "itemId": "ci-v-nobiru-grow-extend-extend"
+        },
+        {
+          "id": "b",
+          "text": "来年、地下鉄がうちの近くまで伸びるそうだよ。",
+          "furigana": "{来年|らいねん}、{地下鉄|ちかてつ}がうちの{近|ちか}くまで{伸|の}びるそうだよ。",
+          "itemId": "ci-v-nobiru-grow-extend-grow",
+          "feedbackVi": "Tuyến đường được nối dài thêm thường viết 延びる."
+        },
+        {
+          "id": "c",
+          "text": "来年、地下鉄がうちの近くまで進めるそうだよ。",
+          "furigana": "{来年|らいねん}、{地下鉄|ちかてつ}がうちの{近|ちか}くまで{進|すす}めるそうだよ。",
+          "feedbackVi": "進める là tha động từ 'xúc tiến', không hợp."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tuyến đường được kéo dài → 延びる."
+    }
+  ]
+}

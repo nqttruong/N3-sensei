@@ -17,6 +17,15 @@ Tab Học (LearnHub) ── "Contrast Lab — Mới" (mục cuối danh sách, k
 - Back: So sánh → Thư viện (giữ truy vấn và bộ lọc) → Contrast Home → Tab Học. Mỗi lần mở là một entry; không có `popUpTo` đặc biệt.
 - Từ Home cũng mở được So sánh trực tiếp (Tiếp tục học, Đến hạn ôn, Hay nhầm).
 
+### Lối vào từ bài học và trang kiến thức (C6)
+
+- **Vị trí:**
+  - Học → Bài học → chi tiết bài: "Phân biệt kiến thức dễ nhầm".
+  - Trang Ngữ pháp, Từ vựng, Kanji: "Xem các kiến thức dễ nhầm".
+- **Dữ liệu:** `ContrastLinksViewModel` đọc `ContrastContentRepository.observeGroupsForSources`, tức là các nhóm đã phát hành có mục trỏ tới id nguồn của bài hoặc trang. Đây chỉ là truy vấn, không đổi schema.
+- **Hiển thị:** một hàng chip cuộn ngang (`ContrastLinkTags`). Bấm vào mở màn So sánh.
+- **Hành vi:** không ghi gì. Khi không có gói được phát hành thì không hiện. Bài học vẫn theo CoursePlan, không đổi.
+
 ## 2. ViewModel và UI State
 
 Kiến trúc như phần còn lại của app: Screen → ViewModel → use case / repository → Room. Composable không truy cập DAO; ViewModel không giữ NavController. Mọi luồng được thu bằng `collectAsStateWithLifecycle`.

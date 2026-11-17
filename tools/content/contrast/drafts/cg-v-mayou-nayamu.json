@@ -1,0 +1,317 @@
+{
+  "id": "cg-v-mayou-nayamu",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "迷う và 悩む",
+  "summaryVi": "Cả hai liên quan đến 'băn khoăn', nhưng 迷う là lưỡng lự giữa các lựa chọn (hoặc lạc đường), còn 悩む là đau đầu, khổ tâm vì một vấn đề khó giải quyết.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-mayou-nayamu-mayou",
+      "label": "迷う",
+      "labelFurigana": "{迷|まよ}う",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v502",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "迷う",
+          "reading": "まよう",
+          "meaningVi": "lạc đường"
+        },
+        "sourceFingerprint": "sha256:c954367d551beb839bd3f86e4067a13dc2ace909dac56fdb26009fa3160ee3f4"
+      },
+      "vocabulary": {
+        "reading": "まよう",
+        "meaningVi": "lạc đường; lưỡng lự",
+        "usageVi": "(1) Không biết đường: 道に迷う; (2) Phân vân chọn A hay B: どちらにするか迷う.",
+        "collocations": [
+          {
+            "japanese": "道に迷う",
+            "furigana": "{道|みち}に{迷|まよ}う",
+            "meaningVi": "lạc đường"
+          },
+          {
+            "japanese": "何を買うか迷う",
+            "furigana": "{何|なに}を{買|か}うか{迷|まよ}う",
+            "meaningVi": "phân vân mua gì"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-mayou-nayamu-nayamu",
+      "label": "悩む",
+      "labelFurigana": "{悩|なや}む",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v503",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "悩む",
+          "reading": "なやむ",
+          "meaningVi": "băn khoăn"
+        },
+        "sourceFingerprint": "sha256:8fec817e2b5f96167ba7f50c72028d15d50f33cd31020aa536e4e599484b8034"
+      },
+      "vocabulary": {
+        "reading": "なやむ",
+        "meaningVi": "lo nghĩ, khổ tâm, đau đầu",
+        "usageVi": "Suy nghĩ mãi về một vấn đề khó, gây khổ sở: 人間関係に悩む、将来について悩む.",
+        "collocations": [
+          {
+            "japanese": "進路に悩む",
+            "furigana": "{進路|しんろ}に{悩|なや}む",
+            "meaningVi": "đau đầu về con đường tương lai"
+          },
+          {
+            "japanese": "頭痛に悩む",
+            "furigana": "{頭痛|ずつう}に{悩|なや}む",
+            "meaningVi": "khổ vì chứng đau đầu"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-mayou-nayamu-1",
+      "titleVi": "Chọn lựa hay khổ tâm",
+      "bodyVi": "Có các phương án cụ thể để chọn (AかBか、どれにするか) → 迷う, cảm giác nhẹ nhàng hơn. Có một vấn đề làm mình khổ, lâu dài (いじめ、借金、病気、人間関係) → 悩む, cảm giác nặng nề. Nghĩa 'lạc đường' chỉ có ở 迷う."
+    },
+    {
+      "id": "ct-v-mayou-nayamu-2",
+      "titleVi": "Trợ từ",
+      "bodyVi": "悩む thường đi với に (問題に悩む) hoặc について. 迷う đi với か (〜か迷う) hoặc に (道に迷う)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-v-mayou-nayamu-mayou": "Lưỡng lự giữa lựa chọn; lạc đường",
+        "ci-v-mayou-nayamu-nayamu": "Khổ tâm vì vấn đề khó"
+      }
+    },
+    {
+      "aspectVi": "Mức nặng nề",
+      "values": {
+        "ci-v-mayou-nayamu-mayou": "Nhẹ, nhất thời",
+        "ci-v-mayou-nayamu-nayamu": "Nặng, kéo dài"
+      }
+    },
+    {
+      "aspectVi": "Cấu trúc",
+      "values": {
+        "ci-v-mayou-nayamu-mayou": "〜か迷う、道に迷う",
+        "ci-v-mayou-nayamu-nayamu": "N に悩む、〜について悩む"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-mayou-nayamu-1",
+      "itemId": "ci-v-mayou-nayamu-mayou",
+      "japanese": "メニューが多くて、何を注文するか迷ってしまう。",
+      "furigana": "メニューが{多|おお}くて、{何|なに}を{注文|ちゅうもん}するか{迷|まよ}ってしまう。",
+      "translationVi": "Thực đơn nhiều quá nên tôi phân vân không biết gọi gì."
+    },
+    {
+      "id": "cx-v-mayou-nayamu-2",
+      "itemId": "ci-v-mayou-nayamu-mayou",
+      "japanese": "初めての町で道に迷った。",
+      "furigana": "{初|はじ}めての{町|まち}で{道|みち}に{迷|まよ}った。",
+      "translationVi": "Tôi bị lạc đường ở thành phố lần đầu đến."
+    },
+    {
+      "id": "cx-v-mayou-nayamu-3",
+      "itemId": "ci-v-mayou-nayamu-nayamu",
+      "japanese": "彼は長い間、仕事の人間関係に悩んでいる。",
+      "furigana": "{彼|かれ}は{長|なが}い{間|あいだ}、{仕事|しごと}の{人間関係|にんげんかんけい}に{悩|なや}んでいる。",
+      "translationVi": "Anh ấy đã khổ tâm vì các mối quan hệ ở nơi làm việc trong một thời gian dài."
+    },
+    {
+      "id": "cx-v-mayou-nayamu-4",
+      "itemId": "ci-v-mayou-nayamu-nayamu",
+      "japanese": "悩みがあったら、一人で悩まないで相談してね。",
+      "furigana": "{悩|なや}みがあったら、{一人|ひとり}で{悩|なや}まないで{相談|そうだん}してね。",
+      "translationVi": "Có chuyện phiền muộn thì đừng ôm một mình, hãy tâm sự nhé."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-mayou-nayamu-1",
+      "textVi": "迷 có bộ 辶 (đi): đi mà không biết đường → lạc, lưỡng lự. 悩 có bộ 忄 (tâm): khổ trong lòng."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-mayou-nayamu-1",
+      "situationVi": "Phân vân giữa hai chiếc áo.",
+      "wrong": {
+        "japanese": "赤と青のどちらを買うか、悩みに苦しんでいる。",
+        "furigana": "{赤|あか}と{青|あお}のどちらを{買|か}うか、{悩|なや}みに{苦|くる}しんでいる。"
+      },
+      "correct": {
+        "japanese": "赤と青のどちらを買うか迷っている。",
+        "furigana": "{赤|あか}と{青|あお}のどちらを{買|か}うか{迷|まよ}っている。"
+      },
+      "explanationVi": "Chọn giữa hai lựa chọn cụ thể, nhẹ nhàng → 迷う.",
+      "expectedItemId": "ci-v-mayou-nayamu-mayou",
+      "confusedWithItemId": "ci-v-mayou-nayamu-nayamu"
+    },
+    {
+      "id": "ce-v-mayou-nayamu-2",
+      "situationVi": "Khổ sở vì nợ nần nhiều năm.",
+      "wrong": {
+        "japanese": "何年も借金に迷っている。",
+        "furigana": "{何年|なんねん}も{借金|しゃっきん}に{迷|まよ}っている。"
+      },
+      "correct": {
+        "japanese": "何年も借金に悩んでいる。",
+        "furigana": "{何年|なんねん}も{借金|しゃっきん}に{悩|なや}んでいる。"
+      },
+      "explanationVi": "Vấn đề khó, gây khổ tâm lâu dài → 悩む.",
+      "expectedItemId": "ci-v-mayou-nayamu-nayamu",
+      "confusedWithItemId": "ci-v-mayou-nayamu-mayou"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-mayou-nayamu-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-mayou-nayamu-mayou",
+      "instructionVi": "Chọn câu đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "地図を持っていなかったので、山で道に迷った。",
+          "furigana": "{地図|ちず}を{持|も}っていなかったので、{山|やま}で{道|みち}に{迷|まよ}った。",
+          "itemId": "ci-v-mayou-nayamu-mayou"
+        },
+        {
+          "id": "b",
+          "text": "地図を持っていなかったので、山で道に悩んだ。",
+          "furigana": "{地図|ちず}を{持|も}っていなかったので、{山|やま}で{道|みち}に{悩|なや}んだ。",
+          "itemId": "ci-v-mayou-nayamu-nayamu",
+          "feedbackVi": "Lạc đường chỉ dùng 迷う."
+        },
+        {
+          "id": "c",
+          "text": "地図を持っていなかったので、山で道を間違った。",
+          "furigana": "{地図|ちず}を{持|も}っていなかったので、{山|やま}で{道|みち}を{間違|まちが}った。",
+          "feedbackVi": "間違う là tự động từ; 'đi nhầm đường' nói 道を間違えた."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Lạc đường → 道に迷う."
+    },
+    {
+      "id": "cq-v-mayou-nayamu-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-mayou-nayamu-nayamu",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "娘は友達とうまくいかないことに＿＿＿いるようだ。",
+        "furigana": "{娘|むすめ}は{友達|ともだち}とうまくいかないことに＿＿＿いるようだ。",
+        "translationVi": "Con gái tôi có vẻ đang khổ tâm vì không hòa hợp được với bạn bè."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "悩んで",
+          "furigana": "{悩|なや}んで",
+          "itemId": "ci-v-mayou-nayamu-nayamu"
+        },
+        {
+          "id": "b",
+          "text": "迷って",
+          "furigana": "{迷|まよ}って",
+          "itemId": "ci-v-mayou-nayamu-mayou"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Vấn đề quan hệ bạn bè gây khổ tâm → 悩む."
+    },
+    {
+      "id": "cq-v-mayou-nayamu-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-mayou-nayamu-mayou",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "京都に行くか大阪に行くか、悩みに苦しんでいる。",
+        "furigana": "{京都|きょうと}に{行|い}くか{大阪|おおさか}に{行|い}くか、{悩|なや}みに{苦|くる}しんでいる。",
+        "translationVi": "Tôi đang phân vân không biết nên đi Kyoto hay Osaka."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "京都に行くか",
+          "furigana": "{京都|きょうと}に{行|い}くか"
+        },
+        {
+          "id": "b",
+          "text": "大阪に行くか、",
+          "furigana": "{大阪|おおさか}に{行|い}くか、"
+        },
+        {
+          "id": "c",
+          "text": "悩みに苦しんでいる。",
+          "furigana": "{悩|なや}みに{苦|くる}しんでいる。",
+          "itemId": "ci-v-mayou-nayamu-nayamu"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "迷っている。",
+        "furigana": "{迷|まよ}っている。",
+        "itemId": "ci-v-mayou-nayamu-mayou"
+      },
+      "explanationVi": "Phân vân giữa hai lựa chọn → 迷う; 悩みに苦しむ quá nặng nề cho việc chọn nơi du lịch."
+    },
+    {
+      "id": "cq-v-mayou-nayamu-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-mayou-nayamu-nayamu",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Người bạn tâm sự rằng nhiều tháng nay bạn ấy mất ngủ vì áp lực công việc và không biết làm sao."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "仕事のストレスで、ずっと悩んでいるんだね。",
+          "furigana": "{仕事|しごと}のストレスで、ずっと{悩|なや}んでいるんだね。",
+          "itemId": "ci-v-mayou-nayamu-nayamu"
+        },
+        {
+          "id": "b",
+          "text": "仕事のストレスで、ずっと迷っているんだね。",
+          "furigana": "{仕事|しごと}のストレスで、ずっと{迷|まよ}っているんだね。",
+          "itemId": "ci-v-mayou-nayamu-mayou",
+          "feedbackVi": "迷う là phân vân giữa lựa chọn, không diễn tả khổ tâm kéo dài."
+        },
+        {
+          "id": "c",
+          "text": "仕事のストレスで、ずっと慌てているんだね。",
+          "furigana": "{仕事|しごと}のストレスで、ずっと{慌|あわ}てているんだね。",
+          "feedbackVi": "慌てる là vội vàng, cuống quýt."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Khổ tâm kéo dài vì vấn đề khó → 悩む."
+    }
+  ]
+}

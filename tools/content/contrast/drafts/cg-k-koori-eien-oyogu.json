@@ -1,0 +1,380 @@
+{
+  "id": "cg-k-koori-eien-oyogu",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "氷, 永 và 泳",
+  "summaryVi": "Ba chữ hình dáng rất gần nhau: 永 (VĨNH, lâu dài) là gốc; thêm một chấm bên trái thành 氷 (BĂNG, nước đá); thêm bộ 氵 (nước) thành 泳 (VỊNH, bơi).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-koori-eien-oyogu-koori",
+      "label": "氷",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k06c37",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "氷",
+          "onReadings": [
+            "ヒョウ"
+          ],
+          "kunReadings": [
+            "こおり",
+            "ひ",
+            "こお.る"
+          ],
+          "meaningVi": "Băng, nước đá"
+        },
+        "sourceFingerprint": "sha256:ec0c102983a337ffd1b7694351fa6cfde6fb1dcbfcb34769c0158cda14446542"
+      },
+      "kanji": {
+        "meaningVi": "băng, nước đá",
+        "hanViet": "BĂNG",
+        "onReadings": [
+          "ヒョウ"
+        ],
+        "kunReadings": [
+          "こおり",
+          "ひ",
+          "こお.る"
+        ],
+        "radical": {
+          "character": "水",
+          "nameVi": "Thủy (nước)"
+        },
+        "shapeNoteVi": "水 (nước) thêm một chấm: nước đông lại → đá. 氷, 氷山, かき氷."
+      }
+    },
+    {
+      "id": "ci-k-koori-eien-oyogu-nagai",
+      "label": "永",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k06c38",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "永",
+          "onReadings": [
+            "エイ"
+          ],
+          "kunReadings": [
+            "なが.い"
+          ],
+          "meaningVi": "Lâu dài, vĩnh viễn"
+        },
+        "sourceFingerprint": "sha256:279908e8c7f03ba679a70a70315b31b4810cc6819c0fbd8c4a035b615876c8ed"
+      },
+      "kanji": {
+        "meaningVi": "lâu dài, vĩnh viễn",
+        "hanViet": "VĨNH",
+        "onReadings": [
+          "エイ"
+        ],
+        "kunReadings": [
+          "なが.い"
+        ],
+        "radical": {
+          "character": "水",
+          "nameVi": "Thủy (nước)"
+        },
+        "shapeNoteVi": "Dòng nước chảy mãi → lâu dài. 永遠, 永久, 永住."
+      }
+    },
+    {
+      "id": "ci-k-koori-eien-oyogu-oyogu",
+      "label": "泳",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k06cf3",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "泳",
+          "onReadings": [
+            "エイ"
+          ],
+          "kunReadings": [
+            "およ.ぐ"
+          ],
+          "meaningVi": "Bơi"
+        },
+        "sourceFingerprint": "sha256:b27d6a2c009524f545115372c2a4f172eafa3546b71067a668b77d7e9603e339"
+      },
+      "kanji": {
+        "meaningVi": "bơi",
+        "hanViet": "VỊNH",
+        "onReadings": [
+          "エイ"
+        ],
+        "kunReadings": [
+          "およ.ぐ"
+        ],
+        "radical": {
+          "character": "氵",
+          "nameVi": "Thủy (nước) bên trái"
+        },
+        "shapeNoteVi": "氵 + 永: người ở lâu trong nước → bơi. 泳ぐ, 水泳."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-koori-eien-oyogu-1",
+      "titleVi": "Nhìn chấm và bộ nước",
+      "bodyVi": "永: có chấm ở đỉnh, không có chấm bên trái. 氷: giống 水 thêm một chấm nhỏ bên trái (giọt nước đóng băng). 泳: bộ 氵 bên trái + 永."
+    },
+    {
+      "id": "ct-k-koori-eien-oyogu-2",
+      "titleVi": "Âm đọc",
+      "bodyVi": "氷: こおり, ヒョウ (氷山). 永: なが.い, エイ (永遠). 泳: およ.ぐ, エイ (水泳). 永 và 泳 cùng âm エイ nên dễ nhầm trong 水泳 ／ 永遠."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Đặc điểm hình",
+      "values": {
+        "ci-k-koori-eien-oyogu-koori": "水 + chấm bên trái",
+        "ci-k-koori-eien-oyogu-nagai": "Chấm ở đỉnh, không bộ",
+        "ci-k-koori-eien-oyogu-oyogu": "氵 + 永"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-koori-eien-oyogu-koori": "Băng, đá",
+        "ci-k-koori-eien-oyogu-nagai": "Lâu dài",
+        "ci-k-koori-eien-oyogu-oyogu": "Bơi"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-koori-eien-oyogu-koori": "氷、氷山、かき氷",
+        "ci-k-koori-eien-oyogu-nagai": "永遠、永久、永住",
+        "ci-k-koori-eien-oyogu-oyogu": "泳ぐ、水泳"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-koori-eien-oyogu-1",
+      "itemId": "ci-k-koori-eien-oyogu-koori",
+      "japanese": "ジュースに氷を入れてください。",
+      "furigana": "ジュースに{氷|こおり}を{入|い}れてください。",
+      "translationVi": "Cho đá vào nước ép giúp tôi."
+    },
+    {
+      "id": "cx-k-koori-eien-oyogu-2",
+      "itemId": "ci-k-koori-eien-oyogu-koori",
+      "japanese": "夏祭りでかき氷を食べた。",
+      "furigana": "{夏祭|なつまつ}りでかき{氷|ごおり}を{食|た}べた。",
+      "translationVi": "Tôi ăn đá bào ở lễ hội mùa hè."
+    },
+    {
+      "id": "cx-k-koori-eien-oyogu-3",
+      "itemId": "ci-k-koori-eien-oyogu-nagai",
+      "japanese": "二人は永遠の愛を誓った。",
+      "furigana": "{二人|ふたり}は{永遠|えいえん}の{愛|あい}を{誓|ちか}った。",
+      "translationVi": "Hai người thề nguyện tình yêu vĩnh cửu."
+    },
+    {
+      "id": "cx-k-koori-eien-oyogu-4",
+      "itemId": "ci-k-koori-eien-oyogu-nagai",
+      "japanese": "彼は日本に永住するつもりだ。",
+      "furigana": "{彼|かれ}は{日本|にほん}に{永住|えいじゅう}するつもりだ。",
+      "translationVi": "Anh ấy định định cư lâu dài ở Nhật."
+    },
+    {
+      "id": "cx-k-koori-eien-oyogu-5",
+      "itemId": "ci-k-koori-eien-oyogu-oyogu",
+      "japanese": "子供のころから水泳を習っている。",
+      "furigana": "{子供|こども}のころから{水泳|すいえい}を{習|なら}っている。",
+      "translationVi": "Tôi học bơi từ nhỏ."
+    },
+    {
+      "id": "cx-k-koori-eien-oyogu-6",
+      "itemId": "ci-k-koori-eien-oyogu-oyogu",
+      "japanese": "海で泳ぐのは気持ちがいい。",
+      "furigana": "{海|うみ}で{泳|およ}ぐのは{気持|きも}ちがいい。",
+      "translationVi": "Bơi ở biển thật dễ chịu."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-koori-eien-oyogu-1",
+      "textVi": "Thêm 'giọt nước' (氵) → bơi 泳; thêm 'một hạt băng' (chấm trái) → đá 氷; không thêm gì → lâu dài 永."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-koori-eien-oyogu-1",
+      "situationVi": "Viết 'bơi lội'.",
+      "wrong": {
+        "japanese": "趣味は水永です。",
+        "furigana": "{趣味|しゅみ}は{水永|すいえい}です。"
+      },
+      "correct": {
+        "japanese": "趣味は水泳です。",
+        "furigana": "{趣味|しゅみ}は{水泳|すいえい}です。"
+      },
+      "explanationVi": "Bơi → 泳 (có 氵).",
+      "expectedItemId": "ci-k-koori-eien-oyogu-oyogu",
+      "confusedWithItemId": "ci-k-koori-eien-oyogu-nagai"
+    },
+    {
+      "id": "ce-k-koori-eien-oyogu-2",
+      "situationVi": "Viết 'nước đá'.",
+      "wrong": {
+        "japanese": "コップに永を入れた。",
+        "furigana": "コップに{永|えい}を{入|い}れた。"
+      },
+      "correct": {
+        "japanese": "コップに氷を入れた。",
+        "furigana": "コップに{氷|こおり}を{入|い}れた。"
+      },
+      "explanationVi": "Đá → 氷 (chấm bên trái).",
+      "expectedItemId": "ci-k-koori-eien-oyogu-koori",
+      "confusedWithItemId": "ci-k-koori-eien-oyogu-nagai"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-koori-eien-oyogu-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-koori-eien-oyogu-nagai",
+      "instructionVi": "Chọn cách viết đúng của えいえん (vĩnh viễn).",
+      "options": [
+        {
+          "id": "a",
+          "text": "泳遠",
+          "itemId": "ci-k-koori-eien-oyogu-oyogu",
+          "feedbackVi": "泳 là bơi."
+        },
+        {
+          "id": "b",
+          "text": "永遠",
+          "itemId": "ci-k-koori-eien-oyogu-nagai"
+        },
+        {
+          "id": "c",
+          "text": "氷遠",
+          "itemId": "ci-k-koori-eien-oyogu-koori",
+          "feedbackVi": "氷 là băng."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanationVi": "永遠: lâu dài mãi → 永."
+    },
+    {
+      "id": "cq-k-koori-eien-oyogu-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-koori-eien-oyogu-koori",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "寒い朝、池に＿＿＿が張っていた。",
+        "furigana": "{寒|さむ}い{朝|あさ}、{池|いけ}に＿＿＿が{張|は}っていた。",
+        "translationVi": "Buổi sáng lạnh, mặt ao đóng một lớp băng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "氷",
+          "itemId": "ci-k-koori-eien-oyogu-koori"
+        },
+        {
+          "id": "b",
+          "text": "永",
+          "itemId": "ci-k-koori-eien-oyogu-nagai"
+        },
+        {
+          "id": "c",
+          "text": "泳",
+          "itemId": "ci-k-koori-eien-oyogu-oyogu"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Băng → 氷."
+    },
+    {
+      "id": "cq-k-koori-eien-oyogu-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-koori-eien-oyogu-oyogu",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "妹は私より永ぐのが上手だ。",
+        "furigana": "{妹|いもうと}は{私|わたし}より{永|なが}ぐのが{上手|じょうず}だ。",
+        "translationVi": "Em gái tôi bơi giỏi hơn tôi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "妹は",
+          "furigana": "{妹|いもうと}は"
+        },
+        {
+          "id": "b",
+          "text": "私より",
+          "furigana": "{私|わたし}より"
+        },
+        {
+          "id": "c",
+          "text": "永ぐのが上手だ。",
+          "furigana": "{永|なが}ぐのが{上手|じょうず}だ。",
+          "itemId": "ci-k-koori-eien-oyogu-nagai"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "泳ぐのが上手だ。",
+        "furigana": "{泳|およ}ぐのが{上手|じょうず}だ。",
+        "itemId": "ci-k-koori-eien-oyogu-oyogu"
+      },
+      "explanationVi": "Bơi → 泳ぐ."
+    },
+    {
+      "id": "cq-k-koori-eien-oyogu-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-koori-eien-oyogu-oyogu",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn rủ bạn cuối tuần đi bể bơi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "週末、プールに泳ぎに行こうよ。",
+          "furigana": "{週末|しゅうまつ}、プールに{泳|およ}ぎに{行|い}こうよ。",
+          "itemId": "ci-k-koori-eien-oyogu-oyogu"
+        },
+        {
+          "id": "b",
+          "text": "週末、プールに永ぎに行こうよ。",
+          "furigana": "{週末|しゅうまつ}、プールに{永|なが}ぎに{行|い}こうよ。",
+          "itemId": "ci-k-koori-eien-oyogu-nagai",
+          "feedbackVi": "Bơi viết 泳ぐ (có 氵)."
+        },
+        {
+          "id": "c",
+          "text": "週末、プールに氷ぎに行こうよ。",
+          "furigana": "{週末|しゅうまつ}、プールに{氷|こお}ぎに{行|い}こうよ。",
+          "itemId": "ci-k-koori-eien-oyogu-koori",
+          "feedbackVi": "Bơi viết 泳ぐ, không phải 氷."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "泳ぐ (bơi) viết với 泳."
+    }
+  ]
+}

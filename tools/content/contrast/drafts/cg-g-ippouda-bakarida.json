@@ -1,0 +1,283 @@
+{
+  "id": "cg-g-ippouda-bakarida",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜一方だ và 〜ばかりだ",
+  "summaryVi": "Cả hai đều nghĩa 'ngày càng…', chỉ một sự thay đổi cứ tiếp diễn theo một hướng. ばかりだ hầu như chỉ dùng cho chiều hướng xấu; 一方だ hay dùng cho chiều xấu nhưng cũng dùng được cho thay đổi trung tính hoặc tốt.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-ippouda-bakarida-ippou",
+      "label": "〜一方だ",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g047",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜一方だ",
+          "structure": "Vる ＋ 一方だ",
+          "meaningVi": "ngày càng…, cứ thế mà…"
+        },
+        "sourceFingerprint": "sha256:391ed4cfefe559509f1a43c4306371e80b4ab436d462b43e197274477a0ea0b4"
+      },
+      "grammar": {
+        "meaningVi": "Ngày càng…, cứ thế mà…",
+        "connection": "Vる ＋ 一方だ",
+        "nuanceVi": "Thay đổi liên tục theo một hướng, không dừng. Đi với động từ chỉ sự thay đổi (増える、減る、悪くなる、上がる). Có thể dùng cho thay đổi trung tính hoặc tốt."
+      }
+    },
+    {
+      "id": "ci-g-ippouda-bakarida-bakari",
+      "label": "〜ばかりだ",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g161",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜ばかりだ",
+          "structure": "Vる + ばかりだ",
+          "meaningVi": "ngày càng… (thường theo chiều xấu)"
+        },
+        "sourceFingerprint": "sha256:fce32c647710900ce8e4e37e7776a90783756ab038ec48252079c3d540bc7eb7"
+      },
+      "grammar": {
+        "meaningVi": "Ngày càng… (thường theo chiều xấu)",
+        "connection": "Vる ＋ ばかりだ",
+        "nuanceVi": "Thay đổi theo hướng xấu cứ tiếp diễn, người nói lo lắng, bất mãn. Không dùng cho thay đổi tốt."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-ippouda-bakarida-1",
+      "titleVi": "Chiều hướng của thay đổi",
+      "bodyVi": "Xấu (悪くなる、増える[ゴミ]、減る[客]) → cả hai đều được, ばかりだ nhấn mạnh sự lo lắng. Tốt (上手になる、よくなる) → chỉ 一方だ (×上手になるばかりだ)."
+    },
+    {
+      "id": "ct-g-ippouda-bakarida-2",
+      "titleVi": "Chỉ đi với động từ thay đổi",
+      "bodyVi": "Cả hai đều cần động từ chỉ sự biến đổi (〜くなる、〜になる、増える、減る、上がる、下がる). Không dùng với hành động một lần như 食べる、行く."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Chiều hướng",
+      "values": {
+        "ci-g-ippouda-bakarida-ippou": "Xấu, trung tính, đôi khi tốt",
+        "ci-g-ippouda-bakarida-bakari": "Hầu như chỉ xấu"
+      }
+    },
+    {
+      "aspectVi": "Cảm xúc người nói",
+      "values": {
+        "ci-g-ippouda-bakarida-ippou": "Khách quan hơn",
+        "ci-g-ippouda-bakarida-bakari": "Lo lắng, bất mãn rõ"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ",
+      "values": {
+        "ci-g-ippouda-bakarida-ippou": "人口が増える一方だ",
+        "ci-g-ippouda-bakarida-bakari": "病気は悪くなるばかりだ"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-ippouda-bakarida-1",
+      "itemId": "ci-g-ippouda-bakarida-ippou",
+      "japanese": "この町の人口は減る一方だ。",
+      "furigana": "この{町|まち}の{人口|じんこう}は{減|へ}る{一方|いっぽう}だ。",
+      "translationVi": "Dân số thị trấn này ngày càng giảm."
+    },
+    {
+      "id": "cx-g-ippouda-bakarida-2",
+      "itemId": "ci-g-ippouda-bakarida-ippou",
+      "japanese": "彼女の日本語は上手になる一方だ。",
+      "furigana": "{彼女|かのじょ}の{日本語|にほんご}は{上手|じょうず}になる{一方|いっぽう}だ。",
+      "translationVi": "Tiếng Nhật của cô ấy ngày càng giỏi."
+    },
+    {
+      "id": "cx-g-ippouda-bakarida-3",
+      "itemId": "ci-g-ippouda-bakarida-bakari",
+      "japanese": "物価は上がるばかりで、生活が苦しい。",
+      "furigana": "{物価|ぶっか}は{上|あ}がるばかりで、{生活|せいかつ}が{苦|くる}しい。",
+      "translationVi": "Vật giá cứ tăng mãi, cuộc sống thật khó khăn."
+    },
+    {
+      "id": "cx-g-ippouda-bakarida-4",
+      "itemId": "ci-g-ippouda-bakarida-bakari",
+      "japanese": "薬を飲んでも、咳はひどくなるばかりだ。",
+      "furigana": "{薬|くすり}を{飲|の}んでも、{咳|せき}はひどくなるばかりだ。",
+      "translationVi": "Uống thuốc rồi mà cơn ho cứ ngày càng nặng hơn."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-ippouda-bakarida-1",
+      "textVi": "ばかり hay mang sắc thái tiêu cực ('chỉ toàn…'); 一方 là 'một phía', cứ một chiều mà đi, tốt xấu đều được."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-ippouda-bakarida-1",
+      "situationVi": "Khen học sinh tiến bộ nhanh.",
+      "wrong": {
+        "japanese": "田中さんの成績はよくなるばかりだ。",
+        "furigana": "{田中|たなか}さんの{成績|せいせき}はよくなるばかりだ。"
+      },
+      "correct": {
+        "japanese": "田中さんの成績はよくなる一方だ。",
+        "furigana": "{田中|たなか}さんの{成績|せいせき}はよくなる{一方|いっぽう}だ。"
+      },
+      "explanationVi": "Thay đổi tốt (thành tích tốt lên) không dùng ばかりだ; dùng 一方だ.",
+      "expectedItemId": "ci-g-ippouda-bakarida-ippou",
+      "confusedWithItemId": "ci-g-ippouda-bakarida-bakari"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-ippouda-bakarida-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-ippouda-bakarida-ippou",
+      "instructionVi": "Câu nào tự nhiên?",
+      "options": [
+        {
+          "id": "a",
+          "text": "練習のおかげで、彼のピアノは上手になる一方だ。",
+          "furigana": "{練習|れんしゅう}のおかげで、{彼|かれ}のピアノは{上手|じょうず}になる{一方|いっぽう}だ。",
+          "itemId": "ci-g-ippouda-bakarida-ippou"
+        },
+        {
+          "id": "b",
+          "text": "練習のおかげで、彼のピアノは上手になるばかりだ。",
+          "furigana": "{練習|れんしゅう}のおかげで、{彼|かれ}のピアノは{上手|じょうず}になるばかりだ。",
+          "itemId": "ci-g-ippouda-bakarida-bakari",
+          "feedbackVi": "ばかりだ không dùng cho thay đổi tốt."
+        },
+        {
+          "id": "c",
+          "text": "練習のおかげで、彼はピアノを弾く一方だ。",
+          "furigana": "{練習|れんしゅう}のおかげで、{彼|かれ}はピアノを{弾|ひ}く{一方|いっぽう}だ。",
+          "feedbackVi": "弾く không phải động từ chỉ sự thay đổi."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Thay đổi tốt, tiếp diễn → 一方だ."
+    },
+    {
+      "id": "cq-g-ippouda-bakarida-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-ippouda-bakarida-bakari",
+      "instructionVi": "Chọn cách nói phù hợp nhất để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "雨は止むどころか、強くなる＿＿＿で、今日の試合は無理そうだ。",
+        "furigana": "{雨|あめ}は{止|や}むどころか、{強|つよ}くなる＿＿＿で、{今日|きょう}の{試合|しあい}は{無理|むり}そうだ。",
+        "translationVi": "Mưa chẳng những không tạnh mà còn ngày càng to, trận đấu hôm nay chắc không được rồi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ばかり",
+          "itemId": "ci-g-ippouda-bakarida-bakari"
+        },
+        {
+          "id": "b",
+          "text": "ところ",
+          "feedbackVi": "強くなるところ là 'sắp mạnh lên', không diễn tả sự thay đổi tiếp diễn."
+        },
+        {
+          "id": "c",
+          "text": "はず",
+          "feedbackVi": "強くなるはず là suy đoán 'chắc sẽ mạnh lên', không hợp với どころか."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Thay đổi xấu tiếp diễn, người nói lo lắng → 強くなるばかりで. (一方で ở đây dễ bị hiểu thành 'mặt khác'.)"
+    },
+    {
+      "id": "cq-g-ippouda-bakarida-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-ippouda-bakarida-ippou",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "ネットの宣伝のおかげで、店の客は増えるばかりで、店長は喜んでいる。",
+        "furigana": "ネットの{宣伝|せんでん}のおかげで、{店|みせ}の{客|きゃく}は{増|ふ}えるばかりで、{店長|てんちょう}は{喜|よろこ}んでいる。",
+        "translationVi": "Nhờ quảng cáo trên mạng, số khách của cửa hàng ngày càng tăng, chủ quán rất vui."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ネットの宣伝のおかげで、",
+          "furigana": "ネットの{宣伝|せんでん}のおかげで、"
+        },
+        {
+          "id": "b",
+          "text": "店の客は",
+          "furigana": "{店|みせ}の{客|きゃく}は"
+        },
+        {
+          "id": "c",
+          "text": "増えるばかりで、",
+          "furigana": "{増|ふ}えるばかりで、",
+          "itemId": "ci-g-ippouda-bakarida-bakari"
+        },
+        {
+          "id": "d",
+          "text": "店長は喜んでいる。",
+          "furigana": "{店長|てんちょう}は{喜|よろこ}んでいる。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "増える一方で、",
+        "furigana": "{増|ふ}える{一方|いっぽう}で、",
+        "itemId": "ci-g-ippouda-bakarida-ippou"
+      },
+      "explanationVi": "Khách tăng là điều đáng mừng (店長は喜んでいる); ばかりだ mang sắc thái lo lắng nên không hợp. Dùng 一方で."
+    },
+    {
+      "id": "cq-g-ippouda-bakarida-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-ippouda-bakarida-bakari",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn lo lắng kể với bác sĩ rằng dù đã nghỉ ngơi, cơn đau lưng của bạn cứ ngày một tệ đi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "休んでいるのに、腰の痛みはひどくなるばかりなんです。",
+          "furigana": "{休|やす}んでいるのに、{腰|こし}の{痛|いた}みはひどくなるばかりなんです。",
+          "itemId": "ci-g-ippouda-bakarida-bakari"
+        },
+        {
+          "id": "b",
+          "text": "休んでいるのに、腰の痛みはひどくなったところなんです。",
+          "furigana": "{休|やす}んでいるのに、{腰|こし}の{痛|いた}みはひどくなったところなんです。",
+          "feedbackVi": "ひどくなったところ là 'vừa mới nặng lên', không phải tiếp diễn."
+        },
+        {
+          "id": "c",
+          "text": "休んでいるのに、腰の痛みはひどくなるはずなんです。",
+          "furigana": "{休|やす}んでいるのに、{腰|こし}の{痛|いた}みはひどくなるはずなんです。",
+          "feedbackVi": "はず là suy đoán, không phải mô tả điều đang xảy ra."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tình trạng xấu đi liên tục, người nói lo lắng → ばかりだ."
+    }
+  ]
+}

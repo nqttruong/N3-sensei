@@ -1,0 +1,293 @@
+{
+  "id": "cg-g-karaniwa-karatoitte",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜からには và 〜からといって",
+  "summaryVi": "Hình thức gần giống nhau nhưng nghĩa khác: からには là 'một khi đã… thì phải…' (quyết tâm, nghĩa vụ); からといって là 'không phải cứ vì… mà…' (vế sau phủ định).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-karaniwa-karatoitte-karaniwa",
+      "label": "〜からには",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g066",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜からには",
+          "structure": "Vthường ＋ からには",
+          "meaningVi": "một khi đã… thì phải…"
+        },
+        "sourceFingerprint": "sha256:bae4a9e096bab987e27cd1359ea94b286b984e9ec0c1d93438d6c017d7d32246"
+      },
+      "grammar": {
+        "meaningVi": "Một khi đã… thì phải…",
+        "connection": "V thể thường ＋ からには",
+        "nuanceVi": "Vế trước là sự thật hay quyết định đã có; vế sau là ý chí, nghĩa vụ, lời khuyên mạnh: 〜なければならない、〜つもりだ、〜べきだ、〜たい."
+      }
+    },
+    {
+      "id": "ci-g-karaniwa-karatoitte-karatoitte",
+      "label": "〜からといって",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g091",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜からといって",
+          "structure": "câu（thể thường） ＋ からといって ＋ …（phủ định）",
+          "meaningVi": "không phải cứ vì… mà…"
+        },
+        "sourceFingerprint": "sha256:98106fbdefe53a6c2da59f984548df09f21997dcef15e6ebccbb56e4ab2c196c"
+      },
+      "grammar": {
+        "meaningVi": "Không phải cứ vì… mà…",
+        "connection": "Câu (thể thường) ＋ からといって ＋ …（phủ định）",
+        "nuanceVi": "Phủ nhận một suy luận thông thường: vế sau thường là 〜わけではない、〜とは限らない、〜てはいけない."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-karaniwa-karatoitte-1",
+      "titleVi": "Nhìn vế sau",
+      "bodyVi": "Vế sau là quyết tâm, nghĩa vụ (最後までやる、頑張らなければならない) → からには. Vế sau phủ định một suy luận (〜わけではない、〜とは限らない) → からといって."
+    },
+    {
+      "id": "ct-g-karaniwa-karatoitte-2",
+      "titleVi": "Mẹo nhớ hình thức",
+      "bodyVi": "からには = から (vì) + には (thì nhất định): đã vì thế thì nhất định phải. からといって = 'dù nói là vì…' → tiếp theo là lời phản bác."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-g-karaniwa-karatoitte-karaniwa": "Một khi đã… thì phải",
+        "ci-g-karaniwa-karatoitte-karatoitte": "Không phải cứ vì… mà"
+      }
+    },
+    {
+      "aspectVi": "Vế sau",
+      "values": {
+        "ci-g-karaniwa-karatoitte-karaniwa": "Ý chí, nghĩa vụ",
+        "ci-g-karaniwa-karatoitte-karatoitte": "Phủ định: わけではない、とは限らない"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ",
+      "values": {
+        "ci-g-karaniwa-karatoitte-karaniwa": "約束したからには守る",
+        "ci-g-karaniwa-karatoitte-karatoitte": "高いからといっていいとは限らない"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-karaniwa-karatoitte-1",
+      "itemId": "ci-g-karaniwa-karatoitte-karaniwa",
+      "japanese": "試合に出るからには、絶対に勝ちたい。",
+      "furigana": "{試合|しあい}に{出|で}るからには、{絶対|ぜったい}に{勝|か}ちたい。",
+      "translationVi": "Một khi đã ra thi đấu thì nhất định tôi muốn thắng."
+    },
+    {
+      "id": "cx-g-karaniwa-karatoitte-2",
+      "itemId": "ci-g-karaniwa-karatoitte-karaniwa",
+      "japanese": "約束したからには、守らなければならない。",
+      "furigana": "{約束|やくそく}したからには、{守|まも}らなければならない。",
+      "translationVi": "Một khi đã hứa thì phải giữ lời."
+    },
+    {
+      "id": "cx-g-karaniwa-karatoitte-3",
+      "itemId": "ci-g-karaniwa-karatoitte-karatoitte",
+      "japanese": "日本人だからといって、敬語が上手なわけではない。",
+      "furigana": "{日本人|にほんじん}だからといって、{敬語|けいご}が{上手|じょうず}なわけではない。",
+      "translationVi": "Không phải cứ là người Nhật thì giỏi kính ngữ."
+    },
+    {
+      "id": "cx-g-karaniwa-karatoitte-4",
+      "itemId": "ci-g-karaniwa-karatoitte-karatoitte",
+      "japanese": "値段が高いからといって、いい物だとは限らない。",
+      "furigana": "{値段|ねだん}が{高|たか}いからといって、いい{物|もの}だとは{限|かぎ}らない。",
+      "translationVi": "Không phải cứ đắt là đồ tốt."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-karaniwa-karatoitte-1",
+      "textVi": "からには → 'thì PHẢI'; からといって → 'cũng KHÔNG hẳn'."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-karaniwa-karatoitte-1",
+      "situationVi": "Khuyên: đã vào đại học thì phải học chăm.",
+      "wrong": {
+        "japanese": "大学に入ったからといって、しっかり勉強するべきだ。",
+        "furigana": "{大学|だいがく}に{入|はい}ったからといって、しっかり{勉強|べんきょう}するべきだ。"
+      },
+      "correct": {
+        "japanese": "大学に入ったからには、しっかり勉強するべきだ。",
+        "furigana": "{大学|だいがく}に{入|はい}ったからには、しっかり{勉強|べんきょう}するべきだ。"
+      },
+      "explanationVi": "Vế sau là nghĩa vụ (勉強するべきだ) → からには.",
+      "expectedItemId": "ci-g-karaniwa-karatoitte-karaniwa",
+      "confusedWithItemId": "ci-g-karaniwa-karatoitte-karatoitte"
+    },
+    {
+      "id": "ce-g-karaniwa-karatoitte-2",
+      "situationVi": "Nói: không phải cứ rảnh là vui.",
+      "wrong": {
+        "japanese": "暇だからには、楽しいわけではない。",
+        "furigana": "{暇|ひま}だからには、{楽|たの}しいわけではない。"
+      },
+      "correct": {
+        "japanese": "暇だからといって、楽しいわけではない。",
+        "furigana": "{暇|ひま}だからといって、{楽|たの}しいわけではない。"
+      },
+      "explanationVi": "Vế sau わけではない phủ định suy luận → からといって.",
+      "expectedItemId": "ci-g-karaniwa-karatoitte-karatoitte",
+      "confusedWithItemId": "ci-g-karaniwa-karatoitte-karaniwa"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-karaniwa-karatoitte-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-karaniwa-karatoitte-karatoitte",
+      "instructionVi": "Chọn câu đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "一度失敗したからといって、あきらめることはない。",
+          "furigana": "{一度|いちど}{失敗|しっぱい}したからといって、あきらめることはない。",
+          "itemId": "ci-g-karaniwa-karatoitte-karatoitte"
+        },
+        {
+          "id": "b",
+          "text": "一度失敗したからには、あきらめることはない。",
+          "furigana": "{一度|いちど}{失敗|しっぱい}したからには、あきらめることはない。",
+          "itemId": "ci-g-karaniwa-karatoitte-karaniwa",
+          "feedbackVi": "からには cần vế sau là quyết tâm, nghĩa vụ; ことはない là phủ định suy luận."
+        },
+        {
+          "id": "c",
+          "text": "一度失敗したおかげで、あきらめることはない。",
+          "furigana": "{一度|いちど}{失敗|しっぱい}したおかげで、あきらめることはない。",
+          "feedbackVi": "おかげで không hợp với nghĩa câu."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Không phải cứ thất bại một lần mà phải bỏ cuộc → からといって."
+    },
+    {
+      "id": "cq-g-karaniwa-karatoitte-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-karaniwa-karatoitte-karaniwa",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "リーダーに選ばれた＿＿＿、責任を持ってやります。",
+        "furigana": "リーダーに{選|えら}ばれた＿＿＿、{責任|せきにん}を{持|も}ってやります。",
+        "translationVi": "Một khi đã được chọn làm trưởng nhóm, tôi sẽ làm với tinh thần trách nhiệm."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "からには",
+          "itemId": "ci-g-karaniwa-karatoitte-karaniwa"
+        },
+        {
+          "id": "b",
+          "text": "からといって",
+          "itemId": "ci-g-karaniwa-karatoitte-karatoitte",
+          "feedbackVi": "Vế sau là quyết tâm, không phải phủ định."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Vế sau là quyết tâm → からには."
+    },
+    {
+      "id": "cq-g-karaniwa-karatoitte-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-karaniwa-karatoitte-karatoitte",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "お金がたくさんあるからには、幸せだとは限らない。",
+        "furigana": "お{金|かね}がたくさんあるからには、{幸|しあわ}せだとは{限|かぎ}らない。",
+        "translationVi": "Không phải cứ nhiều tiền là hạnh phúc."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "お金が",
+          "furigana": "お{金|かね}が"
+        },
+        {
+          "id": "b",
+          "text": "たくさんあるからには、",
+          "itemId": "ci-g-karaniwa-karatoitte-karaniwa"
+        },
+        {
+          "id": "c",
+          "text": "幸せだとは",
+          "furigana": "{幸|しあわ}せだとは"
+        },
+        {
+          "id": "d",
+          "text": "限らない。",
+          "furigana": "{限|かぎ}らない。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "たくさんあるからといって、",
+        "itemId": "ci-g-karaniwa-karatoitte-karatoitte"
+      },
+      "explanationVi": "Vế sau とは限らない phủ định suy luận → からといって."
+    },
+    {
+      "id": "cq-g-karaniwa-karatoitte-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-karaniwa-karatoitte-karaniwa",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn đã quyết định du học Nhật và nói với bố mẹ về quyết tâm của mình."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "日本に留学するからには、N1に合格するまで頑張ります。",
+          "furigana": "{日本|にほん}に{留学|りゅうがく}するからには、N1に{合格|ごうかく}するまで{頑張|がんば}ります。",
+          "itemId": "ci-g-karaniwa-karatoitte-karaniwa"
+        },
+        {
+          "id": "b",
+          "text": "日本に留学するからといって、N1に合格するまで頑張ります。",
+          "furigana": "{日本|にほん}に{留学|りゅうがく}するからといって、N1に{合格|ごうかく}するまで{頑張|がんば}ります。",
+          "itemId": "ci-g-karaniwa-karatoitte-karatoitte",
+          "feedbackVi": "からといって cần vế sau phủ định."
+        },
+        {
+          "id": "c",
+          "text": "日本に留学するくせに、N1に合格するまで頑張ります。",
+          "furigana": "{日本|にほん}に{留学|りゅうがく}するくせに、N1に{合格|ごうかく}するまで{頑張|がんば}ります。",
+          "feedbackVi": "くせに là trách móc, không hợp."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Quyết tâm sau một quyết định đã có → からには."
+    }
+  ]
+}

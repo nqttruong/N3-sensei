@@ -3,6 +3,8 @@ package com.n3sensei.app.domain.repository
 import com.n3sensei.app.domain.contrast.ContrastDetail
 import com.n3sensei.app.domain.contrast.ContrastFilter
 import com.n3sensei.app.domain.contrast.ContrastGroup
+import com.n3sensei.app.domain.contrast.ContrastGroupLink
+import com.n3sensei.app.domain.contrast.ContrastSourceIds
 import com.n3sensei.app.domain.contrast.ContrastQuestion
 import com.n3sensei.app.domain.contrast.InstalledContrastPack
 import com.n3sensei.app.domain.contrast.RetiredGroup
@@ -30,4 +32,10 @@ interface ContrastContentRepository {
 
     /** Present when the group was retired by the installed pack. */
     suspend fun retiredGroup(groupId: String): RetiredGroup?
+
+    /**
+     * Published groups with at least one item whose source is one of [sources], in pack order.
+     * Empty when no reviewed pack is installed (only published groups are in the database).
+     */
+    fun observeGroupsForSources(sources: ContrastSourceIds): Flow<List<ContrastGroupLink>>
 }

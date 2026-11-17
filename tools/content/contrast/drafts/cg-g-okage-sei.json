@@ -1,0 +1,293 @@
+{
+  "id": "cg-g-okage-sei",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜おかげで và 〜せいで",
+  "summaryVi": "Cả hai nêu nguyên nhân dẫn đến một kết quả. おかげで dùng khi kết quả tốt (biết ơn), せいで dùng khi kết quả xấu (đổ lỗi).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-okage-sei-okage",
+      "label": "〜おかげで",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g018",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜おかげ",
+          "structure": "N の／Vthường・Aい・Aな ＋ おかげで／おかげだ",
+          "meaningVi": "nhờ…, nhờ có…"
+        },
+        "sourceFingerprint": "sha256:f38c24f93da7ab746ba796dbdaea0da11935f22afaba885a9ea99fc1af922eac"
+      },
+      "grammar": {
+        "meaningVi": "Nhờ…, nhờ có… (kết quả tốt)",
+        "connection": "N の／Vthường・Aい・Aな ＋ おかげで／おかげだ",
+        "nuanceVi": "Người nói thấy biết ơn nguyên nhân. Dùng với người giúp đỡ, sự việc thuận lợi. Dùng mỉa mai cho kết quả xấu thì chỉ là cách nói châm biếm."
+      }
+    },
+    {
+      "id": "ci-g-okage-sei-sei",
+      "label": "〜せいで",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g019",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜せい",
+          "structure": "N の／Vthường・Aい・Aな ＋ せいで／せいだ",
+          "meaningVi": "tại…, do… (kết quả xấu)"
+        },
+        "sourceFingerprint": "sha256:6ce2eecfc2144391451cf58d062412733cd2d9118b1a60e90d98e973bb2ec1b8"
+      },
+      "grammar": {
+        "meaningVi": "Tại…, do… (kết quả xấu)",
+        "connection": "N の／Vthường・Aい・Aな ＋ せいで／せいだ",
+        "nuanceVi": "Người nói đổ lỗi, khó chịu với nguyên nhân. Kết quả là điều không mong muốn: trễ, ốm, thất bại."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-okage-sei-1",
+      "titleVi": "Phân biệt bằng kết quả",
+      "bodyVi": "Hãy nhìn vế sau: kết quả tốt (合格した、元気になった、間に合った) → おかげで. Kết quả xấu (遅れた、失敗した、眠れなかった) → せいで. Nối giống nhau: N の, động từ và tính từ ở thể thường."
+    },
+    {
+      "id": "ct-g-okage-sei-2",
+      "titleVi": "Khi nào không dùng",
+      "bodyVi": "Không dùng せいで để cảm ơn ai. Không dùng おかげで cho kết quả xấu nếu không có ý mỉa mai. Khi chỉ muốn nêu nguyên nhân khách quan (báo chí, thông báo) thì dùng ため(に), không mang cảm xúc."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Kết quả",
+      "values": {
+        "ci-g-okage-sei-okage": "Tốt, mong muốn",
+        "ci-g-okage-sei-sei": "Xấu, không mong muốn"
+      }
+    },
+    {
+      "aspectVi": "Cảm xúc của người nói",
+      "values": {
+        "ci-g-okage-sei-okage": "Biết ơn, vui",
+        "ci-g-okage-sei-sei": "Trách móc, bực bội"
+      }
+    },
+    {
+      "aspectVi": "Câu cảm ơn hay đi kèm",
+      "values": {
+        "ci-g-okage-sei-okage": "〜のおかげです。ありがとうございます。",
+        "ci-g-okage-sei-sei": "(không dùng để cảm ơn)"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-okage-sei-1",
+      "itemId": "ci-g-okage-sei-okage",
+      "japanese": "先生のおかげで、試験に合格できました。",
+      "furigana": "{先生|せんせい}のおかげで、{試験|しけん}に{合格|ごうかく}できました。",
+      "translationVi": "Nhờ thầy mà em đã thi đỗ."
+    },
+    {
+      "id": "cx-g-okage-sei-2",
+      "itemId": "ci-g-okage-sei-okage",
+      "japanese": "薬を飲んだおかげで、熱が下がった。",
+      "furigana": "{薬|くすり}を{飲|の}んだおかげで、{熱|ねつ}が{下|さ}がった。",
+      "translationVi": "Nhờ uống thuốc mà hạ sốt."
+    },
+    {
+      "id": "cx-g-okage-sei-3",
+      "itemId": "ci-g-okage-sei-sei",
+      "japanese": "雨のせいで、試合が中止になった。",
+      "furigana": "{雨|あめ}のせいで、{試合|しあい}が{中止|ちゅうし}になった。",
+      "translationVi": "Tại mưa mà trận đấu bị hủy."
+    },
+    {
+      "id": "cx-g-okage-sei-4",
+      "itemId": "ci-g-okage-sei-sei",
+      "japanese": "夜コーヒーを飲んだせいで、眠れなかった。",
+      "furigana": "{夜|よる}コーヒーを{飲|の}んだせいで、{眠|ねむ}れなかった。",
+      "translationVi": "Tại uống cà phê buổi tối nên tôi không ngủ được."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-okage-sei-1",
+      "textVi": "おかげ có gốc từ 陰 (bóng mát che chở): được che chở thì biết ơn. せい gợi tới việc 'đổ lỗi cho ai đó'."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-okage-sei-1",
+      "situationVi": "Muốn cảm ơn bạn đã giúp mình làm xong việc.",
+      "wrong": {
+        "japanese": "田中さんのせいで、早く終わりました。",
+        "furigana": "{田中|たなか}さんのせいで、{早|はや}く{終|お}わりました。"
+      },
+      "correct": {
+        "japanese": "田中さんのおかげで、早く終わりました。",
+        "furigana": "{田中|たなか}さんのおかげで、{早|はや}く{終|お}わりました。"
+      },
+      "explanationVi": "Làm xong sớm là kết quả tốt và người nói biết ơn, nên dùng おかげで. せいで nghe như trách anh Tanaka.",
+      "expectedItemId": "ci-g-okage-sei-okage",
+      "confusedWithItemId": "ci-g-okage-sei-sei"
+    },
+    {
+      "id": "ce-g-okage-sei-2",
+      "situationVi": "Bị trễ tàu vì tắc đường.",
+      "wrong": {
+        "japanese": "渋滞のおかげで、電車に乗り遅れた。",
+        "furigana": "{渋滞|じゅうたい}のおかげで、{電車|でんしゃ}に{乗|の}り{遅|おく}れた。"
+      },
+      "correct": {
+        "japanese": "渋滞のせいで、電車に乗り遅れた。",
+        "furigana": "{渋滞|じゅうたい}のせいで、{電車|でんしゃ}に{乗|の}り{遅|おく}れた。"
+      },
+      "explanationVi": "Lỡ tàu là kết quả xấu; dùng おかげで ở đây chỉ đúng khi cố ý mỉa mai.",
+      "expectedItemId": "ci-g-okage-sei-sei",
+      "confusedWithItemId": "ci-g-okage-sei-okage"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-okage-sei-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-okage-sei-sei",
+      "instructionVi": "Chọn câu dùng đúng ngữ pháp và tự nhiên.",
+      "options": [
+        {
+          "id": "a",
+          "text": "風邪のせいで、旅行に行けなかった。",
+          "furigana": "{風邪|かぜ}のせいで、{旅行|りょこう}に{行|い}けなかった。",
+          "itemId": "ci-g-okage-sei-sei"
+        },
+        {
+          "id": "b",
+          "text": "風邪のおかげで、旅行に行けなかった。",
+          "furigana": "{風邪|かぜ}のおかげで、{旅行|りょこう}に{行|い}けなかった。",
+          "itemId": "ci-g-okage-sei-okage",
+          "feedbackVi": "Không đi du lịch được là kết quả xấu, おかげで nghe như biết ơn cơn cảm."
+        },
+        {
+          "id": "c",
+          "text": "風邪のせいで、旅行を楽しめた。",
+          "furigana": "{風邪|かぜ}のせいで、{旅行|りょこう}を{楽|たの}しめた。",
+          "feedbackVi": "せいで đi với kết quả xấu, còn 'tận hưởng chuyến đi' là kết quả tốt."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Bị cảm nên không đi du lịch được: kết quả xấu, đổ lỗi cho cơn cảm → せいで."
+    },
+    {
+      "id": "cq-g-okage-sei-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-okage-sei-okage",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "友達が手伝ってくれた＿＿＿、引っ越しが一日で終わった。",
+        "furigana": "{友達|ともだち}が{手伝|てつだ}ってくれた＿＿＿、{引|ひ}っ{越|こ}しが{一日|いちにち}で{終|お}わった。",
+        "translationVi": "Nhờ bạn giúp mà việc chuyển nhà xong trong một ngày."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "おかげで",
+          "itemId": "ci-g-okage-sei-okage"
+        },
+        {
+          "id": "b",
+          "text": "せいで",
+          "itemId": "ci-g-okage-sei-sei",
+          "feedbackVi": "Việc xong trong một ngày là kết quả tốt; せいで dùng khi đổ lỗi."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Bạn giúp đỡ và kết quả tốt (xong trong một ngày), người nói biết ơn → おかげで."
+    },
+    {
+      "id": "cq-g-okage-sei-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-okage-sei-sei",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "目覚まし時計が壊れていたおかげで、今朝は学校に遅刻した。",
+        "furigana": "{目覚|めざ}まし{時計|どけい}が{壊|こわ}れていたおかげで、{今朝|けさ}は{学校|がっこう}に{遅刻|ちこく}した。",
+        "translationVi": "Tại cái đồng hồ báo thức hỏng mà sáng nay tôi đi học muộn."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "目覚まし時計が壊れていた",
+          "furigana": "{目覚|めざ}まし{時計|どけい}が{壊|こわ}れていた"
+        },
+        {
+          "id": "b",
+          "text": "おかげで、",
+          "itemId": "ci-g-okage-sei-okage"
+        },
+        {
+          "id": "c",
+          "text": "今朝は",
+          "furigana": "{今朝|けさ}は"
+        },
+        {
+          "id": "d",
+          "text": "学校に遅刻した。",
+          "furigana": "{学校|がっこう}に{遅刻|ちこく}した。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "せいで、",
+        "itemId": "ci-g-okage-sei-sei"
+      },
+      "explanationVi": "Đi học muộn là kết quả xấu và người nói đổ lỗi cho đồng hồ, nên phải dùng せいで."
+    },
+    {
+      "id": "cq-g-okage-sei-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-okage-sei-okage",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn vừa thi đỗ JLPT N3 và muốn cảm ơn cô giáo đã luyện thi cho bạn."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "先生のおかげで合格できました。ありがとうございました。",
+          "furigana": "{先生|せんせい}のおかげで{合格|ごうかく}できました。ありがとうございました。",
+          "itemId": "ci-g-okage-sei-okage"
+        },
+        {
+          "id": "b",
+          "text": "先生のせいで合格できました。ありがとうございました。",
+          "furigana": "{先生|せんせい}のせいで{合格|ごうかく}できました。ありがとうございました。",
+          "itemId": "ci-g-okage-sei-sei",
+          "feedbackVi": "せいで mang ý trách móc, không dùng khi cảm ơn."
+        },
+        {
+          "id": "c",
+          "text": "先生のために合格できました。ありがとうございました。",
+          "furigana": "{先生|せんせい}のために{合格|ごうかく}できました。ありがとうございました。",
+          "feedbackVi": "のために ở đây nghe như 'đỗ vì cô (mục đích)', không diễn tả nhờ cô giúp."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Kết quả tốt nhờ cô giáo và người nói biết ơn → おかげで."
+    }
+  ]
+}

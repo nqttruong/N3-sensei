@@ -49,6 +49,8 @@ fun VocabularyDetailScreen(
     onEdit: () -> Unit,
     onOpenKanji: (kanjiId: String) -> Unit,
     modifier: Modifier = Modifier,
+    /** Optional entry point to Contrast Lab (shown only when a published group contains this item). */
+    contrastLinks: @Composable () -> Unit = {},
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     // Back from the edit screen: show the saved values.
@@ -72,6 +74,7 @@ fun VocabularyDetailScreen(
                 ItemActions(scheduleInfo, viewModel::toggleMark, onPracticeLesson = { onPracticeLesson(detail.vocabulary.lessonId) })
             }
             OutlinedButton(onClick = onEdit) { Text(stringResource(R.string.edit_action)) }
+            contrastLinks()
         }
     }
 }

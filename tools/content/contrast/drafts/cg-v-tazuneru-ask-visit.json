@@ -1,0 +1,317 @@
+{
+  "id": "cg-v-tazuneru-ask-visit",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "尋ねる và 訪ねる",
+  "summaryVi": "Cùng đọc là たずねる. 尋ねる là hỏi (thông tin), 訪ねる là đến thăm (người, nơi chốn).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-tazuneru-ask-visit-ask",
+      "label": "尋ねる",
+      "labelFurigana": "{尋|たず}ねる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v131",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "尋ねる",
+          "reading": "たずねる",
+          "meaningVi": "hỏi"
+        },
+        "sourceFingerprint": "sha256:d7acd27c72291b1f038ad836c4137c196601342c46da2550bb5347ad28b1a382"
+      },
+      "vocabulary": {
+        "reading": "たずねる",
+        "meaningVi": "hỏi, hỏi thăm",
+        "usageVi": "Hỏi để biết thông tin; lịch sự hơn 聞く: 道を尋ねる.",
+        "collocations": [
+          {
+            "japanese": "道を尋ねる",
+            "furigana": "{道|みち}を{尋|たず}ねる",
+            "meaningVi": "hỏi đường"
+          },
+          {
+            "japanese": "理由を尋ねる",
+            "furigana": "{理由|りゆう}を{尋|たず}ねる",
+            "meaningVi": "hỏi lý do"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-tazuneru-ask-visit-visit",
+      "label": "訪ねる",
+      "labelFurigana": "{訪|たず}ねる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v169",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "訪ねる",
+          "reading": "たずねる",
+          "meaningVi": "thăm"
+        },
+        "sourceFingerprint": "sha256:0234229d93279fa81e818259e1077f53a172341fd9983f0a31e44c4b056a8afb"
+      },
+      "vocabulary": {
+        "reading": "たずねる",
+        "meaningVi": "đến thăm",
+        "usageVi": "Đến gặp người hoặc đến một nơi: 友人を訪ねる、故郷を訪ねる.",
+        "collocations": [
+          {
+            "japanese": "友人を訪ねる",
+            "furigana": "{友人|ゆうじん}を{訪|たず}ねる",
+            "meaningVi": "đến thăm bạn"
+          },
+          {
+            "japanese": "会社を訪ねる",
+            "furigana": "{会社|かいしゃ}を{訪|たず}ねる",
+            "meaningVi": "đến thăm công ty"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-tazuneru-ask-visit-1",
+      "titleVi": "Hỏi hay đến",
+      "bodyVi": "Tân ngữ là thông tin (道、理由、名前、意見) → 尋ねる. Tân ngữ là người hay nơi chốn được đến (先生、友達の家、京都) → 訪ねる. Có thể thử thay: 聞く → 尋ねる; 訪問する／行く → 訪ねる."
+    },
+    {
+      "id": "ct-v-tazuneru-ask-visit-2",
+      "titleVi": "Mẹo chữ Kanji",
+      "bodyVi": "訪 = phỏng trong 訪問 (thăm viếng). 尋 = tầm trong 尋問 (thẩm vấn, hỏi han). Trong đề, nghĩ tới từ ghép âm Hán là chọn được chữ."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-v-tazuneru-ask-visit-ask": "Hỏi",
+        "ci-v-tazuneru-ask-visit-visit": "Đến thăm"
+      }
+    },
+    {
+      "aspectVi": "Tân ngữ hay gặp",
+      "values": {
+        "ci-v-tazuneru-ask-visit-ask": "道、理由、名前、意見",
+        "ci-v-tazuneru-ask-visit-visit": "人、家、会社、故郷"
+      }
+    },
+    {
+      "aspectVi": "Từ thay thế",
+      "values": {
+        "ci-v-tazuneru-ask-visit-ask": "聞く、質問する",
+        "ci-v-tazuneru-ask-visit-visit": "訪問する"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-tazuneru-ask-visit-1",
+      "itemId": "ci-v-tazuneru-ask-visit-ask",
+      "japanese": "駅で駅員に出口を尋ねた。",
+      "furigana": "{駅|えき}で{駅員|えきいん}に{出口|でぐち}を{尋|たず}ねた。",
+      "translationVi": "Tôi hỏi nhân viên nhà ga lối ra ở đâu."
+    },
+    {
+      "id": "cx-v-tazuneru-ask-visit-2",
+      "itemId": "ci-v-tazuneru-ask-visit-ask",
+      "japanese": "先生に遅刻の理由を尋ねられた。",
+      "furigana": "{先生|せんせい}に{遅刻|ちこく}の{理由|りゆう}を{尋|たず}ねられた。",
+      "translationVi": "Tôi bị thầy hỏi lý do đến muộn."
+    },
+    {
+      "id": "cx-v-tazuneru-ask-visit-3",
+      "itemId": "ci-v-tazuneru-ask-visit-visit",
+      "japanese": "週末、大学の先生のお宅を訪ねた。",
+      "furigana": "{週末|しゅうまつ}、{大学|だいがく}の{先生|せんせい}のお{宅|たく}を{訪|たず}ねた。",
+      "translationVi": "Cuối tuần tôi đến thăm nhà thầy giáo đại học."
+    },
+    {
+      "id": "cx-v-tazuneru-ask-visit-4",
+      "itemId": "ci-v-tazuneru-ask-visit-visit",
+      "japanese": "二十年ぶりに生まれた町を訪ねた。",
+      "furigana": "{二十年|にじゅうねん}ぶりに{生|う}まれた{町|まち}を{訪|たず}ねた。",
+      "translationVi": "Sau hai mươi năm tôi mới về thăm thị trấn nơi mình sinh ra."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-tazuneru-ask-visit-1",
+      "textVi": "訪 → 訪問 (thăm); 尋 → 尋問 (hỏi)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-tazuneru-ask-visit-1",
+      "situationVi": "Viết 'đến thăm ông bà'.",
+      "wrong": {
+        "japanese": "夏休みに祖父母を尋ねた。",
+        "furigana": "{夏休|なつやす}みに{祖父母|そふぼ}を{尋|たず}ねた。"
+      },
+      "correct": {
+        "japanese": "夏休みに祖父母を訪ねた。",
+        "furigana": "{夏休|なつやす}みに{祖父母|そふぼ}を{訪|たず}ねた。"
+      },
+      "explanationVi": "Đến thăm người → 訪ねる.",
+      "expectedItemId": "ci-v-tazuneru-ask-visit-visit",
+      "confusedWithItemId": "ci-v-tazuneru-ask-visit-ask"
+    },
+    {
+      "id": "ce-v-tazuneru-ask-visit-2",
+      "situationVi": "Viết 'hỏi đường'.",
+      "wrong": {
+        "japanese": "知らない人に道を訪ねた。",
+        "furigana": "{知|し}らない{人|ひと}に{道|みち}を{訪|たず}ねた。"
+      },
+      "correct": {
+        "japanese": "知らない人に道を尋ねた。",
+        "furigana": "{知|し}らない{人|ひと}に{道|みち}を{尋|たず}ねた。"
+      },
+      "explanationVi": "Hỏi thông tin (đường) → 尋ねる.",
+      "expectedItemId": "ci-v-tazuneru-ask-visit-ask",
+      "confusedWithItemId": "ci-v-tazuneru-ask-visit-visit"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-tazuneru-ask-visit-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-tazuneru-ask-visit-visit",
+      "instructionVi": "Chọn câu viết đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "来週、取引先の会社を訪ねる予定だ。",
+          "furigana": "{来週|らいしゅう}、{取引先|とりひきさき}の{会社|かいしゃ}を{訪|たず}ねる{予定|よてい}だ。",
+          "itemId": "ci-v-tazuneru-ask-visit-visit"
+        },
+        {
+          "id": "b",
+          "text": "来週、取引先の会社を尋ねる予定だ。",
+          "furigana": "{来週|らいしゅう}、{取引先|とりひきさき}の{会社|かいしゃ}を{尋|たず}ねる{予定|よてい}だ。",
+          "itemId": "ci-v-tazuneru-ask-visit-ask",
+          "feedbackVi": "尋ねる là hỏi; đến công ty đối tác là 'thăm'."
+        },
+        {
+          "id": "c",
+          "text": "来週、取引先の会社に尋ねる予定だ。",
+          "furigana": "{来週|らいしゅう}、{取引先|とりひきさき}の{会社|かいしゃ}に{尋|たず}ねる{予定|よてい}だ。",
+          "feedbackVi": "Sai chữ và sai nghĩa: đây không phải hỏi công ty điều gì."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Đến thăm công ty → 訪ねる."
+    },
+    {
+      "id": "cq-v-tazuneru-ask-visit-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-tazuneru-ask-visit-ask",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "分からないことがあれば、遠慮なく係の者にお＿＿＿ください。",
+        "furigana": "{分|わ}からないことがあれば、{遠慮|えんりょ}なく{係|かかり}の{者|もの}にお＿＿＿ください。",
+        "translationVi": "Nếu có điều gì không rõ, xin cứ hỏi nhân viên phụ trách."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "尋ね",
+          "furigana": "{尋|たず}ね",
+          "itemId": "ci-v-tazuneru-ask-visit-ask"
+        },
+        {
+          "id": "b",
+          "text": "訪ね",
+          "furigana": "{訪|たず}ね",
+          "itemId": "ci-v-tazuneru-ask-visit-visit"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Hỏi điều không hiểu → 尋ねる."
+    },
+    {
+      "id": "cq-v-tazuneru-ask-visit-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-tazuneru-ask-visit-ask",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "警察官に名前と住所を訪ねられた。",
+        "furigana": "{警察官|けいさつかん}に{名前|なまえ}と{住所|じゅうしょ}を{訪|たず}ねられた。",
+        "translationVi": "Cảnh sát hỏi tên và địa chỉ của tôi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "警察官に",
+          "furigana": "{警察官|けいさつかん}に"
+        },
+        {
+          "id": "b",
+          "text": "名前と住所を",
+          "furigana": "{名前|なまえ}と{住所|じゅうしょ}を"
+        },
+        {
+          "id": "c",
+          "text": "訪ねられた。",
+          "furigana": "{訪|たず}ねられた。",
+          "itemId": "ci-v-tazuneru-ask-visit-visit"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "尋ねられた。",
+        "furigana": "{尋|たず}ねられた。",
+        "itemId": "ci-v-tazuneru-ask-visit-ask"
+      },
+      "explanationVi": "Hỏi thông tin (tên, địa chỉ) → 尋ねる."
+    },
+    {
+      "id": "cq-v-tazuneru-ask-visit-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-tazuneru-ask-visit-visit",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn đi Kyoto và tranh thủ ghé nhà người bạn cũ sống ở đó."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "京都に行ったついでに、昔の友達を訪ねた。",
+          "furigana": "{京都|きょうと}に{行|い}ったついでに、{昔|むかし}の{友達|ともだち}を{訪|たず}ねた。",
+          "itemId": "ci-v-tazuneru-ask-visit-visit"
+        },
+        {
+          "id": "b",
+          "text": "京都に行ったついでに、昔の友達を尋ねた。",
+          "furigana": "{京都|きょうと}に{行|い}ったついでに、{昔|むかし}の{友達|ともだち}を{尋|たず}ねた。",
+          "itemId": "ci-v-tazuneru-ask-visit-ask",
+          "feedbackVi": "尋ねる là hỏi; 'hỏi người bạn' không phải ghé thăm."
+        },
+        {
+          "id": "c",
+          "text": "京都に行ったついでに、昔の友達に訪ねた。",
+          "furigana": "{京都|きょうと}に{行|い}ったついでに、{昔|むかし}の{友達|ともだち}に{訪|たず}ねた。",
+          "feedbackVi": "訪ねる đi với を (người, nơi được thăm)."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Ghé thăm người bạn → 友達を訪ねる."
+    }
+  ]
+}

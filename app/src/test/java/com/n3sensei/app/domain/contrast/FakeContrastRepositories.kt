@@ -35,6 +35,19 @@ class FakeContrastContent(var pack: ValidatedContrastPack) : ContrastContentRepo
     override suspend fun getQuestion(questionId: String) = pack.groups.flatMap { it.questions }.firstOrNull { it.id == questionId }
     override suspend fun installedPack() = InstalledContrastPack(pack.id, pack.contentVersion, pack.licenseVerified, pack.groups.map { it.detail.group.id }.toSet())
     override suspend fun retiredGroup(groupId: String) = pack.retiredGroups.firstOrNull { it.id == groupId }
+
+    override fun observeGroupsForSources(sources: ContrastSourceIds): Flow<List<ContrastGroupLink>> = packs.map { p ->
+        p.groups.map { it.detail }.filter { d ->
+            d.items.any { item ->
+                val id = item.source.sourceContentId
+                when (item.source.sourceType) {
+                    ContrastContentType.GRAMMAR -> id in sources.grammar
+                    ContrastContentType.VOCABULARY -> id in sources.vocabulary
+                    ContrastContentType.KANJI -> id in sources.kanji
+                }
+            }
+        }.map { ContrastGroupLink(it.group.id, it.group.title, it.group.contentType) }
+    }
 }
 
 class FakeSourceResolver(private val statuses: Map<String, ResolvedSource> = emptyMap()) : ContrastSourceResolver {

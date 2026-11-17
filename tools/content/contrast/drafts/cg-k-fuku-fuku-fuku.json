@@ -1,0 +1,372 @@
+{
+  "id": "cg-k-fuku-fuku-fuku",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "復, 複 và 腹",
+  "summaryVi": "Ba chữ cùng đọc フク và cùng có phần 复 bên phải. 彳 (bước chân) → 復 – trở lại, lặp lại; 衤 (áo) → 複 – kép, phức (áo nhiều lớp); 月 (thịt, cơ thể) → 腹 – bụng.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-fuku-fuku-fuku-kaeru",
+      "label": "復",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05fa9",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "復",
+          "onReadings": [
+            "フク"
+          ],
+          "kunReadings": [
+            "また"
+          ],
+          "meaningVi": "Khôi phục, trở lại"
+        },
+        "sourceFingerprint": "sha256:82eee7c93daf8f044b4e194755281eeba0e214f2ac98aa68ba57c2b426864a04"
+      },
+      "kanji": {
+        "meaningVi": "trở lại, khôi phục, lặp lại",
+        "hanViet": "PHỤC",
+        "onReadings": [
+          "フク"
+        ],
+        "kunReadings": [
+          "また"
+        ],
+        "radical": {
+          "character": "彳",
+          "nameVi": "Xích (bước chân)"
+        },
+        "shapeNoteVi": "彳 + 复: bước đi rồi quay lại → trở lại, ôn lại. 復習, 往復, 回復."
+      }
+    },
+    {
+      "id": "ci-k-fuku-fuku-fuku-kasaneru",
+      "label": "複",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k08907",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "複",
+          "onReadings": [
+            "フク"
+          ],
+          "kunReadings": [],
+          "meaningVi": "Gấp đôi; trộn , phức tạp"
+        },
+        "sourceFingerprint": "sha256:fd389387f2664563e9368572d45ba7302c4b059c172b49ef30288ce79e1863a6"
+      },
+      "kanji": {
+        "meaningVi": "kép, phức tạp, nhiều",
+        "hanViet": "PHỨC",
+        "onReadings": [
+          "フク"
+        ],
+        "kunReadings": [],
+        "radical": {
+          "character": "衤",
+          "nameVi": "Y (áo)"
+        },
+        "shapeNoteVi": "衤 + 复: áo may nhiều lớp → kép, nhiều. 複雑, 複数, 複写."
+      }
+    },
+    {
+      "id": "ci-k-fuku-fuku-fuku-hara",
+      "label": "腹",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k08179",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "腹",
+          "onReadings": [
+            "フク"
+          ],
+          "kunReadings": [
+            "はら"
+          ],
+          "meaningVi": "Bụng"
+        },
+        "sourceFingerprint": "sha256:9d3c585176bdae2a052a79d9a945f95b5e78468613034ec9d830ce5877a57101"
+      },
+      "kanji": {
+        "meaningVi": "bụng",
+        "hanViet": "PHÚC",
+        "onReadings": [
+          "フク"
+        ],
+        "kunReadings": [
+          "はら"
+        ],
+        "radical": {
+          "character": "月",
+          "nameVi": "Nhục (thịt, cơ thể)"
+        },
+        "shapeNoteVi": "月 (cơ thể) + 复 → bụng. お腹, 空腹, 腹が立つ."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-fuku-fuku-fuku-1",
+      "titleVi": "Bộ trái quyết định",
+      "bodyVi": "彳 (bước chân) → 復 (đi rồi về: 往復, ôn lại: 復習). 衤 (áo, chú ý có thêm một chấm so với 礻) → 複 (nhiều lớp: 複雑, 複数). 月 (cơ thể) → 腹 (bụng)."
+    },
+    {
+      "id": "ct-k-fuku-fuku-fuku-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "復: 復習 (ôn tập), 往復 (khứ hồi), 回復 (hồi phục). 複: 複雑 (phức tạp), 複数 (số nhiều), 重複. 腹: お腹 (bụng), 空腹 (đói bụng), 腹が立つ (bực mình)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ trái",
+      "values": {
+        "ci-k-fuku-fuku-fuku-kaeru": "彳 (bước chân)",
+        "ci-k-fuku-fuku-fuku-kasaneru": "衤 (áo)",
+        "ci-k-fuku-fuku-fuku-hara": "月 (cơ thể)"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-fuku-fuku-fuku-kaeru": "Trở lại, lặp lại",
+        "ci-k-fuku-fuku-fuku-kasaneru": "Kép, phức tạp",
+        "ci-k-fuku-fuku-fuku-hara": "Bụng"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-fuku-fuku-fuku-kaeru": "復習、往復、回復",
+        "ci-k-fuku-fuku-fuku-kasaneru": "複雑、複数",
+        "ci-k-fuku-fuku-fuku-hara": "お腹、空腹"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-fuku-fuku-fuku-1",
+      "itemId": "ci-k-fuku-fuku-fuku-kaeru",
+      "japanese": "授業の後は、必ず復習している。",
+      "furigana": "{授業|じゅぎょう}の{後|あと}は、{必|かなら}ず{復習|ふくしゅう}している。",
+      "translationVi": "Sau giờ học tôi luôn ôn lại bài."
+    },
+    {
+      "id": "cx-k-fuku-fuku-fuku-2",
+      "itemId": "ci-k-fuku-fuku-fuku-kaeru",
+      "japanese": "東京まで往復の切符を買った。",
+      "furigana": "{東京|とうきょう}まで{往復|おうふく}の{切符|きっぷ}を{買|か}った。",
+      "translationVi": "Tôi mua vé khứ hồi đi Tokyo."
+    },
+    {
+      "id": "cx-k-fuku-fuku-fuku-3",
+      "itemId": "ci-k-fuku-fuku-fuku-kasaneru",
+      "japanese": "この問題は思ったより複雑だ。",
+      "furigana": "この{問題|もんだい}は{思|おも}ったより{複雑|ふくざつ}だ。",
+      "translationVi": "Vấn đề này phức tạp hơn tôi nghĩ."
+    },
+    {
+      "id": "cx-k-fuku-fuku-fuku-4",
+      "itemId": "ci-k-fuku-fuku-fuku-kasaneru",
+      "japanese": "答えが複数ある質問もあります。",
+      "furigana": "{答|こた}えが{複数|ふくすう}ある{質問|しつもん}もあります。",
+      "translationVi": "Cũng có câu hỏi có nhiều đáp án."
+    },
+    {
+      "id": "cx-k-fuku-fuku-fuku-5",
+      "itemId": "ci-k-fuku-fuku-fuku-hara",
+      "japanese": "朝から何も食べていないので、お腹が空いた。",
+      "furigana": "{朝|あさ}から{何|なに}も{食|た}べていないので、{お腹|おなか}が{空|す}いた。",
+      "translationVi": "Từ sáng chưa ăn gì nên đói bụng."
+    },
+    {
+      "id": "cx-k-fuku-fuku-fuku-6",
+      "itemId": "ci-k-fuku-fuku-fuku-hara",
+      "japanese": "彼の態度に腹が立った。",
+      "furigana": "{彼|かれ}の{態度|たいど}に{腹|はら}が{立|た}った。",
+      "translationVi": "Tôi bực mình vì thái độ của anh ta."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-fuku-fuku-fuku-1",
+      "textVi": "Đi đi về về (彳) → 復; áo nhiều lớp (衤) → 複; cơ thể (月) → 腹."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-fuku-fuku-fuku-1",
+      "situationVi": "Viết 'ôn tập'.",
+      "wrong": {
+        "japanese": "試験の前に複習する。",
+        "furigana": "{試験|しけん}の{前|まえ}に{複習|ふくしゅう}する。"
+      },
+      "correct": {
+        "japanese": "試験の前に復習する。",
+        "furigana": "{試験|しけん}の{前|まえ}に{復習|ふくしゅう}する。"
+      },
+      "explanationVi": "Ôn lại (lặp lại) → 復 (bộ 彳).",
+      "expectedItemId": "ci-k-fuku-fuku-fuku-kaeru",
+      "confusedWithItemId": "ci-k-fuku-fuku-fuku-kasaneru"
+    },
+    {
+      "id": "ce-k-fuku-fuku-fuku-2",
+      "situationVi": "Viết 'phức tạp'.",
+      "wrong": {
+        "japanese": "手続きが復雑で分からない。",
+        "furigana": "{手続|てつづ}きが{復雑|ふくざつ}で{分|わ}からない。"
+      },
+      "correct": {
+        "japanese": "手続きが複雑で分からない。",
+        "furigana": "{手続|てつづ}きが{複雑|ふくざつ}で{分|わ}からない。"
+      },
+      "explanationVi": "Phức tạp (nhiều lớp) → 複 (bộ 衤).",
+      "expectedItemId": "ci-k-fuku-fuku-fuku-kasaneru",
+      "confusedWithItemId": "ci-k-fuku-fuku-fuku-kaeru"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-fuku-fuku-fuku-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-fuku-fuku-fuku-kasaneru",
+      "instructionVi": "Chọn cách viết đúng của ふくざつ (phức tạp).",
+      "options": [
+        {
+          "id": "a",
+          "text": "復雑",
+          "itemId": "ci-k-fuku-fuku-fuku-kaeru",
+          "feedbackVi": "復 là trở lại."
+        },
+        {
+          "id": "b",
+          "text": "腹雑",
+          "itemId": "ci-k-fuku-fuku-fuku-hara",
+          "feedbackVi": "腹 là bụng."
+        },
+        {
+          "id": "c",
+          "text": "複雑",
+          "itemId": "ci-k-fuku-fuku-fuku-kasaneru"
+        }
+      ],
+      "correctOptionId": "c",
+      "explanationVi": "複雑: nhiều lớp đan xen → 複."
+    },
+    {
+      "id": "cq-k-fuku-fuku-fuku-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-fuku-fuku-fuku-hara",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "空＿＿＿のときに薬を飲まないでください。",
+        "furigana": "{空|くう}＿＿＿のときに{薬|くすり}を{飲|の}まないでください。",
+        "translationVi": "Đừng uống thuốc khi bụng đói."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "腹",
+          "itemId": "ci-k-fuku-fuku-fuku-hara"
+        },
+        {
+          "id": "b",
+          "text": "復",
+          "itemId": "ci-k-fuku-fuku-fuku-kaeru"
+        },
+        {
+          "id": "c",
+          "text": "複",
+          "itemId": "ci-k-fuku-fuku-fuku-kasaneru"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "空腹 (đói bụng) viết với 腹."
+    },
+    {
+      "id": "cq-k-fuku-fuku-fuku-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-fuku-fuku-fuku-kaeru",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "手術の後、祖母の体調は回腹した。",
+        "furigana": "{手術|しゅじゅつ}の{後|あと}、{祖母|そぼ}の{体調|たいちょう}は{回腹|かいふく}した。",
+        "translationVi": "Sau phẫu thuật, sức khỏe bà tôi đã hồi phục."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "手術の後、",
+          "furigana": "{手術|しゅじゅつ}の{後|あと}、"
+        },
+        {
+          "id": "b",
+          "text": "祖母の体調は",
+          "furigana": "{祖母|そぼ}の{体調|たいちょう}は"
+        },
+        {
+          "id": "c",
+          "text": "回腹した。",
+          "furigana": "{回腹|かいふく}した。",
+          "itemId": "ci-k-fuku-fuku-fuku-hara"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "回復した。",
+        "furigana": "{回復|かいふく}した。",
+        "itemId": "ci-k-fuku-fuku-fuku-kaeru"
+      },
+      "explanationVi": "Hồi phục (trở lại như cũ) → 回復."
+    },
+    {
+      "id": "cq-k-fuku-fuku-fuku-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-fuku-fuku-fuku-kaeru",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn hỏi nhân viên nhà ga mua vé khứ hồi đi Osaka."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "大阪までの往復切符をください。",
+          "furigana": "{大阪|おおさか}までの{往復|おうふく}{切符|きっぷ}をください。",
+          "itemId": "ci-k-fuku-fuku-fuku-kaeru"
+        },
+        {
+          "id": "b",
+          "text": "大阪までの往複切符をください。",
+          "furigana": "{大阪|おおさか}までの{往複|おうふく}{切符|きっぷ}をください。",
+          "itemId": "ci-k-fuku-fuku-fuku-kasaneru",
+          "feedbackVi": "往復 viết với 復 (bộ 彳), không phải 複."
+        },
+        {
+          "id": "c",
+          "text": "大阪までの往腹切符をください。",
+          "furigana": "{大阪|おおさか}までの{往腹|おうふく}{切符|きっぷ}をください。",
+          "itemId": "ci-k-fuku-fuku-fuku-hara",
+          "feedbackVi": "往復 viết với 復, không phải 腹."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "往復 (khứ hồi) viết với 復."
+    }
+  ]
+}

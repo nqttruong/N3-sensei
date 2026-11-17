@@ -1,0 +1,322 @@
+{
+  "id": "cg-v-jiko-jiken",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "事故 và 事件",
+  "summaryVi": "事故 là tai nạn, sự cố xảy ra ngoài ý muốn (giao thông, máy móc); 事件 là vụ việc, thường do con người gây ra có chủ ý và liên quan đến pháp luật (trộm, giết người, lừa đảo).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-jiko-jiken-jiko",
+      "label": "事故",
+      "labelFurigana": "{事故|じこ}",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v351",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "事故",
+          "reading": "じこ",
+          "meaningVi": "tai nạn"
+        },
+        "sourceFingerprint": "sha256:89d02917dc1a96fb3895504bc535704e128088346374e5e21ef707dcf7aecdc5"
+      },
+      "vocabulary": {
+        "reading": "じこ",
+        "meaningVi": "tai nạn, sự cố",
+        "usageVi": "Việc không ai muốn xảy ra, do sơ suất hay rủi ro: 交通事故、事故に遭う.",
+        "collocations": [
+          {
+            "japanese": "交通事故",
+            "furigana": "{交通|こうつう}{事故|じこ}",
+            "meaningVi": "tai nạn giao thông"
+          },
+          {
+            "japanese": "事故に遭う",
+            "furigana": "{事故|じこ}に{遭|あ}う",
+            "meaningVi": "gặp tai nạn"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-jiko-jiken-jiken",
+      "label": "事件",
+      "labelFurigana": "{事件|じけん}",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v352",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "事件",
+          "reading": "じけん",
+          "meaningVi": "sự kiện"
+        },
+        "sourceFingerprint": "sha256:af045aa5deb859bd18ffdb4e3e26157639d26ea5327776e9d6a9b37a9627b305"
+      },
+      "vocabulary": {
+        "reading": "じけん",
+        "meaningVi": "vụ án, vụ việc",
+        "usageVi": "Sự việc gây chú ý, thường là hành vi phạm tội có chủ đích: 殺人事件、事件が起きる.",
+        "collocations": [
+          {
+            "japanese": "殺人事件",
+            "furigana": "{殺人|さつじん}{事件|じけん}",
+            "meaningVi": "vụ án giết người"
+          },
+          {
+            "japanese": "事件を解決する",
+            "furigana": "{事件|じけん}を{解決|かいけつ}する",
+            "meaningVi": "phá án"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-jiko-jiken-1",
+      "titleVi": "Có ai cố ý không?",
+      "bodyVi": "Không ai cố ý, do sơ suất hay rủi ro (xe đâm, máy hỏng, cháy do chập điện) → 事故. Có người cố ý gây ra, cảnh sát điều tra, có thủ phạm (trộm, cướp, giết người) → 事件."
+    },
+    {
+      "id": "ct-v-jiko-jiken-2",
+      "titleVi": "Từ đi kèm",
+      "bodyVi": "事故: 交通事故、事故に遭う、事故を起こす、事故現場. 事件: 殺人事件、盗難事件、事件の犯人、事件を解決する. Thấy 犯人 (thủ phạm) → 事件."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bản chất",
+      "values": {
+        "ci-v-jiko-jiken-jiko": "Ngoài ý muốn, sơ suất",
+        "ci-v-jiko-jiken-jiken": "Thường có chủ ý, phạm tội"
+      }
+    },
+    {
+      "aspectVi": "Từ hay đi kèm",
+      "values": {
+        "ci-v-jiko-jiken-jiko": "交通、遭う、起こす",
+        "ci-v-jiko-jiken-jiken": "殺人、盗難、犯人、解決"
+      }
+    },
+    {
+      "aspectVi": "Người liên quan",
+      "values": {
+        "ci-v-jiko-jiken-jiko": "Nạn nhân, người gây tai nạn",
+        "ci-v-jiko-jiken-jiken": "Thủ phạm, cảnh sát điều tra"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-jiko-jiken-1",
+      "itemId": "ci-v-jiko-jiken-jiko",
+      "japanese": "雪の日は交通事故が多い。",
+      "furigana": "{雪|ゆき}の{日|ひ}は{交通|こうつう}{事故|じこ}が{多|おお}い。",
+      "translationVi": "Ngày tuyết rơi có nhiều tai nạn giao thông."
+    },
+    {
+      "id": "cx-v-jiko-jiken-2",
+      "itemId": "ci-v-jiko-jiken-jiko",
+      "japanese": "工場で機械の事故があって、二人がけがをした。",
+      "furigana": "{工場|こうじょう}で{機械|きかい}の{事故|じこ}があって、{二人|ふたり}がけがをした。",
+      "translationVi": "Ở nhà máy xảy ra sự cố máy móc làm hai người bị thương."
+    },
+    {
+      "id": "cx-v-jiko-jiken-3",
+      "itemId": "ci-v-jiko-jiken-jiken",
+      "japanese": "昨日、近所で盗難事件があった。",
+      "furigana": "{昨日|きのう}、{近所|きんじょ}で{盗難|とうなん}{事件|じけん}があった。",
+      "translationVi": "Hôm qua gần nhà xảy ra một vụ trộm."
+    },
+    {
+      "id": "cx-v-jiko-jiken-4",
+      "itemId": "ci-v-jiko-jiken-jiken",
+      "japanese": "警察はまだ事件の犯人を捕まえていない。",
+      "furigana": "{警察|けいさつ}はまだ{事件|じけん}の{犯人|はんにん}を{捕|つか}まえていない。",
+      "translationVi": "Cảnh sát vẫn chưa bắt được thủ phạm vụ án."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-jiko-jiken-1",
+      "textVi": "故 trong 故障 (hỏng hóc) → sự cố. 件 trong 用件, 案件 (vụ việc) → vụ án."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-jiko-jiken-1",
+      "situationVi": "Nói về vụ trộm ở cửa hàng tiện lợi.",
+      "wrong": {
+        "japanese": "コンビニで強盗事故があった。",
+        "furigana": "コンビニで{強盗|ごうとう}{事故|じこ}があった。"
+      },
+      "correct": {
+        "japanese": "コンビニで強盗事件があった。",
+        "furigana": "コンビニで{強盗|ごうとう}{事件|じけん}があった。"
+      },
+      "explanationVi": "Cướp là hành vi cố ý phạm tội → 事件.",
+      "expectedItemId": "ci-v-jiko-jiken-jiken",
+      "confusedWithItemId": "ci-v-jiko-jiken-jiko"
+    },
+    {
+      "id": "ce-v-jiko-jiken-2",
+      "situationVi": "Nói bị tai nạn xe đạp.",
+      "wrong": {
+        "japanese": "自転車で転んで、事件に遭った。",
+        "furigana": "{自転車|じてんしゃ}で{転|ころ}んで、{事件|じけん}に{遭|あ}った。"
+      },
+      "correct": {
+        "japanese": "自転車で転んで、事故に遭った。",
+        "furigana": "{自転車|じてんしゃ}で{転|ころ}んで、{事故|じこ}に{遭|あ}った。"
+      },
+      "explanationVi": "Ngã xe ngoài ý muốn → 事故.",
+      "expectedItemId": "ci-v-jiko-jiken-jiko",
+      "confusedWithItemId": "ci-v-jiko-jiken-jiken"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-jiko-jiken-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-jiko-jiken-jiken",
+      "instructionVi": "Chọn câu đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "その事件の犯人は三日後に逮捕された。",
+          "furigana": "その{事件|じけん}の{犯人|はんにん}は{三日後|みっかご}に{逮捕|たいほ}された。",
+          "itemId": "ci-v-jiko-jiken-jiken"
+        },
+        {
+          "id": "b",
+          "text": "その事故の犯人は三日後に逮捕された。",
+          "furigana": "その{事故|じこ}の{犯人|はんにん}は{三日後|みっかご}に{逮捕|たいほ}された。",
+          "itemId": "ci-v-jiko-jiken-jiko",
+          "feedbackVi": "Có 犯人 (thủ phạm) và bị bắt → vụ án 事件."
+        },
+        {
+          "id": "c",
+          "text": "その故障の犯人は三日後に逮捕された。",
+          "furigana": "その{故障|こしょう}の{犯人|はんにん}は{三日後|みっかご}に{逮捕|たいほ}された。",
+          "feedbackVi": "故障 là hỏng hóc máy móc."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Có thủ phạm bị bắt → 事件."
+    },
+    {
+      "id": "cq-v-jiko-jiken-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-jiko-jiken-jiko",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "スピードを出しすぎて、車の＿＿＿を起こしてしまった。",
+        "furigana": "スピードを{出|だ}しすぎて、{車|くるま}の＿＿＿を{起|お}こしてしまった。",
+        "translationVi": "Chạy quá tốc độ nên tôi đã gây tai nạn xe."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "事故",
+          "furigana": "{事故|じこ}",
+          "itemId": "ci-v-jiko-jiken-jiko"
+        },
+        {
+          "id": "b",
+          "text": "事件",
+          "furigana": "{事件|じけん}",
+          "itemId": "ci-v-jiko-jiken-jiken"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tai nạn do sơ suất → 事故を起こす."
+    },
+    {
+      "id": "cq-v-jiko-jiken-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-jiko-jiken-jiken",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "警察はその詐欺事故を調べている。",
+        "furigana": "{警察|けいさつ}はその{詐欺|さぎ}{事故|じこ}を{調|しら}べている。",
+        "translationVi": "Cảnh sát đang điều tra vụ lừa đảo đó."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "警察は",
+          "furigana": "{警察|けいさつ}は"
+        },
+        {
+          "id": "b",
+          "text": "その詐欺",
+          "furigana": "その{詐欺|さぎ}"
+        },
+        {
+          "id": "c",
+          "text": "事故を",
+          "furigana": "{事故|じこ}を",
+          "itemId": "ci-v-jiko-jiken-jiko"
+        },
+        {
+          "id": "d",
+          "text": "調べている。",
+          "furigana": "{調|しら}べている。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "事件を",
+        "furigana": "{事件|じけん}を",
+        "itemId": "ci-v-jiko-jiken-jiken"
+      },
+      "explanationVi": "Lừa đảo là hành vi cố ý phạm tội → 詐欺事件."
+    },
+    {
+      "id": "cq-v-jiko-jiken-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-jiko-jiken-jiko",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn đến muộn vì tàu dừng lại do một sự cố kỹ thuật trên đường ray."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "線路で事故があって、電車が止まっていたんです。",
+          "furigana": "{線路|せんろ}で{事故|じこ}があって、{電車|でんしゃ}が{止|と}まっていたんです。",
+          "itemId": "ci-v-jiko-jiken-jiko"
+        },
+        {
+          "id": "b",
+          "text": "線路で事件があって、電車が止まっていたんです。",
+          "furigana": "{線路|せんろ}で{事件|じけん}があって、{電車|でんしゃ}が{止|と}まっていたんです。",
+          "itemId": "ci-v-jiko-jiken-jiken",
+          "feedbackVi": "事件 gợi ý có tội phạm; sự cố kỹ thuật → 事故."
+        },
+        {
+          "id": "c",
+          "text": "線路で渋滞があって、電車が止まっていたんです。",
+          "furigana": "{線路|せんろ}で{渋滞|じゅうたい}があって、{電車|でんしゃ}が{止|と}まっていたんです。",
+          "feedbackVi": "渋滞 là kẹt xe trên đường bộ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Sự cố ngoài ý muốn → 事故."
+    }
+  ]
+}

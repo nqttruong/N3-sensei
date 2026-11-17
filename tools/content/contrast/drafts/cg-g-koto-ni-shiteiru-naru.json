@@ -1,0 +1,325 @@
+{
+  "id": "cg-g-koto-ni-shiteiru-naru",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜ことにしている và 〜ことになっている",
+  "summaryVi": "Cả hai nói về việc được làm đều đặn theo một quyết định. Khác nhau ở người quyết định: chính người nói (ことにしている) hay người khác, tổ chức, quy định (ことになっている).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-koto-ni-shiteiru-naru-shiteiru",
+      "label": "〜ことにしている",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g001",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜ことにしている",
+          "structure": "Vる／Vない ＋ ことにしている",
+          "meaningVi": "(tôi) có thói quen/nguyên tắc là…"
+        },
+        "sourceFingerprint": "sha256:17c66fa0705aaed1701a46aa9248f716e19e03a884428007a7b7b793178bba1f"
+      },
+      "grammar": {
+        "meaningVi": "Tôi (tự mình) có thói quen / nguyên tắc là…",
+        "connection": "Vる／Vない ＋ ことにしている",
+        "nuanceVi": "Quyết định do chính người nói đặt ra và đang duy trì. Chủ ngữ thường là 私 (hoặc ẩn). Nhấn mạnh ý chí cá nhân."
+      }
+    },
+    {
+      "id": "ci-g-koto-ni-shiteiru-naru-natteiru",
+      "label": "〜ことになっている",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g002",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜ことになっている",
+          "structure": "Vる／Vない ＋ ことになっている",
+          "meaningVi": "theo quy định thì…, đã được định sẵn là…"
+        },
+        "sourceFingerprint": "sha256:427e8c5d006e32704b5a0ebef168ae79de64623b69d6f8ddd2ced569034ffddd"
+      },
+      "grammar": {
+        "meaningVi": "Theo quy định / theo kế hoạch đã định thì…",
+        "connection": "Vる／Vない ＋ ことになっている",
+        "nuanceVi": "Quyết định đến từ bên ngoài người nói: luật, nội quy, công ty, lịch đã chốt. Người nói chỉ truyền đạt lại. Hay đi với 〜では、規則で、法律で."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-koto-ni-shiteiru-naru-1",
+      "titleVi": "Khác nhau ở người ra quyết định",
+      "bodyVi": "する là chủ động làm: 〜ことにする là tự quyết định, 〜ことにしている là đã tự quyết và vẫn đang giữ. なる là tự trở thành: 〜ことになる là việc được quyết định (không do mình), 〜ことになっている là quyết định đó đang có hiệu lực như một quy định."
+    },
+    {
+      "id": "ct-g-koto-ni-shiteiru-naru-2",
+      "titleVi": "Khi nào không dùng",
+      "bodyVi": "Không dùng ことにしている cho luật lệ, nội quy chung (nghe như người nói tự đặt ra luật). Không dùng ことになっている cho thói quen riêng chỉ mình biết (nghe như có ai bắt buộc)."
+    },
+    {
+      "id": "ct-g-koto-ni-shiteiru-naru-3",
+      "titleVi": "Nhận biết nhanh trong đề thi",
+      "bodyVi": "Có 私は、健康のために、自分で… → ことにしている. Có 規則で、法律で、この会社では、予定では… → ことになっている."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Ai quyết định",
+      "values": {
+        "ci-g-koto-ni-shiteiru-naru-shiteiru": "Chính người nói",
+        "ci-g-koto-ni-shiteiru-naru-natteiru": "Người khác, tổ chức, luật lệ"
+      }
+    },
+    {
+      "aspectVi": "Từ hay đi kèm",
+      "values": {
+        "ci-g-koto-ni-shiteiru-naru-shiteiru": "私は、毎日、〜ために (mục đích cá nhân)",
+        "ci-g-koto-ni-shiteiru-naru-natteiru": "〜では、規則で、法律で、予定では"
+      }
+    },
+    {
+      "aspectVi": "Sắc thái",
+      "values": {
+        "ci-g-koto-ni-shiteiru-naru-shiteiru": "Thói quen, nguyên tắc cá nhân",
+        "ci-g-koto-ni-shiteiru-naru-natteiru": "Quy định, lịch đã chốt, truyền đạt khách quan"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-koto-ni-shiteiru-naru-1",
+      "itemId": "ci-g-koto-ni-shiteiru-naru-shiteiru",
+      "japanese": "私は寝る前に日記を書くことにしている。",
+      "furigana": "{私|わたし}は{寝|ね}る{前|まえ}に{日記|にっき}を{書|か}くことにしている。",
+      "translationVi": "Tôi có thói quen viết nhật ký trước khi ngủ (tự mình đặt ra)."
+    },
+    {
+      "id": "cx-g-koto-ni-shiteiru-naru-2",
+      "itemId": "ci-g-koto-ni-shiteiru-naru-shiteiru",
+      "japanese": "甘い物は週に一回だけ食べることにしている。",
+      "furigana": "{甘|あま}い{物|もの}は{週|しゅう}に{一回|いっかい}だけ{食|た}べることにしている。",
+      "translationVi": "Tôi tự đặt nguyên tắc chỉ ăn đồ ngọt mỗi tuần một lần."
+    },
+    {
+      "id": "cx-g-koto-ni-shiteiru-naru-3",
+      "itemId": "ci-g-koto-ni-shiteiru-naru-natteiru",
+      "japanese": "この会社では、毎週金曜日に会議をすることになっている。",
+      "furigana": "この{会社|かいしゃ}では、{毎週|まいしゅう}{金曜日|きんようび}に{会議|かいぎ}をすることになっている。",
+      "translationVi": "Ở công ty này, theo quy định thứ Sáu hằng tuần sẽ họp."
+    },
+    {
+      "id": "cx-g-koto-ni-shiteiru-naru-4",
+      "itemId": "ci-g-koto-ni-shiteiru-naru-natteiru",
+      "japanese": "図書館の本は二週間以内に返すことになっている。",
+      "furigana": "{図書館|としょかん}の{本|ほん}は{二週間|にしゅうかん}{以内|いない}に{返|かえ}すことになっている。",
+      "translationVi": "Theo quy định, sách thư viện phải trả trong vòng hai tuần."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-koto-ni-shiteiru-naru-1",
+      "textVi": "する = mình làm, nên にしている là mình đặt ra. なる = tự thành, nên になっている là đã được định sẵn cho mình."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-koto-ni-shiteiru-naru-1",
+      "situationVi": "Muốn nói thói quen do chính mình đặt ra.",
+      "wrong": {
+        "japanese": "私は健康のために、毎朝走ることになっている。",
+        "furigana": "{私|わたし}は{健康|けんこう}のために、{毎朝|まいあさ}{走|はし}ることになっている。"
+      },
+      "correct": {
+        "japanese": "私は健康のために、毎朝走ることにしている。",
+        "furigana": "{私|わたし}は{健康|けんこう}のために、{毎朝|まいあさ}{走|はし}ることにしている。"
+      },
+      "explanationVi": "健康のために là mục đích cá nhân, do mình tự quyết, nên dùng ことにしている. Dùng ことになっている nghe như có ai bắt mình chạy.",
+      "expectedItemId": "ci-g-koto-ni-shiteiru-naru-shiteiru",
+      "confusedWithItemId": "ci-g-koto-ni-shiteiru-naru-natteiru"
+    },
+    {
+      "id": "ce-g-koto-ni-shiteiru-naru-2",
+      "situationVi": "Nói về nội quy của trường.",
+      "wrong": {
+        "japanese": "学校の規則で、制服を着ることにしている。",
+        "furigana": "{学校|がっこう}の{規則|きそく}で、{制服|せいふく}を{着|き}ることにしている。"
+      },
+      "correct": {
+        "japanese": "学校の規則で、制服を着ることになっている。",
+        "furigana": "{学校|がっこう}の{規則|きそく}で、{制服|せいふく}を{着|き}ることになっている。"
+      },
+      "explanationVi": "規則で (theo nội quy) cho biết người quyết định là nhà trường, nên dùng ことになっている.",
+      "expectedItemId": "ci-g-koto-ni-shiteiru-naru-natteiru",
+      "confusedWithItemId": "ci-g-koto-ni-shiteiru-naru-shiteiru"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-koto-ni-shiteiru-naru-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-koto-ni-shiteiru-naru-natteiru",
+      "instructionVi": "Câu nào diễn tả một quy định do nơi ở đặt ra (không phải do người nói tự quyết)?",
+      "options": [
+        {
+          "id": "a",
+          "text": "毎晩、十時に寝ることにしている。",
+          "furigana": "{毎晩|まいばん}、{十時|じゅうじ}に{寝|ね}ることにしている。",
+          "itemId": "ci-g-koto-ni-shiteiru-naru-shiteiru",
+          "feedbackVi": "Đây là thói quen người nói tự đặt ra."
+        },
+        {
+          "id": "b",
+          "text": "この寮では、十時に寝ることになっている。",
+          "furigana": "この{寮|りょう}では、{十時|じゅうじ}に{寝|ね}ることになっている。",
+          "itemId": "ci-g-koto-ni-shiteiru-naru-natteiru"
+        },
+        {
+          "id": "c",
+          "text": "毎晩、十時に寝ることにした。",
+          "furigana": "{毎晩|まいばん}、{十時|じゅうじ}に{寝|ね}ることにした。",
+          "feedbackVi": "ことにした là vừa tự quyết định (một lần), không phải quy định."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanationVi": "この寮では (ở ký túc xá này) cho biết quy định do nơi ở đặt ra, nên dùng ことになっている."
+    },
+    {
+      "id": "cq-g-koto-ni-shiteiru-naru-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-koto-ni-shiteiru-naru-shiteiru",
+      "instructionVi": "Chọn cách nói phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "健康のために、私は毎朝三十分歩く＿＿＿。",
+        "furigana": "{健康|けんこう}のために、{私|わたし}は{毎朝|まいあさ}{三十分|さんじゅっぷん}{歩|ある}く＿＿＿。",
+        "translationVi": "Vì sức khỏe, mỗi sáng tôi (tự đặt ra) đi bộ ba mươi phút."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ことにしている",
+          "itemId": "ci-g-koto-ni-shiteiru-naru-shiteiru"
+        },
+        {
+          "id": "b",
+          "text": "ことになっている",
+          "itemId": "ci-g-koto-ni-shiteiru-naru-natteiru",
+          "feedbackVi": "Không có quy định nào ở đây; người nói tự duy trì thói quen."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Người nói diễn đạt thói quen do bản thân quyết định duy trì vì sức khỏe, nên dùng ことにしている. Muốn dùng ことになっている phải có ngữ cảnh về quy định hay sự sắp xếp từ bên ngoài."
+    },
+    {
+      "id": "cq-g-koto-ni-shiteiru-naru-fb2",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-koto-ni-shiteiru-naru-natteiru",
+      "instructionVi": "Chọn cách nói phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "日本では、車は道の左側を走る＿＿＿。",
+        "furigana": "{日本|にほん}では、{車|くるま}は{道|みち}の{左側|ひだりがわ}を{走|はし}る＿＿＿。",
+        "translationVi": "Ở Nhật, (theo luật) xe chạy bên trái đường."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ことにしている",
+          "itemId": "ci-g-koto-ni-shiteiru-naru-shiteiru"
+        },
+        {
+          "id": "b",
+          "text": "ことになっている",
+          "itemId": "ci-g-koto-ni-shiteiru-naru-natteiru"
+        }
+      ],
+      "correctOptionId": "b",
+      "explanationVi": "Luật giao thông do nhà nước đặt ra, không phải do người nói quyết định, nên dùng ことになっている."
+    },
+    {
+      "id": "cq-g-koto-ni-shiteiru-naru-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-koto-ni-shiteiru-naru-shiteiru",
+      "instructionVi": "Người nói tự đặt ra thói quen này. Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "私は健康のために、毎日野菜を食べることになっている。",
+        "furigana": "{私|わたし}は{健康|けんこう}のために、{毎日|まいにち}{野菜|やさい}を{食|た}べることになっている。",
+        "translationVi": "Vì sức khỏe, tôi (tự đặt ra) mỗi ngày ăn rau."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "私は",
+          "furigana": "{私|わたし}は"
+        },
+        {
+          "id": "b",
+          "text": "健康のために、",
+          "furigana": "{健康|けんこう}のために、"
+        },
+        {
+          "id": "c",
+          "text": "毎日野菜を食べる",
+          "furigana": "{毎日|まいにち}{野菜|やさい}を{食|た}べる"
+        },
+        {
+          "id": "d",
+          "text": "ことになっている。",
+          "itemId": "ci-g-koto-ni-shiteiru-naru-natteiru"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "ことにしている。",
+        "itemId": "ci-g-koto-ni-shiteiru-naru-shiteiru"
+      },
+      "explanationVi": "Thói quen do người nói tự đặt ra (健康のために) phải dùng ことにしている. ことになっている nghĩa là có người khác quy định."
+    },
+    {
+      "id": "cq-g-koto-ni-shiteiru-naru-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-koto-ni-shiteiru-naru-natteiru",
+      "instructionVi": "Chọn câu tự nhiên nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn giải thích cho đồng nghiệp mới rằng ở công ty, nhân viên phải nộp báo cáo vào thứ Sáu hằng tuần."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "毎週金曜日に報告書を出すことになっています。",
+          "furigana": "{毎週|まいしゅう}{金曜日|きんようび}に{報告書|ほうこくしょ}を{出|だ}すことになっています。",
+          "itemId": "ci-g-koto-ni-shiteiru-naru-natteiru"
+        },
+        {
+          "id": "b",
+          "text": "毎週金曜日に報告書を出すことにしています。",
+          "furigana": "{毎週|まいしゅう}{金曜日|きんようび}に{報告書|ほうこくしょ}を{出|だ}すことにしています。",
+          "itemId": "ci-g-koto-ni-shiteiru-naru-shiteiru",
+          "feedbackVi": "Câu này nghe như thói quen riêng của bạn, không phải quy định của công ty."
+        },
+        {
+          "id": "c",
+          "text": "毎週金曜日に報告書を出すことにしました。",
+          "furigana": "{毎週|まいしゅう}{金曜日|きんようび}に{報告書|ほうこくしょ}を{出|だ}すことにしました。",
+          "feedbackVi": "ことにしました là bạn vừa tự quyết định."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Quy định của công ty là quyết định từ bên ngoài người nói, nên dùng ことになっています."
+    }
+  ]
+}

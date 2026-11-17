@@ -6,8 +6,10 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -21,13 +23,15 @@ import com.n3sensei.app.app.di.appViewModel
 import com.n3sensei.app.app.reminder.ReminderDeepLinks
 import com.n3sensei.app.core.designsystem.theme.LocalReduceMotion
 import com.n3sensei.app.core.designsystem.theme.N3Motion
-import com.n3sensei.app.domain.edit.UserWords
+import com.n3sensei.app.core.ui.state.DashboardViewModel
+import com.n3sensei.app.domain.contrast.ContrastSourceIds
 import com.n3sensei.app.domain.dashboard.ExamDashboardManager
 import com.n3sensei.app.domain.dashboard.PlanTask
+import com.n3sensei.app.domain.edit.UserWords
 import com.n3sensei.app.domain.exam.AnswerManager
-import com.n3sensei.app.domain.exam.ExamSkill
 import com.n3sensei.app.domain.exam.ExamResultManager
 import com.n3sensei.app.domain.exam.ExamSessionManager
+import com.n3sensei.app.domain.exam.ExamSkill
 import com.n3sensei.app.domain.exam.ExamSubmissionManager
 import com.n3sensei.app.domain.mistakes.ErrorReviewSessionManager
 import com.n3sensei.app.domain.mistakes.MistakeAnalysisManager
@@ -36,9 +40,36 @@ import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.domain.practice.PracticeResult
 import com.n3sensei.app.domain.srs.SubmitReviewUseCase
+import com.n3sensei.app.feature.contrast.ContrastErrorsScreen
+import com.n3sensei.app.feature.contrast.ContrastErrorsViewModel
+import com.n3sensei.app.feature.contrast.ContrastGroupScreen
+import com.n3sensei.app.feature.contrast.ContrastHomeScreen
+import com.n3sensei.app.feature.contrast.ContrastHomeViewModel
+import com.n3sensei.app.feature.contrast.ContrastLearningViewModel
+import com.n3sensei.app.feature.contrast.ContrastLibraryScreen
+import com.n3sensei.app.feature.contrast.ContrastLibraryViewModel
+import com.n3sensei.app.feature.contrast.ContrastLinksSection
+import com.n3sensei.app.feature.contrast.ContrastLinksViewModel
+import com.n3sensei.app.feature.contrast.ContrastPracticeScreen
+import com.n3sensei.app.feature.contrast.ContrastPracticeViewModel
+import com.n3sensei.app.feature.contrast.ContrastProgressScreen
+import com.n3sensei.app.feature.contrast.ContrastProgressViewModel
+import com.n3sensei.app.feature.contrast.ContrastReviewScreen
+import com.n3sensei.app.feature.contrast.ContrastReviewViewModel
+import com.n3sensei.app.feature.contrast.ContrastSessionSummaryScreen
+import com.n3sensei.app.feature.contrast.ContrastSessionSummaryViewModel
+import com.n3sensei.app.feature.contrast.SourceLinks
 import com.n3sensei.app.feature.edit.ContentEditScreen
 import com.n3sensei.app.feature.edit.ContentEditViewModel
 import com.n3sensei.app.feature.edit.EditTarget
+import com.n3sensei.app.feature.exam.ErrorDetailScreen
+import com.n3sensei.app.feature.exam.ErrorDetailViewModel
+import com.n3sensei.app.feature.exam.ErrorNotebookScreen
+import com.n3sensei.app.feature.exam.ErrorNotebookViewModel
+import com.n3sensei.app.feature.exam.ErrorReviewSessionScreen
+import com.n3sensei.app.feature.exam.ErrorReviewSessionViewModel
+import com.n3sensei.app.feature.exam.ExamDashboardScreen
+import com.n3sensei.app.feature.exam.ExamDashboardViewModel
 import com.n3sensei.app.feature.exam.ExamIntroScreen
 import com.n3sensei.app.feature.exam.ExamIntroViewModel
 import com.n3sensei.app.feature.exam.ExamListScreen
@@ -47,30 +78,21 @@ import com.n3sensei.app.feature.exam.ExamResultScreen
 import com.n3sensei.app.feature.exam.ExamResultViewModel
 import com.n3sensei.app.feature.exam.ExamReviewScreen
 import com.n3sensei.app.feature.exam.ExamReviewViewModel
+import com.n3sensei.app.feature.exam.ExamSessionScreen
+import com.n3sensei.app.feature.exam.ExamSessionViewModel
 import com.n3sensei.app.feature.exam.MistakeActions
 import com.n3sensei.app.feature.exam.MistakeAnalysisScreen
 import com.n3sensei.app.feature.exam.MistakeAnalysisViewModel
-import com.n3sensei.app.feature.exam.ErrorDetailScreen
-import com.n3sensei.app.feature.exam.ExamDashboardScreen
-import com.n3sensei.app.feature.exam.ExamDashboardViewModel
+import com.n3sensei.app.feature.exam.ReviewFilter
 import com.n3sensei.app.feature.exam.SkillDetailScreen
 import com.n3sensei.app.feature.exam.SkillDetailViewModel
-import com.n3sensei.app.feature.exam.ErrorDetailViewModel
-import com.n3sensei.app.feature.exam.ErrorNotebookScreen
-import com.n3sensei.app.feature.exam.ErrorNotebookViewModel
-import com.n3sensei.app.feature.exam.ErrorReviewSessionScreen
-import com.n3sensei.app.feature.exam.ErrorReviewSessionViewModel
 import com.n3sensei.app.feature.exam.WeaknessScreen
 import com.n3sensei.app.feature.exam.WeaknessViewModel
-import com.n3sensei.app.feature.exam.ReviewFilter
-import com.n3sensei.app.feature.exam.ExamSessionScreen
-import com.n3sensei.app.feature.exam.ExamSessionViewModel
 import com.n3sensei.app.feature.grammar.GrammarDetailScreen
 import com.n3sensei.app.feature.grammar.GrammarDetailViewModel
 import com.n3sensei.app.feature.grammar.GrammarListScreen
 import com.n3sensei.app.feature.grammar.GrammarListViewModel
 import com.n3sensei.app.feature.home.HomeScreen
-import com.n3sensei.app.core.ui.state.DashboardViewModel
 import com.n3sensei.app.feature.home.ProverbViewModel
 import com.n3sensei.app.feature.kanji.KanjiDetailScreen
 import com.n3sensei.app.feature.kanji.KanjiDetailViewModel
@@ -88,15 +110,15 @@ import com.n3sensei.app.feature.review.ReviewScreen
 import com.n3sensei.app.feature.review.ReviewViewModel
 import com.n3sensei.app.feature.reviewsession.ReviewSessionScreen
 import com.n3sensei.app.feature.reviewsession.ReviewSessionViewModel
-import com.n3sensei.app.feature.settings.BackupViewModel
 import com.n3sensei.app.feature.settings.AndroidSyncViewModel
+import com.n3sensei.app.feature.settings.BackupViewModel
 import com.n3sensei.app.feature.settings.JlptAiReviewViewModel
+import com.n3sensei.app.feature.settings.KanjiReviewLessonsScreen
+import com.n3sensei.app.feature.settings.KanjiReviewLessonsViewModel
 import com.n3sensei.app.feature.settings.ReminderLessonsScreen
 import com.n3sensei.app.feature.settings.ReminderLessonsViewModel
 import com.n3sensei.app.feature.settings.ReminderSettingsScreen
 import com.n3sensei.app.feature.settings.ReminderSettingsViewModel
-import com.n3sensei.app.feature.settings.KanjiReviewLessonsScreen
-import com.n3sensei.app.feature.settings.KanjiReviewLessonsViewModel
 import com.n3sensei.app.feature.settings.ReviewSettingsScreen
 import com.n3sensei.app.feature.settings.ReviewSettingsViewModel
 import com.n3sensei.app.feature.settings.SettingsScreen
@@ -110,23 +132,6 @@ import com.n3sensei.app.feature.vocabulary.VocabularyDetailViewModel
 import com.n3sensei.app.feature.vocabulary.VocabularyGroupScreen
 import com.n3sensei.app.feature.vocabulary.VocabularyGroupViewModel
 import com.n3sensei.app.feature.vocabulary.VocabularyGroupsScreen
-import com.n3sensei.app.feature.contrast.ContrastGroupScreen
-import com.n3sensei.app.feature.contrast.ContrastHomeScreen
-import com.n3sensei.app.feature.contrast.ContrastHomeViewModel
-import com.n3sensei.app.feature.contrast.ContrastLearningViewModel
-import com.n3sensei.app.feature.contrast.ContrastLibraryScreen
-import com.n3sensei.app.feature.contrast.ContrastLibraryViewModel
-import com.n3sensei.app.feature.contrast.ContrastErrorsScreen
-import com.n3sensei.app.feature.contrast.ContrastErrorsViewModel
-import com.n3sensei.app.feature.contrast.ContrastProgressScreen
-import com.n3sensei.app.feature.contrast.ContrastProgressViewModel
-import com.n3sensei.app.feature.contrast.ContrastReviewScreen
-import com.n3sensei.app.feature.contrast.ContrastReviewViewModel
-import com.n3sensei.app.feature.contrast.ContrastPracticeScreen
-import com.n3sensei.app.feature.contrast.ContrastPracticeViewModel
-import com.n3sensei.app.feature.contrast.ContrastSessionSummaryScreen
-import com.n3sensei.app.feature.contrast.ContrastSessionSummaryViewModel
-import com.n3sensei.app.feature.contrast.SourceLinks
 import com.n3sensei.app.feature.vocabulary.VocabularyGroupsViewModel
 import com.n3sensei.app.feature.vocabulary.VocabularyListScreen
 import com.n3sensei.app.feature.vocabulary.VocabularyListViewModel
@@ -378,6 +383,16 @@ fun N3SenseiNavHost(
                     onOpenKanji = { navController.navigate(KanjiDetailRoute(it)) },
                     onOpenGrammar = { navController.navigate(GrammarDetailRoute(it)) },
                     onStartPractice = { navController.navigate(PracticeRoute(courseLesson = route.number)) },
+                    contrastLinks = { lesson ->
+                        val sources = remember(lesson) {
+                            ContrastSourceIds(
+                                grammar = lesson.grammar.map { it.item.id }.toSet(),
+                                vocabulary = lesson.words.map { it.item.id }.toSet(),
+                                kanji = lesson.kanji.map { it.item.id }.toSet(),
+                            )
+                        }
+                        ContrastLinks(navController, sources, stringResource(R.string.contrast_links_lesson))
+                    },
                 )
             }
             composable<VocabularyRoute> { entry ->
@@ -423,6 +438,7 @@ fun N3SenseiNavHost(
                     onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
                     onEdit = { navController.navigate(VocabularyEditRoute(id)) },
                     onOpenKanji = { navController.navigate(KanjiDetailRoute(it)) },
+                    contrastLinks = { ItemContrastLinks(navController, ContrastSourceIds(vocabulary = setOf(id))) },
                 )
             }
             composable<VocabularyEditRoute> { entry ->
@@ -463,6 +479,7 @@ fun N3SenseiNavHost(
                     onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
                     onEdit = { navController.navigate(KanjiEditRoute(id)) },
                     onOpenVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
+                    contrastLinks = { ItemContrastLinks(navController, ContrastSourceIds(kanji = setOf(id))) },
                 )
             }
             composable<KanjiEditRoute> { entry ->
@@ -490,6 +507,7 @@ fun N3SenseiNavHost(
                     viewModel = appViewModel { GrammarDetailViewModel(id, contentRepository, progressRepository, userPreferencesRepository, clock) },
                     onPracticeLesson = { navController.navigate(PracticeRoute(lessonId = it)) },
                     onEdit = { navController.navigate(GrammarEditRoute(id)) },
+                    contrastLinks = { ItemContrastLinks(navController, ContrastSourceIds(grammar = setOf(id))) },
                 )
             }
             composable<GrammarEditRoute> { entry ->
@@ -652,6 +670,17 @@ fun N3SenseiNavHost(
             KanjiReviewLessonsScreen(viewModel = appViewModel { KanjiReviewLessonsViewModel(userPreferencesRepository, contentRepository) })
         }
     }
+}
+
+/** Contrast Lab entry point of an item page (grammar / vocabulary / kanji). */
+@Composable
+private fun ItemContrastLinks(navController: NavHostController, sources: ContrastSourceIds) =
+    ContrastLinks(navController, sources, stringResource(R.string.contrast_links_item))
+
+@Composable
+private fun ContrastLinks(navController: NavHostController, sources: ContrastSourceIds, title: String) {
+    val viewModel = appViewModel { ContrastLinksViewModel(contrastContentRepository) }
+    ContrastLinksSection(viewModel, sources, title, onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) })
 }
 
 private fun PracticeResult.toRoute(practice: PracticeRoute) =

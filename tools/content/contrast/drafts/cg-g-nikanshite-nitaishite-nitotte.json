@@ -1,0 +1,342 @@
+{
+  "id": "cg-g-nikanshite-nitaishite-nitotte",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜に関して, 〜に対して và 〜にとって",
+  "summaryVi": "Ba trợ từ ghép đều có thể dịch là 'về, đối với', nhưng に関して là 'về chủ đề', に対して là 'hướng tới đối tượng' (hành động, thái độ), にとって là 'từ lập trường của ai' (đánh giá).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-nikanshite-nitaishite-nitotte-kanshite",
+      "label": "〜に関して",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g022",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜に関し（て）",
+          "structure": "N ＋ に関して／に関する N",
+          "meaningVi": "liên quan đến…, về…"
+        },
+        "sourceFingerprint": "sha256:526f76c98dba79df7a9315e048f61cac5d0c1bca3003c4672d72479c1bada62a"
+      },
+      "grammar": {
+        "meaningVi": "Liên quan đến…, về…",
+        "connection": "N ＋ に関して／に関する N",
+        "nuanceVi": "Nêu chủ đề của việc nói, viết, nghiên cứu, điều tra: 〜に関して話す、調べる、質問する. Trang trọng hơn について."
+      }
+    },
+    {
+      "id": "ci-g-nikanshite-nitaishite-nitotte-taishite",
+      "label": "〜に対して",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g025",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜に対し（て）",
+          "structure": "N ＋ に対して／に対する N",
+          "meaningVi": "đối với…, hướng tới…"
+        },
+        "sourceFingerprint": "sha256:b820e02b173b36f00ec4eba11690d7e9f87888e41ba5a8ce2fa05e2054fdff92"
+      },
+      "grammar": {
+        "meaningVi": "Đối với…, hướng tới…",
+        "connection": "N ＋ に対して／に対する N",
+        "nuanceVi": "Hành động, thái độ, cảm xúc hướng thẳng vào đối tượng: 客に対して丁寧だ、質問に対して答える、親に対する態度."
+      }
+    },
+    {
+      "id": "ci-g-nikanshite-nitaishite-nitotte-nitotte",
+      "label": "〜にとって",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g037",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜にとって",
+          "structure": "N ＋ にとって",
+          "meaningVi": "đối với… (từ lập trường của…)"
+        },
+        "sourceFingerprint": "sha256:10a48f0f5a007a9811e6da521236b5e9c0455c81a15f2311de60bf9953c20237"
+      },
+      "grammar": {
+        "meaningVi": "Đối với… (từ lập trường của…)",
+        "connection": "N ＋ にとって",
+        "nuanceVi": "Đánh giá từ góc nhìn của N: 大切だ、難しい、ありがたい、問題だ. Vế sau là tính từ đánh giá, không phải hành động."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-nikanshite-nitaishite-nitotte-1",
+      "titleVi": "Vế sau quyết định",
+      "bodyVi": "Vế sau là động từ nói, viết, điều tra (話す、書く、研究する) → に関して. Vế sau là thái độ, phản ứng hướng vào ai/cái gì (優しい、厳しい、反対する、答える) → に対して. Vế sau là đánh giá (大切だ、難しい、必要だ) → にとって."
+    },
+    {
+      "id": "ct-g-nikanshite-nitaishite-nitotte-2",
+      "titleVi": "Mẹo thay thế",
+      "bodyVi": "Thay được bằng について → に関して. Thay được bằng 〜に向かって (hướng về) → に対して. Thay được bằng 〜の立場から見ると (nhìn từ lập trường) → にとって."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Chức năng",
+      "values": {
+        "ci-g-nikanshite-nitaishite-nitotte-kanshite": "Chủ đề",
+        "ci-g-nikanshite-nitaishite-nitotte-taishite": "Đối tượng của hành động, thái độ",
+        "ci-g-nikanshite-nitaishite-nitotte-nitotte": "Lập trường đánh giá"
+      }
+    },
+    {
+      "aspectVi": "Vế sau thường gặp",
+      "values": {
+        "ci-g-nikanshite-nitaishite-nitotte-kanshite": "話す、調べる、質問する、資料",
+        "ci-g-nikanshite-nitaishite-nitotte-taishite": "優しい、厳しい、反対する、答える",
+        "ci-g-nikanshite-nitaishite-nitotte-nitotte": "大切だ、難しい、必要だ"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ",
+      "values": {
+        "ci-g-nikanshite-nitaishite-nitotte-kanshite": "環境問題に関して研究する",
+        "ci-g-nikanshite-nitaishite-nitotte-taishite": "子供に対して厳しい",
+        "ci-g-nikanshite-nitaishite-nitotte-nitotte": "私にとって大切な人"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-nikanshite-nitaishite-nitotte-1",
+      "itemId": "ci-g-nikanshite-nitaishite-nitotte-kanshite",
+      "japanese": "この事件に関して、警察が調べている。",
+      "furigana": "この{事件|じけん}に{関|かん}して、{警察|けいさつ}が{調|しら}べている。",
+      "translationVi": "Cảnh sát đang điều tra về vụ việc này."
+    },
+    {
+      "id": "cx-g-nikanshite-nitaishite-nitotte-2",
+      "itemId": "ci-g-nikanshite-nitaishite-nitotte-kanshite",
+      "japanese": "新しい制度に関する説明会が開かれた。",
+      "furigana": "{新|あたら}しい{制度|せいど}に{関|かん}する{説明会|せつめいかい}が{開|ひら}かれた。",
+      "translationVi": "Buổi giải thích về chế độ mới đã được tổ chức."
+    },
+    {
+      "id": "cx-g-nikanshite-nitaishite-nitotte-3",
+      "itemId": "ci-g-nikanshite-nitaishite-nitotte-taishite",
+      "japanese": "店員はどの客に対しても親切だ。",
+      "furigana": "{店員|てんいん}はどの{客|きゃく}に{対|たい}しても{親切|しんせつ}だ。",
+      "translationVi": "Nhân viên cửa hàng tử tế với mọi khách hàng."
+    },
+    {
+      "id": "cx-g-nikanshite-nitaishite-nitotte-4",
+      "itemId": "ci-g-nikanshite-nitaishite-nitotte-taishite",
+      "japanese": "先生の質問に対して、誰も答えられなかった。",
+      "furigana": "{先生|せんせい}の{質問|しつもん}に{対|たい}して、{誰|だれ}も{答|こた}えられなかった。",
+      "translationVi": "Không ai trả lời được câu hỏi của thầy."
+    },
+    {
+      "id": "cx-g-nikanshite-nitaishite-nitotte-5",
+      "itemId": "ci-g-nikanshite-nitaishite-nitotte-nitotte",
+      "japanese": "留学生にとって、日本の夏は暑すぎる。",
+      "furigana": "{留学生|りゅうがくせい}にとって、{日本|にほん}の{夏|なつ}は{暑|あつ}すぎる。",
+      "translationVi": "Đối với du học sinh, mùa hè Nhật quá nóng."
+    },
+    {
+      "id": "cx-g-nikanshite-nitaishite-nitotte-6",
+      "itemId": "ci-g-nikanshite-nitaishite-nitotte-nitotte",
+      "japanese": "この写真は私にとって一番大切な宝物だ。",
+      "furigana": "この{写真|しゃしん}は{私|わたし}にとって{一番|いちばん}{大切|たいせつ}な{宝物|たからもの}だ。",
+      "translationVi": "Tấm ảnh này là báu vật quý nhất đối với tôi."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-nikanshite-nitaishite-nitotte-1",
+      "textVi": "関 = 'liên quan' (chủ đề), 対 = 'đối mặt' (hành động hướng vào), とって = 'lấy chỗ đứng của ai' (đánh giá)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-nikanshite-nitaishite-nitotte-1",
+      "situationVi": "Nói rằng sức khỏe là quan trọng đối với tôi.",
+      "wrong": {
+        "japanese": "私に対して、健康が一番大切だ。",
+        "furigana": "{私|わたし}に{対|たい}して、{健康|けんこう}が{一番|いちばん}{大切|たいせつ}だ。"
+      },
+      "correct": {
+        "japanese": "私にとって、健康が一番大切だ。",
+        "furigana": "{私|わたし}にとって、{健康|けんこう}が{一番|いちばん}{大切|たいせつ}だ。"
+      },
+      "explanationVi": "Vế sau là đánh giá (大切だ) từ lập trường của tôi → にとって.",
+      "expectedItemId": "ci-g-nikanshite-nitaishite-nitotte-nitotte",
+      "confusedWithItemId": "ci-g-nikanshite-nitaishite-nitotte-taishite"
+    },
+    {
+      "id": "ce-g-nikanshite-nitaishite-nitotte-2",
+      "situationVi": "Thái độ của học sinh với giáo viên.",
+      "wrong": {
+        "japanese": "彼は先生にとって失礼な態度をとった。",
+        "furigana": "{彼|かれ}は{先生|せんせい}にとって{失礼|しつれい}な{態度|たいど}をとった。"
+      },
+      "correct": {
+        "japanese": "彼は先生に対して失礼な態度をとった。",
+        "furigana": "{彼|かれ}は{先生|せんせい}に{対|たい}して{失礼|しつれい}な{態度|たいど}をとった。"
+      },
+      "explanationVi": "Thái độ hướng thẳng vào giáo viên → に対して.",
+      "expectedItemId": "ci-g-nikanshite-nitaishite-nitotte-taishite",
+      "confusedWithItemId": "ci-g-nikanshite-nitaishite-nitotte-nitotte"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-nikanshite-nitaishite-nitotte-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-nikanshite-nitaishite-nitotte-kanshite",
+      "instructionVi": "Chọn câu dùng đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "日本の経済に関してレポートを書いた。",
+          "furigana": "{日本|にほん}の{経済|けいざい}に{関|かん}してレポートを{書|か}いた。",
+          "itemId": "ci-g-nikanshite-nitaishite-nitotte-kanshite"
+        },
+        {
+          "id": "b",
+          "text": "日本の経済にとってレポートを書いた。",
+          "furigana": "{日本|にほん}の{経済|けいざい}にとってレポートを{書|か}いた。",
+          "itemId": "ci-g-nikanshite-nitaishite-nitotte-nitotte",
+          "feedbackVi": "にとって cần vế sau là đánh giá, không đi với 書く."
+        },
+        {
+          "id": "c",
+          "text": "日本の経済に対してレポートを書いた。",
+          "furigana": "{日本|にほん}の{経済|けいざい}に{対|たい}してレポートを{書|か}いた。",
+          "itemId": "ci-g-nikanshite-nitaishite-nitotte-taishite",
+          "feedbackVi": "Viết báo cáo về chủ đề, không phải hành động hướng vào nền kinh tế."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Chủ đề của bài báo cáo → に関して."
+    },
+    {
+      "id": "cq-g-nikanshite-nitaishite-nitotte-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-nikanshite-nitaishite-nitotte-taishite",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "部長は部下の失敗＿＿＿厳しい。",
+        "furigana": "{部長|ぶちょう}は{部下|ぶか}の{失敗|しっぱい}＿＿＿{厳|きび}しい。",
+        "translationVi": "Trưởng phòng nghiêm khắc với lỗi của cấp dưới."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "に対して",
+          "furigana": "に{対|たい}して",
+          "itemId": "ci-g-nikanshite-nitaishite-nitotte-taishite"
+        },
+        {
+          "id": "b",
+          "text": "にとって",
+          "itemId": "ci-g-nikanshite-nitaishite-nitotte-nitotte",
+          "feedbackVi": "にとって + 厳しい nghĩa là 'khó khăn đối với', không phải thái độ nghiêm khắc của trưởng phòng."
+        },
+        {
+          "id": "c",
+          "text": "に関して",
+          "furigana": "に{関|かん}して",
+          "itemId": "ci-g-nikanshite-nitaishite-nitotte-kanshite",
+          "feedbackVi": "に関して chỉ chủ đề, không diễn tả thái độ hướng vào."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Thái độ nghiêm khắc hướng vào lỗi của cấp dưới → に対して."
+    },
+    {
+      "id": "cq-g-nikanshite-nitaishite-nitotte-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-nikanshite-nitaishite-nitotte-nitotte",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "高齢者に関して、この駅の階段はとても大変だ。",
+        "furigana": "{高齢者|こうれいしゃ}に{関|かん}して、この{駅|えき}の{階段|かいだん}はとても{大変|たいへん}だ。",
+        "translationVi": "Đối với người cao tuổi, cầu thang ở nhà ga này thật vất vả."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "高齢者に関して、",
+          "furigana": "{高齢者|こうれいしゃ}に{関|かん}して、",
+          "itemId": "ci-g-nikanshite-nitaishite-nitotte-kanshite"
+        },
+        {
+          "id": "b",
+          "text": "この駅の",
+          "furigana": "この{駅|えき}の"
+        },
+        {
+          "id": "c",
+          "text": "階段は",
+          "furigana": "{階段|かいだん}は"
+        },
+        {
+          "id": "d",
+          "text": "とても大変だ。",
+          "furigana": "とても{大変|たいへん}だ。"
+        }
+      ],
+      "correctOptionId": "a",
+      "correction": {
+        "text": "高齢者にとって、",
+        "furigana": "{高齢者|こうれいしゃ}にとって、",
+        "itemId": "ci-g-nikanshite-nitaishite-nitotte-nitotte"
+      },
+      "explanationVi": "Vế sau là đánh giá (大変だ) từ lập trường người cao tuổi → にとって."
+    },
+    {
+      "id": "cq-g-nikanshite-nitaishite-nitotte-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-nikanshite-nitaishite-nitotte-taishite",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn kể rằng nhiều cư dân đã phản đối kế hoạch xây đường cao tốc."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "多くの住民が高速道路の計画に対して反対した。",
+          "furigana": "{多|おお}くの{住民|じゅうみん}が{高速道路|こうそくどうろ}の{計画|けいかく}に{対|たい}して{反対|はんたい}した。",
+          "itemId": "ci-g-nikanshite-nitaishite-nitotte-taishite"
+        },
+        {
+          "id": "b",
+          "text": "多くの住民が高速道路の計画にとって反対した。",
+          "furigana": "{多|おお}くの{住民|じゅうみん}が{高速道路|こうそくどうろ}の{計画|けいかく}にとって{反対|はんたい}した。",
+          "itemId": "ci-g-nikanshite-nitaishite-nitotte-nitotte",
+          "feedbackVi": "にとって không đi với hành động phản đối."
+        },
+        {
+          "id": "c",
+          "text": "多くの住民が高速道路の計画によって反対した。",
+          "furigana": "{多|おお}くの{住民|じゅうみん}が{高速道路|こうそくどうろ}の{計画|けいかく}によって{反対|はんたい}した。",
+          "feedbackVi": "によって là 'do, bởi', sai nghĩa."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Hành động phản đối hướng vào kế hoạch → に対して."
+    }
+  ]
+}

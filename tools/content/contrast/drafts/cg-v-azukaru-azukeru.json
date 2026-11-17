@@ -1,0 +1,320 @@
+{
+  "id": "cg-v-azukaru-azukeru",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "預かる và 預ける",
+  "summaryVi": "Hai động từ nhìn từ hai phía của cùng một việc gửi giữ: 預ける là gửi (đồ, tiền, con) cho người khác giữ; 預かる là nhận giữ hộ.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-azukaru-azukeru-karu",
+      "label": "預かる",
+      "labelFurigana": "{預|あず}かる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v142",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "預かる",
+          "reading": "あずかる",
+          "meaningVi": "chăm sóc"
+        },
+        "sourceFingerprint": "sha256:d2eb3f9985516b8a55b99c74be8dd0fb2ce7c983aaa227fa6b1534d6a9b57e7d"
+      },
+      "vocabulary": {
+        "reading": "あずかる",
+        "meaningVi": "nhận giữ, trông giữ (hộ)",
+        "usageVi": "Người nhận đồ, tiền, trẻ của người khác để trông giữ: 荷物を預かる.",
+        "collocations": [
+          {
+            "japanese": "荷物を預かる",
+            "furigana": "{荷物|にもつ}を{預|あず}かる",
+            "meaningVi": "giữ hộ hành lý"
+          },
+          {
+            "japanese": "子供を預かる",
+            "furigana": "{子供|こども}を{預|あず}かる",
+            "meaningVi": "trông hộ con"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-azukaru-azukeru-keru",
+      "label": "預ける",
+      "labelFurigana": "{預|あず}ける",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v143",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "預ける",
+          "reading": "あずける",
+          "meaningVi": "gửi"
+        },
+        "sourceFingerprint": "sha256:671c8d630fb90495fa4211b317c29b654ebd37b030506a3973781ee0968c1679"
+      },
+      "vocabulary": {
+        "reading": "あずける",
+        "meaningVi": "gửi (cho ai giữ)",
+        "usageVi": "Người giao đồ, tiền, trẻ cho người khác giữ: 銀行にお金を預ける.",
+        "collocations": [
+          {
+            "japanese": "銀行にお金を預ける",
+            "furigana": "{銀行|ぎんこう}にお{金|かね}を{預|あず}ける",
+            "meaningVi": "gửi tiền ngân hàng"
+          },
+          {
+            "japanese": "保育園に子供を預ける",
+            "furigana": "{保育園|ほいくえん}に{子供|こども}を{預|あず}ける",
+            "meaningVi": "gửi con ở nhà trẻ"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-azukaru-azukeru-1",
+      "titleVi": "Ai đưa, ai nhận",
+      "bodyVi": "Người đưa đồ đi → 預ける (A に B を預ける: gửi B cho A). Người nhận đồ để giữ → 預かる (A から B を預かる: nhận giữ B của A). Nhân viên khách sạn nói お荷物をお預かりします (chúng tôi xin giữ hành lý)."
+    },
+    {
+      "id": "ct-v-azukaru-azukeru-2",
+      "titleVi": "Mẹo trợ từ",
+      "bodyVi": "預ける: người nhận đi với に (フロントに預ける). 預かる: người gửi đi với から (お客様から預かる). Thấy に + người giữ → thường là 預ける."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Vai trò",
+      "values": {
+        "ci-v-azukaru-azukeru-karu": "Người nhận giữ",
+        "ci-v-azukaru-azukeru-keru": "Người gửi"
+      }
+    },
+    {
+      "aspectVi": "Cấu trúc",
+      "values": {
+        "ci-v-azukaru-azukeru-karu": "(人) から N を預かる",
+        "ci-v-azukaru-azukeru-keru": "(人／所) に N を預ける"
+      }
+    },
+    {
+      "aspectVi": "Câu thường nghe",
+      "values": {
+        "ci-v-azukaru-azukeru-karu": "お荷物をお預かりします",
+        "ci-v-azukaru-azukeru-keru": "コインロッカーに荷物を預ける"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-azukaru-azukeru-1",
+      "itemId": "ci-v-azukaru-azukeru-karu",
+      "japanese": "旅行の間、隣の人が猫を預かってくれた。",
+      "furigana": "{旅行|りょこう}の{間|あいだ}、{隣|となり}の{人|ひと}が{猫|ねこ}を{預|あず}かってくれた。",
+      "translationVi": "Trong lúc đi du lịch, người hàng xóm đã trông giữ con mèo cho tôi."
+    },
+    {
+      "id": "cx-v-azukaru-azukeru-2",
+      "itemId": "ci-v-azukaru-azukeru-karu",
+      "japanese": "一万円お預かりします。",
+      "furigana": "{一万円|いちまんえん}お{預|あず}かりします。",
+      "translationVi": "(Thu ngân) Tôi xin nhận của quý khách mười nghìn yên."
+    },
+    {
+      "id": "cx-v-azukaru-azukeru-3",
+      "itemId": "ci-v-azukaru-azukeru-keru",
+      "japanese": "駅のコインロッカーに荷物を預けた。",
+      "furigana": "{駅|えき}のコインロッカーに{荷物|にもつ}を{預|あず}けた。",
+      "translationVi": "Tôi gửi hành lý vào tủ khóa ở ga."
+    },
+    {
+      "id": "cx-v-azukaru-azukeru-4",
+      "itemId": "ci-v-azukaru-azukeru-keru",
+      "japanese": "毎月、給料の一部を銀行に預けている。",
+      "furigana": "{毎月|まいつき}、{給料|きゅうりょう}の{一部|いちぶ}を{銀行|ぎんこう}に{預|あず}けている。",
+      "translationVi": "Mỗi tháng tôi gửi một phần lương vào ngân hàng."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-azukaru-azukeru-1",
+      "textVi": "預ける: 'ける' như 'giao đi' (đẩy ra). 預かる: 'かる' như 'nhận về' (giống 助かる, 見つかる: phía nhận)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-azukaru-azukeru-1",
+      "situationVi": "Bạn nhờ hàng xóm giữ chìa khóa.",
+      "wrong": {
+        "japanese": "旅行中、隣の人に鍵を預かった。",
+        "furigana": "{旅行中|りょこうちゅう}、{隣|となり}の{人|ひと}に{鍵|かぎ}を{預|あず}かった。"
+      },
+      "correct": {
+        "japanese": "旅行中、隣の人に鍵を預けた。",
+        "furigana": "{旅行中|りょこうちゅう}、{隣|となり}の{人|ひと}に{鍵|かぎ}を{預|あず}けた。"
+      },
+      "explanationVi": "Bạn là người gửi, hàng xóm là người nhận (に) → 預ける.",
+      "expectedItemId": "ci-v-azukaru-azukeru-keru",
+      "confusedWithItemId": "ci-v-azukaru-azukeru-karu"
+    },
+    {
+      "id": "ce-v-azukaru-azukeru-2",
+      "situationVi": "Nhân viên lễ tân nói sẽ giữ hành lý.",
+      "wrong": {
+        "japanese": "お荷物をお預けします。",
+        "furigana": "お{荷物|にもつ}をお{預|あず}けします。"
+      },
+      "correct": {
+        "japanese": "お荷物をお預かりします。",
+        "furigana": "お{荷物|にもつ}をお{預|あず}かりします。"
+      },
+      "explanationVi": "Nhân viên là người nhận giữ → 預かる.",
+      "expectedItemId": "ci-v-azukaru-azukeru-karu",
+      "confusedWithItemId": "ci-v-azukaru-azukeru-keru"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-azukaru-azukeru-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-azukaru-azukeru-karu",
+      "instructionVi": "Bạn là nhân viên khách sạn. Câu nào đúng khi nhận vali của khách?",
+      "options": [
+        {
+          "id": "a",
+          "text": "チェックインまで、お荷物をお預かりします。",
+          "furigana": "チェックインまで、お{荷物|にもつ}をお{預|あず}かりします。",
+          "itemId": "ci-v-azukaru-azukeru-karu"
+        },
+        {
+          "id": "b",
+          "text": "チェックインまで、お荷物をお預けします。",
+          "furigana": "チェックインまで、お{荷物|にもつ}をお{預|あず}けします。",
+          "itemId": "ci-v-azukaru-azukeru-keru",
+          "feedbackVi": "預ける là gửi đi; nhân viên là người nhận giữ."
+        },
+        {
+          "id": "c",
+          "text": "チェックインまで、お荷物をお借りします。",
+          "furigana": "チェックインまで、お{荷物|にもつ}をお{借|か}りします。",
+          "feedbackVi": "借りる là mượn để dùng, không phải giữ hộ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Nhân viên nhận giữ đồ → お預かりします."
+    },
+    {
+      "id": "cq-v-azukaru-azukeru-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-azukaru-azukeru-keru",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "働いている間、子供を保育園に＿＿＿。",
+        "furigana": "{働|はたら}いている{間|あいだ}、{子供|こども}を{保育園|ほいくえん}に＿＿＿。",
+        "translationVi": "Trong lúc đi làm, tôi gửi con ở nhà trẻ."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "預けている",
+          "furigana": "{預|あず}けている",
+          "itemId": "ci-v-azukaru-azukeru-keru"
+        },
+        {
+          "id": "b",
+          "text": "預かっている",
+          "furigana": "{預|あず}かっている",
+          "itemId": "ci-v-azukaru-azukeru-karu"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Người mẹ gửi con cho nhà trẻ (に) → 預ける."
+    },
+    {
+      "id": "cq-v-azukaru-azukeru-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-azukaru-azukeru-keru",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "コートをクロークに預かってから、美術館に入った。",
+        "furigana": "コートをクロークに{預|あず}かってから、{美術館|びじゅつかん}に{入|はい}った。",
+        "translationVi": "Tôi gửi áo khoác ở quầy gửi đồ rồi vào bảo tàng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "コートを"
+        },
+        {
+          "id": "b",
+          "text": "クロークに"
+        },
+        {
+          "id": "c",
+          "text": "預かってから、",
+          "furigana": "{預|あず}かってから、",
+          "itemId": "ci-v-azukaru-azukeru-karu"
+        },
+        {
+          "id": "d",
+          "text": "美術館に入った。",
+          "furigana": "{美術館|びじゅつかん}に{入|はい}った。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "預けてから、",
+        "furigana": "{預|あず}けてから、",
+        "itemId": "ci-v-azukaru-azukeru-keru"
+      },
+      "explanationVi": "Tôi là người gửi áo cho quầy (に) → 預ける."
+    },
+    {
+      "id": "cq-v-azukaru-azukeru-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-azukaru-azukeru-karu",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn của bạn phải đi công tác một tuần và nhờ bạn trông con chó. Bạn nhận lời."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "いいよ。一週間、犬を預かるよ。",
+          "furigana": "いいよ。{一週間|いっしゅうかん}、{犬|いぬ}を{預|あず}かるよ。",
+          "itemId": "ci-v-azukaru-azukeru-karu"
+        },
+        {
+          "id": "b",
+          "text": "いいよ。一週間、犬を預けるよ。",
+          "furigana": "いいよ。{一週間|いっしゅうかん}、{犬|いぬ}を{預|あず}けるよ。",
+          "itemId": "ci-v-azukaru-azukeru-keru",
+          "feedbackVi": "預ける là bạn gửi chó đi cho người khác, ngược tình huống."
+        },
+        {
+          "id": "c",
+          "text": "いいよ。一週間、犬を飼うよ。",
+          "furigana": "いいよ。{一週間|いっしゅうかん}、{犬|いぬ}を{飼|か}うよ。",
+          "feedbackVi": "飼う là nuôi (như của mình), không phải trông hộ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Bạn là người nhận trông hộ → 預かる."
+    }
+  ]
+}

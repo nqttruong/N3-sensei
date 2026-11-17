@@ -1,0 +1,316 @@
+{
+  "id": "cg-k-tori-shima",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "鳥 và 島",
+  "summaryVi": "鳥 (ĐIỂU, chim) và 島 (ĐẢO, đảo) trông rất giống nhau: 島 là 鳥 bỏ bốn chấm ở dưới và thay bằng 山 (núi) – hình con chim đậu trên ngọn núi giữa biển.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-tori-shima-tori",
+      "label": "鳥",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k09ce5",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "鳥",
+          "onReadings": [
+            "チョウ"
+          ],
+          "kunReadings": [
+            "とり"
+          ],
+          "meaningVi": "Chim"
+        },
+        "sourceFingerprint": "sha256:b92714c5e4eff735edb12fa8cdacb3e59bff7bd8f14f5274f16186fb2502c9db"
+      },
+      "kanji": {
+        "meaningVi": "chim",
+        "hanViet": "ĐIỂU",
+        "onReadings": [
+          "チョウ"
+        ],
+        "kunReadings": [
+          "とり"
+        ],
+        "radical": {
+          "character": "鳥",
+          "nameVi": "Điểu – chính là bộ thủ"
+        },
+        "shapeNoteVi": "Hình con chim, bốn chấm 灬 ở dưới là chân và đuôi. 鳥, 小鳥, 焼き鳥."
+      }
+    },
+    {
+      "id": "ci-k-tori-shima-shima",
+      "label": "島",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05cf6",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "島",
+          "onReadings": [
+            "トウ"
+          ],
+          "kunReadings": [
+            "しま"
+          ],
+          "meaningVi": "Đảo"
+        },
+        "sourceFingerprint": "sha256:ca2627fcbd9dbd4ab4192ff0a4b2970069f33b39343867f638a5179d2b74573d"
+      },
+      "kanji": {
+        "meaningVi": "đảo",
+        "hanViet": "ĐẢO",
+        "onReadings": [
+          "トウ"
+        ],
+        "kunReadings": [
+          "しま"
+        ],
+        "radical": {
+          "character": "山",
+          "nameVi": "Sơn (núi)"
+        },
+        "shapeNoteVi": "鳥 bỏ bốn chấm, thêm 山 ở dưới: chim đậu trên núi giữa biển → đảo. 島, 半島, 島国."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-tori-shima-1",
+      "titleVi": "Bốn chấm hay núi",
+      "bodyVi": "Phần dưới có bốn chấm (灬) → 鳥 (chim). Phần dưới có 山 (núi) → 島 (đảo). Âm: 鳥 とり, チョウ; 島 しま, トウ."
+    },
+    {
+      "id": "ct-k-tori-shima-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "鳥: 鳥 (chim), 小鳥 (chim nhỏ), 焼き鳥 (gà nướng xiên). 島: 島 (đảo), 半島 (bán đảo), 島国 (quốc đảo), 無人島 (đảo hoang)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Phần dưới",
+      "values": {
+        "ci-k-tori-shima-tori": "Bốn chấm 灬",
+        "ci-k-tori-shima-shima": "山 (núi)"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-tori-shima-tori": "Chim",
+        "ci-k-tori-shima-shima": "Đảo"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-tori-shima-tori": "小鳥、焼き鳥",
+        "ci-k-tori-shima-shima": "半島、島国、無人島"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-tori-shima-1",
+      "itemId": "ci-k-tori-shima-tori",
+      "japanese": "朝、鳥の声で目が覚めた。",
+      "furigana": "{朝|あさ}、{鳥|とり}の{声|こえ}で{目|め}が{覚|さ}めた。",
+      "translationVi": "Sáng nay tôi thức giấc vì tiếng chim."
+    },
+    {
+      "id": "cx-k-tori-shima-2",
+      "itemId": "ci-k-tori-shima-tori",
+      "japanese": "仕事の後、焼き鳥を食べに行った。",
+      "furigana": "{仕事|しごと}の{後|あと}、{焼|や}き{鳥|とり}を{食|た}べに{行|い}った。",
+      "translationVi": "Sau giờ làm tôi đi ăn gà nướng xiên."
+    },
+    {
+      "id": "cx-k-tori-shima-3",
+      "itemId": "ci-k-tori-shima-shima",
+      "japanese": "日本は島国だ。",
+      "furigana": "{日本|にほん}は{島国|しまぐに}だ。",
+      "translationVi": "Nhật Bản là một quốc đảo."
+    },
+    {
+      "id": "cx-k-tori-shima-4",
+      "itemId": "ci-k-tori-shima-shima",
+      "japanese": "船で小さな島に渡った。",
+      "furigana": "{船|ふね}で{小|ちい}さな{島|しま}に{渡|わた}った。",
+      "translationVi": "Tôi đi thuyền sang một hòn đảo nhỏ."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-tori-shima-1",
+      "textVi": "Chim (鳥) có chân (bốn chấm); đảo (島) có núi (山)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-tori-shima-1",
+      "situationVi": "Viết 'quốc đảo'.",
+      "wrong": {
+        "japanese": "日本は鳥国です。",
+        "furigana": "{日本|にほん}は{鳥国|とりくに}です。"
+      },
+      "correct": {
+        "japanese": "日本は島国です。",
+        "furigana": "{日本|にほん}は{島国|しまぐに}です。"
+      },
+      "explanationVi": "Đảo → 島 (có 山).",
+      "expectedItemId": "ci-k-tori-shima-shima",
+      "confusedWithItemId": "ci-k-tori-shima-tori"
+    },
+    {
+      "id": "ce-k-tori-shima-2",
+      "situationVi": "Viết 'chim nhỏ'.",
+      "wrong": {
+        "japanese": "小島が窓の外で鳴いている。",
+        "furigana": "{小島|こじま}が{窓|まど}の{外|そと}で{鳴|な}いている。"
+      },
+      "correct": {
+        "japanese": "小鳥が窓の外で鳴いている。",
+        "furigana": "{小鳥|ことり}が{窓|まど}の{外|そと}で{鳴|な}いている。"
+      },
+      "explanationVi": "Chim → 鳥 (bốn chấm). 小島 là đảo nhỏ.",
+      "expectedItemId": "ci-k-tori-shima-tori",
+      "confusedWithItemId": "ci-k-tori-shima-shima"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-tori-shima-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-tori-shima-shima",
+      "instructionVi": "Chọn chữ có nghĩa 'đảo'.",
+      "options": [
+        {
+          "id": "a",
+          "text": "鳥",
+          "itemId": "ci-k-tori-shima-tori",
+          "feedbackVi": "鳥 là chim."
+        },
+        {
+          "id": "b",
+          "text": "島",
+          "itemId": "ci-k-tori-shima-shima"
+        },
+        {
+          "id": "c",
+          "text": "烏",
+          "feedbackVi": "烏 (からす) là con quạ."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanationVi": "島 (phần dưới là 山) là đảo."
+    },
+    {
+      "id": "cq-k-tori-shima-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-tori-shima-tori",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "公園の池にたくさんの水＿＿＿が集まっている。",
+        "furigana": "{公園|こうえん}の{池|いけ}にたくさんの{水|みず}＿＿＿が{集|あつ}まっている。",
+        "translationVi": "Có rất nhiều chim nước tụ tập ở hồ công viên."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "鳥",
+          "itemId": "ci-k-tori-shima-tori"
+        },
+        {
+          "id": "b",
+          "text": "島",
+          "itemId": "ci-k-tori-shima-shima"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "水鳥 (chim nước) viết với 鳥."
+    },
+    {
+      "id": "cq-k-tori-shima-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-tori-shima-shima",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "夏休みに伊豆半鳥へ旅行した。",
+        "furigana": "{夏休|なつやす}みに{伊豆半鳥|いずはんちょう}へ{旅行|りょこう}した。",
+        "translationVi": "Kỳ nghỉ hè tôi đi du lịch bán đảo Izu."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "夏休みに",
+          "furigana": "{夏休|なつやす}みに"
+        },
+        {
+          "id": "b",
+          "text": "伊豆半鳥へ",
+          "furigana": "{伊豆半鳥|いずはんちょう}へ",
+          "itemId": "ci-k-tori-shima-tori"
+        },
+        {
+          "id": "c",
+          "text": "旅行した。",
+          "furigana": "{旅行|りょこう}した。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "伊豆半島へ",
+        "furigana": "{伊豆半島|いずはんとう}へ",
+        "itemId": "ci-k-tori-shima-shima"
+      },
+      "explanationVi": "Bán đảo → 半島 (có 山)."
+    },
+    {
+      "id": "cq-k-tori-shima-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-tori-shima-tori",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn kể rằng trong vườn có một con chim nhỏ làm tổ."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "庭の木に小鳥が巣を作った。",
+          "furigana": "{庭|にわ}の{木|き}に{小鳥|ことり}が{巣|す}を{作|つく}った。",
+          "itemId": "ci-k-tori-shima-tori"
+        },
+        {
+          "id": "b",
+          "text": "庭の木に小島が巣を作った。",
+          "furigana": "{庭|にわ}の{木|き}に{小島|こじま}が{巣|す}を{作|つく}った。",
+          "itemId": "ci-k-tori-shima-shima",
+          "feedbackVi": "小島 là đảo nhỏ; chim viết 鳥."
+        },
+        {
+          "id": "c",
+          "text": "庭の木に小烏が巣を作った。",
+          "furigana": "{庭|にわ}の{木|き}に{小烏|こがらす}が{巣|す}を{作|つく}った。",
+          "feedbackVi": "烏 là con quạ, khác với 'chim nhỏ' trong tình huống."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Chim nhỏ → 小鳥."
+    }
+  ]
+}

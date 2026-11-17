@@ -8,6 +8,8 @@ import com.n3sensei.app.domain.contrast.ContrastAttempt
 import com.n3sensei.app.domain.contrast.ContrastDetail
 import com.n3sensei.app.domain.contrast.ContrastFilter
 import com.n3sensei.app.domain.contrast.ContrastGroup
+import com.n3sensei.app.domain.contrast.ContrastGroupLink
+import com.n3sensei.app.domain.contrast.ContrastSourceIds
 import com.n3sensei.app.domain.contrast.ContrastProgress
 import com.n3sensei.app.domain.contrast.ContrastQuestion
 import com.n3sensei.app.domain.contrast.ContrastReview
@@ -32,6 +34,7 @@ import com.n3sensei.app.domain.repository.ContrastPracticeRepository
 import com.n3sensei.app.domain.repository.ContrastProgressRepository
 import com.n3sensei.app.domain.repository.RecordAnswerResult
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import java.time.Instant
 
@@ -63,6 +66,14 @@ class OfflineContrastContentRepository(private val dao: ContrastDao) : ContrastC
         dao.installedPack()?.let { InstalledContrastPack(it.id, it.contentVersion, it.licenseVerified, dao.groupIds(it.id).toSet()) }
 
     override suspend fun retiredGroup(groupId: String): RetiredGroup? = dao.retiredGroup(groupId)?.toDomain()
+
+    override fun observeGroupsForSources(sources: ContrastSourceIds): Flow<List<ContrastGroupLink>> =
+        if (sources.isEmpty) {
+            flowOf(emptyList())
+        } else {
+            dao.observeGroupsForSources(sources.grammar.toList(), sources.vocabulary.toList(), sources.kanji.toList())
+                .map { rows -> rows.map { ContrastGroupLink(it.id, it.title, it.contentType) } }
+        }
 
     /**
      * Installs a VALIDATED pack (no ERROR) in one transaction, replacing the content of the same

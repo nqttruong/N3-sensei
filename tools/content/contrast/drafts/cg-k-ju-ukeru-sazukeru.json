@@ -1,0 +1,322 @@
+{
+  "id": "cg-k-ju-ukeru-sazukeru",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "受 và 授",
+  "summaryVi": "Hai chữ cùng đọc ジュ. 受 là nhận (tay đón lấy); 授 có thêm 扌 (tay) bên trái là trao, truyền dạy. Một bên nhận, một bên trao.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-ju-ukeru-sazukeru-ukeru",
+      "label": "受",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k053d7",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "受",
+          "onReadings": [
+            "ジュ"
+          ],
+          "kunReadings": [
+            "う.ける",
+            "-う.け",
+            "う.かる"
+          ],
+          "meaningVi": "Nhận, tiếp nhận"
+        },
+        "sourceFingerprint": "sha256:5719fad45599ee6bbf9cb2ff1fd73c24094f65ca5b3e1c3b223fd2c15d28d598"
+      },
+      "kanji": {
+        "meaningVi": "nhận, tiếp nhận",
+        "hanViet": "THỤ",
+        "onReadings": [
+          "ジュ"
+        ],
+        "kunReadings": [
+          "う.ける",
+          "-う.け",
+          "う.かる"
+        ],
+        "radical": {
+          "character": "又",
+          "nameVi": "Hựu (bàn tay)"
+        },
+        "shapeNoteVi": "Tay trên (爫) đưa, tay dưới (又) đón → nhận. 受ける, 受験, 受付."
+      }
+    },
+    {
+      "id": "ci-k-ju-ukeru-sazukeru-sazukeru",
+      "label": "授",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k06388",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "授",
+          "onReadings": [
+            "ジュ"
+          ],
+          "kunReadings": [
+            "さず.ける",
+            "さず.かる"
+          ],
+          "meaningVi": "Trao, truyền dạy"
+        },
+        "sourceFingerprint": "sha256:3be5ef4afecdc01d49bba7df554f7dfcb61ae7c62508bfb032895e726b735768"
+      },
+      "kanji": {
+        "meaningVi": "trao, truyền dạy",
+        "hanViet": "THỤ",
+        "onReadings": [
+          "ジュ"
+        ],
+        "kunReadings": [
+          "さず.ける",
+          "さず.かる"
+        ],
+        "radical": {
+          "character": "扌",
+          "nameVi": "Thủ (tay)"
+        },
+        "shapeNoteVi": "扌 + 受: thêm một bàn tay chủ động đưa ra → trao. 授業, 教授, 授ける."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-ju-ukeru-sazukeru-1",
+      "titleVi": "Nhận hay trao",
+      "bodyVi": "受 (không có 扌): người nhận (試験を受ける: dự thi, 受付: quầy tiếp nhận). 授 (có 扌): người trao, người dạy (授業: giờ học – thầy truyền dạy; 教授: giáo sư)."
+    },
+    {
+      "id": "ct-k-ju-ukeru-sazukeru-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "受: 受ける, 受験 (dự thi), 受付 (lễ tân), 受信 (nhận tin), 受賞 (nhận giải). 授: 授業 (giờ học), 教授 (giáo sư), 授賞式 (lễ trao giải), 授かる."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ trái",
+      "values": {
+        "ci-k-ju-ukeru-sazukeru-ukeru": "Không có",
+        "ci-k-ju-ukeru-sazukeru-sazukeru": "扌 (tay)"
+      }
+    },
+    {
+      "aspectVi": "Vai trò",
+      "values": {
+        "ci-k-ju-ukeru-sazukeru-ukeru": "Người nhận",
+        "ci-k-ju-ukeru-sazukeru-sazukeru": "Người trao, người dạy"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-ju-ukeru-sazukeru-ukeru": "受験、受付、受賞",
+        "ci-k-ju-ukeru-sazukeru-sazukeru": "授業、教授、授賞式"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-ju-ukeru-sazukeru-1",
+      "itemId": "ci-k-ju-ukeru-sazukeru-ukeru",
+      "japanese": "来月、日本語能力試験を受ける。",
+      "furigana": "{来月|らいげつ}、{日本語|にほんご}{能力|のうりょく}{試験|しけん}を{受|う}ける。",
+      "translationVi": "Tháng sau tôi dự thi năng lực tiếng Nhật."
+    },
+    {
+      "id": "cx-k-ju-ukeru-sazukeru-2",
+      "itemId": "ci-k-ju-ukeru-sazukeru-ukeru",
+      "japanese": "まず受付で名前を書いてください。",
+      "furigana": "まず{受付|うけつけ}で{名前|なまえ}を{書|か}いてください。",
+      "translationVi": "Trước tiên hãy ghi tên ở quầy tiếp nhận."
+    },
+    {
+      "id": "cx-k-ju-ukeru-sazukeru-3",
+      "itemId": "ci-k-ju-ukeru-sazukeru-sazukeru",
+      "japanese": "今日の授業は三時に終わる。",
+      "furigana": "{今日|きょう}の{授業|じゅぎょう}は{三時|さんじ}に{終|お}わる。",
+      "translationVi": "Giờ học hôm nay kết thúc lúc ba giờ."
+    },
+    {
+      "id": "cx-k-ju-ukeru-sazukeru-4",
+      "itemId": "ci-k-ju-ukeru-sazukeru-sazukeru",
+      "japanese": "田中教授は経済学が専門だ。",
+      "furigana": "{田中|たなか}{教授|きょうじゅ}は{経済学|けいざいがく}が{専門|せんもん}だ。",
+      "translationVi": "Giáo sư Tanaka chuyên về kinh tế học."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-ju-ukeru-sazukeru-1",
+      "textVi": "Thêm tay (扌) là chủ động 'trao' → 授; không thêm là 'nhận' → 受."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-ju-ukeru-sazukeru-1",
+      "situationVi": "Viết 'giờ học'.",
+      "wrong": {
+        "japanese": "受業に遅れた。",
+        "furigana": "{受業|じゅぎょう}に{遅|おく}れた。"
+      },
+      "correct": {
+        "japanese": "授業に遅れた。",
+        "furigana": "{授業|じゅぎょう}に{遅|おく}れた。"
+      },
+      "explanationVi": "Giờ học (thầy truyền dạy) → 授業.",
+      "expectedItemId": "ci-k-ju-ukeru-sazukeru-sazukeru",
+      "confusedWithItemId": "ci-k-ju-ukeru-sazukeru-ukeru"
+    },
+    {
+      "id": "ce-k-ju-ukeru-sazukeru-2",
+      "situationVi": "Viết 'dự thi'.",
+      "wrong": {
+        "japanese": "大学を授験する。",
+        "furigana": "{大学|だいがく}を{授験|じゅけん}する。"
+      },
+      "correct": {
+        "japanese": "大学を受験する。",
+        "furigana": "{大学|だいがく}を{受験|じゅけん}する。"
+      },
+      "explanationVi": "Dự thi (nhận bài thi) → 受験.",
+      "expectedItemId": "ci-k-ju-ukeru-sazukeru-ukeru",
+      "confusedWithItemId": "ci-k-ju-ukeru-sazukeru-sazukeru"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-ju-ukeru-sazukeru-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-ju-ukeru-sazukeru-sazukeru",
+      "instructionVi": "Chọn cách viết đúng của きょうじゅ (giáo sư).",
+      "options": [
+        {
+          "id": "a",
+          "text": "教受",
+          "itemId": "ci-k-ju-ukeru-sazukeru-ukeru",
+          "feedbackVi": "受 là nhận."
+        },
+        {
+          "id": "b",
+          "text": "教授",
+          "itemId": "ci-k-ju-ukeru-sazukeru-sazukeru"
+        },
+        {
+          "id": "c",
+          "text": "教樹",
+          "feedbackVi": "樹 là cây."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanationVi": "教授: người truyền dạy → 授."
+    },
+    {
+      "id": "cq-k-ju-ukeru-sazukeru-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-ju-ukeru-sazukeru-ukeru",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "彼の小説が文学賞を＿＿＿賞した。",
+        "furigana": "{彼|かれ}の{小説|しょうせつ}が{文学賞|ぶんがくしょう}を＿＿＿{賞|しょう}した。",
+        "translationVi": "Tiểu thuyết của anh ấy đã nhận giải văn học."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "受",
+          "itemId": "ci-k-ju-ukeru-sazukeru-ukeru"
+        },
+        {
+          "id": "b",
+          "text": "授",
+          "itemId": "ci-k-ju-ukeru-sazukeru-sazukeru"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "受賞 (nhận giải) viết với 受."
+    },
+    {
+      "id": "cq-k-ju-ukeru-sazukeru-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-ju-ukeru-sazukeru-ukeru",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "一階の授付で手続きをしてください。",
+        "furigana": "{一階|いっかい}の{授付|じゅつけ}で{手続|てつづ}きをしてください。",
+        "translationVi": "Xin hãy làm thủ tục ở quầy tiếp nhận tầng một."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "一階の",
+          "furigana": "{一階|いっかい}の"
+        },
+        {
+          "id": "b",
+          "text": "授付で",
+          "furigana": "{授付|じゅつけ}で",
+          "itemId": "ci-k-ju-ukeru-sazukeru-sazukeru"
+        },
+        {
+          "id": "c",
+          "text": "手続きをしてください。",
+          "furigana": "{手続|てつづ}きをしてください。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "受付で",
+        "furigana": "{受付|うけつけ}で",
+        "itemId": "ci-k-ju-ukeru-sazukeru-ukeru"
+      },
+      "explanationVi": "Quầy tiếp nhận → 受付."
+    },
+    {
+      "id": "cq-k-ju-ukeru-sazukeru-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-ju-ukeru-sazukeru-sazukeru",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn kể rằng hôm nay giờ học tiếng Anh rất thú vị."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "今日の英語の授業はとても面白かった。",
+          "furigana": "{今日|きょう}の{英語|えいご}の{授業|じゅぎょう}はとても{面白|おもしろ}かった。",
+          "itemId": "ci-k-ju-ukeru-sazukeru-sazukeru"
+        },
+        {
+          "id": "b",
+          "text": "今日の英語の受業はとても面白かった。",
+          "furigana": "{今日|きょう}の{英語|えいご}の{受業|じゅぎょう}はとても{面白|おもしろ}かった。",
+          "itemId": "ci-k-ju-ukeru-sazukeru-ukeru",
+          "feedbackVi": "授業 viết với 授 (có 扌)."
+        },
+        {
+          "id": "c",
+          "text": "今日の英語の受験はとても面白かった。",
+          "furigana": "{今日|きょう}の{英語|えいご}の{受験|じゅけん}はとても{面白|おもしろ}かった。",
+          "feedbackVi": "受験 là dự thi, không phải giờ học."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "授業 (giờ học) viết với 授."
+    }
+  ]
+}

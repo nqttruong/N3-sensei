@@ -1,0 +1,320 @@
+{
+  "id": "cg-v-konzatsu-juutai",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "混雑 và 渋滞",
+  "summaryVi": "Cả hai nói 'đông nghẹt', nhưng 混雑 là nơi chốn đông người (ga, cửa hàng, tàu), còn 渋滞 là xe cộ ùn tắc trên đường.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-konzatsu-juutai-konzatsu",
+      "label": "混雑",
+      "labelFurigana": "{混雑|こんざつ}",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v347",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "混雑",
+          "reading": "こんざつ",
+          "meaningVi": "hỗn tạp"
+        },
+        "sourceFingerprint": "sha256:73ce74f1f22169e73214da946812dcfce97c06545542ed403d2ab9f3f7c2eb61"
+      },
+      "vocabulary": {
+        "reading": "こんざつ",
+        "meaningVi": "đông đúc, chen chúc",
+        "usageVi": "Một nơi có quá nhiều người: 駅が混雑する、混雑した店内. (Nguồn dịch là 'hỗn tạp'; nghĩa thường dùng là đông đúc.)",
+        "collocations": [
+          {
+            "japanese": "駅が混雑する",
+            "furigana": "{駅|えき}が{混雑|こんざつ}する",
+            "meaningVi": "nhà ga đông đúc"
+          },
+          {
+            "japanese": "混雑を避ける",
+            "furigana": "{混雑|こんざつ}を{避|さ}ける",
+            "meaningVi": "tránh chỗ đông"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-konzatsu-juutai-juutai",
+      "label": "渋滞",
+      "labelFurigana": "{渋滞|じゅうたい}",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v348",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "渋滞",
+          "reading": "じゅうたい",
+          "meaningVi": "tắc đường"
+        },
+        "sourceFingerprint": "sha256:359f5461745c3f29c7c53cfd354bcab4729d0fe8c970b7f4e1379a863eaf6bf0"
+      },
+      "vocabulary": {
+        "reading": "じゅうたい",
+        "meaningVi": "tắc đường, ùn tắc",
+        "usageVi": "Xe cộ nối đuôi nhau không đi được: 道路が渋滞する、渋滞に巻き込まれる.",
+        "collocations": [
+          {
+            "japanese": "道路が渋滞する",
+            "furigana": "{道路|どうろ}が{渋滞|じゅうたい}する",
+            "meaningVi": "đường bị tắc"
+          },
+          {
+            "japanese": "渋滞に巻き込まれる",
+            "furigana": "{渋滞|じゅうたい}に{巻|ま}き{込|こ}まれる",
+            "meaningVi": "bị kẹt xe"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-konzatsu-juutai-1",
+      "titleVi": "Người hay xe",
+      "bodyVi": "Đông người ở một địa điểm (駅、デパート、電車の中、会場) → 混雑. Xe cộ ùn tắc trên đường (高速道路、国道、帰省ラッシュの車) → 渋滞."
+    },
+    {
+      "id": "ct-v-konzatsu-juutai-2",
+      "titleVi": "Từ gần nghĩa",
+      "bodyVi": "混む (văn nói) dùng được cho cả hai: 道が混む、店が混む. Khi dùng từ Hán trang trọng, phải chọn 混雑 hay 渋滞 cho đúng đối tượng."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Đối tượng",
+      "values": {
+        "ci-v-konzatsu-juutai-konzatsu": "Người ở một nơi",
+        "ci-v-konzatsu-juutai-juutai": "Xe cộ trên đường"
+      }
+    },
+    {
+      "aspectVi": "Nơi hay đi kèm",
+      "values": {
+        "ci-v-konzatsu-juutai-konzatsu": "駅、店、電車、会場",
+        "ci-v-konzatsu-juutai-juutai": "道路、高速道路、交差点"
+      }
+    },
+    {
+      "aspectVi": "Từ văn nói",
+      "values": {
+        "ci-v-konzatsu-juutai-konzatsu": "混む、込む",
+        "ci-v-konzatsu-juutai-juutai": "混む、詰まる"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-konzatsu-juutai-1",
+      "itemId": "ci-v-konzatsu-juutai-konzatsu",
+      "japanese": "年末のデパートはとても混雑している。",
+      "furigana": "{年末|ねんまつ}のデパートはとても{混雑|こんざつ}している。",
+      "translationVi": "Trung tâm thương mại cuối năm rất đông đúc."
+    },
+    {
+      "id": "cx-v-konzatsu-juutai-2",
+      "itemId": "ci-v-konzatsu-juutai-konzatsu",
+      "japanese": "朝の電車の混雑を避けて、早めに家を出る。",
+      "furigana": "{朝|あさ}の{電車|でんしゃ}の{混雑|こんざつ}を{避|さ}けて、{早|はや}めに{家|いえ}を{出|で}る。",
+      "translationVi": "Tôi ra khỏi nhà sớm để tránh cảnh chen chúc trên tàu buổi sáng."
+    },
+    {
+      "id": "cx-v-konzatsu-juutai-3",
+      "itemId": "ci-v-konzatsu-juutai-juutai",
+      "japanese": "事故のため、高速道路が十キロも渋滞している。",
+      "furigana": "{事故|じこ}のため、{高速道路|こうそくどうろ}が{十|じゅう}キロも{渋滞|じゅうたい}している。",
+      "translationVi": "Vì tai nạn mà đường cao tốc bị tắc đến mười cây số."
+    },
+    {
+      "id": "cx-v-konzatsu-juutai-4",
+      "itemId": "ci-v-konzatsu-juutai-juutai",
+      "japanese": "渋滞に巻き込まれて、会議に遅れた。",
+      "furigana": "{渋滞|じゅうたい}に{巻|ま}き{込|こ}まれて、{会議|かいぎ}に{遅|おく}れた。",
+      "translationVi": "Bị kẹt xe nên tôi trễ họp."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-konzatsu-juutai-1",
+      "textVi": "渋滞: 'chậm (滞) như nhựa (渋) dính' → xe đứng im. 混雑: 'trộn lẫn (混) lộn xộn (雑)' → người chen chúc."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-konzatsu-juutai-1",
+      "situationVi": "Nói con đường trước ga bị tắc xe.",
+      "wrong": {
+        "japanese": "駅前の道路がひどく混雑していて、バスが動かない。",
+        "furigana": "{駅前|えきまえ}の{道路|どうろ}がひどく{混雑|こんざつ}していて、バスが{動|うご}かない。"
+      },
+      "correct": {
+        "japanese": "駅前の道路がひどく渋滞していて、バスが動かない。",
+        "furigana": "{駅前|えきまえ}の{道路|どうろ}がひどく{渋滞|じゅうたい}していて、バスが{動|うご}かない。"
+      },
+      "explanationVi": "Xe cộ ùn tắc trên đường → 渋滞.",
+      "expectedItemId": "ci-v-konzatsu-juutai-juutai",
+      "confusedWithItemId": "ci-v-konzatsu-juutai-konzatsu"
+    },
+    {
+      "id": "ce-v-konzatsu-juutai-2",
+      "situationVi": "Nói công viên giải trí đông người.",
+      "wrong": {
+        "japanese": "休日の遊園地は渋滞している。",
+        "furigana": "{休日|きゅうじつ}の{遊園地|ゆうえんち}は{渋滞|じゅうたい}している。"
+      },
+      "correct": {
+        "japanese": "休日の遊園地は混雑している。",
+        "furigana": "{休日|きゅうじつ}の{遊園地|ゆうえんち}は{混雑|こんざつ}している。"
+      },
+      "explanationVi": "Đông người ở một địa điểm → 混雑.",
+      "expectedItemId": "ci-v-konzatsu-juutai-konzatsu",
+      "confusedWithItemId": "ci-v-konzatsu-juutai-juutai"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-konzatsu-juutai-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-konzatsu-juutai-juutai",
+      "instructionVi": "Chọn câu đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "お盆の時期は、高速道路がよく渋滞する。",
+          "furigana": "お{盆|ぼん}の{時期|じき}は、{高速道路|こうそくどうろ}がよく{渋滞|じゅうたい}する。",
+          "itemId": "ci-v-konzatsu-juutai-juutai"
+        },
+        {
+          "id": "b",
+          "text": "お盆の時期は、高速道路がよく混雑する。",
+          "furigana": "お{盆|ぼん}の{時期|じき}は、{高速道路|こうそくどうろ}がよく{混雑|こんざつ}する。",
+          "itemId": "ci-v-konzatsu-juutai-konzatsu",
+          "feedbackVi": "Với xe cộ trên đường cao tốc, từ chuẩn là 渋滞."
+        },
+        {
+          "id": "c",
+          "text": "お盆の時期は、高速道路がよく満員になる。",
+          "furigana": "お{盆|ぼん}の{時期|じき}は、{高速道路|こうそくどうろ}がよく{満員|まんいん}になる。",
+          "feedbackVi": "満員 là kín chỗ (người trong xe, phòng), không dùng cho đường."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Xe ùn tắc trên cao tốc → 渋滞."
+    },
+    {
+      "id": "cq-v-konzatsu-juutai-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-konzatsu-juutai-konzatsu",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "初詣の神社は大変＿＿＿していますので、ご注意ください。",
+        "furigana": "{初詣|はつもうで}の{神社|じんじゃ}は{大変|たいへん}＿＿＿していますので、ご{注意|ちゅうい}ください。",
+        "translationVi": "Đền thờ dịp lễ đầu năm rất đông người, xin quý khách chú ý."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "混雑",
+          "furigana": "{混雑|こんざつ}",
+          "itemId": "ci-v-konzatsu-juutai-konzatsu"
+        },
+        {
+          "id": "b",
+          "text": "渋滞",
+          "furigana": "{渋滞|じゅうたい}",
+          "itemId": "ci-v-konzatsu-juutai-juutai"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Đông người ở đền → 混雑."
+    },
+    {
+      "id": "cq-v-konzatsu-juutai-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-konzatsu-juutai-konzatsu",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "ラッシュアワーのホームは人で渋滞していた。",
+        "furigana": "ラッシュアワーのホームは{人|ひと}で{渋滞|じゅうたい}していた。",
+        "translationVi": "Sân ga giờ cao điểm đông nghẹt người."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ラッシュアワーの"
+        },
+        {
+          "id": "b",
+          "text": "ホームは"
+        },
+        {
+          "id": "c",
+          "text": "人で",
+          "furigana": "{人|ひと}で"
+        },
+        {
+          "id": "d",
+          "text": "渋滞していた。",
+          "furigana": "{渋滞|じゅうたい}していた。",
+          "itemId": "ci-v-konzatsu-juutai-juutai"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "混雑していた。",
+        "furigana": "{混雑|こんざつ}していた。",
+        "itemId": "ci-v-konzatsu-juutai-konzatsu"
+      },
+      "explanationVi": "Người đông ở sân ga → 混雑."
+    },
+    {
+      "id": "cq-v-konzatsu-juutai-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-konzatsu-juutai-juutai",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn gọi điện báo sẽ đến muộn vì taxi kẹt giữa dòng xe không nhúc nhích."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "すみません、渋滞で少し遅れます。",
+          "furigana": "すみません、{渋滞|じゅうたい}で{少|すこ}し{遅|おく}れます。",
+          "itemId": "ci-v-konzatsu-juutai-juutai"
+        },
+        {
+          "id": "b",
+          "text": "すみません、混雑で少し遅れます。",
+          "furigana": "すみません、{混雑|こんざつ}で{少|すこ}し{遅|おく}れます。",
+          "itemId": "ci-v-konzatsu-juutai-konzatsu",
+          "feedbackVi": "Kẹt xe trên đường → 渋滞."
+        },
+        {
+          "id": "c",
+          "text": "すみません、停電で少し遅れます。",
+          "furigana": "すみません、{停電|ていでん}で{少|すこ}し{遅|おく}れます。",
+          "feedbackVi": "停電 là mất điện."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Kẹt xe → 渋滞."
+    }
+  ]
+}

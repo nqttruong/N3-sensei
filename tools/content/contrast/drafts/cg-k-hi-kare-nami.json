@@ -1,0 +1,385 @@
+{
+  "id": "cg-k-hi-kare-nami",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "皮, 彼 và 波",
+  "summaryVi": "Ba chữ cùng có phần 皮 (BÌ, da). Thêm 彳 (bước chân) thành 彼 – anh ấy, người kia; thêm 氵 (nước) thành 波 – sóng (mặt nước gợn như da).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-hi-kare-nami-kawa",
+      "label": "皮",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k076ae",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "皮",
+          "onReadings": [
+            "ヒ"
+          ],
+          "kunReadings": [
+            "かわ"
+          ],
+          "meaningVi": "Da"
+        },
+        "sourceFingerprint": "sha256:af221faae6c37a5b11049128da6ffd753b37cda23056cf82de88f7b856cb7c2f"
+      },
+      "kanji": {
+        "meaningVi": "da, vỏ",
+        "hanViet": "BÌ",
+        "onReadings": [
+          "ヒ"
+        ],
+        "kunReadings": [
+          "かわ"
+        ],
+        "radical": {
+          "character": "皮",
+          "nameVi": "Bì (da) – chính là bộ thủ"
+        },
+        "shapeNoteVi": "Hình bàn tay lột lớp da thú → da, vỏ. 皮, 皮肉."
+      }
+    },
+    {
+      "id": "ci-k-hi-kare-nami-kare",
+      "label": "彼",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05f7c",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "彼",
+          "onReadings": [
+            "ヒ"
+          ],
+          "kunReadings": [
+            "かれ",
+            "かの",
+            "か.の"
+          ],
+          "meaningVi": "Anh ấy"
+        },
+        "sourceFingerprint": "sha256:81b66c65c352f4c84891002fb9688ccb538d408c4cbdd4d6dff57d277046937c"
+      },
+      "kanji": {
+        "meaningVi": "anh ấy; cái kia",
+        "hanViet": "BỈ",
+        "onReadings": [
+          "ヒ"
+        ],
+        "kunReadings": [
+          "かれ",
+          "かの",
+          "か.の"
+        ],
+        "radical": {
+          "character": "彳",
+          "nameVi": "Xích (bước chân)"
+        },
+        "shapeNoteVi": "彳 (đi) + 皮: người ở phía bên kia → anh ấy. 彼, 彼女, 彼氏."
+      }
+    },
+    {
+      "id": "ci-k-hi-kare-nami-nami",
+      "label": "波",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k06ce2",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "波",
+          "onReadings": [
+            "ハ"
+          ],
+          "kunReadings": [
+            "なみ"
+          ],
+          "meaningVi": "Sóng"
+        },
+        "sourceFingerprint": "sha256:90d777ae18e77d246e202a56efe2da56e9739a482b8e9842eadf90e85b5f3924"
+      },
+      "kanji": {
+        "meaningVi": "sóng",
+        "hanViet": "BA",
+        "onReadings": [
+          "ハ"
+        ],
+        "kunReadings": [
+          "なみ"
+        ],
+        "radical": {
+          "character": "氵",
+          "nameVi": "Thủy (nước)"
+        },
+        "shapeNoteVi": "氵 + 皮: lớp 'da' trên mặt nước gợn lên → sóng. 波, 津波, 電波."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-hi-kare-nami-1",
+      "titleVi": "Bộ bên trái",
+      "bodyVi": "Không có bộ: 皮 (da, vỏ). 彳 (người đi) → 彼 (người kia: anh ấy). 氵 (nước) → 波 (sóng). Âm On: 皮 ヒ, 彼 ヒ, 波 ハ."
+    },
+    {
+      "id": "ct-k-hi-kare-nami-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "皮: りんごの皮 (vỏ táo), 皮肉 (mỉa mai). 彼: 彼 (anh ấy), 彼女 (cô ấy, bạn gái), 彼氏 (bạn trai). 波: 波 (sóng), 津波 (sóng thần), 電波 (sóng điện)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ bên trái",
+      "values": {
+        "ci-k-hi-kare-nami-kawa": "Không có",
+        "ci-k-hi-kare-nami-kare": "彳 (bước chân)",
+        "ci-k-hi-kare-nami-nami": "氵 (nước)"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-hi-kare-nami-kawa": "Da, vỏ",
+        "ci-k-hi-kare-nami-kare": "Anh ấy, người kia",
+        "ci-k-hi-kare-nami-nami": "Sóng"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-hi-kare-nami-kawa": "皮、皮肉",
+        "ci-k-hi-kare-nami-kare": "彼、彼女、彼氏",
+        "ci-k-hi-kare-nami-nami": "波、津波、電波"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-hi-kare-nami-1",
+      "itemId": "ci-k-hi-kare-nami-kawa",
+      "japanese": "りんごの皮をむいて食べる。",
+      "furigana": "りんごの{皮|かわ}をむいて{食|た}べる。",
+      "translationVi": "Gọt vỏ táo rồi ăn."
+    },
+    {
+      "id": "cx-k-hi-kare-nami-2",
+      "itemId": "ci-k-hi-kare-nami-kawa",
+      "japanese": "彼の言い方には皮肉がこもっていた。",
+      "furigana": "{彼|かれ}の{言|い}い{方|かた}には{皮肉|ひにく}がこもっていた。",
+      "translationVi": "Cách nói của anh ta đầy mỉa mai."
+    },
+    {
+      "id": "cx-k-hi-kare-nami-3",
+      "itemId": "ci-k-hi-kare-nami-kare",
+      "japanese": "彼女は来月結婚する。",
+      "furigana": "{彼女|かのじょ}は{来月|らいげつ}{結婚|けっこん}する。",
+      "translationVi": "Cô ấy sẽ kết hôn vào tháng sau."
+    },
+    {
+      "id": "cx-k-hi-kare-nami-4",
+      "itemId": "ci-k-hi-kare-nami-kare",
+      "japanese": "彼は私の同僚です。",
+      "furigana": "{彼|かれ}は{私|わたし}の{同僚|どうりょう}です。",
+      "translationVi": "Anh ấy là đồng nghiệp của tôi."
+    },
+    {
+      "id": "cx-k-hi-kare-nami-5",
+      "itemId": "ci-k-hi-kare-nami-nami",
+      "japanese": "今日は風が強くて、波が高い。",
+      "furigana": "{今日|きょう}は{風|かぜ}が{強|つよ}くて、{波|なみ}が{高|たか}い。",
+      "translationVi": "Hôm nay gió mạnh, sóng cao."
+    },
+    {
+      "id": "cx-k-hi-kare-nami-6",
+      "itemId": "ci-k-hi-kare-nami-nami",
+      "japanese": "山の中は電波が弱い。",
+      "furigana": "{山|やま}の{中|なか}は{電波|でんぱ}が{弱|よわ}い。",
+      "translationVi": "Trong núi sóng điện thoại yếu."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-hi-kare-nami-1",
+      "textVi": "Da (皮) gặp nước (氵) thành sóng (波); gặp người đi (彳) thành người kia (彼)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-hi-kare-nami-1",
+      "situationVi": "Viết 'sóng thần'.",
+      "wrong": {
+        "japanese": "地震の後、津皮が来た。",
+        "furigana": "{地震|じしん}の{後|あと}、{津皮|つひ}が{来|き}た。"
+      },
+      "correct": {
+        "japanese": "地震の後、津波が来た。",
+        "furigana": "{地震|じしん}の{後|あと}、{津波|つなみ}が{来|き}た。"
+      },
+      "explanationVi": "Sóng → 波 (bộ 氵).",
+      "expectedItemId": "ci-k-hi-kare-nami-nami",
+      "confusedWithItemId": "ci-k-hi-kare-nami-kawa"
+    },
+    {
+      "id": "ce-k-hi-kare-nami-2",
+      "situationVi": "Viết 'cô ấy'.",
+      "wrong": {
+        "japanese": "波女は先生です。",
+        "furigana": "{波女|はじょ}は{先生|せんせい}です。"
+      },
+      "correct": {
+        "japanese": "彼女は先生です。",
+        "furigana": "{彼女|かのじょ}は{先生|せんせい}です。"
+      },
+      "explanationVi": "Cô ấy → 彼女 (bộ 彳).",
+      "expectedItemId": "ci-k-hi-kare-nami-kare",
+      "confusedWithItemId": "ci-k-hi-kare-nami-nami"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-hi-kare-nami-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-hi-kare-nami-nami",
+      "instructionVi": "Chọn cách viết đúng của でんぱ (sóng điện).",
+      "options": [
+        {
+          "id": "a",
+          "text": "電皮",
+          "itemId": "ci-k-hi-kare-nami-kawa",
+          "feedbackVi": "皮 là da, vỏ."
+        },
+        {
+          "id": "b",
+          "text": "電波",
+          "itemId": "ci-k-hi-kare-nami-nami"
+        },
+        {
+          "id": "c",
+          "text": "電彼",
+          "itemId": "ci-k-hi-kare-nami-kare",
+          "feedbackVi": "彼 là anh ấy."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanationVi": "電波 viết với 波 (sóng)."
+    },
+    {
+      "id": "cq-k-hi-kare-nami-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-hi-kare-nami-kawa",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "じゃがいもの＿＿＿をむいてから、小さく切ってください。",
+        "furigana": "じゃがいもの＿＿＿をむいてから、{小|ちい}さく{切|き}ってください。",
+        "translationVi": "Gọt vỏ khoai tây rồi cắt nhỏ."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "皮",
+          "itemId": "ci-k-hi-kare-nami-kawa"
+        },
+        {
+          "id": "b",
+          "text": "波",
+          "itemId": "ci-k-hi-kare-nami-nami"
+        },
+        {
+          "id": "c",
+          "text": "彼",
+          "itemId": "ci-k-hi-kare-nami-kare"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Vỏ (khoai) → 皮."
+    },
+    {
+      "id": "cq-k-hi-kare-nami-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-hi-kare-nami-kare",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "昨日、皮氏と映画を見に行った。",
+        "furigana": "{昨日|きのう}、{皮氏|ひし}と{映画|えいが}を{見|み}に{行|い}った。",
+        "translationVi": "Hôm qua tôi đi xem phim với bạn trai."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "昨日、",
+          "furigana": "{昨日|きのう}、"
+        },
+        {
+          "id": "b",
+          "text": "皮氏と",
+          "furigana": "{皮氏|ひし}と",
+          "itemId": "ci-k-hi-kare-nami-kawa"
+        },
+        {
+          "id": "c",
+          "text": "映画を",
+          "furigana": "{映画|えいが}を"
+        },
+        {
+          "id": "d",
+          "text": "見に行った。",
+          "furigana": "{見|み}に{行|い}った。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "彼氏と",
+        "furigana": "{彼氏|かれし}と",
+        "itemId": "ci-k-hi-kare-nami-kare"
+      },
+      "explanationVi": "Bạn trai → 彼氏 (bộ 彳)."
+    },
+    {
+      "id": "cq-k-hi-kare-nami-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-hi-kare-nami-nami",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn nhắc bạn bè không nên tắm biển hôm nay vì sóng to."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "今日は波が高いから、海に入らないほうがいい。",
+          "furigana": "{今日|きょう}は{波|なみ}が{高|たか}いから、{海|うみ}に{入|はい}らないほうがいい。",
+          "itemId": "ci-k-hi-kare-nami-nami"
+        },
+        {
+          "id": "b",
+          "text": "今日は皮が高いから、海に入らないほうがいい。",
+          "furigana": "{今日|きょう}は{皮|かわ}が{高|たか}いから、{海|うみ}に{入|はい}らないほうがいい。",
+          "itemId": "ci-k-hi-kare-nami-kawa",
+          "feedbackVi": "Sóng viết 波 (bộ 氵), không phải 皮."
+        },
+        {
+          "id": "c",
+          "text": "今日は彼が高いから、海に入らないほうがいい。",
+          "furigana": "{今日|きょう}は{彼|かれ}が{高|たか}いから、{海|うみ}に{入|はい}らないほうがいい。",
+          "itemId": "ci-k-hi-kare-nami-kare",
+          "feedbackVi": "Sóng viết 波, không phải 彼."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Sóng → 波."
+    }
+  ]
+}

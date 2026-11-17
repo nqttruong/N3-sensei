@@ -75,9 +75,38 @@ class ContrastViewModelsTest {
         override suspend fun getQuestion(questionId: String): ContrastQuestion? = error("disk error")
         override suspend fun installedPack(): InstalledContrastPack? = error("disk error")
         override suspend fun retiredGroup(groupId: String): RetiredGroup? = error("disk error")
+        override fun observeGroupsForSources(sources: com.n3sensei.app.domain.contrast.ContrastSourceIds): Flow<List<com.n3sensei.app.domain.contrast.ContrastGroupLink>> = flow { error("disk error") }
     }
 
     private fun writes() = Triple(store.attempts.size, store.progressRows.size, store.reviewRows.size) to store.sessions.size
+
+    // ---- Entry points from lessons and item pages ----
+
+    @Test
+    fun links_showOnlyPublishedGroupsContainingTheItems_andWriteNothing() = runTest {
+        val vm = ContrastLinksViewModel(content)
+        collect(vm.links)
+        assertTrue(vm.links.value.isEmpty())
+        // n3g-g001 (〜ことにしている) is an item of the grammar group; mimikara-n3-v211 (冷める) of the vocabulary group.
+        vm.show(com.n3sensei.app.domain.contrast.ContrastSourceIds(grammar = setOf("n3g-g001"), vocabulary = setOf("mimikara-n3-v211")))
+        assertEquals(listOf(grammarId, "cg-v-sameru-cold-awake"), vm.links.value.map { it.id })
+        // An item of no group, or ids of another kind: nothing.
+        vm.show(com.n3sensei.app.domain.contrast.ContrastSourceIds(kanji = setOf("n3g-g001"), grammar = setOf("n3g-g999")))
+        assertTrue(vm.links.value.isEmpty())
+        assertEquals((Triple(0, 0, 0) to 0), writes())
+    }
+
+    @Test
+    fun links_withoutAReviewedPack_orOnAFailure_areEmpty() = runTest {
+        val empty = ContrastLinksViewModel(emptyContent())
+        collect(empty.links)
+        empty.show(com.n3sensei.app.domain.contrast.ContrastSourceIds(grammar = setOf("n3g-g001")))
+        assertTrue(empty.links.value.isEmpty())
+        val failingVm = ContrastLinksViewModel(failing)
+        collect(failingVm.links)
+        failingVm.show(com.n3sensei.app.domain.contrast.ContrastSourceIds(grammar = setOf("n3g-g001")))
+        assertTrue(failingVm.links.value.isEmpty())
+    }
 
     // ---- Home ----
 

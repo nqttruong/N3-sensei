@@ -1,0 +1,326 @@
+{
+  "id": "cg-k-kou-shin",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "幸 và 辛",
+  "summaryVi": "Hai chữ chỉ khác một nét ngang: 幸 (HẠNH, hạnh phúc) có hai nét ngang ở trên (土 + 干 → nhiều nét hơn); 辛 (TÂN, cay, vất vả) có 立 ở trên. Nghĩa gần như ngược nhau.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-kou-shin-shiawase",
+      "label": "幸",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05e78",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "幸",
+          "onReadings": [
+            "コウ"
+          ],
+          "kunReadings": [
+            "さいわ.い",
+            "さち",
+            "しあわ.せ"
+          ],
+          "meaningVi": "Hạnh phúc, may mắn"
+        },
+        "sourceFingerprint": "sha256:44a897e6dab12c5c420f361bca557f2f73d893a91d8ec7ab21d122d3c17d554b"
+      },
+      "kanji": {
+        "meaningVi": "hạnh phúc, may mắn",
+        "hanViet": "HẠNH",
+        "onReadings": [
+          "コウ"
+        ],
+        "kunReadings": [
+          "さいわ.い",
+          "さち",
+          "しあわ.せ"
+        ],
+        "radical": {
+          "character": "干",
+          "nameVi": "Can (phần dưới)"
+        },
+        "shapeNoteVi": "Phần trên là 土 rồi đến ソ và 干: thêm một nét so với 辛 → 'thêm một chút là hạnh phúc'. 幸せ, 幸福, 不幸."
+      }
+    },
+    {
+      "id": "ci-k-kou-shin-karai",
+      "label": "辛",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k08f9b",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "辛",
+          "onReadings": [
+            "シン"
+          ],
+          "kunReadings": [
+            "から.い",
+            "つら.い",
+            "-づら.い",
+            "かのと"
+          ],
+          "meaningVi": "Cay; vất vả, khổ sở"
+        },
+        "sourceFingerprint": "sha256:5c17d4f4315e5f22f0b89ad9f2d9d365a5dc02a6b252797cd40ca152314445d2"
+      },
+      "kanji": {
+        "meaningVi": "cay; vất vả, khổ",
+        "hanViet": "TÂN",
+        "onReadings": [
+          "シン"
+        ],
+        "kunReadings": [
+          "から.い",
+          "つら.い",
+          "-づら.い",
+          "かのと"
+        ],
+        "radical": {
+          "character": "辛",
+          "nameVi": "Tân – chính là bộ thủ"
+        },
+        "shapeNoteVi": "Phần trên là 立: dao đâm, cay đắng → cay, khổ. 辛い (からい／つらい), 辛口."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-kou-shin-1",
+      "titleVi": "Đếm nét ngang trên cùng",
+      "bodyVi": "幸: trên cùng là 土 (hai nét ngang, nét dưới dài hơn). 辛: trên cùng là 立 (chấm và nét ngang). Người ta hay nói 'cay đắng (辛) thêm một nét là hạnh phúc (幸)'."
+    },
+    {
+      "id": "ct-k-kou-shin-2",
+      "titleVi": "Cách đọc của 辛い",
+      "bodyVi": "辛い có hai cách đọc: からい (cay) và つらい (khổ sở). Ngữ cảnh món ăn → からい; ngữ cảnh cảm xúc, công việc → つらい. 幸 đọc しあわ.せ, さいわ.い, コウ."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Phần trên",
+      "values": {
+        "ci-k-kou-shin-shiawase": "土 (hai nét ngang)",
+        "ci-k-kou-shin-karai": "立"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-kou-shin-shiawase": "Hạnh phúc, may mắn",
+        "ci-k-kou-shin-karai": "Cay; vất vả"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-kou-shin-shiawase": "幸せ、幸福、不幸",
+        "ci-k-kou-shin-karai": "辛い、辛口"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-kou-shin-1",
+      "itemId": "ci-k-kou-shin-shiawase",
+      "japanese": "家族と過ごす時間が一番幸せだ。",
+      "furigana": "{家族|かぞく}と{過|す}ごす{時間|じかん}が{一番|いちばん}{幸|しあわ}せだ。",
+      "translationVi": "Thời gian bên gia đình là hạnh phúc nhất."
+    },
+    {
+      "id": "cx-k-kou-shin-2",
+      "itemId": "ci-k-kou-shin-shiawase",
+      "japanese": "幸い、けが人はいなかった。",
+      "furigana": "{幸|さいわ}い、けが{人|にん}はいなかった。",
+      "translationVi": "May mắn là không có ai bị thương."
+    },
+    {
+      "id": "cx-k-kou-shin-3",
+      "itemId": "ci-k-kou-shin-karai",
+      "japanese": "このカレーは辛すぎて食べられない。",
+      "furigana": "このカレーは{辛|から}すぎて{食|た}べられない。",
+      "translationVi": "Món cà ri này cay quá, không ăn được."
+    },
+    {
+      "id": "cx-k-kou-shin-4",
+      "itemId": "ci-k-kou-shin-karai",
+      "japanese": "友達と別れるのは辛い。",
+      "furigana": "{友達|ともだち}と{別|わか}れるのは{辛|つら}い。",
+      "translationVi": "Chia tay bạn bè thật khổ sở."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-kou-shin-1",
+      "textVi": "Thêm một nét (một chút cố gắng) vào cay đắng 辛 là thành hạnh phúc 幸."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-kou-shin-1",
+      "situationVi": "Viết 'hạnh phúc'.",
+      "wrong": {
+        "japanese": "二人は辛せに暮らした。",
+        "furigana": "{二人|ふたり}は{辛|から}せに{暮|く}らした。"
+      },
+      "correct": {
+        "japanese": "二人は幸せに暮らした。",
+        "furigana": "{二人|ふたり}は{幸|しあわ}せに{暮|く}らした。"
+      },
+      "explanationVi": "Hạnh phúc → 幸せ.",
+      "expectedItemId": "ci-k-kou-shin-shiawase",
+      "confusedWithItemId": "ci-k-kou-shin-karai"
+    },
+    {
+      "id": "ce-k-kou-shin-2",
+      "situationVi": "Viết 'cay'.",
+      "wrong": {
+        "japanese": "幸い料理が好きだ。",
+        "furigana": "{幸|さいわ}い{料理|りょうり}が{好|す}きだ。"
+      },
+      "correct": {
+        "japanese": "辛い料理が好きだ。",
+        "furigana": "{辛|から}い{料理|りょうり}が{好|す}きだ。"
+      },
+      "explanationVi": "Cay → 辛い.",
+      "expectedItemId": "ci-k-kou-shin-karai",
+      "confusedWithItemId": "ci-k-kou-shin-shiawase"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-kou-shin-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-kou-shin-karai",
+      "instructionVi": "Chọn chữ đúng cho からい (cay).",
+      "options": [
+        {
+          "id": "a",
+          "text": "幸",
+          "itemId": "ci-k-kou-shin-shiawase",
+          "feedbackVi": "幸 là hạnh phúc."
+        },
+        {
+          "id": "b",
+          "text": "辛",
+          "itemId": "ci-k-kou-shin-karai"
+        },
+        {
+          "id": "c",
+          "text": "空",
+          "feedbackVi": "空 (から) là trống rỗng, không phải cay."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanationVi": "辛い (cay) viết với 辛."
+    },
+    {
+      "id": "cq-k-kou-shin-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-kou-shin-shiawase",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "お二人の＿＿＿せを心からお祈りしています。",
+        "furigana": "お{二人|ふたり}の＿＿＿せを{心|こころ}からお{祈|いの}りしています。",
+        "translationVi": "Tôi thành tâm cầu chúc hai bạn hạnh phúc."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "幸",
+          "itemId": "ci-k-kou-shin-shiawase"
+        },
+        {
+          "id": "b",
+          "text": "辛",
+          "itemId": "ci-k-kou-shin-karai"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "幸せ (hạnh phúc) viết với 幸."
+    },
+    {
+      "id": "cq-k-kou-shin-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-kou-shin-karai",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "仕事は幸いけれど、頑張っています。",
+        "furigana": "{仕事|しごと}は{幸|さいわ}いけれど、{頑張|がんば}っています。",
+        "translationVi": "Công việc vất vả nhưng tôi vẫn cố gắng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "仕事は",
+          "furigana": "{仕事|しごと}は"
+        },
+        {
+          "id": "b",
+          "text": "幸いけれど、",
+          "furigana": "{幸|さいわ}いけれど、",
+          "itemId": "ci-k-kou-shin-shiawase"
+        },
+        {
+          "id": "c",
+          "text": "頑張っています。",
+          "furigana": "{頑張|がんば}っています。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "辛いけれど、",
+        "furigana": "{辛|つら}いけれど、",
+        "itemId": "ci-k-kou-shin-karai"
+      },
+      "explanationVi": "Vất vả, khổ sở → 辛い (つらい)."
+    },
+    {
+      "id": "cq-k-kou-shin-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-kou-shin-shiawase",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn viết thiệp mừng cưới cho bạn thân."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "どうぞお幸せに。",
+          "furigana": "どうぞお{幸|しあわ}せに。",
+          "itemId": "ci-k-kou-shin-shiawase"
+        },
+        {
+          "id": "b",
+          "text": "どうぞお辛せに。",
+          "furigana": "どうぞお{辛|から}せに。",
+          "itemId": "ci-k-kou-shin-karai",
+          "feedbackVi": "辛 là cay, khổ; chúc mừng dùng 幸せ."
+        },
+        {
+          "id": "c",
+          "text": "どうぞお元気せに。",
+          "furigana": "どうぞお{元気|げんき}せに。",
+          "feedbackVi": "Không có cách nói này."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Chúc hạnh phúc → お幸せに."
+    }
+  ]
+}

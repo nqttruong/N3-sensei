@@ -1,0 +1,322 @@
+{
+  "id": "cg-v-mitsukaru-mitsukeru",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "見つかる và 見つける",
+  "summaryVi": "見つかる là 'được tìm thấy, bị phát hiện' (tự động từ, N が), 見つける là 'tìm thấy, phát hiện ra' (tha động từ, N を, có người tìm).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-mitsukaru-mitsukeru-karu",
+      "label": "見つかる",
+      "labelFurigana": "{見|み}つかる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v152",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "見つかる",
+          "reading": "みつかる",
+          "meaningVi": "được tìm thấy"
+        },
+        "sourceFingerprint": "sha256:c47f92e9a560a115e5b46f2480497dba293c220744fc31e55317b4a3274a36fb"
+      },
+      "vocabulary": {
+        "reading": "みつかる",
+        "meaningVi": "được tìm thấy, bị phát hiện",
+        "usageVi": "Tự động từ: thứ bị mất hay điều bí mật hiện ra; N が 見つかる.",
+        "collocations": [
+          {
+            "japanese": "財布が見つかる",
+            "furigana": "{財布|さいふ}が{見|み}つかる",
+            "meaningVi": "ví được tìm thấy"
+          },
+          {
+            "japanese": "仕事が見つかる",
+            "furigana": "{仕事|しごと}が{見|み}つかる",
+            "meaningVi": "tìm được việc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-mitsukaru-mitsukeru-keru",
+      "label": "見つける",
+      "labelFurigana": "{見|み}つける",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v153",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "見つける",
+          "reading": "みつける",
+          "meaningVi": "tìm thấy"
+        },
+        "sourceFingerprint": "sha256:9494314d4c4615084ae1279d03e7aee6bdb3743f5bf63a433cd25bedb790ae5d"
+      },
+      "vocabulary": {
+        "reading": "みつける",
+        "meaningVi": "tìm thấy, phát hiện ra",
+        "usageVi": "Tha động từ: người chủ động tìm ra; N を 見つける.",
+        "collocations": [
+          {
+            "japanese": "財布を見つける",
+            "furigana": "{財布|さいふ}を{見|み}つける",
+            "meaningVi": "tìm thấy cái ví"
+          },
+          {
+            "japanese": "間違いを見つける",
+            "furigana": "{間違|まちが}いを{見|み}つける",
+            "meaningVi": "phát hiện lỗi sai"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-mitsukaru-mitsukeru-1",
+      "titleVi": "Chủ ngữ là ai",
+      "bodyVi": "見つける: chủ ngữ là người tìm (私は鍵を見つけた). 見つかる: chủ ngữ là thứ được tìm (鍵が見つかった), không cần nói ai tìm. Khi kết quả có được không do mình chủ động (仕事が見つかった) cũng dùng 見つかる."
+    },
+    {
+      "id": "ct-v-mitsukaru-mitsukeru-2",
+      "titleVi": "Nghĩa 'bị phát hiện'",
+      "bodyVi": "見つかる còn nghĩa 'bị bắt gặp' khi làm điều lén lút: 先生に見つかる (bị thầy phát hiện). Người phát hiện đi với に."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Loại",
+      "values": {
+        "ci-v-mitsukaru-mitsukeru-karu": "Tự động từ",
+        "ci-v-mitsukaru-mitsukeru-keru": "Tha động từ"
+      }
+    },
+    {
+      "aspectVi": "Trợ từ",
+      "values": {
+        "ci-v-mitsukaru-mitsukeru-karu": "N が 見つかる (người phát hiện: に)",
+        "ci-v-mitsukaru-mitsukeru-keru": "(人は) N を 見つける"
+      }
+    },
+    {
+      "aspectVi": "Sắc thái",
+      "values": {
+        "ci-v-mitsukaru-mitsukeru-karu": "Kết quả, được tìm thấy; bị bắt gặp",
+        "ci-v-mitsukaru-mitsukeru-keru": "Hành động tìm ra của ai đó"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-mitsukaru-mitsukeru-1",
+      "itemId": "ci-v-mitsukaru-mitsukeru-karu",
+      "japanese": "なくした鍵が机の下から見つかった。",
+      "furigana": "なくした{鍵|かぎ}が{机|つくえ}の{下|した}から{見|み}つかった。",
+      "translationVi": "Chiếc chìa khóa bị mất đã được tìm thấy dưới gầm bàn."
+    },
+    {
+      "id": "cx-v-mitsukaru-mitsukeru-2",
+      "itemId": "ci-v-mitsukaru-mitsukeru-karu",
+      "japanese": "授業中にゲームをしていて、先生に見つかった。",
+      "furigana": "{授業|じゅぎょう}{中|ちゅう}にゲームをしていて、{先生|せんせい}に{見|み}つかった。",
+      "translationVi": "Chơi game trong giờ học và bị thầy phát hiện."
+    },
+    {
+      "id": "cx-v-mitsukaru-mitsukeru-3",
+      "itemId": "ci-v-mitsukaru-mitsukeru-keru",
+      "japanese": "駅で財布を見つけて、交番に届けた。",
+      "furigana": "{駅|えき}で{財布|さいふ}を{見|み}つけて、{交番|こうばん}に{届|とど}けた。",
+      "translationVi": "Tôi nhặt được cái ví ở ga và đem nộp đồn cảnh sát."
+    },
+    {
+      "id": "cx-v-mitsukaru-mitsukeru-4",
+      "itemId": "ci-v-mitsukaru-mitsukeru-keru",
+      "japanese": "安くておいしい店を見つけたよ。",
+      "furigana": "{安|やす}くておいしい{店|みせ}を{見|み}つけたよ。",
+      "translationVi": "Tớ tìm được một quán vừa rẻ vừa ngon đấy."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-mitsukaru-mitsukeru-1",
+      "textVi": "かる (る tự động) = tự hiện ra; ける (る sau え) = mình tìm ra. Giống 掛かる／掛ける, 助かる／助ける."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-mitsukaru-mitsukeru-1",
+      "situationVi": "Kể mình đã tìm thấy chiếc nhẫn bị mất.",
+      "wrong": {
+        "japanese": "私はなくした指輪を見つかった。",
+        "furigana": "{私|わたし}はなくした{指輪|ゆびわ}を{見|み}つかった。"
+      },
+      "correct": {
+        "japanese": "私はなくした指輪を見つけた。",
+        "furigana": "{私|わたし}はなくした{指輪|ゆびわ}を{見|み}つけた。"
+      },
+      "explanationVi": "Chủ ngữ là người tìm (私は) + を → 見つける.",
+      "expectedItemId": "ci-v-mitsukaru-mitsukeru-keru",
+      "confusedWithItemId": "ci-v-mitsukaru-mitsukeru-karu"
+    },
+    {
+      "id": "ce-v-mitsukaru-mitsukeru-2",
+      "situationVi": "Nói việc làm thêm đã tìm được.",
+      "wrong": {
+        "japanese": "やっといいアルバイトを見つかった。",
+        "furigana": "やっといいアルバイトを{見|み}つかった。"
+      },
+      "correct": {
+        "japanese": "やっといいアルバイトが見つかった。",
+        "furigana": "やっといいアルバイトが{見|み}つかった。"
+      },
+      "explanationVi": "見つかる đi với が. (Hoặc: アルバイトを見つけた.)",
+      "expectedItemId": "ci-v-mitsukaru-mitsukeru-karu",
+      "confusedWithItemId": "ci-v-mitsukaru-mitsukeru-keru"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-mitsukaru-mitsukeru-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-mitsukaru-mitsukeru-karu",
+      "instructionVi": "Chọn câu đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "探していた本がやっと見つかった。",
+          "furigana": "{探|さが}していた{本|ほん}がやっと{見|み}つかった。",
+          "itemId": "ci-v-mitsukaru-mitsukeru-karu"
+        },
+        {
+          "id": "b",
+          "text": "探していた本がやっと見つけた。",
+          "furigana": "{探|さが}していた{本|ほん}がやっと{見|み}つけた。",
+          "itemId": "ci-v-mitsukaru-mitsukeru-keru",
+          "feedbackVi": "見つける cần を, không đi với が."
+        },
+        {
+          "id": "c",
+          "text": "探していた本をやっと見つかった。",
+          "furigana": "{探|さが}していた{本|ほん}をやっと{見|み}つかった。",
+          "feedbackVi": "見つかる không đi với を."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "本が (thứ được tìm thấy) → 見つかる."
+    },
+    {
+      "id": "cq-v-mitsukaru-mitsukeru-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-mitsukaru-mitsukeru-keru",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "子供が公園で小さな猫を＿＿＿。",
+        "furigana": "{子供|こども}が{公園|こうえん}で{小|ちい}さな{猫|ねこ}を＿＿＿。",
+        "translationVi": "Bọn trẻ phát hiện một con mèo nhỏ trong công viên."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "見つけた",
+          "furigana": "{見|み}つけた",
+          "itemId": "ci-v-mitsukaru-mitsukeru-keru"
+        },
+        {
+          "id": "b",
+          "text": "見つかった",
+          "furigana": "{見|み}つかった",
+          "itemId": "ci-v-mitsukaru-mitsukeru-karu",
+          "feedbackVi": "見つかる không đi với を; chủ ngữ ở đây là người phát hiện (子供が)."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Người phát hiện (子供が) + 猫を → 見つける."
+    },
+    {
+      "id": "cq-v-mitsukaru-mitsukeru-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-mitsukaru-mitsukeru-karu",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "落としたスマホが駅で見つけた。",
+        "furigana": "{落|お}としたスマホが{駅|えき}で{見|み}つけた。",
+        "translationVi": "Chiếc điện thoại tôi đánh rơi đã được tìm thấy ở nhà ga."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "落とした",
+          "furigana": "{落|お}とした"
+        },
+        {
+          "id": "b",
+          "text": "スマホが"
+        },
+        {
+          "id": "c",
+          "text": "駅で",
+          "furigana": "{駅|えき}で"
+        },
+        {
+          "id": "d",
+          "text": "見つけた。",
+          "furigana": "{見|み}つけた。",
+          "itemId": "ci-v-mitsukaru-mitsukeru-keru"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "見つかった。",
+        "furigana": "{見|み}つかった。",
+        "itemId": "ci-v-mitsukaru-mitsukeru-karu"
+      },
+      "explanationVi": "スマホが (thứ được tìm thấy) → 見つかった."
+    },
+    {
+      "id": "cq-v-mitsukaru-mitsukeru-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-mitsukaru-mitsukeru-karu",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn giấu kẹo trong ngăn bàn, mẹ mở ra và thấy. Bạn kể với em trai."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "机に隠していたお菓子が、母に見つかっちゃった。",
+          "furigana": "{机|つくえ}に{隠|かく}していたお{菓子|かし}が、{母|はは}に{見|み}つかっちゃった。",
+          "itemId": "ci-v-mitsukaru-mitsukeru-karu"
+        },
+        {
+          "id": "b",
+          "text": "机に隠していたお菓子が、母に見つけちゃった。",
+          "furigana": "{机|つくえ}に{隠|かく}していたお{菓子|かし}が、{母|はは}に{見|み}つけちゃった。",
+          "itemId": "ci-v-mitsukaru-mitsukeru-keru",
+          "feedbackVi": "見つける không đi với が … に như vậy."
+        },
+        {
+          "id": "c",
+          "text": "机に隠していたお菓子を、母が見つかっちゃった。",
+          "furigana": "{机|つくえ}に{隠|かく}していたお{菓子|かし}を、{母|はは}が{見|み}つかっちゃった。",
+          "feedbackVi": "見つかる không đi với を."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Bị phát hiện (người phát hiện: 母に) → 見つかる."
+    }
+  ]
+}

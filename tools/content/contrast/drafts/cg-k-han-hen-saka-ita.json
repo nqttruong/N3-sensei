@@ -1,0 +1,451 @@
+{
+  "id": "cg-k-han-hen-saka-ita",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "反, 返, 坂 và 板",
+  "summaryVi": "Bốn chữ cùng có phần 反. 反 là ngược lại; thêm 辶 (bước đi) thành 返 – trả lại; thêm 土 (đất) thành 坂 – con dốc; thêm 木 (gỗ) thành 板 – tấm ván.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-han-hen-saka-ita-han",
+      "label": "反",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k053cd",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "反",
+          "onReadings": [
+            "ハン",
+            "ホン",
+            "タン",
+            "ホ"
+          ],
+          "kunReadings": [
+            "そ.る",
+            "そ.らす",
+            "かえ.す",
+            "かえ.る",
+            "-かえ.る"
+          ],
+          "meaningVi": "Ngược lại, phản"
+        },
+        "sourceFingerprint": "sha256:df79ba5bab7ce0263f82a798e114bd98e2c0dd990224b719fd0baa88e00e7d32"
+      },
+      "kanji": {
+        "meaningVi": "ngược lại, phản đối",
+        "hanViet": "PHẢN",
+        "onReadings": [
+          "ハン",
+          "ホン",
+          "タン",
+          "ホ"
+        ],
+        "kunReadings": [
+          "そ.る",
+          "そ.らす",
+          "かえ.す",
+          "かえ.る",
+          "-かえ.る"
+        ],
+        "radical": {
+          "character": "又",
+          "nameVi": "Hựu (bàn tay)"
+        },
+        "shapeNoteVi": "Tay lật ngược tấm vải → ngược lại. 反対, 反省, 反応."
+      }
+    },
+    {
+      "id": "ci-k-han-hen-saka-ita-kaesu",
+      "label": "返",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k08fd4",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "返",
+          "onReadings": [
+            "ヘン"
+          ],
+          "kunReadings": [
+            "かえ.す",
+            "-かえ.す",
+            "かえ.る",
+            "-かえ.る"
+          ],
+          "meaningVi": "Trả lại, đáp lại"
+        },
+        "sourceFingerprint": "sha256:399a8e5fa9a1a5682d93fac2b6344e8d185a1e034e9f8d119eca18590dcf9397"
+      },
+      "kanji": {
+        "meaningVi": "trả lại, đáp lại",
+        "hanViet": "PHẢN",
+        "onReadings": [
+          "ヘン"
+        ],
+        "kunReadings": [
+          "かえ.す",
+          "-かえ.す",
+          "かえ.る",
+          "-かえ.る"
+        ],
+        "radical": {
+          "character": "辶",
+          "nameVi": "Sước (bước đi)"
+        },
+        "shapeNoteVi": "辶 + 反: đi ngược trở lại → trả lại. 返す, 返事, 返信."
+      }
+    },
+    {
+      "id": "ci-k-han-hen-saka-ita-saka",
+      "label": "坂",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05742",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "坂",
+          "onReadings": [
+            "ハン"
+          ],
+          "kunReadings": [
+            "さか"
+          ],
+          "meaningVi": "Con dốc"
+        },
+        "sourceFingerprint": "sha256:8bbbc983bef512c32f339cf4c086e8b184dac6bc5383f557f2f2e78b61c2c728"
+      },
+      "kanji": {
+        "meaningVi": "con dốc",
+        "hanViet": "PHẢN",
+        "onReadings": [
+          "ハン"
+        ],
+        "kunReadings": [
+          "さか"
+        ],
+        "radical": {
+          "character": "土",
+          "nameVi": "Thổ (đất)"
+        },
+        "shapeNoteVi": "土 + 反: mặt đất nghiêng lật lên → con dốc. 坂, 坂道, 上り坂."
+      }
+    },
+    {
+      "id": "ci-k-han-hen-saka-ita-ita",
+      "label": "板",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k0677f",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "板",
+          "onReadings": [
+            "ハン",
+            "バン"
+          ],
+          "kunReadings": [
+            "いた"
+          ],
+          "meaningVi": "Tấm ván, tấm bảng"
+        },
+        "sourceFingerprint": "sha256:8117206b973ce4acc27f80ed89e83e9493935cd922556d7c3c04a93f17626024"
+      },
+      "kanji": {
+        "meaningVi": "tấm ván, tấm bảng",
+        "hanViet": "BẢN",
+        "onReadings": [
+          "ハン",
+          "バン"
+        ],
+        "kunReadings": [
+          "いた"
+        ],
+        "radical": {
+          "character": "木",
+          "nameVi": "Mộc (gỗ)"
+        },
+        "shapeNoteVi": "木 + 反: miếng gỗ phẳng → tấm ván. 板, 黒板, 看板."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-han-hen-saka-ita-1",
+      "titleVi": "Bộ thủ quyết định",
+      "bodyVi": "Không có bộ: 反 (ngược, phản). 辶 (đi) → 返 (đi ngược lại: trả). 土 (đất) → 坂 (dốc). 木 (gỗ) → 板 (ván, bảng)."
+    },
+    {
+      "id": "ct-k-han-hen-saka-ita-2",
+      "titleVi": "Âm đọc",
+      "bodyVi": "反: ハン (反対); 返: ヘン, かえ.す (返事); 坂: さか, ハン; 板: いた, ハン／バン (黒板 こくばん). Ba chữ đọc ハン nên khi viết từ Hán phải nhớ nghĩa."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ thủ",
+      "values": {
+        "ci-k-han-hen-saka-ita-han": "Không có",
+        "ci-k-han-hen-saka-ita-kaesu": "辶 (bước đi)",
+        "ci-k-han-hen-saka-ita-saka": "土 (đất)",
+        "ci-k-han-hen-saka-ita-ita": "木 (gỗ)"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-han-hen-saka-ita-han": "Ngược lại",
+        "ci-k-han-hen-saka-ita-kaesu": "Trả lại",
+        "ci-k-han-hen-saka-ita-saka": "Con dốc",
+        "ci-k-han-hen-saka-ita-ita": "Tấm ván, bảng"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-han-hen-saka-ita-han": "反対、反省",
+        "ci-k-han-hen-saka-ita-kaesu": "返事、返す",
+        "ci-k-han-hen-saka-ita-saka": "坂道、上り坂",
+        "ci-k-han-hen-saka-ita-ita": "黒板、看板"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-han-hen-saka-ita-1",
+      "itemId": "ci-k-han-hen-saka-ita-han",
+      "japanese": "多くの住民がその計画に反対した。",
+      "furigana": "{多|おお}くの{住民|じゅうみん}がその{計画|けいかく}に{反対|はんたい}した。",
+      "translationVi": "Nhiều cư dân phản đối kế hoạch đó."
+    },
+    {
+      "id": "cx-k-han-hen-saka-ita-2",
+      "itemId": "ci-k-han-hen-saka-ita-han",
+      "japanese": "失敗を反省して、次に生かしたい。",
+      "furigana": "{失敗|しっぱい}を{反省|はんせい}して、{次|つぎ}に{生|い}かしたい。",
+      "translationVi": "Tôi muốn kiểm điểm thất bại để rút kinh nghiệm cho lần sau."
+    },
+    {
+      "id": "cx-k-han-hen-saka-ita-3",
+      "itemId": "ci-k-han-hen-saka-ita-kaesu",
+      "japanese": "図書館に本を返しに行く。",
+      "furigana": "{図書館|としょかん}に{本|ほん}を{返|かえ}しに{行|い}く。",
+      "translationVi": "Tôi đi trả sách cho thư viện."
+    },
+    {
+      "id": "cx-k-han-hen-saka-ita-4",
+      "itemId": "ci-k-han-hen-saka-ita-kaesu",
+      "japanese": "メールの返事がまだ来ない。",
+      "furigana": "メールの{返事|へんじ}がまだ{来|こ}ない。",
+      "translationVi": "Thư trả lời email vẫn chưa đến."
+    },
+    {
+      "id": "cx-k-han-hen-saka-ita-5",
+      "itemId": "ci-k-han-hen-saka-ita-saka",
+      "japanese": "この坂を上ると、学校が見える。",
+      "furigana": "この{坂|さか}を{上|のぼ}ると、{学校|がっこう}が{見|み}える。",
+      "translationVi": "Leo hết con dốc này sẽ thấy trường học."
+    },
+    {
+      "id": "cx-k-han-hen-saka-ita-6",
+      "itemId": "ci-k-han-hen-saka-ita-saka",
+      "japanese": "自転車で急な坂道を下った。",
+      "furigana": "{自転車|じてんしゃ}で{急|きゅう}な{坂道|さかみち}を{下|くだ}った。",
+      "translationVi": "Tôi đạp xe xuống con dốc đứng."
+    },
+    {
+      "id": "cx-k-han-hen-saka-ita-7",
+      "itemId": "ci-k-han-hen-saka-ita-ita",
+      "japanese": "先生が黒板に字を書いた。",
+      "furigana": "{先生|せんせい}が{黒板|こくばん}に{字|じ}を{書|か}いた。",
+      "translationVi": "Thầy giáo viết chữ lên bảng đen."
+    },
+    {
+      "id": "cx-k-han-hen-saka-ita-8",
+      "itemId": "ci-k-han-hen-saka-ita-ita",
+      "japanese": "店の前に大きな看板がある。",
+      "furigana": "{店|みせ}の{前|まえ}に{大|おお}きな{看板|かんばん}がある。",
+      "translationVi": "Trước cửa hàng có tấm biển lớn."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-han-hen-saka-ita-1",
+      "textVi": "Đi (辶) ngược lại → trả 返; đất (土) dựng ngược → dốc 坂; gỗ (木) phẳng → ván 板."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-han-hen-saka-ita-1",
+      "situationVi": "Viết 'trả lời'.",
+      "wrong": {
+        "japanese": "友達に反事を書いた。",
+        "furigana": "{友達|ともだち}に{反事|はんじ}を{書|か}いた。"
+      },
+      "correct": {
+        "japanese": "友達に返事を書いた。",
+        "furigana": "{友達|ともだち}に{返事|へんじ}を{書|か}いた。"
+      },
+      "explanationVi": "Trả lời (đáp lại) → 返 (có 辶).",
+      "expectedItemId": "ci-k-han-hen-saka-ita-kaesu",
+      "confusedWithItemId": "ci-k-han-hen-saka-ita-han"
+    },
+    {
+      "id": "ce-k-han-hen-saka-ita-2",
+      "situationVi": "Viết 'bảng đen'.",
+      "wrong": {
+        "japanese": "黒坂に名前を書いてください。",
+        "furigana": "{黒坂|こくはん}に{名前|なまえ}を{書|か}いてください。"
+      },
+      "correct": {
+        "japanese": "黒板に名前を書いてください。",
+        "furigana": "{黒板|こくばん}に{名前|なまえ}を{書|か}いてください。"
+      },
+      "explanationVi": "Bảng (tấm gỗ) → 板 (bộ 木).",
+      "expectedItemId": "ci-k-han-hen-saka-ita-ita",
+      "confusedWithItemId": "ci-k-han-hen-saka-ita-saka"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-han-hen-saka-ita-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-han-hen-saka-ita-saka",
+      "instructionVi": "Chọn chữ có nghĩa 'con dốc'.",
+      "options": [
+        {
+          "id": "a",
+          "text": "板",
+          "itemId": "ci-k-han-hen-saka-ita-ita",
+          "feedbackVi": "板 là tấm ván."
+        },
+        {
+          "id": "b",
+          "text": "坂",
+          "itemId": "ci-k-han-hen-saka-ita-saka"
+        },
+        {
+          "id": "c",
+          "text": "返",
+          "itemId": "ci-k-han-hen-saka-ita-kaesu",
+          "feedbackVi": "返 là trả lại."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanationVi": "坂 (bộ 土): con dốc."
+    },
+    {
+      "id": "cq-k-han-hen-saka-ita-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-han-hen-saka-ita-kaesu",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "借りたお金は来月までに＿＿＿します。",
+        "furigana": "{借|か}りたお{金|かね}は{来月|らいげつ}までに＿＿＿します。",
+        "translationVi": "Tiền đã mượn tôi sẽ trả trước tháng sau."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "返",
+          "itemId": "ci-k-han-hen-saka-ita-kaesu"
+        },
+        {
+          "id": "b",
+          "text": "反",
+          "itemId": "ci-k-han-hen-saka-ita-han"
+        },
+        {
+          "id": "c",
+          "text": "板",
+          "itemId": "ci-k-han-hen-saka-ita-ita"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "返す (trả lại) viết với 返."
+    },
+    {
+      "id": "cq-k-han-hen-saka-ita-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-han-hen-saka-ita-han",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "私は彼の意見に返対です。",
+        "furigana": "{私|わたし}は{彼|かれ}の{意見|いけん}に{返対|へんたい}です。",
+        "translationVi": "Tôi phản đối ý kiến của anh ấy."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "私は",
+          "furigana": "{私|わたし}は"
+        },
+        {
+          "id": "b",
+          "text": "彼の意見に",
+          "furigana": "{彼|かれ}の{意見|いけん}に"
+        },
+        {
+          "id": "c",
+          "text": "返対です。",
+          "furigana": "{返対|へんたい}です。",
+          "itemId": "ci-k-han-hen-saka-ita-kaesu"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "反対です。",
+        "furigana": "{反対|はんたい}です。",
+        "itemId": "ci-k-han-hen-saka-ita-han"
+      },
+      "explanationVi": "Phản đối → 反対."
+    },
+    {
+      "id": "cq-k-han-hen-saka-ita-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-han-hen-saka-ita-ita",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn kể đã làm một cái kệ bằng tấm ván gỗ."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "木の板で棚を作った。",
+          "furigana": "{木|き}の{板|いた}で{棚|たな}を{作|つく}った。",
+          "itemId": "ci-k-han-hen-saka-ita-ita"
+        },
+        {
+          "id": "b",
+          "text": "木の坂で棚を作った。",
+          "furigana": "{木|き}の{坂|さか}で{棚|たな}を{作|つく}った。",
+          "itemId": "ci-k-han-hen-saka-ita-saka",
+          "feedbackVi": "Tấm ván viết 板 (bộ 木), 坂 là con dốc."
+        },
+        {
+          "id": "c",
+          "text": "木の反で棚を作った。",
+          "furigana": "{木|き}の{反|はん}で{棚|たな}を{作|つく}った。",
+          "itemId": "ci-k-han-hen-saka-ita-han",
+          "feedbackVi": "反 không có nghĩa tấm ván."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tấm ván → 板."
+    }
+  ]
+}

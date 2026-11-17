@@ -1,0 +1,323 @@
+{
+  "id": "cg-v-fueru-fuyasu",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "増える và 増やす",
+  "summaryVi": "Cặp tự động từ / tha động từ: 増える là 'tăng lên' (tự thay đổi, đi với が), 増やす là 'làm tăng' (có người tác động, đi với を).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-fueru-fuyasu-fueru",
+      "label": "増える",
+      "labelFurigana": "{増|ふ}える",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v431",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "増える",
+          "reading": "ふえる",
+          "meaningVi": "tăng lên"
+        },
+        "sourceFingerprint": "sha256:aeee78649092d8800f377122aa537f7207af79c27e24685d146564890392fa41"
+      },
+      "vocabulary": {
+        "reading": "ふえる",
+        "meaningVi": "tăng lên (tự động từ)",
+        "usageVi": "Số lượng tự tăng lên; chủ ngữ là thứ tăng, trợ từ が.",
+        "collocations": [
+          {
+            "japanese": "人口が増える",
+            "furigana": "{人口|じんこう}が{増|ふ}える",
+            "meaningVi": "dân số tăng"
+          },
+          {
+            "japanese": "体重が増える",
+            "furigana": "{体重|たいじゅう}が{増|ふ}える",
+            "meaningVi": "cân nặng tăng"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-fueru-fuyasu-fuyasu",
+      "label": "増やす",
+      "labelFurigana": "{増|ふ}やす",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v432",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "増やす",
+          "reading": "ふやす",
+          "meaningVi": "làm tăng lên"
+        },
+        "sourceFingerprint": "sha256:ff6ec37899070d41f5efc33d1b30177304cc67f52de364a593a057c693cc4b63"
+      },
+      "vocabulary": {
+        "reading": "ふやす",
+        "meaningVi": "làm tăng (tha động từ)",
+        "usageVi": "Có người chủ động làm cho tăng; đối tượng đi với を.",
+        "collocations": [
+          {
+            "japanese": "貯金を増やす",
+            "furigana": "{貯金|ちょきん}を{増|ふ}やす",
+            "meaningVi": "tăng tiền tiết kiệm"
+          },
+          {
+            "japanese": "社員を増やす",
+            "furigana": "{社員|しゃいん}を{増|ふ}やす",
+            "meaningVi": "tăng nhân viên"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-fueru-fuyasu-1",
+      "titleVi": "が hay を",
+      "bodyVi": "Nhìn trợ từ trước động từ: N が → 増える (tự tăng). N を → 増やす (ai đó làm tăng). Câu có chủ thể hành động (会社は、政府は、私は) và mục đích (〜ために) thường dùng 増やす."
+    },
+    {
+      "id": "ct-v-fueru-fuyasu-2",
+      "titleVi": "Quy luật đuôi động từ",
+      "bodyVi": "Nhiều cặp tự/tha có đuôi 〜える (tự) ↔ 〜やす (tha): 増える／増やす、冷える／冷やす、燃える／燃やす. Ngược với cặp 減る／減らす (〜る ↔ 〜らす)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Loại động từ",
+      "values": {
+        "ci-v-fueru-fuyasu-fueru": "Tự động từ (tự tăng)",
+        "ci-v-fueru-fuyasu-fuyasu": "Tha động từ (làm tăng)"
+      }
+    },
+    {
+      "aspectVi": "Trợ từ",
+      "values": {
+        "ci-v-fueru-fuyasu-fueru": "N が 増える",
+        "ci-v-fueru-fuyasu-fuyasu": "N を 増やす"
+      }
+    },
+    {
+      "aspectVi": "Đối nghĩa",
+      "values": {
+        "ci-v-fueru-fuyasu-fueru": "減る",
+        "ci-v-fueru-fuyasu-fuyasu": "減らす"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-fueru-fuyasu-1",
+      "itemId": "ci-v-fueru-fuyasu-fueru",
+      "japanese": "最近、外国人観光客が増えている。",
+      "furigana": "{最近|さいきん}、{外国人|がいこくじん}{観光客|かんこうきゃく}が{増|ふ}えている。",
+      "translationVi": "Gần đây khách du lịch nước ngoài đang tăng lên."
+    },
+    {
+      "id": "cx-v-fueru-fuyasu-2",
+      "itemId": "ci-v-fueru-fuyasu-fueru",
+      "japanese": "冬になると、体重が増えやすい。",
+      "furigana": "{冬|ふゆ}になると、{体重|たいじゅう}が{増|ふ}えやすい。",
+      "translationVi": "Cứ đến mùa đông là dễ tăng cân."
+    },
+    {
+      "id": "cx-v-fueru-fuyasu-3",
+      "itemId": "ci-v-fueru-fuyasu-fuyasu",
+      "japanese": "会社は来年、社員を増やす予定だ。",
+      "furigana": "{会社|かいしゃ}は{来年|らいねん}、{社員|しゃいん}を{増|ふ}やす{予定|よてい}だ。",
+      "translationVi": "Năm sau công ty dự định tăng thêm nhân viên."
+    },
+    {
+      "id": "cx-v-fueru-fuyasu-4",
+      "itemId": "ci-v-fueru-fuyasu-fuyasu",
+      "japanese": "日本語の語彙を増やすために、毎日本を読んでいる。",
+      "furigana": "{日本語|にほんご}の{語彙|ごい}を{増|ふ}やすために、{毎日|まいにち}{本|ほん}を{読|よ}んでいる。",
+      "translationVi": "Để tăng vốn từ tiếng Nhật, tôi đọc sách mỗi ngày."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-fueru-fuyasu-1",
+      "textVi": "増える: えー, tự tăng (が). 増やす: やす là 'làm', có người làm (を)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-fueru-fuyasu-1",
+      "situationVi": "Nói muốn tăng thời gian học.",
+      "wrong": {
+        "japanese": "勉強の時間を増えたい。",
+        "furigana": "{勉強|べんきょう}の{時間|じかん}を{増|ふ}えたい。"
+      },
+      "correct": {
+        "japanese": "勉強の時間を増やしたい。",
+        "furigana": "{勉強|べんきょう}の{時間|じかん}を{増|ふ}やしたい。"
+      },
+      "explanationVi": "Có trợ từ を và người nói chủ động làm tăng → 増やす.",
+      "expectedItemId": "ci-v-fueru-fuyasu-fuyasu",
+      "confusedWithItemId": "ci-v-fueru-fuyasu-fueru"
+    },
+    {
+      "id": "ce-v-fueru-fuyasu-2",
+      "situationVi": "Nói số người dùng điện thoại tăng lên.",
+      "wrong": {
+        "japanese": "スマホを使う人が増やした。",
+        "furigana": "スマホを{使|つか}う{人|ひと}が{増|ふ}やした。"
+      },
+      "correct": {
+        "japanese": "スマホを使う人が増えた。",
+        "furigana": "スマホを{使|つか}う{人|ひと}が{増|ふ}えた。"
+      },
+      "explanationVi": "人が (chủ ngữ tự tăng) → 増える.",
+      "expectedItemId": "ci-v-fueru-fuyasu-fueru",
+      "confusedWithItemId": "ci-v-fueru-fuyasu-fuyasu"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-fueru-fuyasu-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-fueru-fuyasu-fuyasu",
+      "instructionVi": "Chọn câu đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "政府は保育園の数を増やすことにした。",
+          "furigana": "{政府|せいふ}は{保育園|ほいくえん}の{数|かず}を{増|ふ}やすことにした。",
+          "itemId": "ci-v-fueru-fuyasu-fuyasu"
+        },
+        {
+          "id": "b",
+          "text": "政府は保育園の数を増えることにした。",
+          "furigana": "{政府|せいふ}は{保育園|ほいくえん}の{数|かず}を{増|ふ}えることにした。",
+          "itemId": "ci-v-fueru-fuyasu-fueru",
+          "feedbackVi": "増える là tự động từ, không đi với を."
+        },
+        {
+          "id": "c",
+          "text": "政府は保育園の数が増やすことにした。",
+          "furigana": "{政府|せいふ}は{保育園|ほいくえん}の{数|かず}が{増|ふ}やすことにした。",
+          "feedbackVi": "増やす cần を, không phải が."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Chủ thể (政府) chủ động làm tăng + を → 増やす."
+    },
+    {
+      "id": "cq-v-fueru-fuyasu-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-fueru-fuyasu-fueru",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "雨が続いたので、川の水が＿＿＿。",
+        "furigana": "{雨|あめ}が{続|つづ}いたので、{川|かわ}の{水|みず}が＿＿＿。",
+        "translationVi": "Mưa liên tục nên nước sông dâng lên."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "増えた",
+          "furigana": "{増|ふ}えた",
+          "itemId": "ci-v-fueru-fuyasu-fueru"
+        },
+        {
+          "id": "b",
+          "text": "増やした",
+          "furigana": "{増|ふ}やした",
+          "itemId": "ci-v-fueru-fuyasu-fuyasu",
+          "feedbackVi": "Không ai làm tăng nước sông; nước tự tăng → 増えた."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "水が (tự tăng) → 増える."
+    },
+    {
+      "id": "cq-v-fueru-fuyasu-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-fueru-fuyasu-fuyasu",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "貯金を増えるために、外食を減らしている。",
+        "furigana": "{貯金|ちょきん}を{増|ふ}えるために、{外食|がいしょく}を{減|へ}らしている。",
+        "translationVi": "Để tăng tiền tiết kiệm, tôi bớt ăn ngoài."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "貯金を",
+          "furigana": "{貯金|ちょきん}を"
+        },
+        {
+          "id": "b",
+          "text": "増えるために、",
+          "furigana": "{増|ふ}えるために、",
+          "itemId": "ci-v-fueru-fuyasu-fueru"
+        },
+        {
+          "id": "c",
+          "text": "外食を",
+          "furigana": "{外食|がいしょく}を"
+        },
+        {
+          "id": "d",
+          "text": "減らしている。",
+          "furigana": "{減|へ}らしている。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "増やすために、",
+        "furigana": "{増|ふ}やすために、",
+        "itemId": "ci-v-fueru-fuyasu-fuyasu"
+      },
+      "explanationVi": "貯金を + chủ động → 増やす."
+    },
+    {
+      "id": "cq-v-fueru-fuyasu-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-fueru-fuyasu-fueru",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn lo lắng kể với bác sĩ rằng gần đây cân nặng của bạn tăng lên dù không ăn nhiều."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "あまり食べていないのに、体重が増えてきたんです。",
+          "furigana": "あまり{食|た}べていないのに、{体重|たいじゅう}が{増|ふ}えてきたんです。",
+          "itemId": "ci-v-fueru-fuyasu-fueru"
+        },
+        {
+          "id": "b",
+          "text": "あまり食べていないのに、体重を増やしてきたんです。",
+          "furigana": "あまり{食|た}べていないのに、{体重|たいじゅう}を{増|ふ}やしてきたんです。",
+          "itemId": "ci-v-fueru-fuyasu-fuyasu",
+          "feedbackVi": "増やしてきた nghe như bạn cố ý tăng cân."
+        },
+        {
+          "id": "c",
+          "text": "あまり食べていないのに、体重が増やしてきたんです。",
+          "furigana": "あまり{食|た}べていないのに、{体重|たいじゅう}が{増|ふ}やしてきたんです。",
+          "feedbackVi": "増やす không đi với が."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Cân nặng tự tăng, không chủ ý → 体重が増える."
+    }
+  ]
+}

@@ -71,6 +71,8 @@ fun LessonDetailScreen(
     onOpenGrammar: (id: String) -> Unit,
     onStartPractice: () -> Unit,
     modifier: Modifier = Modifier,
+    /** Optional entry point to Contrast Lab for the lesson's items (shown only when published groups exist). */
+    contrastLinks: @Composable (CourseLesson) -> Unit = {},
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val selectedTab by viewModel.selectedTab.collectAsStateWithLifecycle()
@@ -84,7 +86,7 @@ fun LessonDetailScreen(
         modifier = modifier,
     ) { lesson ->
         Column(Modifier.fillMaxSize()) {
-            LessonHeader(lesson, onStartPractice)
+            LessonHeader(lesson, onStartPractice) { contrastLinks(lesson) }
             PrimaryTabRow(selectedTabIndex = selectedTab.ordinal) {
                 LessonTab.entries.forEach { tab ->
                     Tab(
@@ -119,7 +121,7 @@ private fun LessonTab.label(lesson: CourseLesson): String = when (this) {
 }
 
 @Composable
-private fun LessonHeader(lesson: CourseLesson, onStartPractice: () -> Unit) {
+private fun LessonHeader(lesson: CourseLesson, onStartPractice: () -> Unit, extra: @Composable () -> Unit = {}) {
     Column(modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 8.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
         Text(stringResource(R.string.course_lesson_title, lesson.number), style = MaterialTheme.typography.headlineSmall)
         Text(
@@ -130,6 +132,7 @@ private fun LessonHeader(lesson: CourseLesson, onStartPractice: () -> Unit) {
         Button(onClick = onStartPractice, enabled = !lesson.isEmpty, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
             Text(stringResource(R.string.lesson_practice))
         }
+        extra()
     }
 }
 

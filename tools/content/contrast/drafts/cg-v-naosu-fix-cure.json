@@ -1,0 +1,323 @@
+{
+  "id": "cg-v-naosu-fix-cure",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "直す và 治す",
+  "summaryVi": "Hai động từ cùng đọc là なおす. 直す là sửa (đồ vật, lỗi sai, thói quen), 治す là chữa (bệnh, vết thương).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-naosu-fix-cure-fix",
+      "label": "直す",
+      "labelFurigana": "{直|なお}す",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v161",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "直す",
+          "reading": "なおす",
+          "meaningVi": "sửa"
+        },
+        "sourceFingerprint": "sha256:c7cb2404d90654f51109474d71612fdecc8879b51215d1f727deb9c33b4d047c"
+      },
+      "vocabulary": {
+        "reading": "なおす",
+        "meaningVi": "sửa, sửa chữa, chỉnh lại",
+        "usageVi": "Làm cho đồ hỏng, chỗ sai, thói xấu trở lại đúng.",
+        "collocations": [
+          {
+            "japanese": "時計を直す",
+            "furigana": "{時計|とけい}を{直|なお}す",
+            "meaningVi": "sửa đồng hồ"
+          },
+          {
+            "japanese": "間違いを直す",
+            "furigana": "{間違|まちが}いを{直|なお}す",
+            "meaningVi": "sửa lỗi sai"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-naosu-fix-cure-cure",
+      "label": "治す",
+      "labelFurigana": "{治|なお}す",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v163",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "治す",
+          "reading": "なおす",
+          "meaningVi": "cứu chữa"
+        },
+        "sourceFingerprint": "sha256:3ada6a171abb10e723d351791f29dc360ebdf533605a3c78b396ea3751124a8b"
+      },
+      "vocabulary": {
+        "reading": "なおす",
+        "meaningVi": "chữa (bệnh, vết thương)",
+        "usageVi": "Làm cho cơ thể hết bệnh, lành vết thương.",
+        "collocations": [
+          {
+            "japanese": "病気を治す",
+            "furigana": "{病気|びょうき}を{治|なお}す",
+            "meaningVi": "chữa bệnh"
+          },
+          {
+            "japanese": "風邪を治す",
+            "furigana": "{風邪|かぜ}を{治|なお}す",
+            "meaningVi": "chữa cảm"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-naosu-fix-cure-1",
+      "titleVi": "Đồ vật hay cơ thể",
+      "bodyVi": "Đối tượng là đồ vật, câu chữ, thói quen, tâm trạng (機嫌を直す) → 直す. Đối tượng là bệnh, vết thương, cơ thể → 治す. Tự động từ tương ứng: 直る ／ 治る."
+    },
+    {
+      "id": "ct-v-naosu-fix-cure-2",
+      "titleVi": "Nghĩa riêng của 直す",
+      "bodyVi": "Vます + 直す nghĩa là 'làm lại': 書き直す (viết lại), やり直す (làm lại). Nghĩa này chỉ có ở 直す."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Đối tượng",
+      "values": {
+        "ci-v-naosu-fix-cure-fix": "Đồ vật, lỗi sai, thói quen",
+        "ci-v-naosu-fix-cure-cure": "Bệnh, vết thương"
+      }
+    },
+    {
+      "aspectVi": "Tự động từ",
+      "values": {
+        "ci-v-naosu-fix-cure-fix": "直る (được sửa)",
+        "ci-v-naosu-fix-cure-cure": "治る (khỏi bệnh)"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa thêm",
+      "values": {
+        "ci-v-naosu-fix-cure-fix": "Vます＋直す: làm lại",
+        "ci-v-naosu-fix-cure-cure": "Không có"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-naosu-fix-cure-1",
+      "itemId": "ci-v-naosu-fix-cure-fix",
+      "japanese": "壊れた自転車を自分で直した。",
+      "furigana": "{壊|こわ}れた{自転車|じてんしゃ}を{自分|じぶん}で{直|なお}した。",
+      "translationVi": "Tôi tự sửa chiếc xe đạp bị hỏng."
+    },
+    {
+      "id": "cx-v-naosu-fix-cure-2",
+      "itemId": "ci-v-naosu-fix-cure-fix",
+      "japanese": "先生に作文の間違いを直してもらった。",
+      "furigana": "{先生|せんせい}に{作文|さくぶん}の{間違|まちが}いを{直|なお}してもらった。",
+      "translationVi": "Tôi được thầy sửa lỗi trong bài văn."
+    },
+    {
+      "id": "cx-v-naosu-fix-cure-3",
+      "itemId": "ci-v-naosu-fix-cure-cure",
+      "japanese": "早く風邪を治して、学校に行きたい。",
+      "furigana": "{早|はや}く{風邪|かぜ}を{治|なお}して、{学校|がっこう}に{行|い}きたい。",
+      "translationVi": "Tôi muốn mau chữa khỏi cảm để đi học."
+    },
+    {
+      "id": "cx-v-naosu-fix-cure-4",
+      "itemId": "ci-v-naosu-fix-cure-cure",
+      "japanese": "この薬は傷を早く治す効果がある。",
+      "furigana": "この{薬|くすり}は{傷|きず}を{早|はや}く{治|なお}す{効果|こうか}がある。",
+      "translationVi": "Thuốc này có tác dụng làm vết thương mau lành."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-naosu-fix-cure-1",
+      "textVi": "直 = thẳng (正直) → nắn lại cho thẳng, cho đúng. 治 = trị (治療) → chữa trị bệnh."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-naosu-fix-cure-1",
+      "situationVi": "Nói bác sĩ chữa bệnh.",
+      "wrong": {
+        "japanese": "医者は患者の病気を直す。",
+        "furigana": "{医者|いしゃ}は{患者|かんじゃ}の{病気|びょうき}を{直|なお}す。"
+      },
+      "correct": {
+        "japanese": "医者は患者の病気を治す。",
+        "furigana": "{医者|いしゃ}は{患者|かんじゃ}の{病気|びょうき}を{治|なお}す。"
+      },
+      "explanationVi": "Bệnh → 治す.",
+      "expectedItemId": "ci-v-naosu-fix-cure-cure",
+      "confusedWithItemId": "ci-v-naosu-fix-cure-fix"
+    },
+    {
+      "id": "ce-v-naosu-fix-cure-2",
+      "situationVi": "Nhờ thợ sửa máy giặt.",
+      "wrong": {
+        "japanese": "洗濯機を治してもらった。",
+        "furigana": "{洗濯機|せんたくき}を{治|なお}してもらった。"
+      },
+      "correct": {
+        "japanese": "洗濯機を直してもらった。",
+        "furigana": "{洗濯機|せんたくき}を{直|なお}してもらった。"
+      },
+      "explanationVi": "Máy giặt là đồ vật → 直す.",
+      "expectedItemId": "ci-v-naosu-fix-cure-fix",
+      "confusedWithItemId": "ci-v-naosu-fix-cure-cure"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-naosu-fix-cure-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-naosu-fix-cure-cure",
+      "instructionVi": "Chọn câu viết đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "手術で足のけがを治した。",
+          "furigana": "{手術|しゅじゅつ}で{足|あし}のけがを{治|なお}した。",
+          "itemId": "ci-v-naosu-fix-cure-cure"
+        },
+        {
+          "id": "b",
+          "text": "手術で足のけがを直した。",
+          "furigana": "{手術|しゅじゅつ}で{足|あし}のけがを{直|なお}した。",
+          "itemId": "ci-v-naosu-fix-cure-fix",
+          "feedbackVi": "Vết thương ở chân → 治す, không phải 直す."
+        },
+        {
+          "id": "c",
+          "text": "手術で足のけがを修理した。",
+          "furigana": "{手術|しゅじゅつ}で{足|あし}のけがを{修理|しゅうり}した。",
+          "feedbackVi": "修理 dùng cho máy móc, đồ vật."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Vết thương → 治す."
+    },
+    {
+      "id": "cq-v-naosu-fix-cure-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-naosu-fix-cure-fix",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "レポートに間違いがあったので、全部書き＿＿＿。",
+        "furigana": "レポートに{間違|まちが}いがあったので、{全部|ぜんぶ}{書|か}き＿＿＿。",
+        "translationVi": "Báo cáo có lỗi nên tôi viết lại toàn bộ."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "直した",
+          "furigana": "{直|なお}した",
+          "itemId": "ci-v-naosu-fix-cure-fix"
+        },
+        {
+          "id": "b",
+          "text": "治した",
+          "furigana": "{治|なお}した",
+          "itemId": "ci-v-naosu-fix-cure-cure",
+          "feedbackVi": "治す chỉ dùng cho bệnh, vết thương; nghĩa 'làm lại' chỉ có ở 直す."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Vます + 直す = làm lại: 書き直す."
+    },
+    {
+      "id": "cq-v-naosu-fix-cure-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-naosu-fix-cure-cure",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "ゆっくり休んで、早く病気を直してね。",
+        "furigana": "ゆっくり{休|やす}んで、{早|はや}く{病気|びょうき}を{直|なお}してね。",
+        "translationVi": "Nghỉ ngơi cho tốt để chữa khỏi bệnh nhé."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ゆっくり休んで、",
+          "furigana": "ゆっくり{休|やす}んで、"
+        },
+        {
+          "id": "b",
+          "text": "早く",
+          "furigana": "{早|はや}く"
+        },
+        {
+          "id": "c",
+          "text": "病気を",
+          "furigana": "{病気|びょうき}を"
+        },
+        {
+          "id": "d",
+          "text": "直してね。",
+          "furigana": "{直|なお}してね。",
+          "itemId": "ci-v-naosu-fix-cure-fix"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "治してね。",
+        "furigana": "{治|なお}してね。",
+        "itemId": "ci-v-naosu-fix-cure-cure"
+      },
+      "explanationVi": "Bệnh → 治す."
+    },
+    {
+      "id": "cq-v-naosu-fix-cure-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-naosu-fix-cure-fix",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Đồng hồ của bạn bị chạy chậm, bạn mang ra tiệm để sửa."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "時計を直してもらいに行く。",
+          "furigana": "{時計|とけい}を{直|なお}してもらいに{行|い}く。",
+          "itemId": "ci-v-naosu-fix-cure-fix"
+        },
+        {
+          "id": "b",
+          "text": "時計を治してもらいに行く。",
+          "furigana": "{時計|とけい}を{治|なお}してもらいに{行|い}く。",
+          "itemId": "ci-v-naosu-fix-cure-cure",
+          "feedbackVi": "治す dùng cho bệnh; đồng hồ là đồ vật."
+        },
+        {
+          "id": "c",
+          "text": "時計を治療してもらいに行く。",
+          "furigana": "{時計|とけい}を{治療|ちりょう}してもらいに{行|い}く。",
+          "feedbackVi": "治療 là điều trị bệnh."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Sửa đồ vật → 直す."
+    }
+  ]
+}

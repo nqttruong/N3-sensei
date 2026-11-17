@@ -1,0 +1,322 @@
+{
+  "id": "cg-v-seikaku-seishitsu",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "性格 và 性質",
+  "summaryVi": "Cả hai dịch là 'tính', nhưng 性格 là tính cách của con người (hoặc con vật), còn 性質 là tính chất vốn có của sự vật, vật chất (và đôi khi bản tính).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-seikaku-seishitsu-kaku",
+      "label": "性格",
+      "labelFurigana": "{性格|せいかく}",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v113",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "性格",
+          "reading": "せいかく",
+          "meaningVi": "tính cách"
+        },
+        "sourceFingerprint": "sha256:5c224ae4f0a4d94fcccbf08af89a17387cc7b25ac44a17535675539416d3ffa3"
+      },
+      "vocabulary": {
+        "reading": "せいかく",
+        "meaningVi": "tính cách",
+        "usageVi": "Đặc điểm tâm lý, cách cư xử của một người: 明るい性格、性格が合う.",
+        "collocations": [
+          {
+            "japanese": "明るい性格",
+            "furigana": "{明|あか}るい{性格|せいかく}",
+            "meaningVi": "tính cách vui vẻ"
+          },
+          {
+            "japanese": "性格が合う",
+            "furigana": "{性格|せいかく}が{合|あ}う",
+            "meaningVi": "hợp tính nhau"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-seikaku-seishitsu-shitsu",
+      "label": "性質",
+      "labelFurigana": "{性質|せいしつ}",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v114",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "性質",
+          "reading": "せいしつ",
+          "meaningVi": "tính chất"
+        },
+        "sourceFingerprint": "sha256:871e90037cbdd06df28a604d8bd1fa49e3fa64987761190d1b94a7e59b68d46b"
+      },
+      "vocabulary": {
+        "reading": "せいしつ",
+        "meaningVi": "tính chất",
+        "usageVi": "Đặc điểm vốn có của vật chất, sự vật, vấn đề: 金属の性質、水に溶ける性質.",
+        "collocations": [
+          {
+            "japanese": "金属の性質",
+            "furigana": "{金属|きんぞく}の{性質|せいしつ}",
+            "meaningVi": "tính chất của kim loại"
+          },
+          {
+            "japanese": "燃えやすい性質",
+            "furigana": "{燃|も}えやすい{性質|せいしつ}",
+            "meaningVi": "tính dễ cháy"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-seikaku-seishitsu-1",
+      "titleVi": "Người hay vật",
+      "bodyVi": "Nói về con người: vui vẻ, nóng nảy, nhút nhát, hợp nhau → 性格. Nói về vật chất, chất liệu, vấn đề: dễ cháy, tan trong nước, nặng hơn nước → 性質."
+    },
+    {
+      "id": "ct-v-seikaku-seishitsu-2",
+      "titleVi": "Trường hợp chồng lấn",
+      "bodyVi": "性質 đôi khi dùng cho bản tính bẩm sinh của người hay con vật (この犬は人なつこい性質だ). Nhưng trong giao tiếp, tả tính cách người gần như luôn dùng 性格; đề thi hỏi chất liệu thì chọn 性質."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Đối tượng",
+      "values": {
+        "ci-v-seikaku-seishitsu-kaku": "Con người (tính cách)",
+        "ci-v-seikaku-seishitsu-shitsu": "Vật chất, sự vật (tính chất)"
+      }
+    },
+    {
+      "aspectVi": "Tính từ hay đi kèm",
+      "values": {
+        "ci-v-seikaku-seishitsu-kaku": "明るい、優しい、短気な、おとなしい",
+        "ci-v-seikaku-seishitsu-shitsu": "燃えやすい、溶けやすい、重い"
+      }
+    },
+    {
+      "aspectVi": "Cụm hay gặp",
+      "values": {
+        "ci-v-seikaku-seishitsu-kaku": "性格が合う、性格がいい",
+        "ci-v-seikaku-seishitsu-shitsu": "〜という性質がある、物質の性質"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-seikaku-seishitsu-1",
+      "itemId": "ci-v-seikaku-seishitsu-kaku",
+      "japanese": "姉は明るい性格で、誰とでもすぐ仲良くなれる。",
+      "furigana": "{姉|あね}は{明|あか}るい{性格|せいかく}で、{誰|だれ}とでもすぐ{仲良|なかよ}くなれる。",
+      "translationVi": "Chị tôi tính tình vui vẻ, kết thân với ai cũng nhanh."
+    },
+    {
+      "id": "cx-v-seikaku-seishitsu-2",
+      "itemId": "ci-v-seikaku-seishitsu-kaku",
+      "japanese": "彼とは性格が合わないので、一緒に仕事をするのは大変だ。",
+      "furigana": "{彼|かれ}とは{性格|せいかく}が{合|あ}わないので、{一緒|いっしょ}に{仕事|しごと}をするのは{大変|たいへん}だ。",
+      "translationVi": "Tôi không hợp tính với anh ấy nên làm việc cùng rất vất vả."
+    },
+    {
+      "id": "cx-v-seikaku-seishitsu-3",
+      "itemId": "ci-v-seikaku-seishitsu-shitsu",
+      "japanese": "油には水に溶けない性質がある。",
+      "furigana": "{油|あぶら}には{水|みず}に{溶|と}けない{性質|せいしつ}がある。",
+      "translationVi": "Dầu có tính chất không tan trong nước."
+    },
+    {
+      "id": "cx-v-seikaku-seishitsu-4",
+      "itemId": "ci-v-seikaku-seishitsu-shitsu",
+      "japanese": "この素材は熱に強いという性質を持っている。",
+      "furigana": "この{素材|そざい}は{熱|ねつ}に{強|つよ}いという{性質|せいしつ}を{持|も}っている。",
+      "translationVi": "Chất liệu này có tính chịu nhiệt tốt."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-seikaku-seishitsu-1",
+      "textVi": "性格 = 'cách' cư xử của người. 性質 = 'chất' bên trong của vật."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-seikaku-seishitsu-1",
+      "situationVi": "Tả bạn mình hiền lành.",
+      "wrong": {
+        "japanese": "山田さんは優しい性質の人だ。",
+        "furigana": "{山田|やまだ}さんは{優|やさ}しい{性質|せいしつ}の{人|ひと}だ。"
+      },
+      "correct": {
+        "japanese": "山田さんは優しい性格の人だ。",
+        "furigana": "{山田|やまだ}さんは{優|やさ}しい{性格|せいかく}の{人|ひと}だ。"
+      },
+      "explanationVi": "Tả tính cách người → 性格.",
+      "expectedItemId": "ci-v-seikaku-seishitsu-kaku",
+      "confusedWithItemId": "ci-v-seikaku-seishitsu-shitsu"
+    },
+    {
+      "id": "ce-v-seikaku-seishitsu-2",
+      "situationVi": "Giải thích kim loại dẫn điện.",
+      "wrong": {
+        "japanese": "金属には電気を通す性格がある。",
+        "furigana": "{金属|きんぞく}には{電気|でんき}を{通|とお}す{性格|せいかく}がある。"
+      },
+      "correct": {
+        "japanese": "金属には電気を通す性質がある。",
+        "furigana": "{金属|きんぞく}には{電気|でんき}を{通|とお}す{性質|せいしつ}がある。"
+      },
+      "explanationVi": "Đặc điểm của vật chất → 性質.",
+      "expectedItemId": "ci-v-seikaku-seishitsu-shitsu",
+      "confusedWithItemId": "ci-v-seikaku-seishitsu-kaku"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-seikaku-seishitsu-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-seikaku-seishitsu-shitsu",
+      "instructionVi": "Chọn câu đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ガソリンには燃えやすい性質がある。",
+          "furigana": "ガソリンには{燃|も}えやすい{性質|せいしつ}がある。",
+          "itemId": "ci-v-seikaku-seishitsu-shitsu"
+        },
+        {
+          "id": "b",
+          "text": "ガソリンには燃えやすい性格がある。",
+          "furigana": "ガソリンには{燃|も}えやすい{性格|せいかく}がある。",
+          "itemId": "ci-v-seikaku-seishitsu-kaku",
+          "feedbackVi": "性格 dùng cho người."
+        },
+        {
+          "id": "c",
+          "text": "ガソリンには燃えやすい態度がある。",
+          "furigana": "ガソリンには{燃|も}えやすい{態度|たいど}がある。",
+          "feedbackVi": "態度 là thái độ (của người)."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tính chất của xăng → 性質."
+    },
+    {
+      "id": "cq-v-seikaku-seishitsu-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-seikaku-seishitsu-kaku",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "弟はおとなしい＿＿＿なので、初対面の人とはあまり話さない。",
+        "furigana": "{弟|おとうと}はおとなしい＿＿＿なので、{初対面|しょたいめん}の{人|ひと}とはあまり{話|はな}さない。",
+        "translationVi": "Em trai tôi tính hiền lành ít nói nên ít nói chuyện với người mới gặp."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "性格",
+          "furigana": "{性格|せいかく}",
+          "itemId": "ci-v-seikaku-seishitsu-kaku"
+        },
+        {
+          "id": "b",
+          "text": "性質",
+          "furigana": "{性質|せいしつ}",
+          "itemId": "ci-v-seikaku-seishitsu-shitsu"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tính cách của người → 性格."
+    },
+    {
+      "id": "cq-v-seikaku-seishitsu-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-seikaku-seishitsu-kaku",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "あの二人は性質が合うので、長い間友達でいる。",
+        "furigana": "あの{二人|ふたり}は{性質|せいしつ}が{合|あ}うので、{長|なが}い{間|あいだ}{友達|ともだち}でいる。",
+        "translationVi": "Hai người họ hợp tính nhau nên làm bạn lâu năm."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "あの二人は",
+          "furigana": "あの{二人|ふたり}は"
+        },
+        {
+          "id": "b",
+          "text": "性質が合うので、",
+          "furigana": "{性質|せいしつ}が{合|あ}うので、",
+          "itemId": "ci-v-seikaku-seishitsu-shitsu"
+        },
+        {
+          "id": "c",
+          "text": "長い間",
+          "furigana": "{長|なが}い{間|あいだ}"
+        },
+        {
+          "id": "d",
+          "text": "友達でいる。",
+          "furigana": "{友達|ともだち}でいる。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "性格が合うので、",
+        "furigana": "{性格|せいかく}が{合|あ}うので、",
+        "itemId": "ci-v-seikaku-seishitsu-kaku"
+      },
+      "explanationVi": "Hợp tính nhau → 性格が合う."
+    },
+    {
+      "id": "cq-v-seikaku-seishitsu-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-seikaku-seishitsu-shitsu",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Giáo viên hóa học giải thích rằng muối có đặc điểm dễ tan trong nước."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "塩には水に溶けやすい性質があります。",
+          "furigana": "{塩|しお}には{水|みず}に{溶|と}けやすい{性質|せいしつ}があります。",
+          "itemId": "ci-v-seikaku-seishitsu-shitsu"
+        },
+        {
+          "id": "b",
+          "text": "塩には水に溶けやすい性格があります。",
+          "furigana": "{塩|しお}には{水|みず}に{溶|と}けやすい{性格|せいかく}があります。",
+          "itemId": "ci-v-seikaku-seishitsu-kaku",
+          "feedbackVi": "性格 dùng cho người."
+        },
+        {
+          "id": "c",
+          "text": "塩には水に溶けやすい特技があります。",
+          "furigana": "{塩|しお}には{水|みず}に{溶|と}けやすい{特技|とくぎ}があります。",
+          "feedbackVi": "特技 là tài lẻ, kỹ năng đặc biệt của người."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tính chất của chất (muối) → 性質."
+    }
+  ]
+}

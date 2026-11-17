@@ -1,0 +1,293 @@
+{
+  "id": "cg-g-hazuda-bekida",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜はずだ và 〜べきだ",
+  "summaryVi": "Cả hai đều có thể dịch là 'phải…', nhưng はずだ là suy luận chắc chắn dựa trên căn cứ (lẽ ra là, chắc là), còn べきだ là đánh giá nên làm hay không (nên, phải).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-hazuda-bekida-hazu",
+      "label": "〜はずだ",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g080",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜はずだ",
+          "structure": "Vthường・Aい・Aな・N の ＋ はずだ",
+          "meaningVi": "chắc chắn là…, lẽ ra…; thảo nào…"
+        },
+        "sourceFingerprint": "sha256:bb3cf8bc4a59662a7e328116daadf244db2fedbc3619ad47fbd4b4c28ca2741a"
+      },
+      "grammar": {
+        "meaningVi": "Chắc chắn là…, lẽ ra…; thảo nào…",
+        "connection": "V thể thường・Aい・Aな・N の ＋ はずだ",
+        "nuanceVi": "Người nói suy ra từ căn cứ khách quan (lịch trình, logic, thông tin đã biết). Không thể hiện ý kiến nên hay không nên."
+      }
+    },
+    {
+      "id": "ci-g-hazuda-bekida-beki",
+      "label": "〜べきだ",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g139",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜べきだ",
+          "structure": "V辞書形 + べきだ",
+          "meaningVi": "nên…, phải…"
+        },
+        "sourceFingerprint": "sha256:5f6114c3465b0a3030f59bacb8aa9d70d677df1849faa9e01599bc3964c5fe55"
+      },
+      "grammar": {
+        "meaningVi": "Nên…, phải…",
+        "connection": "V辞書形 ＋ べきだ（する → すべきだ／するべきだ）",
+        "nuanceVi": "Người nói đánh giá điều đúng đắn, hợp đạo lý, có tính khuyên bảo mạnh. Thường không dùng với người trên trực tiếp."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-hazuda-bekida-1",
+      "titleVi": "Suy luận hay đánh giá",
+      "bodyVi": "Hỏi: câu này nói về khả năng (chắc là có, chắc là đến) hay về bổn phận (nên làm)? Khả năng → はずだ. Bổn phận, lời khuyên → べきだ. 'Anh ấy đã xuất phát từ 3 giờ nên chắc đã tới' → 着いたはずだ."
+    },
+    {
+      "id": "ct-g-hazuda-bekida-2",
+      "titleVi": "Khi nào không dùng",
+      "bodyVi": "Không dùng べきだ để đoán sự việc (×もう着くべきだ với nghĩa 'chắc sắp tới'). Không dùng はずだ để khuyên (×約束は守るはずだ với nghĩa 'nên giữ lời'). べきだ chỉ nối với thể từ điển, không nối với tính từ hay danh từ trực tiếp."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bản chất",
+      "values": {
+        "ci-g-hazuda-bekida-hazu": "Suy luận từ căn cứ",
+        "ci-g-hazuda-bekida-beki": "Đánh giá, lời khuyên"
+      }
+    },
+    {
+      "aspectVi": "Câu hỏi để kiểm tra",
+      "values": {
+        "ci-g-hazuda-bekida-hazu": "Có căn cứ để tin là đúng không?",
+        "ci-g-hazuda-bekida-beki": "Có đúng đắn, nên làm không?"
+      }
+    },
+    {
+      "aspectVi": "Cách nối",
+      "values": {
+        "ci-g-hazuda-bekida-hazu": "Thể thường, Aな, N の",
+        "ci-g-hazuda-bekida-beki": "Chỉ V thể từ điển (する→すべき)"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-hazuda-bekida-1",
+      "itemId": "ci-g-hazuda-bekida-hazu",
+      "japanese": "三時に出発したから、もう着いているはずだ。",
+      "furigana": "{三時|さんじ}に{出発|しゅっぱつ}したから、もう{着|つ}いているはずだ。",
+      "translationVi": "Đã xuất phát lúc 3 giờ nên chắc là đã tới rồi."
+    },
+    {
+      "id": "cx-g-hazuda-bekida-2",
+      "itemId": "ci-g-hazuda-bekida-hazu",
+      "japanese": "彼は日本に十年住んでいたから、日本語が上手なはずだ。",
+      "furigana": "{彼|かれ}は{日本|にほん}に{十年|じゅうねん}{住|す}んでいたから、{日本語|にほんご}が{上手|じょうず}なはずだ。",
+      "translationVi": "Anh ấy đã sống ở Nhật mười năm nên chắc chắn giỏi tiếng Nhật."
+    },
+    {
+      "id": "cx-g-hazuda-bekida-3",
+      "itemId": "ci-g-hazuda-bekida-beki",
+      "japanese": "約束は守るべきだ。",
+      "furigana": "{約束|やくそく}は{守|まも}るべきだ。",
+      "translationVi": "Đã hứa thì nên giữ lời."
+    },
+    {
+      "id": "cx-g-hazuda-bekida-4",
+      "itemId": "ci-g-hazuda-bekida-beki",
+      "japanese": "分からないことがあったら、すぐ質問すべきだ。",
+      "furigana": "{分|わ}からないことがあったら、すぐ{質問|しつもん}すべきだ。",
+      "translationVi": "Có gì không hiểu thì nên hỏi ngay."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-hazuda-bekida-1",
+      "textVi": "はず = 'theo lý thì' (đầu óc suy ra); べき = 'theo lẽ phải thì' (lương tâm bảo làm)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-hazuda-bekida-1",
+      "situationVi": "Đoán rằng gói hàng đã gửi hôm qua thì hôm nay sẽ tới.",
+      "wrong": {
+        "japanese": "昨日送ったから、今日届くべきだ。",
+        "furigana": "{昨日|きのう}{送|おく}ったから、{今日|きょう}{届|とど}くべきだ。"
+      },
+      "correct": {
+        "japanese": "昨日送ったから、今日届くはずだ。",
+        "furigana": "{昨日|きのう}{送|おく}ったから、{今日|きょう}{届|とど}くはずだ。"
+      },
+      "explanationVi": "Đây là suy luận từ việc đã gửi hôm qua, không phải lời khuyên, nên dùng はずだ.",
+      "expectedItemId": "ci-g-hazuda-bekida-hazu",
+      "confusedWithItemId": "ci-g-hazuda-bekida-beki"
+    },
+    {
+      "id": "ce-g-hazuda-bekida-2",
+      "situationVi": "Khuyên bạn nên xin lỗi.",
+      "wrong": {
+        "japanese": "あなたが悪いのだから、先に謝るはずだ。",
+        "furigana": "あなたが{悪|わる}いのだから、{先|さき}に{謝|あやま}るはずだ。"
+      },
+      "correct": {
+        "japanese": "あなたが悪いのだから、先に謝るべきだ。",
+        "furigana": "あなたが{悪|わる}いのだから、{先|さき}に{謝|あやま}るべきだ。"
+      },
+      "explanationVi": "Người nói đánh giá điều nên làm (xin lỗi trước), nên dùng べきだ.",
+      "expectedItemId": "ci-g-hazuda-bekida-beki",
+      "confusedWithItemId": "ci-g-hazuda-bekida-hazu"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-hazuda-bekida-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-hazuda-bekida-beki",
+      "instructionVi": "Câu nào là lời khuyên 'nên…'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "学生はもっと本を読むべきだ。",
+          "furigana": "{学生|がくせい}はもっと{本|ほん}を{読|よ}むべきだ。",
+          "itemId": "ci-g-hazuda-bekida-beki"
+        },
+        {
+          "id": "b",
+          "text": "学生はもっと本を読むはずだ。",
+          "furigana": "{学生|がくせい}はもっと{本|ほん}を{読|よ}むはずだ。",
+          "itemId": "ci-g-hazuda-bekida-hazu",
+          "feedbackVi": "読むはずだ là đoán 'chắc là đọc nhiều hơn', không phải lời khuyên."
+        },
+        {
+          "id": "c",
+          "text": "学生はもっと本を読むそうだ。",
+          "furigana": "{学生|がくせい}はもっと{本|ほん}を{読|よ}むそうだ。",
+          "feedbackVi": "読むそうだ là 'nghe nói đọc nhiều hơn'."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Lời khuyên về điều nên làm → べきだ."
+    },
+    {
+      "id": "cq-g-hazuda-bekida-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-hazuda-bekida-hazu",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "鍵はかばんに入れた＿＿＿なのに、どこにもない。",
+        "furigana": "{鍵|かぎ}はかばんに{入|い}れた＿＿＿なのに、どこにもない。",
+        "translationVi": "Lẽ ra tôi đã bỏ chìa khóa vào cặp, vậy mà tìm đâu cũng không thấy."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "はず",
+          "itemId": "ci-g-hazuda-bekida-hazu"
+        },
+        {
+          "id": "b",
+          "text": "べき",
+          "itemId": "ci-g-hazuda-bekida-beki",
+          "feedbackVi": "べき không nối với thể quá khứ 入れた và không dùng để nói 'lẽ ra đã'."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Người nói tin chắc (theo trí nhớ) là đã bỏ vào cặp → 入れたはずなのに."
+    },
+    {
+      "id": "cq-g-hazuda-bekida-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-hazuda-bekida-hazu",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "飛行機は十時に出発したから、彼は今ごろ機内にいるべきだ。",
+        "furigana": "{飛行機|ひこうき}は{十時|じゅうじ}に{出発|しゅっぱつ}したから、{彼|かれ}は{今|いま}ごろ{機内|きない}にいるべきだ。",
+        "translationVi": "Chuyến bay cất cánh lúc 10 giờ, nên giờ này chắc anh ấy đang ở trên máy bay."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "飛行機は十時に",
+          "furigana": "{飛行機|ひこうき}は{十時|じゅうじ}に"
+        },
+        {
+          "id": "b",
+          "text": "出発したから、",
+          "furigana": "{出発|しゅっぱつ}したから、"
+        },
+        {
+          "id": "c",
+          "text": "彼は今ごろ機内に",
+          "furigana": "{彼|かれ}は{今|いま}ごろ{機内|きない}に"
+        },
+        {
+          "id": "d",
+          "text": "いるべきだ。",
+          "itemId": "ci-g-hazuda-bekida-beki"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "いるはずだ。",
+        "itemId": "ci-g-hazuda-bekida-hazu"
+      },
+      "explanationVi": "Đây là suy luận từ giờ cất cánh, nên dùng はずだ. いるべきだ nghĩa là 'anh ấy nên ở trên máy bay' (đánh giá)."
+    },
+    {
+      "id": "cq-g-hazuda-bekida-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-hazuda-bekida-beki",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn của bạn mượn tiền nhiều lần mà không trả. Bạn nói với một người khác rằng theo bạn, người mượn tiền thì nên trả đúng hẹn."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "借りたお金は、約束の日までに返すべきだよ。",
+          "furigana": "{借|か}りたお{金|かね}は、{約束|やくそく}の{日|ひ}までに{返|かえ}すべきだよ。",
+          "itemId": "ci-g-hazuda-bekida-beki"
+        },
+        {
+          "id": "b",
+          "text": "借りたお金は、約束の日までに返すはずだよ。",
+          "furigana": "{借|か}りたお{金|かね}は、{約束|やくそく}の{日|ひ}までに{返|かえ}すはずだよ。",
+          "itemId": "ci-g-hazuda-bekida-hazu",
+          "feedbackVi": "返すはずだ là đoán 'chắc là sẽ trả', không nói lên ý 'nên trả'."
+        },
+        {
+          "id": "c",
+          "text": "借りたお金は、約束の日までに返すことになったよ。",
+          "furigana": "{借|か}りたお{金|かね}は、{約束|やくそく}の{日|ひ}までに{返|かえ}すことになったよ。",
+          "feedbackVi": "ことになった là 'đã được quyết định là', không phải ý kiến của bạn."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Người nói nêu ý kiến về điều đúng đắn → べきだ."
+    }
+  ]
+}

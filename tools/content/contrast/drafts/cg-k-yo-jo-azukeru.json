@@ -1,0 +1,381 @@
+{
+  "id": "cg-k-yo-jo-azukeru",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "予, 序 và 預",
+  "summaryVi": "Ba chữ cùng có phần 予. 予 là trước (sẵn từ trước); thêm 广 (mái nhà) thành 序 – thứ tự, mở đầu; thêm 頁 (đầu, trang) thành 預 – gửi giữ.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-yo-jo-azukeru-yo",
+      "label": "予",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k04e88",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "予",
+          "onReadings": [
+            "ヨ",
+            "シャ"
+          ],
+          "kunReadings": [
+            "あらかじ.め"
+          ],
+          "meaningVi": "Trước, sẵn từ trước"
+        },
+        "sourceFingerprint": "sha256:cb7831064c0accd605f06c202057e9c2aaf6956c707079cde4dc5b076c63a4c3"
+      },
+      "kanji": {
+        "meaningVi": "trước, sẵn từ trước",
+        "hanViet": "DƯ",
+        "onReadings": [
+          "ヨ",
+          "シャ"
+        ],
+        "kunReadings": [
+          "あらかじ.め"
+        ],
+        "radical": {
+          "character": "亅",
+          "nameVi": "Quyết (nét móc)"
+        },
+        "shapeNoteVi": "Một mình 予: trước. 予定, 予約, 予報, 予習."
+      }
+    },
+    {
+      "id": "ci-k-yo-jo-azukeru-jo",
+      "label": "序",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05e8f",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "序",
+          "onReadings": [
+            "ジョ"
+          ],
+          "kunReadings": [
+            "つい.で",
+            "ついで"
+          ],
+          "meaningVi": "Trật tự"
+        },
+        "sourceFingerprint": "sha256:4ab0dae4702e2c3eda50d9d9bf40b8a4681e6e3d3a34cab84485548aba6778ca"
+      },
+      "kanji": {
+        "meaningVi": "thứ tự, mở đầu",
+        "hanViet": "TỰ",
+        "onReadings": [
+          "ジョ"
+        ],
+        "kunReadings": [
+          "つい.で",
+          "ついで"
+        ],
+        "radical": {
+          "character": "广",
+          "nameVi": "Nghiễm (mái nhà)"
+        },
+        "shapeNoteVi": "广 + 予: các phòng trong nhà xếp theo trật tự → thứ tự. 順序, 序章."
+      }
+    },
+    {
+      "id": "ci-k-yo-jo-azukeru-azukeru",
+      "label": "預",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k09810",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "預",
+          "onReadings": [
+            "ヨ"
+          ],
+          "kunReadings": [
+            "あず.ける",
+            "あず.かる"
+          ],
+          "meaningVi": "Gửi"
+        },
+        "sourceFingerprint": "sha256:1288f8c95f800da8d5894cd2c63b6cab839153de07158bf1127125520df23991"
+      },
+      "kanji": {
+        "meaningVi": "gửi, gửi giữ",
+        "hanViet": "DỰ",
+        "onReadings": [
+          "ヨ"
+        ],
+        "kunReadings": [
+          "あず.ける",
+          "あず.かる"
+        ],
+        "radical": {
+          "character": "頁",
+          "nameVi": "Hiệt (đầu, trang)"
+        },
+        "shapeNoteVi": "予 + 頁: giao trước cho người khác giữ → gửi. 預ける, 預金."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-yo-jo-azukeru-1",
+      "titleVi": "Phần thêm vào",
+      "bodyVi": "予 (trước) là gốc. 广 (mái nhà) bao lấy → 序 (thứ tự). 頁 bên phải → 預 (gửi). 予 và 預 cùng âm ヨ, dễ nhầm trong 予金 (sai) ／ 預金 (đúng)."
+    },
+    {
+      "id": "ct-k-yo-jo-azukeru-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "予: 予定 (dự định), 予約 (đặt trước), 予報 (dự báo), 予習 (học trước). 序: 順序 (thứ tự), 序章 (chương mở đầu). 預: 預ける (gửi), 預かる (giữ hộ), 預金 (tiền gửi)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Phần thêm",
+      "values": {
+        "ci-k-yo-jo-azukeru-yo": "Không có",
+        "ci-k-yo-jo-azukeru-jo": "广 (mái nhà) bao ngoài",
+        "ci-k-yo-jo-azukeru-azukeru": "頁 bên phải"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-yo-jo-azukeru-yo": "Trước",
+        "ci-k-yo-jo-azukeru-jo": "Thứ tự",
+        "ci-k-yo-jo-azukeru-azukeru": "Gửi giữ"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-yo-jo-azukeru-yo": "予定、予約、予報",
+        "ci-k-yo-jo-azukeru-jo": "順序、序章",
+        "ci-k-yo-jo-azukeru-azukeru": "預ける、預金"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-yo-jo-azukeru-1",
+      "itemId": "ci-k-yo-jo-azukeru-yo",
+      "japanese": "明日の予定はまだ決まっていない。",
+      "furigana": "{明日|あした}の{予定|よてい}はまだ{決|き}まっていない。",
+      "translationVi": "Kế hoạch ngày mai vẫn chưa định."
+    },
+    {
+      "id": "cx-k-yo-jo-azukeru-2",
+      "itemId": "ci-k-yo-jo-azukeru-yo",
+      "japanese": "レストランを予約しておいた。",
+      "furigana": "レストランを{予約|よやく}しておいた。",
+      "translationVi": "Tôi đã đặt bàn nhà hàng trước."
+    },
+    {
+      "id": "cx-k-yo-jo-azukeru-3",
+      "itemId": "ci-k-yo-jo-azukeru-jo",
+      "japanese": "順序よく並んでください。",
+      "furigana": "{順序|じゅんじょ}よく{並|なら}んでください。",
+      "translationVi": "Xin hãy xếp hàng theo thứ tự."
+    },
+    {
+      "id": "cx-k-yo-jo-azukeru-4",
+      "itemId": "ci-k-yo-jo-azukeru-jo",
+      "japanese": "この小説は序章から面白い。",
+      "furigana": "この{小説|しょうせつ}は{序章|じょしょう}から{面白|おもしろ}い。",
+      "translationVi": "Cuốn tiểu thuyết này hay ngay từ chương mở đầu."
+    },
+    {
+      "id": "cx-k-yo-jo-azukeru-5",
+      "itemId": "ci-k-yo-jo-azukeru-azukeru",
+      "japanese": "銀行にお金を預けた。",
+      "furigana": "{銀行|ぎんこう}にお{金|かね}を{預|あず}けた。",
+      "translationVi": "Tôi gửi tiền vào ngân hàng."
+    },
+    {
+      "id": "cx-k-yo-jo-azukeru-6",
+      "itemId": "ci-k-yo-jo-azukeru-azukeru",
+      "japanese": "毎月少しずつ預金している。",
+      "furigana": "{毎月|まいつき}{少|すこ}しずつ{預金|よきん}している。",
+      "translationVi": "Mỗi tháng tôi gửi tiết kiệm từng chút."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-yo-jo-azukeru-1",
+      "textVi": "予 (trước) + nhà (广) = xếp thứ tự (序); + trang (頁) = giao gửi (預)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-yo-jo-azukeru-1",
+      "situationVi": "Viết 'tiền gửi ngân hàng'.",
+      "wrong": {
+        "japanese": "銀行の予金を下ろした。",
+        "furigana": "{銀行|ぎんこう}の{予金|よきん}を{下|お}ろした。"
+      },
+      "correct": {
+        "japanese": "銀行の預金を下ろした。",
+        "furigana": "{銀行|ぎんこう}の{預金|よきん}を{下|お}ろした。"
+      },
+      "explanationVi": "Tiền gửi → 預金 (gửi giữ).",
+      "expectedItemId": "ci-k-yo-jo-azukeru-azukeru",
+      "confusedWithItemId": "ci-k-yo-jo-azukeru-yo"
+    },
+    {
+      "id": "ce-k-yo-jo-azukeru-2",
+      "situationVi": "Viết 'dự báo thời tiết'.",
+      "wrong": {
+        "japanese": "天気預報を見た。",
+        "furigana": "{天気|てんき}{預報|よほう}を{見|み}た。"
+      },
+      "correct": {
+        "japanese": "天気予報を見た。",
+        "furigana": "{天気|てんき}{予報|よほう}を{見|み}た。"
+      },
+      "explanationVi": "Dự báo (báo trước) → 予報.",
+      "expectedItemId": "ci-k-yo-jo-azukeru-yo",
+      "confusedWithItemId": "ci-k-yo-jo-azukeru-azukeru"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-yo-jo-azukeru-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-yo-jo-azukeru-yo",
+      "instructionVi": "Chọn cách viết đúng của よやく (đặt trước).",
+      "options": [
+        {
+          "id": "a",
+          "text": "預約",
+          "itemId": "ci-k-yo-jo-azukeru-azukeru",
+          "feedbackVi": "預 là gửi giữ."
+        },
+        {
+          "id": "b",
+          "text": "予約",
+          "itemId": "ci-k-yo-jo-azukeru-yo"
+        },
+        {
+          "id": "c",
+          "text": "序約",
+          "itemId": "ci-k-yo-jo-azukeru-jo",
+          "feedbackVi": "序 là thứ tự."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanationVi": "予約: hẹn trước → 予."
+    },
+    {
+      "id": "cq-k-yo-jo-azukeru-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-yo-jo-azukeru-jo",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "説明書の順＿＿＿どおりに組み立ててください。",
+        "furigana": "{説明書|せつめいしょ}の{順|じゅん}＿＿＿どおりに{組|く}み{立|た}ててください。",
+        "translationVi": "Hãy lắp ráp theo đúng thứ tự trong sách hướng dẫn."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "序",
+          "itemId": "ci-k-yo-jo-azukeru-jo"
+        },
+        {
+          "id": "b",
+          "text": "予",
+          "itemId": "ci-k-yo-jo-azukeru-yo"
+        },
+        {
+          "id": "c",
+          "text": "預",
+          "itemId": "ci-k-yo-jo-azukeru-azukeru"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "順序 (thứ tự) viết với 序."
+    },
+    {
+      "id": "cq-k-yo-jo-azukeru-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-yo-jo-azukeru-azukeru",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "ホテルのフロントに荷物を予けた。",
+        "furigana": "ホテルのフロントに{荷物|にもつ}を{予|よ}けた。",
+        "translationVi": "Tôi gửi hành lý ở quầy lễ tân khách sạn."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ホテルのフロントに"
+        },
+        {
+          "id": "b",
+          "text": "荷物を",
+          "furigana": "{荷物|にもつ}を"
+        },
+        {
+          "id": "c",
+          "text": "予けた。",
+          "furigana": "{予|よ}けた。",
+          "itemId": "ci-k-yo-jo-azukeru-yo"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "預けた。",
+        "furigana": "{預|あず}けた。",
+        "itemId": "ci-k-yo-jo-azukeru-azukeru"
+      },
+      "explanationVi": "Gửi giữ → 預ける. (予 không có cách đọc あず.)"
+    },
+    {
+      "id": "cq-k-yo-jo-azukeru-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-yo-jo-azukeru-yo",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn nhắc học sinh học bài trước khi lên lớp."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "明日の授業の予習をしておいてね。",
+          "furigana": "{明日|あした}の{授業|じゅぎょう}の{予習|よしゅう}をしておいてね。",
+          "itemId": "ci-k-yo-jo-azukeru-yo"
+        },
+        {
+          "id": "b",
+          "text": "明日の授業の預習をしておいてね。",
+          "furigana": "{明日|あした}の{授業|じゅぎょう}の{預習|よしゅう}をしておいてね。",
+          "itemId": "ci-k-yo-jo-azukeru-azukeru",
+          "feedbackVi": "予習 viết với 予 (trước), không phải 預."
+        },
+        {
+          "id": "c",
+          "text": "明日の授業の序習をしておいてね。",
+          "furigana": "{明日|あした}の{授業|じゅぎょう}の{序習|じょしゅう}をしておいてね。",
+          "itemId": "ci-k-yo-jo-azukeru-jo",
+          "feedbackVi": "予習 viết với 予, không phải 序."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "予習 (học trước) viết với 予."
+    }
+  ]
+}

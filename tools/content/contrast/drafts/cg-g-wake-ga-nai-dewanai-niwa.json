@@ -1,0 +1,340 @@
+{
+  "id": "cg-g-wake-ga-nai-dewanai-niwa",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜わけがない, 〜わけではない và 〜わけにはいかない",
+  "summaryVi": "Ba mẫu cùng có わけ nhưng nghĩa khác nhau: わけがない là phủ định mạnh (không đời nào), わけではない là phủ định một phần (không hẳn là), わけにはいかない là không thể làm vì lý do xã hội, đạo lý.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-wake-ga-nai-dewanai-niwa-ganai",
+      "label": "〜わけがない",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g082",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜わけがない",
+          "structure": "Vthường・Aい・Aな・N な／である ＋ わけがない",
+          "meaningVi": "không lẽ nào…, không đời nào…"
+        },
+        "sourceFingerprint": "sha256:ca2b026e72702ada1699c9f2014503c810969d8d13bf18928fe80307d39f25ff"
+      },
+      "grammar": {
+        "meaningVi": "Không lẽ nào…, không đời nào…",
+        "connection": "V thể thường・Aい・Aな・N な／である ＋ わけがない",
+        "nuanceVi": "Người nói phủ định hoàn toàn khả năng một việc là đúng, dựa trên lý lẽ của mình. Gần nghĩa はずがない."
+      }
+    },
+    {
+      "id": "ci-g-wake-ga-nai-dewanai-niwa-dewanai",
+      "label": "〜わけではない",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g083",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜わけではない",
+          "structure": "Vthường・Aい・Aな・N な／である ＋ わけではない",
+          "meaningVi": "không hẳn là…, không có nghĩa là…"
+        },
+        "sourceFingerprint": "sha256:dad1b98c82b527a31b63ad5180d9186686432c39c58bb8df2da7bd0b49c7de2e"
+      },
+      "grammar": {
+        "meaningVi": "Không hẳn là…, không có nghĩa là…",
+        "connection": "V thể thường・Aい・Aな・N な／である ＋ わけではない",
+        "nuanceVi": "Phủ định một phần, sửa lại suy nghĩ có thể bị hiểu nhầm. Hay đi với 全部、いつも、必ずしも、別に."
+      }
+    },
+    {
+      "id": "ci-g-wake-ga-nai-dewanai-niwa-niwa",
+      "label": "〜わけにはいかない",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g084",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜わけにはいかない",
+          "structure": "Vる ＋ わけにはいかない",
+          "meaningVi": "không thể… (vì lý do xã hội, đạo lý)"
+        },
+        "sourceFingerprint": "sha256:a4dfefae57c4640f4d74dcba684a9133d740fa6b24b4e7f492d0dbb92c489091"
+      },
+      "grammar": {
+        "meaningVi": "Không thể… (vì lý do xã hội, đạo lý)",
+        "connection": "Vる ＋ わけにはいかない",
+        "nuanceVi": "Có khả năng làm nhưng hoàn cảnh, trách nhiệm, lương tâm không cho phép. Không dùng cho việc không làm được vì năng lực."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-wake-ga-nai-dewanai-niwa-1",
+      "titleVi": "Ba mức phủ định khác nhau",
+      "bodyVi": "わけがない: 'không thể có chuyện đó' (phủ định khả năng). わけではない: 'không phải là như vậy hoàn toàn' (phủ định một phần). わけにはいかない: 'tôi không thể làm việc đó' (bị ngăn bởi nghĩa vụ). Hai mẫu đầu nói về sự thật; mẫu cuối nói về hành động của người nói."
+    },
+    {
+      "id": "ct-g-wake-ga-nai-dewanai-niwa-2",
+      "titleVi": "Nhận biết nhanh",
+      "bodyVi": "Có 別に、全部、いつも、必ずしも → わけではない. Có lý do trách nhiệm (明日は試験だから、約束したから、仕事中だから) + hành động → わけにはいかない. Có lý lẽ bác bỏ mạnh (あんなに練習したのだから…負ける) → わけがない."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-g-wake-ga-nai-dewanai-niwa-ganai": "Không đời nào (phủ định hoàn toàn)",
+        "ci-g-wake-ga-nai-dewanai-niwa-dewanai": "Không hẳn (phủ định một phần)",
+        "ci-g-wake-ga-nai-dewanai-niwa-niwa": "Không thể làm (vì nghĩa vụ)"
+      }
+    },
+    {
+      "aspectVi": "Nói về",
+      "values": {
+        "ci-g-wake-ga-nai-dewanai-niwa-ganai": "Khả năng của một sự việc",
+        "ci-g-wake-ga-nai-dewanai-niwa-dewanai": "Sửa hiểu lầm",
+        "ci-g-wake-ga-nai-dewanai-niwa-niwa": "Hành động của chính người nói"
+      }
+    },
+    {
+      "aspectVi": "Cách nối",
+      "values": {
+        "ci-g-wake-ga-nai-dewanai-niwa-ganai": "Thể thường, Aな／N な",
+        "ci-g-wake-ga-nai-dewanai-niwa-dewanai": "Thể thường, Aな／N な",
+        "ci-g-wake-ga-nai-dewanai-niwa-niwa": "Chỉ Vる (Vない cho 'buộc phải')"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-wake-ga-nai-dewanai-niwa-1",
+      "itemId": "ci-g-wake-ga-nai-dewanai-niwa-ganai",
+      "japanese": "こんな簡単な問題を間違えるわけがない。",
+      "furigana": "こんな{簡単|かんたん}な{問題|もんだい}を{間違|まちが}えるわけがない。",
+      "translationVi": "Câu dễ thế này thì không đời nào làm sai."
+    },
+    {
+      "id": "cx-g-wake-ga-nai-dewanai-niwa-2",
+      "itemId": "ci-g-wake-ga-nai-dewanai-niwa-ganai",
+      "japanese": "彼が嘘をつくわけがない。",
+      "furigana": "{彼|かれ}が{嘘|うそ}をつくわけがない。",
+      "translationVi": "Không lẽ nào anh ấy lại nói dối."
+    },
+    {
+      "id": "cx-g-wake-ga-nai-dewanai-niwa-3",
+      "itemId": "ci-g-wake-ga-nai-dewanai-niwa-dewanai",
+      "japanese": "肉が嫌いなわけではないが、あまり食べない。",
+      "furigana": "{肉|にく}が{嫌|きら}いなわけではないが、あまり{食|た}べない。",
+      "translationVi": "Không phải tôi ghét thịt, chỉ là không ăn nhiều."
+    },
+    {
+      "id": "cx-g-wake-ga-nai-dewanai-niwa-4",
+      "itemId": "ci-g-wake-ga-nai-dewanai-niwa-dewanai",
+      "japanese": "高い物がいつもいいわけではない。",
+      "furigana": "{高|たか}い{物|もの}がいつもいいわけではない。",
+      "translationVi": "Đồ đắt không hẳn lúc nào cũng tốt."
+    },
+    {
+      "id": "cx-g-wake-ga-nai-dewanai-niwa-5",
+      "itemId": "ci-g-wake-ga-nai-dewanai-niwa-niwa",
+      "japanese": "明日は大事な会議があるから、休むわけにはいかない。",
+      "furigana": "{明日|あした}は{大事|だいじ}な{会議|かいぎ}があるから、{休|やす}むわけにはいかない。",
+      "translationVi": "Mai có cuộc họp quan trọng nên tôi không thể nghỉ được."
+    },
+    {
+      "id": "cx-g-wake-ga-nai-dewanai-niwa-6",
+      "itemId": "ci-g-wake-ga-nai-dewanai-niwa-niwa",
+      "japanese": "車で来たので、お酒を飲むわけにはいかない。",
+      "furigana": "{車|くるま}で{来|き}たので、お{酒|さけ}を{飲|の}むわけにはいかない。",
+      "translationVi": "Tôi đi ô tô đến nên không thể uống rượu."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-wake-ga-nai-dewanai-niwa-1",
+      "textVi": "がない = không có khả năng; ではない = không phải hoàn toàn; にはいかない = không 'đi' được vì bị trách nhiệm chặn đường."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-wake-ga-nai-dewanai-niwa-1",
+      "situationVi": "Không thể bỏ về giữa chừng vì còn việc phải xong hôm nay.",
+      "wrong": {
+        "japanese": "今日中に終わらせる仕事があるので、帰るわけがない。",
+        "furigana": "{今日中|きょうじゅう}に{終|お}わらせる{仕事|しごと}があるので、{帰|かえ}るわけがない。"
+      },
+      "correct": {
+        "japanese": "今日中に終わらせる仕事があるので、帰るわけにはいかない。",
+        "furigana": "{今日中|きょうじゅう}に{終|お}わらせる{仕事|しごと}があるので、{帰|かえ}るわけにはいかない。"
+      },
+      "explanationVi": "Đây là hành động của người nói bị trách nhiệm ngăn lại, nên dùng わけにはいかない. わけがない là phủ định khả năng của sự việc.",
+      "expectedItemId": "ci-g-wake-ga-nai-dewanai-niwa-niwa",
+      "confusedWithItemId": "ci-g-wake-ga-nai-dewanai-niwa-ganai"
+    },
+    {
+      "id": "ce-g-wake-ga-nai-dewanai-niwa-2",
+      "situationVi": "Sửa hiểu lầm: không phải ghét anh ta, chỉ là ít nói chuyện.",
+      "wrong": {
+        "japanese": "彼が嫌いなわけがない。ただ、あまり話さないだけだ。",
+        "furigana": "{彼|かれ}が{嫌|きら}いなわけがない。ただ、あまり{話|はな}さないだけだ。"
+      },
+      "correct": {
+        "japanese": "彼が嫌いなわけではない。ただ、あまり話さないだけだ。",
+        "furigana": "{彼|かれ}が{嫌|きら}いなわけではない。ただ、あまり{話|はな}さないだけだ。"
+      },
+      "explanationVi": "Câu sau ただ…だけだ cho thấy đây là sửa hiểu lầm một phần → わけではない.",
+      "expectedItemId": "ci-g-wake-ga-nai-dewanai-niwa-dewanai",
+      "confusedWithItemId": "ci-g-wake-ga-nai-dewanai-niwa-ganai"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-wake-ga-nai-dewanai-niwa-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-wake-ga-nai-dewanai-niwa-dewanai",
+      "instructionVi": "Câu nào có nghĩa 'Không phải tôi hiểu hết tất cả'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "全部分かるわけではない。",
+          "furigana": "{全部|ぜんぶ}{分|わ}かるわけではない。",
+          "itemId": "ci-g-wake-ga-nai-dewanai-niwa-dewanai"
+        },
+        {
+          "id": "b",
+          "text": "全部分かるわけがない。",
+          "furigana": "{全部|ぜんぶ}{分|わ}かるわけがない。",
+          "itemId": "ci-g-wake-ga-nai-dewanai-niwa-ganai",
+          "feedbackVi": "わけがない là 'không đời nào hiểu hết', phủ định mạnh."
+        },
+        {
+          "id": "c",
+          "text": "全部分かるわけにはいかない。",
+          "furigana": "{全部|ぜんぶ}{分|わ}かるわけにはいかない。",
+          "itemId": "ci-g-wake-ga-nai-dewanai-niwa-niwa",
+          "feedbackVi": "わけにはいかない là 'không thể (cho phép mình) hiểu hết', vô nghĩa ở đây."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "全部 + わけではない: phủ định một phần."
+    },
+    {
+      "id": "cq-g-wake-ga-nai-dewanai-niwa-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-wake-ga-nai-dewanai-niwa-niwa",
+      "instructionVi": "Chọn cách nói phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "先生に頼まれた仕事だから、断る＿＿＿。",
+        "furigana": "{先生|せんせい}に{頼|たの}まれた{仕事|しごと}だから、{断|ことわ}る＿＿＿。",
+        "translationVi": "Vì là việc thầy nhờ nên tôi không thể từ chối."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "わけにはいかない",
+          "itemId": "ci-g-wake-ga-nai-dewanai-niwa-niwa"
+        },
+        {
+          "id": "b",
+          "text": "わけではない",
+          "itemId": "ci-g-wake-ga-nai-dewanai-niwa-dewanai",
+          "feedbackVi": "わけではない là 'không hẳn là từ chối', không hợp."
+        },
+        {
+          "id": "c",
+          "text": "わけがない",
+          "itemId": "ci-g-wake-ga-nai-dewanai-niwa-ganai",
+          "feedbackVi": "わけがない nói về khả năng của sự việc, không phải người nói bị ràng buộc."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Lý do đạo lý (thầy nhờ) ngăn người nói từ chối → わけにはいかない."
+    },
+    {
+      "id": "cq-g-wake-ga-nai-dewanai-niwa-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-wake-ga-nai-dewanai-niwa-ganai",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "あんなに一生懸命練習したのだから、彼が負けるわけにはいかない。",
+        "furigana": "あんなに{一生懸命|いっしょうけんめい}{練習|れんしゅう}したのだから、{彼|かれ}が{負|ま}けるわけにはいかない。",
+        "translationVi": "Anh ấy đã luyện tập chăm chỉ như thế thì không đời nào thua."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "あんなに"
+        },
+        {
+          "id": "b",
+          "text": "一生懸命練習したのだから、",
+          "furigana": "{一生懸命|いっしょうけんめい}{練習|れんしゅう}したのだから、"
+        },
+        {
+          "id": "c",
+          "text": "彼が",
+          "furigana": "{彼|かれ}が"
+        },
+        {
+          "id": "d",
+          "text": "負けるわけにはいかない。",
+          "furigana": "{負|ま}けるわけにはいかない。",
+          "itemId": "ci-g-wake-ga-nai-dewanai-niwa-niwa"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "負けるわけがない。",
+        "furigana": "{負|ま}けるわけがない。",
+        "itemId": "ci-g-wake-ga-nai-dewanai-niwa-ganai"
+      },
+      "explanationVi": "Người nói phủ định khả năng anh ấy thua dựa trên lý lẽ → わけがない. わけにはいかない chỉ hành động bị trách nhiệm ngăn lại."
+    },
+    {
+      "id": "cq-g-wake-ga-nai-dewanai-niwa-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-wake-ga-nai-dewanai-niwa-dewanai",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn bè nghĩ bạn không thích đồ ngọt vì bạn hay từ chối bánh. Thật ra bạn thích, chỉ là đang ăn kiêng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "甘い物が嫌いなわけではないよ。ダイエット中なんだ。",
+          "furigana": "{甘|あま}い{物|もの}が{嫌|きら}いなわけではないよ。ダイエット{中|ちゅう}なんだ。",
+          "itemId": "ci-g-wake-ga-nai-dewanai-niwa-dewanai"
+        },
+        {
+          "id": "b",
+          "text": "甘い物が嫌いなわけがないよ。ダイエット中なんだ。",
+          "furigana": "{甘|あま}い{物|もの}が{嫌|きら}いなわけがないよ。ダイエット{中|ちゅう}なんだ。",
+          "itemId": "ci-g-wake-ga-nai-dewanai-niwa-ganai",
+          "feedbackVi": "わけがない là phủ định mạnh 'làm sao mà ghét được', nghe gay gắt và không hợp mạch sửa hiểu lầm."
+        },
+        {
+          "id": "c",
+          "text": "甘い物を食べるわけにはいかないよ。嫌いなんだ。",
+          "furigana": "{甘|あま}い{物|もの}を{食|た}べるわけにはいかないよ。{嫌|きら}いなんだ。",
+          "itemId": "ci-g-wake-ga-nai-dewanai-niwa-niwa",
+          "feedbackVi": "Câu sau 嫌いなんだ trái với sự thật là bạn thích đồ ngọt."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Sửa hiểu lầm một phần (không phải ghét) → わけではない."
+    }
+  ]
+}

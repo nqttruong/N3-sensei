@@ -1,0 +1,378 @@
+{
+  "id": "cg-k-kyuu-motomeru-tama-sukuu",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "求, 球 và 救",
+  "summaryVi": "Ba chữ cùng đọc キュウ và cùng có phần 求. 求 là mong cầu, yêu cầu; thêm 王 (ngọc) thành 球 – quả cầu, quả bóng; thêm 攵 (đánh, hành động) thành 救 – cứu giúp.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-kyuu-motomeru-tama-sukuu-motomeru",
+      "label": "求",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k06c42",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "求",
+          "onReadings": [
+            "キュウ",
+            "グ"
+          ],
+          "kunReadings": [
+            "もと.める"
+          ],
+          "meaningVi": "Yêu cầu, mong muốn, tìm kiếm"
+        },
+        "sourceFingerprint": "sha256:debbe210c21c792dfe48165344ea47c7f9783bf7de34e6a97be8d0b5a0e26af0"
+      },
+      "kanji": {
+        "meaningVi": "yêu cầu, mong muốn, tìm kiếm",
+        "hanViet": "CẦU",
+        "onReadings": [
+          "キュウ",
+          "グ"
+        ],
+        "kunReadings": [
+          "もと.める"
+        ],
+        "radical": {
+          "character": "水",
+          "nameVi": "Thủy (biến thể) – nét gốc của 求"
+        },
+        "shapeNoteVi": "Một mình 求: mong cầu, tìm kiếm. 求める, 要求, 求人."
+      }
+    },
+    {
+      "id": "ci-k-kyuu-motomeru-tama-sukuu-tama",
+      "label": "球",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k07403",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "球",
+          "onReadings": [
+            "キュウ"
+          ],
+          "kunReadings": [
+            "たま"
+          ],
+          "meaningVi": "Quả bóng"
+        },
+        "sourceFingerprint": "sha256:09f0b10eb790fecd7fe4f5ba73daae31a3a75fa202653e75c86355627d0ef103"
+      },
+      "kanji": {
+        "meaningVi": "quả cầu, quả bóng",
+        "hanViet": "CẦU",
+        "onReadings": [
+          "キュウ"
+        ],
+        "kunReadings": [
+          "たま"
+        ],
+        "radical": {
+          "character": "王",
+          "nameVi": "Ngọc (viên ngọc)"
+        },
+        "shapeNoteVi": "王 (ngọc) + 求: viên ngọc tròn → quả cầu, bóng. 野球, 地球, 電球."
+      }
+    },
+    {
+      "id": "ci-k-kyuu-motomeru-tama-sukuu-sukuu",
+      "label": "救",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k06551",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "救",
+          "onReadings": [
+            "キュウ"
+          ],
+          "kunReadings": [
+            "すく.う"
+          ],
+          "meaningVi": "Cứu giúp"
+        },
+        "sourceFingerprint": "sha256:c4e248a4bfa9f580cc38518e6ffcdd1445cc35834969d6e8c13dda283f1f969a"
+      },
+      "kanji": {
+        "meaningVi": "cứu giúp",
+        "hanViet": "CỨU",
+        "onReadings": [
+          "キュウ"
+        ],
+        "kunReadings": [
+          "すく.う"
+        ],
+        "radical": {
+          "character": "攵",
+          "nameVi": "Phộc (đánh, hành động)"
+        },
+        "shapeNoteVi": "求 + 攵 (hành động): ra tay đáp lại lời cầu cứu → cứu. 救う, 救急車, 救助."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-kyuu-motomeru-tama-sukuu-1",
+      "titleVi": "Phần thêm vào quyết định nghĩa",
+      "bodyVi": "Cùng phần 求 cho âm キュウ. Có 王 bên trái → 球 (vật tròn: bóng, cầu). Có 攵 bên phải → 救 (hành động cứu). Chỉ 求 → mong cầu, yêu cầu."
+    },
+    {
+      "id": "ct-k-kyuu-motomeru-tama-sukuu-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "求: 求める (yêu cầu), 要求, 求人 (tuyển người). 球: 野球 (bóng chày), 地球 (trái đất), 電球 (bóng đèn). 救: 救う (cứu), 救急車 (xe cứu thương), 救助 (cứu hộ)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Phần thêm",
+      "values": {
+        "ci-k-kyuu-motomeru-tama-sukuu-motomeru": "Không có",
+        "ci-k-kyuu-motomeru-tama-sukuu-tama": "王 bên trái",
+        "ci-k-kyuu-motomeru-tama-sukuu-sukuu": "攵 bên phải"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-kyuu-motomeru-tama-sukuu-motomeru": "Yêu cầu, mong cầu",
+        "ci-k-kyuu-motomeru-tama-sukuu-tama": "Quả cầu, bóng",
+        "ci-k-kyuu-motomeru-tama-sukuu-sukuu": "Cứu giúp"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-kyuu-motomeru-tama-sukuu-motomeru": "要求、求人",
+        "ci-k-kyuu-motomeru-tama-sukuu-tama": "野球、地球",
+        "ci-k-kyuu-motomeru-tama-sukuu-sukuu": "救急車、救助"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-kyuu-motomeru-tama-sukuu-1",
+      "itemId": "ci-k-kyuu-motomeru-tama-sukuu-motomeru",
+      "japanese": "客は店に返金を求めた。",
+      "furigana": "{客|きゃく}は{店|みせ}に{返金|へんきん}を{求|もと}めた。",
+      "translationVi": "Khách yêu cầu cửa hàng hoàn tiền."
+    },
+    {
+      "id": "cx-k-kyuu-motomeru-tama-sukuu-2",
+      "itemId": "ci-k-kyuu-motomeru-tama-sukuu-motomeru",
+      "japanese": "この会社は今、求人を出している。",
+      "furigana": "この{会社|かいしゃ}は{今|いま}、{求人|きゅうじん}を{出|だ}している。",
+      "translationVi": "Công ty này đang đăng tin tuyển người."
+    },
+    {
+      "id": "cx-k-kyuu-motomeru-tama-sukuu-3",
+      "itemId": "ci-k-kyuu-motomeru-tama-sukuu-tama",
+      "japanese": "日曜日に友達と野球をした。",
+      "furigana": "{日曜日|にちようび}に{友達|ともだち}と{野球|やきゅう}をした。",
+      "translationVi": "Chủ nhật tôi chơi bóng chày với bạn."
+    },
+    {
+      "id": "cx-k-kyuu-motomeru-tama-sukuu-4",
+      "itemId": "ci-k-kyuu-motomeru-tama-sukuu-tama",
+      "japanese": "地球の環境を守ろう。",
+      "furigana": "{地球|ちきゅう}の{環境|かんきょう}を{守|まも}ろう。",
+      "translationVi": "Hãy bảo vệ môi trường trái đất."
+    },
+    {
+      "id": "cx-k-kyuu-motomeru-tama-sukuu-5",
+      "itemId": "ci-k-kyuu-motomeru-tama-sukuu-sukuu",
+      "japanese": "救急車を呼んでください。",
+      "furigana": "{救急車|きゅうきゅうしゃ}を{呼|よ}んでください。",
+      "translationVi": "Hãy gọi xe cứu thương."
+    },
+    {
+      "id": "cx-k-kyuu-motomeru-tama-sukuu-6",
+      "itemId": "ci-k-kyuu-motomeru-tama-sukuu-sukuu",
+      "japanese": "消防士が火事から子供を救った。",
+      "furigana": "{消防士|しょうぼうし}が{火事|かじ}から{子供|こども}を{救|すく}った。",
+      "translationVi": "Lính cứu hỏa đã cứu đứa trẻ khỏi đám cháy."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-kyuu-motomeru-tama-sukuu-1",
+      "textVi": "Ngọc (王) tròn → 球; ra tay (攵) → 救; chỉ mong (求) mà chưa làm gì."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-kyuu-motomeru-tama-sukuu-1",
+      "situationVi": "Viết 'xe cứu thương'.",
+      "wrong": {
+        "japanese": "球急車が来た。",
+        "furigana": "{球急車|きゅうきゅうしゃ}が{来|き}た。"
+      },
+      "correct": {
+        "japanese": "救急車が来た。",
+        "furigana": "{救急車|きゅうきゅうしゃ}が{来|き}た。"
+      },
+      "explanationVi": "Cứu → 救 (có 攵).",
+      "expectedItemId": "ci-k-kyuu-motomeru-tama-sukuu-sukuu",
+      "confusedWithItemId": "ci-k-kyuu-motomeru-tama-sukuu-tama"
+    },
+    {
+      "id": "ce-k-kyuu-motomeru-tama-sukuu-2",
+      "situationVi": "Viết 'trái đất'.",
+      "wrong": {
+        "japanese": "地求は丸い。",
+        "furigana": "{地求|ちきゅう}は{丸|まる}い。"
+      },
+      "correct": {
+        "japanese": "地球は丸い。",
+        "furigana": "{地球|ちきゅう}は{丸|まる}い。"
+      },
+      "explanationVi": "Trái đất là quả cầu → 球 (có 王).",
+      "expectedItemId": "ci-k-kyuu-motomeru-tama-sukuu-tama",
+      "confusedWithItemId": "ci-k-kyuu-motomeru-tama-sukuu-motomeru"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-kyuu-motomeru-tama-sukuu-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-kyuu-motomeru-tama-sukuu-tama",
+      "instructionVi": "Chọn cách viết đúng của やきゅう (bóng chày).",
+      "options": [
+        {
+          "id": "a",
+          "text": "野球",
+          "itemId": "ci-k-kyuu-motomeru-tama-sukuu-tama"
+        },
+        {
+          "id": "b",
+          "text": "野求",
+          "itemId": "ci-k-kyuu-motomeru-tama-sukuu-motomeru",
+          "feedbackVi": "求 là mong cầu."
+        },
+        {
+          "id": "c",
+          "text": "野救",
+          "itemId": "ci-k-kyuu-motomeru-tama-sukuu-sukuu",
+          "feedbackVi": "救 là cứu."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "野球: môn chơi bằng quả bóng → 球."
+    },
+    {
+      "id": "cq-k-kyuu-motomeru-tama-sukuu-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-kyuu-motomeru-tama-sukuu-motomeru",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "住民は市に道路の修理を要＿＿＿した。",
+        "furigana": "{住民|じゅうみん}は{市|し}に{道路|どうろ}の{修理|しゅうり}を{要|よう}＿＿＿した。",
+        "translationVi": "Cư dân yêu cầu thành phố sửa đường."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "求",
+          "itemId": "ci-k-kyuu-motomeru-tama-sukuu-motomeru"
+        },
+        {
+          "id": "b",
+          "text": "球",
+          "itemId": "ci-k-kyuu-motomeru-tama-sukuu-tama"
+        },
+        {
+          "id": "c",
+          "text": "救",
+          "itemId": "ci-k-kyuu-motomeru-tama-sukuu-sukuu"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "要求 (yêu cầu) viết với 求."
+    },
+    {
+      "id": "cq-k-kyuu-motomeru-tama-sukuu-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-kyuu-motomeru-tama-sukuu-sukuu",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "山で動けなくなった人を、球助隊が助け出した。",
+        "furigana": "{山|やま}で{動|うご}けなくなった{人|ひと}を、{球助隊|きゅうじょたい}が{助|たす}け{出|だ}した。",
+        "translationVi": "Đội cứu hộ đã cứu những người bị kẹt trên núi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "山で動けなくなった人を、",
+          "furigana": "{山|やま}で{動|うご}けなくなった{人|ひと}を、"
+        },
+        {
+          "id": "b",
+          "text": "球助隊が",
+          "furigana": "{球助隊|きゅうじょたい}が",
+          "itemId": "ci-k-kyuu-motomeru-tama-sukuu-tama"
+        },
+        {
+          "id": "c",
+          "text": "助け出した。",
+          "furigana": "{助|たす}け{出|だ}した。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "救助隊が",
+        "furigana": "{救助隊|きゅうじょたい}が",
+        "itemId": "ci-k-kyuu-motomeru-tama-sukuu-sukuu"
+      },
+      "explanationVi": "救助 (cứu hộ) viết với 救."
+    },
+    {
+      "id": "cq-k-kyuu-motomeru-tama-sukuu-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-kyuu-motomeru-tama-sukuu-motomeru",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn kể rằng đang tìm việc và xem các tin tuyển dụng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "今、求人情報を見ているところです。",
+          "furigana": "{今|いま}、{求人|きゅうじん}{情報|じょうほう}を{見|み}ているところです。",
+          "itemId": "ci-k-kyuu-motomeru-tama-sukuu-motomeru"
+        },
+        {
+          "id": "b",
+          "text": "今、球人情報を見ているところです。",
+          "furigana": "{今|いま}、{球人|きゅうじん}{情報|じょうほう}を{見|み}ているところです。",
+          "itemId": "ci-k-kyuu-motomeru-tama-sukuu-tama",
+          "feedbackVi": "求人 viết với 求, không phải 球."
+        },
+        {
+          "id": "c",
+          "text": "今、救人情報を見ているところです。",
+          "furigana": "{今|いま}、{救人|きゅうじん}{情報|じょうほう}を{見|み}ているところです。",
+          "itemId": "ci-k-kyuu-motomeru-tama-sukuu-sukuu",
+          "feedbackVi": "求人 viết với 求, không phải 救."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "求人 (tuyển người) viết với 求."
+    }
+  ]
+}

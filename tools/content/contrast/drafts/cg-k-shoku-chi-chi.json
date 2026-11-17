@@ -1,0 +1,386 @@
+{
+  "id": "cg-k-shoku-chi-chi",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "植, 値 và 置",
+  "summaryVi": "Ba chữ cùng có phần 直. Bộ thủ quyết định nghĩa: 植 (bộ 木 cây) là trồng; 値 (bộ 亻 người) là giá trị, giá cả; 置 (bộ 罒 lưới ở trên) là đặt, để.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-shoku-chi-chi-ueru",
+      "label": "植",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k0690d",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "植",
+          "onReadings": [
+            "ショク"
+          ],
+          "kunReadings": [
+            "う.える",
+            "う.わる"
+          ],
+          "meaningVi": "Trồng (cây)"
+        },
+        "sourceFingerprint": "sha256:49e660a9a5dbe20fb1b14c99dae28e57521107abd6d0ac98c62a012e829e6855"
+      },
+      "kanji": {
+        "meaningVi": "trồng (cây)",
+        "hanViet": "THỰC",
+        "onReadings": [
+          "ショク"
+        ],
+        "kunReadings": [
+          "う.える",
+          "う.わる"
+        ],
+        "radical": {
+          "character": "木",
+          "nameVi": "Mộc (cây)"
+        },
+        "shapeNoteVi": "木 + 直: cắm cây thẳng xuống đất → trồng. 植える, 植物."
+      }
+    },
+    {
+      "id": "ci-k-shoku-chi-chi-ne",
+      "label": "値",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05024",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "値",
+          "onReadings": [
+            "チ"
+          ],
+          "kunReadings": [
+            "ね",
+            "あたい"
+          ],
+          "meaningVi": "Giá, giá trị"
+        },
+        "sourceFingerprint": "sha256:f5b3d353c46b5625fe5a0486fd47774f244b7c584765fd59503fe23f552120c4"
+      },
+      "kanji": {
+        "meaningVi": "giá, giá trị",
+        "hanViet": "TRỊ",
+        "onReadings": [
+          "チ"
+        ],
+        "kunReadings": [
+          "ね",
+          "あたい"
+        ],
+        "radical": {
+          "character": "亻",
+          "nameVi": "Nhân đứng (người)"
+        },
+        "shapeNoteVi": "亻 + 直: con người định giá cho đúng (直) → giá trị. 値段, 価値, 数値."
+      }
+    },
+    {
+      "id": "ci-k-shoku-chi-chi-oku",
+      "label": "置",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k07f6e",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "置",
+          "onReadings": [
+            "チ"
+          ],
+          "kunReadings": [
+            "お.く",
+            "-お.き"
+          ],
+          "meaningVi": "Đặt, để"
+        },
+        "sourceFingerprint": "sha256:1c6fba6f45667ecfb7c56775dee49af049f73918cd8864b9d5bd3e1310ad104b"
+      },
+      "kanji": {
+        "meaningVi": "đặt, để",
+        "hanViet": "TRÍ",
+        "onReadings": [
+          "チ"
+        ],
+        "kunReadings": [
+          "お.く",
+          "-お.き"
+        ],
+        "radical": {
+          "character": "罒",
+          "nameVi": "Võng (lưới), nằm trên"
+        },
+        "shapeNoteVi": "罒 ở trên + 直: đặt lưới xuống cho thẳng → đặt, để. 置く, 位置, 設置."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-shoku-chi-chi-1",
+      "titleVi": "Bộ thủ là chìa khóa",
+      "bodyVi": "Phần 直 chung, nhìn phần còn lại: 木 bên trái → liên quan cây cối (植); 亻 bên trái → liên quan con người, giá trị (値); 罒 ở trên → đặt, để (置)."
+    },
+    {
+      "id": "ct-k-shoku-chi-chi-2",
+      "titleVi": "Âm đọc",
+      "bodyVi": "植: ショク, う.える (植物, 植える). 値: チ, ね, あたい (価値, 値段). 置: チ, お.く (位置, 置く). 値 và 置 cùng âm チ nên dễ viết nhầm trong 価値 ／ 位置."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ thủ",
+      "values": {
+        "ci-k-shoku-chi-chi-ueru": "木 (cây) bên trái",
+        "ci-k-shoku-chi-chi-ne": "亻 (người) bên trái",
+        "ci-k-shoku-chi-chi-oku": "罒 (lưới) ở trên"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-shoku-chi-chi-ueru": "Trồng",
+        "ci-k-shoku-chi-chi-ne": "Giá, giá trị",
+        "ci-k-shoku-chi-chi-oku": "Đặt, để"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-shoku-chi-chi-ueru": "植物、植える",
+        "ci-k-shoku-chi-chi-ne": "値段、価値、数値",
+        "ci-k-shoku-chi-chi-oku": "位置、置く、設置"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-shoku-chi-chi-1",
+      "itemId": "ci-k-shoku-chi-chi-ueru",
+      "japanese": "庭に桜の木を植えた。",
+      "furigana": "{庭|にわ}に{桜|さくら}の{木|き}を{植|う}えた。",
+      "translationVi": "Tôi đã trồng cây anh đào trong vườn."
+    },
+    {
+      "id": "cx-k-shoku-chi-chi-2",
+      "itemId": "ci-k-shoku-chi-chi-ueru",
+      "japanese": "この植物は水をあまり必要としない。",
+      "furigana": "この{植物|しょくぶつ}は{水|みず}をあまり{必要|ひつよう}としない。",
+      "translationVi": "Loài cây này không cần nhiều nước."
+    },
+    {
+      "id": "cx-k-shoku-chi-chi-3",
+      "itemId": "ci-k-shoku-chi-chi-ne",
+      "japanese": "この店は値段が安くて助かる。",
+      "furigana": "この{店|みせ}は{値段|ねだん}が{安|やす}くて{助|たす}かる。",
+      "translationVi": "Quán này giá rẻ nên đỡ quá."
+    },
+    {
+      "id": "cx-k-shoku-chi-chi-4",
+      "itemId": "ci-k-shoku-chi-chi-ne",
+      "japanese": "この本は読む価値がある。",
+      "furigana": "この{本|ほん}は{読|よ}む{価値|かち}がある。",
+      "translationVi": "Cuốn sách này đáng để đọc."
+    },
+    {
+      "id": "cx-k-shoku-chi-chi-5",
+      "itemId": "ci-k-shoku-chi-chi-oku",
+      "japanese": "鍵は机の上に置いてください。",
+      "furigana": "{鍵|かぎ}は{机|つくえ}の{上|うえ}に{置|お}いてください。",
+      "translationVi": "Hãy để chìa khóa trên bàn."
+    },
+    {
+      "id": "cx-k-shoku-chi-chi-6",
+      "itemId": "ci-k-shoku-chi-chi-oku",
+      "japanese": "地図で駅の位置を確かめた。",
+      "furigana": "{地図|ちず}で{駅|えき}の{位置|いち}を{確|たし}かめた。",
+      "translationVi": "Tôi xem vị trí nhà ga trên bản đồ."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-shoku-chi-chi-1",
+      "textVi": "Cây (木) thì trồng – 植; người (亻) thì định giá – 値; lưới (罒) thì đặt xuống – 置."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-shoku-chi-chi-1",
+      "situationVi": "Viết 'giá cả' (ねだん).",
+      "wrong": {
+        "japanese": "このかばんの植段は高い。",
+        "furigana": "このかばんの{植段|しょくだん}は{高|たか}い。"
+      },
+      "correct": {
+        "japanese": "このかばんの値段は高い。",
+        "furigana": "このかばんの{値段|ねだん}は{高|たか}い。"
+      },
+      "explanationVi": "Giá cả → 値 (bộ 亻).",
+      "expectedItemId": "ci-k-shoku-chi-chi-ne",
+      "confusedWithItemId": "ci-k-shoku-chi-chi-ueru"
+    },
+    {
+      "id": "ce-k-shoku-chi-chi-2",
+      "situationVi": "Viết 'vị trí' (いち).",
+      "wrong": {
+        "japanese": "机の位値を変えた。",
+        "furigana": "{机|つくえ}の{位値|いち}を{変|か}えた。"
+      },
+      "correct": {
+        "japanese": "机の位置を変えた。",
+        "furigana": "{机|つくえ}の{位置|いち}を{変|か}えた。"
+      },
+      "explanationVi": "Vị trí là chỗ đặt → 置.",
+      "expectedItemId": "ci-k-shoku-chi-chi-oku",
+      "confusedWithItemId": "ci-k-shoku-chi-chi-ne"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-shoku-chi-chi-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-shoku-chi-chi-oku",
+      "instructionVi": "Chọn cách viết đúng của いち (vị trí).",
+      "options": [
+        {
+          "id": "a",
+          "text": "位値",
+          "itemId": "ci-k-shoku-chi-chi-ne",
+          "feedbackVi": "値 là giá trị."
+        },
+        {
+          "id": "b",
+          "text": "位置",
+          "itemId": "ci-k-shoku-chi-chi-oku"
+        },
+        {
+          "id": "c",
+          "text": "位植",
+          "itemId": "ci-k-shoku-chi-chi-ueru",
+          "feedbackVi": "植 là trồng cây."
+        }
+      ],
+      "correctOptionId": "b",
+      "explanationVi": "位置: chỗ đặt → 置."
+    },
+    {
+      "id": "cq-k-shoku-chi-chi-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-shoku-chi-chi-ueru",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "春になったら、花の種を＿＿＿えよう。",
+        "furigana": "{春|はる}になったら、{花|はな}の{種|たね}を＿＿＿えよう。",
+        "translationVi": "Sang xuân thì mình gieo hạt hoa nhé."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "植",
+          "itemId": "ci-k-shoku-chi-chi-ueru"
+        },
+        {
+          "id": "b",
+          "text": "値",
+          "itemId": "ci-k-shoku-chi-chi-ne"
+        },
+        {
+          "id": "c",
+          "text": "置",
+          "itemId": "ci-k-shoku-chi-chi-oku"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "植える (trồng) viết với 植 (bộ 木)."
+    },
+    {
+      "id": "cq-k-shoku-chi-chi-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-shoku-chi-chi-ne",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "この意見は考える価置がある。",
+        "furigana": "この{意見|いけん}は{考|かんが}える{価置|かち}がある。",
+        "translationVi": "Ý kiến này đáng để suy nghĩ."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "この意見は",
+          "furigana": "この{意見|いけん}は"
+        },
+        {
+          "id": "b",
+          "text": "考える",
+          "furigana": "{考|かんが}える"
+        },
+        {
+          "id": "c",
+          "text": "価置が",
+          "furigana": "{価置|かち}が",
+          "itemId": "ci-k-shoku-chi-chi-oku"
+        },
+        {
+          "id": "d",
+          "text": "ある。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "価値が",
+        "furigana": "{価値|かち}が",
+        "itemId": "ci-k-shoku-chi-chi-ne"
+      },
+      "explanationVi": "価値 (giá trị) viết với 値."
+    },
+    {
+      "id": "cq-k-shoku-chi-chi-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-shoku-chi-chi-oku",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn dặn em: đừng để cặp sách ở hành lang."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "廊下にかばんを置かないで。",
+          "furigana": "{廊下|ろうか}にかばんを{置|お}かないで。",
+          "itemId": "ci-k-shoku-chi-chi-oku"
+        },
+        {
+          "id": "b",
+          "text": "廊下にかばんを値かないで。",
+          "furigana": "{廊下|ろうか}にかばんを{値|ね}かないで。",
+          "itemId": "ci-k-shoku-chi-chi-ne",
+          "feedbackVi": "'Đặt, để' viết 置く; 値 (giá trị) không có nghĩa này."
+        },
+        {
+          "id": "c",
+          "text": "廊下にかばんを植かないで。",
+          "furigana": "{廊下|ろうか}にかばんを{植|う}かないで。",
+          "itemId": "ci-k-shoku-chi-chi-ueru",
+          "feedbackVi": "植 là trồng; 'đặt, để' viết 置く."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "置く (đặt, để) viết với 置."
+    }
+  ]
+}

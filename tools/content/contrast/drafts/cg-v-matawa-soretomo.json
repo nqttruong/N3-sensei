@@ -1,0 +1,316 @@
+{
+  "id": "cg-v-matawa-soretomo",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "または và それとも",
+  "summaryVi": "Cả hai nghĩa 'hoặc, hay là'. または dùng trong câu trần thuật, thông báo, quy định (A hoặc B đều được); それとも chỉ dùng trong câu hỏi lựa chọn (A hay là B?).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-matawa-soretomo-matawa",
+      "label": "または",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v878",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "または",
+          "reading": "または",
+          "meaningVi": "hoặc"
+        },
+        "sourceFingerprint": "sha256:3400882707552015c8af3b60f84ebb94864b8ae5810cdc44f7660a092fcaf64e"
+      },
+      "vocabulary": {
+        "reading": "または",
+        "meaningVi": "hoặc",
+        "usageVi": "Nêu các lựa chọn trong câu trần thuật, văn bản: 黒または青のペンで書いてください.",
+        "collocations": [
+          {
+            "japanese": "電話またはメール",
+            "furigana": "{電話|でんわ}またはメール",
+            "meaningVi": "điện thoại hoặc email"
+          },
+          {
+            "japanese": "本人または家族",
+            "furigana": "{本人|ほんにん}または{家族|かぞく}",
+            "meaningVi": "bản thân hoặc người nhà"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-matawa-soretomo-soretomo",
+      "label": "それとも",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v879",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "それとも",
+          "reading": "それとも",
+          "meaningVi": "hoặc"
+        },
+        "sourceFingerprint": "sha256:3937835776b257d6401054a9e201893cb7fcb42dd528a6dee7615237ea480e7e"
+      },
+      "vocabulary": {
+        "reading": "それとも",
+        "meaningVi": "hay là",
+        "usageVi": "Đặt giữa hai câu hỏi để người nghe chọn một: コーヒーにしますか。それとも紅茶にしますか.",
+        "collocations": [
+          {
+            "japanese": "行く？それとも行かない？",
+            "furigana": "{行|い}く？それとも{行|い}かない？",
+            "meaningVi": "đi hay không đi?"
+          },
+          {
+            "japanese": "和食？それとも洋食？",
+            "furigana": "{和食|わしょく}？それとも{洋食|ようしょく}？",
+            "meaningVi": "món Nhật hay món Âu?"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-matawa-soretomo-1",
+      "titleVi": "Câu hỏi hay câu trần thuật",
+      "bodyVi": "Câu hỏi bắt người nghe chọn (〜か。それとも〜か) → それとも. Câu thông báo, hướng dẫn, quy định chấp nhận một trong các khả năng → または."
+    },
+    {
+      "id": "ct-v-matawa-soretomo-2",
+      "titleVi": "Vị trí trong câu",
+      "bodyVi": "または nối danh từ hoặc mệnh đề trong cùng một câu (A または B). それとも thường đứng đầu câu hỏi thứ hai, sau một câu hỏi khác (〜ますか。それとも〜ますか)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Loại câu",
+      "values": {
+        "ci-v-matawa-soretomo-matawa": "Trần thuật, thông báo, quy định",
+        "ci-v-matawa-soretomo-soretomo": "Câu hỏi lựa chọn"
+      }
+    },
+    {
+      "aspectVi": "Vị trí",
+      "values": {
+        "ci-v-matawa-soretomo-matawa": "Giữa hai danh từ/mệnh đề",
+        "ci-v-matawa-soretomo-soretomo": "Đầu câu hỏi thứ hai"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ",
+      "values": {
+        "ci-v-matawa-soretomo-matawa": "鉛筆またはボールペンで書くこと",
+        "ci-v-matawa-soretomo-soretomo": "電車で行く？それともバス？"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-matawa-soretomo-1",
+      "itemId": "ci-v-matawa-soretomo-matawa",
+      "japanese": "申込書は郵送、またはメールで送ってください。",
+      "furigana": "{申込書|もうしこみしょ}は{郵送|ゆうそう}、またはメールで{送|おく}ってください。",
+      "translationVi": "Hãy gửi đơn đăng ký qua bưu điện hoặc qua email."
+    },
+    {
+      "id": "cx-v-matawa-soretomo-2",
+      "itemId": "ci-v-matawa-soretomo-matawa",
+      "japanese": "料金は現金またはカードでお支払いいただけます。",
+      "furigana": "{料金|りょうきん}は{現金|げんきん}またはカードでお{支払|しはら}いいただけます。",
+      "translationVi": "Có thể thanh toán bằng tiền mặt hoặc thẻ."
+    },
+    {
+      "id": "cx-v-matawa-soretomo-3",
+      "itemId": "ci-v-matawa-soretomo-soretomo",
+      "japanese": "夏休みは海に行く？それとも山に行く？",
+      "furigana": "{夏休|なつやす}みは{海|うみ}に{行|い}く？それとも{山|やま}に{行|い}く？",
+      "translationVi": "Nghỉ hè đi biển hay là đi núi?"
+    },
+    {
+      "id": "cx-v-matawa-soretomo-4",
+      "itemId": "ci-v-matawa-soretomo-soretomo",
+      "japanese": "ここで食べますか。それとも持ち帰りですか。",
+      "furigana": "ここで{食|た}べますか。それとも{持|も}ち{帰|かえ}りですか。",
+      "translationVi": "Quý khách ăn ở đây hay mang về?"
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-matawa-soretomo-1",
+      "textVi": "それとも chỉ sống trong câu có dấu chấm hỏi; または sống trong biển báo, đơn từ."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-matawa-soretomo-1",
+      "situationVi": "Nhân viên hỏi khách muốn trà hay cà phê.",
+      "wrong": {
+        "japanese": "お飲み物はコーヒーですか。または紅茶ですか。",
+        "furigana": "お{飲|の}み{物|もの}はコーヒーですか。または{紅茶|こうちゃ}ですか。"
+      },
+      "correct": {
+        "japanese": "お飲み物はコーヒーですか。それとも紅茶ですか。",
+        "furigana": "お{飲|の}み{物|もの}はコーヒーですか。それとも{紅茶|こうちゃ}ですか。"
+      },
+      "explanationVi": "Câu hỏi lựa chọn → それとも.",
+      "expectedItemId": "ci-v-matawa-soretomo-soretomo",
+      "confusedWithItemId": "ci-v-matawa-soretomo-matawa"
+    },
+    {
+      "id": "ce-v-matawa-soretomo-2",
+      "situationVi": "Hướng dẫn ghi bằng bút đen hoặc xanh.",
+      "wrong": {
+        "japanese": "黒、それとも青のペンで記入してください。",
+        "furigana": "{黒|くろ}、それとも{青|あお}のペンで{記入|きにゅう}してください。"
+      },
+      "correct": {
+        "japanese": "黒または青のペンで記入してください。",
+        "furigana": "{黒|くろ}または{青|あお}のペンで{記入|きにゅう}してください。"
+      },
+      "explanationVi": "Câu hướng dẫn (không phải câu hỏi) → または.",
+      "expectedItemId": "ci-v-matawa-soretomo-matawa",
+      "confusedWithItemId": "ci-v-matawa-soretomo-soretomo"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-matawa-soretomo-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-matawa-soretomo-matawa",
+      "instructionVi": "Chọn câu đúng (thông báo của trường).",
+      "options": [
+        {
+          "id": "a",
+          "text": "欠席する場合は、電話またはメールで連絡すること。",
+          "furigana": "{欠席|けっせき}する{場合|ばあい}は、{電話|でんわ}またはメールで{連絡|れんらく}すること。",
+          "itemId": "ci-v-matawa-soretomo-matawa"
+        },
+        {
+          "id": "b",
+          "text": "欠席する場合は、電話それともメールで連絡すること。",
+          "furigana": "{欠席|けっせき}する{場合|ばあい}は、{電話|でんわ}それともメールで{連絡|れんらく}すること。",
+          "itemId": "ci-v-matawa-soretomo-soretomo",
+          "feedbackVi": "それとも chỉ dùng trong câu hỏi."
+        },
+        {
+          "id": "c",
+          "text": "欠席する場合は、電話それでメールで連絡すること。",
+          "furigana": "{欠席|けっせき}する{場合|ばあい}は、{電話|でんわ}それでメールで{連絡|れんらく}すること。",
+          "feedbackVi": "それで là 'vì thế', sai nghĩa."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Thông báo, quy định → または."
+    },
+    {
+      "id": "cq-v-matawa-soretomo-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-matawa-soretomo-soretomo",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "今日の夕飯は家で作る？＿＿＿外で食べる？",
+        "furigana": "{今日|きょう}の{夕飯|ゆうはん}は{家|いえ}で{作|つく}る？＿＿＿{外|そと}で{食|た}べる？",
+        "translationVi": "Tối nay mình nấu ở nhà hay là ăn ngoài?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "それとも",
+          "itemId": "ci-v-matawa-soretomo-soretomo"
+        },
+        {
+          "id": "b",
+          "text": "または",
+          "itemId": "ci-v-matawa-soretomo-matawa",
+          "feedbackVi": "または không dùng để nối hai câu hỏi lựa chọn trong hội thoại."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Câu hỏi lựa chọn → それとも."
+    },
+    {
+      "id": "cq-v-matawa-soretomo-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-matawa-soretomo-matawa",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "参加者はパスポートそれとも在留カードを持ってきてください。",
+        "furigana": "{参加者|さんかしゃ}はパスポートそれとも{在留|ざいりゅう}カードを{持|も}ってきてください。",
+        "translationVi": "Người tham gia hãy mang theo hộ chiếu hoặc thẻ cư trú."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "参加者は",
+          "furigana": "{参加者|さんかしゃ}は"
+        },
+        {
+          "id": "b",
+          "text": "パスポート"
+        },
+        {
+          "id": "c",
+          "text": "それとも",
+          "itemId": "ci-v-matawa-soretomo-soretomo"
+        },
+        {
+          "id": "d",
+          "text": "在留カードを持ってきてください。",
+          "furigana": "{在留|ざいりゅう}カードを{持|も}ってきてください。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "または",
+        "itemId": "ci-v-matawa-soretomo-matawa"
+      },
+      "explanationVi": "Câu yêu cầu (không phải câu hỏi) → または."
+    },
+    {
+      "id": "cq-v-matawa-soretomo-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-matawa-soretomo-soretomo",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn hỏi bạn mình muốn xem phim hành động hay phim hoạt hình."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "アクション映画がいい？それともアニメ？",
+          "furigana": "アクション{映画|えいが}がいい？それともアニメ？",
+          "itemId": "ci-v-matawa-soretomo-soretomo"
+        },
+        {
+          "id": "b",
+          "text": "アクション映画がいい？またはアニメ？",
+          "furigana": "アクション{映画|えいが}がいい？またはアニメ？",
+          "itemId": "ci-v-matawa-soretomo-matawa",
+          "feedbackVi": "または không dùng để hỏi lựa chọn trong hội thoại."
+        },
+        {
+          "id": "c",
+          "text": "アクション映画がいい？そこでアニメ？",
+          "furigana": "アクション{映画|えいが}がいい？そこでアニメ？",
+          "feedbackVi": "そこで là 'vì vậy', sai nghĩa."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Câu hỏi lựa chọn → それとも."
+    }
+  ]
+}

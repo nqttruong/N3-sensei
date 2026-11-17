@@ -1,0 +1,321 @@
+{
+  "id": "cg-v-kawaku-dry-thirsty",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "乾く và 渇く",
+  "summaryVi": "Cùng đọc là かわく. 乾く là khô (mất nước: quần áo, đất, không khí), 渇く là khát (cổ họng cần nước, hoặc khao khát).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-kawaku-dry-thirsty-dry",
+      "label": "乾く",
+      "labelFurigana": "{乾|かわ}く",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v137",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "乾く",
+          "reading": "かわく",
+          "meaningVi": "khô"
+        },
+        "sourceFingerprint": "sha256:49181957af8b37a3c15e2d1cf1c12c19aca105c2b7f2299bbc0dfe884f401965"
+      },
+      "vocabulary": {
+        "reading": "かわく",
+        "meaningVi": "khô",
+        "usageVi": "Đồ vật, không khí mất hơi nước: 洗濯物が乾く、空気が乾く.",
+        "collocations": [
+          {
+            "japanese": "洗濯物が乾く",
+            "furigana": "{洗濯物|せんたくもの}が{乾|かわ}く",
+            "meaningVi": "quần áo giặt khô"
+          },
+          {
+            "japanese": "空気が乾く",
+            "furigana": "{空気|くうき}が{乾|かわ}く",
+            "meaningVi": "không khí khô"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-kawaku-dry-thirsty-thirsty",
+      "label": "渇く",
+      "labelFurigana": "{渇|かわ}く",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v121",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "渇く",
+          "reading": "かわく",
+          "meaningVi": "khát"
+        },
+        "sourceFingerprint": "sha256:7a3270aa4004c093fc3ae03da4e65e90c39fe8e8db08420aea5eff45845306a7"
+      },
+      "vocabulary": {
+        "reading": "かわく",
+        "meaningVi": "khát",
+        "usageVi": "Cổ họng cần nước: のどが渇く. Nghĩa bóng: khao khát (愛に渇く).",
+        "collocations": [
+          {
+            "japanese": "のどが渇く",
+            "furigana": "のどが{渇|かわ}く",
+            "meaningVi": "khát nước"
+          },
+          {
+            "japanese": "心が渇く",
+            "furigana": "{心|こころ}が{渇|かわ}く",
+            "meaningVi": "tâm hồn khô khát"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-kawaku-dry-thirsty-1",
+      "titleVi": "Hỏi: cái gì かわく?",
+      "bodyVi": "のど (cổ họng) → 渇く, gần như cố định thành cụm のどが渇く. Quần áo, tóc, đất, sơn, không khí → 乾く."
+    },
+    {
+      "id": "ct-v-kawaku-dry-thirsty-2",
+      "titleVi": "Hình chữ giúp nhớ",
+      "bodyVi": "渇 có bộ thủy 氵 (nước): thiếu nước nên khát. 乾 là 'càn' (乾燥: khô ráo, 乾杯: cạn chén). Tha động từ chỉ có ở 乾く: 乾かす (sấy khô)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-v-kawaku-dry-thirsty-dry": "Khô (mất hơi nước)",
+        "ci-v-kawaku-dry-thirsty-thirsty": "Khát (cần nước)"
+      }
+    },
+    {
+      "aspectVi": "Cụm cố định",
+      "values": {
+        "ci-v-kawaku-dry-thirsty-dry": "洗濯物が乾く、空気が乾く",
+        "ci-v-kawaku-dry-thirsty-thirsty": "のどが渇く"
+      }
+    },
+    {
+      "aspectVi": "Từ liên quan",
+      "values": {
+        "ci-v-kawaku-dry-thirsty-dry": "乾かす、乾燥、乾杯",
+        "ci-v-kawaku-dry-thirsty-thirsty": "渇き (cơn khát)"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-kawaku-dry-thirsty-1",
+      "itemId": "ci-v-kawaku-dry-thirsty-dry",
+      "japanese": "今日は天気がいいから、洗濯物がすぐ乾く。",
+      "furigana": "{今日|きょう}は{天気|てんき}がいいから、{洗濯物|せんたくもの}がすぐ{乾|かわ}く。",
+      "translationVi": "Hôm nay trời đẹp nên quần áo khô ngay."
+    },
+    {
+      "id": "cx-v-kawaku-dry-thirsty-2",
+      "itemId": "ci-v-kawaku-dry-thirsty-dry",
+      "japanese": "冬は空気が乾いているので、肌が荒れやすい。",
+      "furigana": "{冬|ふゆ}は{空気|くうき}が{乾|かわ}いているので、{肌|はだ}が{荒|あ}れやすい。",
+      "translationVi": "Mùa đông không khí khô nên da dễ bị nứt nẻ."
+    },
+    {
+      "id": "cx-v-kawaku-dry-thirsty-3",
+      "itemId": "ci-v-kawaku-dry-thirsty-thirsty",
+      "japanese": "たくさん走ったので、のどが渇いた。",
+      "furigana": "たくさん{走|はし}ったので、のどが{渇|かわ}いた。",
+      "translationVi": "Chạy nhiều nên khát nước."
+    },
+    {
+      "id": "cx-v-kawaku-dry-thirsty-4",
+      "itemId": "ci-v-kawaku-dry-thirsty-thirsty",
+      "japanese": "のどが渇いたら、我慢しないで水を飲んでください。",
+      "furigana": "のどが{渇|かわ}いたら、{我慢|がまん}しないで{水|みず}を{飲|の}んでください。",
+      "translationVi": "Khát thì đừng nhịn, hãy uống nước."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-kawaku-dry-thirsty-1",
+      "textVi": "渇 có 氵 (nước) → khát nước; 乾 → 乾燥 (khô ráo)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-kawaku-dry-thirsty-1",
+      "situationVi": "Nói khát nước sau khi tập thể dục.",
+      "wrong": {
+        "japanese": "運動の後は、のどが乾く。",
+        "furigana": "{運動|うんどう}の{後|あと}は、のどが{乾|かわ}く。"
+      },
+      "correct": {
+        "japanese": "運動の後は、のどが渇く。",
+        "furigana": "{運動|うんどう}の{後|あと}は、のどが{渇|かわ}く。"
+      },
+      "explanationVi": "Khát nước → のどが渇く.",
+      "expectedItemId": "ci-v-kawaku-dry-thirsty-thirsty",
+      "confusedWithItemId": "ci-v-kawaku-dry-thirsty-dry"
+    },
+    {
+      "id": "ce-v-kawaku-dry-thirsty-2",
+      "situationVi": "Nói tóc vẫn chưa khô.",
+      "wrong": {
+        "japanese": "髪がまだ渇いていない。",
+        "furigana": "{髪|かみ}がまだ{渇|かわ}いていない。"
+      },
+      "correct": {
+        "japanese": "髪がまだ乾いていない。",
+        "furigana": "{髪|かみ}がまだ{乾|かわ}いていない。"
+      },
+      "explanationVi": "Tóc mất nước → 乾く.",
+      "expectedItemId": "ci-v-kawaku-dry-thirsty-dry",
+      "confusedWithItemId": "ci-v-kawaku-dry-thirsty-thirsty"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-kawaku-dry-thirsty-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-kawaku-dry-thirsty-thirsty",
+      "instructionVi": "Chọn câu viết đúng: 'Tôi khát nước, muốn uống gì đó lạnh.'",
+      "options": [
+        {
+          "id": "a",
+          "text": "のどが渇いたから、冷たい物が飲みたい。",
+          "furigana": "のどが{渇|かわ}いたから、{冷|つめ}たい{物|もの}が{飲|の}みたい。",
+          "itemId": "ci-v-kawaku-dry-thirsty-thirsty"
+        },
+        {
+          "id": "b",
+          "text": "のどが乾いたから、冷たい物が飲みたい。",
+          "furigana": "のどが{乾|かわ}いたから、{冷|つめ}たい{物|もの}が{飲|の}みたい。",
+          "itemId": "ci-v-kawaku-dry-thirsty-dry",
+          "feedbackVi": "乾く là khô (quần áo, không khí)."
+        },
+        {
+          "id": "c",
+          "text": "のどが乾燥したから、冷たい物が飲みたい。",
+          "furigana": "のどが{乾燥|かんそう}したから、{冷|つめ}たい{物|もの}が{飲|の}みたい。",
+          "feedbackVi": "乾燥 là khô ráo, không diễn tả cảm giác khát."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Khát nước → のどが渇く."
+    },
+    {
+      "id": "cq-v-kawaku-dry-thirsty-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-kawaku-dry-thirsty-dry",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "ペンキが＿＿＿まで、壁に触らないでください。",
+        "furigana": "ペンキが＿＿＿まで、{壁|かべ}に{触|さわ}らないでください。",
+        "translationVi": "Đừng chạm vào tường cho đến khi sơn khô."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "乾く",
+          "furigana": "{乾|かわ}く",
+          "itemId": "ci-v-kawaku-dry-thirsty-dry"
+        },
+        {
+          "id": "b",
+          "text": "渇く",
+          "furigana": "{渇|かわ}く",
+          "itemId": "ci-v-kawaku-dry-thirsty-thirsty"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Sơn khô đi → 乾く."
+    },
+    {
+      "id": "cq-v-kawaku-dry-thirsty-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-kawaku-dry-thirsty-dry",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "雨なので、洗濯物がなかなか渇かない。",
+        "furigana": "{雨|あめ}なので、{洗濯物|せんたくもの}がなかなか{渇|かわ}かない。",
+        "translationVi": "Trời mưa nên quần áo giặt mãi không khô."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "雨なので、",
+          "furigana": "{雨|あめ}なので、"
+        },
+        {
+          "id": "b",
+          "text": "洗濯物が",
+          "furigana": "{洗濯物|せんたくもの}が"
+        },
+        {
+          "id": "c",
+          "text": "なかなか"
+        },
+        {
+          "id": "d",
+          "text": "渇かない。",
+          "furigana": "{渇|かわ}かない。",
+          "itemId": "ci-v-kawaku-dry-thirsty-thirsty"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "乾かない。",
+        "furigana": "{乾|かわ}かない。",
+        "itemId": "ci-v-kawaku-dry-thirsty-dry"
+      },
+      "explanationVi": "Quần áo khô → 乾く."
+    },
+    {
+      "id": "cq-v-kawaku-dry-thirsty-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-kawaku-dry-thirsty-thirsty",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Sau trận bóng dưới nắng, bạn nói với đồng đội là bạn rất khát."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ああ、のどがからからに渇いた。",
+          "furigana": "ああ、のどがからからに{渇|かわ}いた。",
+          "itemId": "ci-v-kawaku-dry-thirsty-thirsty"
+        },
+        {
+          "id": "b",
+          "text": "ああ、のどがからからに乾かした。",
+          "furigana": "ああ、のどがからからに{乾|かわ}かした。",
+          "itemId": "ci-v-kawaku-dry-thirsty-dry",
+          "feedbackVi": "乾かす là làm khô (tha động từ), không dùng cho cảm giác khát."
+        },
+        {
+          "id": "c",
+          "text": "ああ、のどがからからに冷えた。",
+          "furigana": "ああ、のどがからからに{冷|ひ}えた。",
+          "feedbackVi": "冷える là bị lạnh."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Khát khô cổ → のどが渇く."
+    }
+  ]
+}

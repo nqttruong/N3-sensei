@@ -1,0 +1,310 @@
+{
+  "id": "cg-v-sorede-sokode",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "それで và そこで",
+  "summaryVi": "Cả hai nối hai câu theo quan hệ nguyên nhân – kết quả. それで nêu kết quả tự nhiên của sự việc trước (vì thế mà…); そこで nêu hành động có chủ ý được chọn để giải quyết tình huống trước (vì vậy, bèn…).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-sorede-sokode-sorede",
+      "label": "それで",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v874",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "それで",
+          "reading": "それで",
+          "meaningVi": "thế thì"
+        },
+        "sourceFingerprint": "sha256:a72ce19b4500d8c101f1b1a2ae6cd36c0e030f87640f4226c3239fa7161be114"
+      },
+      "vocabulary": {
+        "reading": "それで",
+        "meaningVi": "vì thế, do đó; rồi sao nữa",
+        "usageVi": "Kết quả đương nhiên của việc nói trước, hoặc hỏi tiếp câu chuyện (それで、どうなったの？).",
+        "collocations": [
+          {
+            "japanese": "それで遅れた",
+            "furigana": "それで{遅|おく}れた",
+            "meaningVi": "vì thế nên trễ"
+          },
+          {
+            "japanese": "それで、どうしたの",
+            "meaningVi": "rồi sao, cậu làm gì"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-sorede-sokode-sokode",
+      "label": "そこで",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v875",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "そこで",
+          "reading": "そこで",
+          "meaningVi": "tiếp theo"
+        },
+        "sourceFingerprint": "sha256:b94e04536968e43222e25051ae078778fa44d2345b38097d685b49d35785a866"
+      },
+      "vocabulary": {
+        "reading": "そこで",
+        "meaningVi": "vì vậy (bèn), thế là (quyết định)",
+        "usageVi": "Trước tình huống đó, người ta chủ động làm một việc để đối phó: そこで、〜することにした.",
+        "collocations": [
+          {
+            "japanese": "そこで相談した",
+            "furigana": "そこで{相談|そうだん}した",
+            "meaningVi": "bèn đi hỏi ý kiến"
+          },
+          {
+            "japanese": "そこで提案がある",
+            "furigana": "そこで{提案|ていあん}がある",
+            "meaningVi": "vì vậy tôi có đề xuất"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-sorede-sokode-1",
+      "titleVi": "Kết quả tự nhiên hay giải pháp chủ động",
+      "bodyVi": "Câu sau là kết quả không do ai quyết định (遅れた、風邪をひいた、売り切れた) → それで. Câu sau là hành động có chủ ý để giải quyết vấn đề ở câu trước (〜することにした、〜てみた、提案します) → そこで."
+    },
+    {
+      "id": "ct-v-sorede-sokode-2",
+      "titleVi": "Cách dùng riêng",
+      "bodyVi": "それで còn dùng để giục người kia kể tiếp: それで？ (rồi sao?). そこで không dùng như vậy. Trong văn bản đề xuất hay gặp mẫu: 〜が問題だ。そこで、〜を提案する."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Câu sau",
+      "values": {
+        "ci-v-sorede-sokode-sorede": "Kết quả tự nhiên",
+        "ci-v-sorede-sokode-sokode": "Hành động chủ động để đối phó"
+      }
+    },
+    {
+      "aspectVi": "Dùng hỏi tiếp chuyện",
+      "values": {
+        "ci-v-sorede-sokode-sorede": "Được: それで？",
+        "ci-v-sorede-sokode-sokode": "Không"
+      }
+    },
+    {
+      "aspectVi": "Mẫu hay gặp",
+      "values": {
+        "ci-v-sorede-sokode-sorede": "〜。それで、〜てしまった",
+        "ci-v-sorede-sokode-sokode": "〜。そこで、〜ことにした"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-sorede-sokode-1",
+      "itemId": "ci-v-sorede-sokode-sorede",
+      "japanese": "昨日は雨に濡れた。それで、風邪をひいてしまった。",
+      "furigana": "{昨日|きのう}は{雨|あめ}に{濡|ぬ}れた。それで、{風邪|かぜ}をひいてしまった。",
+      "translationVi": "Hôm qua tôi bị ướt mưa. Vì thế mà bị cảm."
+    },
+    {
+      "id": "cx-v-sorede-sokode-2",
+      "itemId": "ci-v-sorede-sokode-sorede",
+      "japanese": "「財布をなくしちゃって…」「それで、どうしたの？」",
+      "furigana": "「{財布|さいふ}をなくしちゃって…」「それで、どうしたの？」",
+      "translationVi": "— Tớ làm mất ví… — Rồi sao, cậu làm thế nào?"
+    },
+    {
+      "id": "cx-v-sorede-sokode-3",
+      "itemId": "ci-v-sorede-sokode-sokode",
+      "japanese": "一人では仕事が終わらなかった。そこで、同僚に手伝いを頼んだ。",
+      "furigana": "{一人|ひとり}では{仕事|しごと}が{終|お}わらなかった。そこで、{同僚|どうりょう}に{手伝|てつだ}いを{頼|たの}んだ。",
+      "translationVi": "Một mình làm không xong việc. Vì vậy tôi nhờ đồng nghiệp giúp."
+    },
+    {
+      "id": "cx-v-sorede-sokode-4",
+      "itemId": "ci-v-sorede-sokode-sokode",
+      "japanese": "最近、社員の残業が多い。そこで、会社は新しいルールを作った。",
+      "furigana": "{最近|さいきん}、{社員|しゃいん}の{残業|ざんぎょう}が{多|おお}い。そこで、{会社|かいしゃ}は{新|あたら}しいルールを{作|つく}った。",
+      "translationVi": "Gần đây nhân viên làm thêm giờ nhiều. Vì vậy công ty lập quy định mới."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-sorede-sokode-1",
+      "textVi": "それで = 'thế là… (xảy ra)'. そこで = 'ở chỗ đó (そこ), ta bèn…' – một quyết định."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-sorede-sokode-1",
+      "situationVi": "Ngủ quên nên lỡ tàu (kết quả không mong muốn).",
+      "wrong": {
+        "japanese": "寝坊した。そこで、電車に乗り遅れた。",
+        "furigana": "{寝坊|ねぼう}した。そこで、{電車|でんしゃ}に{乗|の}り{遅|おく}れた。"
+      },
+      "correct": {
+        "japanese": "寝坊した。それで、電車に乗り遅れた。",
+        "furigana": "{寝坊|ねぼう}した。それで、{電車|でんしゃ}に{乗|の}り{遅|おく}れた。"
+      },
+      "explanationVi": "Lỡ tàu là kết quả tự nhiên, không phải hành động chủ ý → それで.",
+      "expectedItemId": "ci-v-sorede-sokode-sorede",
+      "confusedWithItemId": "ci-v-sorede-sokode-sokode"
+    },
+    {
+      "id": "ce-v-sorede-sokode-2",
+      "situationVi": "Quên ô nên bị ướt sũng (kết quả không mong muốn).",
+      "wrong": {
+        "japanese": "傘を忘れた。そこで、びしょ濡れになった。",
+        "furigana": "{傘|かさ}を{忘|わす}れた。そこで、びしょ{濡|ぬ}れになった。"
+      },
+      "correct": {
+        "japanese": "傘を忘れた。それで、びしょ濡れになった。",
+        "furigana": "{傘|かさ}を{忘|わす}れた。それで、びしょ{濡|ぬ}れになった。"
+      },
+      "explanationVi": "Bị ướt là kết quả tự nhiên, không ai chủ động chọn → それで. そこで chỉ dùng khi câu sau là hành động có chủ ý.",
+      "expectedItemId": "ci-v-sorede-sokode-sorede",
+      "confusedWithItemId": "ci-v-sorede-sokode-sokode"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-sorede-sokode-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 2,
+      "targetItemId": "ci-v-sorede-sokode-sokode",
+      "instructionVi": "Chọn từ nối phù hợp nhất: 「駅までの道が分からなくなった。___、近くの人に聞いてみることにした。」",
+      "options": [
+        {
+          "id": "a",
+          "text": "そこで",
+          "itemId": "ci-v-sorede-sokode-sokode"
+        },
+        {
+          "id": "b",
+          "text": "それに",
+          "feedbackVi": "それに là 'hơn nữa' (thêm thông tin), không nối vấn đề với giải pháp."
+        },
+        {
+          "id": "c",
+          "text": "それとも",
+          "feedbackVi": "それとも là 'hay là' trong câu hỏi lựa chọn."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Gặp vấn đề → bèn chủ động hỏi người gần đó → そこで."
+    },
+    {
+      "id": "cq-v-sorede-sokode-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-sorede-sokode-sorede",
+      "instructionVi": "Chọn từ nối phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "昨夜は隣の部屋がうるさかった。＿＿＿、よく眠れなかった。",
+        "furigana": "{昨夜|ゆうべ}は{隣|となり}の{部屋|へや}がうるさかった。＿＿＿、よく{眠|ねむ}れなかった。",
+        "translationVi": "Đêm qua phòng bên ồn ào. Vì thế tôi không ngủ ngon."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "それで",
+          "itemId": "ci-v-sorede-sokode-sorede"
+        },
+        {
+          "id": "b",
+          "text": "そこで",
+          "itemId": "ci-v-sorede-sokode-sokode",
+          "feedbackVi": "Không ngủ được là kết quả tự nhiên, không phải hành động chủ ý."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Kết quả tự nhiên → それで."
+    },
+    {
+      "id": "cq-v-sorede-sokode-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-sorede-sokode-sorede",
+      "instructionVi": "Chọn phần sai trong đoạn hội thoại.",
+      "prompt": {
+        "japanese": "「昨日、駅で昔の先生に会ったんだ。」「そこで、どうなったの？」",
+        "furigana": "「{昨日|きのう}、{駅|えき}で{昔|むかし}の{先生|せんせい}に{会|あ}ったんだ。」「そこで、どうなったの？」",
+        "translationVi": "— Hôm qua tớ gặp thầy cũ ở ga. — Rồi sao nữa?"
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "「昨日、駅で",
+          "furigana": "「{昨日|きのう}、{駅|えき}で"
+        },
+        {
+          "id": "b",
+          "text": "昔の先生に会ったんだ。」",
+          "furigana": "{昔|むかし}の{先生|せんせい}に{会|あ}ったんだ。」"
+        },
+        {
+          "id": "c",
+          "text": "「そこで、",
+          "itemId": "ci-v-sorede-sokode-sokode"
+        },
+        {
+          "id": "d",
+          "text": "どうなったの？」"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "「それで、",
+        "itemId": "ci-v-sorede-sokode-sorede"
+      },
+      "explanationVi": "Giục người kia kể tiếp chỉ dùng それで."
+    },
+    {
+      "id": "cq-v-sorede-sokode-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-sorede-sokode-sokode",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn viết báo cáo: khách hàng than phiền thời gian chờ quá lâu, và công ty đã quyết định tăng thêm nhân viên quầy."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "待ち時間が長いという苦情が多かった。そこで、窓口の係員を増やすことにした。",
+          "furigana": "{待|ま}ち{時間|じかん}が{長|なが}いという{苦情|くじょう}が{多|おお}かった。そこで、{窓口|まどぐち}の{係員|かかりいん}を{増|ふ}やすことにした。",
+          "itemId": "ci-v-sorede-sokode-sokode"
+        },
+        {
+          "id": "b",
+          "text": "待ち時間が長いという苦情が多かった。または、窓口の係員を増やすことにした。",
+          "furigana": "{待|ま}ち{時間|じかん}が{長|なが}いという{苦情|くじょう}が{多|おお}かった。または、{窓口|まどぐち}の{係員|かかりいん}を{増|ふ}やすことにした。",
+          "feedbackVi": "または là 'hoặc', không nối nguyên nhân – giải pháp."
+        },
+        {
+          "id": "c",
+          "text": "待ち時間が長いという苦情が多かった。それとも、窓口の係員を増やすことにした。",
+          "furigana": "{待|ま}ち{時間|じかん}が{長|なが}いという{苦情|くじょう}が{多|おお}かった。それとも、{窓口|まどぐち}の{係員|かかりいん}を{増|ふ}やすことにした。",
+          "feedbackVi": "それとも dùng trong câu hỏi lựa chọn."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Vấn đề → giải pháp được quyết định → そこで."
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "id": "cg-k-hirou-suteru",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "拾 và 捨",
+  "summaryVi": "Hai chữ cùng bộ 扌 (tay) và nghĩa đối lập: 拾 là nhặt lên, 捨 là vứt bỏ. Người học hay viết nhầm vì hình dạng giống và luôn đi thành cặp.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-hirou-suteru-hirou",
+      "label": "拾",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k062fe",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "拾",
+          "onReadings": [
+            "シュウ",
+            "ジュウ"
+          ],
+          "kunReadings": [
+            "ひろ.う"
+          ],
+          "meaningVi": "Nhặt"
+        },
+        "sourceFingerprint": "sha256:6748648ccc4221a2c8d5c429069f6a1384ccefa870bdf7e34a35ac9baf894018"
+      },
+      "kanji": {
+        "meaningVi": "nhặt",
+        "hanViet": "THẬP",
+        "onReadings": [
+          "シュウ",
+          "ジュウ"
+        ],
+        "kunReadings": [
+          "ひろ.う"
+        ],
+        "radical": {
+          "character": "扌",
+          "nameVi": "Thủ (tay)"
+        },
+        "shapeNoteVi": "扌 + 合 (hợp): tay gom lại → nhặt. 拾う, 拾得物."
+      }
+    },
+    {
+      "id": "ci-k-hirou-suteru-suteru",
+      "label": "捨",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k06368",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "捨",
+          "onReadings": [
+            "シャ"
+          ],
+          "kunReadings": [
+            "す.てる"
+          ],
+          "meaningVi": "Vứt bỏ"
+        },
+        "sourceFingerprint": "sha256:e96e4b5291627e08dc85f6511929dfb2b4459ca4c9c29f7a90c47af058305cf6"
+      },
+      "kanji": {
+        "meaningVi": "vứt bỏ",
+        "hanViet": "XẢ",
+        "onReadings": [
+          "シャ"
+        ],
+        "kunReadings": [
+          "す.てる"
+        ],
+        "radical": {
+          "character": "扌",
+          "nameVi": "Thủ (tay)"
+        },
+        "shapeNoteVi": "扌 + 舎 (nhà, bỏ lại): tay buông ra → vứt. 捨てる, ゴミを捨てる."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-hirou-suteru-1",
+      "titleVi": "Nhìn phần bên phải",
+      "bodyVi": "拾: bên phải là 合 (nắp đậy lên miệng hộp: gom vào) → nhặt. 捨: bên phải là 舎 (căn nhà: bỏ lại sau lưng) → vứt. 舎 có nhiều nét hơn, có hình mái nhà và chữ 土."
+    },
+    {
+      "id": "ct-k-hirou-suteru-2",
+      "titleVi": "Cách đọc",
+      "bodyVi": "拾: ひろ.う, シュウ (拾得物: đồ nhặt được); cũng là chữ 'mười' trên chứng từ. 捨: す.てる, シャ (取捨選択: chọn lọc)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Phần bên phải",
+      "values": {
+        "ci-k-hirou-suteru-hirou": "合 (hợp)",
+        "ci-k-hirou-suteru-suteru": "舎 (nhà)"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-hirou-suteru-hirou": "Nhặt lên",
+        "ci-k-hirou-suteru-suteru": "Vứt bỏ"
+      }
+    },
+    {
+      "aspectVi": "Động từ",
+      "values": {
+        "ci-k-hirou-suteru-hirou": "拾う",
+        "ci-k-hirou-suteru-suteru": "捨てる"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-hirou-suteru-1",
+      "itemId": "ci-k-hirou-suteru-hirou",
+      "japanese": "道で財布を拾って、交番に届けた。",
+      "furigana": "{道|みち}で{財布|さいふ}を{拾|ひろ}って、{交番|こうばん}に{届|とど}けた。",
+      "translationVi": "Tôi nhặt được ví trên đường và nộp cho đồn cảnh sát."
+    },
+    {
+      "id": "cx-k-hirou-suteru-2",
+      "itemId": "ci-k-hirou-suteru-hirou",
+      "japanese": "子供たちが公園のゴミを拾っている。",
+      "furigana": "{子供|こども}たちが{公園|こうえん}のゴミを{拾|ひろ}っている。",
+      "translationVi": "Bọn trẻ đang nhặt rác trong công viên."
+    },
+    {
+      "id": "cx-k-hirou-suteru-3",
+      "itemId": "ci-k-hirou-suteru-suteru",
+      "japanese": "ゴミは決められた日に捨ててください。",
+      "furigana": "ゴミは{決|き}められた{日|ひ}に{捨|す}ててください。",
+      "translationVi": "Hãy vứt rác vào ngày quy định."
+    },
+    {
+      "id": "cx-k-hirou-suteru-4",
+      "itemId": "ci-k-hirou-suteru-suteru",
+      "japanese": "古い服を捨てて、部屋を片付けた。",
+      "furigana": "{古|ふる}い{服|ふく}を{捨|す}てて、{部屋|へや}を{片付|かたづ}けた。",
+      "translationVi": "Tôi vứt quần áo cũ và dọn phòng."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-hirou-suteru-1",
+      "textVi": "拾: 合 = gom lại (nhặt). 捨: 舎 = bỏ lại nhà (vứt)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-hirou-suteru-1",
+      "situationVi": "Viết 'vứt rác'.",
+      "wrong": {
+        "japanese": "ここにゴミを拾てないでください。",
+        "furigana": "ここにゴミを{拾|ひろ}てないでください。"
+      },
+      "correct": {
+        "japanese": "ここにゴミを捨てないでください。",
+        "furigana": "ここにゴミを{捨|す}てないでください。"
+      },
+      "explanationVi": "Vứt → 捨てる. (拾 đọc ひろ, chữ viết sai làm câu đọc thành ひろてない vô nghĩa.)",
+      "expectedItemId": "ci-k-hirou-suteru-suteru",
+      "confusedWithItemId": "ci-k-hirou-suteru-hirou"
+    },
+    {
+      "id": "ce-k-hirou-suteru-2",
+      "situationVi": "Viết 'nhặt lá rụng'.",
+      "wrong": {
+        "japanese": "庭の落ち葉を捨った。",
+        "furigana": "{庭|にわ}の{落|お}ち{葉|ば}を{捨|す}った。"
+      },
+      "correct": {
+        "japanese": "庭の落ち葉を拾った。",
+        "furigana": "{庭|にわ}の{落|お}ち{葉|ば}を{拾|ひろ}った。"
+      },
+      "explanationVi": "Nhặt → 拾う.",
+      "expectedItemId": "ci-k-hirou-suteru-hirou",
+      "confusedWithItemId": "ci-k-hirou-suteru-suteru"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-hirou-suteru-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-hirou-suteru-suteru",
+      "instructionVi": "Chọn chữ có nghĩa 'vứt bỏ'.",
+      "options": [
+        {
+          "id": "a",
+          "text": "捨",
+          "itemId": "ci-k-hirou-suteru-suteru"
+        },
+        {
+          "id": "b",
+          "text": "拾",
+          "itemId": "ci-k-hirou-suteru-hirou",
+          "feedbackVi": "拾 là nhặt."
+        },
+        {
+          "id": "c",
+          "text": "給",
+          "feedbackVi": "給 là cấp, lương."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "捨 (bên phải 舎) là vứt bỏ."
+    },
+    {
+      "id": "cq-k-hirou-suteru-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-hirou-suteru-hirou",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "落とした消しゴムを友達が＿＿＿ってくれた。",
+        "furigana": "{落|お}とした{消|け}しゴムを{友達|ともだち}が＿＿＿ってくれた。",
+        "translationVi": "Bạn tôi nhặt giúp cục tẩy tôi đánh rơi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "拾",
+          "itemId": "ci-k-hirou-suteru-hirou"
+        },
+        {
+          "id": "b",
+          "text": "捨",
+          "itemId": "ci-k-hirou-suteru-suteru"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "拾う (nhặt) viết với 拾."
+    },
+    {
+      "id": "cq-k-hirou-suteru-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-hirou-suteru-suteru",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "ペットボトルをここに拾ててはいけません。",
+        "furigana": "ペットボトルをここに{拾|ひろ}ててはいけません。",
+        "translationVi": "Không được vứt chai nhựa ở đây."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ペットボトルを"
+        },
+        {
+          "id": "b",
+          "text": "ここに"
+        },
+        {
+          "id": "c",
+          "text": "拾ててはいけません。",
+          "furigana": "{拾|ひろ}ててはいけません。",
+          "itemId": "ci-k-hirou-suteru-hirou"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "捨ててはいけません。",
+        "furigana": "{捨|す}ててはいけません。",
+        "itemId": "ci-k-hirou-suteru-suteru"
+      },
+      "explanationVi": "Vứt → 捨てる."
+    },
+    {
+      "id": "cq-k-hirou-suteru-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-hirou-suteru-hirou",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn kể rằng đã nhặt được một chú mèo con bị bỏ rơi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "捨てられていた子猫を拾った。",
+          "furigana": "{捨|す}てられていた{子猫|こねこ}を{拾|ひろ}った。",
+          "itemId": "ci-k-hirou-suteru-hirou"
+        },
+        {
+          "id": "b",
+          "text": "拾われていた子猫を捨った。",
+          "furigana": "{拾|ひろ}われていた{子猫|こねこ}を{捨|す}った。",
+          "itemId": "ci-k-hirou-suteru-suteru",
+          "feedbackVi": "Câu đảo ngược nghĩa và 捨った là sai cách chia (捨てる → 捨てた)."
+        },
+        {
+          "id": "c",
+          "text": "捨てられていた子猫を捨てた。",
+          "furigana": "{捨|す}てられていた{子猫|こねこ}を{捨|す}てた。",
+          "feedbackVi": "Nghĩa là 'vứt bỏ con mèo bị bỏ rơi', trái tình huống."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Nhặt con mèo bị bỏ rơi (捨てられていた) → 拾った."
+    }
+  ]
+}

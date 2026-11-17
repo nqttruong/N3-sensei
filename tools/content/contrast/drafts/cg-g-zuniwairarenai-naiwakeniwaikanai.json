@@ -1,0 +1,294 @@
+{
+  "id": "cg-g-zuniwairarenai-naiwakeniwaikanai",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜ずにはいられない và 〜ないわけにはいかない",
+  "summaryVi": "Cả hai dịch là 'không thể không…', nhưng ずにはいられない là không kìm được cảm xúc, phản ứng tự nhiên; ないわけにはいかない là buộc phải làm vì nghĩa vụ, hoàn cảnh xã hội.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa",
+      "label": "〜ずにはいられない",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g143",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜ずにはいられない",
+          "structure": "Vない → ずにはいられない",
+          "meaningVi": "không thể không…"
+        },
+        "sourceFingerprint": "sha256:7aeb02845f1d50f1dfd75cdb2721c5322a8c114231a8bb3fe42d282905129295"
+      },
+      "grammar": {
+        "meaningVi": "Không thể không…, không kìm được mà…",
+        "connection": "Vない（bỏ ない） ＋ ずにはいられない（する → せずにはいられない）",
+        "nuanceVi": "Cảm xúc hay phản ứng tự nhiên trào ra, người nói không kìm nén được: 笑わずにはいられない、泣かずにはいられない、心配せずにはいられない."
+      }
+    },
+    {
+      "id": "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake",
+      "label": "〜ないわけにはいかない",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g085",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜ないわけにはいかない",
+          "structure": "Vない ＋ わけにはいかない",
+          "meaningVi": "không thể không…, buộc phải…"
+        },
+        "sourceFingerprint": "sha256:9c1440362e51828666376a593041ceed4c9740139bd92f677e28c6ad16afb28c"
+      },
+      "grammar": {
+        "meaningVi": "Không thể không…, buộc phải…",
+        "connection": "Vない ＋ わけにはいかない",
+        "nuanceVi": "Dù không muốn, người nói vẫn phải làm vì trách nhiệm, lễ nghĩa, hoàn cảnh: 行かないわけにはいかない、払わないわけにはいかない."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-zuniwairarenai-naiwakeniwaikanai-1",
+      "titleVi": "Cảm xúc hay nghĩa vụ",
+      "bodyVi": "Lý do đến từ bên trong (buồn cười quá, cảm động quá, lo quá) → ずにはいられない. Lý do đến từ bên ngoài (là tiệc cưới của sếp, đã hứa, là quy định) → ないわけにはいかない."
+    },
+    {
+      "id": "ct-g-zuniwairarenai-naiwakeniwaikanai-2",
+      "titleVi": "Cách nối dễ sai",
+      "bodyVi": "ずにはいられない: bỏ ない rồi thêm ず (笑わない → 笑わず); する → せず (không phải しず). ないわけにはいかない: giữ nguyên Vない (行かない + わけにはいかない)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nguồn gốc",
+      "values": {
+        "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa": "Cảm xúc, phản ứng tự nhiên",
+        "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake": "Nghĩa vụ, hoàn cảnh xã hội"
+      }
+    },
+    {
+      "aspectVi": "Người nói có muốn không",
+      "values": {
+        "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa": "Tự nhiên muốn, không nhịn được",
+        "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake": "Thường không muốn nhưng phải làm"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ",
+      "values": {
+        "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa": "あまりにおかしくて笑わずにはいられない",
+        "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake": "上司の結婚式なので行かないわけにはいかない"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-zuniwairarenai-naiwakeniwaikanai-1",
+      "itemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa",
+      "japanese": "その映画は悲しくて、泣かずにはいられなかった。",
+      "furigana": "その{映画|えいが}は{悲|かな}しくて、{泣|な}かずにはいられなかった。",
+      "translationVi": "Bộ phim buồn đến mức tôi không kìm được nước mắt."
+    },
+    {
+      "id": "cx-g-zuniwairarenai-naiwakeniwaikanai-2",
+      "itemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa",
+      "japanese": "子供の帰りが遅いと、心配せずにはいられない。",
+      "furigana": "{子供|こども}の{帰|かえ}りが{遅|おそ}いと、{心配|しんぱい}せずにはいられない。",
+      "translationVi": "Con về muộn là tôi không thể không lo."
+    },
+    {
+      "id": "cx-g-zuniwairarenai-naiwakeniwaikanai-3",
+      "itemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake",
+      "japanese": "部長に誘われたので、飲み会に行かないわけにはいかない。",
+      "furigana": "{部長|ぶちょう}に{誘|さそ}われたので、{飲|の}み{会|かい}に{行|い}かないわけにはいかない。",
+      "translationVi": "Được trưởng phòng mời nên tôi không thể không đi nhậu."
+    },
+    {
+      "id": "cx-g-zuniwairarenai-naiwakeniwaikanai-4",
+      "itemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake",
+      "japanese": "明日は試験だから、今夜は勉強しないわけにはいかない。",
+      "furigana": "{明日|あした}は{試験|しけん}だから、{今夜|こんや}は{勉強|べんきょう}しないわけにはいかない。",
+      "translationVi": "Mai thi rồi nên tối nay buộc phải học."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-zuniwairarenai-naiwakeniwaikanai-1",
+      "textVi": "ずにはいられない: 'lòng không yên' (いられない = không ngồi yên được). ないわけにはいかない: 'lý lẽ không cho phép' (わけ = lý do)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-zuniwairarenai-naiwakeniwaikanai-1",
+      "situationVi": "Kể rằng bộ phim hài quá nên không nhịn được cười.",
+      "wrong": {
+        "japanese": "あまりにおかしくて、笑わないわけにはいかなかった。",
+        "furigana": "あまりにおかしくて、{笑|わら}わないわけにはいかなかった。"
+      },
+      "correct": {
+        "japanese": "あまりにおかしくて、笑わずにはいられなかった。",
+        "furigana": "あまりにおかしくて、{笑|わら}わずにはいられなかった。"
+      },
+      "explanationVi": "Cười vì buồn cười là phản ứng tự nhiên → ずにはいられない. ないわけにはいかない nghe như bị bắt phải cười.",
+      "expectedItemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa",
+      "confusedWithItemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake"
+    },
+    {
+      "id": "ce-g-zuniwairarenai-naiwakeniwaikanai-2",
+      "situationVi": "Phải dự đám cưới của đồng nghiệp thân dù bận.",
+      "wrong": {
+        "japanese": "忙しいが、同僚の結婚式だから出席せずにはいられない。",
+        "furigana": "{忙|いそが}しいが、{同僚|どうりょう}の{結婚式|けっこんしき}だから{出席|しゅっせき}せずにはいられない。"
+      },
+      "correct": {
+        "japanese": "忙しいが、同僚の結婚式だから出席しないわけにはいかない。",
+        "furigana": "{忙|いそが}しいが、{同僚|どうりょう}の{結婚式|けっこんしき}だから{出席|しゅっせき}しないわけにはいかない。"
+      },
+      "explanationVi": "Lý do là quan hệ xã hội (đám cưới đồng nghiệp), không phải cảm xúc → ないわけにはいかない.",
+      "expectedItemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake",
+      "confusedWithItemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-zuniwairarenai-naiwakeniwaikanai-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa",
+      "instructionVi": "Câu nào diễn tả cảm xúc không kìm được?",
+      "options": [
+        {
+          "id": "a",
+          "text": "彼の話を聞いて、感動せずにはいられなかった。",
+          "furigana": "{彼|かれ}の{話|はなし}を{聞|き}いて、{感動|かんどう}せずにはいられなかった。",
+          "itemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa"
+        },
+        {
+          "id": "b",
+          "text": "彼の話を聞いて、感動しないわけにはいかなかった。",
+          "furigana": "{彼|かれ}の{話|はなし}を{聞|き}いて、{感動|かんどう}しないわけにはいかなかった。",
+          "itemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake",
+          "feedbackVi": "ないわけにはいかない là bị buộc phải làm, không hợp với cảm xúc tự nhiên."
+        },
+        {
+          "id": "c",
+          "text": "彼の話を聞いて、感動しずにはいられなかった。",
+          "furigana": "{彼|かれ}の{話|はなし}を{聞|き}いて、{感動|かんどう}しずにはいられなかった。",
+          "feedbackVi": "Sai cách chia: する → せず, không phải しず."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Cảm động trào ra tự nhiên → せずにはいられない."
+    },
+    {
+      "id": "cq-g-zuniwairarenai-naiwakeniwaikanai-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake",
+      "instructionVi": "Chọn cách nói phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "自分で引き受けた仕事だから、最後までやら＿＿＿。",
+        "furigana": "{自分|じぶん}で{引|ひ}き{受|う}けた{仕事|しごと}だから、{最後|さいご}までやら＿＿＿。",
+        "translationVi": "Vì là việc tự mình nhận nên không thể không làm đến cùng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "ないわけにはいかない",
+          "itemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake"
+        },
+        {
+          "id": "b",
+          "text": "ずにはいられない",
+          "itemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa",
+          "feedbackVi": "Lý do là trách nhiệm đã nhận, không phải cảm xúc không kìm được."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Trách nhiệm với việc đã nhận → やらないわけにはいかない."
+    },
+    {
+      "id": "cq-g-zuniwairarenai-naiwakeniwaikanai-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "雨に濡れた捨て猫を見て、助けないわけにはいられなかった。",
+        "furigana": "{雨|あめ}に{濡|ぬ}れた{捨|す}て{猫|ねこ}を{見|み}て、{助|たす}けないわけにはいられなかった。",
+        "translationVi": "Thấy con mèo bị bỏ rơi ướt mưa, tôi không thể không giúp."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "雨に濡れた",
+          "furigana": "{雨|あめ}に{濡|ぬ}れた"
+        },
+        {
+          "id": "b",
+          "text": "捨て猫を見て、",
+          "furigana": "{捨|す}て{猫|ねこ}を{見|み}て、"
+        },
+        {
+          "id": "c",
+          "text": "助けないわけには",
+          "furigana": "{助|たす}けないわけには",
+          "itemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake"
+        },
+        {
+          "id": "d",
+          "text": "いられなかった。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "助けずには",
+        "furigana": "{助|たす}けずには",
+        "itemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa"
+      },
+      "explanationVi": "Đi với いられない phải là Vず + には: 助けずにはいられない (thương xót, không kìm được)."
+    },
+    {
+      "id": "cq-g-zuniwairarenai-naiwakeniwaikanai-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn không thích đám đông, nhưng là trưởng ban tổ chức nên phải có mặt ở lễ hội của trường."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "実行委員長だから、学園祭に行かないわけにはいかない。",
+          "furigana": "{実行|じっこう}{委員長|いいんちょう}だから、{学園祭|がくえんさい}に{行|い}かないわけにはいかない。",
+          "itemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-naiwake"
+        },
+        {
+          "id": "b",
+          "text": "実行委員長だから、学園祭に行かずにはいられない。",
+          "furigana": "{実行|じっこう}{委員長|いいんちょう}だから、{学園祭|がくえんさい}に{行|い}かずにはいられない。",
+          "itemId": "ci-g-zuniwairarenai-naiwakeniwaikanai-zuniwa",
+          "feedbackVi": "ずにはいられない nghe như bạn rất háo hức muốn đi, trái với tình huống."
+        },
+        {
+          "id": "c",
+          "text": "実行委員長だから、学園祭に行くわけがない。",
+          "furigana": "{実行|じっこう}{委員長|いいんちょう}だから、{学園祭|がくえんさい}に{行|い}くわけがない。",
+          "feedbackVi": "わけがない là 'không đời nào đi', sai nghĩa."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Nghĩa vụ của trưởng ban, dù không thích → ないわけにはいかない."
+    }
+  ]
+}

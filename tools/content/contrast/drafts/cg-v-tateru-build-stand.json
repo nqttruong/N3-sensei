@@ -1,0 +1,322 @@
+{
+  "id": "cg-v-tateru-build-stand",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "建てる và 立てる",
+  "summaryVi": "Cùng đọc là たてる. 建てる là xây (nhà, tòa nhà, công trình), 立てる là dựng đứng (cột, cờ), và nghĩa trừu tượng: lập (kế hoạch, mục tiêu), gây (tiếng ồn).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-tateru-build-stand-build",
+      "label": "建てる",
+      "labelFurigana": "{建|た}てる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v477",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "建てる",
+          "reading": "たてる",
+          "meaningVi": "xây"
+        },
+        "sourceFingerprint": "sha256:d75c1221f80922afbff423d36d8138d2a7e8b7fb0f476ab02b71a3a2ba4f6e06"
+      },
+      "vocabulary": {
+        "reading": "たてる",
+        "meaningVi": "xây, xây dựng",
+        "usageVi": "Dựng công trình kiến trúc: 家を建てる、ビルを建てる.",
+        "collocations": [
+          {
+            "japanese": "家を建てる",
+            "furigana": "{家|いえ}を{建|た}てる",
+            "meaningVi": "xây nhà"
+          },
+          {
+            "japanese": "記念碑を建てる",
+            "furigana": "{記念碑|きねんひ}を{建|た}てる",
+            "meaningVi": "dựng bia kỷ niệm"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-tateru-build-stand-stand",
+      "label": "立てる",
+      "labelFurigana": "{立|た}てる",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v475",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "立てる",
+          "reading": "たてる",
+          "meaningVi": "dựng lên"
+        },
+        "sourceFingerprint": "sha256:ca280b02cf548e14ce835520f0dc0d51a45b4fda776d97402467276573b330ec"
+      },
+      "vocabulary": {
+        "reading": "たてる",
+        "meaningVi": "dựng lên; lập (kế hoạch)",
+        "usageVi": "Làm cho đứng thẳng; lập ra: 旗を立てる、計画を立てる、音を立てる.",
+        "collocations": [
+          {
+            "japanese": "計画を立てる",
+            "furigana": "{計画|けいかく}を{立|た}てる",
+            "meaningVi": "lập kế hoạch"
+          },
+          {
+            "japanese": "音を立てる",
+            "furigana": "{音|おと}を{立|た}てる",
+            "meaningVi": "gây tiếng động"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-tateru-build-stand-1",
+      "titleVi": "Công trình hay mọi thứ khác",
+      "bodyVi": "Chỉ khi xây công trình (家、ビル、寺、学校、橋の塔) → 建てる (建 trong 建物, 建設). Cột, cờ, biển, que (dựng đứng) và nghĩa trừu tượng (計画、目標、予定、音、腹) → 立てる."
+    },
+    {
+      "id": "ct-v-tateru-build-stand-2",
+      "titleVi": "Tự động từ",
+      "bodyVi": "建てる ↔ 建つ (家が建つ: nhà được xây lên). 立てる ↔ 立つ (旗が立つ, 計画が立つ). Quy tắc chọn chữ giống nhau."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-v-tateru-build-stand-build": "Xây công trình",
+        "ci-v-tateru-build-stand-stand": "Dựng đứng; lập (kế hoạch, mục tiêu)"
+      }
+    },
+    {
+      "aspectVi": "Tân ngữ hay gặp",
+      "values": {
+        "ci-v-tateru-build-stand-build": "家、ビル、学校、寺",
+        "ci-v-tateru-build-stand-stand": "旗、看板、計画、目標、音"
+      }
+    },
+    {
+      "aspectVi": "Từ Hán liên quan",
+      "values": {
+        "ci-v-tateru-build-stand-build": "建物、建設、建築",
+        "ci-v-tateru-build-stand-stand": "立派、設立、独立"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-tateru-build-stand-1",
+      "itemId": "ci-v-tateru-build-stand-build",
+      "japanese": "父は三十年前にこの家を建てた。",
+      "furigana": "{父|ちち}は{三十年前|さんじゅうねんまえ}にこの{家|いえ}を{建|た}てた。",
+      "translationVi": "Bố tôi xây ngôi nhà này ba mươi năm trước."
+    },
+    {
+      "id": "cx-v-tateru-build-stand-2",
+      "itemId": "ci-v-tateru-build-stand-build",
+      "japanese": "駅前に新しいホテルが建てられる予定だ。",
+      "furigana": "{駅前|えきまえ}に{新|あたら}しいホテルが{建|た}てられる{予定|よてい}だ。",
+      "translationVi": "Trước ga dự kiến sẽ xây một khách sạn mới."
+    },
+    {
+      "id": "cx-v-tateru-build-stand-3",
+      "itemId": "ci-v-tateru-build-stand-stand",
+      "japanese": "夏休みの旅行の計画を立てた。",
+      "furigana": "{夏休|なつやす}みの{旅行|りょこう}の{計画|けいかく}を{立|た}てた。",
+      "translationVi": "Tôi đã lập kế hoạch du lịch nghỉ hè."
+    },
+    {
+      "id": "cx-v-tateru-build-stand-4",
+      "itemId": "ci-v-tateru-build-stand-stand",
+      "japanese": "夜は大きな音を立てないでください。",
+      "furigana": "{夜|よる}は{大|おお}きな{音|おと}を{立|た}てないでください。",
+      "translationVi": "Ban đêm xin đừng gây tiếng động lớn."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-tateru-build-stand-1",
+      "textVi": "建 → 建物 (tòa nhà): chỉ dùng cho công trình. Còn lại (cờ, kế hoạch, tiếng động) → 立."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-tateru-build-stand-1",
+      "situationVi": "Viết 'lập mục tiêu'.",
+      "wrong": {
+        "japanese": "今年の目標を建てた。",
+        "furigana": "{今年|ことし}の{目標|もくひょう}を{建|た}てた。"
+      },
+      "correct": {
+        "japanese": "今年の目標を立てた。",
+        "furigana": "{今年|ことし}の{目標|もくひょう}を{立|た}てた。"
+      },
+      "explanationVi": "Lập mục tiêu (nghĩa trừu tượng) → 立てる.",
+      "expectedItemId": "ci-v-tateru-build-stand-stand",
+      "confusedWithItemId": "ci-v-tateru-build-stand-build"
+    },
+    {
+      "id": "ce-v-tateru-build-stand-2",
+      "situationVi": "Viết 'xây trường học'.",
+      "wrong": {
+        "japanese": "村に新しい小学校を立てた。",
+        "furigana": "{村|むら}に{新|あたら}しい{小学校|しょうがっこう}を{立|た}てた。"
+      },
+      "correct": {
+        "japanese": "村に新しい小学校を建てた。",
+        "furigana": "{村|むら}に{新|あたら}しい{小学校|しょうがっこう}を{建|た}てた。"
+      },
+      "explanationVi": "Xây công trình → 建てる.",
+      "expectedItemId": "ci-v-tateru-build-stand-build",
+      "confusedWithItemId": "ci-v-tateru-build-stand-stand"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-tateru-build-stand-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-tateru-build-stand-stand",
+      "instructionVi": "Chọn câu viết đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "試験に向けて、勉強の予定を立てた。",
+          "furigana": "{試験|しけん}に{向|む}けて、{勉強|べんきょう}の{予定|よてい}を{立|た}てた。",
+          "itemId": "ci-v-tateru-build-stand-stand"
+        },
+        {
+          "id": "b",
+          "text": "試験に向けて、勉強の予定を建てた。",
+          "furigana": "{試験|しけん}に{向|む}けて、{勉強|べんきょう}の{予定|よてい}を{建|た}てた。",
+          "itemId": "ci-v-tateru-build-stand-build",
+          "feedbackVi": "建てる chỉ dùng cho công trình kiến trúc."
+        },
+        {
+          "id": "c",
+          "text": "試験に向けて、勉強の予定を作られた。",
+          "furigana": "{試験|しけん}に{向|む}けて、{勉強|べんきょう}の{予定|よてい}を{作|つく}られた。",
+          "feedbackVi": "作られた là bị động, không hợp chủ ngữ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Lập kế hoạch học → 予定を立てる."
+    },
+    {
+      "id": "cq-v-tateru-build-stand-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-tateru-build-stand-build",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "いつか海の見える場所に家を＿＿＿たい。",
+        "furigana": "いつか{海|うみ}の{見|み}える{場所|ばしょ}に{家|いえ}を＿＿＿たい。",
+        "translationVi": "Một ngày nào đó tôi muốn xây nhà ở nơi nhìn ra biển."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "建て",
+          "furigana": "{建|た}て",
+          "itemId": "ci-v-tateru-build-stand-build"
+        },
+        {
+          "id": "b",
+          "text": "立て",
+          "furigana": "{立|た}て",
+          "itemId": "ci-v-tateru-build-stand-stand"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Xây nhà → 建てる."
+    },
+    {
+      "id": "cq-v-tateru-build-stand-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-tateru-build-stand-stand",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "彼らは山の頂上に旗を建てた。",
+        "furigana": "{彼|かれ}らは{山|やま}の{頂上|ちょうじょう}に{旗|はた}を{建|た}てた。",
+        "translationVi": "Họ cắm cờ trên đỉnh núi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "彼らは",
+          "furigana": "{彼|かれ}らは"
+        },
+        {
+          "id": "b",
+          "text": "山の頂上に",
+          "furigana": "{山|やま}の{頂上|ちょうじょう}に"
+        },
+        {
+          "id": "c",
+          "text": "旗を",
+          "furigana": "{旗|はた}を"
+        },
+        {
+          "id": "d",
+          "text": "建てた。",
+          "furigana": "{建|た}てた。",
+          "itemId": "ci-v-tateru-build-stand-build"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "立てた。",
+        "furigana": "{立|た}てた。",
+        "itemId": "ci-v-tateru-build-stand-stand"
+      },
+      "explanationVi": "Dựng đứng lá cờ → 立てる."
+    },
+    {
+      "id": "cq-v-tateru-build-stand-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-tateru-build-stand-build",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn kể rằng thành phố sẽ xây một sân vận động mới cạnh sông."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "川のそばに新しいスタジアムを建てるそうだ。",
+          "furigana": "{川|かわ}のそばに{新|あたら}しいスタジアムを{建|た}てるそうだ。",
+          "itemId": "ci-v-tateru-build-stand-build"
+        },
+        {
+          "id": "b",
+          "text": "川のそばに新しいスタジアムを立てるそうだ。",
+          "furigana": "{川|かわ}のそばに{新|あたら}しいスタジアムを{立|た}てるそうだ。",
+          "itemId": "ci-v-tateru-build-stand-stand",
+          "feedbackVi": "Sân vận động là công trình → 建てる."
+        },
+        {
+          "id": "c",
+          "text": "川のそばに新しいスタジアムが建てるそうだ。",
+          "furigana": "{川|かわ}のそばに{新|あたら}しいスタジアムが{建|た}てるそうだ。",
+          "feedbackVi": "建てる là tha động từ, cần を (hoặc dùng 建つ với が)."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Xây công trình → 建てる."
+    }
+  ]
+}

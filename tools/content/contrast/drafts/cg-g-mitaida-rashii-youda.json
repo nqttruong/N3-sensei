@@ -1,0 +1,336 @@
+{
+  "id": "cg-g-mitaida-rashii-youda",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜みたいだ, 〜らしい và 〜ようだ",
+  "summaryVi": "Ba cách nói 'hình như, có vẻ'. ようだ là cách nói trang trọng, みたいだ là văn nói; らしい thường dựa vào thông tin nghe được và còn có nghĩa 'đúng chất…'. Cách nối với danh từ cũng khác nhau.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-mitaida-rashii-youda-mitai",
+      "label": "〜みたいだ",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g005",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜みたいだ",
+          "structure": "N／Vthường／Aい／Aな（bỏ な） ＋ みたいだ",
+          "meaningVi": "hình như…, giống như…"
+        },
+        "sourceFingerprint": "sha256:cdf72ddfea11ac0dcc3321e72d445fd7e2be6b4f0c524ff44fb8eef4ac51dca2"
+      },
+      "grammar": {
+        "meaningVi": "Hình như…, giống như… (văn nói)",
+        "connection": "N／V thể thường／Aい／Aな（bỏ な） ＋ みたいだ",
+        "nuanceVi": "Phán đoán dựa trên điều chính mình thấy, nghe, cảm nhận; hoặc so sánh 'giống như'. Thân mật, dùng trong hội thoại. Nối thẳng với danh từ: 子供みたい."
+      }
+    },
+    {
+      "id": "ci-g-mitaida-rashii-youda-rashii",
+      "label": "〜らしい",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g006",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜らしい",
+          "structure": "N／Vthường／Aい／Aな（bỏ な） ＋ らしい ／ N ＋ らしい（đúng chất N）",
+          "meaningVi": "nghe nói…, có vẻ…; đúng chất…"
+        },
+        "sourceFingerprint": "sha256:64c49c70e50f02a53d9d3e30bb5b24da1ccd1a16b920523d789cfe9a2fdd6435"
+      },
+      "grammar": {
+        "meaningVi": "Nghe nói…, có vẻ…; đúng chất…",
+        "connection": "N／V thể thường／Aい／Aな（bỏ な） ＋ らしい ／ N ＋ らしい（đúng chất N）",
+        "nuanceVi": "Phán đoán dựa trên thông tin gián tiếp (nghe nói, đọc được), người nói giữ khoảng cách. N + らしい còn nghĩa 'ra dáng, đúng chất N': 男らしい、春らしい."
+      }
+    },
+    {
+      "id": "ci-g-mitaida-rashii-youda-youda",
+      "label": "〜ようだ",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g121",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜ようだ",
+          "structure": "V普通形／Aい + ようだ；Aな + な + ようだ；N + の + ようだ",
+          "meaningVi": "có vẻ như…, hình như… (suy đoán)"
+        },
+        "sourceFingerprint": "sha256:d8446738487610f05dabe4c4f88650c20630822819b1fb0edbd6481720312d0a"
+      },
+      "grammar": {
+        "meaningVi": "Có vẻ như…, hình như… (suy đoán)",
+        "connection": "V thể thường／Aい ＋ ようだ；Aな ＋ な ＋ ようだ；N ＋ の ＋ ようだ",
+        "nuanceVi": "Phán đoán dựa trên quan sát và cảm nhận của chính người nói; trang trọng hơn みたいだ, dùng trong văn viết và lời nói lịch sự."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-mitaida-rashii-youda-1",
+      "titleVi": "Cách nối với danh từ và tính từ đuôi な",
+      "bodyVi": "Danh từ: 子供みたいだ ／ 子供らしい ／ 子供のようだ. Tính từ な: 静かみたいだ ／ 静からしい ／ 静かなようだ. Sai cách nối là lỗi hay ra trong phần phát hiện lỗi."
+    },
+    {
+      "id": "ct-g-mitaida-rashii-youda-2",
+      "titleVi": "Nguồn phán đoán và mức trang trọng",
+      "bodyVi": "ようだ, みたいだ: người nói tự quan sát (ようだ trang trọng, みたいだ thân mật). らしい: thường dựa vào lời người khác, tin tức, người nói không chịu trách nhiệm về thông tin. N らしい (đúng chất) thì hai mẫu kia không thay được."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nối với danh từ",
+      "values": {
+        "ci-g-mitaida-rashii-youda-mitai": "N ＋ みたい",
+        "ci-g-mitaida-rashii-youda-rashii": "N ＋ らしい",
+        "ci-g-mitaida-rashii-youda-youda": "N ＋ の ＋ よう"
+      }
+    },
+    {
+      "aspectVi": "Mức trang trọng",
+      "values": {
+        "ci-g-mitaida-rashii-youda-mitai": "Văn nói, thân mật",
+        "ci-g-mitaida-rashii-youda-rashii": "Trung tính",
+        "ci-g-mitaida-rashii-youda-youda": "Trang trọng, văn viết"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa riêng",
+      "values": {
+        "ci-g-mitaida-rashii-youda-mitai": "So sánh 'giống như' (thân mật)",
+        "ci-g-mitaida-rashii-youda-rashii": "'Đúng chất, ra dáng' (男らしい)",
+        "ci-g-mitaida-rashii-youda-youda": "So sánh 'giống như' (trang trọng, văn chương)"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-mitaida-rashii-youda-1",
+      "itemId": "ci-g-mitaida-rashii-youda-mitai",
+      "japanese": "隣の部屋、だれもいないみたいだよ。",
+      "furigana": "{隣|となり}の{部屋|へや}、だれもいないみたいだよ。",
+      "translationVi": "Phòng bên cạnh hình như không có ai đâu."
+    },
+    {
+      "id": "cx-g-mitaida-rashii-youda-2",
+      "itemId": "ci-g-mitaida-rashii-youda-mitai",
+      "japanese": "あの二人は本当の兄弟みたいだ。",
+      "furigana": "あの{二人|ふたり}は{本当|ほんとう}の{兄弟|きょうだい}みたいだ。",
+      "translationVi": "Hai người đó trông như anh em ruột vậy."
+    },
+    {
+      "id": "cx-g-mitaida-rashii-youda-3",
+      "itemId": "ci-g-mitaida-rashii-youda-rashii",
+      "japanese": "ニュースによると、犯人はまだ見つかっていないらしい。",
+      "furigana": "ニュースによると、{犯人|はんにん}はまだ{見|み}つかっていないらしい。",
+      "translationVi": "Theo tin tức, có vẻ thủ phạm vẫn chưa bị tìm thấy."
+    },
+    {
+      "id": "cx-g-mitaida-rashii-youda-4",
+      "itemId": "ci-g-mitaida-rashii-youda-rashii",
+      "japanese": "今日は暖かくて、春らしい天気だ。",
+      "furigana": "{今日|きょう}は{暖|あたた}かくて、{春|はる}らしい{天気|てんき}だ。",
+      "translationVi": "Hôm nay ấm áp, đúng là thời tiết mùa xuân."
+    },
+    {
+      "id": "cx-g-mitaida-rashii-youda-5",
+      "itemId": "ci-g-mitaida-rashii-youda-youda",
+      "japanese": "道が濡れている。夜の間に雨が降ったようだ。",
+      "furigana": "{道|みち}が{濡|ぬ}れている。{夜|よる}の{間|あいだ}に{雨|あめ}が{降|ふ}ったようだ。",
+      "translationVi": "Đường ướt. Có vẻ trong đêm trời đã mưa."
+    },
+    {
+      "id": "cx-g-mitaida-rashii-youda-6",
+      "itemId": "ci-g-mitaida-rashii-youda-youda",
+      "japanese": "部長は今日、少しお疲れのようです。",
+      "furigana": "{部長|ぶちょう}は{今日|きょう}、{少|すこ}しお{疲|つか}れのようです。",
+      "translationVi": "Hôm nay trưởng phòng có vẻ hơi mệt."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-mitaida-rashii-youda-1",
+      "textVi": "みたい nối thẳng như nói chuyện; よう cần の／な như văn viết; らしい = 'nghe đồn' hoặc 'ra dáng'."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-mitaida-rashii-youda-1",
+      "situationVi": "Nối ようだ với danh từ.",
+      "wrong": {
+        "japanese": "外はまるで冬ようだ。",
+        "furigana": "{外|そと}はまるで{冬|ふゆ}ようだ。"
+      },
+      "correct": {
+        "japanese": "外はまるで冬のようだ。",
+        "furigana": "{外|そと}はまるで{冬|ふゆ}のようだ。"
+      },
+      "explanationVi": "Danh từ + ようだ cần の: 冬のようだ. Không có の thì chỉ đúng với みたいだ: 冬みたいだ.",
+      "expectedItemId": "ci-g-mitaida-rashii-youda-youda",
+      "confusedWithItemId": "ci-g-mitaida-rashii-youda-mitai"
+    },
+    {
+      "id": "ce-g-mitaida-rashii-youda-2",
+      "situationVi": "Khen một người đàn ông mạnh mẽ, ra dáng đàn ông.",
+      "wrong": {
+        "japanese": "彼は本当に男みたいな人だ。",
+        "furigana": "{彼|かれ}は{本当|ほんとう}に{男|おとこ}みたいな{人|ひと}だ。"
+      },
+      "correct": {
+        "japanese": "彼は本当に男らしい人だ。",
+        "furigana": "{彼|かれ}は{本当|ほんとう}に{男|おとこ}らしい{人|ひと}だ。"
+      },
+      "explanationVi": "Ý 'ra dáng, đúng chất đàn ông' chỉ có ở N らしい. 男みたいな nghe như người đó không phải đàn ông mà chỉ giống đàn ông.",
+      "expectedItemId": "ci-g-mitaida-rashii-youda-rashii",
+      "confusedWithItemId": "ci-g-mitaida-rashii-youda-mitai"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-mitaida-rashii-youda-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-mitaida-rashii-youda-rashii",
+      "instructionVi": "Câu nào có nghĩa 'Cô ấy rất nữ tính (đúng chất phụ nữ)'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "彼女はとても女らしい。",
+          "furigana": "{彼女|かのじょ}はとても{女|おんな}らしい。",
+          "itemId": "ci-g-mitaida-rashii-youda-rashii"
+        },
+        {
+          "id": "b",
+          "text": "彼女はとても女みたいだ。",
+          "furigana": "{彼女|かのじょ}はとても{女|おんな}みたいだ。",
+          "itemId": "ci-g-mitaida-rashii-youda-mitai",
+          "feedbackVi": "女みたいだ nghĩa là 'giống phụ nữ', dùng cho người không phải phụ nữ."
+        },
+        {
+          "id": "c",
+          "text": "彼女はとても女のようだ。",
+          "furigana": "{彼女|かのじょ}はとても{女|おんな}のようだ。",
+          "itemId": "ci-g-mitaida-rashii-youda-youda",
+          "feedbackVi": "女のようだ cũng là so sánh 'như là phụ nữ', không có nghĩa 'đúng chất'."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "N + らしい mang nghĩa 'đúng chất, ra dáng N'; みたい, よう chỉ là so sánh."
+    },
+    {
+      "id": "cq-g-mitaida-rashii-youda-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-mitaida-rashii-youda-youda",
+      "instructionVi": "Chọn cách nối đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "この町は夜になると、とても静か＿＿＿ようだ。",
+        "furigana": "この{町|まち}は{夜|よる}になると、とても{静|しず}か＿＿＿ようだ。",
+        "translationVi": "Thị trấn này có vẻ về đêm rất yên tĩnh."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "な",
+          "itemId": "ci-g-mitaida-rashii-youda-youda"
+        },
+        {
+          "id": "b",
+          "text": "の",
+          "feedbackVi": "Danh từ mới nối bằng の; 静か là tính từ đuôi な."
+        },
+        {
+          "id": "c",
+          "text": "だ",
+          "feedbackVi": "Không nối だ trước ようだ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tính từ đuôi な + な + ようだ: 静かなようだ."
+    },
+    {
+      "id": "cq-g-mitaida-rashii-youda-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-mitaida-rashii-youda-mitai",
+      "instructionVi": "Chọn phần sai trong câu (văn nói thân mật).",
+      "prompt": {
+        "japanese": "彼は話し方が子供のみたいだね。",
+        "furigana": "{彼|かれ}は{話|はな}し{方|かた}が{子供|こども}のみたいだね。",
+        "translationVi": "Cậu ấy nói chuyện cứ như trẻ con ấy."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "彼は",
+          "furigana": "{彼|かれ}は"
+        },
+        {
+          "id": "b",
+          "text": "話し方が",
+          "furigana": "{話|はな}し{方|かた}が"
+        },
+        {
+          "id": "c",
+          "text": "子供のみたい",
+          "furigana": "{子供|こども}のみたい",
+          "itemId": "ci-g-mitaida-rashii-youda-youda"
+        },
+        {
+          "id": "d",
+          "text": "だね。"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "子供みたい",
+        "furigana": "{子供|こども}みたい",
+        "itemId": "ci-g-mitaida-rashii-youda-mitai"
+      },
+      "explanationVi": "みたい nối thẳng với danh từ, không có の: 子供みたいだ. Nếu muốn có の thì phải dùng ようだ (子供のようだ)."
+    },
+    {
+      "id": "cq-g-mitaida-rashii-youda-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-mitaida-rashii-youda-rashii",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn không tự thấy, chỉ đọc trên mạng rằng quán ramen mới mở rất đông khách và muốn kể lại cho bạn."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "駅前の新しいラーメン屋、すごく人気があるらしいよ。",
+          "furigana": "{駅前|えきまえ}の{新|あたら}しいラーメン{屋|や}、すごく{人気|にんき}があるらしいよ。",
+          "itemId": "ci-g-mitaida-rashii-youda-rashii"
+        },
+        {
+          "id": "b",
+          "text": "駅前の新しいラーメン屋、すごく人気があるようにするよ。",
+          "furigana": "{駅前|えきまえ}の{新|あたら}しいラーメン{屋|や}、すごく{人気|にんき}があるようにするよ。",
+          "feedbackVi": "ようにする là cố gắng làm cho…, sai nghĩa."
+        },
+        {
+          "id": "c",
+          "text": "駅前の新しいラーメン屋、すごく人気らしい人だよ。",
+          "furigana": "{駅前|えきまえ}の{新|あたら}しいラーメン{屋|や}、すごく{人気|にんき}らしい{人|ひと}だよ。",
+          "feedbackVi": "Câu sai cấu trúc: 人気らしい人 không phải cách nói kể lại tin."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Thông tin đọc được trên mạng, người nói kể lại và giữ khoảng cách → らしい."
+    }
+  ]
+}

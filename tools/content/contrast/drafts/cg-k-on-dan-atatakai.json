@@ -1,0 +1,334 @@
+{
+  "id": "cg-k-on-dan-atatakai",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "温 và 暖",
+  "summaryVi": "Cả hai đọc あたたかい nhưng dùng cho thứ khác nhau: 温 (bộ 氵 nước) cho vật, đồ ăn, nước, tấm lòng ấm (温かいスープ); 暖 (bộ 日 mặt trời) cho thời tiết, không khí, nhiệt độ môi trường (暖かい部屋).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-on-dan-atatakai-on",
+      "label": "温",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k06e29",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "温",
+          "onReadings": [
+            "オン"
+          ],
+          "kunReadings": [
+            "あたた.か",
+            "あたた.かい",
+            "あたた.まる",
+            "あたた.める",
+            "ぬく"
+          ],
+          "meaningVi": "Ấm"
+        },
+        "sourceFingerprint": "sha256:151773ecc7897011302925d6db2e3ea9aa88bae04c4141721ed7cb7e6567f422"
+      },
+      "kanji": {
+        "meaningVi": "ấm (vật, nước, tấm lòng)",
+        "hanViet": "ÔN",
+        "onReadings": [
+          "オン"
+        ],
+        "kunReadings": [
+          "あたた.か",
+          "あたた.かい",
+          "あたた.まる",
+          "あたた.める",
+          "ぬく"
+        ],
+        "radical": {
+          "character": "氵",
+          "nameVi": "Thủy (nước)"
+        },
+        "shapeNoteVi": "氵 + 昷: nước ấm → hơi ấm của vật chạm vào được. 温かい, 温度, 温泉."
+      }
+    },
+    {
+      "id": "ci-k-on-dan-atatakai-dan",
+      "label": "暖",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k06696",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "暖",
+          "onReadings": [
+            "ダン",
+            "ノン"
+          ],
+          "kunReadings": [
+            "あたた.か",
+            "あたた.かい",
+            "あたた.まる",
+            "あたた.める"
+          ],
+          "meaningVi": "Ấm áp"
+        },
+        "sourceFingerprint": "sha256:88cf3fdd6f449051944dbcb10de648e76a97336fb9e6902e4dc79b14e6e74a6e"
+      },
+      "kanji": {
+        "meaningVi": "ấm (thời tiết, không khí)",
+        "hanViet": "NOÃN",
+        "onReadings": [
+          "ダン",
+          "ノン"
+        ],
+        "kunReadings": [
+          "あたた.か",
+          "あたた.かい",
+          "あたた.まる",
+          "あたた.める"
+        ],
+        "radical": {
+          "character": "日",
+          "nameVi": "Nhật (mặt trời)"
+        },
+        "shapeNoteVi": "日 + 爰: nắng mặt trời sưởi ấm → không khí ấm. 暖かい, 暖房, 温暖化."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-on-dan-atatakai-1",
+      "titleVi": "Vật hay môi trường",
+      "bodyVi": "Ấm của thứ chạm vào, ăn uống, hay tấm lòng (温かいご飯、温かい手、温かい言葉) → 温. Ấm của khí hậu, căn phòng, mùa (暖かい春、暖かい部屋、暖冬) → 暖. Đối nghĩa: 温かい ↔ 冷たい; 暖かい ↔ 寒い."
+    },
+    {
+      "id": "ct-k-on-dan-atatakai-2",
+      "titleVi": "Từ Hán hay gặp",
+      "bodyVi": "温: 温度 (nhiệt độ), 体温 (thân nhiệt), 温泉 (suối nước nóng). 暖: 暖房 (máy sưởi), 暖冬 (đông ấm). 地球温暖化 (nóng lên toàn cầu) có cả hai chữ."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ thủ",
+      "values": {
+        "ci-k-on-dan-atatakai-on": "氵 (nước)",
+        "ci-k-on-dan-atatakai-dan": "日 (mặt trời)"
+      }
+    },
+    {
+      "aspectVi": "Dùng cho",
+      "values": {
+        "ci-k-on-dan-atatakai-on": "Đồ ăn, nước, vật, tấm lòng",
+        "ci-k-on-dan-atatakai-dan": "Thời tiết, không khí, phòng"
+      }
+    },
+    {
+      "aspectVi": "Đối nghĩa",
+      "values": {
+        "ci-k-on-dan-atatakai-on": "冷たい",
+        "ci-k-on-dan-atatakai-dan": "寒い"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-on-dan-atatakai-1",
+      "itemId": "ci-k-on-dan-atatakai-on",
+      "japanese": "寒い日は温かいスープが飲みたくなる。",
+      "furigana": "{寒|さむ}い{日|ひ}は{温|あたた}かいスープが{飲|の}みたくなる。",
+      "translationVi": "Ngày lạnh lại thèm uống súp nóng ấm."
+    },
+    {
+      "id": "cx-k-on-dan-atatakai-2",
+      "itemId": "ci-k-on-dan-atatakai-on",
+      "japanese": "先生の温かい言葉に励まされた。",
+      "furigana": "{先生|せんせい}の{温|あたた}かい{言葉|ことば}に{励|はげ}まされた。",
+      "translationVi": "Tôi được khích lệ bởi lời nói ấm áp của thầy."
+    },
+    {
+      "id": "cx-k-on-dan-atatakai-3",
+      "itemId": "ci-k-on-dan-atatakai-dan",
+      "japanese": "今日は春のように暖かい。",
+      "furigana": "{今日|きょう}は{春|はる}のように{暖|あたた}かい。",
+      "translationVi": "Hôm nay ấm áp như mùa xuân."
+    },
+    {
+      "id": "cx-k-on-dan-atatakai-4",
+      "itemId": "ci-k-on-dan-atatakai-dan",
+      "japanese": "寒いので暖房をつけた。",
+      "furigana": "{寒|さむ}いので{暖房|だんぼう}をつけた。",
+      "translationVi": "Lạnh quá nên tôi bật máy sưởi."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-on-dan-atatakai-1",
+      "textVi": "Có nước (氵) → thứ cầm, uống được 温; có mặt trời (日) → trời, phòng 暖."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-on-dan-atatakai-1",
+      "situationVi": "Viết 'mùa xuân ấm áp'.",
+      "wrong": {
+        "japanese": "温かい春が来た。",
+        "furigana": "{温|あたた}かい{春|はる}が{来|き}た。"
+      },
+      "correct": {
+        "japanese": "暖かい春が来た。",
+        "furigana": "{暖|あたた}かい{春|はる}が{来|き}た。"
+      },
+      "explanationVi": "Thời tiết, mùa → 暖かい.",
+      "expectedItemId": "ci-k-on-dan-atatakai-dan",
+      "confusedWithItemId": "ci-k-on-dan-atatakai-on"
+    },
+    {
+      "id": "ce-k-on-dan-atatakai-2",
+      "situationVi": "Viết 'cơm nóng ấm'.",
+      "wrong": {
+        "japanese": "暖かいご飯を食べた。",
+        "furigana": "{暖|あたた}かいご{飯|はん}を{食|た}べた。"
+      },
+      "correct": {
+        "japanese": "温かいご飯を食べた。",
+        "furigana": "{温|あたた}かいご{飯|はん}を{食|た}べた。"
+      },
+      "explanationVi": "Đồ ăn → 温かい.",
+      "expectedItemId": "ci-k-on-dan-atatakai-on",
+      "confusedWithItemId": "ci-k-on-dan-atatakai-dan"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-on-dan-atatakai-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-on-dan-atatakai-dan",
+      "instructionVi": "Chọn câu viết đúng: 'Căn phòng này ấm áp.'",
+      "options": [
+        {
+          "id": "a",
+          "text": "この部屋は暖かい。",
+          "furigana": "この{部屋|へや}は{暖|あたた}かい。",
+          "itemId": "ci-k-on-dan-atatakai-dan"
+        },
+        {
+          "id": "b",
+          "text": "この部屋は温かい。",
+          "furigana": "この{部屋|へや}は{温|あたた}かい。",
+          "itemId": "ci-k-on-dan-atatakai-on",
+          "feedbackVi": "Không khí trong phòng → 暖かい."
+        },
+        {
+          "id": "c",
+          "text": "この部屋は熱かい。",
+          "furigana": "この{部屋|へや}は{熱|あつ}かい。",
+          "feedbackVi": "Không có từ 熱かい."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Không khí căn phòng → 暖かい."
+    },
+    {
+      "id": "cq-k-on-dan-atatakai-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-on-dan-atatakai-on",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "熱があるかどうか、体＿＿＿を測ってみよう。",
+        "furigana": "{熱|ねつ}があるかどうか、{体|たい}＿＿＿を{測|はか}ってみよう。",
+        "translationVi": "Thử đo thân nhiệt xem có sốt không."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "温",
+          "itemId": "ci-k-on-dan-atatakai-on"
+        },
+        {
+          "id": "b",
+          "text": "暖",
+          "itemId": "ci-k-on-dan-atatakai-dan"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "体温 (thân nhiệt) viết với 温."
+    },
+    {
+      "id": "cq-k-on-dan-atatakai-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-on-dan-atatakai-dan",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "寒いから、温房をつけて。",
+        "furigana": "{寒|さむ}いから、{温房|おんぼう}をつけて。",
+        "translationVi": "Lạnh quá, bật máy sưởi lên đi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "寒いから、",
+          "furigana": "{寒|さむ}いから、"
+        },
+        {
+          "id": "b",
+          "text": "温房を",
+          "furigana": "{温房|おんぼう}を",
+          "itemId": "ci-k-on-dan-atatakai-on"
+        },
+        {
+          "id": "c",
+          "text": "つけて。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "暖房を",
+        "furigana": "{暖房|だんぼう}を",
+        "itemId": "ci-k-on-dan-atatakai-dan"
+      },
+      "explanationVi": "Máy sưởi (làm ấm không khí) → 暖房."
+    },
+    {
+      "id": "cq-k-on-dan-atatakai-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-on-dan-atatakai-on",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn cảm ơn gia đình chủ nhà đã đón tiếp bạn chu đáo, ấm áp."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "温かく迎えてくださって、ありがとうございました。",
+          "furigana": "{温|あたた}かく{迎|むか}えてくださって、ありがとうございました。",
+          "itemId": "ci-k-on-dan-atatakai-on"
+        },
+        {
+          "id": "b",
+          "text": "暖かく迎えてくださって、ありがとうございました。",
+          "furigana": "{暖|あたた}かく{迎|むか}えてくださって、ありがとうございました。",
+          "itemId": "ci-k-on-dan-atatakai-dan",
+          "feedbackVi": "Sự ấm áp của tấm lòng thường viết 温かく."
+        },
+        {
+          "id": "c",
+          "text": "暑く迎えてくださって、ありがとうございました。",
+          "furigana": "{暑|あつ}く{迎|むか}えてくださって、ありがとうございました。",
+          "feedbackVi": "暑い là nóng (thời tiết), sai nghĩa."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tấm lòng ấm áp → 温かく."
+    }
+  ]
+}

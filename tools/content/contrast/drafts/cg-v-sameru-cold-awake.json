@@ -1,0 +1,322 @@
+{
+  "id": "cg-v-sameru-cold-awake",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "冷める và 覚める",
+  "summaryVi": "Hai động từ cùng đọc là さめる. 冷める là nguội đi (nhiệt độ, cảm xúc), 覚める là tỉnh ra (khỏi giấc ngủ, cơn say, sự mê muội).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-sameru-cold-awake-cold",
+      "label": "冷める",
+      "labelFurigana": "{冷|さ}める",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v211",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "冷める",
+          "reading": "さめる",
+          "meaningVi": "bị nguội"
+        },
+        "sourceFingerprint": "sha256:75749f0af3a9311c29d1c30534f454152ab91a7dca13c8ca04f3984c184001a5"
+      },
+      "vocabulary": {
+        "reading": "さめる",
+        "meaningVi": "nguội đi; (cảm xúc) nguội lạnh",
+        "usageVi": "Vật nóng mất nhiệt; hứng thú, tình cảm giảm đi.",
+        "collocations": [
+          {
+            "japanese": "料理が冷める",
+            "furigana": "{料理|りょうり}が{冷|さ}める",
+            "meaningVi": "thức ăn nguội"
+          },
+          {
+            "japanese": "熱が冷める",
+            "furigana": "{熱|ねつ}が{冷|さ}める",
+            "meaningVi": "nhiệt tình nguội đi"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-sameru-cold-awake-awake",
+      "label": "覚める",
+      "labelFurigana": "{覚|さ}める",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v505",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "覚める",
+          "reading": "さめる",
+          "meaningVi": "thức dậy"
+        },
+        "sourceFingerprint": "sha256:141e3c205496242d0b460cadfa80a2d299fcb2a8a24ffba8ca3b633f7909666e"
+      },
+      "vocabulary": {
+        "reading": "さめる",
+        "meaningVi": "tỉnh ra, thức giấc",
+        "usageVi": "Thoát khỏi trạng thái ngủ, say hay mê muội.",
+        "collocations": [
+          {
+            "japanese": "目が覚める",
+            "furigana": "{目|め}が{覚|さ}める",
+            "meaningVi": "tỉnh giấc"
+          },
+          {
+            "japanese": "酔いが覚める",
+            "furigana": "{酔|よ}いが{覚|さ}める",
+            "meaningVi": "tỉnh rượu"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-sameru-cold-awake-1",
+      "titleVi": "Cùng âm, khác chữ",
+      "bodyVi": "Phát âm giống nhau nên phải dựa vào nghĩa để chọn chữ. Hỏi 'cái gì さめる?': đồ ăn, nước, tình cảm → 冷める (bộ băng 冫 = lạnh). Mắt, người, cơn say, giấc mơ → 覚める (覚 = giác: cảm giác, tỉnh táo)."
+    },
+    {
+      "id": "ct-v-sameru-cold-awake-2",
+      "titleVi": "Tha động từ đi kèm",
+      "bodyVi": "冷める (tự) ↔ 冷ます (làm nguội: スープを冷ます). 覚める (tự) ↔ 覚ます (làm tỉnh: 目を覚ます). Cặp tự/tha giữ nguyên chữ Kanji."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-v-sameru-cold-awake-cold": "Nguội đi, giảm nhiệt, nguội lạnh",
+        "ci-v-sameru-cold-awake-awake": "Tỉnh ra, thức giấc"
+      }
+    },
+    {
+      "aspectVi": "Chủ ngữ hay gặp",
+      "values": {
+        "ci-v-sameru-cold-awake-cold": "料理、お茶、熱、愛情",
+        "ci-v-sameru-cold-awake-awake": "目、酔い、夢"
+      }
+    },
+    {
+      "aspectVi": "Tha động từ",
+      "values": {
+        "ci-v-sameru-cold-awake-cold": "冷ます",
+        "ci-v-sameru-cold-awake-awake": "覚ます"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-sameru-cold-awake-1",
+      "itemId": "ci-v-sameru-cold-awake-cold",
+      "japanese": "早く食べないと、スープが冷めてしまうよ。",
+      "furigana": "{早|はや}く{食|た}べないと、スープが{冷|さ}めてしまうよ。",
+      "translationVi": "Không ăn nhanh thì súp nguội mất đấy."
+    },
+    {
+      "id": "cx-v-sameru-cold-awake-2",
+      "itemId": "ci-v-sameru-cold-awake-cold",
+      "japanese": "彼への気持ちはもう冷めてしまった。",
+      "furigana": "{彼|かれ}への{気持|きも}ちはもう{冷|さ}めてしまった。",
+      "translationVi": "Tình cảm dành cho anh ấy đã nguội lạnh rồi."
+    },
+    {
+      "id": "cx-v-sameru-cold-awake-3",
+      "itemId": "ci-v-sameru-cold-awake-awake",
+      "japanese": "夜中に大きな音がして、目が覚めた。",
+      "furigana": "{夜中|よなか}に{大|おお}きな{音|おと}がして、{目|め}が{覚|さ}めた。",
+      "translationVi": "Nửa đêm có tiếng động lớn làm tôi tỉnh giấc."
+    },
+    {
+      "id": "cx-v-sameru-cold-awake-4",
+      "itemId": "ci-v-sameru-cold-awake-awake",
+      "japanese": "冷たい水で顔を洗ったら、眠気が覚めた。",
+      "furigana": "{冷|つめ}たい{水|みず}で{顔|かお}を{洗|あら}ったら、{眠気|ねむけ}が{覚|さ}めた。",
+      "translationVi": "Rửa mặt bằng nước lạnh xong thì hết buồn ngủ."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-sameru-cold-awake-1",
+      "textVi": "冷 có bộ 冫 (băng, lạnh) → nguội. 覚 trong 感覚, 自覚 (cảm giác, tự giác) → tỉnh táo."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-sameru-cold-awake-1",
+      "situationVi": "Viết 'tỉnh giấc' bằng chữ Kanji.",
+      "wrong": {
+        "japanese": "今朝は五時に目が冷めた。",
+        "furigana": "{今朝|けさ}は{五時|ごじ}に{目|め}が{冷|さ}めた。"
+      },
+      "correct": {
+        "japanese": "今朝は五時に目が覚めた。",
+        "furigana": "{今朝|けさ}は{五時|ごじ}に{目|め}が{覚|さ}めた。"
+      },
+      "explanationVi": "Tỉnh giấc là 目が覚める. 冷める chỉ sự nguội đi.",
+      "expectedItemId": "ci-v-sameru-cold-awake-awake",
+      "confusedWithItemId": "ci-v-sameru-cold-awake-cold"
+    },
+    {
+      "id": "ce-v-sameru-cold-awake-2",
+      "situationVi": "Nói cà phê đã nguội.",
+      "wrong": {
+        "japanese": "コーヒーが覚めてしまった。",
+        "furigana": "コーヒーが{覚|さ}めてしまった。"
+      },
+      "correct": {
+        "japanese": "コーヒーが冷めてしまった。",
+        "furigana": "コーヒーが{冷|さ}めてしまった。"
+      },
+      "explanationVi": "Cà phê mất nhiệt → 冷める.",
+      "expectedItemId": "ci-v-sameru-cold-awake-cold",
+      "confusedWithItemId": "ci-v-sameru-cold-awake-awake"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-sameru-cold-awake-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-sameru-cold-awake-cold",
+      "instructionVi": "Chọn câu viết đúng: 'Cà phê đã nguội mất rồi.'",
+      "options": [
+        {
+          "id": "a",
+          "text": "コーヒーが冷めてしまった。",
+          "furigana": "コーヒーが{冷|さ}めてしまった。",
+          "itemId": "ci-v-sameru-cold-awake-cold"
+        },
+        {
+          "id": "b",
+          "text": "コーヒーが覚めてしまった。",
+          "furigana": "コーヒーが{覚|さ}めてしまった。",
+          "itemId": "ci-v-sameru-cold-awake-awake",
+          "feedbackVi": "覚める là tỉnh giấc, tỉnh ra, không dùng cho đồ uống."
+        },
+        {
+          "id": "c",
+          "text": "コーヒーが冷えてしまった。",
+          "furigana": "コーヒーが{冷|ひ}えてしまった。",
+          "feedbackVi": "冷える là bị lạnh đi (thường do môi trường lạnh), không phải 'nguội' của đồ đang nóng."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Cà phê nguội đi → 冷める."
+    },
+    {
+      "id": "cq-v-sameru-cold-awake-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-sameru-cold-awake-cold",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "料理が＿＿＿うちに、どうぞ召し上がってください。",
+        "furigana": "{料理|りょうり}が＿＿＿うちに、どうぞ{召|め}し{上|あ}がってください。",
+        "translationVi": "Xin mời dùng món ăn trước khi nó nguội."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "冷めない",
+          "furigana": "{冷|さ}めない",
+          "itemId": "ci-v-sameru-cold-awake-cold"
+        },
+        {
+          "id": "b",
+          "text": "覚めない",
+          "furigana": "{覚|さ}めない",
+          "itemId": "ci-v-sameru-cold-awake-awake"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Món ăn nguội đi → 冷める; 冷めないうちに = trước khi nguội."
+    },
+    {
+      "id": "cq-v-sameru-cold-awake-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-sameru-cold-awake-awake",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "冷たい水を飲んだら、酔いが冷めた。",
+        "furigana": "{冷|つめ}たい{水|みず}を{飲|の}んだら、{酔|よ}いが{冷|さ}めた。",
+        "translationVi": "Nhờ uống nước lạnh mà tôi tỉnh rượu."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "冷たい水を",
+          "furigana": "{冷|つめ}たい{水|みず}を"
+        },
+        {
+          "id": "b",
+          "text": "飲んだら、",
+          "furigana": "{飲|の}んだら、"
+        },
+        {
+          "id": "c",
+          "text": "酔いが",
+          "furigana": "{酔|よ}いが"
+        },
+        {
+          "id": "d",
+          "text": "冷めた。",
+          "furigana": "{冷|さ}めた。",
+          "itemId": "ci-v-sameru-cold-awake-cold"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "覚めた。",
+        "furigana": "{覚|さ}めた。",
+        "itemId": "ci-v-sameru-cold-awake-awake"
+      },
+      "explanationVi": "Tỉnh rượu là 酔いが覚める."
+    },
+    {
+      "id": "cq-v-sameru-cold-awake-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-sameru-cold-awake-awake",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Sáng nay chuông báo thức không kêu nhưng bạn vẫn tự tỉnh dậy lúc 6 giờ."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "今朝は六時に目が覚めた。",
+          "furigana": "{今朝|けさ}は{六時|ろくじ}に{目|め}が{覚|さ}めた。",
+          "itemId": "ci-v-sameru-cold-awake-awake"
+        },
+        {
+          "id": "b",
+          "text": "今朝は六時に目が冷めた。",
+          "furigana": "{今朝|けさ}は{六時|ろくじ}に{目|め}が{冷|さ}めた。",
+          "itemId": "ci-v-sameru-cold-awake-cold",
+          "feedbackVi": "冷める là nguội đi."
+        },
+        {
+          "id": "c",
+          "text": "今朝は六時に目が冷えた。",
+          "furigana": "{今朝|けさ}は{六時|ろくじ}に{目|め}が{冷|ひ}えた。",
+          "feedbackVi": "冷える là bị lạnh đi, không dùng cho việc tỉnh giấc."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "目が覚める là tỉnh giấc."
+    }
+  ]
+}

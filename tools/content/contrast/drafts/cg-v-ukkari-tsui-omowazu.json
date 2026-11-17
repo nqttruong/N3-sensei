@@ -1,0 +1,372 @@
+{
+  "id": "cg-v-ukkari-tsui-omowazu",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "うっかり, つい và 思わず",
+  "summaryVi": "Ba phó từ đều nói hành động không chủ ý. うっかり là do lơ đễnh, quên (vô ý làm sai); つい là biết không nên nhưng vẫn lỡ làm (thói quen, cám dỗ); 思わず là phản ứng bất giác ngay lúc đó (cười, kêu lên).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-ukkari-tsui-omowazu-ukkari",
+      "label": "うっかり",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v629",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "うっかり",
+          "reading": "うっかり",
+          "meaningVi": "ngơ ngác, không để ý"
+        },
+        "sourceFingerprint": "sha256:54fe8de4de18eea93149c56b2c9429f71501264bbed38e867561e3eaa0af95e6"
+      },
+      "vocabulary": {
+        "reading": "うっかり",
+        "meaningVi": "lơ đễnh, vô ý (quên mất)",
+        "usageVi": "Không chú ý nên quên hoặc làm sai: うっかり忘れる、うっかり乗り過ごす.",
+        "collocations": [
+          {
+            "japanese": "うっかり忘れる",
+            "furigana": "うっかり{忘|わす}れる",
+            "meaningVi": "lỡ quên mất"
+          },
+          {
+            "japanese": "うっかりミスをする",
+            "meaningVi": "mắc lỗi do sơ ý"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-ukkari-tsui-omowazu-tsui",
+      "label": "つい",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v630",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "つい",
+          "reading": "つい",
+          "meaningVi": "vô ý, buột"
+        },
+        "sourceFingerprint": "sha256:193a8b36dd551611ae57b21f83edf1492a23a07fd56e7556932c76a949a33cbf"
+      },
+      "vocabulary": {
+        "reading": "つい",
+        "meaningVi": "lỡ (biết là không nên mà vẫn)",
+        "usageVi": "Không cưỡng lại được thói quen, cám dỗ: つい食べすぎる、つい言ってしまう.",
+        "collocations": [
+          {
+            "japanese": "つい食べすぎる",
+            "furigana": "つい{食|た}べすぎる",
+            "meaningVi": "lỡ ăn quá nhiều"
+          },
+          {
+            "japanese": "つい夜更かしする",
+            "furigana": "つい{夜更|よふ}かしする",
+            "meaningVi": "lỡ thức khuya"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-ukkari-tsui-omowazu-omowazu",
+      "label": "思わず",
+      "labelFurigana": "{思|おも}わず",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v631",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "思わず",
+          "reading": "おもわず",
+          "meaningVi": "không ngờ đến"
+        },
+        "sourceFingerprint": "sha256:2d7a6257f494d34482727f7381bff4eeea304ca4ae10cefa396c4a89cddbfb37"
+      },
+      "vocabulary": {
+        "reading": "おもわず",
+        "meaningVi": "bất giác, buột (ra)",
+        "usageVi": "Phản ứng tự nhiên tức thời không kịp nghĩ: 思わず笑う、思わず声を出す.",
+        "collocations": [
+          {
+            "japanese": "思わず笑う",
+            "furigana": "{思|おも}わず{笑|わら}う",
+            "meaningVi": "bật cười"
+          },
+          {
+            "japanese": "思わず叫ぶ",
+            "furigana": "{思|おも}わず{叫|さけ}ぶ",
+            "meaningVi": "buột miệng hét lên"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-ukkari-tsui-omowazu-1",
+      "titleVi": "Nguyên nhân của hành động",
+      "bodyVi": "うっかり: vì không để ý, đầu óc quên mất (傘を忘れた、駅を乗り過ごした). つい: biết là không nên nhưng thói quen, ham muốn thắng (ダイエット中なのについ食べた). 思わず: phản ứng tức thời trước một kích thích (びっくりして思わず叫んだ)."
+    },
+    {
+      "id": "ct-v-ukkari-tsui-omowazu-2",
+      "titleVi": "Vế sau hay gặp",
+      "bodyVi": "うっかり + 忘れる、間違える、〜てしまう. つい + 〜すぎる、〜てしまう (thói quen lặp lại). 思わず + 笑う、泣く、声を上げる、手を叩く (phản ứng cơ thể, cảm xúc)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nguyên nhân",
+      "values": {
+        "ci-v-ukkari-tsui-omowazu-ukkari": "Lơ đễnh, quên",
+        "ci-v-ukkari-tsui-omowazu-tsui": "Thói quen, cám dỗ",
+        "ci-v-ukkari-tsui-omowazu-omowazu": "Phản ứng bất giác"
+      }
+    },
+    {
+      "aspectVi": "Người nói có biết là không nên?",
+      "values": {
+        "ci-v-ukkari-tsui-omowazu-ukkari": "Không để ý lúc đó",
+        "ci-v-ukkari-tsui-omowazu-tsui": "Biết nhưng vẫn làm",
+        "ci-v-ukkari-tsui-omowazu-omowazu": "Không kịp nghĩ"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ",
+      "values": {
+        "ci-v-ukkari-tsui-omowazu-ukkari": "うっかり財布を忘れた",
+        "ci-v-ukkari-tsui-omowazu-tsui": "つい買いすぎた",
+        "ci-v-ukkari-tsui-omowazu-omowazu": "思わず笑ってしまった"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-ukkari-tsui-omowazu-1",
+      "itemId": "ci-v-ukkari-tsui-omowazu-ukkari",
+      "japanese": "うっかりして、友達の誕生日を忘れてしまった。",
+      "furigana": "うっかりして、{友達|ともだち}の{誕生日|たんじょうび}を{忘|わす}れてしまった。",
+      "translationVi": "Tôi sơ ý quên mất sinh nhật bạn."
+    },
+    {
+      "id": "cx-v-ukkari-tsui-omowazu-2",
+      "itemId": "ci-v-ukkari-tsui-omowazu-ukkari",
+      "japanese": "電車で寝てしまい、うっかり降りる駅を過ぎてしまった。",
+      "furigana": "{電車|でんしゃ}で{寝|ね}てしまい、うっかり{降|お}りる{駅|えき}を{過|す}ぎてしまった。",
+      "translationVi": "Ngủ quên trên tàu nên lỡ đi quá ga cần xuống."
+    },
+    {
+      "id": "cx-v-ukkari-tsui-omowazu-3",
+      "itemId": "ci-v-ukkari-tsui-omowazu-tsui",
+      "japanese": "セールだと、いらない物までつい買ってしまう。",
+      "furigana": "セールだと、いらない{物|もの}までつい{買|か}ってしまう。",
+      "translationVi": "Cứ hễ giảm giá là tôi lỡ mua cả những thứ không cần."
+    },
+    {
+      "id": "cx-v-ukkari-tsui-omowazu-4",
+      "itemId": "ci-v-ukkari-tsui-omowazu-tsui",
+      "japanese": "明日試験なのに、ついゲームをしてしまった。",
+      "furigana": "{明日|あした}{試験|しけん}なのに、ついゲームをしてしまった。",
+      "translationVi": "Mai thi rồi mà tôi vẫn lỡ chơi game."
+    },
+    {
+      "id": "cx-v-ukkari-tsui-omowazu-5",
+      "itemId": "ci-v-ukkari-tsui-omowazu-omowazu",
+      "japanese": "彼の冗談があまりに面白くて、思わず笑ってしまった。",
+      "furigana": "{彼|かれ}の{冗談|じょうだん}があまりに{面白|おもしろ}くて、{思|おも}わず{笑|わら}ってしまった。",
+      "translationVi": "Câu đùa của anh ấy buồn cười quá nên tôi bật cười."
+    },
+    {
+      "id": "cx-v-ukkari-tsui-omowazu-6",
+      "itemId": "ci-v-ukkari-tsui-omowazu-omowazu",
+      "japanese": "突然虫が飛んできて、思わず「きゃっ」と叫んだ。",
+      "furigana": "{突然|とつぜん}{虫|むし}が{飛|と}んできて、{思|おも}わず「きゃっ」と{叫|さけ}んだ。",
+      "translationVi": "Bỗng có con côn trùng bay tới, tôi buột miệng hét 'á'."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-ukkari-tsui-omowazu-1",
+      "textVi": "うっかり = quên (đầu óc); つい = thèm, quen tay (ý chí yếu); 思わず = phản xạ (cơ thể, cảm xúc)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-ukkari-tsui-omowazu-1",
+      "situationVi": "Ăn kiêng mà vẫn lỡ ăn bánh.",
+      "wrong": {
+        "japanese": "ダイエット中なのに、思わずケーキを三つも食べた。",
+        "furigana": "ダイエット{中|ちゅう}なのに、{思|おも}わずケーキを{三|みっ}つも{食|た}べた。"
+      },
+      "correct": {
+        "japanese": "ダイエット中なのに、ついケーキを三つも食べた。",
+        "furigana": "ダイエット{中|ちゅう}なのに、ついケーキを{三|みっ}つも{食|た}べた。"
+      },
+      "explanationVi": "Biết đang ăn kiêng mà vẫn ăn vì thèm → つい. 思わず là phản ứng tức thời, không hợp với ăn ba cái bánh.",
+      "expectedItemId": "ci-v-ukkari-tsui-omowazu-tsui",
+      "confusedWithItemId": "ci-v-ukkari-tsui-omowazu-omowazu"
+    },
+    {
+      "id": "ce-v-ukkari-tsui-omowazu-2",
+      "situationVi": "Bật khóc khi xem cảnh xúc động.",
+      "wrong": {
+        "japanese": "感動的な場面で、うっかり泣いてしまった。",
+        "furigana": "{感動的|かんどうてき}な{場面|ばめん}で、うっかり{泣|な}いてしまった。"
+      },
+      "correct": {
+        "japanese": "感動的な場面で、思わず泣いてしまった。",
+        "furigana": "{感動的|かんどうてき}な{場面|ばめん}で、{思|おも}わず{泣|な}いてしまった。"
+      },
+      "explanationVi": "Khóc vì xúc động là phản ứng bất giác → 思わず. うっかり là do lơ đễnh, quên.",
+      "expectedItemId": "ci-v-ukkari-tsui-omowazu-omowazu",
+      "confusedWithItemId": "ci-v-ukkari-tsui-omowazu-ukkari"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-ukkari-tsui-omowazu-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-ukkari-tsui-omowazu-ukkari",
+      "instructionVi": "Câu nào diễn tả lỗi do sơ ý quên?",
+      "options": [
+        {
+          "id": "a",
+          "text": "うっかりして、宿題を家に置いてきてしまった。",
+          "furigana": "うっかりして、{宿題|しゅくだい}を{家|いえ}に{置|お}いてきてしまった。",
+          "itemId": "ci-v-ukkari-tsui-omowazu-ukkari"
+        },
+        {
+          "id": "b",
+          "text": "思わず、宿題を家に置いてきてしまった。",
+          "furigana": "{思|おも}わず、{宿題|しゅくだい}を{家|いえ}に{置|お}いてきてしまった。",
+          "itemId": "ci-v-ukkari-tsui-omowazu-omowazu",
+          "feedbackVi": "Để quên bài tập ở nhà không phải phản ứng bất giác."
+        },
+        {
+          "id": "c",
+          "text": "つい、宿題を家に置いてきてしまった。",
+          "furigana": "つい、{宿題|しゅくだい}を{家|いえ}に{置|お}いてきてしまった。",
+          "itemId": "ci-v-ukkari-tsui-omowazu-tsui",
+          "feedbackVi": "つい dùng khi biết là không nên mà vẫn làm vì thói quen, cám dỗ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Quên vì không để ý → うっかり."
+    },
+    {
+      "id": "cq-v-ukkari-tsui-omowazu-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-ukkari-tsui-omowazu-omowazu",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "窓の外の美しい景色に、＿＿＿声を上げた。",
+        "furigana": "{窓|まど}の{外|そと}の{美|うつく}しい{景色|けしき}に、＿＿＿{声|こえ}を{上|あ}げた。",
+        "translationVi": "Trước cảnh đẹp ngoài cửa sổ, tôi bất giác thốt lên."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "思わず",
+          "furigana": "{思|おも}わず",
+          "itemId": "ci-v-ukkari-tsui-omowazu-omowazu"
+        },
+        {
+          "id": "b",
+          "text": "うっかり",
+          "itemId": "ci-v-ukkari-tsui-omowazu-ukkari",
+          "feedbackVi": "Thốt lên vì cảnh đẹp không phải do sơ ý quên."
+        },
+        {
+          "id": "c",
+          "text": "つい",
+          "itemId": "ci-v-ukkari-tsui-omowazu-tsui",
+          "feedbackVi": "つい dùng cho thói quen, cám dỗ khó cưỡng."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Phản ứng tức thời trước cảnh đẹp → 思わず."
+    },
+    {
+      "id": "cq-v-ukkari-tsui-omowazu-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-ukkari-tsui-omowazu-tsui",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "体に悪いと分かっているのに、毎晩思わず夜更かしをしてしまう。",
+        "furigana": "{体|からだ}に{悪|わる}いと{分|わ}かっているのに、{毎晩|まいばん}{思|おも}わず{夜更|よふ}かしをしてしまう。",
+        "translationVi": "Biết là có hại cho sức khỏe nhưng tối nào tôi cũng lỡ thức khuya."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "体に悪いと分かっているのに、",
+          "furigana": "{体|からだ}に{悪|わる}いと{分|わ}かっているのに、"
+        },
+        {
+          "id": "b",
+          "text": "毎晩",
+          "furigana": "{毎晩|まいばん}"
+        },
+        {
+          "id": "c",
+          "text": "思わず夜更かしをしてしまう。",
+          "furigana": "{思|おも}わず{夜更|よふ}かしをしてしまう。",
+          "itemId": "ci-v-ukkari-tsui-omowazu-omowazu"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "つい夜更かしをしてしまう。",
+        "furigana": "つい{夜更|よふ}かしをしてしまう。",
+        "itemId": "ci-v-ukkari-tsui-omowazu-tsui"
+      },
+      "explanationVi": "Biết là không tốt mà vẫn lặp lại vì thói quen → つい."
+    },
+    {
+      "id": "cq-v-ukkari-tsui-omowazu-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-ukkari-tsui-omowazu-ukkari",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn đến siêu thị, ra quầy tính tiền mới nhận ra mình để quên ví ở nhà vì vội."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "急いでいて、うっかり財布を忘れてきちゃった。",
+          "furigana": "{急|いそ}いでいて、うっかり{財布|さいふ}を{忘|わす}れてきちゃった。",
+          "itemId": "ci-v-ukkari-tsui-omowazu-ukkari"
+        },
+        {
+          "id": "b",
+          "text": "急いでいて、思わず財布を忘れてきちゃった。",
+          "furigana": "{急|いそ}いでいて、{思|おも}わず{財布|さいふ}を{忘|わす}れてきちゃった。",
+          "itemId": "ci-v-ukkari-tsui-omowazu-omowazu",
+          "feedbackVi": "Quên ví không phải phản ứng bất giác."
+        },
+        {
+          "id": "c",
+          "text": "急いでいて、わざと財布を忘れてきちゃった。",
+          "furigana": "{急|いそ}いでいて、わざと{財布|さいふ}を{忘|わす}れてきちゃった。",
+          "feedbackVi": "わざと là cố ý, trái tình huống."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Quên vì vội, không để ý → うっかり."
+    }
+  ]
+}

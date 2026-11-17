@@ -1,0 +1,292 @@
+{
+  "id": "cg-g-kaneru-kanenai",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜かねる và 〜かねない",
+  "summaryVi": "Chỉ khác nhau một chữ ない nhưng nghĩa gần như ngược: かねる là 'khó có thể (làm)' – lời từ chối lịch sự; かねない là 'có thể sẽ (xảy ra điều xấu)' – lo ngại.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-kaneru-kanenai-kaneru",
+      "label": "〜かねる",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g163",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜かねる",
+          "structure": "Vます + かねる",
+          "meaningVi": "khó có thể…"
+        },
+        "sourceFingerprint": "sha256:804ec9106cbb566cf68f088a67a466ad5b2115ce46568a0fc5ddbdd4b3ef8f75"
+      },
+      "grammar": {
+        "meaningVi": "Khó có thể…, không thể…",
+        "connection": "Vます（bỏ ます） ＋ かねる",
+        "nuanceVi": "Người nói muốn nhưng không thể làm vì hoàn cảnh, lập trường; cách từ chối lịch sự, hay dùng trong kinh doanh: お答えしかねます、賛成しかねる."
+      }
+    },
+    {
+      "id": "ci-g-kaneru-kanenai-kanenai",
+      "label": "〜かねない",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g164",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜かねない",
+          "structure": "Vます + かねない",
+          "meaningVi": "có thể… (lo ngại điều xấu)"
+        },
+        "sourceFingerprint": "sha256:31561b0fab7931796860189a157d0fbbbdc3f0b34675009bd699ab9c994cfbdd"
+      },
+      "grammar": {
+        "meaningVi": "Có thể… (lo ngại điều xấu)",
+        "connection": "Vます（bỏ ます） ＋ かねない",
+        "nuanceVi": "Khả năng xảy ra kết quả xấu: 事故を起こしかねない、病気になりかねない. Không dùng cho điều tốt."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-kaneru-kanenai-1",
+      "titleVi": "Ngược nghĩa dù giống hình",
+      "bodyVi": "かねる (khẳng định) = không làm được; かねない (phủ định) = có thể xảy ra. Mẹo: かねない là 'không thể nói là không xảy ra' → có thể xảy ra."
+    },
+    {
+      "id": "ct-g-kaneru-kanenai-2",
+      "titleVi": "Chủ ngữ và sắc thái",
+      "bodyVi": "かねる: chủ ngữ là người nói (hoặc phía người nói), từ chối lịch sự. かねない: thường nói về hành vi nguy hiểm, tình huống xấu có thể xảy ra cho ai đó, cảnh báo."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-g-kaneru-kanenai-kaneru": "Khó có thể làm (từ chối)",
+        "ci-g-kaneru-kanenai-kanenai": "Có thể xảy ra (điều xấu)"
+      }
+    },
+    {
+      "aspectVi": "Bối cảnh",
+      "values": {
+        "ci-g-kaneru-kanenai-kaneru": "Kinh doanh, lịch sự",
+        "ci-g-kaneru-kanenai-kanenai": "Cảnh báo, lo ngại"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ",
+      "values": {
+        "ci-g-kaneru-kanenai-kaneru": "その質問にはお答えしかねます",
+        "ci-g-kaneru-kanenai-kanenai": "スピードを出しすぎると事故を起こしかねない"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-kaneru-kanenai-1",
+      "itemId": "ci-g-kaneru-kanenai-kaneru",
+      "japanese": "申し訳ございませんが、その件についてはお答えしかねます。",
+      "furigana": "{申|もう}し{訳|わけ}ございませんが、その{件|けん}についてはお{答|こた}えしかねます。",
+      "translationVi": "Thành thật xin lỗi, về việc đó chúng tôi khó có thể trả lời."
+    },
+    {
+      "id": "cx-g-kaneru-kanenai-2",
+      "itemId": "ci-g-kaneru-kanenai-kaneru",
+      "japanese": "その意見には賛成しかねる。",
+      "furigana": "その{意見|いけん}には{賛成|さんせい}しかねる。",
+      "translationVi": "Tôi khó có thể tán thành ý kiến đó."
+    },
+    {
+      "id": "cx-g-kaneru-kanenai-3",
+      "itemId": "ci-g-kaneru-kanenai-kanenai",
+      "japanese": "そんなに無理をしたら、体を壊しかねない。",
+      "furigana": "そんなに{無理|むり}をしたら、{体|からだ}を{壊|こわ}しかねない。",
+      "translationVi": "Gắng sức như thế thì có thể hỏng sức khỏe đấy."
+    },
+    {
+      "id": "cx-g-kaneru-kanenai-4",
+      "itemId": "ci-g-kaneru-kanenai-kanenai",
+      "japanese": "寝不足で運転すると、事故を起こしかねない。",
+      "furigana": "{寝不足|ねぶそく}で{運転|うんてん}すると、{事故|じこ}を{起|お}こしかねない。",
+      "translationVi": "Thiếu ngủ mà lái xe thì có thể gây tai nạn."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-kaneru-kanenai-1",
+      "textVi": "かねる → 'không làm được' (lịch sự); かねない → 'có khi lại xảy ra' (nguy hiểm)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-kaneru-kanenai-1",
+      "situationVi": "Cảnh báo về việc đi xe đạp vừa đi vừa xem điện thoại.",
+      "wrong": {
+        "japanese": "スマホを見ながら自転車に乗ると、危ないことになりかねる。",
+        "furigana": "スマホを{見|み}ながら{自転車|じてんしゃ}に{乗|の}ると、{危|あぶ}ないことになりかねる。"
+      },
+      "correct": {
+        "japanese": "スマホを見ながら自転車に乗ると、危ないことになりかねない。",
+        "furigana": "スマホを{見|み}ながら{自転車|じてんしゃ}に{乗|の}ると、{危|あぶ}ないことになりかねない。"
+      },
+      "explanationVi": "Cảnh báo kết quả xấu có thể xảy ra → かねない.",
+      "expectedItemId": "ci-g-kaneru-kanenai-kanenai",
+      "confusedWithItemId": "ci-g-kaneru-kanenai-kaneru"
+    },
+    {
+      "id": "ce-g-kaneru-kanenai-2",
+      "situationVi": "Nhân viên lịch sự từ chối yêu cầu đổi hàng đã dùng.",
+      "wrong": {
+        "japanese": "使用済みの商品の交換は、お受けしかねないです。",
+        "furigana": "{使用済|しようず}みの{商品|しょうひん}の{交換|こうかん}は、お{受|う}けしかねないです。"
+      },
+      "correct": {
+        "japanese": "使用済みの商品の交換は、お受けしかねます。",
+        "furigana": "{使用済|しようず}みの{商品|しょうひん}の{交換|こうかん}は、お{受|う}けしかねます。"
+      },
+      "explanationVi": "Từ chối lịch sự → かねます. かねない nghĩa là 'có thể sẽ nhận', ngược ý.",
+      "expectedItemId": "ci-g-kaneru-kanenai-kaneru",
+      "confusedWithItemId": "ci-g-kaneru-kanenai-kanenai"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-kaneru-kanenai-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-kaneru-kanenai-kanenai",
+      "instructionVi": "Câu nào là lời cảnh báo?",
+      "options": [
+        {
+          "id": "a",
+          "text": "このままでは、会社は倒産しかねない。",
+          "furigana": "このままでは、{会社|かいしゃ}は{倒産|とうさん}しかねない。",
+          "itemId": "ci-g-kaneru-kanenai-kanenai"
+        },
+        {
+          "id": "b",
+          "text": "このままでは、会社は倒産しかねる。",
+          "furigana": "このままでは、{会社|かいしゃ}は{倒産|とうさん}しかねる。",
+          "itemId": "ci-g-kaneru-kanenai-kaneru",
+          "feedbackVi": "かねる là 'khó có thể (làm)', không dùng để cảnh báo."
+        },
+        {
+          "id": "c",
+          "text": "このままでは、会社は倒産するわけにはいかない。",
+          "furigana": "このままでは、{会社|かいしゃ}は{倒産|とうさん}するわけにはいかない。",
+          "feedbackVi": "わけにはいかない là không thể làm vì lý do đạo lý."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Lo ngại kết quả xấu có thể xảy ra → かねない."
+    },
+    {
+      "id": "cq-g-kaneru-kanenai-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-kaneru-kanenai-kaneru",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống (nhân viên trả lời khách).",
+      "prompt": {
+        "japanese": "個人情報ですので、お教えし＿＿＿。",
+        "furigana": "{個人|こじん}{情報|じょうほう}ですので、お{教|おし}えし＿＿＿。",
+        "translationVi": "Vì là thông tin cá nhân nên chúng tôi khó có thể cho biết."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "かねます",
+          "itemId": "ci-g-kaneru-kanenai-kaneru"
+        },
+        {
+          "id": "b",
+          "text": "かねません",
+          "itemId": "ci-g-kaneru-kanenai-kanenai",
+          "feedbackVi": "かねません (dạng lịch sự của かねない) là 'có thể sẽ cho biết', ngược ý từ chối."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Từ chối lịch sự → かねます."
+    },
+    {
+      "id": "cq-g-kaneru-kanenai-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-kaneru-kanenai-kanenai",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "風邪をそのままにしておくと、大きな病気になりかねる。",
+        "furigana": "{風邪|かぜ}をそのままにしておくと、{大|おお}きな{病気|びょうき}になりかねる。",
+        "translationVi": "Nếu cứ để như vậy, cảm lạnh có thể chuyển thành bệnh nặng."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "風邪を",
+          "furigana": "{風邪|かぜ}を"
+        },
+        {
+          "id": "b",
+          "text": "そのままにしておくと、"
+        },
+        {
+          "id": "c",
+          "text": "大きな病気に",
+          "furigana": "{大|おお}きな{病気|びょうき}に"
+        },
+        {
+          "id": "d",
+          "text": "なりかねる。",
+          "itemId": "ci-g-kaneru-kanenai-kaneru"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "なりかねない。",
+        "itemId": "ci-g-kaneru-kanenai-kanenai"
+      },
+      "explanationVi": "Kết quả xấu có thể xảy ra → なりかねない."
+    },
+    {
+      "id": "cq-g-kaneru-kanenai-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-kaneru-kanenai-kaneru",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Khách hàng yêu cầu giảm giá 50%. Bạn là nhân viên và muốn từ chối một cách lịch sự."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "申し訳ありませんが、そのご要望にはお応えしかねます。",
+          "furigana": "{申|もう}し{訳|わけ}ありませんが、そのご{要望|ようぼう}にはお{応|こた}えしかねます。",
+          "itemId": "ci-g-kaneru-kanenai-kaneru"
+        },
+        {
+          "id": "b",
+          "text": "申し訳ありませんが、そのご要望にはお応えしかねません。",
+          "furigana": "{申|もう}し{訳|わけ}ありませんが、そのご{要望|ようぼう}にはお{応|こた}えしかねません。",
+          "itemId": "ci-g-kaneru-kanenai-kanenai",
+          "feedbackVi": "かねません nghĩa là có thể sẽ đáp ứng, ngược ý."
+        },
+        {
+          "id": "c",
+          "text": "申し訳ありませんが、そのご要望にはお応えするはずです。",
+          "furigana": "{申|もう}し{訳|わけ}ありませんが、そのご{要望|ようぼう}にはお{応|こた}えするはずです。",
+          "feedbackVi": "はずです là suy đoán 'chắc là sẽ đáp ứng'."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Từ chối lịch sự trong kinh doanh → お応えしかねます."
+    }
+  ]
+}

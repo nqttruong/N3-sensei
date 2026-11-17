@@ -31,6 +31,21 @@ enum class ContrastContentStatus {
 }
 
 /** A group to tell apart, as listed and searched (the summary part of [ContrastDetail]). */
+/**
+ * Existing learning items (stable ids of Học → Ngữ pháp / Từ vựng / Kanji) for which the published
+ * contrast groups are looked up: entry points from a lesson or an item page to Contrast Lab.
+ */
+data class ContrastSourceIds(
+    val grammar: Set<String> = emptySet(),
+    val vocabulary: Set<String> = emptySet(),
+    val kanji: Set<String> = emptySet(),
+) {
+    val isEmpty: Boolean get() = grammar.isEmpty() && vocabulary.isEmpty() && kanji.isEmpty()
+}
+
+/** A published group that contains at least one of the [ContrastSourceIds]. */
+data class ContrastGroupLink(val id: String, val title: String, val contentType: ContrastContentType)
+
 data class ContrastGroup(
     val id: String,
     val packId: String,

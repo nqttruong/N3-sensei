@@ -1,0 +1,317 @@
+{
+  "id": "cg-v-hakken-hatsumei",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "発見 và 発明",
+  "summaryVi": "発見 là phát hiện ra thứ đã tồn tại nhưng chưa ai biết (định luật, loài mới, di tích); 発明 là phát minh ra thứ trước đó chưa có (máy móc, công cụ, kỹ thuật).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-hakken-hatsumei-hakken",
+      "label": "発見",
+      "labelFurigana": "{発見|はっけん}",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v374",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "発見",
+          "reading": "はっけん",
+          "meaningVi": "phát kiến"
+        },
+        "sourceFingerprint": "sha256:a2553440ff9c826483bbb17fe4f99d1a2e6b7528a6d70e3cfa0e40102e3eb804"
+      },
+      "vocabulary": {
+        "reading": "はっけん",
+        "meaningVi": "phát hiện",
+        "usageVi": "Tìm ra điều đã có sẵn trong tự nhiên hay thế giới: 新しい星を発見する、病気を早期発見する.",
+        "collocations": [
+          {
+            "japanese": "新種を発見する",
+            "furigana": "{新種|しんしゅ}を{発見|はっけん}する",
+            "meaningVi": "phát hiện loài mới"
+          },
+          {
+            "japanese": "早期発見",
+            "furigana": "{早期|そうき}{発見|はっけん}",
+            "meaningVi": "phát hiện sớm"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-hakken-hatsumei-hatsumei",
+      "label": "発明",
+      "labelFurigana": "{発明|はつめい}",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v375",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "発明",
+          "reading": "はつめい",
+          "meaningVi": "phát minh"
+        },
+        "sourceFingerprint": "sha256:c046886cf91bc286d8574b646f2295260bce74f95bd0836bc581411463456cb5"
+      },
+      "vocabulary": {
+        "reading": "はつめい",
+        "meaningVi": "phát minh",
+        "usageVi": "Tạo ra thứ mới chưa từng có: 電話を発明する、発明家.",
+        "collocations": [
+          {
+            "japanese": "電球を発明する",
+            "furigana": "{電球|でんきゅう}を{発明|はつめい}する",
+            "meaningVi": "phát minh bóng đèn"
+          },
+          {
+            "japanese": "発明家",
+            "furigana": "{発明家|はつめいか}",
+            "meaningVi": "nhà phát minh"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-hakken-hatsumei-1",
+      "titleVi": "Đã có sẵn hay tạo mới",
+      "bodyVi": "Thứ vốn tồn tại, con người chỉ tìm thấy (星、新種、遺跡、ウイルス、法則、間違い) → 発見. Thứ do con người nghĩ ra, chế tạo (電話、飛行機、印刷機、カップ麺) → 発明."
+    },
+    {
+      "id": "ct-v-hakken-hatsumei-2",
+      "titleVi": "Mẹo câu hỏi",
+      "bodyVi": "Hỏi: 'trước khi người này làm, thứ đó đã có chưa?' Đã có (chỉ chưa ai biết) → 発見. Chưa có → 発明."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Đối tượng",
+      "values": {
+        "ci-v-hakken-hatsumei-hakken": "Thứ đã tồn tại",
+        "ci-v-hakken-hatsumei-hatsumei": "Thứ mới tạo ra"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ",
+      "values": {
+        "ci-v-hakken-hatsumei-hakken": "新しい星、遺跡、ウイルス",
+        "ci-v-hakken-hatsumei-hatsumei": "電話、飛行機、電球"
+      }
+    },
+    {
+      "aspectVi": "Người làm",
+      "values": {
+        "ci-v-hakken-hatsumei-hakken": "発見者 (người phát hiện)",
+        "ci-v-hakken-hatsumei-hatsumei": "発明家 (nhà phát minh)"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-hakken-hatsumei-1",
+      "itemId": "ci-v-hakken-hatsumei-hakken",
+      "japanese": "工事中に、古い時代の遺跡が発見された。",
+      "furigana": "{工事|こうじ}{中|ちゅう}に、{古|ふる}い{時代|じだい}の{遺跡|いせき}が{発見|はっけん}された。",
+      "translationVi": "Trong lúc thi công đã phát hiện ra di tích thời cổ."
+    },
+    {
+      "id": "cx-v-hakken-hatsumei-2",
+      "itemId": "ci-v-hakken-hatsumei-hakken",
+      "japanese": "病気は早く発見すれば、治る可能性が高い。",
+      "furigana": "{病気|びょうき}は{早|はや}く{発見|はっけん}すれば、{治|なお}る{可能性|かのうせい}が{高|たか}い。",
+      "translationVi": "Bệnh nếu phát hiện sớm thì khả năng chữa khỏi cao."
+    },
+    {
+      "id": "cx-v-hakken-hatsumei-3",
+      "itemId": "ci-v-hakken-hatsumei-hatsumei",
+      "japanese": "エジソンは多くの物を発明した。",
+      "furigana": "エジソンは{多|おお}くの{物|もの}を{発明|はつめい}した。",
+      "translationVi": "Edison đã phát minh ra nhiều thứ."
+    },
+    {
+      "id": "cx-v-hakken-hatsumei-4",
+      "itemId": "ci-v-hakken-hatsumei-hatsumei",
+      "japanese": "インスタントラーメンは日本で発明された。",
+      "furigana": "インスタントラーメンは{日本|にほん}で{発明|はつめい}された。",
+      "translationVi": "Mì ăn liền được phát minh ở Nhật."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-hakken-hatsumei-1",
+      "textVi": "見 (nhìn) → 発見: nhìn thấy cái đã có. 明 (sáng, nghĩ ra) → 発明: nghĩ ra cái mới."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-hakken-hatsumei-1",
+      "situationVi": "Nói nhà khoa học tìm ra loài cá mới.",
+      "wrong": {
+        "japanese": "科学者が深海で新しい魚を発明した。",
+        "furigana": "{科学者|かがくしゃ}が{深海|しんかい}で{新|あたら}しい{魚|さかな}を{発明|はつめい}した。"
+      },
+      "correct": {
+        "japanese": "科学者が深海で新しい魚を発見した。",
+        "furigana": "{科学者|かがくしゃ}が{深海|しんかい}で{新|あたら}しい{魚|さかな}を{発見|はっけん}した。"
+      },
+      "explanationVi": "Loài cá đã tồn tại, chỉ là được tìm thấy → 発見.",
+      "expectedItemId": "ci-v-hakken-hatsumei-hakken",
+      "confusedWithItemId": "ci-v-hakken-hatsumei-hatsumei"
+    },
+    {
+      "id": "ce-v-hakken-hatsumei-2",
+      "situationVi": "Nói về người làm ra máy bay đầu tiên.",
+      "wrong": {
+        "japanese": "ライト兄弟は飛行機を発見した。",
+        "furigana": "ライト{兄弟|きょうだい}は{飛行機|ひこうき}を{発見|はっけん}した。"
+      },
+      "correct": {
+        "japanese": "ライト兄弟は飛行機を発明した。",
+        "furigana": "ライト{兄弟|きょうだい}は{飛行機|ひこうき}を{発明|はつめい}した。"
+      },
+      "explanationVi": "Máy bay trước đó chưa có → 発明.",
+      "expectedItemId": "ci-v-hakken-hatsumei-hatsumei",
+      "confusedWithItemId": "ci-v-hakken-hatsumei-hakken"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-hakken-hatsumei-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-hakken-hatsumei-hatsumei",
+      "instructionVi": "Chọn câu đúng.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ベルは電話を発明したことで有名だ。",
+          "furigana": "ベルは{電話|でんわ}を{発明|はつめい}したことで{有名|ゆうめい}だ。",
+          "itemId": "ci-v-hakken-hatsumei-hatsumei"
+        },
+        {
+          "id": "b",
+          "text": "ベルは電話を発見したことで有名だ。",
+          "furigana": "ベルは{電話|でんわ}を{発見|はっけん}したことで{有名|ゆうめい}だ。",
+          "itemId": "ci-v-hakken-hatsumei-hakken",
+          "feedbackVi": "Điện thoại là thứ được tạo ra mới → 発明."
+        },
+        {
+          "id": "c",
+          "text": "ベルは電話を発表したことで有名だ。",
+          "furigana": "ベルは{電話|でんわ}を{発表|はっぴょう}したことで{有名|ゆうめい}だ。",
+          "feedbackVi": "発表 là công bố, không nói lên việc tạo ra."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tạo ra điện thoại → 発明."
+    },
+    {
+      "id": "cq-v-hakken-hatsumei-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-hakken-hatsumei-hakken",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "作文を読み直したら、漢字の間違いを三つ＿＿＿した。",
+        "furigana": "{作文|さくぶん}を{読|よ}み{直|なお}したら、{漢字|かんじ}の{間違|まちが}いを{三|みっ}つ＿＿＿した。",
+        "translationVi": "Đọc lại bài văn, tôi phát hiện ba lỗi Kanji."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "発見",
+          "furigana": "{発見|はっけん}",
+          "itemId": "ci-v-hakken-hatsumei-hakken"
+        },
+        {
+          "id": "b",
+          "text": "発明",
+          "furigana": "{発明|はつめい}",
+          "itemId": "ci-v-hakken-hatsumei-hatsumei"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Lỗi sai đã có sẵn, chỉ được tìm thấy → 発見."
+    },
+    {
+      "id": "cq-v-hakken-hatsumei-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-hakken-hatsumei-hakken",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "一九三〇年に冥王星が発明された。",
+        "furigana": "{一九三〇年|せんきゅうひゃくさんじゅうねん}に{冥王星|めいおうせい}が{発明|はつめい}された。",
+        "translationVi": "Năm 1930 người ta phát hiện ra sao Diêm Vương."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "一九三〇年に",
+          "furigana": "{一九三〇年|せんきゅうひゃくさんじゅうねん}に"
+        },
+        {
+          "id": "b",
+          "text": "冥王星が",
+          "furigana": "{冥王星|めいおうせい}が"
+        },
+        {
+          "id": "c",
+          "text": "発明された。",
+          "furigana": "{発明|はつめい}された。",
+          "itemId": "ci-v-hakken-hatsumei-hatsumei"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "発見された。",
+        "furigana": "{発見|はっけん}された。",
+        "itemId": "ci-v-hakken-hatsumei-hakken"
+      },
+      "explanationVi": "Ngôi sao đã tồn tại, chỉ được tìm thấy → 発見."
+    },
+    {
+      "id": "cq-v-hakken-hatsumei-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-hakken-hatsumei-hatsumei",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn kể rằng một học sinh tiểu học đã tự chế ra một dụng cụ mới giúp gấp quần áo nhanh."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "小学生が服を早く畳める道具を発明したそうだ。",
+          "furigana": "{小学生|しょうがくせい}が{服|ふく}を{早|はや}く{畳|たた}める{道具|どうぐ}を{発明|はつめい}したそうだ。",
+          "itemId": "ci-v-hakken-hatsumei-hatsumei"
+        },
+        {
+          "id": "b",
+          "text": "小学生が服を早く畳める道具を発見したそうだ。",
+          "furigana": "{小学生|しょうがくせい}が{服|ふく}を{早|はや}く{畳|たた}める{道具|どうぐ}を{発見|はっけん}したそうだ。",
+          "itemId": "ci-v-hakken-hatsumei-hakken",
+          "feedbackVi": "Dụng cụ do bạn ấy tự chế tạo → 発明."
+        },
+        {
+          "id": "c",
+          "text": "小学生が服を早く畳める道具を見つかったそうだ。",
+          "furigana": "{小学生|しょうがくせい}が{服|ふく}を{早|はや}く{畳|たた}める{道具|どうぐ}を{見|み}つかったそうだ。",
+          "feedbackVi": "見つかる không đi với を."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Chế tạo dụng cụ mới → 発明."
+    }
+  ]
+}

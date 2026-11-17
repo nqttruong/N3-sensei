@@ -1,0 +1,295 @@
+{
+  "id": "cg-g-kakeru-kiru",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜かける và 〜きる",
+  "summaryVi": "Hai hậu tố gắn vào thân ます nói về mức độ hoàn thành, nhưng ngược nhau: かける là làm dở, mới bắt đầu, chưa xong; きる là làm đến hết, trọn vẹn.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-kakeru-kiru-kakeru",
+      "label": "〜かけ／〜かける",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g102",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜かけ／〜かける",
+          "structure": "Vます（bỏ ます） ＋ かけ（の N）／かける",
+          "meaningVi": "đang… dở, làm… giữa chừng; suýt…"
+        },
+        "sourceFingerprint": "sha256:92d45f04c4ed0aaf8ebab5f7bf23ea151f998b847c3f8f57b292f142ab640337"
+      },
+      "grammar": {
+        "meaningVi": "Đang… dở, làm… giữa chừng; suýt…",
+        "connection": "Vます（bỏ ます） ＋ かけ（の N）／かける",
+        "nuanceVi": "Hành động đã bắt đầu nhưng chưa xong: 読みかけの本、食べかけのパン. Với động từ trạng thái tức thời: 死にかける (suýt chết)."
+      }
+    },
+    {
+      "id": "ci-g-kakeru-kiru-kiru",
+      "label": "〜きる",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g067",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜きる",
+          "structure": "Vます（bỏ ます） ＋ きる／きれる／きれない",
+          "meaningVi": "làm hết, làm xong hoàn toàn…; không thể… hết"
+        },
+        "sourceFingerprint": "sha256:4042510e435deb7b147c48308bcc0d2cdf3df672d90a2c503b3bd42b1f059c6f"
+      },
+      "grammar": {
+        "meaningVi": "Làm hết, làm xong hoàn toàn…; không thể… hết",
+        "connection": "Vます（bỏ ます） ＋ きる／きれる／きれない",
+        "nuanceVi": "Làm đến tận cùng, không còn lại: 使いきる、走りきる、食べきれない. Dạng きれない: không thể làm hết (vì quá nhiều)."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-kakeru-kiru-1",
+      "titleVi": "Dở dang hay trọn vẹn",
+      "bodyVi": "読みかけの本 = sách đang đọc dở. 読みきった本 = sách đã đọc hết. Một nửa cái bánh bị bỏ lại là 食べかけ; ăn sạch là 食べきる; nhiều quá ăn không hết là 食べきれない."
+    },
+    {
+      "id": "ct-g-kakeru-kiru-2",
+      "titleVi": "Dạng thường gặp trong đề",
+      "bodyVi": "かけ + の + N (飲みかけのコーヒー); 〜かけたが (vừa định… thì). きれない với số lượng lớn (多すぎて数えきれない). きる còn nhấn mạnh mức độ: 疲れきる (mệt lả)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Mức độ hoàn thành",
+      "values": {
+        "ci-g-kakeru-kiru-kakeru": "Chưa xong, đang dở",
+        "ci-g-kakeru-kiru-kiru": "Xong hoàn toàn, đến hết"
+      }
+    },
+    {
+      "aspectVi": "Dạng hay gặp",
+      "values": {
+        "ci-g-kakeru-kiru-kakeru": "〜かけの N、〜かけた",
+        "ci-g-kakeru-kiru-kiru": "〜きる、〜きれない"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ",
+      "values": {
+        "ci-g-kakeru-kiru-kakeru": "読みかけの本",
+        "ci-g-kakeru-kiru-kiru": "一晩で読みきった"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-kakeru-kiru-1",
+      "itemId": "ci-g-kakeru-kiru-kakeru",
+      "japanese": "机の上に飲みかけのコーヒーが置いてある。",
+      "furigana": "{机|つくえ}の{上|うえ}に{飲|の}みかけのコーヒーが{置|お}いてある。",
+      "translationVi": "Trên bàn có cốc cà phê đang uống dở."
+    },
+    {
+      "id": "cx-g-kakeru-kiru-2",
+      "itemId": "ci-g-kakeru-kiru-kakeru",
+      "japanese": "何か言いかけたが、彼は黙ってしまった。",
+      "furigana": "{何|なに}か{言|い}いかけたが、{彼|かれ}は{黙|だま}ってしまった。",
+      "translationVi": "Anh ấy định nói gì đó nhưng rồi im lặng."
+    },
+    {
+      "id": "cx-g-kakeru-kiru-3",
+      "itemId": "ci-g-kakeru-kiru-kiru",
+      "japanese": "面白くて、一晩でこの小説を読みきった。",
+      "furigana": "{面白|おもしろ}くて、{一晩|ひとばん}でこの{小説|しょうせつ}を{読|よ}みきった。",
+      "translationVi": "Hay quá nên tôi đọc hết cuốn tiểu thuyết trong một đêm."
+    },
+    {
+      "id": "cx-g-kakeru-kiru-4",
+      "itemId": "ci-g-kakeru-kiru-kiru",
+      "japanese": "こんなにたくさんの料理、一人では食べきれない。",
+      "furigana": "こんなにたくさんの{料理|りょうり}、{一人|ひとり}では{食|た}べきれない。",
+      "translationVi": "Nhiều món thế này, một mình ăn không hết được."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-kakeru-kiru-1",
+      "textVi": "かける: 'treo' (かける) lơ lửng giữa chừng. きる: 'cắt' (切る) đứt đến cùng, không còn gì."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-kakeru-kiru-1",
+      "situationVi": "Kể rằng đã chạy hết quãng đường marathon.",
+      "wrong": {
+        "japanese": "初めてのマラソンだったが、最後まで走りかけた。",
+        "furigana": "{初|はじ}めてのマラソンだったが、{最後|さいご}まで{走|はし}りかけた。"
+      },
+      "correct": {
+        "japanese": "初めてのマラソンだったが、最後まで走りきった。",
+        "furigana": "{初|はじ}めてのマラソンだったが、{最後|さいご}まで{走|はし}りきった。"
+      },
+      "explanationVi": "最後まで (đến cuối) cho thấy đã hoàn thành → 走りきった.",
+      "expectedItemId": "ci-g-kakeru-kiru-kiru",
+      "confusedWithItemId": "ci-g-kakeru-kiru-kakeru"
+    },
+    {
+      "id": "ce-g-kakeru-kiru-2",
+      "situationVi": "Nói về cuốn sách đang đọc dở.",
+      "wrong": {
+        "japanese": "これは読みきりの本だから、まだ片付けないで。",
+        "furigana": "これは{読|よ}みきりの{本|ほん}だから、まだ{片付|かたづ}けないで。"
+      },
+      "correct": {
+        "japanese": "これは読みかけの本だから、まだ片付けないで。",
+        "furigana": "これは{読|よ}みかけの{本|ほん}だから、まだ{片付|かたづ}けないで。"
+      },
+      "explanationVi": "Chưa đọc xong nên đừng cất → 読みかけの本.",
+      "expectedItemId": "ci-g-kakeru-kiru-kakeru",
+      "confusedWithItemId": "ci-g-kakeru-kiru-kiru"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-kakeru-kiru-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-kakeru-kiru-kiru",
+      "instructionVi": "Câu nào có nghĩa 'Tôi đã dùng hết tiền tiêu vặt tháng này'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "今月のお小遣いを使いきった。",
+          "furigana": "{今月|こんげつ}のお{小遣|こづか}いを{使|つか}いきった。",
+          "itemId": "ci-g-kakeru-kiru-kiru"
+        },
+        {
+          "id": "b",
+          "text": "今月のお小遣いを使いかけた。",
+          "furigana": "{今月|こんげつ}のお{小遣|こづか}いを{使|つか}いかけた。",
+          "itemId": "ci-g-kakeru-kiru-kakeru",
+          "feedbackVi": "使いかけた là mới bắt đầu dùng, chưa hết."
+        },
+        {
+          "id": "c",
+          "text": "今月のお小遣いを使いっぱなしだ。",
+          "furigana": "{今月|こんげつ}のお{小遣|こづか}いを{使|つか}いっぱなしだ。",
+          "feedbackVi": "っぱなし là để đó không xử lý, không có nghĩa 'hết'."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Dùng đến hết → 使いきる."
+    },
+    {
+      "id": "cq-g-kakeru-kiru-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-kakeru-kiru-kakeru",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "食べ＿＿＿のパンをそのままにしないで、冷蔵庫に入れておいて。",
+        "furigana": "{食|た}べ＿＿＿のパンをそのままにしないで、{冷蔵庫|れいぞうこ}に{入|い}れておいて。",
+        "translationVi": "Đừng để nguyên ổ bánh mì đang ăn dở, cho vào tủ lạnh đi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "かけ",
+          "itemId": "ci-g-kakeru-kiru-kakeru"
+        },
+        {
+          "id": "b",
+          "text": "きり",
+          "itemId": "ci-g-kakeru-kiru-kiru",
+          "feedbackVi": "食べきりのパン không phải 'bánh đang ăn dở'; bánh còn lại nên chưa ăn hết."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Ăn dở, còn lại một phần → 食べかけのパン."
+    },
+    {
+      "id": "cq-g-kakeru-kiru-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-kakeru-kiru-kiru",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "広場には数えかけないほどたくさんの人が集まっていた。",
+        "furigana": "{広場|ひろば}には{数|かぞ}えかけないほどたくさんの{人|ひと}が{集|あつ}まっていた。",
+        "translationVi": "Ở quảng trường có rất nhiều người, đông đến mức không đếm xuể."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "広場には",
+          "furigana": "{広場|ひろば}には"
+        },
+        {
+          "id": "b",
+          "text": "数えかけないほど",
+          "furigana": "{数|かぞ}えかけないほど",
+          "itemId": "ci-g-kakeru-kiru-kakeru"
+        },
+        {
+          "id": "c",
+          "text": "たくさんの人が",
+          "furigana": "たくさんの{人|ひと}が"
+        },
+        {
+          "id": "d",
+          "text": "集まっていた。",
+          "furigana": "{集|あつ}まっていた。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "数えきれないほど",
+        "furigana": "{数|かぞ}えきれないほど",
+        "itemId": "ci-g-kakeru-kiru-kiru"
+      },
+      "explanationVi": "Không đếm hết được vì quá nhiều → 数えきれない."
+    },
+    {
+      "id": "cq-g-kakeru-kiru-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-kakeru-kiru-kakeru",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn thấy trên bàn có một chai nước ép mới uống được một nửa và muốn hỏi xem của ai."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "この飲みかけのジュース、誰の？",
+          "furigana": "この{飲|の}みかけのジュース、{誰|だれ}の？",
+          "itemId": "ci-g-kakeru-kiru-kakeru"
+        },
+        {
+          "id": "b",
+          "text": "この飲みきったジュース、誰の？",
+          "furigana": "この{飲|の}みきったジュース、{誰|だれ}の？",
+          "itemId": "ci-g-kakeru-kiru-kiru",
+          "feedbackVi": "飲みきった là đã uống hết, nhưng chai vẫn còn một nửa."
+        },
+        {
+          "id": "c",
+          "text": "この飲むところのジュース、誰の？",
+          "furigana": "この{飲|の}むところのジュース、{誰|だれ}の？",
+          "feedbackVi": "飲むところ là 'sắp uống', không dùng làm định ngữ như thế này."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Uống dở, còn một nửa → 飲みかけのジュース."
+    }
+  ]
+}

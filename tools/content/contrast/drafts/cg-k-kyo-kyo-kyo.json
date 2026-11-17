@@ -1,0 +1,381 @@
+{
+  "id": "cg-k-kyo-kyo-kyo",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "巨, 拒 và 距",
+  "summaryVi": "Ba chữ cùng đọc キョ và cùng có phần 巨. 巨 là to lớn; thêm 扌 (tay) thành 拒 – cự tuyệt (đưa tay đẩy ra); thêm 足 (chân) thành 距 – cự ly (khoảng cách bước chân).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-kyo-kyo-kyo-ookii",
+      "label": "巨",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k05de8",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "巨",
+          "onReadings": [
+            "キョ"
+          ],
+          "kunReadings": [],
+          "meaningVi": "To lớn"
+        },
+        "sourceFingerprint": "sha256:9551dd735e812b051ff363aabd8c8becfb72fcc82855261793be02abbbfe19f5"
+      },
+      "kanji": {
+        "meaningVi": "to lớn, khổng lồ",
+        "hanViet": "CỰ",
+        "onReadings": [
+          "キョ"
+        ],
+        "kunReadings": [],
+        "radical": {
+          "character": "工",
+          "nameVi": "Công (thước thợ)"
+        },
+        "shapeNoteVi": "Hình cây thước lớn → to lớn. 巨大, 巨人."
+      }
+    },
+    {
+      "id": "ci-k-kyo-kyo-kyo-kobamu",
+      "label": "拒",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k062d2",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "拒",
+          "onReadings": [
+            "キョ",
+            "ゴ"
+          ],
+          "kunReadings": [
+            "こば.む"
+          ],
+          "meaningVi": "Từ chối, cự tuyệt"
+        },
+        "sourceFingerprint": "sha256:90f986af64c41c923c605d7d6a12f41373fce47ea467289e16b7ad0a8286e4a9"
+      },
+      "kanji": {
+        "meaningVi": "từ chối, cự tuyệt",
+        "hanViet": "CỰ",
+        "onReadings": [
+          "キョ",
+          "ゴ"
+        ],
+        "kunReadings": [
+          "こば.む"
+        ],
+        "radical": {
+          "character": "扌",
+          "nameVi": "Thủ (tay)"
+        },
+        "shapeNoteVi": "扌 + 巨: đưa tay đẩy ra → cự tuyệt. 拒否, 拒絶, 拒む."
+      }
+    },
+    {
+      "id": "ci-k-kyo-kyo-kyo-kyori",
+      "label": "距",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k08ddd",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "距",
+          "onReadings": [
+            "キョ"
+          ],
+          "kunReadings": [
+            "へだ.たる",
+            "けづめ"
+          ],
+          "meaningVi": "Cự ly"
+        },
+        "sourceFingerprint": "sha256:290415d7f379425cf995bdfd16a141b942d2bfa7bb102a6d57c678fc2152236f"
+      },
+      "kanji": {
+        "meaningVi": "cự ly, khoảng cách",
+        "hanViet": "CỰ",
+        "onReadings": [
+          "キョ"
+        ],
+        "kunReadings": [
+          "へだ.たる",
+          "けづめ"
+        ],
+        "radical": {
+          "character": "⻊",
+          "nameVi": "Túc (chân)"
+        },
+        "shapeNoteVi": "⻊ + 巨: khoảng cách đo bằng bước chân → cự ly. 距離."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-kyo-kyo-kyo-1",
+      "titleVi": "Bộ bên trái",
+      "bodyVi": "Không có bộ: 巨 (to lớn). 扌 (tay) → 拒 (đẩy ra, từ chối). ⻊ (chân) → 距 (khoảng cách). Âm giống nhau hoàn toàn nên chỉ có thể dựa vào nghĩa của từ."
+    },
+    {
+      "id": "ct-k-kyo-kyo-kyo-2",
+      "titleVi": "Từ hay gặp",
+      "bodyVi": "巨: 巨大 (khổng lồ), 巨人 (người khổng lồ), 巨額 (số tiền khổng lồ). 拒: 拒否 (từ chối), 拒絶 (cự tuyệt), 拒む. 距: 距離 (khoảng cách), 長距離 (đường dài)."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Bộ bên trái",
+      "values": {
+        "ci-k-kyo-kyo-kyo-ookii": "Không có",
+        "ci-k-kyo-kyo-kyo-kobamu": "扌 (tay)",
+        "ci-k-kyo-kyo-kyo-kyori": "⻊ (chân)"
+      }
+    },
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-k-kyo-kyo-kyo-ookii": "To lớn",
+        "ci-k-kyo-kyo-kyo-kobamu": "Từ chối",
+        "ci-k-kyo-kyo-kyo-kyori": "Khoảng cách"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-kyo-kyo-kyo-ookii": "巨大、巨人",
+        "ci-k-kyo-kyo-kyo-kobamu": "拒否、拒む",
+        "ci-k-kyo-kyo-kyo-kyori": "距離、長距離"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-kyo-kyo-kyo-1",
+      "itemId": "ci-k-kyo-kyo-kyo-ookii",
+      "japanese": "海の底で巨大な魚が見つかった。",
+      "furigana": "{海|うみ}の{底|そこ}で{巨大|きょだい}な{魚|さかな}が{見|み}つかった。",
+      "translationVi": "Dưới đáy biển đã tìm thấy một con cá khổng lồ."
+    },
+    {
+      "id": "cx-k-kyo-kyo-kyo-2",
+      "itemId": "ci-k-kyo-kyo-kyo-ookii",
+      "japanese": "その会社は巨額の借金を抱えている。",
+      "furigana": "その{会社|かいしゃ}は{巨額|きょがく}の{借金|しゃっきん}を{抱|かか}えている。",
+      "translationVi": "Công ty đó đang ôm khoản nợ khổng lồ."
+    },
+    {
+      "id": "cx-k-kyo-kyo-kyo-3",
+      "itemId": "ci-k-kyo-kyo-kyo-kobamu",
+      "japanese": "彼は質問に答えることを拒否した。",
+      "furigana": "{彼|かれ}は{質問|しつもん}に{答|こた}えることを{拒否|きょひ}した。",
+      "translationVi": "Anh ta từ chối trả lời câu hỏi."
+    },
+    {
+      "id": "cx-k-kyo-kyo-kyo-4",
+      "itemId": "ci-k-kyo-kyo-kyo-kobamu",
+      "japanese": "住民は工場の建設を拒んだ。",
+      "furigana": "{住民|じゅうみん}は{工場|こうじょう}の{建設|けんせつ}を{拒|こば}んだ。",
+      "translationVi": "Cư dân đã phản đối việc xây nhà máy."
+    },
+    {
+      "id": "cx-k-kyo-kyo-kyo-5",
+      "itemId": "ci-k-kyo-kyo-kyo-kyori",
+      "japanese": "家から駅までの距離は約二キロだ。",
+      "furigana": "{家|いえ}から{駅|えき}までの{距離|きょり}は{約|やく}{二|に}キロだ。",
+      "translationVi": "Khoảng cách từ nhà đến ga khoảng hai cây số."
+    },
+    {
+      "id": "cx-k-kyo-kyo-kyo-6",
+      "itemId": "ci-k-kyo-kyo-kyo-kyori",
+      "japanese": "長距離の運転は疲れる。",
+      "furigana": "{長距離|ちょうきょり}の{運転|うんてん}は{疲|つか}れる。",
+      "translationVi": "Lái xe đường dài thì mệt."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-kyo-kyo-kyo-1",
+      "textVi": "Tay (扌) đẩy ra → 拒; chân (⻊) bước đo → 距; chỉ 巨 là to lớn."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-kyo-kyo-kyo-1",
+      "situationVi": "Viết 'khoảng cách'.",
+      "wrong": {
+        "japanese": "二人の間の巨離が縮まった。",
+        "furigana": "{二人|ふたり}の{間|あいだ}の{巨離|きょり}が{縮|ちぢ}まった。"
+      },
+      "correct": {
+        "japanese": "二人の間の距離が縮まった。",
+        "furigana": "{二人|ふたり}の{間|あいだ}の{距離|きょり}が{縮|ちぢ}まった。"
+      },
+      "explanationVi": "Khoảng cách → 距 (bộ chân).",
+      "expectedItemId": "ci-k-kyo-kyo-kyo-kyori",
+      "confusedWithItemId": "ci-k-kyo-kyo-kyo-ookii"
+    },
+    {
+      "id": "ce-k-kyo-kyo-kyo-2",
+      "situationVi": "Viết 'từ chối'.",
+      "wrong": {
+        "japanese": "会社は要求を距否した。",
+        "furigana": "{会社|かいしゃ}は{要求|ようきゅう}を{距否|きょひ}した。"
+      },
+      "correct": {
+        "japanese": "会社は要求を拒否した。",
+        "furigana": "{会社|かいしゃ}は{要求|ようきゅう}を{拒否|きょひ}した。"
+      },
+      "explanationVi": "Từ chối → 拒 (bộ tay).",
+      "expectedItemId": "ci-k-kyo-kyo-kyo-kobamu",
+      "confusedWithItemId": "ci-k-kyo-kyo-kyo-kyori"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-kyo-kyo-kyo-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-kyo-kyo-kyo-kyori",
+      "instructionVi": "Chọn cách viết đúng của きょり (khoảng cách).",
+      "options": [
+        {
+          "id": "a",
+          "text": "巨離",
+          "itemId": "ci-k-kyo-kyo-kyo-ookii",
+          "feedbackVi": "巨 là to lớn."
+        },
+        {
+          "id": "b",
+          "text": "拒離",
+          "itemId": "ci-k-kyo-kyo-kyo-kobamu",
+          "feedbackVi": "拒 là từ chối."
+        },
+        {
+          "id": "c",
+          "text": "距離",
+          "itemId": "ci-k-kyo-kyo-kyo-kyori"
+        }
+      ],
+      "correctOptionId": "c",
+      "explanationVi": "距離: khoảng cách bước chân → 距."
+    },
+    {
+      "id": "cq-k-kyo-kyo-kyo-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-kyo-kyo-kyo-ookii",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "台風の後、海岸に＿＿＿大な木が流れ着いた。",
+        "furigana": "{台風|たいふう}の{後|あと}、{海岸|かいがん}に＿＿＿{大|だい}な{木|き}が{流|なが}れ{着|つ}いた。",
+        "translationVi": "Sau cơn bão, một thân cây khổng lồ trôi dạt vào bờ biển."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "巨",
+          "itemId": "ci-k-kyo-kyo-kyo-ookii"
+        },
+        {
+          "id": "b",
+          "text": "拒",
+          "itemId": "ci-k-kyo-kyo-kyo-kobamu"
+        },
+        {
+          "id": "c",
+          "text": "距",
+          "itemId": "ci-k-kyo-kyo-kyo-kyori"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "巨大 (khổng lồ) viết với 巨."
+    },
+    {
+      "id": "cq-k-kyo-kyo-kyo-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-kyo-kyo-kyo-kobamu",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "猫は新しいえさを食べるのを巨否した。",
+        "furigana": "{猫|ねこ}は{新|あたら}しいえさを{食|た}べるのを{巨否|きょひ}した。",
+        "translationVi": "Con mèo từ chối ăn thức ăn mới."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "猫は",
+          "furigana": "{猫|ねこ}は"
+        },
+        {
+          "id": "b",
+          "text": "新しいえさを",
+          "furigana": "{新|あたら}しいえさを"
+        },
+        {
+          "id": "c",
+          "text": "食べるのを",
+          "furigana": "{食|た}べるのを"
+        },
+        {
+          "id": "d",
+          "text": "巨否した。",
+          "furigana": "{巨否|きょひ}した。",
+          "itemId": "ci-k-kyo-kyo-kyo-ookii"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "拒否した。",
+        "furigana": "{拒否|きょひ}した。",
+        "itemId": "ci-k-kyo-kyo-kyo-kobamu"
+      },
+      "explanationVi": "Từ chối → 拒否."
+    },
+    {
+      "id": "cq-k-kyo-kyo-kyo-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-kyo-kyo-kyo-kyori",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn kể rằng từ nhà đến trường xa nên đi xe đạp."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "家から学校まで距離があるので、自転車で通っている。",
+          "furigana": "{家|いえ}から{学校|がっこう}まで{距離|きょり}があるので、{自転車|じてんしゃ}で{通|かよ}っている。",
+          "itemId": "ci-k-kyo-kyo-kyo-kyori"
+        },
+        {
+          "id": "b",
+          "text": "家から学校まで巨離があるので、自転車で通っている。",
+          "furigana": "{家|いえ}から{学校|がっこう}まで{巨離|きょり}があるので、{自転車|じてんしゃ}で{通|かよ}っている。",
+          "itemId": "ci-k-kyo-kyo-kyo-ookii",
+          "feedbackVi": "距離 viết với 距, không phải 巨."
+        },
+        {
+          "id": "c",
+          "text": "家から学校まで拒離があるので、自転車で通っている。",
+          "furigana": "{家|いえ}から{学校|がっこう}まで{拒離|きょり}があるので、{自転車|じてんしゃ}で{通|かよ}っている。",
+          "itemId": "ci-k-kyo-kyo-kyo-kobamu",
+          "feedbackVi": "距離 viết với 距, không phải 拒."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "距離 (khoảng cách) viết với 距."
+    }
+  ]
+}

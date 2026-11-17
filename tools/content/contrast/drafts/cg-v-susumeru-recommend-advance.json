@@ -1,0 +1,381 @@
+{
+  "id": "cg-v-susumeru-recommend-advance",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "勧める, 薦める và 進める",
+  "summaryVi": "Ba động từ cùng đọc là すすめる. 勧める là khuyên, mời (ai làm gì), 薦める là tiến cử, giới thiệu (người, vật tốt), 進める là làm cho tiến lên (công việc, kế hoạch, kim đồng hồ).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-susumeru-recommend-advance-kan",
+      "label": "勧める",
+      "labelFurigana": "{勧|すす}める",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v734",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "勧める",
+          "reading": "すすめる",
+          "meaningVi": "rủ, mời, gợi ý"
+        },
+        "sourceFingerprint": "sha256:d64c815978487d28ae370b6b9040cf3d40b95216cca73110f418141b81c1560c"
+      },
+      "vocabulary": {
+        "reading": "すすめる",
+        "meaningVi": "khuyên, mời, rủ",
+        "usageVi": "Khuyến khích ai làm một hành động: 運動を勧める、お茶を勧める.",
+        "collocations": [
+          {
+            "japanese": "入会を勧める",
+            "furigana": "{入会|にゅうかい}を{勧|すす}める",
+            "meaningVi": "mời gia nhập"
+          },
+          {
+            "japanese": "医者が禁煙を勧める",
+            "furigana": "{医者|いしゃ}が{禁煙|きんえん}を{勧|すす}める",
+            "meaningVi": "bác sĩ khuyên bỏ thuốc"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-susumeru-recommend-advance-sen",
+      "label": "薦める",
+      "labelFurigana": "{薦|すす}める",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v735",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "薦める",
+          "reading": "すすめる",
+          "meaningVi": "giới thiệu, gợi ý"
+        },
+        "sourceFingerprint": "sha256:43a5189c2658f7d6a94ffc2b10064e3d1e5a85f00732e4f90b8e49b13062e567"
+      },
+      "vocabulary": {
+        "reading": "すすめる",
+        "meaningVi": "tiến cử, giới thiệu (cái tốt)",
+        "usageVi": "Giới thiệu người, vật mình thấy tốt cho vị trí hay cho ai: 候補者を薦める、本を薦める.",
+        "collocations": [
+          {
+            "japanese": "候補者を薦める",
+            "furigana": "{候補者|こうほしゃ}を{薦|すす}める",
+            "meaningVi": "tiến cử ứng viên"
+          },
+          {
+            "japanese": "いい本を薦める",
+            "furigana": "いい{本|ほん}を{薦|すす}める",
+            "meaningVi": "giới thiệu sách hay"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-susumeru-recommend-advance-shin",
+      "label": "進める",
+      "labelFurigana": "{進|すす}める",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v719",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "進める",
+          "reading": "すすめる",
+          "meaningVi": "làm cho tiến lên"
+        },
+        "sourceFingerprint": "sha256:420f7c921a0ad0a3467272203bc33dd6b905eb323dc306ceddcf8c95e34d0773"
+      },
+      "vocabulary": {
+        "reading": "すすめる",
+        "meaningVi": "làm cho tiến lên, xúc tiến",
+        "usageVi": "Đẩy công việc, kế hoạch, thứ gì đó tiến về phía trước: 計画を進める、時計を進める.",
+        "collocations": [
+          {
+            "japanese": "計画を進める",
+            "furigana": "{計画|けいかく}を{進|すす}める",
+            "meaningVi": "xúc tiến kế hoạch"
+          },
+          {
+            "japanese": "時計を進める",
+            "furigana": "{時計|とけい}を{進|すす}める",
+            "meaningVi": "vặn đồng hồ nhanh lên"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-susumeru-recommend-advance-1",
+      "titleVi": "Ba hướng nghĩa",
+      "bodyVi": "勧める: khuyên ai làm một việc (hành động) – 'nên làm đi'. 薦める: giới thiệu một người/vật cụ thể vì nó tốt – 'cái này hay đấy'. 進める: làm một việc tiến triển – không liên quan đến khuyên nhủ."
+    },
+    {
+      "id": "ct-v-susumeru-recommend-advance-2",
+      "titleVi": "Phân biệt 勧める và 薦める",
+      "bodyVi": "Tân ngữ là hành động (〜ことを、運動を、受験を) → 勧める. Tân ngữ là người, sản phẩm, sách được tiến cử → 薦める. Trong thực tế 勧める đôi khi dùng rộng cho cả hai, nhưng 'tiến cử ứng viên' thì viết 薦める."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa",
+      "values": {
+        "ci-v-susumeru-recommend-advance-kan": "Khuyên, mời làm gì",
+        "ci-v-susumeru-recommend-advance-sen": "Tiến cử, giới thiệu cái tốt",
+        "ci-v-susumeru-recommend-advance-shin": "Làm cho tiến lên"
+      }
+    },
+    {
+      "aspectVi": "Tân ngữ hay gặp",
+      "values": {
+        "ci-v-susumeru-recommend-advance-kan": "運動、禁煙、入会、お茶",
+        "ci-v-susumeru-recommend-advance-sen": "候補者、人材、本、商品",
+        "ci-v-susumeru-recommend-advance-shin": "計画、仕事、話、時計"
+      }
+    },
+    {
+      "aspectVi": "Từ Hán liên quan",
+      "values": {
+        "ci-v-susumeru-recommend-advance-kan": "勧誘 (mời chào)",
+        "ci-v-susumeru-recommend-advance-sen": "推薦 (tiến cử)",
+        "ci-v-susumeru-recommend-advance-shin": "進行 (tiến hành)"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-susumeru-recommend-advance-1",
+      "itemId": "ci-v-susumeru-recommend-advance-kan",
+      "japanese": "医者に毎日歩くことを勧められた。",
+      "furigana": "{医者|いしゃ}に{毎日|まいにち}{歩|ある}くことを{勧|すす}められた。",
+      "translationVi": "Tôi được bác sĩ khuyên đi bộ mỗi ngày."
+    },
+    {
+      "id": "cx-v-susumeru-recommend-advance-2",
+      "itemId": "ci-v-susumeru-recommend-advance-kan",
+      "japanese": "友達にサークルへの入会を勧めた。",
+      "furigana": "{友達|ともだち}にサークルへの{入会|にゅうかい}を{勧|すす}めた。",
+      "translationVi": "Tôi rủ bạn tham gia câu lạc bộ."
+    },
+    {
+      "id": "cx-v-susumeru-recommend-advance-3",
+      "itemId": "ci-v-susumeru-recommend-advance-sen",
+      "japanese": "先生が薦めてくれた辞書はとても使いやすい。",
+      "furigana": "{先生|せんせい}が{薦|すす}めてくれた{辞書|じしょ}はとても{使|つか}いやすい。",
+      "translationVi": "Cuốn từ điển thầy giới thiệu rất dễ dùng."
+    },
+    {
+      "id": "cx-v-susumeru-recommend-advance-4",
+      "itemId": "ci-v-susumeru-recommend-advance-sen",
+      "japanese": "部長は次のリーダーに田中さんを薦めた。",
+      "furigana": "{部長|ぶちょう}は{次|つぎ}のリーダーに{田中|たなか}さんを{薦|すす}めた。",
+      "translationVi": "Trưởng phòng đã tiến cử anh Tanaka làm trưởng nhóm tiếp theo."
+    },
+    {
+      "id": "cx-v-susumeru-recommend-advance-5",
+      "itemId": "ci-v-susumeru-recommend-advance-shin",
+      "japanese": "予定どおりに工事を進めている。",
+      "furigana": "{予定|よてい}どおりに{工事|こうじ}を{進|すす}めている。",
+      "translationVi": "Chúng tôi đang tiến hành công trình đúng kế hoạch."
+    },
+    {
+      "id": "cx-v-susumeru-recommend-advance-6",
+      "itemId": "ci-v-susumeru-recommend-advance-shin",
+      "japanese": "話を先に進めましょう。",
+      "furigana": "{話|はなし}を{先|さき}に{進|すす}めましょう。",
+      "translationVi": "Chúng ta hãy nói tiếp sang phần sau."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-susumeru-recommend-advance-1",
+      "textVi": "勧 → 勧誘 (mời), 薦 → 推薦 (tiến cử), 進 → 進行 (tiến hành)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-susumeru-recommend-advance-1",
+      "situationVi": "Viết 'xúc tiến dự án'.",
+      "wrong": {
+        "japanese": "プロジェクトを勧める。",
+        "furigana": "プロジェクトを{勧|すす}める。"
+      },
+      "correct": {
+        "japanese": "プロジェクトを進める。",
+        "furigana": "プロジェクトを{進|すす}める。"
+      },
+      "explanationVi": "Làm cho dự án tiến triển → 進める.",
+      "expectedItemId": "ci-v-susumeru-recommend-advance-shin",
+      "confusedWithItemId": "ci-v-susumeru-recommend-advance-kan"
+    },
+    {
+      "id": "ce-v-susumeru-recommend-advance-2",
+      "situationVi": "Viết 'tiến cử cô Sato làm ứng viên'.",
+      "wrong": {
+        "japanese": "佐藤さんを候補者として進めた。",
+        "furigana": "{佐藤|さとう}さんを{候補者|こうほしゃ}として{進|すす}めた。"
+      },
+      "correct": {
+        "japanese": "佐藤さんを候補者として薦めた。",
+        "furigana": "{佐藤|さとう}さんを{候補者|こうほしゃ}として{薦|すす}めた。"
+      },
+      "explanationVi": "Tiến cử người → 薦める.",
+      "expectedItemId": "ci-v-susumeru-recommend-advance-sen",
+      "confusedWithItemId": "ci-v-susumeru-recommend-advance-shin"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-susumeru-recommend-advance-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-susumeru-recommend-advance-kan",
+      "instructionVi": "Chọn câu viết đúng: 'Bác sĩ khuyên tôi bỏ thuốc lá.'",
+      "options": [
+        {
+          "id": "a",
+          "text": "医者にたばこをやめるように勧められた。",
+          "furigana": "{医者|いしゃ}にたばこをやめるように{勧|すす}められた。",
+          "itemId": "ci-v-susumeru-recommend-advance-kan"
+        },
+        {
+          "id": "b",
+          "text": "医者にたばこをやめるように進められた。",
+          "furigana": "{医者|いしゃ}にたばこをやめるように{進|すす}められた。",
+          "itemId": "ci-v-susumeru-recommend-advance-shin",
+          "feedbackVi": "進める là làm tiến triển, không có nghĩa khuyên."
+        },
+        {
+          "id": "c",
+          "text": "医者にたばこをやめるように薦められた。",
+          "furigana": "{医者|いしゃ}にたばこをやめるように{薦|すす}められた。",
+          "itemId": "ci-v-susumeru-recommend-advance-sen",
+          "feedbackVi": "薦める là tiến cử người, vật; khuyên làm một hành động dùng 勧める."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Khuyên ai làm một hành động → 勧める."
+    },
+    {
+      "id": "cq-v-susumeru-recommend-advance-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-susumeru-recommend-advance-shin",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "会議の時間が少ないので、議題を早く＿＿＿ましょう。",
+        "furigana": "{会議|かいぎ}の{時間|じかん}が{少|すく}ないので、{議題|ぎだい}を{早|はや}く＿＿＿ましょう。",
+        "translationVi": "Thời gian họp ít nên ta mau chóng tiến hành các nội dung đi."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "進め",
+          "furigana": "{進|すす}め",
+          "itemId": "ci-v-susumeru-recommend-advance-shin"
+        },
+        {
+          "id": "b",
+          "text": "勧め",
+          "furigana": "{勧|すす}め",
+          "itemId": "ci-v-susumeru-recommend-advance-kan"
+        },
+        {
+          "id": "c",
+          "text": "薦め",
+          "furigana": "{薦|すす}め",
+          "itemId": "ci-v-susumeru-recommend-advance-sen"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Làm cho nội dung họp tiến triển → 進める."
+    },
+    {
+      "id": "cq-v-susumeru-recommend-advance-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-susumeru-recommend-advance-sen",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "友達が進めてくれた小説は本当に面白かった。",
+        "furigana": "{友達|ともだち}が{進|すす}めてくれた{小説|しょうせつ}は{本当|ほんとう}に{面白|おもしろ}かった。",
+        "translationVi": "Cuốn tiểu thuyết bạn tôi giới thiệu hay thật."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "友達が",
+          "furigana": "{友達|ともだち}が"
+        },
+        {
+          "id": "b",
+          "text": "進めてくれた",
+          "furigana": "{進|すす}めてくれた",
+          "itemId": "ci-v-susumeru-recommend-advance-shin"
+        },
+        {
+          "id": "c",
+          "text": "小説は",
+          "furigana": "{小説|しょうせつ}は"
+        },
+        {
+          "id": "d",
+          "text": "本当に面白かった。",
+          "furigana": "{本当|ほんとう}に{面白|おもしろ}かった。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "薦めてくれた",
+        "furigana": "{薦|すす}めてくれた",
+        "itemId": "ci-v-susumeru-recommend-advance-sen"
+      },
+      "explanationVi": "Giới thiệu một cuốn sách hay → 薦める."
+    },
+    {
+      "id": "cq-v-susumeru-recommend-advance-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-susumeru-recommend-advance-sen",
+      "instructionVi": "Chọn câu đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Công ty cần người phụ trách dự án mới; trưởng phòng đề cử chị Yamada vì chị có nhiều kinh nghiệm."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "部長は経験豊富な山田さんを担当者に薦めた。",
+          "furigana": "{部長|ぶちょう}は{経験|けいけん}{豊富|ほうふ}な{山田|やまだ}さんを{担当者|たんとうしゃ}に{薦|すす}めた。",
+          "itemId": "ci-v-susumeru-recommend-advance-sen"
+        },
+        {
+          "id": "b",
+          "text": "部長は経験豊富な山田さんを担当者に進めた。",
+          "furigana": "{部長|ぶちょう}は{経験|けいけん}{豊富|ほうふ}な{山田|やまだ}さんを{担当者|たんとうしゃ}に{進|すす}めた。",
+          "itemId": "ci-v-susumeru-recommend-advance-shin",
+          "feedbackVi": "進める là làm tiến triển."
+        },
+        {
+          "id": "c",
+          "text": "部長は経験豊富な山田さんの担当者を勧めた。",
+          "furigana": "{部長|ぶちょう}は{経験|けいけん}{豊富|ほうふ}な{山田|やまだ}さんの{担当者|たんとうしゃ}を{勧|すす}めた。",
+          "itemId": "ci-v-susumeru-recommend-advance-kan",
+          "feedbackVi": "Câu sai cấu trúc và sai nghĩa: không phải khuyên ai làm việc gì."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tiến cử người cho vị trí → 薦める."
+    }
+  ]
+}

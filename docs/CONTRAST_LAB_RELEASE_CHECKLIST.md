@@ -24,8 +24,8 @@ Ký hiệu: ✅ đạt, có bằng chứng · ⏳ chưa xong, cần chủ dự �
 
 | # | Điều kiện | Trạng thái | Ghi chú |
 |---|---|---|---|
-| C1 | Có gói Contrast cần phát hành | ❌ | App hiện **không** mang gói Contrast nào (`ContrastBundledInstallTest`). Gói mẫu chỉ có ở tài liệu và assets của test |
-| C2 | Gói được duyệt bởi người duyệt thật, đã đăng ký, khác tác giả | ❌ | Gói mẫu: `authoredBy = approvedBy = reviewer-01` (tự duyệt), nội dung có `aiAssisted: true` |
+| C1 | Có gói Contrast cần phát hành | ❌ (nội dung đã soạn, chưa duyệt) | Đã có 69 bản nháp `AI_GENERATED` (22 ngữ pháp, 24 từ vựng, 23 Kanji; 277 câu hỏi), qua validator Python và Kotlin; xem [CONTRAST_LAB_CONTENT_GENERATION_REPORT.md](CONTRAST_LAB_CONTENT_GENERATION_REPORT.md). App vẫn **không** mang gói Contrast nào |
+| C2 | Gói được duyệt bởi người duyệt thật, đã đăng ký, khác tác giả | ❌ | 69 bản nháp chưa có `approval`; chưa có `reviewers.json`. Gói mẫu cũ: `reviewer-01` tự duyệt |
 | C3 | Giấy phép nội dung đã xác minh | ❌ | `license.licenseVerified: false` |
 | C4 | `build_pack.py --check … --strict` đạt, không còn cảnh báo chưa xác nhận | ✅ cho gói mẫu | Cần chạy lại trên gói phát hành thật, kèm `--previous` khi đã có bản trước |
 | C5 | Dấu vân tay nguồn (SHA-256) khớp gói nguồn đang phát hành | ✅ cho gói mẫu | `test_sample_fingerprints_match_the_real_source_packs` |

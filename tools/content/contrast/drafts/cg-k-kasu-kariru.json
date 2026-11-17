@@ -1,0 +1,322 @@
+{
+  "id": "cg-k-kasu-kariru",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "KANJI",
+  "jlptLevel": "N3",
+  "title": "貸 và 借",
+  "summaryVi": "貸 là cho mượn, cho vay (đồ đi từ mình sang người khác); 借 là mượn, vay (đồ từ người khác về mình). Hai chữ khác hẳn hình dạng nhưng hay bị viết nhầm vì luôn đi đôi.",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-k-kasu-kariru-kasu",
+      "label": "貸",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k08cb8",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "貸",
+          "onReadings": [
+            "タイ"
+          ],
+          "kunReadings": [
+            "か.す",
+            "か.し-",
+            "かし-"
+          ],
+          "meaningVi": "Cho mượn, cho vay"
+        },
+        "sourceFingerprint": "sha256:a4fc13308d6e95adc83aa4eeaeb8e76ff101a6fca39bb66bb8bb3997516d71cc"
+      },
+      "kanji": {
+        "meaningVi": "cho mượn, cho vay",
+        "hanViet": "THẢI",
+        "onReadings": [
+          "タイ"
+        ],
+        "kunReadings": [
+          "か.す",
+          "か.し-",
+          "かし-"
+        ],
+        "radical": {
+          "character": "貝",
+          "nameVi": "Bối (tiền) ở dưới"
+        },
+        "shapeNoteVi": "代 (thay) trên 貝 (tiền): đưa tiền cho người khác dùng thay → cho vay. 貸す, 貸し出し, 賃貸."
+      }
+    },
+    {
+      "id": "ci-k-kasu-kariru-kariru",
+      "label": "借",
+      "source": {
+        "sourceType": "KANJI",
+        "sourceContentId": "n3k-k0501f",
+        "sourcePackId": "n3-kanji",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "character": "借",
+          "onReadings": [
+            "シャク"
+          ],
+          "kunReadings": [
+            "か.りる"
+          ],
+          "meaningVi": "Mượn, vay"
+        },
+        "sourceFingerprint": "sha256:504cd6386ee0d9b0931ae7f6c093003cbafa90159f3fd340d206ab4dd1b01964"
+      },
+      "kanji": {
+        "meaningVi": "mượn, vay",
+        "hanViet": "TÁ",
+        "onReadings": [
+          "シャク"
+        ],
+        "kunReadings": [
+          "か.りる"
+        ],
+        "radical": {
+          "character": "亻",
+          "nameVi": "Nhân đứng (người)"
+        },
+        "shapeNoteVi": "亻 + 昔: người đi xin dùng tạm của người khác → mượn. 借りる, 借金."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-k-kasu-kariru-1",
+      "titleVi": "Hướng của đồ vật",
+      "bodyVi": "Đồ đi ra khỏi tay mình (A が B に貸す: A cho B mượn) → 貸. Đồ đến tay mình (B が A に／から借りる: B mượn của A) → 借. Tiền nợ của mình là 借金."
+    },
+    {
+      "id": "ct-k-kasu-kariru-2",
+      "titleVi": "Nhớ bằng bộ thủ",
+      "bodyVi": "貸 có 貝 (tiền) ở dưới: người có tiền nên cho vay. 借 có 亻 (người) bên trái: người đi mượn. Âm: 貸 か.す, タイ; 借 か.りる, シャク."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Hướng",
+      "values": {
+        "ci-k-kasu-kariru-kasu": "Từ mình → người khác",
+        "ci-k-kasu-kariru-kariru": "Từ người khác → mình"
+      }
+    },
+    {
+      "aspectVi": "Bộ thủ",
+      "values": {
+        "ci-k-kasu-kariru-kasu": "貝 (tiền) ở dưới",
+        "ci-k-kasu-kariru-kariru": "亻 (người) bên trái"
+      }
+    },
+    {
+      "aspectVi": "Từ tiêu biểu",
+      "values": {
+        "ci-k-kasu-kariru-kasu": "貸す、貸し出し、賃貸",
+        "ci-k-kasu-kariru-kariru": "借りる、借金"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-k-kasu-kariru-1",
+      "itemId": "ci-k-kasu-kariru-kasu",
+      "japanese": "友達に傘を貸した。",
+      "furigana": "{友達|ともだち}に{傘|かさ}を{貸|か}した。",
+      "translationVi": "Tôi cho bạn mượn ô."
+    },
+    {
+      "id": "cx-k-kasu-kariru-2",
+      "itemId": "ci-k-kasu-kariru-kasu",
+      "japanese": "この図書館は本を二週間貸し出している。",
+      "furigana": "この{図書館|としょかん}は{本|ほん}を{二週間|にしゅうかん}{貸|か}し{出|だ}している。",
+      "translationVi": "Thư viện này cho mượn sách hai tuần."
+    },
+    {
+      "id": "cx-k-kasu-kariru-3",
+      "itemId": "ci-k-kasu-kariru-kariru",
+      "japanese": "先輩にノートを借りた。",
+      "furigana": "{先輩|せんぱい}にノートを{借|か}りた。",
+      "translationVi": "Tôi mượn vở của đàn anh."
+    },
+    {
+      "id": "cx-k-kasu-kariru-4",
+      "itemId": "ci-k-kasu-kariru-kariru",
+      "japanese": "家を買うために銀行からお金を借りた。",
+      "furigana": "{家|いえ}を{買|か}うために{銀行|ぎんこう}からお{金|かね}を{借|か}りた。",
+      "translationVi": "Tôi vay tiền ngân hàng để mua nhà."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-k-kasu-kariru-1",
+      "textVi": "Có tiền (貝) thì cho vay 貸; là người (亻) đi xin thì mượn 借."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-k-kasu-kariru-1",
+      "situationVi": "Viết 'mượn sách ở thư viện'.",
+      "wrong": {
+        "japanese": "図書館で本を貸りた。",
+        "furigana": "{図書館|としょかん}で{本|ほん}を{貸|か}りた。"
+      },
+      "correct": {
+        "japanese": "図書館で本を借りた。",
+        "furigana": "{図書館|としょかん}で{本|ほん}を{借|か}りた。"
+      },
+      "explanationVi": "Mình mượn (đồ đến tay mình) → 借りる.",
+      "expectedItemId": "ci-k-kasu-kariru-kariru",
+      "confusedWithItemId": "ci-k-kasu-kariru-kasu"
+    },
+    {
+      "id": "ce-k-kasu-kariru-2",
+      "situationVi": "Viết 'tiền nợ'.",
+      "wrong": {
+        "japanese": "貸金を返すために働いている。",
+        "furigana": "{貸金|かしきん}を{返|かえ}すために{働|はたら}いている。"
+      },
+      "correct": {
+        "japanese": "借金を返すために働いている。",
+        "furigana": "{借金|しゃっきん}を{返|かえ}すために{働|はたら}いている。"
+      },
+      "explanationVi": "Khoản mình vay phải trả → 借金.",
+      "expectedItemId": "ci-k-kasu-kariru-kariru",
+      "confusedWithItemId": "ci-k-kasu-kariru-kasu"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-k-kasu-kariru-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-k-kasu-kariru-kasu",
+      "instructionVi": "Chọn câu viết đúng: 'Anh có thể cho tôi mượn bút được không?'",
+      "options": [
+        {
+          "id": "a",
+          "text": "ペンを貸してもらえませんか。",
+          "furigana": "ペンを{貸|か}してもらえませんか。",
+          "itemId": "ci-k-kasu-kariru-kasu"
+        },
+        {
+          "id": "b",
+          "text": "ペンを借してもらえませんか。",
+          "furigana": "ペンを{借|か}してもらえませんか。",
+          "itemId": "ci-k-kasu-kariru-kariru",
+          "feedbackVi": "借 đi với 借りる; 'cho mượn' là 貸す."
+        },
+        {
+          "id": "c",
+          "text": "ペンを返してもらえませんか。",
+          "furigana": "ペンを{返|かえ}してもらえませんか。",
+          "feedbackVi": "返す là trả lại."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Nhờ người khác cho mình mượn → 貸してもらう."
+    },
+    {
+      "id": "cq-k-kasu-kariru-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-k-kasu-kariru-kariru",
+      "instructionVi": "Chọn chữ Kanji đúng để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "財布を忘れたので、友達にお金を＿＿＿りた。",
+        "furigana": "{財布|さいふ}を{忘|わす}れたので、{友達|ともだち}にお{金|かね}を＿＿＿りた。",
+        "translationVi": "Quên ví nên tôi mượn tiền bạn."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "借",
+          "itemId": "ci-k-kasu-kariru-kariru"
+        },
+        {
+          "id": "b",
+          "text": "貸",
+          "itemId": "ci-k-kasu-kariru-kasu"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "借りる (mượn) viết với 借."
+    },
+    {
+      "id": "cq-k-kasu-kariru-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-kasu-kariru-kasu",
+      "instructionVi": "Chọn phần viết sai chữ Kanji.",
+      "prompt": {
+        "japanese": "妹にカメラを借した。",
+        "furigana": "{妹|いもうと}にカメラを{借|か}した。",
+        "translationVi": "Tôi đã cho em gái mượn máy ảnh."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "妹に",
+          "furigana": "{妹|いもうと}に"
+        },
+        {
+          "id": "b",
+          "text": "カメラを"
+        },
+        {
+          "id": "c",
+          "text": "借した。",
+          "furigana": "{借|か}した。",
+          "itemId": "ci-k-kasu-kariru-kariru"
+        }
+      ],
+      "correctOptionId": "c",
+      "correction": {
+        "text": "貸した。",
+        "furigana": "{貸|か}した。",
+        "itemId": "ci-k-kasu-kariru-kasu"
+      },
+      "explanationVi": "Cho mượn → 貸す."
+    },
+    {
+      "id": "cq-k-kasu-kariru-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-k-kasu-kariru-kariru",
+      "instructionVi": "Chọn câu viết đúng trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn kể rằng mình thuê (mượn có trả tiền) một căn hộ gần trường."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "学校の近くにアパートを借りた。",
+          "furigana": "{学校|がっこう}の{近|ちか}くにアパートを{借|か}りた。",
+          "itemId": "ci-k-kasu-kariru-kariru"
+        },
+        {
+          "id": "b",
+          "text": "学校の近くにアパートを貸りた。",
+          "furigana": "{学校|がっこう}の{近|ちか}くにアパートを{貸|か}りた。",
+          "itemId": "ci-k-kasu-kariru-kasu",
+          "feedbackVi": "Mượn, thuê về mình → 借りる."
+        },
+        {
+          "id": "c",
+          "text": "学校の近くにアパートを貸した。",
+          "furigana": "{学校|がっこう}の{近|ちか}くにアパートを{貸|か}した。",
+          "feedbackVi": "貸した là cho người khác thuê, trái tình huống."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Mình thuê căn hộ → 借りる."
+    }
+  ]
+}

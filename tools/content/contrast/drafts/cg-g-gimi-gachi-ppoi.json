@@ -1,0 +1,339 @@
+{
+  "id": "cg-g-gimi-gachi-ppoi",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "GRAMMAR",
+  "jlptLevel": "N3",
+  "title": "〜ぎみ, 〜がち và 〜っぽい",
+  "summaryVi": "Ba hậu tố đều diễn tả một khuynh hướng, nhưng ぎみ là 'hơi có dấu hiệu' ở thời điểm hiện tại, がち là 'hay bị, thường hay' (lặp lại nhiều lần), còn っぽい là 'trông như, có tính chất giống' hoặc 'dễ…' (văn nói).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-g-gimi-gachi-ppoi-gimi",
+      "label": "〜ぎみ",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g068",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜ぎみ",
+          "structure": "Vます（bỏ ます）・N ＋ ぎみ",
+          "meaningVi": "hơi có vẻ…, có chiều hướng…"
+        },
+        "sourceFingerprint": "sha256:103de3451f713752a115715e2b46a330a1563d42701a53cc32fbbda11fc5cc18"
+      },
+      "grammar": {
+        "meaningVi": "Hơi có vẻ…, có chiều hướng…",
+        "connection": "Vます（bỏ ます）・N ＋ ぎみ（だ／の N）",
+        "nuanceVi": "Một chút dấu hiệu của trạng thái (thường không tốt) đang thấy lúc này: 風邪ぎみ、疲れぎみ、太りぎみ、遅れぎみ."
+      }
+    },
+    {
+      "id": "ci-g-gimi-gachi-ppoi-gachi",
+      "label": "〜がち",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g069",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜がち",
+          "structure": "Vます（bỏ ます）・N ＋ がち",
+          "meaningVi": "hay…, thường hay… (khuynh hướng)"
+        },
+        "sourceFingerprint": "sha256:3b289458de54d6a3c0b676e0b4595a8fcf6f0268a0baeb243e5d643df97fbadd"
+      },
+      "grammar": {
+        "meaningVi": "Hay…, thường hay… (khuynh hướng)",
+        "connection": "Vます（bỏ ます）・N ＋ がち（だ／の N）",
+        "nuanceVi": "Việc không tốt dễ xảy ra, lặp lại nhiều lần: 忘れがち、遅れがち、病気がち、曇りがち."
+      }
+    },
+    {
+      "id": "ci-g-gimi-gachi-ppoi-ppoi",
+      "label": "〜っぽい",
+      "source": {
+        "sourceType": "GRAMMAR",
+        "sourceContentId": "n3g-g073",
+        "sourcePackId": "n3-grammar",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "pattern": "〜っぽい",
+          "structure": "Vます（bỏ ます）・Aい（bỏ い）・N ＋ っぽい",
+          "meaningVi": "có vẻ…, giống như…; hay…, dễ…"
+        },
+        "sourceFingerprint": "sha256:a8f4390d59182ae776830d2289b35b3374e7df0d2af788deda87578f77dd3d7e"
+      },
+      "grammar": {
+        "meaningVi": "Có vẻ…, giống như…; hay…, dễ…",
+        "connection": "Vます（bỏ ます）・Aい（bỏ い）・N ＋ っぽい",
+        "nuanceVi": "Văn nói. (1) Có tính chất giống: 子供っぽい、安っぽい、白っぽい; (2) dễ…: 忘れっぽい、怒りっぽい (tính cách)."
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-g-gimi-gachi-ppoi-1",
+      "titleVi": "Một lần, nhiều lần hay tính chất",
+      "bodyVi": "ぎみ: trạng thái hơi có dấu hiệu ở hiện tại (今日は風邪ぎみだ). がち: lặp đi lặp lại thành khuynh hướng (冬は風邪をひきがちだ). っぽい: tính chất, vẻ ngoài, tính cách (子供っぽい服、怒りっぽい人)."
+    },
+    {
+      "id": "ct-g-gimi-gachi-ppoi-2",
+      "titleVi": "Mức trang trọng",
+      "bodyVi": "ぎみ, がち dùng được trong văn viết. っぽい là văn nói, thân mật. 忘れがち (hay quên trong tình huống nào đó) và 忘れっぽい (tính hay quên) gần nghĩa; っぽい nói về tính cách con người."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nghĩa chính",
+      "values": {
+        "ci-g-gimi-gachi-ppoi-gimi": "Hơi có dấu hiệu (lúc này)",
+        "ci-g-gimi-gachi-ppoi-gachi": "Hay xảy ra (lặp lại)",
+        "ci-g-gimi-gachi-ppoi-ppoi": "Trông như, có tính chất; dễ…"
+      }
+    },
+    {
+      "aspectVi": "Ví dụ tiêu biểu",
+      "values": {
+        "ci-g-gimi-gachi-ppoi-gimi": "風邪ぎみ、疲れぎみ",
+        "ci-g-gimi-gachi-ppoi-gachi": "遅れがち、病気がち",
+        "ci-g-gimi-gachi-ppoi-ppoi": "子供っぽい、忘れっぽい"
+      }
+    },
+    {
+      "aspectVi": "Văn phong",
+      "values": {
+        "ci-g-gimi-gachi-ppoi-gimi": "Trung tính",
+        "ci-g-gimi-gachi-ppoi-gachi": "Trung tính, văn viết",
+        "ci-g-gimi-gachi-ppoi-ppoi": "Văn nói"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-g-gimi-gachi-ppoi-1",
+      "itemId": "ci-g-gimi-gachi-ppoi-gimi",
+      "japanese": "最近、少し太りぎみなので、運動を始めた。",
+      "furigana": "{最近|さいきん}、{少|すこ}し{太|ふと}りぎみなので、{運動|うんどう}を{始|はじ}めた。",
+      "translationVi": "Dạo này hơi có dấu hiệu tăng cân nên tôi bắt đầu tập thể dục."
+    },
+    {
+      "id": "cx-g-gimi-gachi-ppoi-2",
+      "itemId": "ci-g-gimi-gachi-ppoi-gimi",
+      "japanese": "今日は風邪ぎみで、頭が少し痛い。",
+      "furigana": "{今日|きょう}は{風邪|かぜ}ぎみで、{頭|あたま}が{少|すこ}し{痛|いた}い。",
+      "translationVi": "Hôm nay tôi hơi bị cảm, đầu hơi đau."
+    },
+    {
+      "id": "cx-g-gimi-gachi-ppoi-3",
+      "itemId": "ci-g-gimi-gachi-ppoi-gachi",
+      "japanese": "冬は運動不足になりがちだ。",
+      "furigana": "{冬|ふゆ}は{運動不足|うんどうぶそく}になりがちだ。",
+      "translationVi": "Mùa đông người ta hay bị thiếu vận động."
+    },
+    {
+      "id": "cx-g-gimi-gachi-ppoi-4",
+      "itemId": "ci-g-gimi-gachi-ppoi-gachi",
+      "japanese": "彼は子供のころ、病気がちだった。",
+      "furigana": "{彼|かれ}は{子供|こども}のころ、{病気|びょうき}がちだった。",
+      "translationVi": "Hồi nhỏ anh ấy hay ốm."
+    },
+    {
+      "id": "cx-g-gimi-gachi-ppoi-5",
+      "itemId": "ci-g-gimi-gachi-ppoi-ppoi",
+      "japanese": "その服は少し子供っぽいね。",
+      "furigana": "その{服|ふく}は{少|すこ}し{子供|こども}っぽいね。",
+      "translationVi": "Bộ quần áo đó trông hơi trẻ con nhỉ."
+    },
+    {
+      "id": "cx-g-gimi-gachi-ppoi-6",
+      "itemId": "ci-g-gimi-gachi-ppoi-ppoi",
+      "japanese": "祖父は年を取って忘れっぽくなった。",
+      "furigana": "{祖父|そふ}は{年|とし}を{取|と}って{忘|わす}れっぽくなった。",
+      "translationVi": "Ông tôi có tuổi nên trở nên hay quên."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-g-gimi-gachi-ppoi-1",
+      "textVi": "ぎみ = 'chớm' (một chút, bây giờ); がち = 'hay bị' (nhiều lần); っぽい = 'trông như / tính hay' (văn nói)."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-g-gimi-gachi-ppoi-1",
+      "situationVi": "Kể rằng tàu điện mùa tuyết thường xuyên bị trễ.",
+      "wrong": {
+        "japanese": "雪の日は、電車が遅れっぽい。",
+        "furigana": "{雪|ゆき}の{日|ひ}は、{電車|でんしゃ}が{遅|おく}れっぽい。"
+      },
+      "correct": {
+        "japanese": "雪の日は、電車が遅れがちだ。",
+        "furigana": "{雪|ゆき}の{日|ひ}は、{電車|でんしゃ}が{遅|おく}れがちだ。"
+      },
+      "explanationVi": "Việc xảy ra lặp lại nhiều lần (tàu hay bị trễ) dùng がち. っぽい dùng cho tính chất, tính cách, không dùng cho sự việc như tàu trễ.",
+      "expectedItemId": "ci-g-gimi-gachi-ppoi-gachi",
+      "confusedWithItemId": "ci-g-gimi-gachi-ppoi-ppoi"
+    },
+    {
+      "id": "ce-g-gimi-gachi-ppoi-2",
+      "situationVi": "Nói hôm nay mình hơi mệt.",
+      "wrong": {
+        "japanese": "今日は少し疲れがちです。",
+        "furigana": "{今日|きょう}は{少|すこ}し{疲|つか}れがちです。"
+      },
+      "correct": {
+        "japanese": "今日は少し疲れぎみです。",
+        "furigana": "{今日|きょう}は{少|すこ}し{疲|つか}れぎみです。"
+      },
+      "explanationVi": "Hơi có dấu hiệu mệt ngay hôm nay (một lần) → ぎみ. がち là hay mệt (lặp lại).",
+      "expectedItemId": "ci-g-gimi-gachi-ppoi-gimi",
+      "confusedWithItemId": "ci-g-gimi-gachi-ppoi-gachi"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-g-gimi-gachi-ppoi-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-g-gimi-gachi-ppoi-ppoi",
+      "instructionVi": "Câu nào có nghĩa 'Anh ấy là người dễ nổi nóng'?",
+      "options": [
+        {
+          "id": "a",
+          "text": "彼は怒りっぽい人だ。",
+          "furigana": "{彼|かれ}は{怒|おこ}りっぽい{人|ひと}だ。",
+          "itemId": "ci-g-gimi-gachi-ppoi-ppoi"
+        },
+        {
+          "id": "b",
+          "text": "彼は怒りぎみの人だ。",
+          "furigana": "{彼|かれ}は{怒|おこ}りぎみの{人|ひと}だ。",
+          "itemId": "ci-g-gimi-gachi-ppoi-gimi",
+          "feedbackVi": "ぎみ là hơi có dấu hiệu lúc này, không diễn tả tính cách."
+        },
+        {
+          "id": "c",
+          "text": "彼は怒りかけの人だ。",
+          "furigana": "{彼|かれ}は{怒|おこ}りかけの{人|ひと}だ。",
+          "feedbackVi": "かけ là đang làm dở, không phải tính cách."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Tính cách dễ nổi giận → 怒りっぽい."
+    },
+    {
+      "id": "cq-g-gimi-gachi-ppoi-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-g-gimi-gachi-ppoi-gachi",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "忙しいと、食事が不規則になり＿＿＿だ。",
+        "furigana": "{忙|いそが}しいと、{食事|しょくじ}が{不規則|ふきそく}になり＿＿＿だ。",
+        "translationVi": "Khi bận rộn, bữa ăn hay trở nên thất thường."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "がち",
+          "itemId": "ci-g-gimi-gachi-ppoi-gachi"
+        },
+        {
+          "id": "b",
+          "text": "っぽい",
+          "itemId": "ci-g-gimi-gachi-ppoi-ppoi",
+          "feedbackVi": "っぽい chỉ vẻ ngoài hay tính cách, không dùng cho khuynh hướng của sự việc."
+        },
+        {
+          "id": "c",
+          "text": "ぎみ",
+          "itemId": "ci-g-gimi-gachi-ppoi-gimi",
+          "feedbackVi": "ぎみ chỉ dấu hiệu ở một thời điểm, câu này nói về điều thường xảy ra mỗi khi bận."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Điều không tốt hay xảy ra mỗi khi bận → がち."
+    },
+    {
+      "id": "cq-g-gimi-gachi-ppoi-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-gimi-gachi-ppoi-gimi",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "朝から少し風邪がちなので、今日は早く帰ります。",
+        "furigana": "{朝|あさ}から{少|すこ}し{風邪|かぜ}がちなので、{今日|きょう}は{早|はや}く{帰|かえ}ります。",
+        "translationVi": "Từ sáng tôi đã hơi bị cảm nên hôm nay sẽ về sớm."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "朝から",
+          "furigana": "{朝|あさ}から"
+        },
+        {
+          "id": "b",
+          "text": "少し風邪がちなので、",
+          "furigana": "{少|すこ}し{風邪|かぜ}がちなので、",
+          "itemId": "ci-g-gimi-gachi-ppoi-gachi"
+        },
+        {
+          "id": "c",
+          "text": "今日は",
+          "furigana": "{今日|きょう}は"
+        },
+        {
+          "id": "d",
+          "text": "早く帰ります。",
+          "furigana": "{早|はや}く{帰|かえ}ります。"
+        }
+      ],
+      "correctOptionId": "b",
+      "correction": {
+        "text": "少し風邪ぎみなので、",
+        "furigana": "{少|すこ}し{風邪|かぜ}ぎみなので、",
+        "itemId": "ci-g-gimi-gachi-ppoi-gimi"
+      },
+      "explanationVi": "朝から少し (từ sáng, một chút) là dấu hiệu ngay hôm nay → 風邪ぎみ. 風邪がち là hay bị cảm (lặp lại nhiều lần)."
+    },
+    {
+      "id": "cq-g-gimi-gachi-ppoi-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-g-gimi-gachi-ppoi-gimi",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bạn nói với cấp trên rằng dự án đang hơi bị chậm so với kế hoạch (tuần này)."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "プロジェクトが予定より少し遅れぎみです。",
+          "furigana": "プロジェクトが{予定|よてい}より{少|すこ}し{遅|おく}れぎみです。",
+          "itemId": "ci-g-gimi-gachi-ppoi-gimi"
+        },
+        {
+          "id": "b",
+          "text": "プロジェクトが予定より少し遅れっぽいです。",
+          "furigana": "プロジェクトが{予定|よてい}より{少|すこ}し{遅|おく}れっぽいです。",
+          "itemId": "ci-g-gimi-gachi-ppoi-ppoi",
+          "feedbackVi": "っぽい là văn nói thân mật, không dùng khi báo cáo cấp trên và không hợp với tiến độ."
+        },
+        {
+          "id": "c",
+          "text": "プロジェクトが予定より少し遅れたところです。",
+          "furigana": "プロジェクトが{予定|よてい}より{少|すこ}し{遅|おく}れたところです。",
+          "feedbackVi": "遅れたところ là 'vừa mới trễ', không diễn tả xu hướng hơi chậm."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Hơi có dấu hiệu chậm ở thời điểm này, báo cáo trang trọng → 遅れぎみ."
+    }
+  ]
+}

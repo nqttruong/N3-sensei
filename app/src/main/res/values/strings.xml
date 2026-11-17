@@ -1137,6 +1137,8 @@
 
     <!-- Contrast Lab (M5) -->
     <string name="learn_contrast_title">Contrast Lab — Mới</string>
+    <string name="contrast_links_lesson">Phân biệt kiến thức dễ nhầm</string>
+    <string name="contrast_links_item">Xem các kiến thức dễ nhầm</string>
     <string name="learn_contrast_description">Phân biệt ngữ pháp, từ vựng và Kanji dễ nhầm</string>
     <string name="contrast_title">Contrast Lab</string>
     <string name="contrast_library_title">Thư viện Contrast</string>

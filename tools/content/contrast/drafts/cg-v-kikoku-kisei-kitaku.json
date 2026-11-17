@@ -1,0 +1,381 @@
+{
+  "id": "cg-v-kikoku-kisei-kitaku",
+  "revision": 1,
+  "status": "AI_GENERATED",
+  "contentType": "VOCABULARY",
+  "jlptLevel": "N3",
+  "title": "帰国, 帰省 và 帰宅",
+  "summaryVi": "Ba danh động từ cùng có chữ 帰 (về), khác nhau ở nơi về: 帰国 là về nước, 帰省 là về quê (thăm gia đình), 帰宅 là về nhà (sau giờ làm, giờ học).",
+  "updatedAt": "2026-11-18",
+  "items": [
+    {
+      "id": "ci-v-kikoku-kisei-kitaku-kikoku",
+      "label": "帰国",
+      "labelFurigana": "{帰国|きこく}",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v034",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "帰国",
+          "reading": "きこく",
+          "meaningVi": "về nước"
+        },
+        "sourceFingerprint": "sha256:f2bce8d5bbda83981c90e88b965defcd62da08a69d5d71511aec0413c84c7251"
+      },
+      "vocabulary": {
+        "reading": "きこく",
+        "meaningVi": "về nước",
+        "usageVi": "Từ nước ngoài trở về nước mình: 帰国する、一時帰国.",
+        "collocations": [
+          {
+            "japanese": "一時帰国する",
+            "furigana": "{一時|いちじ}{帰国|きこく}する",
+            "meaningVi": "về nước tạm thời"
+          },
+          {
+            "japanese": "帰国の準備",
+            "furigana": "{帰国|きこく}の{準備|じゅんび}",
+            "meaningVi": "chuẩn bị về nước"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-kikoku-kisei-kitaku-kisei",
+      "label": "帰省",
+      "labelFurigana": "{帰省|きせい}",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v035",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "帰省",
+          "reading": "きせい",
+          "meaningVi": "về quê"
+        },
+        "sourceFingerprint": "sha256:d4ceb2cc1fee8b315c6e7390a510654c56fe1585d32ed31c9753edc29a44a583"
+      },
+      "vocabulary": {
+        "reading": "きせい",
+        "meaningVi": "về quê",
+        "usageVi": "Về quê nhà (nơi bố mẹ sống) trong kỳ nghỉ: お盆に帰省する、帰省ラッシュ.",
+        "collocations": [
+          {
+            "japanese": "実家に帰省する",
+            "furigana": "{実家|じっか}に{帰省|きせい}する",
+            "meaningVi": "về nhà bố mẹ ở quê"
+          },
+          {
+            "japanese": "帰省ラッシュ",
+            "furigana": "{帰省|きせい}ラッシュ",
+            "meaningVi": "cao điểm về quê"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ci-v-kikoku-kisei-kitaku-kitaku",
+      "label": "帰宅",
+      "labelFurigana": "{帰宅|きたく}",
+      "source": {
+        "sourceType": "VOCABULARY",
+        "sourceContentId": "mimikara-n3-v036",
+        "sourcePackId": "mimikara-n3-vocab",
+        "sourceSchemaVersion": 1,
+        "sourceSnapshot": {
+          "expression": "帰宅",
+          "reading": "きたく",
+          "meaningVi": "về nhà"
+        },
+        "sourceFingerprint": "sha256:aeb098f3891206d5be31ead2b36f92789bc3e85cafa5b2b64724d8f6151a045e"
+      },
+      "vocabulary": {
+        "reading": "きたく",
+        "meaningVi": "về nhà",
+        "usageVi": "Về nhà mình sau khi đi làm, đi học, đi chơi: 七時に帰宅する.",
+        "collocations": [
+          {
+            "japanese": "帰宅する",
+            "furigana": "{帰宅|きたく}する",
+            "meaningVi": "về nhà"
+          },
+          {
+            "japanese": "帰宅時間",
+            "furigana": "{帰宅|きたく}{時間|じかん}",
+            "meaningVi": "giờ về nhà"
+          }
+        ]
+      }
+    }
+  ],
+  "theory": [
+    {
+      "id": "ct-v-kikoku-kisei-kitaku-1",
+      "titleVi": "Về đâu?",
+      "bodyVi": "国 (nước) → 帰国: người sống ở nước ngoài về nước. 省 (thăm hỏi) → 帰省: về thăm quê, bố mẹ, thường dịp お盆, 正月. 宅 (nhà) → 帰宅: về nơi mình đang ở mỗi ngày."
+    },
+    {
+      "id": "ct-v-kikoku-kisei-kitaku-2",
+      "titleVi": "Phân biệt 帰省 và 帰宅",
+      "bodyVi": "Người sống một mình ở Tokyo về nhà trọ sau giờ làm → 帰宅. Người đó về Osaka thăm bố mẹ dịp Tết → 帰省. Người nước ngoài về hẳn nước mình → 帰国."
+    }
+  ],
+  "comparison": [
+    {
+      "aspectVi": "Nơi về",
+      "values": {
+        "ci-v-kikoku-kisei-kitaku-kikoku": "Nước mình (từ nước ngoài)",
+        "ci-v-kikoku-kisei-kitaku-kisei": "Quê (nhà bố mẹ)",
+        "ci-v-kikoku-kisei-kitaku-kitaku": "Nhà mình (hằng ngày)"
+      }
+    },
+    {
+      "aspectVi": "Thời điểm hay gặp",
+      "values": {
+        "ci-v-kikoku-kisei-kitaku-kikoku": "Hết hạn du học, công tác",
+        "ci-v-kikoku-kisei-kitaku-kisei": "お盆、正月",
+        "ci-v-kikoku-kisei-kitaku-kitaku": "Sau giờ làm, giờ học"
+      }
+    },
+    {
+      "aspectVi": "Cụm hay gặp",
+      "values": {
+        "ci-v-kikoku-kisei-kitaku-kikoku": "一時帰国、帰国子女",
+        "ci-v-kikoku-kisei-kitaku-kisei": "帰省ラッシュ、帰省客",
+        "ci-v-kikoku-kisei-kitaku-kitaku": "帰宅時間、帰宅途中"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "cx-v-kikoku-kisei-kitaku-1",
+      "itemId": "ci-v-kikoku-kisei-kitaku-kikoku",
+      "japanese": "留学が終わったら、帰国して日本語の先生になりたい。",
+      "furigana": "{留学|りゅうがく}が{終|お}わったら、{帰国|きこく}して{日本語|にほんご}の{先生|せんせい}になりたい。",
+      "translationVi": "Du học xong tôi muốn về nước làm giáo viên tiếng Nhật."
+    },
+    {
+      "id": "cx-v-kikoku-kisei-kitaku-2",
+      "itemId": "ci-v-kikoku-kisei-kitaku-kikoku",
+      "japanese": "夏休みに一時帰国する予定です。",
+      "furigana": "{夏休|なつやす}みに{一時|いちじ}{帰国|きこく}する{予定|よてい}です。",
+      "translationVi": "Kỳ nghỉ hè tôi dự định về nước tạm thời."
+    },
+    {
+      "id": "cx-v-kikoku-kisei-kitaku-3",
+      "itemId": "ci-v-kikoku-kisei-kitaku-kisei",
+      "japanese": "お正月は家族で田舎に帰省する。",
+      "furigana": "お{正月|しょうがつ}は{家族|かぞく}で{田舎|いなか}に{帰省|きせい}する。",
+      "translationVi": "Tết tôi cùng gia đình về quê."
+    },
+    {
+      "id": "cx-v-kikoku-kisei-kitaku-4",
+      "itemId": "ci-v-kikoku-kisei-kitaku-kisei",
+      "japanese": "お盆の時期は帰省する人で新幹線が混む。",
+      "furigana": "お{盆|ぼん}の{時期|じき}は{帰省|きせい}する{人|ひと}で{新幹線|しんかんせん}が{混|こ}む。",
+      "translationVi": "Dịp Obon tàu Shinkansen đông vì người về quê."
+    },
+    {
+      "id": "cx-v-kikoku-kisei-kitaku-5",
+      "itemId": "ci-v-kikoku-kisei-kitaku-kitaku",
+      "japanese": "父は毎日七時ごろ帰宅する。",
+      "furigana": "{父|ちち}は{毎日|まいにち}{七時|しちじ}ごろ{帰宅|きたく}する。",
+      "translationVi": "Bố tôi về nhà khoảng bảy giờ mỗi ngày."
+    },
+    {
+      "id": "cx-v-kikoku-kisei-kitaku-6",
+      "itemId": "ci-v-kikoku-kisei-kitaku-kitaku",
+      "japanese": "帰宅途中に、スーパーで買い物をした。",
+      "furigana": "{帰宅|きたく}{途中|とちゅう}に、スーパーで{買|か}い{物|もの}をした。",
+      "translationVi": "Trên đường về nhà, tôi ghé siêu thị mua sắm."
+    }
+  ],
+  "memoryTips": [
+    {
+      "id": "cm-v-kikoku-kisei-kitaku-1",
+      "textVi": "帰 + 国 = về nước; 帰 + 省 (thăm viếng cha mẹ) = về quê; 帰 + 宅 (nhà) = về nhà."
+    }
+  ],
+  "commonMistakes": [
+    {
+      "id": "ce-v-kikoku-kisei-kitaku-1",
+      "situationVi": "Nói hôm nay tan làm về nhà sớm.",
+      "wrong": {
+        "japanese": "今日は仕事が早く終わったので、六時に帰省した。",
+        "furigana": "{今日|きょう}は{仕事|しごと}が{早|はや}く{終|お}わったので、{六時|ろくじ}に{帰省|きせい}した。"
+      },
+      "correct": {
+        "japanese": "今日は仕事が早く終わったので、六時に帰宅した。",
+        "furigana": "{今日|きょう}は{仕事|しごと}が{早|はや}く{終|お}わったので、{六時|ろくじ}に{帰宅|きたく}した。"
+      },
+      "explanationVi": "Về nhà sau giờ làm → 帰宅.",
+      "expectedItemId": "ci-v-kikoku-kisei-kitaku-kitaku",
+      "confusedWithItemId": "ci-v-kikoku-kisei-kitaku-kisei"
+    },
+    {
+      "id": "ce-v-kikoku-kisei-kitaku-2",
+      "situationVi": "Du học sinh nói sẽ về Việt Nam.",
+      "wrong": {
+        "japanese": "来月、ベトナムに帰宅します。",
+        "furigana": "{来月|らいげつ}、ベトナムに{帰宅|きたく}します。"
+      },
+      "correct": {
+        "japanese": "来月、ベトナムに帰国します。",
+        "furigana": "{来月|らいげつ}、ベトナムに{帰国|きこく}します。"
+      },
+      "explanationVi": "Về nước mình từ nước ngoài → 帰国.",
+      "expectedItemId": "ci-v-kikoku-kisei-kitaku-kikoku",
+      "confusedWithItemId": "ci-v-kikoku-kisei-kitaku-kitaku"
+    }
+  ],
+  "questions": [
+    {
+      "id": "cq-v-kikoku-kisei-kitaku-mc1",
+      "revision": 1,
+      "type": "MULTIPLE_CHOICE",
+      "difficulty": 1,
+      "targetItemId": "ci-v-kikoku-kisei-kitaku-kisei",
+      "instructionVi": "Anh Tanaka sống ở Tokyo, quê ở Hokkaido. Dịp Obon anh về thăm bố mẹ. Câu nào đúng?",
+      "options": [
+        {
+          "id": "a",
+          "text": "田中さんはお盆に北海道へ帰省した。",
+          "furigana": "{田中|たなか}さんはお{盆|ぼん}に{北海道|ほっかいどう}へ{帰省|きせい}した。",
+          "itemId": "ci-v-kikoku-kisei-kitaku-kisei"
+        },
+        {
+          "id": "b",
+          "text": "田中さんはお盆に北海道へ帰国した。",
+          "furigana": "{田中|たなか}さんはお{盆|ぼん}に{北海道|ほっかいどう}へ{帰国|きこく}した。",
+          "itemId": "ci-v-kikoku-kisei-kitaku-kikoku",
+          "feedbackVi": "Hokkaido vẫn ở Nhật, không phải về nước."
+        },
+        {
+          "id": "c",
+          "text": "田中さんはお盆に北海道へ帰宅した。",
+          "furigana": "{田中|たなか}さんはお{盆|ぼん}に{北海道|ほっかいどう}へ{帰宅|きたく}した。",
+          "itemId": "ci-v-kikoku-kisei-kitaku-kitaku",
+          "feedbackVi": "帰宅 là về nhà hằng ngày, không phải về quê thăm bố mẹ."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Về quê thăm bố mẹ dịp Obon → 帰省."
+    },
+    {
+      "id": "cq-v-kikoku-kisei-kitaku-fb1",
+      "revision": 1,
+      "type": "FILL_IN_THE_BLANK",
+      "difficulty": 1,
+      "targetItemId": "ci-v-kikoku-kisei-kitaku-kitaku",
+      "instructionVi": "Chọn từ phù hợp để điền vào chỗ trống.",
+      "prompt": {
+        "japanese": "台風が近づいているので、社員は早めに＿＿＿してください。",
+        "furigana": "{台風|たいふう}が{近|ちか}づいているので、{社員|しゃいん}は{早|はや}めに＿＿＿してください。",
+        "translationVi": "Bão đang đến gần nên nhân viên hãy về nhà sớm."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "帰宅",
+          "furigana": "{帰宅|きたく}",
+          "itemId": "ci-v-kikoku-kisei-kitaku-kitaku"
+        },
+        {
+          "id": "b",
+          "text": "帰省",
+          "furigana": "{帰省|きせい}",
+          "itemId": "ci-v-kikoku-kisei-kitaku-kisei"
+        },
+        {
+          "id": "c",
+          "text": "帰国",
+          "furigana": "{帰国|きこく}",
+          "itemId": "ci-v-kikoku-kisei-kitaku-kikoku"
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Nhân viên về nhà sau giờ làm → 帰宅."
+    },
+    {
+      "id": "cq-v-kikoku-kisei-kitaku-ed1",
+      "revision": 1,
+      "type": "ERROR_DETECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-kikoku-kisei-kitaku-kikoku",
+      "instructionVi": "Chọn phần sai trong câu.",
+      "prompt": {
+        "japanese": "李さんは日本で五年働いた後、韓国に帰省した。",
+        "furigana": "{李|り}さんは{日本|にほん}で{五年|ごねん}{働|はたら}いた{後|あと}、{韓国|かんこく}に{帰省|きせい}した。",
+        "translationVi": "Anh Lee đã về Hàn Quốc sau 5 năm làm việc ở Nhật."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "李さんは",
+          "furigana": "{李|り}さんは"
+        },
+        {
+          "id": "b",
+          "text": "日本で五年働いた後、",
+          "furigana": "{日本|にほん}で{五年|ごねん}{働|はたら}いた{後|あと}、"
+        },
+        {
+          "id": "c",
+          "text": "韓国に",
+          "furigana": "{韓国|かんこく}に"
+        },
+        {
+          "id": "d",
+          "text": "帰省した。",
+          "furigana": "{帰省|きせい}した。",
+          "itemId": "ci-v-kikoku-kisei-kitaku-kisei"
+        }
+      ],
+      "correctOptionId": "d",
+      "correction": {
+        "text": "帰国した。",
+        "furigana": "{帰国|きこく}した。",
+        "itemId": "ci-v-kikoku-kisei-kitaku-kikoku"
+      },
+      "explanationVi": "Từ Nhật về nước mình (Hàn Quốc) → 帰国."
+    },
+    {
+      "id": "cq-v-kikoku-kisei-kitaku-cs1",
+      "revision": 1,
+      "type": "CONTEXT_SELECTION",
+      "difficulty": 2,
+      "targetItemId": "ci-v-kikoku-kisei-kitaku-kisei",
+      "instructionVi": "Chọn câu phù hợp nhất trong tình huống sau.",
+      "context": {
+        "descriptionVi": "Bản tin nói vào cuối năm, đường cao tốc rời Tokyo đông nghẹt vì rất nhiều người về quê."
+      },
+      "options": [
+        {
+          "id": "a",
+          "text": "年末は帰省ラッシュで、高速道路が渋滞しています。",
+          "furigana": "{年末|ねんまつ}は{帰省|きせい}ラッシュで、{高速道路|こうそくどうろ}が{渋滞|じゅうたい}しています。",
+          "itemId": "ci-v-kikoku-kisei-kitaku-kisei"
+        },
+        {
+          "id": "b",
+          "text": "年末は帰宅ラッシュで、高速道路が渋滞しています。",
+          "furigana": "{年末|ねんまつ}は{帰宅|きたく}ラッシュで、{高速道路|こうそくどうろ}が{渋滞|じゅうたい}しています。",
+          "itemId": "ci-v-kikoku-kisei-kitaku-kitaku",
+          "feedbackVi": "帰宅ラッシュ là giờ tan tầm hằng ngày, không phải mùa về quê."
+        },
+        {
+          "id": "c",
+          "text": "年末は帰国ラッシュで、高速道路が渋滞しています。",
+          "furigana": "{年末|ねんまつ}は{帰国|きこく}ラッシュで、{高速道路|こうそくどうろ}が{渋滞|じゅうたい}しています。",
+          "itemId": "ci-v-kikoku-kisei-kitaku-kikoku",
+          "feedbackVi": "Người Nhật về quê không phải về nước."
+        }
+      ],
+      "correctOptionId": "a",
+      "explanationVi": "Mùa về quê cuối năm → 帰省ラッシュ."
+    }
+  ]
+}
