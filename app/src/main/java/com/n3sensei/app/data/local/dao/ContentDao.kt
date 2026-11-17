@@ -305,10 +305,11 @@ abstract class ContentDao {
         LEFT JOIN learning_progress p ON p.item_type = 'KANJI' AND p.item_id = k.id
         LEFT JOIN item_marks m ON m.item_type = 'KANJI' AND m.item_id = k.id
         WHERE (:lessonId IS NULL OR k.lesson_id = :lessonId)
+            AND (:level IS NULL OR l.jlpt_level = :level)
             AND (:status IS NULL OR (:status = 'NEW' AND p.item_id IS NULL) OR p.state = :status)
             AND (:markedOnly = 0 OR m.item_id IS NOT NULL)
             AND (:pattern IS NULL OR k.search_text LIKE :pattern ESCAPE '\')
-        ORDER BY CASE WHEN k.character = :query THEN 0 ELSE 1 END, l.pack_id, l.number, k.sort_order
+        ORDER BY CASE WHEN k.character = :query THEN 0 ELSE 1 END, l.jlpt_level DESC, l.pack_id, l.number, k.sort_order
         LIMIT :limit
         """,
     )
@@ -319,6 +320,7 @@ abstract class ContentDao {
         pattern: String?,
         query: String?,
         limit: Int,
+        level: String?,
     ): Flow<List<KanjiItemRow>>
 
     @Query(

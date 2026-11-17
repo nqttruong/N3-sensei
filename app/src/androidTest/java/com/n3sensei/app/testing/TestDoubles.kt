@@ -5,6 +5,7 @@ import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.domain.reminder.ReminderScheduler
 import com.n3sensei.app.domain.reminder.ReminderSettings
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
+import com.n3sensei.app.domain.srs.KanjiReviewLessons
 import com.n3sensei.app.domain.srs.ReviewSettings
 import com.n3sensei.app.domain.widget.WidgetSettings
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -19,6 +20,7 @@ class InMemoryPreferencesRepository(initial: UserPreferences = UserPreferences()
     override suspend fun setThemeMode(mode: ThemeMode) = preferences.update { it.copy(themeMode = mode) }
     override suspend fun setShowFurigana(show: Boolean) = preferences.update { it.copy(showFurigana = show) }
     override suspend fun setReviewSettings(settings: ReviewSettings) = preferences.update { it.copy(reviewSettings = settings) }
+    override suspend fun setKanjiReviewLessons(lessons: KanjiReviewLessons) = preferences.update { it.copy(kanjiReviewLessons = lessons) }
     override suspend fun setReminderSettings(settings: ReminderSettings) = preferences.update { it.copy(reminderSettings = settings) }
     override suspend fun setWidgetSettings(settings: WidgetSettings) = preferences.update { it.copy(widgetSettings = settings) }
     override suspend fun setDailyStudyMinutes(minutes: Int) = preferences.update { it.copy(dailyStudyMinutes = minutes) }

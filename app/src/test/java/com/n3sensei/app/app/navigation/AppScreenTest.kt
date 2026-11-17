@@ -42,7 +42,7 @@ class AppScreenTest {
             KanjiEditRoute::class, VocabularyEditRoute::class, AddWordRoute::class,
             GrammarRoute::class, GrammarDetailRoute::class, GrammarEditRoute::class, PracticeRoute::class, PracticeResultRoute::class,
             ReviewRoute::class, ReviewSessionRoute::class, ReviewResultRoute::class,
-            StatsRoute::class, SettingsRoute::class, ReviewSettingsRoute::class, ReminderSettingsRoute::class, WidgetSettingsRoute::class,
+            StatsRoute::class, SettingsRoute::class, ReviewSettingsRoute::class, KanjiReviewLessonsRoute::class, ReminderSettingsRoute::class, WidgetSettingsRoute::class,
         )
         assertEquals(expected, AppScreen.entries.map { it.route }.toSet())
     }

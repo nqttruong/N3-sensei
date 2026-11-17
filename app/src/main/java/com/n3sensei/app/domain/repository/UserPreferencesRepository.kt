@@ -4,6 +4,7 @@ import com.n3sensei.app.domain.widget.WidgetSettings
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.domain.reminder.ReminderSettings
+import com.n3sensei.app.domain.srs.KanjiReviewLessons
 import com.n3sensei.app.domain.srs.ReviewSettings
 import com.n3sensei.app.domain.translate.QuickTranslateSettings
 import kotlinx.coroutines.flow.Flow
@@ -17,6 +18,12 @@ interface UserPreferencesRepository {
 
     /** Applies to each item's next answer; due times already scheduled are kept. */
     suspend fun setReviewSettings(settings: ReviewSettings)
+
+    /**
+     * The kanji lessons review sessions take new kanji from. Saved apart from [setReviewSettings],
+     * so saving the intervals and limits never changes the lessons chosen.
+     */
+    suspend fun setKanjiReviewLessons(lessons: KanjiReviewLessons)
 
     suspend fun setReminderSettings(settings: ReminderSettings)
 

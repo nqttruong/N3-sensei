@@ -54,6 +54,7 @@ import com.n3sensei.app.data.translate.ContentDictionaryProvider
 import com.n3sensei.app.data.translate.MlKitMachineTranslator
 import com.n3sensei.app.domain.translate.TranslationOrchestrator
 import com.n3sensei.app.domain.translate.TranslationRepository
+import com.n3sensei.app.domain.srs.KanjiReviewLessons
 
 /**
  * Manual dependency container, created once in [com.n3sensei.app.N3SenseiApplication] and
@@ -111,7 +112,12 @@ class DefaultAppContainer(context: Context) : AppContainer {
     override val reviewSessionRepository: ReviewSessionRepository by lazy { OfflineReviewSessionRepository(database.reviewSessionDao()) }
 
     override val progressRepository: ProgressRepository by lazy {
-        OfflineProgressRepository(database.progressDao(), clock)
+        OfflineProgressRepository(
+            database.progressDao(),
+            clock,
+            // Lessons review takes new kanji from: the learner's choice applied to the lessons as they are now.
+            newKanjiLessons = KanjiReviewLessons.observeAllowedLessons(contentRepository, userPreferencesRepository),
+        )
     }
 
     // One DataStore instance per file per process, so it lives here and nowhere else.

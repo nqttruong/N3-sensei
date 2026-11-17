@@ -1,0 +1,1812 @@
+lesson	kanji	deck	note	expression	reading	meaning_vi	han_viet	example_id	flags
+n2k-l01	井	第01	1784633673702	井戸	いど	Cái giếng	Tỉnh Hộ	n2k-x-1784633673702	
+n2k-l01	井	第01	1784634679579	井戸水	いどみず	Nước giếng	Tỉnh Hộ Thủy	n2k-x-1784634679579	
+n2k-l01	井	第01	1784634858266	天井	てんじょう	Trần nhà	Thiên Tỉnh	n2k-x-1784634858266	
+n2k-l01	丼	第01	1784636053809	丼	どんぶり	Cái bát tô	Tính	n2k-x-1784636053809	
+n2k-l01	丼	第01	1784636068455	天丼	てんどん	Cơm tô Tempura	Thiên Tính	n2k-x-1784636068455	
+n2k-l01	丼	第01	1784636081562	カツ丼	かつどん	Cơm tô thịt heo chiên xù		n2k-x-1784636081562	
+n2k-l01	囲	第01	1784636113409	囲む	かこむ	Bao quanh, quây quanh	Vi	n2k-x-1784636113409	
+n2k-l01	囲	第01	1784636127046	囲う	かこう	Bao bọc, khoanh lại		n2k-x-1784636127046	
+n2k-l01	囲	第01	1784636144396	範囲	はんい	Phạm vi	Phạm Vi	n2k-x-1784636144396	
+n2k-l01	囲	第01	1784636185437	包囲する	ほういする	Bao vây	Bao Vi	n2k-x-1784636185437	
+n2k-l01	囲	第01	1784636203570	周囲	しゅうい	Chu vi	Chu Vi	n2k-x-1784636203570	
+n2k-l01	免	第01	1784636240568	免許	めんきょ	Giấy phép, bằng cấp	Miễn Hứa	n2k-x-1784636240568	
+n2k-l01	免	第01	1784636257936	免税店	めんぜいてん	Cửa hàng miễn thuế	Miễn Thuế Điếm	n2k-x-1784636257936	
+n2k-l01	免	第01	1784636281391	免疫力	めんえきりょく	Khả năng miễn dịch	Miễn Dịch Lực	n2k-x-1784636281391	
+n2k-l01	免	第01	1784636300012	免許証	めんきょしょう	Giấy phép lái xe / Thẻ chứng nhận	Miễn Hứa Chứng	n2k-x-1784636300012	
+n2k-l01	晩	第01	1784636328562	毎晩	まいばん	Mỗi tối	Mỗi Vãn	n2k-x-1784636328562	
+n2k-l01	晩	第01	1784636344756	晩ご飯	ばんごはん	Cơm tối	Vãn Phạn	n2k-x-1784636344756	
+n2k-l01	逸	第01	1784636382339	逸材	いつざい	Nhân tài, tài năng xuất chúng	Đạt Tài	n2k-x-1784636382339	
+n2k-l01	逸	第01	1784636403261	逸脱する	いつだつする	Lệch hướng, thoát khỏi, trốn thoát	Đạt Thoát	n2k-x-1784636403261	from-image
+n2k-l01	令	第01	1784636434766	命令	めいれい	Mệnh lệnh	Mệnh Lệnh	n2k-x-1784636434766	meaning-is-han-viet
+n2k-l01	令	第01	1784636448014	号令	ごうれい	Hiệu lệnh	Hiệu Lệnh	n2k-x-1784636448014	meaning-is-han-viet
+n2k-l01	令	第01	1784636465533	指令	しれい	Chỉ thị, tư lệnh	Chỉ Lệnh	n2k-x-1784636465533	
+n2k-l01	領	第01	1784636495036	領土	りょうど	Lãnh thổ	Lĩnh Thổ	n2k-x-1784636495036	
+n2k-l01	領	第01	1784636522329	占領する	せんりょうする	Chiếm đóng, chiếm lĩnh	Chiêm Lĩnh	n2k-x-1784636522329	
+n2k-l01	領	第01	1784636539164	横領する	おうりょうする	Tham ô, biển thủ	Hoành Lĩnh	n2k-x-1784636539164	
+n2k-l01	領	第01	1784636563995	領域	りょういき	Lĩnh vực, lãnh địa	Lĩnh Vực	n2k-x-1784636563995	
+n2k-l01	領	第01	1784636584688	大統領	だいとうりょう	Tổng thống	Đại Thống Lĩnh	n2k-x-1784636584688	
+n2k-l01	領	第01	1784636601539	領収証	りょうしゅうしょう	Hóa đơn, biên nhận	Lĩnh Thu Chứng	n2k-x-1784636601539	
+n2k-l01	冷	第01	1784636633582	冷静	れいせい	Bình tĩnh	Lãnh Tĩnh	n2k-x-1784636633582	
+n2k-l01	冷	第01	1784636649754	冷蔵庫	れいぞうこ	Tủ lạnh	Lãnh Tàng Khố	n2k-x-1784636649754	
+n2k-l01	冷	第01	1784636666619	冷凍する	れいとうする	Làm đông lạnh	Lãnh Đống	n2k-x-1784636666619	
+n2k-l01	冷	第01	1784636689359	冷徹	れいてつ	( suy nghĩ ) thực tế, sắc bén, cái đầu lạnh	Lãnh Triệt	n2k-x-1784636689359	
+n2k-l01	冷	第01	1784636719909	冷やかす	ひやかす	Chế giễu; nhạo báng; chọc ghẹo		n2k-x-1784636719909	
+n2k-l01	兆	第01	1784636752352	兆し	きざし	Điềm báo, dấu hiệu		n2k-x-1784636752352	
+n2k-l01	兆	第01	1784636768278	一兆円	いっちょうえん	1 nghìn tỷ Yên	Nhất Triệu Yên	n2k-x-1784636768278	
+n2k-l01	逃	第01	1784636799108	逃走する	とうそうする	Bỏ trốn, đào tẩu	Đào Tẩu	n2k-x-1784636799108	
+n2k-l01	逃	第01	1784636815310	逃亡する	とうぼうする	Đào tẩu, trốn chạy, Bỏ trốn (dài hạn !!!)	Đào Vong	n2k-x-1784636815310	
+n2k-l01	逃	第01	1784636832607	逃がす	にがす	Thả (cá), bỏ lỡ (cơ hội)		n2k-x-1784636832607	
+n2k-l01	逃	第01	1784636845081	逃す	のがす	Bỏ lỡ (cơ hội)		n2k-x-1784636845081	
+n2k-l01	逃	第01	1784636859465	逃げる	にげる	Chạy trốn		n2k-x-1784636859465	
+n2k-l01	逃	第01	1784636874649	逃れる	のがれる	Trốn thoát, thoát khỏi (nguy hiểm, truy đuổi, v.v.)		n2k-x-1784636874649	from-image
+n2k-l01	桃	第01	1784636902987	白桃	はくとう	Quả đào trắng	Bạch Đào	n2k-x-1784636902987	
+n2k-l01	桃	第01	1784636921065	扁桃腺	へんとうせん	Tuyến Amidan	Biển Đào Tuyến	n2k-x-1784636921065	
+n2k-l01	民	第01	1784636952712	民意	みんい	Ý dân, nguyện vọng người dân	Dân Ý	n2k-x-1784636952712	
+n2k-l01	民	第01	1784636969135	国民性	こくみんせい	Tính cách dân tộc / quốc dân	Quốc Dân Tính	n2k-x-1784636969135	
+n2k-l01	民	第01	1784636984552	移民	いみん	Dân di cư, nhập cư	Di Dân	n2k-x-1784636984552	
+n2k-l01	民	第01	1784637007301	民の意見	たみのいけん	Ý kiến của người dân	Dân Ý Kiến	n2k-x-1784637007301	
+n2k-l01	民	第01	1784637027137	民主主義	みんしゅしゅぎ	Chủ nghĩa dân chủ	Dân Chủ Chủ Nghĩa	n2k-x-1784637027137	
+n2k-l01	民	第01	1784637061472	民間	みんかん	Dân gian, Tư nhân; của dân	Dân Gian	n2k-x-1784637061472	
+n2k-l01	眠	第01	1784637090336	眠る	ねむる	Ngủ		n2k-x-1784637090336	
+n2k-l01	眠	第01	1784637110235	睡眠不足	すいみんふそく	Thiếu ngủ	Thụy Miên Bất Túc	n2k-x-1784637110235	
+n2k-l01	眠	第01	1784637127602	仮眠	かみん	Chợp mắt, ngủ tạm	Giả Miên	n2k-x-1784637127602	
+n2k-l01	眠	第01	1784637144272	居眠り	いねむり	Ngủ gật	Cư Miên	n2k-x-1784637144272	
+n2k-l01	察	第01	1784637264586	警察署	けいさつしょ	Đồn cảnh sát	Cảnh Sát Thự	n2k-x-1784637264586	
+n2k-l01	察	第01	1784637282449	考察する	こうさつする	Khảo sát, nghiên cứu	Khảo Sát	n2k-x-1784637282449	
+n2k-l01	察	第01	1784637300650	診察する	しんさつする	Khám bệnh	Chẩn Sát	n2k-x-1784637300650	
+n2k-l01	察	第01	1784637315333	察する	さっする	Cảm nhận, đồng cảm, hiểu thấu		n2k-x-1784637315333	
+n2k-l01	察	第01	1784637333802	観察する	かんさつする	Quan sát	Quan Sát	n2k-x-1784637333802	
+n2k-l01	際	第01	1784637378362	際どい	きわどい	Nguy hiểm, sát nút, nhạy cảm	Tế	n2k-x-1784637378362	
+n2k-l01	際	第01	1784637396205	窓際	まどぎわ	Bên cửa sổ	Song Tế	n2k-x-1784637396205	
+n2k-l01	際	第01	1784637413852	際	さい	Khi, dịp	Tế	n2k-x-1784637413852	
+n2k-l01	際	第01	1784637429989	交際する	こうさいする	Giao lưu, hẹn hò	Giao Tế	n2k-x-1784637429989	
+n2k-l01	際	第01	1784637447784	国際	こくさい	Quốc tế	Quốc Tế	n2k-x-1784637447784	
+n2k-l01	際	第01	1784637464888	国際的	こくさいてき	Mang tính quốc tế	Quốc Tế Đích	n2k-x-1784637464888	
+n2k-l01	垂	第01	1784637496618	垂れる	たれる	Chảy xuống, rủ xuống, nhỏ giọt	Thùy	n2k-x-1784637496618	
+n2k-l01	郵	第01	1784637552855	郵便	ゆうびん	Dịch vụ bưu chính, thư từ	Bưu Tiện	n2k-x-1784637552855	
+n2k-l01	郵	第01	1784637569170	郵便局	ゆうびんきょく	Bưu điện	Bưu Tiện Cục	n2k-x-1784637569170	
+n2k-l01	郵	第01	1784637585859	郵送する	ゆうそうする	Gửi qua đường bưu điện	Bưu Tống	n2k-x-1784637585859	
+n2k-l01	睡	第01	1784637612421	爆睡する	ばくすいする	Ngủ say sưa, ngủ như chết	Bộc Thụy	n2k-x-1784637612421	
+n2k-l01	睡	第01	1784637630112	一睡	いっすい	Một chợp mắt (一睡もしなかった: Không chợp mắt tý nào)	Nhất Thụy	n2k-x-1784637630112	
+n2k-l01	睡	第01	1784637647430	睡眠	すいみん	Giấc ngủ	Thụy Miên	n2k-x-1784637647430	
+n2k-l01	票	第01	1784637681750	一票	いっぴょう	Một lá phiếu	Nhất Phiếu	n2k-x-1784637681750	
+n2k-l01	票	第01	1784637722908	票	ひょう	Lá phiếu	Phiếu	n2k-x-1784637722908	
+n2k-l01	票	第01	1784637739944	伝票	でんぴょう	Hóa đơn, phiếu thanh toán	Truyền Phiếu	n2k-x-1784637739944	
+n2k-l01	票	第01	1784637758603	投票する	とうひょうする	Bỏ phiếu, bầu chọn	Đầu Phiếu	n2k-x-1784637758603	
+n2k-l01	標	第01	1784637791286	標準語	ひょうじゅんご	Tiếng phổ thông / Ngôn ngữ chuẩn	Tiêu Chuẩn Ngữ	n2k-x-1784637791286	
+n2k-l01	標	第01	1784637806305	標識	ひょうしき	Biển báo, dấu hiệu	Tiêu Thức	n2k-x-1784637806305	
+n2k-l01	標	第01	1784637823669	標本	ひょうほん	Tiêu bản, mẫu vật	Tiêu Bản	n2k-x-1784637823669	
+n2k-l01	標	第01	1784637837962	目標	もくひょう	Mục tiêu	Mục Tiêu	n2k-x-1784637837962	meaning-is-han-viet
+n2k-l01	漂	第01	1784637867007	漂う	ただよう	Trôi dạt, tỏa ra, phảng phất	Phiêu	n2k-x-1784637867007	
+n2k-l01	漂	第01	1784637881943	漂白剤	ひょうはくざい	Chất tẩy trắng	Phiêu Bạch Tế	n2k-x-1784637881943	
+n2k-l02	周	第02	1784720689951	周辺	しゅうへん	Vùng xung quanh, phụ cận	Chu Biên	n2k-x-1784720689951	
+n2k-l02	周	第02	1784720726549	周り	まわり	Xung quanh, quanh	Chu	n2k-x-1784720726549	
+n2k-l02	周	第02	1784720745411	一周	いっしゅう	Một vòng	Nhất Chu	n2k-x-1784720745411	
+n2k-l02	彫	第02	1784720787312	彫る	ほる	Khắc, chạm, điêu khắc	Điêu	n2k-x-1784720787312	
+n2k-l02	彫	第02	1784720841536	彫刻	ちょうこく	Bức điêu khắc, sự điêu khắc	Điêu Khắc	n2k-x-1784720841536	
+n2k-l02	彫	第02	1784720876539	彫刻刀	ちょうこくとう	Dao điêu khắc	Điêu Khắc Đao	n2k-x-1784720876539	
+n2k-l02	兼	第02	1784721018975	兼任	けんにん	Kiêm nhiệm	Kiêm Nhiệm	n2k-x-1784721018975	
+n2k-l02	兼	第02	1784721035646	兼業	けんぎょう	Làm thêm, kiêm nghề khác	Kiêm Nghiệp	n2k-x-1784721035646	
+n2k-l02	兼	第02	1784721078456	兼用	けんよう	Sử dụng kết hợp, dùng đôi bên\ Dùng chung, sử dụng cho nhiều mục đích	Kiêm Dụng	n2k-x-1784721078456	
+n2k-l02	嫌	第02	1784721113355	嫌う	きらう	Ghét	Hiểm	n2k-x-1784721113355	
+n2k-l02	嫌	第02	1784721173166	機嫌	きげん	Tâm trạng, sắc mặt	Cơ Hiểm	n2k-x-1784721173166	
+n2k-l02	嫌	第02	1784721193775	自己嫌悪	じこけんお	Chán ghét bản thân	Tự Kỷ Hiểm Ố	n2k-x-1784721193775	
+n2k-l02	嫌	第02	1784721213538	嫌がる	いやがる	Tỏ ra ghét, không thích	Hiểm	n2k-x-1784721213538	
+n2k-l02	嫌	第02	1784721233917	嫌な	いやな	Khó chịu, đáng ghét	Hiểm	n2k-x-1784721233917	
+n2k-l02	謙	第02	1784721262076	謙譲語	けんじょうご	Khiêm nhường ngữ	Khiêm Nhượng Ngữ	n2k-x-1784721262076	
+n2k-l02	謙	第02	1784721286433	謙虚	けんきょ	Khiêm tốn, nhã nhặn, không kiêu ngạo	Khiêm Hư	n2k-x-1784721286433	from-image
+n2k-l02	謙	第02	1784721308096	謙遜	けんそん	Khiêm tốn, nhún nhường	Khiêm Tốn	n2k-x-1784721308096	
+n2k-l02	更	第02	1784721344478	更新	こうしん	Cập nhật, gia hạn	Canh Tân	n2k-x-1784721344478	
+n2k-l02	更	第02	1784721366984	変更	へんこう	Thay đổi, biến đổi	Biến Canh	n2k-x-1784721366984	
+n2k-l02	更	第02	1784721386501	更ける	ふける	Khuya về đêm (đêm dần buông)	Canh	n2k-x-1784721386501	
+n2k-l02	更	第02	1784721840443	夜更かし	よふかし	Thức khuya	Dạ Canh	n2k-x-1784721840443	
+n2k-l02	便	第02	1784721877118	便利	べんり	Tiện lợi, thuận tiện	Tiện Lợi	n2k-x-1784721877118	
+n2k-l02	便	第02	1784721913252	郵便局	ゆうびんきょく	Bưu điện	Bưu Tiện Cục	n2k-x-1784721913252	
+n2k-l02	硬	第02	1784721943870	強硬	きょうこう	Cứng rắn, đanh thép	Cường Ngạnh	n2k-x-1784721943870	
+n2k-l02	硬	第02	1784721964484	硬貨	こうか	Tiền xu, tiền kim loại	Ngạnh Hóa	n2k-x-1784721964484	
+n2k-l02	硬	第02	1784721983698	硬い	かたい	Cứng, đơ, gượng gạo	Ngạnh	n2k-x-1784721983698	
+n2k-l02	充	第02	1784722012170	充分	じゅうぶん	Đầy đủ, thỏa đáng	Sung Phân	n2k-x-1784722012170	
+n2k-l02	充	第02	1784722032003	充実	じゅうじつ	Sung túc, đầy đủ, viên mãn	Sung Thực	n2k-x-1784722032003	
+n2k-l02	充	第02	1784722084087	充てる	あてる	Dành cho, bố trí cho (chi phí...)	Sung	n2k-x-1784722084087	
+n2k-l02	充	第02	1784722108876	充電	じゅうでん	Sạc điện, nạp năng lượng	Sung Điện	n2k-x-1784722108876	
+n2k-l02	銃	第02	1784722139078	拳銃	けんじゅう	Súng ngắn, súng lục	Quyền Súng	n2k-x-1784722139078	
+n2k-l02	銃	第02	1784722158476	銃弾	じゅうだん	Viên đạn	Súng Đạn	n2k-x-1784722158476	
+n2k-l02	銃	第02	1784722190686	銃を撃つ	じゅうをうつ	Bắn súng	Súng Kích	n2k-x-1784722190686	
+n2k-l02	銃	第02	1784722210294	銃口	じゅうこう	Nòng súng	Súng Khẩu	n2k-x-1784722210294	
+n2k-l02	銃	第02	1784722230606	銃撃戦	じゅうげきせん	Cuộc đấu súng	Súng Kích Chiến	n2k-x-1784722230606	
+n2k-l02	統	第02	1784722258445	統計	とうけい	Thống kê	Thống Kế	n2k-x-1784722258445	
+n2k-l02	統	第02	1784722299007	伝統	でんとう	Truyền thống	Truyền Thống	n2k-x-1784722299007	
+n2k-l02	統	第02	1784722324181	天下統一	てんかとういつ	Thống nhất thiên hạ	Thiên Hạ Thống Nhất	n2k-x-1784722324181	
+n2k-l02	統	第02	1784722343577	統合	とうごう	Sáp nhập, tích hợp	Thống Hợp	n2k-x-1784722343577	
+n2k-l02	統	第02	1784722362459	統治	とうち	Thống trị, cai trị	Thống Trị	n2k-x-1784722362459	
+n2k-l02	害	第02	1784722438250	加害者	かがいしゃ	Người gây hại	Gia Hại Giả	n2k-x-1784722438250	
+n2k-l02	害	第02	1784722454269	殺害	さつがい	Sát hại	Sát Hại	n2k-x-1784722454269	
+n2k-l02	害	第02	1784722475319	損害	そんがい	Tổn thất, thiệt hại	Tổn Hại	n2k-x-1784722475319	
+n2k-l02	害	第02	1784722492885	自然災害	しぜんさいがい	Thiên tai tự nhiên	Tự Nhiên Tai Hại	n2k-x-1784722492885	
+n2k-l02	害	第02	1784722508591	被害	ひがい	Thiệt hại, tổn thất (bị nhận)	Bị Hại	n2k-x-1784722508591	
+n2k-l02	割	第02	1784722537657	割引券	わりびきけん	Phiếu giảm giá	Cát Dẫn Khoán	n2k-x-1784722537657	
+n2k-l02	割	第02	1784722614445	割り算	わりざん	Phép chia	Cát Toán	n2k-x-1784722614445	
+n2k-l02	割	第02	1784722629588	割合	わりあい	Tỷ lệ	Cát Hợp	n2k-x-1784722629588	
+n2k-l02	割	第02	1784722645036	割く	さく	Dành (thời gian), xẻ chia	Cát	n2k-x-1784722645036	
+n2k-l02	轄	第02	1784722675303	管轄	かんかつ	Quản hạch, thẩm quyền quản lý	Quản Hạt	n2k-x-1784722675303	
+n2k-l02	轄	第02	1784722691472	管轄外	かんかつがい	Ngoài thẩm quyền quản lý	Quản Hạt Ngoại	n2k-x-1784722691472	
+n2k-l02	矛	第02	1784722806043	矛盾	むじゅん	Mâu thuẫn	Mâu Thuẫn	n2k-x-1784722806043	
+n2k-l02	矛	第02	1784722820278	矛先	ほこさき	Mũi giáo, mục tiêu chỉ trích	Mâu Tiên	n2k-x-1784722820278	
+n2k-l02	務	第02	1784722848469	務まる	つとまる	Đảm nhiệm được	Vụ	n2k-x-1784722848469	
+n2k-l02	務	第02	1784722862105	務める	つとめる	Đảm nhận, Nhẫn nại, chịu đựng	Vụ	n2k-x-1784722862105	
+n2k-l02	務	第02	1784722878055	勤務	きんむ	Làm việc, công tác	Cần Vụ	n2k-x-1784722878055	
+n2k-l02	務	第02	1784722955446	外務省	がいむしょう	Bộ Ngoại giao	Ngoại Vụ Tỉnh	n2k-x-1784722955446	
+n2k-l02	務	第02	1784722976192	法務省	ほうむしょう	Bộ Tư pháp	Pháp Vụ Tỉnh	n2k-x-1784722976192	
+n2k-l02	務	第02	1784723017084	義務	ぎむ	Nghĩa vụ	Nghĩa Vụ	n2k-x-1784723017084	meaning-is-han-viet
+n2k-l02	柔	第02	1784723046828	柔道	じゅうどう	Nhu đạo (Judo)	Nhu Đạo	n2k-x-1784723046828	
+n2k-l02	柔	第02	1784723061661	柔らかい	やわらかい	Mềm, êm	Nhu	n2k-x-1784723061661	
+n2k-l02	柔	第02	1784723075113	柔らかな	やわらかな	Mềm mại, mềm mại nhẹ nhàng	Nhu	n2k-x-1784723075113	from-image
+n2k-l02	堅	第02	1784723110445	堅実	けんじつ	Chắc chắn, vững vàng	Kiên Thực	n2k-x-1784723110445	
+n2k-l02	堅	第02	1784723123715	堅い	かたい	Cứng, vững chắc, kiên định	Kiên	n2k-x-1784723123715	
+n2k-l02	緊	第02	1784723152802	緊張	きんちょう	Căng thẳng, hồi hộp	Khẩn Trương	n2k-x-1784723152802	
+n2k-l02	緊	第02	1784723166805	緊急	きんきゅう	Khẩn cấp	Khẩn Cấp	n2k-x-1784723166805	meaning-is-han-viet
+n2k-l02	賢	第02	1784723193214	賢者	けんじゃ	Người hiền triết, bậc thông thái	Hiền Giả	n2k-x-1784723193214	from-image
+n2k-l02	賢	第02	1784723208166	賢明	けんめい	Khôn ngoan, sáng suốt	Hiền Minh	n2k-x-1784723208166	
+n2k-l02	賢	第02	1784723226569	賢い	かしこい	Thông minh, lanh lợi ​Mặt mũi trông rõ ngoan HIỀN, nhưng CÁC CHỊ COI (かしこい) cách nó cắm sừng 3 em cùng lúc kìa, má nó thông minh lanh lợi vãi đạn!	Hiền	n2k-x-1784723226569	
+n2k-l02	帰	第02	1784723255020	帰国	きこく	Về nước	Quy Quốc	n2k-x-1784723255020	
+n2k-l02	帰	第02	1784723269074	帰宅	きたく	Về nhà	Quy Trạch	n2k-x-1784723269074	
+n2k-l02	帰	第02	1784723283429	帰省	きせい	Về quê	Quy Tỉnh	n2k-x-1784723283429	
+n2k-l02	婦	第02	1784723331767	夫婦	ふうふ	Vợ chồng	Phu Phụ	n2k-x-1784723331767	
+n2k-l02	婦	第02	1784723345431	新婦	しんぷ	Cô dâu	Tân Phụ	n2k-x-1784723345431	
+n2k-l02	婦	第02	1784723361949	主婦	しゅふ	Nội trợ	Chủ Phụ	n2k-x-1784723361949	
+n2k-l02	婦	第02	1784723377432	産婦人科	さんふじんか	Khoa sản phụ	Sản Phụ Nhân Khoa	n2k-x-1784723377432	
+n2k-l02	婦	第02	1784723391224	妊婦	にんぷ	Phụ nữ mang thai	Nhâm Phụ	n2k-x-1784723391224	
+n2k-l02	掃	第02	1784723428734	一掃	いっそう	Quét sạch, xua tan	Nhất Tảo	n2k-x-1784723428734	
+n2k-l02	掃	第02	1784723441454	清掃	せいそう	Dọn dẹp, vệ sinh	Thanh Tảo	n2k-x-1784723441454	
+n2k-l02	掃	第02	1784723456969	掃く	はく	Quét (nhà, sàn)	Tảo	n2k-x-1784723456969	
+n2k-l02	掃	第02	1784723471891	掃除	そうじ	Dọn dẹp	Tảo Trừ	n2k-x-1784723471891	
+n2k-l03	構	第03	1784723663911	構える	かまえる	Lập, dựng (nhà, tư thế)	Cấu	n2k-x-1784723663911	
+n2k-l03	構	第03	1784723678911	構造	こうぞう	Cấu tạo, kết cấu	Cấu Tạo	n2k-x-1784723678911	
+n2k-l03	構	第03	1784723693245	構成	こうせい	Cấu thành, bố cục	Cấu Thành	n2k-x-1784723693245	
+n2k-l03	購	第03	1784723727748	購買	こうばい	Mua sắm, thu mua	Cấu Mại	n2k-x-1784723727748	
+n2k-l03	購	第03	1784723746454	購入	こうにゅう	Mua vào, đặt mua	Cấu Nhập	n2k-x-1784723746454	
+n2k-l03	講	第03	1784723773332	講義	こうぎ	Bài giảng, giờ học	Giảng Nghĩa	n2k-x-1784723773332	
+n2k-l03	講	第03	1784723791431	講演	こうえん	Diễn thuyết, bài nói chuyện	Giảng Diễn	n2k-x-1784723791431	
+n2k-l03	講	第03	1784723810526	講師	こうし	Giảng viên, giáo viên	Giảng Sư	n2k-x-1784723810526	
+n2k-l03	講	第03	1784723826482	講じる	こうじる	Đề ra (biện pháp, đối sách)	Giảng	n2k-x-1784723826482	
+n2k-l03	講	第03	1784723857299	講座 / 受講	こうざ/じゅこう	Khóa học / Tham gia khóa học	Giảng Tọa / Thụ Giảng	n2k-x-1784723857299	
+n2k-l03	抱	第03	1784723885456	抱く	いだく	Ấp ủ, ôm ấp (hoài hoài, hoài nghi)	Bão	n2k-x-1784723885456	
+n2k-l03	抱	第03	1784723898774	抱える	かかえる	Ôm, vướng phải (khó khăn)	Bão	n2k-x-1784723898774	
+n2k-l03	抱	第03	1784723915657	抱きしめる	だきしめる	Ôm chặt	Bão	n2k-x-1784723915657	
+n2k-l03	抱	第03	1784723930626	抱いた (抱く)	だいた(だく)	Ôm, bế (trong tay)	Bão	n2k-x-1784723930626	
+n2k-l03	抱	第03	1784723946049	辛抱	しんぼう	Kiên nhẫn, chịu đựng	Tân Bão	n2k-x-1784723946049	
+n2k-l03	抱	第03	1784723960446	抱負	ほうふ	Bão phụ, hoài hoài, tham vọng	Bão Phụ	n2k-x-1784723960446	
+n2k-l03	抱	第03	1784723992040	介抱	かいほう	Chăm sóc, điều dưỡng	Giới Bão	n2k-x-1784723992040	
+n2k-l03	泡	第03	1784724024221	水泡	すいほう	Bọt nước (nghĩa bóng: công dã tràng)	Thủy Phao	n2k-x-1784724024221	
+n2k-l03	泡	第03	1784724038444	泡	あわ	Bọt	Phao	n2k-x-1784724038444	
+n2k-l03	泡	第03	1784724053786	泡風呂	あわぶろ	Bồn tắm bọt	Phao Phong Lữ	n2k-x-1784724053786	
+n2k-l03	泡	第03	1784724075025	気泡	きほう	Bong bóng khí	Khí Phao	n2k-x-1784724075025	
+n2k-l03	砲	第03	1784724103739	鉄砲	てっぽう	Súng (cổ), súng hỏa mai	Thiết Pháo	n2k-x-1784724103739	from-image
+n2k-l03	砲	第03	1784724117709	発砲	はっぽう	Bắn súng, nổ súng	Phát Pháo	n2k-x-1784724117709	
+n2k-l03	砲	第03	1784724131466	大砲	たいほう	Khẩu đại bác	Đại Pháo	n2k-x-1784724131466	
+n2k-l03	砲	第03	1784724147431	砲撃	ほうげき	Pháo kích, bắn pháo	Pháo Kích	n2k-x-1784724147431	
+n2k-l03	枠	第03	1784724193478	枠組み	わくぐみ	Khung lắp ráp, khuôn khổ	Khung Tổ	n2k-x-1784724193478	
+n2k-l03	酔	第03	1784724224955	酔う	よう	Say (rượu, xe)	Túy	n2k-x-1784724224955	
+n2k-l03	酔	第03	1784724240954	酔っ払う	よっぱらう	Say khướt, say mềm	Túy Phất	n2k-x-1784724240954	
+n2k-l03	粋	第03	1784724278687	粋な	いきな	Sành điệu, phong nhã Lên đồ vest, vuốt keo phông bạt trông rõ TÚY (bảnh bao, sành điệu) để đi chăn rau, nhưng lên giường lại quá ÍT KĨ NĂNG (いきな - i-ki-na)	Túy	n2k-x-1784724278687	
+n2k-l03	粋	第03	1784724291722	純粋な	じゅんすいな	Thuần khiết, trong sáng Cô gái ngây thơ THUẦN TÚY (純粋), mặc quần CHUN ra SUỐI (Jun-sui) tắm tiên.	Thuần Túy	n2k-x-1784724291722	
+n2k-l03	粋	第03	1784724306508	抜粋	ばっすい	Trích xuất, trích đoạn, tinh tuyển	Bạt Túy	n2k-x-1784724306508	from-image
+n2k-l03	仮	第03	1784724334200	仮名	かな	Chữ Kana (hoặc tên giả)	Giả Danh	n2k-x-1784724334200	
+n2k-l03	仮	第03	1784724348916	仮病	けびょう	"Giả bệnh ""Lấy cớ GIẢ BỆNH (仮病) xin nghỉ làm, sếp đến thăm đột xuất bắt tại trận đang nằm KÊ BÌU (Kebyou) tưng tửng xem phim, chả có tí ốm đau nào!"	Giả Bệnh	n2k-x-1784724348916	
+n2k-l03	仮	第03	1784724366337	仮定	かてい	Giả định, giả thiết	Giả Định	n2k-x-1784724366337	
+n2k-l03	仮	第03	1784724384854	仮免許	かりめんきょ	Bằng lái xe tạm thời Mới có cái bằng lái tạm (GIẢ MIỄN HỨA) mà đã đòi chở bồ đi ăn CÀ RI (かり), lùi chuồng quẹt xước xe người ta, đền tiền xong than MỆT QUÁ (MEN-KY-Ô - めんきょ)!	Giả Miễn Hứa	n2k-x-1784724384854	
+n2k-l03	仮	第03	1784724405773	仮説	かせつ	Giả thuyết	Giả Thuyết	n2k-x-1784724405773	
+n2k-l03	販	第03	1784724438345	市販	しはん	Bán ra thị trường	Thị Phiến	n2k-x-1784724438345	
+n2k-l03	販	第03	1784724453995	自動販売機	じどうはんばいき	Máy bán hàng tự động	Tự Động Tản Mại Cơ	n2k-x-1784724453995	
+n2k-l03	販	第03	1784724471911	販売	はんばい	Bán hàng, buôn bán	Phiến Mại	n2k-x-1784724471911	
+n2k-l03	販	第03	1784724488891	販売部	はんばいぶ	Phòng/Bộ phận bán hàng	Phiến Mại Bộ	n2k-x-1784724488891	
+n2k-l03	販	第03	1784724521814	通信販売	つうしんはんばい	Bán hàng qua mạng/bưu điện	Thông Tín Phiến Mại	n2k-x-1784724521814	
+n2k-l03	飯	第03	1784724549891	御飯	ごはん	Cơm, bữa ăn	Ngự Phạn	n2k-x-1784724549891	
+n2k-l03	飯	第03	1784724565637	飯	めし	Cơm (cách nói thân mật)	Phạn	n2k-x-1784724565637	
+n2k-l03	飯	第03	1784724584585	晩ご飯	ばんごはん	Bữa ăn tối	Vãn Phạn	n2k-x-1784724584585	
+n2k-l03	殴	第03	1784724626112	殴った (殴る)	なぐった(なぐる)	Đã đánh, đấm	Ảu	n2k-x-1784724626112	
+n2k-l03	殿	第03	1784724731542	宮殿	きゅうでん	Cung điện	Cung Điện	n2k-x-1784724731542	
+n2k-l03	玄	第03	1784724758640	玄米	げんまい	Gạo lức	Huyền Mễ	n2k-x-1784724758640	
+n2k-l03	玄	第03	1784724773700	玄人	くろうと	Chuyên gia, người sành sỏi	Huyền Nhân	n2k-x-1784724773700	from-image
+n2k-l03	玄	第03	1784724787757	玄関	げんかん	Lối vào, hiên nhà	Huyền Quan	n2k-x-1784724787757	
+n2k-l03	幼	第03	1784724813761	幼い	おさない	Ngây thơ, non nớt, nhỏ tuổi	Ấu	n2k-x-1784724813761	
+n2k-l03	幼	第03	1784724829248	幼稚園	ようちえん	Trường mầm non / mẫu giáo Sáng ra phải dắt đứa cháu mặt mũi còn ẤU TRĨ (幼稚園) đến gửi ở TRƯỜNG MẪU GIÁO, nó khóc thét ôm chân không cho về, làm mình muộn mẹ cả giờ làm!	Ấu Trĩ Viên	n2k-x-1784724829248	
+n2k-l03	幼	第03	1784724847810	幼なじみ	おさななじみ	Bạn thuở nhỏ	Ấu	n2k-x-1784724847810	
+n2k-l03	幻	第03	1784724874969	幻	まぼろし	Ảo ảnh, ảo tưởng	Ảo	n2k-x-1784724874969	
+n2k-l03	幻	第03	1784724888554	幻覚	げんかく	Ảo giác	Ảo Giác	n2k-x-1784724888554	
+n2k-l03	破	第03	1784724923626	破産	はさん	Phá sản	Phá Sản	n2k-x-1784724923626	meaning-is-han-viet
+n2k-l03	破	第03	1784724936786	破棄	はき	Hủy bỏ, bác bỏ	Phá Khí	n2k-x-1784724936786	
+n2k-l03	破	第03	1784724950003	破る	やぶる	Phá vỡ, xé rách (lời hứa, giấy)	Phá	n2k-x-1784724950003	
+n2k-l03	破	第03	1784724969460	破れた (破れる)	やぶれた(やぶれる)	Bị rách, bị rách rời	Phá	n2k-x-1784724969460	
+n2k-l03	被	第03	1784724997482	被告人	ひこくにん	Bị cáo	Bị Cáo Nhân	n2k-x-1784724997482	
+n2k-l03	被	第03	1784725010936	被害	ひがい	Thiệt hại, tổn thất	Bị Hại	n2k-x-1784725010936	
+n2k-l03	被	第03	1784725036143	被る	こうむる/かぶる	Gánh chịu (thiệt hại) / Đội (mũ) (đọc: こうむる / かぶる)	Bị	n2k-x-1784725036143	several-readings
+n2k-l03	疲	第03	1784725063604	疲労	ひろう	Sự mệt mỏi, kiệt sức	Bì Lao	n2k-x-1784725063604	
+n2k-l03	疲	第03	1784725077302	疲れる	つかれる	Mệt mỏi	Bì	n2k-x-1784725077302	
+n2k-l03	証	第03	1784725108339	保証人	ほしょうにん	Người bảo lãnh	Bảo Chứng Nhân	n2k-x-1784725108339	
+n2k-l03	証	第03	1784725121394	免許証	めんきょしょう	Bằng cấp, giấy phép (lái xe)	Miễn Hứa Chứng	n2k-x-1784725121394	
+n2k-l03	証	第03	1784725135813	証明	しょうめい	Chứng minh	Chứng Minh	n2k-x-1784725135813	
+n2k-l03	証	第03	1784725150487	身分証明書	みぶんしょうめいしょ	Giấy chứng minh nhân dân/Căn cước	Thân Phận Chứng Minh Thư	n2k-x-1784725150487	
+n2k-l03	証	第03	1784725167981	証言	しょうげん	Lời chứng, lời khai	Chứng Ngôn	n2k-x-1784725167981	
+n2k-l03	整	第03	1784725194676	整理整頓	せいりせいとん	Sắp xếp gọn gàng, ngăn nắp	Chỉnh Lý Chỉnh Đốn	n2k-x-1784725194676	
+n2k-l03	整	第03	1784725209703	整う	ととのう	Được chuẩn bị sẵn sàng, gọn gàng	Chỉnh	n2k-x-1784725209703	
+n2k-l03	整	第03	1784725225825	整える	ととのえる	Chuẩn bị, chỉnh đốn, chải (tóc)	Chỉnh	n2k-x-1784725225825	
+n2k-l03	整	第03	1784725241234	整理	せいり	Sắp xếp, phân loại	Chỉnh Lý	n2k-x-1784725241234	
+n2k-l03	症	第03	1784725266135	症状	しょうじょう	Triệu chứng bệnh	Chứng Trạng	n2k-x-1784725266135	
+n2k-l03	症	第03	1784725294272	重症	じゅうしょう	Bệnh nặng, triệu chứng nặng	Trọng Chứng	n2k-x-1784725294272	
+n2k-l03	症	第03	1784725310105	軽症	けいしょう	Bệnh nhẹ, triệu chứng nhẹ	Khinh Chứng	n2k-x-1784725310105	
+n2k-l03	症	第03	1784725324445	症候群	しょうこうぐん	Hội chứng Mấy khứa gymer hay mắc HỘI CHỨNG ảo tưởng, ra phòng tập toàn cởi quần SHOW CƠ GÂN (しょうこうぐん).	Chứng Hậu Quần	n2k-x-1784725324445	
+n2k-l03	症	第03	1784725338182	炎症	えんしょう	Viêm nhiễm	Viêm Chứng	n2k-x-1784725338182	
+n2k-l03	症	第03	1784725352950	後遺症	こういしょう	Di chứng để lại 遺 - Trước khi ra đi (辶), người ta để lại những món đồ quý giá (貴) gọi là Di sản.	Hậu Di Chứng	n2k-x-1784725352950	
+n2k-l04	庁	第04	1785898110501	気象庁	きしょうちょう	Cục Khí tượng	Khí Tượng Sảnh	n2k-x-1785898110501	
+n2k-l04	庁	第04	1785898177482	警視庁	けいしちょう	Cơ quan Cảnh sát Thành phố Tokyo	Cảnh Thị Sảnh	n2k-x-1785898177482	
+n2k-l04	庁	第04	1785898193790	消防庁	しょうぼうちょう	Cục Phòng cháy chữa cháy	Tiêu Phòng Sảnh	n2k-x-1785898193790	
+n2k-l04	貯	第04	1785898224343	貯める	ためる	Dành dụm, gơm góp, tiết kiệm		n2k-x-1785898224343	
+n2k-l04	貯	第04	1785898234758	貯まる	たまる	Được tích lũy, đọng lại		n2k-x-1785898234758	
+n2k-l04	貯	第04	1785898251995	貯金する	ちょきんする	Tiết kiệm tiền	Trữ Kim	n2k-x-1785898251995	
+n2k-l04	貯	第04	1785898266879	貯蓄がある	ちょちくがある	Có tiền tiết kiệm/tích lũy Nuôi SÚC vật đem TRỮ (Trữ Súc), bán đi CÓ TIỀN TIẾT KIỆM. Định lén lút đem tiền này CHO CHỊ người yêu CŨ (Cho-chi-ku) thì bị vợ phát hiện táng cho sấp mặt!	Trữ Súc	n2k-x-1785898266879	
+n2k-l04	停	第04	1785898292729	停学	ていがく	Bị đình chỉ học tập, đuổi học tạm thời	Đình Học	n2k-x-1785898292729	
+n2k-l04	停	第04	1785898306417	停電する	ていでんする	Mất điện, cúp điện	Đình Điện	n2k-x-1785898306417	
+n2k-l04	停	第04	1785898321044	停止する	ていしする	Tạm dừng, đình chỉ	Đình Chỉ	n2k-x-1785898321044	
+n2k-l04	停	第04	1785898334343	停滞する	ていたいする	Đình trệ, ngưng trệ	Đình Trệ	n2k-x-1785898334343	
+n2k-l04	拍	第04	1785898362534	心拍数	しんぱくすう	Nhịp tim	Tâm Phách Số	n2k-x-1785898362534	
+n2k-l04	拍	第04	1785898375807	脈拍	みゃくはく	Nhịp đập của mạch (tim)	Mạch Phách	n2k-x-1785898375807	from-image
+n2k-l04	拍	第04	1785898389002	拍手する	はくしゅする	Vỗ tay	Phách Thủ	n2k-x-1785898389002	
+n2k-l04	拍	第04	1785898402599	拍車がかかる	はくしゃがかかる	Thúc đẩy, đẩy nhanh tiến độ	Phách Xa	n2k-x-1785898402599	
+n2k-l04	泊	第04	1785898423323	泊まる	とまる	Trọ lại, ở lại (khách sạn...)		n2k-x-1785898423323	
+n2k-l04	泊	第04	1785898433217	泊める	とめる	Cho trọ lại, cho ở nhờ		n2k-x-1785898433217	
+n2k-l04	泊	第04	1785898502219	二泊三日	にはくみっか	3 ngày 2 đêm	Nhị Bạc Tam Nhật	n2k-x-1785898502219	
+n2k-l04	泊	第04	1785898515137	宿泊先	しゅくはくさき	Nơi lưu trú, chỗ trọ	Túc Bạc Tiên	n2k-x-1785898515137	
+n2k-l04	縮	第04	1785898542886	縮小	しゅくしょう	Thu nhỏ, cắt giảm	Súc Tiểu	n2k-x-1785898542886	
+n2k-l04	縮	第04	1785898555887	縮む	ちぢむ	Co lại, rút lại (áo quần...)		n2k-x-1785898555887	
+n2k-l04	縮	第04	1785898568456	圧縮	あっしゅく	Nén (file, dữ liệu, không khí) ​Tải file game nặng quá nên phải NÉN, THU GON (Áp Súc - 圧縮) lại dung lượng, chỉ cần ẤN XUỐNG (あっしゅく - asshuku) một cú click chuột là giải nén xong chiến game!	Áp Súc	n2k-x-1785898568456	
+n2k-l04	縮	第04	1785898580879	縮める	ちぢめる	Thu ngắn, làm ngắn lại		n2k-x-1785898580879	
+n2k-l04	縮	第04	1785898591014	縮まる	ちぢまる	Được thu ngắn lại		n2k-x-1785898591014	
+n2k-l04	縮	第04	1785898600286	短縮する	たんしゅくする	Rút ngắn, thu ngắn, giảm bớt (thời gian, độ dài, quy mô, …)	ĐOẢN SÚC	n2k-x-1785898600286	from-image
+n2k-l04	祝	第04	1785898619764	祝い	いわい	Sự chúc mừng, quà mừng		n2k-x-1785898619764	
+n2k-l04	祝	第04	1785898631922	祝う	いわう	Chúc mừng, ăn mừng		n2k-x-1785898631922	
+n2k-l04	祝	第04	1785898644723	祝日	しゅくじつ	Ngày lễ	Chúc Nhật	n2k-x-1785898644723	
+n2k-l04	祝	第04	1785898658446	ご祝儀	ごしゅうぎ	Tiền mừng (đám cưới...)	Chúc Nghi	n2k-x-1785898658446	
+n2k-l04	況	第04	1785898683842	不況	ふきょう	"Suy thoái kinh tế Kinh tế BẤT HUỐNG (suy thoái), cuối năm sếp báo cắt thưởng Tết. Bực quá đứng giữa công ty hét lên: ""FUCK YOU (ふきょう)!!!"""	Bất Huống	n2k-x-1785898683842	
+n2k-l04	況	第04	1785898696094	近況	きんきょう	"Tình hình dạo này, tình trạng gần đây Lâu ngày không gặp, đứa bạn hỏi thăm TÌNH HÌNH GẦN ĐÂY (Cận Huống - 近況) thế nào, mình ngửa mặt than thở: ""Vẫn nghèo, đói kém, KÍN CỔNG không dám đi chơi!"""	Cận Huống	n2k-x-1785898696094	
+n2k-l04	況	第04	1785898709636	状況	じょうきょう	Tình huống, tình hình	Trạng Huống	n2k-x-1785898709636	
+n2k-l04	競	第04	1785898732156	競技	きょうぎ	Thi đấu thể thao	Cạnh Kỹ	n2k-x-1785898732156	
+n2k-l04	競	第04	1785898748483	競争	きょうそう	Cạnh tranh, thi đua	Cạnh Tranh	n2k-x-1785898748483	
+n2k-l04	競	第04	1785898761970	競馬	けいば	Đua ngựa	Cạnh Mã	n2k-x-1785898761970	
+n2k-l04	限	第04	1785898788246	権限	けんげん	Quyền hạn	Quyền Hạn	n2k-x-1785898788246	
+n2k-l04	限	第04	1785898800675	最低限	さいていげん	Mức tối thiểu	Tối Đê Hạn	n2k-x-1785898800675	
+n2k-l04	限	第04	1785898809507	限る	かぎる	Hạn chế, giới hạn, chỉ … mà thôi	HẠN	n2k-x-1785898809507	from-image
+n2k-l04	限	第04	1785898823511	入場制限	にゅうじょうせいげん	Giới hạn số người vào cửa ​Quán net HẠN CHẾ VÀO CỬA vì NHIỀU người DÔ (にゅうじょう) toàn lũ SAY GAME (せいげん) ngồi lì nguyên đêm không chịu nhường máy!	Nhập Trường Chế Hạn	n2k-x-1785898823511	
+n2k-l04	限	第04	1785898837187	限界	げんかい	Giới hạn (sức chịu đựng, khả năng)	Hạn Giới	n2k-x-1785898837187	
+n2k-l04	防	第04	1785898861140	堤防	ていぼう	Đê điều, bờ đê	Đê Phòng	n2k-x-1785898861140	
+n2k-l04	防	第04	1785898875409	消防署	しょうぼうしょ	Trạm/Đồn chữa cháy	Tiêu Phòng Thự	n2k-x-1785898875409	
+n2k-l04	防	第04	1785898888029	予防注射	よぼうちゅうしゃ	Tiêm phòng, chích ngừa ​Bị y tá lôi DÔ PHÒNG (よぼう - yobou) để tiêm ngừa, CHÚ SỢ (ちゅうしゃ - chuusha) quá khóc thét lên như con nít!	Dự Phòng Chú Xạ	n2k-x-1785898888029	
+n2k-l04	防	第04	1785898902138	防犯	ぼうはん	Phòng chống tội phạm	Phòng Phạm	n2k-x-1785898902138	
+n2k-l04	防	第04	1785898923310	防災	ぼうさい	Phòng chống thiên tai	Phòng Tai	n2k-x-1785898923310	
+n2k-l04	防	第04	1785898931892	防ぐ	ふせぐ	Phòng tránh, ngăn ngừa Phòng chống dịch thì ít đi lại Phố Dê Cừu ふせぐ		n2k-x-1785898931892	
+n2k-l04	防	第04	1785898945195	防止する	ぼうしする	Phòng ngừa, ngăn chặn	Phòng Chỉ	n2k-x-1785898945195	
+n2k-l04	隣	第04	1785898975077	隣人	りんじん	Người hàng xóm	Lân Nhân	n2k-x-1785898975077	
+n2k-l04	隣	第04	1785898988299	近隣住民	きんりんじゅうみん	Dân cư lân cận/xung quanh	Cận Lân Trụ Dân	n2k-x-1785898988299	
+n2k-l04	隣	第04	1785899000944	隣の人	となりのひと	Người bên cạnh	Lân Nhân	n2k-x-1785899000944	
+n2k-l04	隣	第04	1785899013840	右隣	みぎとなり	Bên phải ngay cạnh	Hữu Lân	n2k-x-1785899013840	
+n2k-l04	隣	第04	1785899027578	隣接する	りんせつする	Giáp ranh, kề bên	Lân Tiếp	n2k-x-1785899027578	
+n2k-l04	器	第04	1785899050697	食器	しょっき	Bát đĩa, dụng cụ ăn uống	Thực Khí	n2k-x-1785899050697	
+n2k-l04	器	第04	1785899062764	楽器	がっき	Nhạc cụ	Lạc Khí	n2k-x-1785899062764	
+n2k-l04	器	第04	1785899078654	容器	ようき	Đồ chứa, thùng/hộp đựng	Dung Khí	n2k-x-1785899078654	
+n2k-l04	器	第04	1785899098253	臓器移植	ぞうきいしょく	Cấy ghép nội tạng Cấy ghép nội tạng (Tạng Khí Di Thực) Làm phẫu thuật TẠNG KHÍ DI THỰC (cấy ghép nội tạng), bác sĩ gọi DÔ KÝ (ぞうき) bill viện phí, nhìn giá xong Í SỐC (いしょく) xỉu ngang!	Tạng Khí Di Thực	n2k-x-1785899098253	
+n2k-l04	器	第04	1785899110986	武器	ぶき	Vũ khí	Vũ Khí	n2k-x-1785899110986	
+n2k-l04	器	第04	1785899123713	核兵器	かくへいき	Vũ khí hạt nhân Vũ khí hạt nhân (Hạch Binh Khí) Hở tí là đòi lôi HẠCH BINH KHÍ (vũ khí hạt nhân) ra bấm nút khè nhau, CÁC (かく) ông HƠI KÌ (へいき) rồi đấy!	Hạch Binh Khí	n2k-x-1785899123713	
+n2k-l04	操	第04	1785899148929	体操	たいそう	Tập thể dục TẠI SAO (たいそう) mồm kêu yêu THỂ THAO mà 5h sáng rủ đi tập thể dục lại block tao???	Thể Thao	n2k-x-1785899148929	
+n2k-l04	操	第04	1785899163726	操作する	そうさする	Thao tác, điều khiển (máy móc)	Thao Tác	n2k-x-1785899163726	
+n2k-l04	操	第04	1785899196137	操る	あやつる	Điều khiển, vận dụng, thông thạo (ngôn ngữ) Bị con bồ cũ THAO TÚNG, ĐIỀU KHIỂN tâm lý (Thao - 操る), bắt còng lưng chuyển khoản đều đặn mỗi tháng, nghĩ lại thấy ẢO THẬT SỰ (あやつる - Ayatsuru)!		n2k-x-1785899196137	
+n2k-l04	操	第04	1785899223589	人形を操る	にんぎょうをあやつる	Điều khiển con rối	Nhân Hình Thao	n2k-x-1785899223589	
+n2k-l04	燥	第04	1785899247412	乾燥機	かんそうき	Máy sấy	Can Táo Cơ	n2k-x-1785899247412	
+n2k-l04	燥	第04	1785899259590	乾燥剤	かんそうざい	Gói/Chất chống ẩm ​CẮN SAO DẠI (かんそうざい) thế, gói HÚT ẨM (Can Táo Tễ) đấy nhả ra!	Can Táo Tể	n2k-x-1785899259590	
+n2k-l04	燥	第04	1785899272458	乾燥する	かんそうする	Khô héo, hanh khô	Can Táo	n2k-x-1785899272458	
+n2k-l04	街	第04	1785899297092	街頭演説	がいとうえんぜつ	Diễn thuyết trên đường phố	Nhai Đầu Diễn Thuyết	n2k-x-1785899297092	
+n2k-l04	街	第04	1785899312394	商店街	しょうてんがい	Phố thương mại, khu mua sắm	Thương Điếm Nhai	n2k-x-1785899312394	
+n2k-l04	街	第04	1785899326655	高級住宅街	こうきゅうじゅうたくがい	Khu phố nhà ở cao cấp	Cao Cấp Trụ Trạch Nhai	n2k-x-1785899326655	
+n2k-l04	術	第04	1785899350354	手術	しゅじゅつ	Phẫu thuật, mổ	Thủ Thuật	n2k-x-1785899350354	
+n2k-l04	術	第04	1785899364418	芸術作品	げいじゅつさくひん	Tác phẩm nghệ thuật	Nghệ Thuật Tác Phẩm	n2k-x-1785899364418	
+n2k-l04	術	第04	1785899378493	技術	ぎじゅつ	Kỹ thuật, công nghệ	Kỹ Thuật	n2k-x-1785899378493	
+n2k-l04	術	第04	1785899392528	美術館	びじゅつかん	Bảo tàng mỹ thuật	Mỹ Thuật Quán	n2k-x-1785899392528	
+n2k-l04	衛	第04	1785899415242	衛生管理	えいせいかんり	Quản lý vệ sinh	Vệ Sinh Quản Lý	n2k-x-1785899415242	
+n2k-l04	衛	第04	1785899428214	護衛する	ごえいする	Hộ vệ, bảo vệ	Hộ Vệ	n2k-x-1785899428214	
+n2k-l04	衛	第04	1785899441542	人工衛星	じんこうえいせい	Vệ tinh nhân tạo	Nhân Công Vệ Tinh	n2k-x-1785899441542	
+n2k-l04	菜	第04	1785899468989	野菜	やさい	Rau củ	Dã Thái	n2k-x-1785899468989	
+n2k-l04	菜	第04	1785899481397	菜の花	なのはな	Hoa cải dầu	Thái Hoa	n2k-x-1785899481397	
+n2k-l04	菜	第04	1785899495693	家庭菜園	かていさいえん	Vườn rau gia đình	Gia Đình Thái Viên	n2k-x-1785899495693	
+n2k-l04	採	第04	1785899519621	採決	さいけつ	Bỏ phiếu biểu quyết	Thái Quyết	n2k-x-1785899519621	
+n2k-l04	採	第04	1785899531900	採用する	さいようする	Tuyển dụng, áp dụng	Thái Dụng	n2k-x-1785899531900	
+n2k-l04	採	第04	1785899545203	昆虫採集	こんちゅうさいしゅう	Sưu tầm/Bắt côn trùng	Côn Trùng Thái Tập	n2k-x-1785899545203	
+n2k-l04	彩	第04	1785899565234	彩り	いろどり	Sự phối màu, màu sắc		n2k-x-1785899565234	
+n2k-l04	彩	第04	1785899638555	彩る	いろどる	Tô điểm, làm cho rực rỡ		n2k-x-1785899638555	
+n2k-l04	彩	第04	1785899652340	水彩絵の具	すいさいえのぐ	Màu nước	Thủy Thái Hội Cụ	n2k-x-1785899652340	
+n2k-l04	輸	第04	1785899676624	輸出する	ゆしゅつする	Xuất khẩu	Thâu Xuất	n2k-x-1785899676624	
+n2k-l04	輸	第04	1785899688621	輸血用	ゆけつよう	Dùng để truyền máu	Thâu Huyết Dụng	n2k-x-1785899688621	
+n2k-l04	輸	第04	1785899701209	輸送する	ゆそうする	Vận tải, vận chuyển	Thâu Tống	n2k-x-1785899701209	
+n2k-l04	軟	第04	1785899726250	軟骨	なんこつ	Sụn	Nhuyễn Xương	n2k-x-1785899726250	
+n2k-l04	軟	第04	1785900504313	柔軟剤	じゅうなんざい	Nước xả vải (làm mềm vải)	Nhu Nhuyễn Tể	n2k-x-1785900504313	
+n2k-l04	軟	第04	1785900597402	柔軟な	じゅうなんな	Linh hoạt, mềm dẻo (suy nghĩ)	Nhu Nhuyễn	n2k-x-1785900597402	
+n2k-l04	軟	第04	1785900609296	軟らかい	やわらかい	Mềm (thức ăn, vật thể)		n2k-x-1785900609296	
+n2k-l04	軒	第04	1785900654529	一軒家	いっけんや	Nhà căn riêng biệt	Nhất Hiên Gia	n2k-x-1785900654529	
+n2k-l04	軒	第04	1785900671497	軒先	のきさき	Hiên nhà	Hiên Tiên	n2k-x-1785900671497	
+n2k-l05	払	第05	1785901125977	払拭する	ふっしょくする	Gạt bỏ, xóa sạch, quét sạch, tiêu trừ	Phát Thức	n2k-x-1785901125977	from-image
+n2k-l05	払	第05	1785901458478	払う	はらう	Phủ, gạt, phủi (bụi...)	Phát	n2k-x-1785901458478	
+n2k-l05	払	第05	1785901469568	支払い	しはらい	Việc thanh toán, chi trả	Phát Trả	n2k-x-1785901469568	
+n2k-l05	払	第05	1785901479993	お金を払う	おかねをはらう	Trả tiền, thanh toán	Kim Phát	n2k-x-1785901479993	
+n2k-l05	払	第05	1787624234009	お金を払う	おかねをはらう	Trả tiền, thanh toán	Kim Phát	n2k-x-1787624234009	
+n2k-l05	拡	第05	1787624280697	拡散	かくさん	Khuếch tán, lan truyền (thông tin, vi-rút)	Khuếch Tản	n2k-x-1787624280697	
+n2k-l05	拡	第05	1787624297096	拡張する	かくちょうする	Mở rộng (đường xá, quy mô)	Khuếch Trương	n2k-x-1787624297096	
+n2k-l05	拡	第05	1787624311362	拡大する	かくだいする	Phóng to, mở rộng	Khuếch Đại	n2k-x-1787624311362	
+n2k-l05	鉱	第05	1787624435642	鉱石	こうせき	Quặng, đá khoáng	Khoáng Thạch	n2k-x-1787624435642	
+n2k-l05	鉱	第05	1787624448224	鉱物	こうぶつ	Khoáng vật (vật chất tự nhiên trong lòng đất)	Khoáng Vật	n2k-x-1787624448224	from-image
+n2k-l05	鉱	第05	1787624462114	鉱業	こうぎょう	Ngành công nghiệp khai khoáng	Khoáng Nghiệp	n2k-x-1787624462114	
+n2k-l05	鉱	第05	1787624478121	炭鉱	たんこう	Mỏ than, hầm mỏ than	Than Khoáng	n2k-x-1787624478121	from-image
+n2k-l05	鉱	第05	1787624495128	鉱山を開発する	こうざんをかいはつする	Khai thác/Phát triển mỏ	Khoáng Sơn Khai Phát	n2k-x-1787624495128	
+n2k-l05	敵	第05	1787624524281	無敵の人	むてきのはん/むてきのひと	Kẻ vô địch (hoặc kẻ không còn gì để mất) (đọc: むてきのはん / むてきのひと)	Vô Địch Nhân	n2k-x-1787624524281	several-readings
+n2k-l05	敵	第05	1787624537366	強敵	きょうてき	Địch thủ mạnh, đối thủ đáng giá	Cường Địch	n2k-x-1787624537366	
+n2k-l05	敵	第05	1787624551545	匹敵する	ひってきする	Sánh ngang, ngang tầm với => “Hai thằng hít khí lực, địch nhau ngang tài!”	Thất Địch	n2k-x-1787624551545	
+n2k-l05	敵	第05	1787624565496	宿敵	しゅくてき	Kẻ thù truyền kiếp, đối thủ lâu năm	Túc Địch	n2k-x-1787624565496	from-image
+n2k-l05	敵	第05	1787624583415	敵対心を抱く	てきたいしんをいだく	Mang lòng thù địch	Địch Đối Tâm Bão	n2k-x-1787624583415	
+n2k-l05	適	第05	1787624606010	適用される	てきようされる	Được áp dụng (luật lệ...)	Thích Dụng	n2k-x-1787624606010	
+n2k-l05	適	第05	1787624622914	快適な暮らし	かいてきなくらし	Cuộc sống thoải mái, dễ chịu	Khoái Thích Mộ	n2k-x-1787624622914	
+n2k-l05	適	第05	1787624640605	適当にする	てきとうにする	Làm qua loa, tùy tiện, cho có	Thích Đương	n2k-x-1787624640605	from-image
+n2k-l05	適	第05	1787624653963	適度な運動	てきどなうんどう	Vận động vừa phải/mức độ hợp lý	Thích Độ Vận Động	n2k-x-1787624653963	
+n2k-l05	適	第05	1787624666382	適性がある	てきせいがある	Có năng khiếu/độ thích hợp	Thích Tính	n2k-x-1787624666382	
+n2k-l05	適	第05	1787624678564	適応する	てきおうする	Thích nghi, thích ứng	Thích Ứng	n2k-x-1787624678564	
+n2k-l05	適	第05	1787624693116	適切な方法	てきせつなほうほう	Phương pháp thích hợp/phù hợp	Thích Thiết Phương Pháp	n2k-x-1787624693116	
+n2k-l05	滴	第05	1787624715694	水滴	すいてき	Giọt nước	Thủy Trích	n2k-x-1787624715694	
+n2k-l05	滴	第05	1787624728262	涙の滴	なみだのしずく	Giọt nước mắt	Lụy Trích	n2k-x-1787624728262	
+n2k-l05	滴	第05	1787624743597	汗が滴る	あせがしたたる	Mồ hôi chảy thành giọt, nhỏ giọt, rơi xuống	Hãn Trích	n2k-x-1787624743597	from-image
+n2k-l05	滴	第05	1787624755575	点滴をうつ	てんてきをうつ	Truyền dịch (đường tĩnh mạch)	Điểm Trích	n2k-x-1787624755575	from-image
+n2k-l05	固	第05	1787624777730	固体	こたい	Thể rắn	Cố Thể	n2k-x-1787624777730	
+n2k-l05	固	第05	1787624790669	固定する	こていする	Cố định, giữ nguyên	Cố Định	n2k-x-1787624790669	
+n2k-l05	固	第05	1787624802897	方針を固める	ほうしんをかためる	Củng cố/Chốt vững chắc phương châm	Phương Châm Cố	n2k-x-1787624802897	
+n2k-l05	固	第05	1787624816864	血が固まる	ちがかたまる	Máu đông lại	Huyết Cố	n2k-x-1787624816864	
+n2k-l05	固	第05	1787624829904	頭が固い	あたまがかたい	Cứng đầu, bảo thủ	Đầu Cố	n2k-x-1787624829904	
+n2k-l05	枯	第05	1787624851518	枯れ葉	かれは	Lá khô	Khô Diệp	n2k-x-1787624851518	
+n2k-l05	枯	第05	1787624867553	花を枯らす	はなをからす	Làm cho hoa héo	Hoa Khô	n2k-x-1787624867553	
+n2k-l05	枯	第05	1787624881636	資源が枯渇する	しげんがこかつする	Tài nguyên bị cạn kiệt, nguồn lực cạn kiệt	Tư Nguyên Khô Kiệt	n2k-x-1787624881636	from-image
+n2k-l05	居	第05	1787624907764	居酒屋	いざかや	Quán nhậu kiểu Nhật	Cư Tửu Ốc	n2k-x-1787624907764	
+n2k-l05	居	第05	1787624919800	居住する	きょじゅうする	Cư trú, sinh sống	Cư Trụ	n2k-x-1787624919800	
+n2k-l05	居	第05	1787624931516	芝居	しばい	Kịch, trò hề/màn kịch	Chi Cư	n2k-x-1787624931516	
+n2k-l05	居	第05	1787624942686	同居する	どうきょする	Sống chung, ở cùng nhà Sống ĐỒNG CƯ (同居) với em gái mưa bị người yêu bắt quả tang, vội vàng chối bay chối biến: Anh ĐÂU CÓ SỜ (Doukyo suru) gì đâu, chỉ SỐNG CHUNG trong sáng thôi!	Đồng Cư	n2k-x-1787624942686	
+n2k-l05	居	第05	1787624956763	居間でテレビを見る	いまでテレビをみる	Xem tivi ở phòng khách	Cư Gian Kiến	n2k-x-1787624956763	
+n2k-l05	巣	第05	1787624982517	クモの巣	クモのす	Mạng nhện	Sào	n2k-x-1787624982517	
+n2k-l05	巣	第05	1787624995822	鳥が巣作りする	とりがすづくりする	Chim làm tổ	Điểu Sào Tác	n2k-x-1787624995822	
+n2k-l05	菓	第05	1787625032020	お菓子	おかし	Bánh kẹo	Quả Tử	n2k-x-1787625032020	
+n2k-l05	菓	第05	1787625045003	洋菓子	ようがし	Bánh kẹo Tây/Phương Tây	Dương Quả Tử	n2k-x-1787625045003	
+n2k-l05	菓	第05	1787625057500	和菓子	わがし	Bánh kẹo truyền thống Nhật Bản	Hòa Quả Tử	n2k-x-1787625057500	
+n2k-l05	菓	第05	1787625069967	製菓会社	せいかがいしゃ	Công ty sản xuất bánh kẹo	Chế Quả Hội Xã	n2k-x-1787625069967	
+n2k-l05	課	第05	1787625094024	課金する	かきんする	Nạp tiền (vào game, dịch vụ)	Khóa Kim	n2k-x-1787625094024	
+n2k-l05	課	第05	1787625109863	課長になる	かちょうになる	Trở thành trưởng phòng/nhóm trưởng	Khóa Trưởng	n2k-x-1787625109863	
+n2k-l05	課	第05	1787625123818	大きな課題	おおきなかだい	Chủ đề/vấn đề lớn	Khóa Đề	n2k-x-1787625123818	
+n2k-l05	課	第05	1787625136203	課税	かぜい	Đánh thuế, thuế khóa	Khóa Thuế	n2k-x-1787625136203	
+n2k-l05	課	第05	1787625152385	営業課	えいぎょうか	Phòng kinh doanh	Doanh Nghiệp Khóa	n2k-x-1787625152385	
+n2k-l05	課	第05	1787625166352	宿題が課される	しゅくだいがかされる	Bị giao bài tập về nhà	Túc Đề Khóa	n2k-x-1787625166352	
+n2k-l05	泉	第05	1787625190004	温泉に行く	おんせんにいく	Đi tắm suối nước nóng	Ôn Tuyền Hành	n2k-x-1787625190004	
+n2k-l05	原	第05	1787625214208	湿原	しつげん	Đầm lầy, vùng đất ngập nước	Thấp Nguyên	n2k-x-1787625214208	
+n2k-l05	原	第05	1787625225514	原料	げんりょう	Nguyên liệu (để chế biến)	Nguyên Liệu	n2k-x-1787625225514	
+n2k-l05	原	第05	1787625238665	原因	げんいん	Nguyên nhân	Nguyên Nhân	n2k-x-1787625238665	
+n2k-l05	源	第05	1787625276087	震源地	しんげんち	Tâm chấn (động đất)	Chấn Nguyên Địa	n2k-x-1787625276087	
+n2k-l05	源	第05	1787625290258	天然資源	てんねんしげん	Tài nguyên thiên nhiên	Thiên Nhiên Tư Nguyên	n2k-x-1787625290258	
+n2k-l05	源	第05	1787625302166	起源	きげん	Nguồn gốc, khởi nguyên	Khởi Nguyên	n2k-x-1787625302166	from-image
+n2k-l05	源	第05	1787625313943	語源	ごげん	Nguồn gốc của từ ngữ	Ngữ Nguyên	n2k-x-1787625313943	
+n2k-l05	源	第05	1787625327333	元気の源	げんきのみなもと	Nguồn gốc sức mạnh, nguồn năng lượng	Nguyên Khí Nguyên	n2k-x-1787625327333	from-image
+n2k-l05	荘	第05	1787625351959	別荘を建てる	べっそうをたてる	Xây biệt trang, xây biệt thự	Biệt Trang Kiến	n2k-x-1787625351959	from-image
+n2k-l05	装	第05	1787625375260	服装を決める	ふくそうをきめる	Chọn/Quyết định trang phục	Phục Trang Quyết	n2k-x-1787625375260	
+n2k-l05	装	第05	1787625394018	装飾品	そうしょくひん	Đồ trang sức, vật trang trí	Trang Sức Phẩm	n2k-x-1787625394018	
+n2k-l05	装	第05	1787625408533	客を装う	きゃくをよそおう	Giả vờ làm khách, đóng giả khách hàng	Khách Trang	n2k-x-1787625408533	from-image
+n2k-l05	装	第05	1787625424452	安全装置が作動する	あんぜんそうちがさどうする	Thiết bị an toàn hoạt động	An Toàn Tác Động	n2k-x-1787625424452	
+n2k-l05	誌	第05	1787625450924	雑誌を読む	ざっしをよむ	Đọc tạp chí	Tạp Chí Độc	n2k-x-1787625450924	
+n2k-l05	誌	第05	1787625465907	日誌をつける	にっしをつける	Viết nhật ký công việc/sổ nhật誌	Nhật Chí	n2k-x-1787625465907	
+n2k-l05	署	第05	1787625491081	部署	ぶしょ	Phòng ban, bộ phận làm việc	Bộ Thự	n2k-x-1787625491081	
+n2k-l05	署	第05	1787625502893	署名する	しょめいする	Ký tên, ký danh, đăng ký tên (làm chữ ký)	Thự Danh	n2k-x-1787625502893	from-image
+n2k-l05	署	第05	1787625517791	警察署	けいさつしょ	Đồn/Sở cảnh sát	Cảnh Sát Thự	n2k-x-1787625517791	
+n2k-l05	署	第05	1787625530691	税務署	ぜいむしょ	Cục/Chi cục thuế	Thuế Vụ Thự	n2k-x-1787625530691	
+n2k-l05	署	第05	1787625546095	消防署	しょうぼうしょ	Trạm/Đồn chữa cháy	Tiêu Phòng Thự	n2k-x-1787625546095	
+n2k-l05	著	第05	1787625570557	著名人	ちょめいじん	Người nổi tiếng	Trứ Danh Nhân	n2k-x-1787625570557	
+n2k-l05	著	第05	1787625584958	著作権	ちょさくけん	Bản quyền, quyền tác giả	Trứ Tác Quyền	n2k-x-1787625584958	from-image
+n2k-l05	著	第05	1787625597901	著者	ちょしゃ	Tác giả	Trứ Giả	n2k-x-1787625597901	
+n2k-l05	著	第05	1787625612484	著書	ちょしょ	Tác phẩm sách, tác phẩm viết 著 - Cuốn sách Tác Giả này viết ra là để CHO (ちょ) đi chứ không bán.	Trứ Thư	n2k-x-1787625612484	
+n2k-l05	緒	第05	1787625640781	一緒に	いっしょに	Cùng nhau	Nhất Tự	n2k-x-1787625640781	
+n2k-l05	緒	第05	1787625654823	情緒不安定	じょうちょふあんてい	Cảm xúc/Tâm trạng không ổn định	Tình Tự Bất An Định	n2k-x-1787625654823	
+n2k-l05	緒	第05	1787625669907	へその緒	へそのお	Dây rốn	Tự	n2k-x-1787625669907	
+n2k-l05	緒	第05	1787625682912	内緒にする	ないしょにする	Giữ bí mật, không cho ai biết	Nội Tự	n2k-x-1787625682912	from-image
+n2k-l05	緒	第05	1787625696575	由緒ある家柄	ゆいしょあるいえがら	Gia tộc có truyền thống, dòng dõi danh giá	Do Tự Gia Bính	n2k-x-1787625696575	from-image
+n2k-l05	即	第05	1787625747208	即席料理	そくせきりょうり	Món ăn nhanh, món làm tức thì, món dã chiến	Tức Tịch Liệu Lý	n2k-x-1787625747208	from-image
+n2k-l05	即	第05	1787625759942	即断即決	そくだんそっけつ	Quyết định nhanh chóng/đoán phạt tức thì	Tức Đoạn Tức Quyết	n2k-x-1787625759942	
+n2k-l05	即	第05	1787625772247	即答する	そくとうする	Trả lời ngay lập tức	Tức Đáp	n2k-x-1787625772247	from-image
+n2k-l05	即	第05	1787625784637	即実行する	そくじっこうする	Thực hành/Thực hiện ngay	Tức Thực Hành	n2k-x-1787625784637	
+n2k-l05	節	第05	1787625809186	季節	きせつ	Mùa (trong năm)	Quý Tiết	n2k-x-1787625809186	
+n2k-l05	節	第05	1787625819869	節約する	せつやくする	Tiết kiệm	Tiết Ước	n2k-x-1787625819869	
+n2k-l05	節	第05	1787625833458	関節が痛い	かんせつがいたい	Đau khớp xương	Quan Tiết Thống	n2k-x-1787625833458	
+n2k-l05	節	第05	1787625846726	温度を調節する	おんどをちょうせつする	Điều chỉnh nhiệt độ	Ôn Độ Điều Tiết	n2k-x-1787625846726	
+n2k-l05	節	第05	1787625860037	人生の節目	じんせいのふしめ	Cột mốc cuộc đời, bước ngoặt cuộc đời	Nhân Sinh Tiết Mục	n2k-x-1787625860037	from-image
+n2k-l05	眼	第05	1787625885558	着眼点	ちゃくがんてん	Góc nhìn, điểm chú ý	Trước Nhãn Điểm	n2k-x-1787625885558	
+n2k-l05	眼	第05	1787625948322	眼中にない	がんちゅうにない	Không để vào trong mắt, không thèm coi trọng, bỏ ngoài tai	Nhãn Trung	n2k-x-1787625948322	from-image
+n2k-l05	眼	第05	1787625968957	眼科	がんか	Khoa mắt/Phòng khám mắt	Nhãn Khoa	n2k-x-1787625968957	
+n2k-l06	融	第06	1787626187514	金融機関	きんゆうきかん	Các tổ chức tài chính (ngân hàng, công ty tài chính, quỹ đầu tư, v.v.)	Kim Dung Cơ Quan	n2k-x-1787626187514	from-image
+n2k-l06	融	第06	1787626197911	融資を受ける	ゆうしをうける	Nhận vốn vay, nhận tài trợ (融資: cấp vốn, cho vay vốn, tài trợ đầu tư)	Dung Tư	n2k-x-1787626197911	from-image
+n2k-l06	融	第06	1787626223662	融通がきかない人	ゆうずうがきかないひと	Người không linh hoạt, không biết tùy cơ ứng biến	Dung Thông	n2k-x-1787626223662	from-image
+n2k-l06	騒	第06	1787626248931	騒ぎが起きる	さわぎがおきる	Xảy ra vụ ồn ào/lộn xộn Xả quả rắm gì ồn ào quá vậy	Tào	n2k-x-1787626248931	
+n2k-l06	騒	第06	1787626261911	外が騒々しい	そとがそうぞうしい	Bên ngoài ồn ào/huyên náo Show diễn to ở nhà ga ồn ào quá, sao mà vô thi được	Tào	n2k-x-1787626261911	
+n2k-l06	騒	第06	1787626279649	騒動	そうどう	Bạo động, sự náo động 騒 - Đám đông chen lấn đi chạy SÔ (そう- show diễn) làm ồn ào cả một góc phố.	Tào Động	n2k-x-1787626279649	
+n2k-l06	騒	第06	1787626290236	騒音	そうおん	Tiếng ồn, âm thanh gây náo động	Tào Âm	n2k-x-1787626290236	from-image
+n2k-l06	騒	第06	1787626311420	物騒な世の中だ	ぶっそうなよのなかだ	Thế thái nguy hiểm/bất an	Vật Tào	n2k-x-1787626311420	
+n2k-l06	嵐	第06	1787626336263	嵐が来る	あらしがくる	Cơn bão đang đến	Lam	n2k-x-1787626336263	
+n2k-l06	嵐	第06	1787626349723	嵐の前の静けさ	あらしのまえのしずけさ	Sự yên bình trước cơn bão	Lam	n2k-x-1787626349723	
+n2k-l06	寮	第06	1787626372567	社員寮に入る	しゃいんりょうにはいる	Vào ký túc xá của công ty	Xã Viên Liêu	n2k-x-1787626372567	from-image
+n2k-l06	寮	第06	1787626384582	寮生活が楽しい	りょうせいかつがたのしい	Cuộc sống ký túc xá vui vẻ, thú vị	Liêu Sinh Hoạt	n2k-x-1787626384582	from-image
+n2k-l06	療	第06	1787626407737	治療が必要	ちりょうがひつよう	Cần phải điều trị	Trị Liệu	n2k-x-1787626407737	
+n2k-l06	療	第06	1787626420132	在宅療養	ざいたくりょうよう	Chăm sóc, điều trị tại nhà	Tại Trạch Liệu Dưỡng	n2k-x-1787626420132	from-image
+n2k-l06	療	第06	1787626431928	診療時間	しんりょうじかん	Thời gian khám chữa bệnh	Chẩn Liệu Thời Gian	n2k-x-1787626431928	
+n2k-l06	療	第06	1787626445902	医療が進歩する	いりょうがしんぽする	Y tế tiến bộ	Y Liệu Tiến Bộ	n2k-x-1787626445902	
+n2k-l06	療	第06	1787626462846	医療保険制度	いりょうほけんせいど	Chế độ bảo hiểm y tế	Y Liệu Bảo Hiểm Chế Độ	n2k-x-1787626462846	
+n2k-l06	僚	第06	1787626483776	同僚と飲みに行く	どうりょうとのみにいく	Đi uống rượu với đồng nghiệp	Đồng Liệu	n2k-x-1787626483776	
+n2k-l06	僚	第06	1787626496313	官僚の役割	かんりょうのやくわり	Vai trò của quan chức/quan biểu Can rượu nọ, dạ cứ qua ri!	Quan Liệu Dịch Cát	n2k-x-1787626496313	
+n2k-l06	隅	第06	1787626520982	隅におけない人	すみにおけないひと	Người không thể coi thường/tài năng ẩn dật	Ngung	n2k-x-1787626520982	
+n2k-l06	隅	第06	1787626531934	隅々	すみずみ	"Mọi ngóc ngách, khắp nơi ""Kéo người yêu tên Mi vào NGUNG (góc) tối để khám phá KHẮP MỌI NGÓC NGÁCH: Ban đầu giả vờ SỜ MI (lông mi), sau lân la sờ luôn ZÚ MI (Sumizumi)!"""	Ngung	n2k-x-1787626531934	
+n2k-l06	隅	第06	1787626543331	片隅	かたすみ	Một góc, nơi khuất, góc nhỏ	Phiến Ngung	n2k-x-1787626543331	from-image
+n2k-l06	偶	第06	1787626567699	偶然に見つける	ぐうぜんにみつける	Tình cờ phát hiện/tìm thấy Cứ tưởng NGẪU NHIÊN (偶然) nhặt được bí kíp võ công là vô đối, ai ngờ luyện bậy luyện bạ làm đầu óc NGU DẦN (Guuzen) đi!	Ngẫu Nhiên	n2k-x-1787626567699	
+n2k-l06	偶	第06	1787626579332	配偶者	はいぐうしゃ	Người phối ngẫu, vợ/chồng, bạn đời (hợp pháp)	Phối Ngẫu Giả	n2k-x-1787626579332	from-image
+n2k-l06	偶	第06	1787626593229	偶数	ぐうすう	Số chẵn	Ngẫu Số	n2k-x-1787626593229	
+n2k-l06	愚	第06	1787626625600	愚か	おろか	Ngu ngốc, dại dột, thiếu sáng suốt	Ngu	n2k-x-1787626625600	from-image
+n2k-l06	愚	第06	1787626638464	愚問	ぐもん	Câu hỏi ngu ngốc, câu hỏi thiếu suy nghĩ	Ngu Vấn	n2k-x-1787626638464	from-image
+n2k-l06	額	第06	1787626665479	合計金額	ごうけいきんがく	Tổng số tiền, tổng chi phí, tổng kim ngạch	Hợp Kế Kim Ngạch	n2k-x-1787626665479	from-image
+n2k-l06	額	第06	1787626676737	写真の額縁	しゃしんのがくぶち	Khung ảnh (額縁: khung tranh, viền tranh)	Ngạch Duyên	n2k-x-1787626676737	from-image
+n2k-l06	額	第06	1787626690658	半額で買う	はんがくでかう	Mua với nửa giá	Bán Ngạch	n2k-x-1787626690658	from-image
+n2k-l06	額	第06	1787626706896	猫の額ほどの庭	ねこのひたいほどのにわ	Khu vườn nhỏ hẹp (nhỏ như trán mèo)	Ngạch Đình	n2k-x-1787626706896	
+n2k-l06	閣	第06	1787626731936	閣僚	かくりょう	Các bộ trưởng, thành viên nội các	Các Liệu	n2k-x-1787626731936	from-image
+n2k-l06	閣	第06	1787626743316	仏閣	ぶっかく	Chùa chiền, kiến trúc Phật giáo	Phật Các	n2k-x-1787626743316	from-image
+n2k-l06	閣	第06	1787626755750	金閣寺へ参る	きんかくじへまいる	Đi viếng/thăm chùa Vàng (Kinkaku-ji)	Kim Các Tự Tham	n2k-x-1787626755750	
+n2k-l06	略	第06	1787626779381	攻略本	こうりゃくぼん	Sách hướng dẫn, sách chiến lược (thường là sách hướng dẫn game)	Công Lược Bổn	n2k-x-1787626779381	from-image
+n2k-l06	略	第06	1787626793251	戦略を実行する	せんりゃくをじっこうする	Thực hiện chiến lược	Chiến Lược Thực Hành	n2k-x-1787626793251	
+n2k-l06	略	第06	1787626807852	略図をかく	りゃくずをかく	Vẽ sơ đồ tóm tắt/phác thảo	Lược Đồ	n2k-x-1787626807852	
+n2k-l06	略	第06	1787626821792	言葉を省略する	ことばをしょうりゃくする	Lược bỏ từ ngữ	Tỉnh Lược	n2k-x-1787626821792	
+n2k-l06	盟	第06	1787626843853	加盟する	かめいする	Gia nhập (liên minh, tổ chức)	Gia Minh	n2k-x-1787626843853	
+n2k-l06	盟	第06	1787626855458	同盟を結ぶ	どうめいをむすぶ	Ký kết đồng minh	Đồng Minh Kết	n2k-x-1787626855458	
+n2k-l06	盟	第06	1787626867570	国際連盟	こくさいれんめい	Liên Hợp Quốc (cũ) / Liên minh quốc tế	Quốc Tế Liên Minh	n2k-x-1787626867570	
+n2k-l06	益	第06	1787626889890	有益な情報	ゆうえきなじょうほう	Thông tin hữu ích	Hữu Ích Tình Báo	n2k-x-1787626889890	
+n2k-l06	益	第06	1787626901437	収益	しゅうえき	Doanh thu, lợi nhuận	Thu Ích	n2k-x-1787626901437	
+n2k-l06	益	第06	1787626913461	利益	りえき	Lợi nhuận, tiền lời	Lợi Ích	n2k-x-1787626913461	
+n2k-l06	衆	第06	1787626934457	観衆	かんしゅう	Khán giả, người xem	Quan Chúng	n2k-x-1787626934457	
+n2k-l06	衆	第06	1787626945862	聴衆	ちょうしゅう	Thính giả, người nghe 聴 - mười (十) cái mắt (目) không bằng cái tai (耳) để tâm (心) thám thính 聴 - Thính giả ngồi lắng nghe say sưa, không ai chịu rời CHỖ (ちょう) của mình. 衆 - Quần chúng, đám đông thấy có chuyện lạ là XÚM (しゅう) lại xem	Thính Chúng	n2k-x-1787626945862	
+n2k-l06	衆	第06	1787626958976	民衆	みんしゅう	Quần chúng nhân dân	Dân Chúng	n2k-x-1787626958976	
+n2k-l06	衆	第06	1787626971410	衆議院	しゅうぎいん	Hạ viện (trong Quốc hội Nhật)	Chúng Nghị Viện	n2k-x-1787626971410	
+n2k-l06	改	第06	1787626998224	改心する	かいしんする	Hối cải, sửa đổi bản thân, cải tà quy chánh	Cải Tâm	n2k-x-1787626998224	
+n2k-l06	改	第06	1787627014829	改革する	かいかくする	Đổi mới, cải tổ, cải cách	Cải Cách 革 - Gồm 廿 (20) + 口 (Miệng) + 十 (10). Có 20 cái miệng kêu gào suốt 10 năm trời để đòi cải CÁCH.	n2k-x-1787627014829	from-image
+n2k-l06	改	第06	1787627028229	内容を改訂する	ないようをかいていする	Sửa đổi/hiệu đính nội dung 訂 (Đính) -> Dùng lời nói (言) sắc bén như cái đinh (丁) để đính chính lại sự thật.	Cải Đính	n2k-x-1787627028229	
+n2k-l06	改	第06	1787627043837	改まった言い方	あらたまったいいかた	Cách nói trang trọng/nghiêm túc	Cải	n2k-x-1787627043837	
+n2k-l06	改	第06	1787627057752	改善点を指摘する	かいぜんてんをしてきする	Chỉ ra các điểm cần cải thiện	Cải Thiện Điểm Chỉ Trích	n2k-x-1787627057752	
+n2k-l06	改	第06	1787627070383	考え方を改める	かんがえかたをあらためる	Thay đổi quan điểm/cách suy nghĩ	Cải	n2k-x-1787627070383	
+n2k-l06	配	第06	1787627095334	将来を心配する	しょうらいをしんぱいする	Lo lắng về tương lai	Tâm Phối	n2k-x-1787627095334	
+n2k-l06	配	第06	1787628042507	情報を配る	じょうほうをくばる	Phân phát/chia sẻ thông tin	Phối	n2k-x-1787628042507	
+n2k-l06	配	第06	1787628052870	新聞配達をする	しんぶんはいたつをする	Giao báo	Phối Đạt	n2k-x-1787628052870	
+n2k-l06	配	第06	1787628065546	利益を配分する	りえきをはいぶんする	Phân chia lợi nhuận	Phối Phân	n2k-x-1787628065546	
+n2k-l06	配	第06	1787628077762	問題用紙を配る	もんだいようしをくばる	Phát đề thi/tờ câu hỏi	Phối	n2k-x-1787628077762	
+n2k-l06	巻	第06	1787628105379	漫画全巻	まんがぜんかん	Trọn bộ truyện tranh	Toàn Quyển	n2k-x-1787628105379	
+n2k-l06	巻	第06	1787628117209	のり巻きが好き	のりまきがすき	Thích món cơm cuộn rong biển	Quyển	n2k-x-1787628117209	
+n2k-l06	巻	第06	1787628130024	糸を巻く	いとをまく	Cuộn chỉ/cuộn dây	Quyển	n2k-x-1787628130024	
+n2k-l06	除	第06	1787628150443	削除する	さくじょする	Xóa bỏ, gạch bỏ	Tước Trừ	n2k-x-1787628150443	
+n2k-l06	除	第06	1787628163244	よごれを除去する	よごれをじょきょする	Tẩy sạch/loại bỏ vết bẩn 除 - Dọn dẹp trừ khử sạch sẽ bụi bẩn rồi mới được bước DÔ (じょ) nhà 去 - Đã là chuyện của quá khứ, thôi đừng nhắc tới kẻo lại KÊU (きょ) ca mệt mỏi	Trừ Khứ	n2k-x-1787628163244	
+n2k-l06	斜	第06	1787628184404	斜面	しゃめん	Mặt nghiêng, sườn dốc 斜 -> Mái nhà bị nghiêng (tà), nước mưa chảy trút xuống kêu XÀ XÀ (しゃ) (Sha).	Tà Diện	n2k-x-1787628184404	
+n2k-l06	斜	第06	1787628198545	斜線を引く	しゃせんをひく	Vẽ đường gạch chéo	Tà Tuyến	n2k-x-1787628198545	
+n2k-l06	斜	第06	1787628210698	斜め後ろの席	ななめうしろのせき	Ghế ngồi chéo phía sau	Tà	n2k-x-1787628210698	
+n2k-l06	斜	第06	1787628223828	世の中を斜めに見る	よのなかをななめにみる	Nhìn đời bằng ánh mắt định kiến/phiến diện	Tà	n2k-x-1787628223828	
+n2k-l06	途	第06	1787628245944	中途半端	ちゅうとはんぱ	Dở dở dang dang, không đến nơi đến chốn 端 - Đứng (立) ngay ngắn ở mép núi (山), gió thổi tung bay bộ râu (而) thật là vô cùng cực đoan.	Trung Đồ Bán Đoan	n2k-x-1787628245944	
+n2k-l06	途	第06	1787628257603	発展途上国	はってんとじょうこく	Các nước đang phát triển	Phát Triển Đồ Thượng Quốc	n2k-x-1787628257603	
+n2k-l06	途	第06	1787628269102	途中までやる	とちゅうまでやる	Làm cho đến giữa chừng	Đồ Trung	n2k-x-1787628269102	
+n2k-l06	途	第06	1787628280782	前途多難	ぜんとたなん	Tiền đồ nhiều gian nan, tương lai trắc trở	Tiền Đồ Đa Nan	n2k-x-1787628280782	
+n2k-l06	途	第06	1787628291633	途方にくれる	とほうにくれる	Bế tắc, không biết phải làm sao	Đồ Phương	n2k-x-1787628291633	
+n2k-l06	途	第06	1787628303064	様々な用途	さまざまなようと	Nhiều ứng dụng/mục đích sử dụng khác nhau	Dụng Đồ	n2k-x-1787628303064	
+n2k-l06	総	第06	1787628326910	総選挙を行う	そうせんきょをおこなう	Tổ chức tổng tuyển cử	Tổng Tuyển Cử	n2k-x-1787628326910	
+n2k-l06	総	第06	1787628339220	総合病院に行く	そうごうびょういんにいく	Đi bệnh viện đa khoa	Tổng Hợp Bệnh Viện	n2k-x-1787628339220	
+n2k-l06	総	第06	1787628352261	総力を発揮した	そうりょくをはっきした	Phát huy toàn bộ sức mạnh 揮 (HUY) -> Dùng tay (扌) vẫy cờ chỉ huy cả một đạo quân đội (軍)	Tổng Lực Phát Huy	n2k-x-1787628352261	
+n2k-l06	総	第06	1787628363455	総称する	そうしょうする	Gọi chung là, tên gọi chung 称 = 禾 (Lúa) + 尔 (Mày/Người kia).- Liên tưởng: Lấy lúa đem cho mày thì tao phải xưng tên đàng hoàng.- Liên tưởng: Bước lên sân khấu xưng tên dõng dạc như đang biểu diễn một SHOW truyền hình.	Tổng Xưng	n2k-x-1787628363455	
+n2k-l06	窓	第06	1787628388083	窓口で手続きをする	まどぐちでてつづきをする	Làm thủ tục tại quầy giao dịch	Song Khẩu	n2k-x-1787628388083	
+n2k-l06	窓	第06	1787628399882	窓際の席	まどぎわのせき	Chỗ ngồi cạnh cửa sổ	Song Tế	n2k-x-1787628399882	
+n2k-l06	窓	第06	1787628411757	同窓会をする	どうそうかいをする	Tổ chức họp lớp/hội đồng đồng khóa 窓 - Mở cửa sổ (Song) ra để ngắm nhìn những vì SAO (そう) lấp lánh trên trời.	Đồng Song Hội	n2k-x-1787628411757	
+n2k-l06	態	第06	1787628431535	実態を知る	じったいをしる	Hiểu rõ thực trạng/thực tế	Thực Thái	n2k-x-1787628431535	
+n2k-l06	態	第06	1787628442676	緊急事態が発生した	きんきゅうじたいがはっせいした	Tình trạng khẩn cấp đã xảy ra	Khẩn Cấp Sự Thái Phát Sinh	n2k-x-1787628442676	
+n2k-l06	態	第06	1787628458177	態勢を整える	たいせいをととのえる	Chuẩn bị/sắp xếp tư thế, sẵn sàng 勢 - Người vừa có (埶) tài năng lại vừa có sức lực (力) ắt sẽ tạo dựng được thế lực lớn.	Thái Thế Chỉnh	n2k-x-1787628458177	
+n2k-l06	態	第06	1787628468534	状態がよくない	じょうたいがよくない	Trạng thái/tình trạng không tốt	Trạng Thái	n2k-x-1787628468534	
+n2k-l06	態	第06	1787628479880	態度が悪い	たいどがわるい	Thái độ tồi/kém	Thái Độ	n2k-x-1787628479880	
+n2k-l07	礼	第07	1788071763540	お礼を言う	おれいをいう	Nói lời cảm ơn	Lễ	n2k-x-1788071763540	
+n2k-l07	礼	第07	1788071784656	礼儀正しい	れいぎただしい	Lễ phép, lịch sự	Lễ Nghi	n2k-x-1788071784656	
+n2k-l07	礼	第07	1788071800092	礼金	れいきん	Tiền lễ (tiền cọc không hoàn lại khi thuê nhà)	Lễ Kim	n2k-x-1788071800092	
+n2k-l07	礼	第07	1788071811173	無礼	ぶれい	Vô lễ, thất lễ	Vô Lễ	n2k-x-1788071811173	
+n2k-l07	札	第07	1788071836753	お札	おさつ	Tiền giấy お札- Có nhiều tiền giấy rủng rỉnh trong túi thì mua bao nhiêu SÁCH (おさつ) cũng được.	Trát	n2k-x-1788071836753	
+n2k-l07	札	第07	1788071849824	二千円札	にせんえんさつ	Tờ tiền 2000 yên	Thiên Yên Trát	n2k-x-1788071849824	
+n2k-l07	札	第07	1788071862107	名札をつける	なふだをつける	Đeo thẻ tên 札 - Lên chùa xin được lá bùa (hoặc nhận được tấm thẻ chứng nhận), cầm trên tay thở cái PHÙ, ĐÃ (Fu-da) quá, thấy tâm hồn bình an nhẹ nhõm hẳn.	Danh Trát	n2k-x-1788071862107	
+n2k-l07	札	第07	1788071874600	札束	さつたば	Cuộn tiền, xấp tiền	Trát Thúc	n2k-x-1788071874600	
+n2k-l07	札	第07	1788071893343	表札	ひょうさつ	Biển tên treo trước nhà	Biểu Trát	n2k-x-1788071893343	
+n2k-l07	札	第07	1788071905693	改札口	かいさつぐち	Cổng soát vé	Cải Trát Khẩu	n2k-x-1788071905693	
+n2k-l07	乱	第07	1788071930357	乱暴な	らんぼうな	Bạo lực, thô bạo, hỗn láo 暴 (BẠO) - Dưới ánh mặt trời (日) gay gắt, đám đông cùng nhau (共) ném những chai nước (氺) để gây BẠO động	Loạn Bạo	n2k-x-1788071930357	
+n2k-l07	乱	第07	1788071945146	頭が混乱する	あたまがこんらんする	Đầu óc hỗn loạn/rối bời	Hỗn Loạn	n2k-x-1788071945146	
+n2k-l07	乱	第07	1788071958740	反乱を起こす	はんらんをおこす	Dấy quân phản loạn, nổi dậy	Phản Loạn	n2k-x-1788071958740	
+n2k-l07	乱	第07	1788071991355	列を乱す	れつをみだす	Làm hỗn loạn hàng/phá hàng 乱す - Bất cẩn thú nhận rằng MÌNH ĐÃ SAI (Mi-da-su), thế là làm rối loạn hết cả kế hoạch của nhóm	Loạn	n2k-x-1788071991355	
+n2k-l07	乱	第07	1788072005170	服が乱れる	ふくがみだれる	Quần áo xộc xệch/rối tung	Loạn	n2k-x-1788072005170	
+n2k-l07	符	第07	1788072027667	音符	おんぷ	Nốt nhạc	Âm Phù	n2k-x-1788072027667	
+n2k-l07	符	第07	1788072044884	新幹線の切符	しんかんせんのきっぷ	Vé tàu Shinkansen	Thiết Phù	n2k-x-1788072044884	
+n2k-l07	将	第07	1788072069167	将軍に仕える	しょうぐんにつかえる	Phụng sự tướng quân	Tương Quân	n2k-x-1788072069167	
+n2k-l07	将	第07	1788072081701	主将になる	しゅしょうになる	Trở thành đội trưởng/chủ tướng	Chủ Tướng	n2k-x-1788072081701	
+n2k-l07	将	第07	1788072101380	将来の計画	しょうらいのけいかく	Kế hoạch tương lai	Tương Lai Kế Hạch	n2k-x-1788072101380	
+n2k-l07	封	第07	1788072145036	手紙を封筒に入れる	てがみをふうとうにいれる	Cho thư vào phong bì	Phong Đống	n2k-x-1788072145036	
+n2k-l07	封	第07	1788072159468	プレゼントを同封する	プレゼントをどうふうする	Đính kèm/gửi kèm quà	Đồng Phong	n2k-x-1788072159468	
+n2k-l07	封	第07	1788072196346	封を開ける	ふうをあける	Bóc phong thư/mở niêm phong	Phong	n2k-x-1788072196346	
+n2k-l07	侵	第07	1788072271265	著作権を侵害する	ちょさくけんをしんがいする	Xâm phạm bản quyền 権 - Cầm cây trượng gỗ (木) đứng quan sát giống chữ Quan 観 (Quan sát) thái độ mọi người để thể hiện uy quyền.	Xâm Hại	n2k-x-1788072271265	
+n2k-l07	侵	第07	1788072285807	不法に侵入する	ふほうにしんにゅうする	Xâm nhập bất hợp pháp	Xâm Nhập	n2k-x-1788072285807	
+n2k-l07	浸	第07	1788072341554	浸す	ひたす	Ngâm (vào nước) Nhúng khăn hoặc ngâm mình vào bồn nước nóng cho thỏa thích rồi nhắm mắt HÍT THẬT SÂU (Hi-ta-su) để tận hưởng sự thư giãn.	Tảm	n2k-x-1788072341554	
+n2k-l07	浸	第07	1788072353714	喜びに浸る	よろこびにひたる	Chìm đắm trong niềm vui	Tảm	n2k-x-1788072353714	
+n2k-l07	浸	第07	1788072379527	床が浸水する	ゆかがしんすいする	Sàn nhà bị ngập nước 床 - Ở dưới mái nhà (广), người ta ghép các tấm gỗ (木) lại để làm sàn nhà hoặc làm giường ngủ.	Tảm Thủy	n2k-x-1788072379527	
+n2k-l07	盛	第07	1788072402782	大盛りを頼む	おおもりをたのむ	Gọi suất lớn/tô bự	Thịnh	n2k-x-1788072402782	
+n2k-l07	盛	第07	1788072418247	食べ盛りの子	たべざかりのこ	Đứa trẻ đang tuổi ăn tuổi lớn 盛り - Con người ai cũng có một thời kỳ đỉnh cao, sung mãn nhất, cống hiến hết mình xong thì cũng bắt đầu GIÀ CẢ ĐI (Za-ka-ri).	Thịnh	n2k-x-1788072418247	
+n2k-l07	盛	第07	1788072435344	育ち盛りの時期	そだちざかりのじき	Giai đoạn phát triển mạnh	Thịnh	n2k-x-1788072435344	
+n2k-l07	盛	第07	1788072447850	盛大な誕生日会	せいだいなたんじょうびかい	Tiệc sinh nhật hoành tráng	Thịnh Đại	n2k-x-1788072447850	
+n2k-l07	盛	第07	1788072464251	スポーツが盛んな学校	スポーツがさかんながっこう	Trường học mạnh về thể thao	Thịnh	n2k-x-1788072464251	
+n2k-l07	盛	第07	1788072526631	ご飯を盛る	ごはんをもる	Xới cơm	Thịnh	n2k-x-1788072526631	
+n2k-l07	城	第07	1788072555903	城跡を訪ねる	しろあとをたずねる	Thăm di tích tòa thành	Thành Tích	n2k-x-1788072555903	
+n2k-l07	城	第07	1788072569249	城壁を登る	じょうへきをのぼる	Leo lên tường thành	Thành Bích	n2k-x-1788072569249	
+n2k-l07	城	第07	1788072619971	城を築く	しろをきずく	Xây dựng tòa thành	Thành	n2k-x-1788072619971	
+n2k-l07	越	第07	1788072643322	年越しそばを食べる	としこしそばをたべる	Ăn mì Toshikoshi Soba đêm giao thừa	Việt	n2k-x-1788072643322	
+n2k-l07	越	第07	1788072655132	海を越える	うみをこえる	Vượt qua biển 越える - Mọi gian nan bão tố anh đều có thể vượt qua vì bên cạnh anh đã CÓ EM RỒI (Ko-e-ru).	Việt	n2k-x-1788072655132	
+n2k-l07	越	第07	1788072668429	前の車を追い越す	まえのくるまをおいこす	Vượt qua chiếc xe phía trước	Việt	n2k-x-1788072668429	
+n2k-l07	越	第07	1788072680633	引っ越しを考える	ひっこしをかんがえる	Suy nghĩ về việc chuyển nhà	Việt	n2k-x-1788072680633	
+n2k-l07	越	第07	1788072693389	優越感にひたる	ゆうえつかんにひたる	Chìm đắm trong cảm giác ưu việt	Ưu Việt Cảm	n2k-x-1788072693389	
+n2k-l07	抜	第07	1788072720348	歯を抜く	はをぬく	Nhổ răng	Bạt	n2k-x-1788072720348	
+n2k-l07	抜	第07	1788072735520	空気が抜ける	くうきがぬける	Xì hơi/thoát khí	Bạt	n2k-x-1788072735520	
+n2k-l07	抜	第07	1788072748914	腰を抜かす	こしをぬかす	Bủn rủn chân tay/chết đứng vì sợ 腰 = 月 (Nhục - Bộ phận cơ thể) + 要 (Yếu - Quan trọng) -> Bộ phận cơ thể (月) quan trọng (要) nhất đóng vai trò trụ cột nâng đỡ con người chính là thắt lưng / cái eo (腰)	Bạt	n2k-x-1788072748914	
+n2k-l07	抜	第07	1788072762146	追い抜かす	おいぬかす	Đuổi vượt qua	Bạt	n2k-x-1788072762146	
+n2k-l07	抜	第07	1788072774466	仕事を手抜きする	しごとをてぬきする	Làm việc qua loa/rút bớt công đoạn	Bạt	n2k-x-1788072774466	
+n2k-l07	抜	第07	1788072786939	抜群	ばつぐん	Xuất chúng, nổi bật	Bạt Quần	n2k-x-1788072786939	
+n2k-l07	援	第07	1788072810597	支援	しえん	Chi viện, hỗ trợ	Chi Viện	n2k-x-1788072810597	
+n2k-l07	援	第07	1788072822946	応援する	おうえんする	Cổ vũ, ủng hộ	Ứng Viện	n2k-x-1788072822946	
+n2k-l07	援	第07	1788072835263	援助	えんじょ	Viện trợ, giúp đỡ	Viện Trợ	n2k-x-1788072835263	
+n2k-l07	援	第07	1788072848595	救援物資	きゅうえんぶっし	Vật tư cứu trợ	Cứu Viện Vật Tư	n2k-x-1788072848595	
+n2k-l07	髪	第07	1788072878023	白髪	しらが/はくはつ	Tóc bạc (đọc: しらが / はくはつ)	Bạch Phát	n2k-x-1788072878023	several-readings
+n2k-l07	髪	第07	1788072889300	金髪	きんぱつ	Tóc vàng	Kim Phát	n2k-x-1788072889300	
+n2k-l07	髪	第07	1788072902222	髪型	かみがた	Kiểu tóc	Phát Hình	n2k-x-1788072902222	
+n2k-l07	髪	第07	1788072912579	短髪	たんぱつ	Tóc ngắn	Đoản Phát	n2k-x-1788072912579	
+n2k-l07	髪	第07	1788072924021	長髪	ちょうはつ	Tóc dài	Trưởng Phát	n2k-x-1788072924021	
+n2k-l07	振	第07	1788072946863	お金を振り込む	おかねをふりこむ	Chuyển khoản tiền	Chấn	n2k-x-1788072946863	
+n2k-l07	振	第07	1788072958405	首を振る	くびをふる	Lắc đầu	Chấn	n2k-x-1788072958405	
+n2k-l07	振	第07	1788072971023	食欲不振	しょくよくふしん	Chán ăn, ăn không ngon miệng	Bất Chấn	n2k-x-1788072971023	
+n2k-l07	振	第07	1788072986117	腕を振るう	うでをふるう	Trổ tài/phát huy tay nghề 腕 - Bộ phận cơ thể (月) có thể uốn lượn (宛) linh hoạt, uyển chuyển nhất chính là cánh tay (腕).	Chấn	n2k-x-1788072986117	
+n2k-l07	振	第07	1788072998734	大きく振れる	おおきくふれる	Rung lắc mạnh/dao động lớn	Chấn	n2k-x-1788072998734	
+n2k-l07	振	第07	1788073012773	振動を感じる	しんどうをかんじる	Cảm nhận sự chấn động/rung lắc	Chấn Động	n2k-x-1788073012773	fixed
+n2k-l07	振	第07	1788073028156	経営不振に陥る	けいえいふしんにおちいる	Rơi vào tình trạng kinh doanh trì trệ	Kinh Doanh Bất Chấn	n2k-x-1788073028156	
+n2k-l07	娠	第07	1788073092955	妊娠する	にんしんする	Mang thai, có bầu	Nhâm Thần	n2k-x-1788073092955	
+n2k-l07	濃	第07	1788073116161	色が濃い	いろがこい	Màu sắc đậm	Nồng	n2k-x-1788073116161	
+n2k-l07	濃	第07	1788073129917	化粧が濃い人	けしょうがこいひと	Người trang điểm đậm	Nồng	n2k-x-1788073129917	
+n2k-l07	濃	第07	1788073144365	味が入濃い	あじがこい	Giàu hương vị	Nồng	n2k-x-1788073144365	
+n2k-l07	濃	第07	1788073157030	濃厚な味わい	のうこうなあじわい	Hương vị đậm đà/béo ngậy	Nồng Hậu	n2k-x-1788073157030	
+n2k-l07	濃	第07	1788073168981	色の濃淡	いろののうたん	Độ đậm nhạt của màu sắc 淡 = 氵 (Nước) + 炎 (Ngọn lửa / Viêm). Nồi canh đang sôi sùng sục trên ngọn lửa (炎) mà đổ thêm cả gáo nước (氵) vào thì gia vị sẽ bị loãng ra và trở nên vô cùng nhạt nhẽo.	Nồng Đạm	n2k-x-1788073168981	
+n2k-l07	契	第07	1788073191671	契約書	けいやくしょ	Bản hợp đồng	Khế Ước Thư	n2k-x-1788073191671	
+n2k-l07	契	第07	1788073203256	契約を結ぶ	けいやくをむすぶ	Ký kết hợp đồng	Khế Ước Kết	n2k-x-1788073203256	
+n2k-l07	喫	第07	1788073226061	喫茶店	きっさてん	Quán cà phê, quán giải khát	Khiết Trà Điếm	n2k-x-1788073226061	
+n2k-l07	喫	第07	1788073238928	喫煙所	きつえんじょ	Nơi hút thuốc	Khiết Yên Sở	n2k-x-1788073238928	
+n2k-l07	喫	第07	1788073256918	休みを満喫する	やすみをまんきつする	Tận hưởng trọn vẹn kỳ nghỉ	Mãn Khiết	n2k-x-1788073256918	
+n2k-l07	潔	第07	1788073281064	清潔	せいけつ	Tinh tươm, sạch sẽ	Thanh Khiết	n2k-x-1788073281064	
+n2k-l07	潔	第07	1788073293782	不潔な人	ふけつなひと	Người dơ dáng, mất vệ sinh	Bất Khiết	n2k-x-1788073293782	
+n2k-l07	潔	第07	1788073305283	簡潔に述べる	かんけつにのべる	Trình bày ngắn gọn/súc tích 述 = 辶 (Xước - đi lại) + 朮 (Thuật - nghệ thuật, kỹ thuật). Liên tưởng: Vừa đi bộ (辶) thong dong vừa dùng lời lẽ đầy nghệ thuật (朮) để tường thuật lại câu chuyện cho mọi người nghe.	Giản Khiết	n2k-x-1788073305283	
+n2k-l07	潔	第07	1788073318282	身の潔白を証明する	みのけっぱくをしょうめいする	Chứng minh bản thân trong sạch	Khiết Bạch	n2k-x-1788073318282	
+n2k-l07	潔	第07	1788073334315	潔く戦う	いさぎよくたたかう	"Chiến đấu quang minh chính đại - Đã là nam tử hán thì phải chơi đẹp, sai là đứng ra nhận lỗi hiên ngang hô to ""Í SAO GÌ, VÔ (ZÔ) ĐÂY!"" (I-sa-gi-yo-i) chứ không thèm trốn tránh."	Khiết	n2k-x-1788073334315	
+n2k-l07	迷	第07	1788073357267	迷路を作る	めいろをつくる	Làm mê cung/đường hầm ziczac	Mê Lộ	n2k-x-1788073357267	
+n2k-l07	迷	第07	1788073404710	迷信を信じる	めいしんをしんじる	Tin vào mê tín	Mê Tín	n2k-x-1788073404710	
+n2k-l07	迷	第07	1788073416770	景気が低迷する	けいきがていめいする	Kinh tế trì trệ/sụt giảm 低 - Một người (亻) mang dòng họ (氏 - Thị) nghèo khó nên đi đâu cũng phải cúi đầu, địa vị trong xã hội rất thấp bé.	Đê Mê	n2k-x-1788073416770	
+n2k-l07	迷	第07	1788073445746	迷いがない	まよいがない	Không có chút do dự/quyết đoán 迷い - Lạc má rồi	Mê	n2k-x-1788073445746	
+n2k-l07	迷	第07	1788073457712	道に迷う	みちにまよう	Bị lạc đường	Mê	n2k-x-1788073457712	
+n2k-l07	糖	第07	1788073486451	糖分を多く含む食品	とうぶんをおおくふくむしょくひん	Thực phẩm chứa nhiều đường	Đường Phân	n2k-x-1788073486451	
+n2k-l07	糖	第07	1788073500802	糖尿病にかかる	とうにょうびょうにかかる	Bị bệnh tiểu đường	Đường Niệu Bệnh	n2k-x-1788073500802	
+n2k-l07	糖	第07	1788073513831	砂糖を控える	さとうをひかえる	Hạn chế ăn đường 控 = 扌 (Tay) + 空 (Không - không gian, trống rỗng). Dùng tay không , khống chế không gian	Sa Đường	n2k-x-1788073513831	
+n2k-l07	菊	第07	1788073537144	野菊が咲く	のぎくがさく	Hoa cúc dại nở 咲 = 口 (Khẩu - miệng) + 关 (Trông giống chữ Thiên 天 - bầu trời bị uốn cong hai chân, tựa như cánh hoa đang bung nở).	Dã Cúc	n2k-x-1788073537144	
+n2k-l07	菊	第07	1788073549767	春菊を育てる	しゅんぎくをそだてる	Trồng rau cải cúc (tần ô)	Xuân Cúc	n2k-x-1788073549767	
+n2k-l08	姿	第08	1788073768725	後ろ姿	うしろすがた	Dáng vẻ từ phía sau	Hậu Tư	n2k-x-1788073768725	
+n2k-l08	姿	第08	1788073778158	容姿	ようし	Diện mạo, dáng vóc	Dung Tư	n2k-x-1788073778158	
+n2k-l08	盗	第08	1788073799475	強盗	ごうとう	Cướp có vũ lực, tên cướp	Cường Đạo	n2k-x-1788073799475	
+n2k-l08	盗	第08	1788073810341	人目を盗む	ひとめをぬすむ	Lén lút (tránh ánh mắt người khác)	Đạo	n2k-x-1788073810341	
+n2k-l08	盗	第08	1788073823149	バイクを盗む	バイクをぬすむ	Trộm xe máy	Đạo	n2k-x-1788073823149	
+n2k-l08	盗	第08	1788073833342	窃盗	せっとう	Trộm cắp 窃 - Kẻ trộm lén lút đào một cái lỗ (穴) chui vào, rồi dùng dao cắt (切) ổ khóa để khoắng sạch tài sản.	Thiết Đạo	n2k-x-1788073833342	
+n2k-l08	盗	第08	1788073843042	盗作	とうさく	Đạo văn, đạo tác phẩm	Đạo Tác	n2k-x-1788073843042	
+n2k-l08	資	第08	1788073863361	投資する	とうしする	Đầu tư	Đầu Tư	n2k-x-1788073863361	
+n2k-l08	資	第08	1788073876330	資料を配る	しりょうをくばる	Phát tài liệu	Tư Liệu	n2k-x-1788073876330	
+n2k-l08	資	第08	1788073885652	資格を取る	しかくをとる	Lấy bằng cấp/chứng chỉ	Tư Cách	n2k-x-1788073885652	
+n2k-l08	資	第08	1788073900165	資質がある	ししつがある	Có tư chất/tố chất	Tư Chất	n2k-x-1788073900165	
+n2k-l08	資	第08	1788073911052	資本主義	しほんしゅぎ	Chủ nghĩa tư bản	Tư Bản Chủ Nghĩa	n2k-x-1788073911052	
+n2k-l08	資	第08	1788073922688	大切な資源	たいせつなしげん	Tài nguyên quan trọng	Tư Nguyên	n2k-x-1788073922688	
+n2k-l08	資	第08	1788073932465	資金	しきん	Tiền vốn, nguồn vốn	Tư Kim	n2k-x-1788073932465	
+n2k-l08	資	第08	1788073944742	資産	しさん	Tài sản	Tư Sản	n2k-x-1788073944742	
+n2k-l08	籍	第08	1788073992139	国籍を記入する	こくせきをきにゅうする	Điền quốc tịch	Quốc Tịch	n2k-x-1788073992139	
+n2k-l08	籍	第08	1788074002235	書籍を読む	しょせきをよむ	Đọc sách báo/sách vở	Thư Tịch	n2k-x-1788074002235	
+n2k-l08	籍	第08	1788074012802	入籍する	にゅうせきする	Đăng ký kết hôn/nhập hộ khẩu	Nhập Tịch	n2k-x-1788074012802	
+n2k-l08	籍	第08	1788074025912	戸籍を抜く	こせきをぬく	Xóa tên khỏi sổ hộ khẩu	Hộ Tịch	n2k-x-1788074025912	
+n2k-l08	籍	第08	1788074036900	在籍している	ざいせきしている	Đang làm việc/đang theo học	Tái Tịch	n2k-x-1788074036900	
+n2k-l08	籍	第08	1788074050123	本籍地を変更する	ほんせきちをへんこうする	Thay đổi nơi đăng ký khai sinh/nguyên quán	Bản Tịch Địa	n2k-x-1788074050123	fixed
+n2k-l08	籍	第08	1788074062525	除籍される	じょせきされる	Bị xóa tên khỏi sổ/đuổi học Bị xóa tên khỏi hộ khẩu/hộ tịch	Trừ Tịch	n2k-x-1788074062525	
+n2k-l08	筒	第08	1788074086264	手紙を封筒に入れる	てがみをふうとうにいれる	Cho thư vào phong bì	Phong Đống	n2k-x-1788074086264	
+n2k-l08	筒	第08	1788074096802	水筒に水を入れる	すいとうにみずをいれる	Cho nước vào bình nước	Thủy Đống	n2k-x-1788074096802	
+n2k-l08	筒	第08	1788074106948	卒業証書の筒	そつぎょうしょうしょのつつ	Ống đựng bằng tốt nghiệp	Tốt Nghiệp Chứng Thư Đống	n2k-x-1788074106948	
+n2k-l08	筒	第08	1788074122588	情報が筒抜けになる	じょうほうがつつぬけになる	Thông tin bị rò rỉ hoàn toàn	Đống	n2k-x-1788074122588	
+n2k-l08	簡	第08	1788074144094	簡易な包装	かんいなほうそう	Đóng gói đơn giản	Giản Dịch	n2k-x-1788074144094	
+n2k-l08	簡	第08	1788074155711	簡略化する	かんりゃくかする	Đơn giản hóa, giản lược	Giản Lược Hóa	n2k-x-1788074155711	
+n2k-l08	簡	第08	1788074165939	簡単な問題	かんたんなもんだい	Câu hỏi/vấn đề đơn giản	Giản Đơn	n2k-x-1788074165939	
+n2k-l08	募	第08	1788074186530	寄付を募る	きふをつのる	Kêu gọi quyên góp	Mộ	n2k-x-1788074186530	
+n2k-l08	募	第08	1788074197065	社員を募集する	しゃいんをぼしゅうする	Tuyển dụng nhân viên	Mộ Tập	n2k-x-1788074197065	
+n2k-l08	墓	第08	1788074221612	墓参り	はかまいり	Đi tảo mộ	Mộ Tham	n2k-x-1788074221612	
+n2k-l08	墓	第08	1788074233665	墓地	ぼち	Nghĩa trang, khu mộ	Mộ Địa	n2k-x-1788074233665	
+n2k-l08	墓	第08	1788074246783	墓穴を掘る	ぼけつをほる	Tự đào huyệt chôn mình (tự chuốc họa) 掘る - Dùng tay (扌) đào mộ để lôi (出) cái xác chết (尸) lên (khai quật).	Mộ Huyệt	n2k-x-1788074246783	
+n2k-l08	暮	第08	1788074271344	一人暮らし	ひとりぐらし	Sống một mình	Mộ	n2k-x-1788074271344	
+n2k-l08	暮	第08	1788074282555	夕暮れ	ゆうぐれ	Hoàng hôn, chiều tà	Tịch Mộ	n2k-x-1788074282555	
+n2k-l08	暮	第08	1788074292713	日が暮れる	ひがくれる	Mặt trời lặn/trời tối	Mộ	n2k-x-1788074292713	
+n2k-l08	完	第08	1788074315015	準備が完了した	じゅんびがかんりょうした	Việc chuẩn bị đã hoàn tất	Hoàn Liễu	n2k-x-1788074315015	
+n2k-l08	完	第08	1788074325548	完成度が高い	かんせいどがたかい	Mức độ hoàn thiện cao	Hoàn Thành Độ	n2k-x-1788074325548	
+n2k-l08	完	第08	1788074335899	完璧にする	かんぺきにする	Làm một cách hoàn hảo	Hoàn Bích	n2k-x-1788074335899	
+n2k-l08	完	第08	1788074346394	作品が完成する	さくひんがかんせいする	Tác phẩm được hoàn thành	Hoàn Thành	n2k-x-1788074346394	fixed
+n2k-l08	完	第08	1788074512696	完治する	かんちする	Chữa khỏi hoàn toàn	Hoàn Trị	n2k-x-1788074512696	
+n2k-l08	完	第08	1788074524694	ドラマの完結編	ドラマのかんけつへん	Tập cuối/phần kết của phim truyền hình	Hoàn Kết Biên	n2k-x-1788074524694	
+n2k-l08	頑	第08	1788074548484	頑張るしかない	がんばるしかない	Chỉ còn cách cố gắng hết sức	Ngoan	n2k-x-1788074548484	
+n2k-l08	頑	第08	1788074558455	頑丈な骨	がんじょうなほね	Xương chắc khỏe 丈 Liên tưởng: Một bậc đại trượng phu thân hình to lớn (大), tay vác một cây trượng hình chữ thập (十) đi hành hiệp trượng nghĩa.	Ngoan Trượng	n2k-x-1788074558455	
+n2k-l08	頑	第08	1788074568532	頑固な人	がんこなひと	Người ngoan cố/bướng bỉnh	Ngoan Cố	n2k-x-1788074568532	
+n2k-l08	冠	第08	1788074590133	栄冠を獲得する	えいかんをかくとくする	Giành vương miện/vinh quang 栄 - Dưới mái nhà (冖) có một cây gỗ (木) trổ hoa bừng sáng rực rỡ (⺌), tượng trưng cho sự phồn vinh và thịnh vượng của gia tộc.	Vinh Quan	n2k-x-1788074590133	
+n2k-l08	冠	第08	1788074599966	王冠をかぶる	おうかんをかぶる	Đội vương miện	Vương Quan	n2k-x-1788074599966	
+n2k-l08	雷	第08	1788074620351	雷雨	らいう	Mưa rào có sấm sét	Lôi Vũ	n2k-x-1788074620351	
+n2k-l08	雷	第08	1788074629653	落雷	らくらい	Sét đánh	Lạc Lôi	n2k-x-1788074629653	
+n2k-l08	雷	第08	1788074642616	雷警報	らいけいほう	Cảnh báo sấm sét	Lôi Cảnh Báo	n2k-x-1788074642616	
+n2k-l08	雷	第08	1788074653152	地雷を踏む	じらいをふむ	Đạp phải mìn (nghĩa đen & bóng)	Địa Lôi	n2k-x-1788074653152	
+n2k-l08	雷	第08	1788074669430	雷が落ちる	かみなりがおちる	Sét đánh / Nổi cơn dội sấm sét (giận dữ)	Lôi	n2k-x-1788074669430	
+n2k-l08	雷	第08	1788074679701	雷が鳴る	かみなりがなる	Sấm rền/sấm nổ	Lôi	n2k-x-1788074679701	
+n2k-l08	震	第08	1788074701280	震度	しんど	Độ địa chấn	Chấn Độ	n2k-x-1788074701280	
+n2k-l08	震	第08	1788074711442	大地震	だいじしん	Trận động đất lớn	Đại Địa Chấn	n2k-x-1788074711442	
+n2k-l08	震	第08	1788074721039	余震	よしん	Dư chấn	Dư Chấn	n2k-x-1788074721039	
+n2k-l08	震	第08	1788074731824	寒さで震える	さむさでふるえる	Run rẩy vì lạnh	Chấn	n2k-x-1788074731824	
+n2k-l08	震	第08	1788074745342	震源地	しんげんち	Tâm đắc/tâm địa chấn	Chấn Nguyên Địa	n2k-x-1788074745342	
+n2k-l08	震	第08	1788074756376	震災	しんさい	Thảm họa động đất	Chấn Tai	n2k-x-1788074756376	
+n2k-l08	震	第08	1788074769900	足の震えがとまらない	あしのふるえがとまらない	Chân run không ngừng	Chấn	n2k-x-1788074769900	
+n2k-l08	需	第08	1788075043622	需要	じゅよう	Nhu cầu	Nhu Yếu	n2k-x-1788075043622	
+n2k-l08	需	第08	1788075055012	生活必需品	せいかつひつじゅひん	Nhu yếu phẩm hàng ngày	Sinh Hoạt Tất Nhu Phẩm	n2k-x-1788075055012	
+n2k-l08	吐	第08	1788075077484	嘔吐する	おうとする	Nôn mửa	Ẩu Thổ	n2k-x-1788075077484	
+n2k-l08	吐	第08	1788075088741	血を吐く	ちをはく	Thổ huyết/nôn ra máu	Thổ	n2k-x-1788075088741	
+n2k-l08	吐	第08	1788075099367	吐血する	とけつする	Thổ huyết	Thổ Huyết	n2k-x-1788075099367	
+n2k-l08	吐	第08	1788075110882	吐き気がする	はきけがする	Buồn nôn	Thổ	n2k-x-1788075110882	
+n2k-l08	吐	第08	1788075122214	心情を吐露する	しんじょうをとろする	Thổ lộ tâm tư/tình cảm	Thổ Lộ	n2k-x-1788075122214	
+n2k-l08	圧	第08	1788075144555	高血圧を防ぐ	こうけつあつをふせぐ	Phòng ngừa cao huyết áp	Áp	n2k-x-1788075144555	
+n2k-l08	圧	第08	1788075157330	低気圧	ていきあつ	Áp thấp nhiệt đới	Đê Khí Áp	n2k-x-1788075157330	
+n2k-l08	圧	第08	1788075171336	胸を圧迫する	むねをあっぱくする	Đè ép/áp bức lồng ngực	Áp Bách	n2k-x-1788075171336	
+n2k-l08	圧	第08	1788075218328	圧倒的な存在感	あっとうてきなそんざいかん	Cảm giác hiện diện áp đảo	Áp Đảo	n2k-x-1788075218328	
+n2k-l08	圧	第08	1788075229184	圧勝する	あっしょうする	Chiến thắng áp đảo	Áp Thắng	n2k-x-1788075229184	
+n2k-l08	圧	第08	1788075240277	血圧が上がる	けつあつがあがる	Huyết áp tăng	Áp	n2k-x-1788075240277	
+n2k-l08	圧	第08	1788075249608	圧力を加える	あつりょくをくわえる	Gia tăng áp lực	Áp Lực	n2k-x-1788075249608	
+n2k-l08	粧	第08	1788075270305	薄化粧する	うすげしょうする	Trang điểm nhẹ nhàng	Bạc Hóa Trang	n2k-x-1788075270305	
+n2k-l08	粧	第08	1788075280179	厚化粧する	あつけしょうする	Trang điểm đậm	Hậu Hóa Trang	n2k-x-1788075280179	
+n2k-l08	粧	第08	1788075289697	化粧室に行く	けしょうしつにいく	Đi vào phòng trang điểm/nhà vệ sinh	Hóa Trang Thất	n2k-x-1788075289697	
+n2k-l08	粧	第08	1788075302234	化粧をする順番	けしょうをするじゅんばん	Thứ tự các bước trang điểm	Hóa Trang	n2k-x-1788075302234	
+n2k-l08	湿	第08	1788075334782	湿気	しっけ	Hơi ẩm, độ ẩm	Thấp Khí	n2k-x-1788075334782	
+n2k-l08	湿	第08	1788075345181	湿度が高い	しつどがたかい	Độ ẩm cao	Thấp Độ	n2k-x-1788075345181	
+n2k-l08	湿	第08	1788075356700	タオルが湿っている	タオルがしめっている	Khăn tắm bị ẩm	Thấp	n2k-x-1788075356700	
+n2k-l08	混	第08	1788075375902	店が混んでいる	みせがこんでいる	Quán ăn/cửa hàng đông đúc	Hỗn	n2k-x-1788075375902	
+n2k-l08	混	第08	1788075388025	コーヒーを混ぜる	コーヒーをまぜる	Khuấy/trộn cà phê	Hỗn	n2k-x-1788075388025	
+n2k-l08	混	第08	1788075398649	米に石が混じっている	こめにいしがまじっている	Trong gạo có lẫn đá	Hỗn	n2k-x-1788075398649	
+n2k-l08	混	第08	1788075411441	色が混ざる	いろがまざる	Các màu sắc bị trộn lẫn	Hỗn	n2k-x-1788075411441	
+n2k-l08	混	第08	1788075423836	混雑	こんざつ	Đông đúc, hỗn loạn	Hỗn Tạp	n2k-x-1788075423836	
+n2k-l08	混	第08	1788075434372	混乱	こんらん	Hỗn loạn, rối bời	Hỗn Loạn	n2k-x-1788075434372	
+n2k-l08	渇	第08	1788075453602	のどが渇く	のどがかわく	Khát nước/khô cổ	Khát	n2k-x-1788075453602	
+n2k-l08	渇	第08	1788075463465	平和を渇望する	へいわをかつぼうする	Khao khát hòa bình	Khát Vọng	n2k-x-1788075463465	
+n2k-l08	裁	第08	1788075486125	裁判を起こす	さいばんをおこす	Khởi kiện/đưa ra tòa	Tài Phán	n2k-x-1788075486125	
+n2k-l08	裁	第08	1788075497154	独裁者	どくさいしゃ	Kẻ độc tài	Độc Tài Giả	n2k-x-1788075497154	
+n2k-l08	裁	第08	1788075506917	仲裁する	ちゅうさいする	Trọng tài, hòa giải	Trọng Tài	n2k-x-1788075506917	
+n2k-l08	裁	第08	1788075517305	体裁を整える	ていさいをととのえる	Chỉnh sửa diện mạo/giữ kẽ bề ngoài	Thể Tài	n2k-x-1788075517305	
+n2k-l08	裁	第08	1788075529411	布を裁つ	ぬのをたつ	Cắt vải	Tài	n2k-x-1788075529411	
+n2k-l08	裁	第08	1788075539720	相手を裁く	あいてをさばく	Phán xét/xử lý đối phương	Tài	n2k-x-1788075539720	
+n2k-l08	我	第08	1788075561082	我を忘れる	われをわすれる	Quên mất bản thân/mất bình tĩnh	Ngã	n2k-x-1788075561082	
+n2k-l08	我	第08	1788075570515	我々の世界	われわれのせかい	Thế giới của chúng ta	Ngã	n2k-x-1788075570515	
+n2k-l08	我	第08	1788075580496	自我が芽生える	じががめばえる	Cái tôi bắt đầu nảy mầm/hình thành	Tự Ngã	n2k-x-1788075580496	
+n2k-l08	我	第08	1788075590670	我が国	わがくに	Đất nước tôi / Đất nước chúng ta	Ngã Quốc	n2k-x-1788075590670	
+n2k-l08	義	第08	1788075610352	定義	ていぎ	Định nghĩa	Định Nghĩa	n2k-x-1788075610352	
+n2k-l08	義	第08	1788075620401	義理の姉	ぎりのあね	Chị kế / Chị dâu / Chị vợ	Nghĩa Lý	n2k-x-1788075620401	
+n2k-l08	義	第08	1788075630391	義務がある	ぎむがある	Có nghĩa vụ/trách nhiệm	Nghĩa Vụ	n2k-x-1788075630391	
+n2k-l08	義	第08	1788075642936	大学の講義	だいがくのこうぎ	Bài giảng ở đại học	Giảng Nghĩa	n2k-x-1788075642936	
+n2k-l09	屈	第09	1788163661516	退屈	たいくつ	Nhàm chán	Thối Khuất	n2k-x-1788163661516	
+n2k-l09	屈	第09	1788163671832	不屈の精神	ふくつのせいしん	Tinh thần bất khuất	Bất Khuất Tinh Thần	n2k-x-1788163671832	
+n2k-l09	屈	第09	1788163682899	権力に屈する	けんりょくにくっする	Khuất phục trước quyền lực	Quyền Lực Khuất	n2k-x-1788163682899	
+n2k-l09	掘	第09	1788163704782	宝を発掘する	ほうをはっくつする	Phát quật kho báu	Phát Quật	n2k-x-1788163704782	
+n2k-l09	掘	第09	1788163715903	石油を採掘する	せきゆをさいくつする	Khai thác/dò tìm dầu mỏ	Thải Quật	n2k-x-1788163715903	
+n2k-l09	堀	第09	1788163738082	堀	ほり	Hào, mương nước quanh thành	Quật	n2k-x-1788163738082	
+n2k-l09	鏡	第09	1788163761305	眼鏡をかける	めがねをかける	Đeo kính	Nhãn Kính	n2k-x-1788163761305	
+n2k-l09	鏡	第09	1788163772117	手鏡を見る	てかがみをみる	Soi gương cầm tay	Thủ Kính	n2k-x-1788163772117	
+n2k-l09	鏡	第09	1788163782415	望遠鏡	ぼうえんきょう	Kính thiên văn, kính viễn vọng	Vọng Viễn Kính	n2k-x-1788163782415	
+n2k-l09	鏡	第09	1788163793048	鏡台	きょうだい	Bàn trang điểm	Kính Đài	n2k-x-1788163793048	
+n2k-l09	鏡	第09	1788163806204	老眼鏡	ろうがんきょう	Kính lão	Lão Nhãn Kính	n2k-x-1788163806204	
+n2k-l09	境	第09	1788163828482	生死の境をさまよう	せいしのさかいをさまよう	Cận kề ranh giới sống chết	Sinh Tử Cảnh	n2k-x-1788163828482	
+n2k-l09	境	第09	1788163838682	国境を超える	こっきょうをこえる	Vượt qua biên giới quốc gia	Quốc Cảnh	n2k-x-1788163838682	
+n2k-l09	境	第09	1788163849102	境界	きょうかい	Ranh giới, biên giới	Cảnh Giới	n2k-x-1788163849102	
+n2k-l09	境	第09	1788163858574	環境を守る	かんきょうをまもる	Bảo vệ môi trường	Hoàn Cảnh	n2k-x-1788163858574	
+n2k-l09	響	第09	1788163883059	音響	おんきょう	Âm thanh, âm hưởng	Âm Hưởng	n2k-x-1788163883059	
+n2k-l09	響	第09	1788163894216	部屋に音が響く	へやにおとがひびく	Âm thanh vang vọng trong phòng	Hưởng	n2k-x-1788163894216	
+n2k-l09	響	第09	1788163905116	世界で反響を呼ぶ	せかいではんきょうをよぶ	Gây tiếng vang/phản hồi trên thế giới	Phản Hưởng	n2k-x-1788163905116	
+n2k-l09	響	第09	1788163915463	心に響く曲	こころにひびくきょく	Ca khúc chạm đến trái tim	Hưởng	n2k-x-1788163915463	
+n2k-l09	響	第09	1788163925115	影響を受ける	えいきょうをうける	Chịu ảnh hưởng	Ảnh Hưởng	n2k-x-1788163925115	
+n2k-l09	絶	第09	1788163963395	絶対	ぜったい	Tuyệt đối	Tuyệt Đối	n2k-x-1788163963395	
+n2k-l09	絶	第09	1788163974287	命を絶つ	いのちをたつ	Chấm dứt cuộc đời/tự sát	Tuyệt	n2k-x-1788163974287	
+n2k-l09	絶	第09	1788163984997	連絡が途絶える	れんらくがとだえる	Mất liên lạc, ngắt kết nối	Đồ Tuyệt	n2k-x-1788163984997	
+n2k-l09	絶	第09	1788163996154	笑顔を絶やさない	えがおをたやさない	Luôn giữ nụ cười (không để tắt nụ cười)	Tuyệt	n2k-x-1788163996154	
+n2k-l09	絶	第09	1788164006335	絶食	ぜっしょく	Tuyệt thực, nhịn ăn	Tuyệt Thực	n2k-x-1788164006335	
+n2k-l09	絶	第09	1788164016201	申し出を拒絶する	もうしでをきょぜつする	Từ chối/cự tuyệt lời đề nghị	Cự Tuyệt	n2k-x-1788164016201	
+n2k-l09	絶	第09	1788164027240	絶好調	ぜっこうちょう	Phong độ cực tốt, trạng thái hoàn hảo	Tuyệt Hảo Điệu	n2k-x-1788164027240	
+n2k-l09	紅	第09	1788164049326	口紅をつける	くちべにをつける	Thoa son môi	Khẩu Hồng	n2k-x-1788164049326	
+n2k-l09	紅	第09	1788164058515	紅色	べにいろ	Màu đỏ thắm	Hồng Sắc	n2k-x-1788164058515	
+n2k-l09	紅	第09	1788164070678	紅葉	こうよう/もみじ	Lá đỏ (mùa thu) (đọc: こうよう / もみじ)	Hồng Diệp	n2k-x-1788164070678	several-readings
+n2k-l09	紅	第09	1788164079741	紅茶	こうちゃ	Trà đen, hồng trà	Hồng Trà	n2k-x-1788164079741	
+n2k-l09	紫	第09	1788164103713	紫色	むらさきいろ	Màu tím	Tử Sắc	n2k-x-1788164103713	
+n2k-l09	紫	第09	1788164113887	紫外線	しがいせん	Tia tử ngoại, tia UV	Tử Ngoại Tuyến	n2k-x-1788164113887	
+n2k-l09	浮	第09	1788164133052	浮かれた気分	うかれたきぶん	Tâm trạng hân hoan/bay bổng	Phù	n2k-x-1788164133052	
+n2k-l09	浮	第09	1788164144018	体が水に浮く	からだがみずにうく	Cơ thể nổi trên mặt nước	Phù	n2k-x-1788164144018	
+n2k-l09	浮	第09	1788164154614	疑惑が浮上する	ぎわくがふじょうする	Nghi vấn nổi lên/hiện ra	Phù Thượng	n2k-x-1788164154614	
+n2k-l09	浮	第09	1788164164554	笑みを浮かべる	えみをうかべる	Nở nụ cười	Phù	n2k-x-1788164164554	
+n2k-l09	浮	第09	1788164178492	大西洋に浮かぶ島々	たいせいようにおうかぶしまじま	Các hòn đảo nổi trên Đại Tây Dương	Phù	n2k-x-1788164178492	
+n2k-l09	遊	第09	1788164202355	遊園地に行く	ゆうえんちにいく	Đi công viên giải trí	Du Viên Địa	n2k-x-1788164202355	
+n2k-l09	遊	第09	1788164231005	悪友と夜遊びする	あくゆうとよあそびする	Đi chơi đêm với bạn xấu	Du Dạ Du	n2k-x-1788164231005	
+n2k-l09	遊	第09	1788164241846	友達と遊ぶ	ともだちとあそぶ	Chơi cùng bạn bè	Du	n2k-x-1788164241846	
+n2k-l09	孫	第09	1788164263120	孫が生まれた	まごがうまれた	Cháu đã ra đời	Tôn	n2k-x-1788164263120	
+n2k-l09	孫	第09	1788164272359	子孫を残す	しそんをのこす	Để lại con cháu/dòng dõi	Tử Tôn	n2k-x-1788164272359	
+n2k-l09	廷	第09	1788164303814	宮廷	きゅうてい	Cung đình	Cung Đình	n2k-x-1788164303814	
+n2k-l09	廷	第09	1788164314025	法廷	ほうてい	Tòa án, pháp đình	Pháp Đình	n2k-x-1788164314025	
+n2k-l09	庭	第09	1788164335408	校庭	こうてい	Sân trường	Hiệu Đình	n2k-x-1788164335408	
+n2k-l09	庭	第09	1788164346510	中庭で遊ぶ	なかにわであそぶ	Chơi ở sân trong/sân giữa	Trung Đình	n2k-x-1788164346510	
+n2k-l09	庭	第09	1788164356596	家庭料理	かていりょうり	Món ăn gia đình	Gia Đình Liệu Lý	n2k-x-1788164356596	
+n2k-l09	妊	第09	1788164377074	避妊する	ひにんする	Tránh thai	Tị Nhâm	n2k-x-1788164377074	
+n2k-l09	妊	第09	1788164388025	妊娠する	にんしんする	Mang thai	Nhâm Thần	n2k-x-1788164388025	
+n2k-l09	妊	第09	1788164398336	不妊治療	ふにんちりょう	Điều trị vô sinh	Bất Nhâm Trị Liệu	n2k-x-1788164398336	
+n2k-l09	妊	第09	1788164411424	妊婦	にんぷ	Phụ nữ mang thai	Nhâm Phụ	n2k-x-1788164411424	
+n2k-l09	依	第09	1788164432305	依頼する	いらいする	Nhờ vả, yêu cầu	Y Lại	n2k-x-1788164432305	
+n2k-l09	依	第09	1788164442791	親に依存する	おやにいぞんする	Phụ thuộc vào bố mẹ	Y Tồn	n2k-x-1788164442791	
+n2k-l09	依	第09	1788164453459	依然として変わらない	いぜんとしてかわらない	Vẫn không thay đổi như trước	Y Nhiên	n2k-x-1788164453459	
+n2k-l09	僕	第09	1788164478833	君と僕	きみとぼく	Cậu và tớ	Bộc	n2k-x-1788164478833	
+n2k-l09	価	第09	1788164497691	価値がある	かちがある	Có giá trị	Giá Trị	n2k-x-1788164497691	
+n2k-l09	価	第09	1788164507489	価格が上がる	かかくがあがる	Giá cả tăng lên	Giá Cách	n2k-x-1788164507489	
+n2k-l09	価	第09	1788164517638	物価が高い	ぶっかがたかい	Vật giá đắt đỏ	Vật Giá	n2k-x-1788164517638	
+n2k-l09	価	第09	1788164527186	定価	ていか	Giá niêm yết	Định Giá	n2k-x-1788164527186	
+n2k-l09	価	第09	1788164536721	評価する	ひょうかする	Đánh giá	Bình Giá	n2k-x-1788164536721	
+n2k-l09	導	第09	1788164558387	指導	しどう	Chỉ đạo, hướng dẫn	Chỉ Đạo	n2k-x-1788164558387	
+n2k-l09	導	第09	1788164569208	人々を導く	ひとびとをみちびく	Dẫn dắt mọi người	Đạo	n2k-x-1788164569208	
+n2k-l09	導	第09	1788164579657	システムを導入する	システムをどうにゅうする	Đưa hệ thống vào áp dụng	Đạo Nhập	n2k-x-1788164579657	
+n2k-l09	述	第09	1788164600623	意見を述べる	いけんをのべる	Nêu ra ý kiến	Thuật	n2k-x-1788164600623	
+n2k-l09	述	第09	1788164610611	記述する	きじゅつする	Ghi chép/mô tả	Ký Thuật	n2k-x-1788164610611	
+n2k-l09	過	第09	1788164725574	過去	かこ	Quá khứ	Quá Khứ	n2k-x-1788164725574	meaning-is-han-viet
+n2k-l09	過	第09	1788164738742	通過する	つうかする	Đi qua, thông qua	Thông Quá	n2k-x-1788164738742	
+n2k-l09	過	第09	1788164748709	過半数	かはんすう	Đa số, quá nửa	Quá Bán Số	n2k-x-1788164748709	
+n2k-l09	過	第09	1788164761388	過ちを犯す	あやまちをおかす	Phạm lỗi lầm	Quá	n2k-x-1788164761388	
+n2k-l09	過	第09	1788164772580	楽しい時を過ごす	たのしいときをすごす	Trải qua khoảng thời gian vui vẻ	Quá	n2k-x-1788164772580	
+n2k-l09	過	第09	1788164783556	過って相手にけがをさせる	あやまってみかたにけがをさせる	Vô tình làm đối phương bị thương	Quá	n2k-x-1788164783556	
+n2k-l09	互	第09	1788164805146	お互いに助け合う	おたがいにたすけあう	Giúp đỡ lẫn nhau	Hỗ	n2k-x-1788164805146	
+n2k-l09	互	第09	1788164815703	相互理解	そうごりかい	Hiểu biết lẫn nhau	Hỗ Tương Lý Giải	n2k-x-1788164815703	
+n2k-l09	互	第09	1788164826375	互換性がある	ごかんせいがある	Có tính tương thích	Hỗ Hoán Tính	n2k-x-1788164826375	
+n2k-l09	互	第09	1788164837803	互角の戦い	つたかごかくのたたかい	Cuộc chiến ngang tài ngang sức	Hỗ Giác	n2k-x-1788164837803	
+n2k-l09	互	第09	1788164848333	交互に食べる	こうごにたべる	Ăn xen kẽ/luân phiên	Hỗ Giao	n2k-x-1788164848333	
+n2k-l09	瓦	第09	1788164869473	瓦	かわら	Mái ngói, viên ngói	Ngõa	n2k-x-1788164869473	
+n2k-l09	瓶	第09	1788164888455	花瓶	かびん	Bình hoa	Hoa Bình	n2k-x-1788164888455	
+n2k-l09	瓶	第09	1788164897464	空き瓶	あきびん	Chai rỗng	Không Bình	n2k-x-1788164897464	
+n2k-l09	瓶	第09	1788164907881	ビール瓶	ビールびん	Chai bia	Bình	n2k-x-1788164907881	
+n2k-l09	瓶	第09	1788164916242	瓶詰め	びんづめ	Đóng chai	Bình Đống	n2k-x-1788164916242	
+n2k-l10	怖	第10	1788165065350	恐怖	きょうふ	Nỗi sợ hãi, hoảng sợ	Khủng Bố	n2k-x-1788165065350	
+n2k-l10	怖	第10	1788165075816	ネズミを怖がる	ネズミをこわがる	Sợ chuột	Bố	n2k-x-1788165075816	
+n2k-l10	怖	第10	1788165085849	高所恐怖症	こうしょきょうふしょう	Hội chứng sợ độ cao	Cao Sở Khủng Bố Chứng	n2k-x-1788165085849	
+n2k-l10	幅	第10	1788165105962	肩幅が広い	かたはばがひろい	Bờ vai rộng	Phụ Phúc	n2k-x-1788165105962	
+n2k-l10	幅	第10	1788165117376	道幅が狭い	みちはばがせまい	Chiều rộng mặt đường hẹp	Đạo Phúc	n2k-x-1788165117376	
+n2k-l10	幅	第10	1788165126767	幅広い知識	はばひろいちしき	Kiến thức rộng lớn/sâu rộng	Phúc	n2k-x-1788165126767	
+n2k-l10	刷	第10	1788165149200	資料を印刷する	しりょうをいんさつする	In tài liệu	Tư Liệu Ấn Loát	n2k-x-1788165149200	
+n2k-l10	刷	第10	1788165160766	新聞を刷る	しんぶんをする	In báo	Loát	n2k-x-1788165160766	
+n2k-l10	挙	第10	1788165179299	選挙を行う	せんきょをおこなう	Tiến hành bầu cử	Tuyển Cử	n2k-x-1788165179299	
+n2k-l10	挙	第10	1788165190293	挙手する	きょしゅする	Giơ tay	Cử Thủ	n2k-x-1788165190293	
+n2k-l10	挙	第10	1788165199418	挙式	きょしき	Tổ chức lễ cưới	Cử Thức	n2k-x-1788165199418	
+n2k-l10	挙	第10	1788165212664	前例のない快挙	ぜんれいのないかいきょ	Thành tích xuất sắc chưa từng có tiền lệ	Tiền Lệ Khoái Cử	n2k-x-1788165212664	
+n2k-l10	挙	第10	1788165222359	証拠が挙がる	しょうこがあがる	Bằng chứng được đưa ra	Chứng Cứ Cử	n2k-x-1788165222359	
+n2k-l10	挙	第10	1788165231876	結婚式を挙げる	けっこんしきをあげる	Tổ chức lễ kết hôn	Kết Hôn Thức Cử	n2k-x-1788165231876	
+n2k-l10	撃	第10	1788165251084	突撃	とつげき	Đột kích, xông lên	Đột Kích	n2k-x-1788165251084	
+n2k-l10	撃	第10	1788165261484	攻撃する	こうげきする	Tấn công	Công Kích	n2k-x-1788165261484	
+n2k-l10	撃	第10	1788165273800	台風が直撃する	たいふうがちょくげきする	Bão đổ bộ trực tiếp	Đài Phong Trực Kích	n2k-x-1788165273800	
+n2k-l10	撃	第10	1788165284321	銃を撃つ	じゅうをうつ	Bắn súng	Kích	n2k-x-1788165284321	
+n2k-l10	承	第10	1788165306660	了承する	りょうしょうする	Chấp thuận, đồng ý	Liễu Thừa	n2k-x-1788165306660	
+n2k-l10	承	第10	1788165317629	継承する	けいしょうする	Kế thừa, tiếp nối	Kế Thừa	n2k-x-1788165317629	
+n2k-l10	承	第10	1788165328717	承知する	しょうちする	Hiểu rõ, nhận lời	Thừa Tri	n2k-x-1788165328717	
+n2k-l10	承	第10	1788165338917	承諾する	しょうだくする	Chấp thuận, đồng ý	Thừa Nặc	n2k-x-1788165338917	
+n2k-l10	承	第10	1788165350122	注文を承る	ちゅうもんをうけたまわる	Nhận đơn hàng (kính ngữ)	Thừa	n2k-x-1788165350122	
+n2k-l10	得	第10	1788165372601	あり得ない	ありえない	Không thể nào/không thể xảy ra	Đắc	n2k-x-1788165372601	
+n2k-l10	得	第10	1788165382338	許可を得る	きょかをえる	Nhận được sự cho phép	Hứa Khả Đắc	n2k-x-1788165382338	
+n2k-l10	得	第10	1788165393465	収入を得る	しゅうにゅうをえる	Có được thu nhập	Thu Nhập Đắc	n2k-x-1788165393465	
+n2k-l10	得	第10	1788165402403	納得する	なっとくする	Thấu hiểu, bị thuyết phục	Nạp Đắc	n2k-x-1788165402403	
+n2k-l10	昇	第10	1788165424287	昇進する	しょうしんする	Thăng tiến	Thăng Tiến	n2k-x-1788165424287	
+n2k-l10	昇	第10	1788165433044	日が昇る	ひがのぼる	Mặt trời mọc	Thăng	n2k-x-1788165433044	
+n2k-l10	昇	第10	1788165443233	株価が上昇する	かぶかがじょうしょうする	Giá cổ phiếu tăng lên	Chu Giá Thượng Thăng	n2k-x-1788165443233	
+n2k-l10	昇	第10	1788165453098	昇給	しょうきゅう	Tăng lương	Thăng Cấp	n2k-x-1788165453098	
+n2k-l10	乾	第10	1788165472993	乾期	かんき	Mùa khô	Can Kỳ	n2k-x-1788165472993	
+n2k-l10	乾	第10	1788165484949	乾電池	かんでんち	Pin khô	Can ĐiệnTrì	n2k-x-1788165484949	
+n2k-l10	乾	第10	1788165494638	乾杯する	かんぱいする	Cụm ly, nâng ly	Can Bôi	n2k-x-1788165494638	
+n2k-l10	乾	第10	1788165504559	乾燥する	かんそうする	Khô ráo, sấy khô	Can Táo	n2k-x-1788165504559	
+n2k-l10	乾	第10	1788165513608	空気が乾く	くうきがかわく	Không khí bị khô	Can	n2k-x-1788165513608	
+n2k-l10	乾	第10	1788165523893	洗濯物を乾かす	せんたくものをかわかす	Phơi khô đồ giặt	Tẩy Trạc Vật Can	n2k-x-1788165523893	
+n2k-l10	応	第10	1788165545528	応援する	おうえんする	Cổ vũ, hỗ trợ	Ứng Viện	n2k-x-1788165545528	
+n2k-l10	応	第10	1788165555444	応用問題	おうようもんだい	Bài tập ứng dụng	Ứng Dụng Vấn Đề	n2k-x-1788165555444	
+n2k-l10	応	第10	1788165566239	反応が鈍い	はんのうがにぶい	Phản ứng chậm chạp	Phản Ứng Độn	n2k-x-1788165566239	
+n2k-l10	応	第10	1788165576168	要望に応える	ようぼうにこたえる	Đáp ứng nguyện vọng	Yếu Vọng Ứng	n2k-x-1788165576168	
+n2k-l10	応	第10	1788165586765	臨機応変	りんきおうへん	Tùy cơ ứng biến	Lâm Cơ Ứng Biến	n2k-x-1788165586765	
+n2k-l10	応	第10	1788165596097	クレーム対応	クレームたいおう	Xử lý khiếu nại	Ứng Đối	n2k-x-1788165596097	
+n2k-l10	応	第10	1788165607559	客に応対する	きゃくにおうたいする	Tiếp đón khách hàng	Khách Ứng Đối	n2k-x-1788165607559	
+n2k-l10	恵	第10	1788165628658	恩恵を受ける	おんけいをうける	Nhận được ân huệ/lợi ích	Ân Huệ	n2k-x-1788165628658	
+n2k-l10	恵	第10	1788165639072	生活の知恵	せいかつのあるちえ	Tri thức/mẹo sống	Sinh Hoạt Trí Huệ	n2k-x-1788165639072	
+n2k-l10	恵	第10	1788165650597	食べ物を恵む	たべものをめぐむ	Ban phát đồ ăn	Huệ	n2k-x-1788165650597	
+n2k-l10	恵	第10	1788165661435	恵まれた生活	めぐまれたせいかつ	Cuộc sống đầy đủ/được ưu đãi	Huệ	n2k-x-1788165661435	
+n2k-l10	恐	第10	1788165685907	間違いを恐れる	まちがいをおそれる	Sợ sai lầm	Khủng	n2k-x-1788165685907	
+n2k-l10	恐	第10	1788165694711	恐れ入ります	おそれいります	Xin lỗi/xin cảm ơn (lịch sự)	Khủng	n2k-x-1788165694711	
+n2k-l10	恐	第10	1788165704754	恐縮	きょうしゅく	Xin lỗi/cảm kích (kính ngữ)	Khủng Súc	n2k-x-1788165704754	
+n2k-l10	恐	第10	1788165715051	恐喝	きょうかつ	Tống tiền, đe dọa	Khủng Hát	n2k-x-1788165715051	
+n2k-l10	恐	第10	1788165725452	世界恐慌	せかいきょうこう	Khủng hoảng kinh tế thế giới	Thế Giới Khủng Hoảng	n2k-x-1788165725452	
+n2k-l10	因	第10	1788165746569	原因	げんいん	Nguyên nhân	Nguyên Nhân	n2k-x-1788165746569	meaning-is-han-viet
+n2k-l10	因	第10	1788165756859	要因	よういん	Yếu tố chính	Yếu Nhân	n2k-x-1788165756859	
+n2k-l10	因	第10	1788165769474	死因	しいん	Nguyên nhân tử vong	Tử Nhân	n2k-x-1788165769474	
+n2k-l10	因	第10	1788165782703	因果関係	いんがかんけい	Mối quan hệ nhân quả	Nhân Quả Quan Hệ	n2k-x-1788165782703	
+n2k-l10	寄	第10	1788165808313	友達の家に寄る	ともだちのいえによる	Ghé qua nhà bạn	Kí	n2k-x-1788165808313	
+n2k-l10	寄	第10	1788165817258	寄付する	きふする	Quyên góp, ủng hộ	Kí Phó	n2k-x-1788165817258	
+n2k-l10	寄	第10	1788165827908	お年寄り	おとしより	Người cao tuổi	Niên Kí	n2k-x-1788165827908	
+n2k-l10	寄	第10	1788165838277	寄り道する	よりみちする	Ghé dọc đường	Kí Đạo	n2k-x-1788165838277	
+n2k-l10	寄	第10	1788165849164	体を寄せ合う	からだをよせあう	Tựa sát vào nhau	Kí	n2k-x-1788165849164	
+n2k-l10	状	第10	1788165872206	状態を確認する	じょうたいをかくにんする	Xác nhận trạng thái	Trạng Thái Xác Nhận	n2k-x-1788165872206	
+n2k-l10	状	第10	1788165882931	命に別状はない	いのちにべつじょうはない	Không nguy hiểm đến tính mạng	Biệt Trạng	n2k-x-1788165882931	
+n2k-l10	状	第10	1788165897624	風邪の症状	かぜのしょうじょう	Triệu chứng cảm cúm	Phong Tà Chứng Trạng	n2k-x-1788165897624	
+n2k-l10	状	第10	1788165911756	状況が変わる	じょうきょうがかわる	Tình hình thay đổi	Trạng Huống	n2k-x-1788165911756	
+n2k-l10	泥	第10	1788166092791	泥パック	どろパック	Đắp mặt nạ bùn	Nê	n2k-x-1788166092791	
+n2k-l10	泥	第10	1788166107659	泥遊び	どろあそび	Chơi với bùn	Nê Du	n2k-x-1788166107659	
+n2k-l10	泥	第10	1788166117624	泥水	どろみず	Nước bùn	Nê Thủy	n2k-x-1788166117624	
+n2k-l10	泥	第10	1788166130240	泥酔する	でいすいする	Say khướt	Nê Túy	n2k-x-1788166130240	
+n2k-l10	泥	第10	1788166140541	泥棒	どろぼう	Kẻ trộm	Nê Bổng	n2k-x-1788166140541	
+n2k-l10	展	第10	1788166168375	個展を開く	こてんをひらく	Mở triển lãm cá nhân	Cá Triển	n2k-x-1788166168375	
+n2k-l10	展	第10	1788166178440	発展する	はってんする	Phát triển	Phát Triển	n2k-x-1788166178440	
+n2k-l10	展	第10	1788166189013	話の展開	はなしのてんかい	Diễn biến của câu chuyện	Triển Khai	n2k-x-1788166189013	
+n2k-l10	展	第10	1788166199096	進展する	しんてんする	Tiến triển	Tiến Triển	n2k-x-1788166199096	
+n2k-l10	展	第10	1788166210686	作品を展示する	さくひんをてんじする	Trưng bày tác phẩm	Tác Phẩm Triển Thị	n2k-x-1788166210686	
+n2k-l10	肩	第10	1788166232575	肩車	かたぐるま	Cõng trên vai	Kiên Xa	n2k-x-1788166232575	
+n2k-l10	肩	第10	1788166242406	肩を組む	かたをくむ	Khoác tay lên vai	Kiên	n2k-x-1788166242406	
+n2k-l10	肩	第10	1788166252097	肩がこる	かたがこる	Đau mỏi vai	Kiên	n2k-x-1788166252097	
+n2k-l10	肩	第10	1788166261347	肩の荷が下りる	かたのにがおりる	Trút bỏ được gánh nặng	Kiên	n2k-x-1788166261347	
+n2k-l10	肩	第10	1788166271793	肩を並べる	かたをならべる	Sánh vai/ngang tầm	Kiên	n2k-x-1788166271793	
+n2k-l10	肩	第10	1788166283549	肩幅が広い	かたはばがひろい	Bờ vai rộng	Kiên Phúc	n2k-x-1788166283549	
+n2k-l10	革	第10	1788166303452	革命をおこす	かくめいをおこす	Tạo ra cuộc cách mạng	Cách Mạng	n2k-x-1788166303452	
+n2k-l10	革	第10	1788166316157	改革する	かいかくする	Cải cách	Cải Cách	n2k-x-1788166316157	
+n2k-l10	革	第10	1788166326503	革靴	かわぐつ	Giày da	Cách Ngoa	n2k-x-1788166326503	
+n2k-l10	靴	第10	1788166345468	靴下	くつした	Tất/vớ	Ngoa Hạ	n2k-x-1788166345468	
+n2k-l10	靴	第10	1788166356201	運動靴	うんどうぐつ	Giày thể thao	Vận Động Ngoa	n2k-x-1788166356201	
+n2k-l10	靴	第10	1788166365360	長靴	ながぐつ	Ủng/giày cao cổ	Trường Ngoa	n2k-x-1788166365360	
+n2k-l10	華	第10	1788166385626	華道	かどう	Nghệ thuật cắm hoa	Hoa Đạo	n2k-x-1788166385626	
+n2k-l10	華	第10	1788166395259	豪華な料理	きょうかなりょうり	Món ăn sang trọng/hoành tráng	Hào Hoa	n2k-x-1788166395259	
+n2k-l10	華	第10	1788166404842	華やかな人	はなやかなひと	Người rực rỡ/nổi bật	Hoa	n2k-x-1788166404842	
+n2k-l10	華	第10	1788166419491	華がある人	はながあるひと	Người có cuốn hút/thần thái	Hoa	n2k-x-1788166419491	
+n2k-l10	華	第10	1788166430060	華々しい活躍	はなばなしいかつやく	Hoạt động rực rỡ/vang dội	Hoa	n2k-x-1788166430060	
+n2k-l10	荒	第10	1788166452094	海が荒れる	うみがあれる	Biển động dữ dội	Hoàng	n2k-x-1788166452094	
+n2k-l10	荒	第10	1788166487551	肌が荒れる	はだがあれる	Da bị nứt nẻ/sần sùi	Hoàng	n2k-x-1788166487551	
+n2k-l10	荒	第10	1788166499077	運転が荒い	うんてんがあらい	Lái xe ẩu/bạo lực	Hoàng	n2k-x-1788166499077	
+n2k-l10	荒	第10	1788166508081	波が荒い	なみがあらい	Sóng to/dữ dội	Hoàng	n2k-x-1788166508081	
+n2k-l10	荒	第10	1788166520585	金遣いが荒い	かねづかいがあらい	Tiêu xài hoang phí	Hoàng	n2k-x-1788166520585	
+n2k-l10	荒	第10	1788166530381	家の中を荒らす	いえのなかをあらす	Làm lộn xộn/phá phách trong nhà	Hoàng	n2k-x-1788166530381	
+n2k-l10	冗	第10	1788166550592	冗談を言う	じょうだんをいう	Nói đùa	Những Đàm	n2k-x-1788166550592	
+n2k-l10	肌	第10	1788166574945	肌荒れ	はだあれ	Da nứt nẻ/sần sùi	Cơ Hoàng	n2k-x-1788166574945	
+n2k-l10	肌	第10	1788166584338	肌着	はだぎ	Quần áo lót	Cơ Trứ	n2k-x-1788166584338	
+n2k-l10	肌	第10	1788166595414	鳥肌が立つ	とりはだがたつ	Nổi da gà	Điểu Cơ	n2k-x-1788166595414	
+n2k-l10	肌	第10	1788166606904	肌の色が白い	はだのいろがしろい	Nước da trắng	Cơ	n2k-x-1788166606904	
+n2k-l10	肌	第10	1788166616782	肌色	はだいろ	Màu da	Cơ Sắc	n2k-x-1788166616782	
+n2k-l10	肌	第10	1788166627723	肌が合う	はだがあう	Hợp tính cách/hợp cạ	Cơ	n2k-x-1788166627723	
+n2k-l11	清	第11	1788953079888	清掃	せいそう	Dọn dẹp, vệ sinh	Thanh Tảo	n2k-x-1788953079888	
+n2k-l11	清	第11	1788953090372	清らかな	きよらかな	Trong trẻo, tinh khiết	Thanh	n2k-x-1788953090372	
+n2k-l11	清	第11	1788953107705	清い心	きよいこころ	Trái tim trong sạch	Thanh	n2k-x-1788953107705	
+n2k-l11	清	第11	1788953117561	心が清まる	こころがきよまる	Tâm trí trở nên trong sạch	Thanh	n2k-x-1788953117561	
+n2k-l11	清	第11	1788953128421	心身を清める	しんしんをつよめる	Làm sạch thân tâm	Thanh	n2k-x-1788953128421	
+n2k-l11	情	第11	1788953153137	情けない	なさけない	Đáng tiếc, thảm hại	Tình	n2k-x-1788953153137	
+n2k-l11	情	第11	1788953162772	友情	ゆうじょう	Tình bạn	Hữu Tình	n2k-x-1788953162772	
+n2k-l11	情	第11	1788953172555	愛情	あいじょう	Tình yêu thương	Ái Tình	n2k-x-1788953172555	
+n2k-l11	情	第11	1788953181689	純情な心	じゅんじょうなこころ	Trái tim thuần khiết	Thuần Tình	n2k-x-1788953181689	
+n2k-l11	情	第11	1788953190571	情熱的な人	じょうねつてきなひと	Người nhiệt huyết	Tình Nhiệt	n2k-x-1788953190571	
+n2k-l11	情	第11	1788953201106	苦情が殺到する	くじょうがさっとうする	Lời phàn nàn tới dồn dập	Khổ Tình	n2k-x-1788953201106	
+n2k-l11	情	第11	1788953211187	顔の表情が硬い	かおのひょうじょうがかたい	Nét mặt cứng đờ	Biểu Tình	n2k-x-1788953211187	
+n2k-l11	精	第11	1788953231538	精進する	しょうじんする	Chuyên tâm, cống hiến	Tinh Tiến	n2k-x-1788953231538	
+n2k-l11	精	第11	1788953245171	精密検査	せいみつけんさ	Kiểm tra tỉ mỉ/chi tiết	Tinh Mật	n2k-x-1788953245171	
+n2k-l11	精	第11	1788953255204	精神病	せいしんびょう	Bệnh tâm thần	Tinh Thần	n2k-x-1788953255204	
+n2k-l11	精	第11	1788953266388	精一杯努力する	せいいっぱいどりょくする	Nỗ lực hết sức	Tinh Nhất Bôi	n2k-x-1788953266388	
+n2k-l11	精	第11	1788953277343	精力的に働く	せいりょくてきにはたらく	Làm việc năng nổ/hết mình	Tinh Lực	n2k-x-1788953277343	
+n2k-l11	請	第11	1788953297154	申請する	しんせいする	Đăng ký, nộp đơn	Thân Thỉnh	n2k-x-1788953297154	
+n2k-l11	請	第11	1788953306872	請求する	せいきゅうする	Yêu cầu thanh toán	Thỉnh Cầu	n2k-x-1788953306872	
+n2k-l11	請	第11	1788953316454	要請する	ようせいする	Kiến nghị, yêu cầu	Yếu Thỉnh	n2k-x-1788953316454	
+n2k-l11	参	第11	1788953337730	墓参りをする	はかまいりをする	Đi tảo mộ	Mộ Tham	n2k-x-1788953337730	
+n2k-l11	参	第11	1788953348344	参ります	まいります	Đi/Đến (Khiêm nhường ngữ)	Tham	n2k-x-1788953348344	
+n2k-l11	参	第11	1788953359207	辞書を参照する	じしょをさんしょうする	Tham khảo từ điển	Tham Chiếu	n2k-x-1788953359207	
+n2k-l11	参	第11	1788953368890	参考にする	さんこうにする	Dùng làm tham khảo	Tham Khảo	n2k-x-1788953368890	
+n2k-l11	参	第11	1788953378222	イベントに参加する	イベントにさんかする	Tham gia sự kiện	Tham Gia	n2k-x-1788953378222	
+n2k-l11	珍	第11	1788953397711	珍味を味わう	ちんみをあじわう	Thưởng thức cao lương mỹ vị	Trân Vị	n2k-x-1788953397711	
+n2k-l11	珍	第11	1788953426008	珍しい花	めずらしいはな	Bông hoa hiếm có	Trân	n2k-x-1788953426008	
+n2k-l11	珍	第11	1788953436827	珍しく家にいる	めずらしくいえにいる	Hiếm khi ở nhà	Trân	n2k-x-1788953436827	
+n2k-l11	修	第11	1788953458609	修行	しゅぎょう	Tu hành, rèn luyện	Tu Hành	n2k-x-1788953458609	
+n2k-l11	修	第11	1788953469874	修学旅行	しゅうがくりょこう	Chuyến đi tham quan học tập	Tu Học	n2k-x-1788953469874	
+n2k-l11	修	第11	1788953480403	学問を修める	がくもんをおさめる	Trau dồi học vấn	Tu	n2k-x-1788953480403	
+n2k-l11	修	第11	1788953491367	パソコンの修理	パソコンのしゅうり	Sửa chữa máy tính	Tu Lý	n2k-x-1788953491367	
+n2k-l11	修	第11	1788953504375	修士論文	しゅうしろんぶん	Luận văn thạc sĩ	Tu Sĩ	n2k-x-1788953504375	
+n2k-l11	修	第11	1788953514806	修了証書	しゅうりょうしょうしょ	Bằng/Chứng nhận hoàn thành khóa học	Tu Liễu	n2k-x-1788953514806	
+n2k-l11	診	第11	1788953561150	初診	しょしん	Khám lần đầu	Sơ Chẩn	n2k-x-1788953561150	
+n2k-l11	診	第11	1788953571621	休診	きゅうしん	Nghỉ khám	Hưu Chẩn	n2k-x-1788953571621	
+n2k-l11	診	第11	1788953602200	健康診断	けんこうしんだん	Khám sức khỏe định kỳ	Chẩn Đoán	n2k-x-1788953602200	
+n2k-l11	診	第11	1788953613478	定期健診	ていきけんしん	Khám sức khỏe định kỳ	Chẩn	n2k-x-1788953613478	
+n2k-l11	診	第11	1788953623592	診察室	しんさつしつ	Phòng khám bệnh	Chẩn Sát	n2k-x-1788953623592	
+n2k-l11	診	第11	1788953633510	受診する	じゅしんする	Đi khám bệnh	Thụ Chẩn	n2k-x-1788953633510	
+n2k-l11	診	第11	1788953645911	意向を打診する	いこうをだしんする	Thăm dò ý định	Đả Chẩn	n2k-x-1788953645911	
+n2k-l11	牧	第11	1788953666409	牧師	ぼくし	Mục sư	Mục Sư	n2k-x-1788953666409	
+n2k-l11	牧	第11	1788953676089	牧畜	ぼくちく	Chăn nuôi gia súc	Mục Súc	n2k-x-1788953676089	
+n2k-l11	牧	第11	1788953686595	牧場の牛	ぼくじょうのうし	Bò ở trang trại	Mục Trường	n2k-x-1788953686595	
+n2k-l11	牧	第11	1788953696626	放牧する	ほうぼくする	Chăn thả gia súc	Phóng Mục	n2k-x-1788953696626	
+n2k-l11	牧	第11	1788953706418	遊牧民族	ゆうぼくみんぞく	Dân du mục	Du Mục	n2k-x-1788953706418	
+n2k-l11	致	第11	1788953727426	致死量	ちしりょう	Liều lượng gây chết người	Trí Tử	n2k-x-1788953727426	
+n2k-l11	致	第11	1788953736825	致命的な傷	ちめいてきなきず	Vết thương chí mạng	Trí Mệnh	n2k-x-1788953736825	
+n2k-l11	致	第11	1788953746165	考えが一致する	かんがえがいっちする	Suy nghĩ thống nhất/nhất trí	Nhất Trí	n2k-x-1788953746165	
+n2k-l11	致	第11	1788953756196	お願い致します	おねがいいたします	Làm (Khiêm nhường ngữ của します)	Trí	n2k-x-1788953756196	
+n2k-l11	攻	第11	1788953777060	速攻	そっこう	Tấn công nhanh	Tốc Công	n2k-x-1788953777060	
+n2k-l11	攻	第11	1788953786778	攻撃する	こうげきする	Tấn công	Công Kích	n2k-x-1788953786778	
+n2k-l11	攻	第11	1788953797038	攻略する	こうりゃくする	Chinh phục, đánh chiếm	Công Lược	n2k-x-1788953797038	
+n2k-l11	攻	第11	1788953806989	敵を攻める	てきをせめる	Tấn công kẻ địch	Công	n2k-x-1788953806989	
+n2k-l11	攻	第11	1788953816590	攻守交替	こうしゅこうたい	Đổi bên tấn công và phòng thủ	Công Thủ	n2k-x-1788953816590	
+n2k-l11	攻	第11	1788953826877	経営学を専攻する	けいえいがくをせんこうする	Chuyên ngành quản trị kinh doanh	Chuyên Công	n2k-x-1788953826877	
+n2k-l11	徹	第11	1788953858397	徹夜で勉強する	てつやでべんきょうする	Thức trắng đêm học bài	Triệt Dạ	n2k-x-1788953858397	
+n2k-l11	徹	第11	1788953871628	徹底的に考える	てっていてきにかんがえる	Suy nghĩ một cách triệt để	Triệt Để	n2k-x-1788953871628	
+n2k-l11	専	第11	1788953892107	専攻科目	せんこうかもく	Môn học chuyên ngành	Chuyên Công	n2k-x-1788953892107	
+n2k-l11	専	第11	1788953907423	専門分野	せんもんぶんや	Lĩnh vực chuyên môn	Chuyên Môn	n2k-x-1788953907423	
+n2k-l11	専	第11	1788953918101	勉強に専念する	べんきょうにせんねんする	Chuyên tâm vào việc học	Chuyên Niệm	n2k-x-1788953918101	
+n2k-l11	専	第11	1788953928445	女性専用車両	じょせいせんようしゃりょう	Toa xe dành riêng cho phụ nữ	Chuyên Dụng	n2k-x-1788953928445	
+n2k-l11	専	第11	1788953940470	休日は専ら読書です	きゅうじつはもっぱらどくしょです	Ngày nghỉ hầu như chỉ đọc sách	Chuyên	n2k-x-1788953940470	
+n2k-l11	博	第11	1788953967265	博学	はくがく	Bác học, thông tuệ	Bác Học	n2k-x-1788953967265	
+n2k-l11	博	第11	1788953977262	賭博	とばく	Cờ bạc	Đổ Bác	n2k-x-1788953977262	
+n2k-l11	博	第11	1788953988303	博士	はかせ/はくし	Tiến sĩ (đọc: はかせ / はくし)	Bác Sĩ	n2k-x-1788953988303	several-readings
+n2k-l11	博	第11	1788953998627	博物館	はくぶつかん	Bảo tàng	Bác Vật	n2k-x-1788953998627	
+n2k-l11	博	第11	1788954009010	博愛の精神	はくあいのせいしん	Tinh thần bác ái	Bác Ái	n2k-x-1788954009010	
+n2k-l11	薄	第11	1788954034110	軽薄な人	けいはくなひと	Người nông cạn, nhẹ giạ	Khinh Bạc	n2k-x-1788954034110	
+n2k-l11	薄	第11	1788954045213	記憶が薄れる	きおくがうすれる	Ký ức phai nhạt	Bạc	n2k-x-1788954045213	
+n2k-l11	薄	第11	1788954062781	味を薄める	あじをうすめる	Làm nhạt vị	Bạc	n2k-x-1788954062781	
+n2k-l11	薄	第11	1788954086422	薄型テレビ	うすがたテレビ	Tivi màn hình mỏng	Bạc	n2k-x-1788954086422	
+n2k-l11	薄	第11	1788954095798	味が入薄まる	あじがうすまる	Vị bị nhạt đi	Bạc	n2k-x-1788954095798	
+n2k-l11	簿	第11	1788954118327	簿記	ぼき	Ghi sổ kế toán	Bộ Ký	n2k-x-1788954118327	
+n2k-l11	簿	第11	1788954127709	帳簿	ちょうぼ	Sổ sách kế toán	Trướng Bộ	n2k-x-1788954127709	
+n2k-l11	簿	第11	1788954146709	出席簿	しゅっせきぼ	Sổ điểm danh	Xuất Tịch Bộ	n2k-x-1788954146709	
+n2k-l11	簿	第11	1788954157755	名簿に名前を記入する	めいぼになまえをきにゅうする	Ghi tên vào danh sách	Danh Bộ	n2k-x-1788954157755	
+n2k-l11	司	第11	1788954177883	上司	じょうし	Cấp trên	Thượng Ti	n2k-x-1788954177883	
+n2k-l11	司	第11	1788954188892	会議の司会を務める	かいぎのしかいをつとめる	Làm chủ trì cuộc họp	Ti Hội	n2k-x-1788954188892	
+n2k-l11	司	第11	1788954199208	司法試験を受ける	しほうしけんをうける	Thi kỳ thi tư pháp	Ti Pháp	n2k-x-1788954199208	
+n2k-l11	伺	第11	1788954219411	名前を伺う	なまえをうかがう	Hỏi tên (Khiêm nhường)	Tú	n2k-x-1788954219411	
+n2k-l11	伺	第11	1788954229959	明日伺います	あすうかがいます	Ngày mai tôi sẽ đến/thăm (Khiêm nhường)	Tú	n2k-x-1788954229959	
+n2k-l11	詞	第11	1788954248674	動詞	どうし	Động từ	Động Từ	n2k-x-1788954248674	
+n2k-l11	詞	第11	1788954257910	名詞	めいし	Danh từ	Danh Từ	n2k-x-1788954257910	
+n2k-l11	詞	第11	1788954269239	副詞	ふくし	Phó từ	Phó Từ	n2k-x-1788954269239	
+n2k-l11	詞	第11	1788954278441	形容詞	けいようし	Tính từ	Hình Dung Từ	n2k-x-1788954278441	
+n2k-l11	詞	第11	1788954288095	助詞	じょし	Trợ từ	Trợ Từ	n2k-x-1788954288095	
+n2k-l11	詞	第11	1788954301657	台詞	せりふ	Lời thoại	Đài Từ	n2k-x-1788954301657	
+n2k-l11	飼	第11	1788954322898	飼育する	しいくする	Chăn nuôi	Tự Dục	n2k-x-1788954322898	
+n2k-l11	飼	第11	1788954333476	飼い主	かいぬし	Chủ nuôi	Tự	n2k-x-1788954333476	
+n2k-l11	飼	第11	1788954343373	ペットを飼う	ペットをかう	Nuôi thú cưng	Tự	n2k-x-1788954343373	
+n2k-l11	象	第11	1788954364665	象	ぞう	Con voi	TƯỢNG	n2k-x-1788954364665	
+n2k-l11	象	第11	1788954373711	第一印象	だいいちいんしょう	Ấn tượng đầu tiên	Ấn Tượng	n2k-x-1788954373711	
+n2k-l11	象	第11	1788954383536	抽象的	ちゅうしょうてき	Trừu tượng	Trừu Tượng	n2k-x-1788954383536	
+n2k-l11	象	第11	1788954394757	気象情報	きしょうじょうほう	Thông tin thời tiết	Khí Tượng	n2k-x-1788954394757	
+n2k-l11	象	第11	1788954405627	ハトは平和の象徴だ	ハトはへいわのしょうちょうだ	Chim câu là biểu tượng của hòa bình	Tượng Trưng	n2k-x-1788954405627	
+n2k-l11	像	第11	1788954426465	石像	せきぞう	Tượng đá	Thạch Tượng	n2k-x-1788954426465	
+n2k-l11	像	第11	1788954436783	仏像	ぶつぞう	Tượng Phật	Phật Tượng	n2k-x-1788954436783	
+n2k-l11	像	第11	1788954447659	実像と虚像	じつぞうときょぞう	Hình ảnh thực và ảnh ảo	Thực Tượng - Hư Tượng	n2k-x-1788954447659	
+n2k-l11	像	第11	1788954459341	美しい映像	うつくしいえいぞう	Hình ảnh đẹp	Ánh Tượng	n2k-x-1788954459341	
+n2k-l11	像	第11	1788954468450	想像する	そうぞうする	Tưởng tượng	Tưởng Tượng	n2k-x-1788954468450	
+n2k-l11	像	第11	1788954478925	自画像	じがぞう	Tranh tự họa	Tự Họa Tượng	n2k-x-1788954478925	
+n2k-l11	稼	第11	1788954498798	時間を稼ぐ	じかんをかせぐ	Câu giờ / Tranh thủ thời gian	Giá	n2k-x-1788954498798	
+n2k-l11	稼	第11	1788954509468	稼働/稼働	かどう	Vận hành, hoạt động (máy móc)	Giá Động	n2k-x-1788954509468	
+n2k-l11	稼	第11	1788954518959	出稼ぎ	でかせぎ	Đi làm xa nhà	Xuất Giá	n2k-x-1788954518959	
+n2k-l11	稼	第11	1788954528617	稼ぎが多い	かせぎがおおい	Thu nhập cao	Giá	n2k-x-1788954528617	
+n2k-l11	稼	第11	1788954538615	お金を稼ぐ	おかねをかせぐ	Kiếm tiền	Giá	n2k-x-1788954538615	
+n2k-l11	劇	第11	1788954558574	劇団	げきだん	Đoàn kịch	Kịch Đoàn	n2k-x-1788954558574	
+n2k-l11	劇	第11	1788954567936	悲劇	ひげき	Bi kịch	Bi Kịch	n2k-x-1788954567936	
+n2k-l11	劇	第11	1788954577333	時代劇	じだいげき	Phim/Kịch lịch sử	Thời Đại Kịch	n2k-x-1788954577333	
+n2k-l11	劇	第11	1788954587569	劇場で演劇を見る	げきじょうでえんげきをみる	Xem diễn kịch ở nhà hát	Kịch Trường - Diễn Kịch	n2k-x-1788954587569	
+n2k-l11	刑	第11	1788954610175	死刑	しけい	Tử hình	Tử Hình	n2k-x-1788954610175	
+n2k-l11	刑	第11	1788954619450	処刑する	しょけいする	Xử tử, thi hành án	Xử Hình	n2k-x-1788954619450	
+n2k-l11	刑	第11	1788954633375	刑事	けいじ	Cảnh sát hình sự	Hình Sự	n2k-x-1788954633375	
+n2k-l11	刊	第11	1788954650874	夕刊	ゆうかん	Báo buổi chiều	Tịch San	n2k-x-1788954650874	
+n2k-l11	刊	第11	1788954660859	朝刊	ちょうかん	Báo buổi sáng	Triêu San	n2k-x-1788954660859	
+n2k-l11	刊	第11	1788954670749	週刊誌	しゅうかんし	Tạp chí tuần	Chu San Chí	n2k-x-1788954670749	
+n2k-l11	剤	第11	1788954690141	洗剤	せんざい	Chất tẩy rửa, xà phòng	Tẩy Tễ	n2k-x-1788954690141	
+n2k-l11	剤	第11	1788954699340	殺虫剤	さっちゅうざい	Thuốc trừ sâu/diệt côn trùng	Sát Trùng Tễ	n2k-x-1788954699340	
+n2k-l11	剤	第11	1788954707544	薬剤師	やくざいし	Dược sĩ	Dược Tễ Sĩ	n2k-x-1788954707544	
+n2k-l11	剤	第11	1788954718210	錠剤を服用する	じょうざいをふくようする	Uống thuốc viên	Đĩnh Tễ	n2k-x-1788954718210	
+n2k-l11	別	第11	1788954737297	区別する	くべつする	Phân biệt	Khu Biệt	n2k-x-1788954737297	
+n2k-l11	別	第11	1788954747200	特別なもの	とくべつなもの	Đồ đặc biệt	Đặc Biệt	n2k-x-1788954747200	
+n2k-l11	別	第11	1788954757706	性別	せいべつ	Giới tính	Tính Biệt	n2k-x-1788954757706	
+n2k-l11	別	第11	1788954767907	差別する	さべつする	Kỳ thị, phân biệt đối xử	Sai Biệt	n2k-x-1788954767907	
+n2k-l11	別	第11	1788954778369	別居する	べっきょする	Sống ly thân / Sống riêng	Biệt Cư	n2k-x-1788954778369	
+n2k-l11	別	第11	1788954789627	恋人と別れる	こいびととわかれる	Chia tay người yêu	Biệt	n2k-x-1788954789627	
+n2k-l11	憎	第11	1788954810189	憎しみ	にくしみ	Sự chán ghét, hận thù	Tăng	n2k-x-1788954810189	
+n2k-l11	憎	第11	1788954820459	憎めない人	にくめないひと	Người không thể ghét nổi	Tăng	n2k-x-1788954820459	
+n2k-l11	憎	第11	1788954830741	憎らしいやつ	にくらしいやつ	Kẻ đáng ghét	Tăng	n2k-x-1788954830741	
+n2k-l11	憎	第11	1788954839840	憎悪	ぞうお	Căm hờn, căm ghét	Tăng Ố	n2k-x-1788954839840	
+n2k-l11	憎	第11	1788954852421	自分を憎む	じぶんをにくむ	Tự ghét bỏ bản thân	Tăng	n2k-x-1788954852421	
+n2k-l11	贈	第11	1788954872674	寄贈する	きぞうする	Biếu tặng, quyên góp	Ký Tặng	n2k-x-1788954872674	
+n2k-l11	贈	第11	1788954882775	贈り物	おくりもの	Quà tặng	Tặng	n2k-x-1788954882775	
+n2k-l11	増	第11	1788954979635	増殖	ぞうしょく	Nhân bản, sinh sản, tăng sinh	Tăng Thực	n2k-x-1788954979635	
+n2k-l11	増	第11	1788954989714	仕事が増える	しごとがふえる	Tăng công việc	Tăng	n2k-x-1788954989714	
+n2k-l11	増	第11	1788954999741	時間を増やす	じかんをふやす	Gia tăng thời gian	Tăng	n2k-x-1788954999741	
+n2k-l11	増	第11	1788955010894	感染者が増加する	かんせんしゃがぞうかする	Số người nhiễm bệnh tăng lên	Tăng Gia	n2k-x-1788955010894	
+n2k-l11	増	第11	1788955020775	不安が増す	ふあんがます	Nỗi lo lắng tăng lên	Tăng	n2k-x-1788955020775	
+n2k-l11	層	第11	1788955041174	高層ビル	こうそうビル	Tòa nhà cao tầng	Cao Tầng	n2k-x-1788955041174	
+n2k-l11	層	第11	1788955052120	断層を調べる	だんそうをしらべる	Điều tra đứt gãy địa chất	Đoạn Tầng	n2k-x-1788955052120	
+n2k-l11	層	第11	1788955060960	地層	ちそう	Địa tầng, lớp đất	Địa Tầng	n2k-x-1788955060960	
+n2k-l11	層	第11	1788955071253	寒さが一層厳しくなる	さむさがいっそうきびしくなる	Cái lạnh trở nên dữ dội hơn một bậc	Nhất Tầng	n2k-x-1788955071253	
+n2k-l12	塾	第12	1789133817276	学習塾	がくしゅうじゅく	Lò luyện thi, trường tư thục	Học Thục	n2k-x-1789133817276	
+n2k-l12	塾	第12	1789133827880	塾講師	じゅくこうし	Giáo viên dạy thêm / giảng viên lò luyện	Thục Giảng Sư	n2k-x-1789133827880	
+n2k-l12	塾	第12	1789133886613	塾に通う	じゅくにかよう	Đi học thêm / đi học ở lò luyện	Thục	n2k-x-1789133886613	
+n2k-l12	堂	第12	1789133945132	国会議事堂	こっかいぎじどう	Tòa nhà Quốc hội	Quốc Hội Nghị Sự Đường	n2k-x-1789133945132	
+n2k-l12	堂	第12	1789133957759	食堂でご飯を食べる	しょくどうでごはんをたべる	Ăn cơm ở nhà ăn	Thực Đường	n2k-x-1789133957759	
+n2k-l12	堂	第12	1789133967543	堂々とした態度	どうどうとしたたいど	Thái độ đường hoàng, tự tin	Đường	n2k-x-1789133967543	
+n2k-l12	堂	第12	1789133978969	講堂に集まる	こうどうにあつまる	Tập trung ở giảng đường	Giảng Đường	n2k-x-1789133978969	
+n2k-l12	壁	第12	1789134005411	壁紙を変える	かべがみをかえる	Thay hình nền / giấy dán tường	Bích Chỉ	n2k-x-1789134005411	
+n2k-l12	壁	第12	1789134015327	壁画	へきが	Tranh tường, bích họa	Bích Họa	n2k-x-1789134015327	
+n2k-l12	壁	第12	1789134025944	壁を作る	かべをつくる	Dựng tường	Bích	n2k-x-1789134025944	
+n2k-l12	域	第12	1789134047510	敵の領域	てきのりょういき	Lãnh thổ / khu vực của địch	Lĩnh Vực	n2k-x-1789134047510	
+n2k-l12	域	第12	1789134057527	地域の人々	ちいきのひとびと	Người dân trong khu vực / địa phương	Địa Vực	n2k-x-1789134057527	
+n2k-l12	域	第12	1789134066577	危険区域	きけんくいき	Khu vực nguy hiểm	Nguy Hiểm Khu Vực	n2k-x-1789134066577	
+n2k-l12	共	第12	1789134087342	共働き	ともばたらき	Cả hai vợ chồng cùng đi làm	Cộng	n2k-x-1789134087342	
+n2k-l12	共	第12	1789134097026	共感する	きょうかんする	Đồng cảm	Cộng Cảm	n2k-x-1789134097026	
+n2k-l12	共	第12	1789134106826	公共施設	こうきょうしせつ	Cơ sở hạ tầng công cộng	Công Cộng Thi Thiết	n2k-x-1789134106826	
+n2k-l12	共	第12	1789134116643	共通の友人	きょうつうのゆうじん	Bạn chung	Cộng Thông	n2k-x-1789134116643	
+n2k-l12	共	第12	1789134127319	苦楽を共にする	くらくをともにする	Cùng chia ngọt sẻ bùi (chia sẻ đắng cay ngọt bùi)	Cộng	n2k-x-1789134127319	fixed
+n2k-l12	港	第12	1789134147384	出港する	しゅっこうする	Xuất cảng, rời bến	Xuất Cảng	n2k-x-1789134147384	
+n2k-l12	港	第12	1789134156926	空港に着陸する	くうこうにちゃくりくする	Hạ cánh xuống sân bay	Không Cảng	n2k-x-1789134156926	
+n2k-l12	洪	第12	1789134181276	洪水	こうずい	Hồng thủy, lũ lụt	Hồng Thủy	n2k-x-1789134181276	
+n2k-l12	異	第12	1789134201627	異性	いせい	Khác giới	Dị Tính	n2k-x-1789134201627	
+n2k-l12	異	第12	1789134212960	異常気象	いじょうきしょう	Thời tiết bất thường	Dị Thường Khí Tượng	n2k-x-1789134212960	
+n2k-l12	異	第12	1789134224799	異なる点	ことなるてん	Điểm khác biệt	Dị	n2k-x-1789134224799	
+n2k-l12	異	第12	1789134233651	異国	いこく	Nước ngoài, xứ lạ	Dị Quốc	n2k-x-1789134233651	
+n2k-l12	異	第12	1789134243945	異変を感じる	いへんをかんじる	Cảm thấy có sự bất thường	Dị Biến	n2k-x-1789134243945	
+n2k-l12	召	第12	1789134263664	召し使い	めしつかい	Người làm, người hầu	Triệu	n2k-x-1789134263664	
+n2k-l12	召	第12	1789134274360	お召し上がりください	おめしあがりください	Mời thưởng thức (kính ngữ của ăn/uống)	Triệu	n2k-x-1789134274360	
+n2k-l12	召	第12	1789134283939	兵を召集する	へいをしょうしゅうする	Triệu tập binh lính	Triệu Tập	n2k-x-1789134283939	
+n2k-l12	招	第12	1789134304229	招き猫	まねきねこ	Mèo may mắn (mèo vẫy tay)	Chiêu	n2k-x-1789134304229	
+n2k-l12	招	第12	1789134314698	パーティの招待状	パーティのしょうたいじょう	Thư mời dự tiệc	Chiêu Đãi Trạng	n2k-x-1789134314698	
+n2k-l12	招	第12	1789134323977	議会を招集する	ぎかいをしょうしゅうする	Triệu tập nghị viện	Chiêu Tập	n2k-x-1789134323977	
+n2k-l12	招	第12	1789134335069	結婚式に招待する	けっこんしきにしょうたいする	Mời cưới	Chiêu Đãi	n2k-x-1789134335069	
+n2k-l12	招	第12	1789134346742	家に招く	いえにまねく	Mời về nhà	Chiêu	n2k-x-1789134346742	
+n2k-l12	沼	第12	1789134365283	関係が泥沼化する	かんけいがどろぬまかする	Mối quan hệ trở nên sa lầy / rắc rối	Chiểu	n2k-x-1789134365283	
+n2k-l12	沼	第12	1789134374127	沼地	ぬまち	Đầm lầy	Chiểu Địa	n2k-x-1789134374127	
+n2k-l12	照	第12	1789134392799	日が照る	ひがてる	Mặt trời chiếu sáng	Chiếu	n2k-x-1789134392799	
+n2k-l12	照	第12	1789134403269	ほめられると照れる	ほめられるとてれる	Được khen nên ngượng ngùng	Chiếu	n2k-x-1789134403269	
+n2k-l12	照	第12	1789134413647	ライトで舞台を照らす	ライトでぶたいをてらす	Dùng đèn chiếu sáng sân khấu	Chiếu	n2k-x-1789134413647	
+n2k-l12	照	第12	1789134422191	照明	しょうめい	Thiết bị chiếu sáng, đèn	Chiếu Minh	n2k-x-1789134422191	
+n2k-l12	照	第12	1789134431334	対照的な人	たいしょうてきなひと	Người có tính cách đối lập	Đối Chiếu	n2k-x-1789134431334	
+n2k-l12	照	第12	1789134439824	参照する	さんしょうする	Tham khảo, đối chiếu	Tham Chiếu	n2k-x-1789134439824	
+n2k-l12	照	第12	1789134449558	残高照会	ざんだかしょうかい	Truy vấn / kiểm tra số dư tài khoản	Chiếu	n2k-x-1789134449558	
+n2k-l12	宴	第12	1789134469817	宴会場	えんかいじょう	Phòng / hội trường tổ chức tiệc	Yến Hội Trường	n2k-x-1789134469817	
+n2k-l12	宴	第12	1789134478278	宴を開く	えんをひらく	Tổ chức yến tiệc	Yến	n2k-x-1789134478278	
+n2k-l12	宴	第12	1789134488340	披露宴	ひろうえん	Tiệc chiêu đãi (thường là tiệc cưới)	Phi Lộ Yến	n2k-x-1789134488340	
+n2k-l12	案	第12	1789134510103	名案が浮かぶ	めいあんがうかぶ	Nảy ra ý tưởng hay / diệu kế	Án	n2k-x-1789134510103	
+n2k-l12	案	第12	1789134520933	発案者	はつあんしゃ	Người đề xuất / người sáng tạo ý tưởng	Phát Án Giả	n2k-x-1789134520933	
+n2k-l12	案	第12	1789134531611	具体的な案	ぐたいてきなあん	Đề án cụ thể	Án	n2k-x-1789134531611	
+n2k-l12	案	第12	1789134543510	案内する	あんないする	Hướng dẫn, dẫn đường	Án Nội	n2k-x-1789134543510	
+n2k-l12	案	第12	1789134553768	製品を提案する	せいひんをていあんする	Đề xuất sản phẩm	Đề Án	n2k-x-1789134553768	
+n2k-l12	桜	第12	1789134574481	桜餅	さくらもち	Bánh Mochi hoa anh đào	Anh	n2k-x-1789134574481	
+n2k-l12	桜	第12	1789134583666	桜前線	さくらぜんせん	Dự báo lịch hoa anh đào nở	Anh Tiền Tuyến	n2k-x-1789134583666	
+n2k-l12	桜	第12	1789134592591	桜が開花した	さくらがかいかした	Hoa anh đào đã nở	Anh	n2k-x-1789134592591	fixed
+n2k-l12	委	第12	1789134612601	委託する	いたくする	Ủy thác, giao phó	Ủy Thác	n2k-x-1789134612601	
+n2k-l12	委	第12	1789134627647	委員	いいん	Ủy viên	Ủy Viên	n2k-x-1789134627647	
+n2k-l12	委	第12	1789134638824	権限を委任する	けんげんをいにんする	Ủy quyền	Ủy Nhiệm	n2k-x-1789134638824	
+n2k-l12	委	第12	1789134649143	教育委員会	きょういくいいんかい	Ủy ban giáo dục	Giáo Dục Ủy Viên Hội	n2k-x-1789134649143	
+n2k-l12	景	第12	1789134670292	景色を眺める	けしきをながめる	Ngắm cảnh	Cảnh Sắc	n2k-x-1789134670292	
+n2k-l12	景	第12	1789134679901	絶景	ぜっけい	Tuyệt cảnh, cảnh đẹp tuyệt vời	Tuyệt Cảnh	n2k-x-1789134679901	
+n2k-l12	景	第12	1789134690085	風景	ふうけい	Phong cảnh	Phong Cảnh	n2k-x-1789134690085	
+n2k-l12	景	第12	1789134805142	景気が悪い	けいきがわるい	Tình hình kinh tế ảm đạm / tồi tệ	Cảnh Khí	n2k-x-1789134805142	
+n2k-l12	景	第12	1789134816415	景品をもらう	けいひんをもらう	Nhận quà tặng / phần thưởng kèm theo	Cảnh Phẩm	n2k-x-1789134816415	
+n2k-l12	景	第12	1789134827527	夜景	やけい	Cảnh đêm	Dạ Cảnh	n2k-x-1789134827527	
+n2k-l12	影	第12	1789134850024	人影がない道	ひとかげがないみち	Con đường không một bóng người	Ảnh	n2k-x-1789134850024	
+n2k-l12	影	第12	1789134859625	動画を撮影する	どうがをさつえいする	Quay video	Tát Ảnh	n2k-x-1789134859625	
+n2k-l12	影	第12	1789134868685	影響を受ける	えいきょうをうける	Chịu ảnh hưởng	Ảnh Hưởng	n2k-x-1789134868685	
+n2k-l12	影	第12	1789134885166	影が薄い人	かげがうすいひと	Người mờ nhạt / ít được chú ý	Ảnh	n2k-x-1789134885166	
+n2k-l12	涼	第12	1789134907200	屋根の下で涼む	やねのしたですずむ	Hóng mát dưới mái nhà	Lương	n2k-x-1789134907200	
+n2k-l12	涼	第12	1789134916272	涼しい部屋	すずしいへや	Căn phòng mát mẻ	Lương	n2k-x-1789134916272	
+n2k-l12	涼	第12	1789134926456	清涼飲料水	せいりょういんりょうすい	Nước giải khát	Thanh Lương Ẩm Liệu Thủy	n2k-x-1789134926456	
+n2k-l12	就	第12	1789134949683	就職する	しゅうしょくする	Tìm việc / bắt đầu đi làm	Tựu Chức	n2k-x-1789134949683	
+n2k-l12	就	第12	1789134960134	仕事に就く	しごとにつく	Bắt đầu nhận công việc	Tựu	n2k-x-1789134960134	
+n2k-l12	就	第12	1789134971198	部長に就任する	ぶちょうにしゅうにんする	Nhậm chức trưởng phòng	Tựu Nhiệm	n2k-x-1789134971198	
+n2k-l12	就	第12	1789134979279	就業時間	しゅうぎょうじかん	Thời gian làm việc	Tựu Nghiệp	n2k-x-1789134979279	
+n2k-l12	誘	第12	1789134999390	誘惑する	ゆうわくする	Dụ dỗ, mê hoặc	Dụ Hoặc	n2k-x-1789134999390	
+n2k-l12	誘	第12	1789135010167	誘導する	ゆうどうする	Dẫn dắt, điều hướng	Dụ Đạo	n2k-x-1789135010167	
+n2k-l12	誘	第12	1789135020388	人を誘致する	ひとをゆうちする	Thu hút người / thu hút khách	Dụ Trí	n2k-x-1789135020388	
+n2k-l12	誘	第12	1789135031555	誘いを断る	さそいをことわる	Từ chối lời mời	Dụ	n2k-x-1789135031555	fixed
+n2k-l12	誘	第12	1789135042046	子どもが誘拐された	こどもがゆうかいされた	Đứa trẻ đã bị bắt cóc	Dụ Cải	n2k-x-1789135042046	
+n2k-l12	誘	第12	1789135053129	友人を誘う	ゆうじんをさそう	Rủ rê bạn bè	Dụ	n2k-x-1789135053129	
+n2k-l12	訓	第12	1789135072173	訓練を受ける	くんれんをうける	Nhận sự huấn luyện / rèn luyện	Huấn Luyện	n2k-x-1789135072173	
+n2k-l12	訓	第12	1789135080616	教訓	きょうくん	Bài học kinh nghiệm	Giáo Huấn	n2k-x-1789135080616	
+n2k-l12	罰	第12	1789135098375	罰金	ばっきん	Tiền phạt	Phạt Kim	n2k-x-1789135098375	
+n2k-l12	罰	第12	1789135106500	刑罰を科す	けいばつをかす	Áp dụng hình phạt	Hình Phạt	n2k-x-1789135106500	
+n2k-l12	罰	第12	1789135606454	罰を与える	ばつをあたえる	Ban phạt / trừng phạt	Phạt	n2k-x-1789135606454	
+n2k-l12	罰	第12	1789135616600	犯罪の処罰	はんざいのしょばつ	Xử phạt hành vi phạm tội	Xử Phạt	n2k-x-1789135616600	
+n2k-l12	罰	第12	1789135625701	罪を罰する	つみをばっする	Trừng phạt tội lỗi	Phạt	n2k-x-1789135625701	
+n2k-l12	誤	第12	1789135667489	誤算だった	ごさんだった	Đã tính toán sai lầm	Ngộ Toán	n2k-x-1789135667489	
+n2k-l12	誤	第12	1789135677518	時代錯誤	じだいさくご	Lỗi thời, sai lệch thời đại	Thời Đại Ngộ Tác	n2k-x-1789135677518	
+n2k-l12	誤	第12	1789135686542	用法を誤る	ようほうをあやまる	Sử dụng sai cách	Ngộ	n2k-x-1789135686542	
+n2k-l12	誤	第12	1789135697348	誤診する	ごしんする	Chẩn đoán sai	Ngộ Chẩn	n2k-x-1789135697348	
+n2k-l12	誤	第12	1789135707732	正誤問題	せいごもんだい	Câu hỏi đúng/sai	Chính Ngộ	n2k-x-1789135707732	
+n2k-l12	誤	第12	1789135716895	誤解を招く	ごかいをまねく	Gây ra hiểu nhầm	Ngộ Giải	n2k-x-1789135716895	
+n2k-l12	猫	第12	1789135737030	猫舌	ねこじた	Không ăn/uống được đồ nóng	Miêu Thiệt	n2k-x-1789135737030	
+n2k-l12	猫	第12	1789135746587	猫背	ねこぜ	Lưng gù	Miêu Bối	n2k-x-1789135746587	
+n2k-l12	猫	第12	1789135756311	猫の手も借りたい	ねこのてもかりたい	Bận túi bụi (muốn mượn cả chân mèo)	Miêu	n2k-x-1789135756311	
+n2k-l12	独	第12	1789135778057	場所を独占する	ばしょをどくせんする	Chiếm trọn / độc chiếm chỗ	Độc Chiếm	n2k-x-1789135778057	
+n2k-l12	独	第12	1789135787813	独身	どくしん	Độc thân	Độc Thân	n2k-x-1789135787813	
+n2k-l12	独	第12	1789135798986	独裁者	どくさいしゃ	Kẻ độc tài	Độc Tài	n2k-x-1789135798986	
+n2k-l12	狭	第12	1789135863689	狭い場所	せまいばしょ	Nơi hẹp / chật chội	Hiệp	n2k-x-1789135863689	
+n2k-l12	狭	第12	1789135874344	間を狭める	あいだをせばめる	Thu hẹp khoảng cách	Hiệp	n2k-x-1789135874344	
+n2k-l12	狭	第12	1789135883699	距離が狭まる	きょりがせばまる	Khoảng cách thu hẹp lại	Hiệp	n2k-x-1789135883699	
+n2k-l12	犯	第12	1789135913329	罪を犯す	つみをおかす	Phạm tội	Phạm	n2k-x-1789135913329	
+n2k-l12	犯	第12	1789135922428	犯人	はんにん	Thủ phạm, hung thủ	Phạm Nhân	n2k-x-1789135922428	
+n2k-l12	犯	第12	1789135932272	防犯対策	ぼうはんたいさく	Biện pháp phòng chống tội phạm	Phòng Phạm Phương Tác	n2k-x-1789135932272	
+n2k-l12	犯	第12	1789135943015	犯罪	はんざい	Tội phạm	Phạm Tội	n2k-x-1789135943015	
+n2k-l12	詳	第12	1789135962356	詳細な説明	しょうさいなせつめい	Giải thích chi tiết	Tường Tế	n2k-x-1789135962356	
+n2k-l12	詳	第12	1789135971811	詳しく調べる	くわしくしらべる	Điều tra / tìm hiểu kỹ lưỡng	Tường	n2k-x-1789135971811	
+n2k-l12	詳	第12	1789135985967	詳しい原因	くわしいげんいん	Nguyên nhân chi tiết	Tường	n2k-x-1789135985967	
+n2k-l12	群	第12	1789136007172	大群	たいぐん	Đàn lớn, bầy lớn	Quần	n2k-x-1789136007172	
+n2k-l12	群	第12	1789136016529	群衆が集まる	ぐんしゅうがあつまる	Đám đông tập trung	Quần Chúng	n2k-x-1789136016529	
+n2k-l12	群	第12	1789136025632	抜群の成績	ばつぐんのせいせき	Thành tích xuất sắc / vượt trội	Bạt Quần	n2k-x-1789136025632	
+n2k-l12	群	第12	1789136037250	鳥の群れ	とりのむれ	Đàn chim	Quần	n2k-x-1789136037250	
+n2k-l12	鮮	第12	1789136142962	生鮮食品	せいせんしょくひん	Thực phẩm tươi sống	Sinh Tiên Thực Phẩm	n2k-x-1789136142962	
+n2k-l12	鮮	第12	1789136153043	鮮やかな色	あざやかないろ	Màu sắc rực rỡ, rực rỡ	Tiên	n2k-x-1789136153043	
+n2k-l12	鮮	第12	1789136163372	新鮮な魚	しんせんなさかな	Cá tươi	Tân Tiên	n2k-x-1789136163372	
+n2k-l12	鮮	第12	1789136172523	鮮明に覚えている	せんめいにおぼえている	Nhớ rõ ràng / nhớ như in	Tiên Minh	n2k-x-1789136172523	
+n2k-l12	善	第12	1789136215662	偽善者	ぎぜんしゃ	Kẻ ngụy thiện	Ngụy Thiện Giả	n2k-x-1789136215662	
+n2k-l12	善	第12	1789136225671	善良な医者	ぜんりょうないしゃ	Bác sĩ hiền lành, nhân hậu	Thiện Lương	n2k-x-1789136225671	
+n2k-l12	善	第12	1789136298222	善い生き方	よいいきかた	Cách sống tốt đẹp	Thiện	n2k-x-1789136298222	
+n2k-l12	善	第12	1789136320217	親善試合を行う	しんぜんしあいをおこなう	Tổ chức trận đấu giao hữu	Thân Thiện Tỉ Hợp	n2k-x-1789136320217	
+n2k-l12	善	第12	1789136355383	善意を断る	ぜんいをおとわる	Từ chối thiện ý / lòng tốt	Thiện Ý	n2k-x-1789136355383	
+n2k-l12	善	第12	1789136364997	改善する	かいぜんする	Cải thiện	Cải Thiện	n2k-x-1789136364997	
+n2k-l13	沖	第13	1789141620641	沖まで泳ぐ	おきまでおよぐ	Bơi ra ngoài khơi	TRÙNG	n2k-x-1789141620641	
+n2k-l13	沖	第13	1789141630627	沖縄県	おきなわけん	Tỉnh Okinawa	TRÙNG THẰNG HUYỆN	n2k-x-1789141630627	
+n2k-l13	溶	第13	1789141650998	溶岩	ようがん	Dung nham	DUNG NHAM	n2k-x-1789141650998	
+n2k-l13	溶	第13	1789141661037	氷が溶ける	こおりがとける	Băng / đá tan	DUNG	n2k-x-1789141661037	
+n2k-l13	溶	第13	1789141671424	卵を溶く	たまごをとく	Đánh tan trứng	DUNG	n2k-x-1789141671424	
+n2k-l13	溶	第13	1789141680721	鉄を溶かす	てつをとかす	Nấu chảy sắt	DUNG	n2k-x-1789141680721	
+n2k-l13	溶	第13	1789141689681	チームに溶け込む	チームにとけこむ	Hòa nhập vào đội nhóm	DUNG	n2k-x-1789141689681	
+n2k-l13	滝	第13	1789141708849	滝にうたれる	たきにうたれる	Đứng dưới thác nước (hành hương, xối nước thác)	LANG	n2k-x-1789141708849	
+n2k-l13	渡	第13	1789141726273	横断歩道を渡る	おうだんほどうをわたる	Băng qua đường dành cho người đi bộ	HOÀNH ĐOẠN BỘ ĐẠO ĐỘ	n2k-x-1789141726273	
+n2k-l13	渡	第13	1789141735966	渡航する	とこうする	Đi du lịch / xuất ngoại bằng đường biển hoặc hàng không	ĐỘ HÀNG	n2k-x-1789141735966	
+n2k-l13	渡	第13	1789141745947	プレゼントを渡す	プレゼントをわたす	Trao / đưa quà	ĐỘ	n2k-x-1789141745947	
+n2k-l13	筋	第13	1789141765270	血筋	ちすじ	Dòng máu, huyết thống	HUYẾT CÂN	n2k-x-1789141765270	
+n2k-l13	筋	第13	1789141775261	腹筋を鍛える	ふっきんをきたえる	Luyện tập cơ bụng	PHÚC CÂN ĐOÁN	n2k-x-1789141775261	
+n2k-l13	筋	第13	1789141783899	筋道を立てる	すじみちをたてる	Lập luận logic / có trình tự hợp lý	CÂN ĐẠO LẬP	n2k-x-1789141783899	
+n2k-l13	筋	第13	1789141792622	筋肉が痛い	きんにくがいたい	Đau cơ bắp	CÂN NHỤC THỐNG	n2k-x-1789141792622	
+n2k-l13	励	第13	1789141812701	子供を励ます	こどもをはげます	Khích lệ, động viên trẻ nhỏ	LỆ	n2k-x-1789141812701	
+n2k-l13	励	第13	1789141823282	励みになる言葉	はげみになることば	Lời nói mang tính động viên / tiếp thêm động lực	LỆ NGÔN DIỆP	n2k-x-1789141823282	
+n2k-l13	励	第13	1789141834306	投資を奨励する	とうしをしょうれいする	Khuyến khích đầu tư	TƯ TƯỚNG TƯỞNG LỆ	n2k-x-1789141834306	
+n2k-l13	励	第13	1789141847569	勉強に励む	べんきょうにはげむ	Nỗ lực, chăm chỉ học hành	MIỄN CƯỜNG LỆ	n2k-x-1789141847569	
+n2k-l13	励	第13	1789141866579	激励する	げきれいする	Kích lệ, cổ vũ nhiệt tình	KÍCH LỆ	n2k-x-1789141866579	
+n2k-l13	協	第13	1789141886019	協会	きょうかい	Hiệp hội, hội	HIỆP HỘI	n2k-x-1789141886019	
+n2k-l13	協	第13	1789141895124	協同組合	きょうどうくみあい	Hợp tác xã, liên đoàn	HIỆP ĐỒNG TỔ HỢP	n2k-x-1789141895124	
+n2k-l13	協	第13	1789141905204	協定を破る	きょうていをやぶる	Vi phạm / phá bỏ hiệp định	HIỆP ĐỊNH PHÁ	n2k-x-1789141905204	
+n2k-l13	協	第13	1789141913876	協賛する	きょうさんする	Tài trợ, bảo trợ	HIỆP TẢN	n2k-x-1789141913876	
+n2k-l13	協	第13	1789141922432	妥協する	だきょうする	Thỏa hiệp	THỎA HIỆP	n2k-x-1789141922432	
+n2k-l13	協	第13	1789141931948	協力する	きょうりょくする	Hợp lực, hợp tác	HIỆP LỰC	n2k-x-1789141931948	
+n2k-l13	勤	第13	1789141951364	夜勤の仕事	やきんのしごと	Công việc ca đêm	DẠ CẦN SĨ SỰ	n2k-x-1789141951364	
+n2k-l13	勤	第13	1789141961228	通勤時間	つうきんじかん	Thời gian đi làm	THÔNG CẦN THỜI GIAN	n2k-x-1789141961228	
+n2k-l13	勤	第13	1789141970397	大阪に転勤する	おおさかにてんきんする	Chuyển công tác đến Osaka	ĐẠI PHẢN CHUYỂN CẦN	n2k-x-1789141970397	
+n2k-l13	勤	第13	1789141978909	欠勤する	けっきんする	Nghỉ làm	KHUYẾT CẦN	n2k-x-1789141978909	
+n2k-l13	勤	第13	1789142002951	勤続年数	きんぞくねんすう	Số năm làm việc liên tục	CẦN TỤC NIÊN SỐ	n2k-x-1789142002951	
+n2k-l13	勤	第13	1789142011846	勤労感謝の日	きんろうかんしゃのひ	Ngày lễ cảm tạ lao động	CẦN LAO CẢM TẠ NHẬT	n2k-x-1789142011846	
+n2k-l13	勤	第13	1789142021593	銀行に勤めている	ぎんこうにつとめている	Đang làm việc tại ngân hàng	NGÂN HÀNG CẦN	n2k-x-1789142021593	
+n2k-l13	加	第13	1789142041785	参加費が高い	さんかひがたかい	Phí tham gia đắt	THAM GIA PHÍ CAO	n2k-x-1789142041785	
+n2k-l13	加	第13	1789142050757	機能を追加する	きのうをついかする	Thêm chức năng	CƠ NĂNG TRUY GIA	n2k-x-1789142050757	
+n2k-l13	加	第13	1789142061751	イベントに参加する	イベントにさんかする	Tham gia sự kiện	THAM GIA	n2k-x-1789142061751	
+n2k-l13	加	第13	1789142071265	水を加える	みずをくわえる	Thêm nước vào	THỦY GIA	n2k-x-1789142071265	
+n2k-l13	勇	第13	1789142090718	勇者になりたい	ゆうしゃになりたい	Muốn trở thành anh hùng dũng sĩ	DŨNG GIẢ	n2k-x-1789142090718	
+n2k-l13	勇	第13	1789142099889	勇ましい男	いさましいおとこ	Người đàn ông dũng cảm / dũng mãnh	DŨNG NAM	n2k-x-1789142099889	
+n2k-l13	勇	第13	1789142108096	勇気がある	ゆうきがある	Có dũng khí, có lòng can đảm	DŨNG KHÍ	n2k-x-1789142108096	
+n2k-l13	勇	第13	1789142117206	勇敢な行動	ゆうかんなこうどう	Hành động dũng cảm	DŨNG CẢM HÀNH ĐỘNG	n2k-x-1789142117206	
+n2k-l13	勢	第13	1789142138946	姿勢を整える	しせいをととのえる	Điều chỉnh tư thế	TƯ THẾ CHỈNH	n2k-x-1789142138946	
+n2k-l13	勢	第13	1789142147529	情勢が変わる	じょうせいがかわる	Tình hình / cục diện thay đổi	TÌNH THẾ BIẾN	n2k-x-1789142147529	
+n2k-l13	勢	第13	1789142157540	台風の勢力	たいふうのせいりょく	Sức mạnh / cường độ của bão	ĐÀI PHONG THẾ LỰC	n2k-x-1789142157540	
+n2k-l13	勢	第13	1789142166169	大勢の人	おおぜいのひと	Rất nhiều người	ĐẠI THẾ NHÂN	n2k-x-1789142166169	
+n2k-l13	勢	第13	1789142175476	勢いがある	いきおいがある	Có khí thế / mạnh mẽ	THẾ	n2k-x-1789142175476	
+n2k-l13	背	第13	1789142193902	背比べ	せくらべ	So chiều cao	BỐI TỶ	n2k-x-1789142193902	
+n2k-l13	背	第13	1789142203714	背が伸びる	せがのびる	Phát triển chiều ca	BỐI THÂN	n2k-x-1789142203714	
+n2k-l13	背	第13	1789142212708	命令に背く	めいれいにそむく	Trái / chống lại mệnh lệnh	MỆNH LỆNH BỐI	n2k-x-1789142212708	
+n2k-l13	背	第13	1789142222981	目を背ける	めをそむける	Quay đi, ngoảnh mặt đi	MỤC BỐI	n2k-x-1789142222981	
+n2k-l13	背	第13	1789142232730	背景	はいけい	Bối cảnh, phông nền	BỐI CẢNH	n2k-x-1789142232730	
+n2k-l13	背	第13	1789142241771	背後から近づく	はいごからちかづく	Tiếp cận từ phía sau	BỐI HẬU CẬN	n2k-x-1789142241771	
+n2k-l13	背	第13	1789142251156	背中を向ける	せなかをむける	Quay lưng lại	BỐI TRUNG HƯỚNG	n2k-x-1789142251156	
+n2k-l13	胃	第13	1789142281826	胃薬	いぐすり	Thuốc dạ dày	VỊ DƯỢC	n2k-x-1789142281826	
+n2k-l13	胃	第13	1789142290869	胃腸が弱い	いちょうがよわい	Bụng dạ / hệ tiêu hóa yếu	VỊ TRƯỜNG NHƯỢC	n2k-x-1789142290869	
+n2k-l13	胃	第13	1789142300468	胃がん	いがん	Ung thư dạ dày	VỊ	n2k-x-1789142300468	
+n2k-l13	骨	第13	1789142371178	骨が折れる	ほねがおれる	Khó khăn, vất vả (tốn nhiều sức lực)	CỐT CHIẾT	n2k-x-1789142371178	
+n2k-l13	骨	第13	1789142385750	骨董品	こっとうひん	Đồ cổ	CỐT ĐỔNG PHẨM	n2k-x-1789142385750	
+n2k-l13	骨	第13	1789142394907	骨折する	こっせつする	Gãy xương	CỐT CHIẾT	n2k-x-1789142394907	
+n2k-l13	骨	第13	1789142404606	骨の折れる仕事	ほねのおれるしごと	Công việc vất vả, gian nam	CỐT CHIẾT SĨ SỰ	n2k-x-1789142404606	
+n2k-l13	脚	第13	1789142423357	椅子の脚	いすのあし	Chân ghế	Y TỬ CƯỚC	n2k-x-1789142423357	
+n2k-l13	脚	第13	1789142432680	三脚を立てる	さんきゃくをたてる	Dựng chân máy 3 chạc	TAM CƯỚC LẬP	n2k-x-1789142432680	
+n2k-l13	脚	第13	1789142446011	脚光を浴びる	きゃっこうをあびる	Trở thành tâm điểm, thu hút sự chú ý	CƯỚC QUANG DỤ	n2k-x-1789142446011	
+n2k-l13	脚	第13	1789142456070	脚色を加える	きゃくしょくをくわえる	Cải biên, thêm thắt tình tiết	CƯỚC SẮC GIA	n2k-x-1789142456070	fixed
+n2k-l13	脚	第13	1789142468569	脚注を挿入する	きゃくちゅうをそうにゅうする	Chèn chú thích ở chân trang	CƯỚC CHÚ NHẬP	n2k-x-1789142468569	
+n2k-l13	脚	第13	1789142479652	脚本家	きゃくほんか	Biên kịch	CƯỚC BẢN GIA	n2k-x-1789142479652	
+n2k-l13	胸	第13	1789142497895	胸騒ぎがする	むなさわぎがする	Có cảm giác bồn chồn, lo lắng	HUNG TAO	n2k-x-1789142497895	
+n2k-l13	胸	第13	1789142507055	度胸がある人	どきょうがあるひと	Người có bản lĩnh / gan cảm	ĐỘ HUNG NHÂN	n2k-x-1789142507055	
+n2k-l13	胸	第13	1789142515747	胸囲を測る	きょういをはかる	Đo vòng ngực	HUNG VI TRẮC	n2k-x-1789142515747	
+n2k-l13	胸	第13	1789142525974	胸が高鳴る	むねがたかなる	Ngực đập liên hồi, hồi hộp phấn khởi	HUNG CA MINH	n2k-x-1789142525974	fixed
+n2k-l13	脳	第13	1789142549408	洗脳する	せんのうする	Tẩy não	TẨY NÃO	n2k-x-1789142549408	
+n2k-l13	脳	第13	1789142558755	首脳会議	しゅのうかいぎ	Hội nghị thượng đỉnh	THỦ NÃO HỘI NGHỊ	n2k-x-1789142558755	
+n2k-l13	脳	第13	1789142568753	頭脳のすぐれている人	ずのうのすぐれているひと	Người có bộ đầu óc thông minh xuất sắc	ĐẦU NÃO NHÂN	n2k-x-1789142568753	
+n2k-l13	脳	第13	1789142577815	脳裏に焼き付ける	つけるのうりにやきつける	Ghi khắc vào trong tâm trí	NÃO LÝ THIÊU	n2k-x-1789142577815	
+n2k-l13	脈	第13	1789142596226	脈絡がない話	みゃくらくがないはなし	Câu chuyện không có mạch lạc / rời rạc	MẠCH LẠC THOẠI	n2k-x-1789142596226	
+n2k-l13	脈	第13	1789142606221	人脈が広い	じんみゃくがひろい	Mối quan hệ rộng rãi	NHÂN MẠCH QUẢNG	n2k-x-1789142606221	
+n2k-l13	脈	第13	1789142614826	脈がある	みゃくがある	Có hy vọng, có triển vọng	MẠCH	n2k-x-1789142614826	
+n2k-l13	脈	第13	1789142624695	文脈を理解する	ぶんみゃくをりかいする	Hiểu ngữ cảnh / văn cảnh	VĂN MẠCH LÝ GIẢI	n2k-x-1789142624695	
+n2k-l13	脈	第13	1789142634228	山脈	さんみゃく	Dãy núi	SƠN MẠCH	n2k-x-1789142634228	
+n2k-l13	脈	第13	1789142647320	静脈と動脈	じょうみゃくとどうみゃく	Tĩnh mạch và động mạch	TĨNH MẠCH ĐỘNG MẠCH	n2k-x-1789142647320	
+n2k-l13	臓	第13	1789142665065	心臓	しんぞう	Quả tim	TÂM TẠNG	n2k-x-1789142665065	
+n2k-l13	臓	第13	1789142672674	内臓	ないぞう	Nội tạng	NỘI TẠNG	n2k-x-1789142672674	
+n2k-l13	臓	第13	1789142683071	臓器	ぞうき	Cơ quan nội tạng	TẠNG KHÍ	n2k-x-1789142683071	
+n2k-l13	崩	第13	1789142702836	体調を崩す	たいちょうをくずす	Làm tổn hại / suy giảm sức khỏe	THỂ ĐIỀU BĂNG	n2k-x-1789142702836	
+n2k-l13	崩	第13	1789142713305	髪型が崩れる	かみがたがくずれる	Kiểu tóc bị rối / mất nếp	PHÁT HÌNH BĂNG	n2k-x-1789142713305	
+n2k-l13	崩	第13	1789142722178	がけが崩れる	がけがくずれる	Vách đá bị sạt lở	BĂNG	n2k-x-1789142722178	
+n2k-l13	崩	第13	1789142732890	雪崩が起こる	なだれがおこる	Xảy ra lở tuyết	TUYẾT BĂNG KHỞI	n2k-x-1789142732890	
+n2k-l13	崩	第13	1789142742968	政権が崩壊する	せいけんがほうかいする	Chính quyền sụp đổ	CHÍNH QUYỀN BĂNG HOẠI	n2k-x-1789142742968	
+n2k-l13	誰	第13	1789142765228	誰か助けて	だれかたすけて	Ai đó cứu tôi với	THÙY TRỢ	n2k-x-1789142765228	
+n2k-l13	誰	第13	1789142774823	誰も知らない	だれもしらない	Không ai biết cả	THÙY TRI	n2k-x-1789142774823	fixed
+n2k-l13	護	第13	1789142793669	弁護士に相談する	べんごしにそうだんする	Thảo luận / tư vấn với luật sư	BIỆN HỘ SĨ TƯƠNG ĐÀM	n2k-x-1789142793669	
+n2k-l13	護	第13	1789142804359	援護する	えんごする	Chi viện, yểm trợ, bảo vệ	VIỆN HỘ	n2k-x-1789142804359	
+n2k-l13	護	第13	1789142816431	親の介護	おやのかいご	Chăm sóc cha mẹ	THÂN GIỚI HỘ	n2k-x-1789142816431	
+n2k-l13	護	第13	1789142828099	護身術を学ぶ	ごしんじゅつをまなぶ	Học võ tự vệ	HỘ THÂN THUẬT HỌC	n2k-x-1789142828099	
+n2k-l13	護	第13	1789142841802	看護する	かんごする	Chăm sóc bệnh nhân	KHÁN HỘ	n2k-x-1789142841802	
+n2k-l13	護	第13	1789142851721	迷子を保護する	まいごをほごする	Bảo vệ / tiếp nhận trẻ lạc	MÊ TỬ BẢO HỘ	n2k-x-1789142851721	
+n2k-l13	雇	第13	1789142938639	雇用期間	こようきかん	Thời hạn hợp đồng lao động	CÓ DỤNG KỲ GIAN	n2k-x-1789142938639	
+n2k-l13	雇	第13	1789142946660	雇用する	こようする	Tuyển dụng, thuê làm	CÓ DỤNG	n2k-x-1789142946660	
+n2k-l13	雇	第13	1789142957549	人を雇う	ひとをやとう	Thuê người làm	NHÂN CÓ	n2k-x-1789142957549	
+n2k-l13	雇	第13	1789142967405	日雇い労働者	ひやといろうどうしゃ	Lao động thời vụ / làm theo ngày	NHẬT CÓ LAO ĐỘNG GIẢ	n2k-x-1789142967405	
+n2k-l13	雇	第13	1789142978840	会社を解雇される	かいしゃをかいこされる	Bị công ty sa thải	HỘI XÃ GIẢI CÓ	n2k-x-1789142978840	
+n2k-l13	雑	第13	1789142998322	雑巾を洗う	ぞうきんをあらう	Rút / giặt giẻ lau	TẠP TRÂN TẨY	n2k-x-1789142998322	
+n2k-l13	雑	第13	1789143007500	友人と雑談する	ゆうじんとざつだんする	Tán chuyện với bạn bè	HỮU NHÂN TẠP ĐÀM	n2k-x-1789143007500	
+n2k-l13	雑	第13	1789143018023	複雑な関係	ふくざつなかんけい	Mối quan hệ phức tạp	PHỨC TẠP QUAN HỆ	n2k-x-1789143018023	
+n2k-l13	雑	第13	1789143027491	大雑把な人	おおざっぱなひと	Người đại khái, xuề xòa	ĐẠI TẠP BẢ NHÂN	n2k-x-1789143027491	
+n2k-l13	雑	第13	1789143038219	雑音がする	ざつおんがする	Có tiếng ồn / tạp âm	TẠP ÂM	n2k-x-1789143038219	
+n2k-l13	権	第13	1789143060459	権限を越える	けんげんをこえる	Vượt quá thẩm quyền	QUYỀN HẠN VIỆT	n2k-x-1789143060459	
+n2k-l13	権	第13	1789143071096	選挙権を得る	せんきょけんをえる	Có được quyền bầu cử	TUYỂN CỬ QUYỀN ĐẮC	n2k-x-1789143071096	
+n2k-l13	権	第13	1789143079454	特許権	とっきょけん	Quyền bằng sáng chế	ĐẶC HỨA QUYỀN	n2k-x-1789143079454	
+n2k-l13	権	第13	1789143089506	権利を主張する	けんりをしゅちょうする	Đòi hỏi / khẳng định quyền lợi	QUYỀN LỢI CHỦ TRƯƠNG	n2k-x-1789143089506	
+n2k-l13	権	第13	1789143100012	政権	せいけん	Chính quyền	CHÍNH QUYỀN	n2k-x-1789143100012	
+n2k-l13	権	第13	1789143109892	権力者になりたい	けんりょくしゃになりたい	Muốn trở thành người có quyền lực	QUYỀN LỰC GIẢ	n2k-x-1789143109892	
+n2k-l13	権	第13	1789143120030	参政権がある	さんせいけんがある	Có quyền tham政 (quyền tham gia chính trị)	THAM CHÍNH QUYỀN	n2k-x-1789143120030	
+n2k-l13	権	第13	1789143129155	権威を示す	けんいをしめす	Thể hiện uy quyền	QUYỀN UY THỊ	n2k-x-1789143129155	
+n2k-l13	離	第13	1789143149639	離婚する	りこんする	Ly hôn	LI HÔN	n2k-x-1789143149639	
+n2k-l13	離	第13	1789143159993	隔離される	かくりされる	Bị cách ly	CÁC LI	n2k-x-1789143159993	
+n2k-l13	離	第13	1789143169525	親を離れる	おやをはなれる	Rời xa cha mẹ	THÂN LI	n2k-x-1789143169525	
+n2k-l13	離	第13	1789143179057	目を離す	めをはなす	Rời mắt khỏi	MỤC LI	n2k-x-1789143179057	
+n2k-l13	離	第13	1789143189665	分離される	ぶんりされる	Bị phân tách / chia rẽ	PHÂN LI	n2k-x-1789143189665	
+n2k-l13	離	第13	1789143200047	飛行機が離陸する	ひこうきがりりくする	Máy bay cất cánh	PHI HÀNH CƠ LI LỤC	n2k-x-1789143200047	
+n2k-l13	勧	第13	1789143219663	勧告する	かんこくする	Khuyên cáo	KHUYẾN CÁO	n2k-x-1789143219663	
+n2k-l13	勧	第13	1789143231637	商品を勧める	しょうひんをすすめる	Giới thiệu / tiến cử sản phẩm	THƯƠNG PHẨM KHUYẾN	n2k-x-1789143231637	
+n2k-l13	勧	第13	1789143240979	お酒を勧める	おさけをすすめる	Mời rượu	TỬU KHUYẾN	n2k-x-1789143240979	
+n2k-l13	勧	第13	1789143250295	勧誘する	かんゆうする	Rủ rê, mời mọc, dụ dỗ	KHUYẾN DỤ	n2k-x-1789143250295	
+n2k-l13	携	第13	1789143287252	連携できない	れんけいできない	Không thể phối hợp / liên kết	LIÊN HUỆ	n2k-x-1789143287252	
+n2k-l13	携	第13	1789143295991	携帯する	けいたいする	Mang theo bên người	HUỆ ĐỚI	n2k-x-1789143295991	
+n2k-l13	携	第13	1789143310903	手を携える	てをたずさえる	Cùng nắm tay nhau	THỦ HUỆ	n2k-x-1789143310903	
+n2k-l13	携	第13	1789143322789	計画に携わる	けいかくにたずさわる	Tham gia vào kế hoạch	KẾ HOẠCH HUỆ	n2k-x-1789143322789	
+n2k-l13	携	第13	1789143333004	提携を結ぶ	ていけいをむすぶ	Ký kết hợp tác	ĐỀ HUỆ KẾT	n2k-x-1789143333004	
+n2k-l13	催	第13	1789143359196	主催者になる	しゅさいしゃになる	Trở thành đơn vị tổ chức chính	CHỦ THÔI GIẢ	n2k-x-1789143359196	
+n2k-l13	催	第13	1789143368772	イベントを開催する	イベントをかいさいする	Tổ chức sự kiện	KHAI THÔI	n2k-x-1789143368772	
+n2k-l13	催	第13	1789143379339	送別会を催す	そうべつかいをもよおす	Tổ chức tiệc chia tay	TỐNG BIỆT HỘI THÔI	n2k-x-1789143379339	
+n2k-l13	催	第13	1789143388645	返事を催促する	へんじをさいそくする	Giục giã trả lời	PHẢN SỰ THÔI THÚC	n2k-x-1789143388645	
+n2k-l13	催	第13	1789143417833	催眠術をかける	さいみんじゅつをかける	Thôi miên	THÔI MIÊN THUẬT	n2k-x-1789143417833	
+n2k-l13	催	第13	1789143441478	催し物	もよおしもの	Sự kiện, hội chợ, chương trình giải trí	THÔI VẬT	n2k-x-1789143441478	
+n2k-l14	訪	第14	1789191148471	他社を訪問する	たしゃをほうもんする	Thăm / tới làm việc với công ty khác	THA XÃ PHÓNG VẤN	n2k-x-1789191148471	
+n2k-l14	訪	第14	1789191158222	京都を訪れる	きょうとをおとずれる	Ghé thăm Kyoto	KINH ĐÔ PHÓNG	n2k-x-1789191158222	
+n2k-l14	訪	第14	1789191169068	先生の家を訪ねる	せんせいのいえをたずねる	Đến thăm nhà thầy cô giáo	TIÊN SINH GIA PHÓNG	n2k-x-1789191169068	
+n2k-l14	坊	第14	1789191253960	坊さん	ぼうさん	Nhà sư, đại đức	PHƯỜNG	n2k-x-1789191253960	
+n2k-l14	坊	第14	1789191264929	坊主	ぼうず	Cúi đầu trọc / chú tiểu / sư thầy	PHƯỜNG CHỦ	n2k-x-1789191264929	
+n2k-l14	坊	第14	1789191275687	丸坊主	まるぼうず	Đầu trọc lốc	HOÀN PHƯỜNG CHỦ	n2k-x-1789191275687	
+n2k-l14	坊	第14	1789191291509	赤ん坊	あかんぼう	Trẻ sơ sinh, bé đỏ hớn	XÍCH PHƯỜNG	n2k-x-1789191291509	
+n2k-l14	坊	第14	1789191332178	坊ちゃん	ぼっちゃん	Công tử nhỏ, cậu chủ nhỏ	PHƯỜNG	n2k-x-1789191332178	
+n2k-l14	坊	第14	1789191341767	暴れん坊	あばれんぼう	Đứa trẻ quậy phá, ngỗ ngược	BẠO PHƯỜNG	n2k-x-1789191341767	
+n2k-l14	放	第14	1789191362383	小鳥を放す	ことりをはなす	Thả chim nhỏ	TIỂU ĐIỂU PHÓNG	n2k-x-1789191362383	
+n2k-l14	放	第14	1789191373218	群れから放れる	むれからはなれる	Tách khỏi đàn / rời đàn	QUẦN PHÓNG	n2k-x-1789191373218	
+n2k-l14	放	第14	1789191384269	光を放つ	ひかりをはなつ	Phát ra ánh sáng	QUANG PHÓNG	n2k-x-1789191384269	
+n2k-l14	放	第14	1789191396680	放っといて	ほっといて	Để yên cho tôi / kệ đi	PHÓNG	n2k-x-1789191396680	
+n2k-l14	放	第14	1789191407761	放送局	ほうそうきょく	Đài phát thanh / đài truyền hình	PHÓNG TỐNG CỤC	n2k-x-1789191407761	
+n2k-l14	放	第14	1789191419702	放置自転車	ほうちじてんしゃ	Xe đạp đỗ sai quy định / xe vứt lung tung	PHÓNG TRÍ TỰ CHUYỂN XA	n2k-x-1789191419702	
+n2k-l14	放	第14	1789191432194	権利を放棄する	けんりをほうきする	Từ bỏ quyền lợi	QUYỀN LỢI PHÓNG KHÍ	n2k-x-1789191432194	
+n2k-l14	放	第14	1789191442408	放火する	ほうかする	Cố ý phóng hỏa / đốt nhà	PHÓNG HỎA	n2k-x-1789191442408	
+n2k-l14	激	第14	1789191467791	感激	かんげき	Cảm kích, xúc động	CẢM KÍCH	n2k-x-1789191467791	
+n2k-l14	激	第14	1789191477857	激励	げきれい	Khích lệ, động viên	KÍCH LỆ	n2k-x-1789191477857	
+n2k-l14	激	第14	1789191489080	犯罪の激増	はんざいのげきぞう	Sự tăng đột biến của tội phạm	PHẠM TỘI KÍCH TĂNG	n2k-x-1789191489080	
+n2k-l14	激	第14	1789191500652	刺激を与える	しげきをあたえる	Tạo kích thích / truyền động lực	THÍCH KÍCH DƯ	n2k-x-1789191500652	
+n2k-l14	激	第14	1789191510458	株の急激な下落	かぶのきゅうげきなげらく	Giá cổ phiếu giảm dốc đột ngột	CHU CẤP KÍCH HẠ LẠC	n2k-x-1789191510458	
+n2k-l14	激	第14	1789191520790	激しい競争	はげしいきょうそう	Cạnh tranh gay gắt / khốc liệt	KÍCH CẠNH TRANH	n2k-x-1789191520790	
+n2k-l14	激	第14	1789191531206	激しい雨	はげしいあめ	Mưa to dữ dội / mưa rào	KÍCH VŨ	n2k-x-1789191531206	
+n2k-l14	灰	第14	1789191551309	灰皿	はいざら	Gạt tàn thuốc	HÔI MÃNH	n2k-x-1789191551309	
+n2k-l14	灰	第14	1789191561267	石灰	せっかい	Vôi	THẠCH HÔI	n2k-x-1789191561267	
+n2k-l14	灰	第14	1789191571622	灰色	はいいろ	Màu xám	HÔI SẮC	n2k-x-1789191571622	
+n2k-l14	炭	第14	1789191592097	炭火	すみび	Than hồng / lửa than	THAN HỎA	n2k-x-1789191592097	
+n2k-l14	炭	第14	1789191602109	炭酸飲料	たんさんいんりょう	Nước giải khát có ga	THAN TOAN ẨM LIỆU	n2k-x-1789191602109	
+n2k-l14	炭	第14	1789191612118	石油と石炭	せきゆとせきたん	Dầu mỏ và than đá	THẠCH DU THẠCH THAN	n2k-x-1789191612118	
+n2k-l14	炭	第14	1789191629268	二酸化炭素が増える	にさんかたんそがふえる	Lượng khí CO_2 tăng lên	NHỊ TÓAN HÓA THAN TỐ TĂNG	n2k-x-1789191629268	
+n2k-l14	災	第14	1789191650591	被災地	ひさいち	Vùng bị thiên tai / thảm họa	BỊ TAI ĐỊA	n2k-x-1789191650591	
+n2k-l14	災	第14	1789191660933	災難に遭う	さいなんにあう	Gặp tai nạn / vận hạn	TAI NẠN TAO	n2k-x-1789191660933	
+n2k-l14	災	第14	1789191671228	天災が起きる	てんさいがおきる	Thiên tai xảy ra	THIÊN TAI KHỞI	n2k-x-1789191671228	
+n2k-l14	灯	第14	1789191697541	街灯が少ない	がいとうがすくない	Đèn đường thưa thớt	NHAI ĐĂNG THIỂU	n2k-x-1789191697541	
+n2k-l14	灯	第14	1789191706881	電灯を消す	でんとうをけす	Tắt đèn điện	ĐIỆN ĐĂNG TIÊU	n2k-x-1789191706881	
+n2k-l14	灯	第14	1789191717409	灯を灯す	ひをともす	Thắp đèn / bật đèn	ĐĂNG ĐĂNG	n2k-x-1789191717409	
+n2k-l14	灯	第14	1789191727858	10時に消灯する	じゅうじにしょうとうする	Tắt đèn lúc 10 giờ	TIÊU ĐĂNG	n2k-x-1789191727858	fixed
+n2k-l14	煙	第14	1789191750961	館内禁煙	かんないきんえん	Cấm hút thuốc trong tòa nhà	QUÁN NỘI CẤM YÊN	n2k-x-1789191750961	
+n2k-l14	煙	第14	1789191763513	喫煙所	きつえんじょ	Nơi dành cho người hút thuốc	KHIẾT YÊN SỞ	n2k-x-1789191763513	
+n2k-l14	煙	第14	1789191773113	煙突	えんとつ	Ống khói	YÊN ĐỘT	n2k-x-1789191773113	
+n2k-l14	煙	第14	1789191783843	タバコの煙を吸う	タバコのけむりをすう	Hít phải khói thuốc	YÊN HẤP	n2k-x-1789191783843	
+n2k-l14	煙	第14	1789191796167	店の前が煙い	みせのまえがけむい	Trước cửa hàng đầy khói nghi ngút	YÊN	n2k-x-1789191796167	
+n2k-l14	煙	第14	1789191807008	煙が出ている煙突	けむりがでているえんとつ	Ống khói đang nhả khói	YÊN ĐỘT	n2k-x-1789191807008	
+n2k-l14	栄	第14	1789191828975	街が栄える	まちがさかえる	Thành phố phát triển phồn vinh	NHAI VINH	n2k-x-1789191828975	
+n2k-l14	栄	第14	1789191838660	光栄に思う	こうえいにおもう	Cảm thấy vinh hạnh	QUANG VINH TƯ	n2k-x-1789191838660	
+n2k-l14	栄	第14	1789191849445	栄光をもたらす	えいこうをもたらす	Mang lại vinh quang	VINH QUANG	n2k-x-1789191849445	
+n2k-l14	栄	第14	1789191860204	栄養がある	えいようがある	Có dinh dưỡng	VINH DƯỠNG	n2k-x-1789191860204	
+n2k-l14	栄	第14	1789191870676	社会が繁栄する	しゃかいがはんえいする	Xã hội phát triển phồn vinh	XÃ HỘI PHỒN VINH	n2k-x-1789191870676	
+n2k-l14	条	第14	1789191890681	箇条書き	かじょうがき	Viết dạng gạch đầu dòng	CÁ ĐIỀU THƯ	n2k-x-1789191890681	
+n2k-l14	条	第14	1789191900843	条約を結ぶ	じょうやくをむすぶ	Ký kết điều ước / hiệp định	ĐIỀU ƯỚC KẾT	n2k-x-1789191900843	
+n2k-l14	条	第14	1789192081256	条件がある	じょうけんがある	Có điều kiện	ĐIỀU KIỆN	n2k-x-1789192081256	
+n2k-l14	極	第14	1789192103632	頂点を極める	ちょうてんをきわめる	Đạt tới đỉnh cao	ĐỈNH ĐIỂM CỰC	n2k-x-1789192103632	
+n2k-l14	極	第14	1789192114512	贅沢の極み	ぜいたくのきわみ	Tột cùng của sự xa hoa	TRÚY TRẠCH CỰC	n2k-x-1789192114512	
+n2k-l14	極	第14	1789192126422	感極まる	かんきわまる	Vô cùng xúc động	CẢM CỰC	n2k-x-1789192126422	
+n2k-l14	極	第14	1789192137435	失礼極まりない	しつれいきわまりない	Cực kỳ thất lễ	THẤT LỄ CỰC	n2k-x-1789192137435	
+n2k-l14	極	第14	1789192169835	究極の選択	きゅうきょくのせんたく	Lựa chọn cuối cùng / quyết định tột cùng	CỨU CỰC TUYỂN TRẠCH	n2k-x-1789192169835	
+n2k-l14	極	第14	1789192180770	南極大陸	なんきょくだいりく	Châu Nam Cực	NAM CỰC ĐẠI LỤC	n2k-x-1789192180770	
+n2k-l14	極	第14	1789192199444	極楽へ行く	ごくらくへいく	Đi về cõi Cực Lạc	CỰC LẠC HÀNH	n2k-x-1789192199444	
+n2k-l14	杉	第14	1789192224420	杉の木	すぎのき	Cây tuyết tùng (Nhật Bản)	SAM MỘC	n2k-x-1789192224420	
+n2k-l14	松	第14	1789192244741	松の木の下で待つ	まつのきのしたでまつ	Chờ dưới gốc cây thông	TÙNG MỘC HẠ ĐÃI	n2k-x-1789192244741	
+n2k-l14	賃	第14	1789192266199	最低賃金	さいていちんぎん	Mức lương tối thiểu	TỐI ĐÊ NHẪM KIM	n2k-x-1789192266199	
+n2k-l14	賃	第14	1789192276533	家賃を下げる	やちんをさげる	Giảm tiền thuê nhà	GIA NHẪM HẠ	n2k-x-1789192276533	
+n2k-l14	賃	第14	1789192295966	地下鉄の運賃が高い	ちかてつのうんちんがたかい	Giá vé tàu điện ngầm đắt	ĐỊA HẠ THIẾT VẬN NHẪM CAO	n2k-x-1789192295966	
+n2k-l14	賃	第14	1789192308407	賃貸住宅	ちんたいじゅうたく	Nhà ở cho thuê	NHẪM THẢI TRÚ TRẠCH	n2k-x-1789192308407	
+n2k-l14	賃	第14	1789192318480	賃金を払う	ちんぎんをはらう	Trả tiền công / tiền lương	NHẪM KIM PHÁT	n2k-x-1789192318480	
+n2k-l14	債	第14	1789192342049	債務	さいむ	Nghĩa vụ nợ / khoản nợ	TRÁI VỤ	n2k-x-1789192342049	
+n2k-l14	債	第14	1789192352824	債券	さいけん	Trái phiếu	TRÁI KHOÁN	n2k-x-1789192352824	
+n2k-l14	債	第14	1789192362484	債権者	さいけんしゃ	Chủ nợ	TRÁI KHOÁN GIẢ	n2k-x-1789192362484	
+n2k-l14	債	第14	1789192374328	負債を負う	ふさいをおう	Gánh chịu khoản nợ	PHỤ TRÁI PHỤ	n2k-x-1789192374328	
+n2k-l14	債	第14	1789192385569	国債を発行する	こくさいをはっこうする	Phát hành trái phiếu chính phủ	QUỐC TRÁI PHÁT HÀNH	n2k-x-1789192385569	
+n2k-l14	噴	第14	1789192416787	噴水	ふんすい	Đài phun nước	PHÚN THỦY	n2k-x-1789192416787	
+n2k-l14	噴	第14	1789192427122	吹き出す	ふきだす	Bật cười / phun ra	PHÚN XUẤT	n2k-x-1789192427122	word-without-its-kanji
+n2k-l14	噴	第14	1789192436484	噴火する	ふんかする	Núi lửa phun trào	PHÚN HỎA	n2k-x-1789192436484	
+n2k-l14	噴	第14	1789192446507	不満が噴出する	ふまんがふんしゅつする	Sự bất mãn bùng nổ / trào ra	BẤT MÃN PHÚN XUẤT	n2k-x-1789192446507	
+n2k-l14	財	第14	1789192469205	全財産を残す	ぜんざいさんをのこす	Để lại toàn bộ tài sản	TOÀN TÀI SẢN TÀN	n2k-x-1789192469205	
+n2k-l14	財	第14	1789192479054	長財布がほしい	ながざいふがほしい	Muốn có một chiếc ví dài	TRƯỜNG TÀI BỐ	n2k-x-1789192479054	
+n2k-l14	財	第14	1789192638895	財布を落とした	ざいふをおとした	Đã làm rơi ví	TÀI BỐ LẠC	n2k-x-1789192638895	
+n2k-l14	財	第14	1789192650991	財政赤字	ざいせいあかじ	Thâm hụt ngân sách tài chính	TÀI CHÍNH XÍCH TỰ	n2k-x-1789192650991	
+n2k-l14	財	第14	1789192663814	財産を継承する	ざいさんをけいしょうする	Thừa kế tài sản	TÀI SẢN KẾ THỪA	n2k-x-1789192663814	
+n2k-l14	財	第14	1789192684731	私財を投じる	しざいをとうじる	Dốc / đầu tư tiền tài cá nhân	TƯ TÀI ĐẦU	n2k-x-1789192684731	
+n2k-l14	貨	第14	1789192706419	貨幣価値	かへいかち	Giá trị tiền tệ	HÓA TỆ GIÁ TRỊ	n2k-x-1789192706419	
+n2k-l14	貨	第14	1789192724990	通貨を発行する	つうかをはっこうする	Phát hành tiền tệ	THÔNG HÓA PHÁT HÀNH	n2k-x-1789192724990	
+n2k-l14	貨	第14	1789192738510	外貨両替	がいかりょうがえ	Đổi ngoại tệ	NGOẠI HÓA LƯỠNG ĐỔI	n2k-x-1789192738510	
+n2k-l14	貨	第14	1789192752946	雑貨	ざっか	Đồ tạp hóa, đồ linh tin	TẠP HÓA	n2k-x-1789192752946	
+n2k-l14	貨	第14	1789192766345	硬貨	こうか	Tiền xu	NGẠNH HÓA	n2k-x-1789192766345	
+n2k-l14	貨	第14	1789192778810	金貨を購入したい	きんかをこうにゅうしたい	Muốn mua đồng tiền vàng	KIM HÓA CÂU NHẬP	n2k-x-1789192778810	
+n2k-l14	貨	第14	1789192789644	貨物列車	かもつれっしゃ	Tàu chở hàng	HÓA VẬT LIỆU XA	n2k-x-1789192789644	
+n2k-l15	暴	第15	1789193805471	暴力を振るう	ぼうりょくをふるう	Dùng bạo lực / bạo hành	BẠO LỰC	n2k-x-1789193805471	
+n2k-l15	暴	第15	1789193817653	秘密を暴く	ひみつをあばく	Vạch trần / làm lộ bí mật	BÍ MẬT BẠO	n2k-x-1789193817653	
+n2k-l15	暴	第15	1789193827490	秘密を暴露する	ひみつをばくろする	Phơi bày / vạch trần bí mật	BÍ MẬT BẠO LỘ	n2k-x-1789193827490	
+n2k-l15	暴	第15	1789193868977	暴れる	あばれる	Nổi giận đùng đùng / quậy phá	BẠO	n2k-x-1789193868977	
+n2k-l15	暴	第15	1789193880721	暴風警報	ぼうふうけいほう	Cảnh báo bão lớn	BẠO PHONG CẢNH BÁO	n2k-x-1789193880721	
+n2k-l15	暴	第15	1789193892931	暴飲暴食	ぼういんぼうしょく	Ăn uống vô độ / bội thực	BẠO ẨM BẠO THỰC	n2k-x-1789193892931	
+n2k-l15	暴	第15	1789193909198	凶暴な人	きょうぼうなひと	Người hung bạo / dữ tợn	HÙNG BẠO	n2k-x-1789193909198	
+n2k-l15	爆	第15	1789193931184	爆発する	ばくはつする	Phát nổ / bộc phát	BỘC PHÁT	n2k-x-1789193931184	
+n2k-l15	爆	第15	1789193942487	原子爆弾	げんしばくだん	Bom nguyên	NGUYÊN TỬ BỘC ĐẠN	n2k-x-1789193942487	
+n2k-l15	爆	第15	1789193953300	爆破する	ざくはする	Bộc phá / làm nổ tung	BỘC PHÁ	n2k-x-1789193953300	
+n2k-l15	爆	第15	1789193963831	爆撃する	ばくげきする	Ném bom / oanh tạc	BỘC KÍCH	n2k-x-1789193963831	
+n2k-l15	爆	第15	1789193979950	爆笑する	ばくしょうする	Cười nghiêng ngả / cười nổ tung	BỘC TIẾU	n2k-x-1789193979950	
+n2k-l15	並	第15	1789194002538	物が並んでいる	ものがならんでいる	Đồ đạc đang được xếp thành hàng	VẬT TỊNH	n2k-x-1789194002538	
+n2k-l15	並	第15	1789194014081	人並みになりたい	ひとなみになりたい	Muốn trở thành người bình thường / như bao người khác	NHÂN TỊNH	n2k-x-1789194014081	
+n2k-l15	並	第15	1789194026715	机を並べる	つくえをならべる	Sắp xếp bàn	CƠ TỊNH	n2k-x-1789194026715	
+n2k-l15	並	第15	1789194039759	直列と並列	ちょくれつとへいれつ	Mạch nối tiếp và mạch song song	TRỰC LIỆT TỊNH LIỆT	n2k-x-1789194039759	
+n2k-l15	並	第15	1789194054111	牛丼の並盛り	ぎゅうどんのなみもり	Bát cơm bò cỡ vừa (tiêu chuẩn)	NGƯU ĐỔNG TỊNH THỊNH	n2k-x-1789194054111	
+n2k-l15	普	第15	1789194075988	スマホが普及する	すまほがふきゅうする	Điện thoại thông minh trở nên phổ biến	PHỔ CẬP	n2k-x-1789194075988	
+n2k-l15	普	第15	1789194086336	普段着	ふだんぎ	Quần áo mặc thường ngày	PHỔ ĐOẠN TRƯỚC	n2k-x-1789194086336	
+n2k-l15	普	第15	1789194096713	普遍的な事実	ふへんてきなじじつ	Sự thật mang tính phổ quát	PHỔ BIẾN ĐÍCH SỰ THỰC	n2k-x-1789194096713	
+n2k-l15	普	第15	1789194112768	普通に暮らし	ふつうにくらし	Sống một cuộc sống bình thường	PHỔ THÔNG MỘ	n2k-x-1789194112768	
+n2k-l15	甘	第15	1789194137667	甘いお菓子	かんあまいおかし	Bánh kẹo ngọt	CAM	n2k-x-1789194137667	
+n2k-l15	甘	第15	1789194151688	親に甘える	おやにあまえる	Nũng nịu / phụ thuộc vào bố mẹ	THÂN CAM	n2k-x-1789194151688	
+n2k-l15	甘	第15	1789194163369	子供を甘やかす	こどもをあまやかす	Chiều chuộng con cái quá mức	TỬ TÂM CAM	n2k-x-1789194163369	
+n2k-l15	紺	第15	1789194193804	紺色の服	こんいろのふく	Quần áo màu xanh sẫm (xanh navy)	CÁM SẮC	n2k-x-1789194193804	
+n2k-l15	射	第15	1789194216760	注射する	ちゅうしゃする	Tiêm thuốc	CHÚ XẠ	n2k-x-1789194216760	
+n2k-l15	射	第15	1789194233620	猛獣を射殺する	もうじゅうをしゃさつする	Bắn chết dã thú	MÃNH THÚ XẠ SÁT	n2k-x-1789194233620	
+n2k-l15	射	第15	1789194245826	光が反射する	ひかりがはんしゃする	Ánh sáng phản xạ lại	QUANG PHẢN XẠ	n2k-x-1789194245826	
+n2k-l15	射	第15	1789194256473	射る	いる	Bắn (tên/đạn)	XẠ	n2k-x-1789194256473	
+n2k-l15	射	第15	1789194266868	ロケットを発射する	ろけっとをはっしゃする	Phóng tên lửa	PHÁT XẠ	n2k-x-1789194266868	
+n2k-l15	謝	第15	1789194289724	感謝する	かんしゃする	Cảm ơn / biết ơn	CẢM TẠ	n2k-x-1789194289724	
+n2k-l15	謝	第15	1789194305327	新陳代謝がいい	しんちんたいしゃがいい	Sự trao đổi chất tốt	TÂN TRẦN ĐẠI TẠ	n2k-x-1789194305327	
+n2k-l15	謝	第15	1789194316406	慰謝料を請求する	いしゃりょうをせいきゅうする	Yêu cầu bồi thường tiền bồi thường tổn thất	ÚY TẠ LIỆU THỈNH CẦU	n2k-x-1789194316406	
+n2k-l15	謝	第15	1789194332490	謝罪する	しゃざいする	Tạ tội / xin lỗi chân thành	TẠ TỘI	n2k-x-1789194332490	
+n2k-l15	謝	第15	1789194344100	月謝を払う	げっしゃをはらう	Trả học phí hàng tháng	NGUYỆT TẠ	n2k-x-1789194344100	
+n2k-l15	謝	第15	1789194353901	謝る	あやまる	Xin lỗi	TẠ	n2k-x-1789194353901	
+n2k-l15	宛	第15	1789194379262	宛名	あてな	Tên người nhận (trên thư/bưu phẩm)	UYÊN DANH	n2k-x-1789194379262	
+n2k-l15	宛	第15	1789194390124	宛先	あてさき	Địa chỉ người nhận	UYÊN TIÊN	n2k-x-1789194390124	
+n2k-l15	腕	第15	1789194410860	腕がいい	うでがいい	Tay nghề giỏi / trình độ cao	OẢN	n2k-x-1789194410860	
+n2k-l15	腕	第15	1789194422186	腕相撲をする	うでずもうをする	Vật tay	OẢN TƯƠNG PHÔ	n2k-x-1789194422186	
+n2k-l15	腕	第15	1789194437937	腕時計	うでどけい	Đồng hồ đeo tay	OẢN THỜI KẾ	n2k-x-1789194437937	
+n2k-l15	腕	第15	1789194448619	腕組みをする	うでぐみをする	Khoanh tay	OẢN	n2k-x-1789194448619	
+n2k-l15	腕	第15	1789194459619	腕前をみせる	うでまえをみせる	Thể hiện tài năng / tay nghề	OẢN TIỀN	n2k-x-1789194459619	
+n2k-l15	腕	第15	1789194469334	腕試し	うでだめし	Thử sức / kiểm tra tay nghề	OẢN THÍ	n2k-x-1789194469334	
+n2k-l15	腕	第15	1789194479243	腕力	わんりょく	Sức mạnh cơ bắp / sức cánh tay	OẢN LỰC	n2k-x-1789194479243	
+n2k-l15	針	第15	1789194501684	秒針	びょうしん	Kim giây	MIỄU CHÂM	n2k-x-1789194501684	
+n2k-l15	針	第15	1789194512297	方針を決める	ほうしんをきめる	Quyết định phương châm / định hướng	PHƯƠNG CHÂM	n2k-x-1789194512297	
+n2k-l15	針	第15	1789194522909	針金を切る	はりがねをきる	Cắt dây thép / dây kim loại	CHÂM KIM	n2k-x-1789194522909	
+n2k-l15	針	第15	1789194533652	針と糸	はりといと	Kim và chỉ	CHÂM MỊCH	n2k-x-1789194533652	
+n2k-l15	針	第15	1789194542842	注射針	ちゅうしゃばり	Kim tiêm	CHÚ XẠ CHÂM	n2k-x-1789194542842	
+n2k-l15	針	第15	1789194553540	長針と短針	ちょうしんときんしん	Kim dài và kim ngắn	TRƯỜNG CHÂM ĐOẢN CHÂM	n2k-x-1789194553540	
+n2k-l15	汁	第15	1789194577742	汁物	しるもの	Món canh	TRÁP VẬT	n2k-x-1789194577742	
+n2k-l15	汁	第15	1789194589013	味噌汁	みそしる	Súp Miso	VỊ TĂNG TRÁP	n2k-x-1789194589013	
+n2k-l15	汁	第15	1789194599747	果汁入りのジュース	かじゅういりのじゅーす	Nước ép có chứa nước cốt trái cây	QUẢ TRÁP	n2k-x-1789194599747	
+n2k-l15	純	第15	1789194620763	純粋な人	じゅんすいなひと	Người thuần khiết / trong sáng	THUẦN TÚY	n2k-x-1789194620763	
+n2k-l15	純	第15	1789194631502	純情	じゅんじょう	Tình cảm chân thành / ngây thơ	THUẦN TÌNH	n2k-x-1789194631502	
+n2k-l15	純	第15	1789194641912	単純な考え	たんじゅんなかんがえ	Suy nghĩ đơn giản	ĐƠN THUẦN	n2k-x-1789194641912	
+n2k-l15	鈍	第15	1789194662311	この包丁が鈍い	このほうちょうがにぶい	Con dao này bị cùn	ĐỘN	n2k-x-1789194662311	
+n2k-l15	鈍	第15	1789194672151	鈍感	どんかん	Chậm hiểu / đần độn / vô cảm	ĐỘN CẢM	n2k-x-1789194672151	
+n2k-l15	鈍	第15	1789194682683	反応が鈍い	はんのうがにぶい	Phản ứng chậm chạp	ĐỘN	n2k-x-1789194682683	
+n2k-l15	鈍	第15	1789194694194	動きが鈍い	うごきがにぶい	Cử động chậm chạp	ĐỘN	n2k-x-1789194694194	
+n2k-l15	鈍	第15	1789194704063	腕が鈍る	うでがにぶる	Tay nghề bị giảm sút / cùn đi	OẢN ĐỘN	n2k-x-1789194704063	
+n2k-l15	沈	第15	1789194727291	沈没する	ちんぼつする	Bị đắm / bị chìm (tàu)	TRẦM MỘT	n2k-x-1789194727291	
+n2k-l15	沈	第15	1789194736778	沈黙を破る	ちんもくをやぶる	Phá tan sự im lặng	TRẦM MẶC	n2k-x-1789194736778	
+n2k-l15	沈	第15	1789194748947	夕日が海に沈む	ゆうひがうみにしずむ	Mặt trời lặn xuống biển	TRẦM	n2k-x-1789194748947	
+n2k-l15	沈	第15	1789194759434	水に体を沈める	みずにからだをしずめる	Thả mình chìm vào nước	TRẦM	n2k-x-1789194759434	fixed
+n2k-l15	枕	第15	1789194786044	腕枕	うでまくら	Gối đầu lên tay	OẢN CHẢM	n2k-x-1789194786044	
+n2k-l15	枕	第15	1789194798538	枕	まくら	Cái gối	CHẢM	n2k-x-1789194798538	
+n2k-l15	銅	第15	1789194818616	銅像を建てる	どうぞうをたてる	Dựng tượng đồng	ĐỒNG TƯỢNG	n2k-x-1789194818616	
+n2k-l15	銅	第15	1789194827758	銅メダル	どうめだる	Huy chương đồn	ĐỒNG	n2k-x-1789194827758	
+n2k-l15	洞	第15	1789194862030	洞窟	どうくつ	Hang động	ĐỘNG KHUẤT	n2k-x-1789194862030	
+n2k-l15	洞	第15	1789194873168	洞穴	どうけつ	Hang ổ / hang đá	ĐỘNG HUYỆT	n2k-x-1789194873168	
+n2k-l15	洞	第15	1789194885194	空洞	くうどう	Hang trống / khoảng hổng	KHÔNG ĐỘNG	n2k-x-1789194885194	
+n2k-l15	洞	第15	1789194929342	洞察力	どうさつりょく	Khả năng quan sát tinh tế / óc quan sát	ĐỘNG SÁT LỰC	n2k-x-1789194929342	
+n2k-l15	壊	第15	1789194955676	破壊する	はかいする	Phá hoại / hủy hoại	PHÁ HOẠI	n2k-x-1789194955676	
+n2k-l15	壊	第15	1789194966045	家が全壊した	いえがぜんかいした	Nhà cửa bị phá hủy toàn bộ	TOÀN HOẠI	n2k-x-1789194966045	
+n2k-l15	壊	第15	1789194976603	建物を壊す	たてものをこわす	Phá hủy tòa nhà	HOẠI	n2k-x-1789194976603	
+n2k-l15	壊	第15	1789194987108	スマホが壊れる	すまほがこわれる	Điện thoại thông minh bị hỏng	HOẠI	n2k-x-1789194987108	
+n2k-l15	懐	第15	1789195008946	昔を懐かしむ	むかしをなつかしむ	Nhớ về ngày xưa	HOÀI	n2k-x-1789195008946	
+n2k-l15	懐	第15	1789195018643	子供が懐く	こどもがなつく	Trẻ con quấn quýt / mến người	HOÀI	n2k-x-1789195018643	
+n2k-l15	懐	第15	1789195029599	猛獣を手懐ける	もうじゅうをてなずける	Thuần phục dã thú	MÃNH THÚ THỦ HOÀI	n2k-x-1789195029599	
+n2k-l15	懐	第15	1789195039354	懐妊	かいにん	Mang thai / có bầu	HOÀI NHÂM	n2k-x-1789195039354	
+n2k-l15	懐	第15	1789195049390	懐が深い	ふところがふかい	Người có lòng bao dung / rộng lượng	HOÀI	n2k-x-1789195049390	
+n2k-l15	捕	第15	1789195077311	警察に捕まった	けいさつにつかまった	Bị cảnh sát bắt	BỘ	n2k-x-1789195077311	
+n2k-l15	捕	第15	1789195088092	犯人を捕まえる	はんにんをつかまえる	Bắt kẻ phạm tội	PHẠM NHÂN BỘ	n2k-x-1789195088092	
+n2k-l15	捕	第15	1789195097410	ボールを捕る	ぼーるをとる	Bắt bóng	BỘ	n2k-x-1789195097410	
+n2k-l15	捕	第15	1789195111740	敵に捕らわれる	てきにとらわれる	Bị kẻ địch bắt giữ	ĐỊCH BỘ	n2k-x-1789195111740	
+n2k-l15	捕	第15	1789195121801	魚を捕らえる	さかなをとらえる	Bắt cá	NGƯ BỘ	n2k-x-1789195121801	
+n2k-l15	捕	第15	1789195131775	逮捕する	たいほする	Bắt giữ / bắt giật	ĐẠI BỘ	n2k-x-1789195131775	
+n2k-l15	捕	第15	1789195143183	動物を捕獲する	どうぶつをほかくする	Bắt giữ động vật	ĐỘNG VẬT BỘ HOẠCH	n2k-x-1789195143183	
+n2k-l15	補	第15	1789195167530	栄養を補う	えいようをおぎなう	Bổ sung dinh dưỡng	VINH DƯỠNG BỔ	n2k-x-1789195167530	
+n2k-l15	補	第15	1789195177077	補習する	ほしゅうする	Học phụ đạo / bổ túc	BỔ TẬP	n2k-x-1789195177077	
+n2k-l15	補	第15	1789195186683	水分補給	すいぶんほきゅう	Bổ sung nước	THỦY PHÂN BỔ CẤP	n2k-x-1789195186683	
+n2k-l15	補	第15	1789195196985	候補者	こうほしゃ	Ứng cử viên	HẬU BỔ GIẢ	n2k-x-1789195196985	
+n2k-l15	補	第15	1789195207757	補充する	ほじゅうする	Bổ sung / làm đầy	BỔ TRUNG	n2k-x-1789195207757	
+n2k-l15	輪	第15	1789195227826	指輪をはめる	ゆびわをはめる	Đeo nhẫn	CHỈ LUÂN	n2k-x-1789195227826	
+n2k-l15	輪	第15	1789195237240	一輪の花	いちりんのはな	Một bông hoa	NHẤT LUÂN	n2k-x-1789195237240	
+n2k-l15	輪	第15	1789195246643	首輪をつける	くびわをつける	Đeo vòng cổ (cho thú cưng)	THỦ LUÂN	n2k-x-1789195246643	
+n2k-l15	輪	第15	1789195256771	車輪	しゃりん	Bánh xe	XA LUÂN	n2k-x-1789195256771	
+n2k-l15	論	第15	1789195276948	卒業論文	そつぎょうろんぶん	Khóa luận tốt nghiệp	TỐT NGHIỆP LUẬN VĂN	n2k-x-1789195276948	
+n2k-l15	論	第15	1789195285567	議論する	ぎろんする	Thảo luận / tranh luận	NGHỊ LUẬN	n2k-x-1789195285567	
+n2k-l15	論	第15	1789195295821	論点を挙げる	ろんてんをあげる	Đưa ra luận điểm	LUẬN ĐIỂM	n2k-x-1789195295821	
+n2k-l15	論	第15	1789195307279	論理的に話す	ろんりてきにはなす	Nói chuyện một cách logic	LUẬN LÝ ĐÍCH	n2k-x-1789195307279	
+n2k-l16	揚	第16	1789140279481	抑揚がある	よくようがある	Có ngữ điệu, có âm điệu trầm bổng	Ức Dương	n2k-x-1789140279481	
+n2k-l16	揚	第16	1789140296204	高揚する	こうようする	Phấn khích, tinh thần lên cao	Cao Dương	n2k-x-1789140296204	
+n2k-l16	揚	第16	1789140306582	旗を揚げる	はたをあげる	Treo cờ, kéo cờ lên	Dương	n2k-x-1789140306582	
+n2k-l16	傷	第16	1789140329954	りんごが傷む	りんごがいたむ	Táo bị hỏng, bị dập	Thương	n2k-x-1789140329954	
+n2k-l16	傷	第16	1789140342673	誹謗中傷	ひぼうちゅうしょう	Phỉ báng, vu khống, xúc phạm	Phỉ Báng Trung Thương	n2k-x-1789140342673	
+n2k-l16	傷	第16	1789140351566	傷がつく	きずがつく	Bị trầy xước, bị tổn thương	Thương	n2k-x-1789140351566	
+n2k-l16	傷	第16	1789140368281	傷跡	きずあと	Vết sẹo, vết thương cũ	Thương Tích	n2k-x-1789140368281	
+n2k-l16	傷	第16	1789140378883	傷口	きずぐち	Miệng vết thương	Thương Khẩu	n2k-x-1789140378883	
+n2k-l16	傷	第16	1789140388954	重傷を負う	じゅうしょうをおう	Bị thương nặng	Trọng Thương Phụ	n2k-x-1789140388954	
+n2k-l16	傷	第16	1789140397691	負傷する	ふしょうする	Bị thương	Phụ Thương	n2k-x-1789140397691	
+n2k-l16	傷	第16	1789140407866	傷害罪	しょうがいざい	Tội cố ý gây thương tích	Thương Hại Tội	n2k-x-1789140407866	
+n2k-l16	駐	第16	1789140428688	駐車場をなくす	ちゅうしゃじょうをなくす	Làm mất vé gửi xe	Trú Xa Trường	n2k-x-1789140428688	
+n2k-l16	駐	第16	1789140437977	駐車する	ちゅうしゃする	Đỗ xe, đậu xe	Trú Xa	n2k-x-1789140437977	
+n2k-l16	駐	第16	1789140447655	駐車禁止	ちゅうしゃきんし	Cấm đỗ xe	Trú Xa Cấm Chỉ	n2k-x-1789140447655	
+n2k-l16	駐	第16	1789140457886	日本に駐在する	にほんにしゅうざいする	Thường trú / làm việc tại Nhật Bản	Trú Tại	n2k-x-1789140457886	
+n2k-l16	往	第16	1789140481726	右往左往する	うおうさおうする	Chạy ngược chạy xuôi, hỗn loạn	Hữu VÃng Tả Vãng	n2k-x-1789140481726	
+n2k-l16	往	第16	1789140491744	往診を頼む	おうしんをたのむ	Yêu cầu bác sĩ đến khám tại nhà	Vãng Chẩn	n2k-x-1789140491744	
+n2k-l16	往	第16	1789140502986	往来が激しい	おうらいがはげしい	Giao thông / người qua lại tấp nập	Vãng Lai	n2k-x-1789140502986	
+n2k-l16	往	第16	1789140512429	往復する	おうふくする	Đi khứ hồi (cả đi lẫn về)	Vãng Phục	n2k-x-1789140512429	
+n2k-l16	帳	第16	1789140532413	記帳する	きちょうする	Ghi sổ, cập nhật sổ ngân hàng	Ký Trương	n2k-x-1789140532413	
+n2k-l16	帳	第16	1789140542236	帳消しにする	ちょうけしにする	Xóa nợ, hủy bỏ, làm hòa	Trương Tiêu	n2k-x-1789140542236	
+n2k-l16	帳	第16	1789140550563	通帳	つうちょう	Sổ tài khoản ngân hàng	Thông Trương	n2k-x-1789140550563	
+n2k-l16	帳	第16	1789140558955	手帳	てちょう	Sổ tay	Thủ Trương	n2k-x-1789140558955	
+n2k-l16	張	第16	1789140577787	緊張する	きんちょうする	Căng thẳng, hồi hộp	Khẩn Trương	n2k-x-1789140577787	
+n2k-l16	張	第16	1789140588507	欲張る	よくばる	Tham lam	Dục Trương	n2k-x-1789140588507	
+n2k-l16	張	第16	1789140598463	テントを張る	テントをはる	Dựng lều	Trương	n2k-x-1789140598463	
+n2k-l16	張	第16	1789140608437	引っ張る	ひっぱる	Kéo, lôi kéo	Dẫn Trương	n2k-x-1789140608437	
+n2k-l16	張	第16	1789140617678	気が張る	きがはる	Căng thẳng thần kinh, giữ tinh thần tập trung	Trương	n2k-x-1789140617678	
+n2k-l16	張	第16	1789140627477	主張する	しゅちょうする	Khẳng định, chủ trương, nêu ý kiến	Chủ Trương	n2k-x-1789140627477	
+n2k-l16	頂	第16	1789140649136	頂上を極める	ちょうじょうをきわめる	Chinh phục đỉnh núi	Đỉnh Thượng	n2k-x-1789140649136	
+n2k-l16	頂	第16	1789140657737	山頂	さんちょう	Đỉnh núi	Sơn Đỉnh	n2k-x-1789140657737	
+n2k-l16	頂	第16	1789140668277	頂戴する	ちょうだいする	Nhận (khiêm nhường ngữ của もらう)	Đỉnh Đái	n2k-x-1789140668277	
+n2k-l16	傾	第16	1789140689336	耳を傾ける	みみをかたむける	Lắng nghe chân thành / chú ý nghe	Khuynh	n2k-x-1789140689336	
+n2k-l16	傾	第16	1789140699039	経営が傾く	けいえいがかたむく	Việc kinh doanh bị sa sút / nghiêng ngả	Khuynh	n2k-x-1789140699039	
+n2k-l16	傾	第16	1789140709003	建物が傾く	たてものがかたむく	Tòa nhà bị nghiêng	Khuynh	n2k-x-1789140709003	
+n2k-l16	傾	第16	1789140718293	傾向がある	けいこうがある	Có khuynh hướng, có xu hướng	Khuynh Hướng	n2k-x-1789140718293	
+n2k-l16	偉	第16	1789140741110	偉人	いじん	Vĩ nhân, người vĩ đại	Vĩ Nhân	n2k-x-1789140741110	
+n2k-l16	偉	第16	1789140749660	偉い人	えらいひと	Người có địa vị cao / người giỏi giang	Vĩ	n2k-x-1789140749660	
+n2k-l16	偉	第16	1789140758566	偉大な発明	いだいなはつめい	Phát minh vĩ đại	Vĩ Đại Phát Minh	n2k-x-1789140758566	
+n2k-l16	違	第16	1789140780442	違法行為	いほうこうい	Hành vi vi phạm pháp luật	Vi Pháp Hành Vi	n2k-x-1789140780442	
+n2k-l16	違	第16	1789140789395	違和感がある	いわかんがある	Cảm thấy có gì đó sai sai / không tự nhiên	Vi Hòa Cảm	n2k-x-1789140789395	
+n2k-l16	違	第16	1789140799077	ルール違反	ルールいはん	Vi phạm quy tắc	Vi Phản	n2k-x-1789140799077	
+n2k-l16	違	第16	1789140808257	相違点を探す	そういてんをさがす	Tìm điểm khác biệt	Tương Vi Điểm	n2k-x-1789140808257	
+n2k-l16	津	第16	1789140827920	津波が発生する	つなみがはっせいする	Phát sinh sóng thần	Tân Ba	n2k-x-1789140827920	
+n2k-l16	津	第16	1789140838427	興味津々	きょうみしんしん	Rất hứng thú, vô cùng tò mò	Hưng Vị Tân Tân	n2k-x-1789140838427	
+n2k-l16	健	第16	1789140858031	保健室に行く	ほけんしつにいく	Đến phòng y tế trường học	Bảo Kiện Thất	n2k-x-1789140858031	
+n2k-l16	健	第16	1789140867135	健康を保つ	けんこうをたもつ	Giữ gìn sức khỏe	Kiện Khang	n2k-x-1789140867135	
+n2k-l16	健	第16	1789140878703	健在	けんざい	Sức khỏe tốt, vẫn sống khỏe mạnh	Kiện Tại	n2k-x-1789140878703	
+n2k-l16	健	第16	1789140887643	健全な精神	けんぜんなせいしん	Tinh thần lành mạnh	Kiện Toàn Tinh Thần	n2k-x-1789140887643	
+n2k-l16	健	第16	1789140897673	健闘を祈る	けんとうをいのる	Chúc thi đấu tốt / nỗ lực tốt	Kiện Đấu	n2k-x-1789140897673	
+n2k-l16	健	第16	1789140907322	健やかに育つ	すこやかにそだつ	Lớn lên khỏe mạnh	Kiện	n2k-x-1789140907322	
+n2k-l16	延	第16	1789140930451	延期する	えんきする	Hoãn lại, dời lịch	Duyên Kỳ	n2k-x-1789140930451	
+n2k-l16	延	第16	1789140941991	延長する	えんちょうする	Kéo dài (thời gian, trận đấu)	Duyên Trường	n2k-x-1789140941991	
+n2k-l16	延	第16	1789140951379	予定が延びる	よていがのびる	Dự định bị kéo dài / hoãn lại	Duyên	n2k-x-1789140951379	
+n2k-l16	延	第16	1789140960603	期限を延ばす	きげんをのばす	Gia hạn thời hạn	Duyên	n2k-x-1789140960603	
+n2k-l16	延	第16	1789140969913	電車が遅延する	でんしゃがちえんする	Tàu điện bị trễ chuyến	Trì Duyên	n2k-x-1789140969913	
+n2k-l16	延	第16	1789140978719	延べ300人	のべさんひゃくにん	Tổng cộng lượt 300 người	Duyên	n2k-x-1789140978719	
+n2k-l16	延	第16	1789140988635	延滞料金がかかる	えんたいりょうきんがかかる	Tốn phí trả chậm / phí phạt trễ hạn	Duyên Trệ Liệu Kim	n2k-x-1789140988635	
+n2k-l16	誕	第16	1789141011936	誕生する	たんじょうする	Trào đời, sinh ra	Đản Sinh	n2k-x-1789141011936	
+n2k-l16	誕	第16	1789141020835	誕生日	たんじょうび	Sinh nhật	Đản Sinh Nhật	n2k-x-1789141020835	
+n2k-l16	誕	第16	1789141029711	生誕祭	せいたんさい	Lễ kỷ niệm ngày sinh	Sinh Đản Tế	n2k-x-1789141029711	
+n2k-l16	従	第16	1789141049245	従順な子ども	じゅうじゅんなこども	Đứa trẻ ngoan ngoãn, nghe lời	Tùng Thuận	n2k-x-1789141049245	
+n2k-l16	従	第16	1789141059162	指示に従う	しじにしたがう	Tuân theo chỉ thị / hướng dẫn	Tùng	n2k-x-1789141059162	
+n2k-l16	従	第16	1789141070760	部下を従える	ぶかをしたがえる	Dẫn dắt / chỉ huy cấp dưới	Tùng	n2k-x-1789141070760	
+n2k-l16	従	第16	1789141081269	主従関係	しゅじゅうかんけい	Mối quan hệ chủ tớ / cấp trên cấp dưới	Chủ Tùng Quan Hệ	n2k-x-1789141081269	
+n2k-l16	従	第16	1789141092257	仕事に従事する	しごとにじゅうじする	Làm việc, hành nghề	Tùng Sự	n2k-x-1789141092257	
+n2k-l16	縦	第16	1789141109848	縦書き	たてがき	Viết hàng dọc	Tung Thư	n2k-x-1789141109848	
+n2k-l16	縦	第16	1789141120694	日本列島を縦断する	にほんれっとうをじゅうだんする	Chạy dọc qua quần đảo Nhật Bản	Tung Đoạn	n2k-x-1789141120694	
+n2k-l16	縦	第16	1789141128997	縦と横	たてとよこ	Dọc và ngang	Tung	n2k-x-1789141128997	
+n2k-l16	詩	第16	1789141148287	詩を作る	しをつくる	Làm thơ	Thi	n2k-x-1789141148287	
+n2k-l16	詰	第16	1789141165437	詰問する	きつもんする	Cật vấn, truy hỏi tận cùng	Cật Vấn	n2k-x-1789141165437	
+n2k-l16	詰	第16	1789141176952	カバンに詰める	カバンにつめる	Nhồi / nhét đồ vào cặp	Cật	n2k-x-1789141176952	
+n2k-l16	詰	第16	1789141185877	予定が詰まる	よていがつまる	Lịch trình bị kín / kẹt lịch	Cật	n2k-x-1789141185877	
+n2k-l16	詰	第16	1789141195751	荷物を詰め込む	にもつをつめこむ	Nhét đầy hành lý	Cật	n2k-x-1789141195751	
+n2k-l16	畳	第16	1789141215340	折り畳み式の椅子	おりたたみしきのいす	Ghế xếp / ghế gấp	Điệp	n2k-x-1789141215340	
+n2k-l16	畳	第16	1789141223870	服を畳む	ふくをたたむ	Gấp quần áo	Điệp	n2k-x-1789141223870	
+n2k-l16	畳	第16	1789141234094	畳の上で正座する	たたみのうえでせいざする	Ngồi quỳ chính tọa trên chiếu Tatami	Điệp	n2k-x-1789141234094	
+n2k-l16	畜	第16	1789141254856	家畜	かちく	Gia súc	Gia Súc	n2k-x-1789141254856	
+n2k-l16	宗	第16	1789141274228	宗教を信仰する	しゅうきょうをしんこうする	Sùng bái / tin theo tôn giáo	Tôn Giáo Tín Ngưỡng	n2k-x-1789141274228	
+n2k-l16	宇	第16	1789141293820	宇宙	うちゅう	Vũ trụ	Vũ Trụ	n2k-x-1789141293820	
+n2k-l16	宇	第16	1789141302659	宇宙船	うちゅうせん	Tàu vũ trụ	Vũ Trụ Thuyền	n2k-x-1789141302659	
+n2k-l16	菌	第16	1789141321569	殺菌する	さっきんする	Sát khuẩn, diệt khuẩn	Sát Khuẩn	n2k-x-1789141321569	
+n2k-l16	菌	第16	1789141331489	細菌を観察する	さいきんをかんさつする	Quan sát vi khuẩn	Tế Khuẩn Tế Bào	n2k-x-1789141331489	
+n2k-l16	菌	第16	1789141342791	ばい菌	ばいきん	Vi trùng, mầm bệnh	Khuẩn	n2k-x-1789141342791	
+n2k-l16	菌	第16	1789141351662	除菌する	じょきんする	Kháng khuẩn, loại bỏ vi khuẩn	Trừ Khuẩn	n2k-x-1789141351662	
+n2k-l16	菌	第16	1789141360677	病原菌	びょうげんきん	Vi khuẩn gây bệnh	Bệnh Nguyên Khuẩn	n2k-x-1789141360677	
+n2k-l16	香	第16	1789141379084	香水をつける	こうすいをつける	Xịt nước hoa	Hương Thủy	n2k-x-1789141379084	
+n2k-l16	香	第16	1789141389240	香辛料を使う	こうしんりょうをつかう	Sử dụng gia vị cay / hương liệu	Hương Tân Liệu	n2k-x-1789141389240	
+n2k-l16	香	第16	1789141400081	バラが香る	バラがかおる	Hoa hồng tỏa hương thơm	Hương	n2k-x-1789141400081	
+n2k-l16	香	第16	1789141411023	いい香りがする	いいかおりがする	Có mùi thơm dễ chịu	Hương	n2k-x-1789141411023	
+n2k-l16	香	第16	1789141422776	お香を焚く	おこうをたく	Thắp hương / đốt trầm	Hương	n2k-x-1789141422776	
+n2k-l16	香	第16	1789141434079	芳香剤	ほうこうざい	Sáp thơm / chất làm thơm phòng	Phương Hương Tác	n2k-x-1789141434079	
+n2k-l17	粒	第17	1789040913046	粒子	りゅうし	Hạt, phần tử	Lạp Tử	n2k-x-1789040913046	
+n2k-l17	粒	第17	1789040924300	小粒納豆	こつぶなっとう	Natto hạt nhỏ	Tiểu Lạp	n2k-x-1789040924300	
+n2k-l17	粒	第17	1789040935029	米粒	こめつぶ	Hạt gạo	Mễ Lạp	n2k-x-1789040935029	
+n2k-l17	粒	第17	1789040947247	粒あん	つぶあん	Nhân đậu đỏ nguyên hạt	Lạp	n2k-x-1789040947247	
+n2k-l17	粒	第17	1789040967798	大粒の雨	おおつぶのあめ	Mưa hạt to	Đại Lạp	n2k-x-1789040967798	
+n2k-l17	端	第17	1789040993263	端っこ	はしっこ	Rìa, góc, mép	Đoan	n2k-x-1789040993263	
+n2k-l17	端	第17	1789041004065	極端な考え	きょくたんなかんがえ	Suy nghĩ cực đoan	Cực Đoan	n2k-x-1789041004065	
+n2k-l17	端	第17	1789041016013	道の端を歩く	みちのはしをあるく	Đi bên mép đường	Đoan	n2k-x-1789041016013	
+n2k-l17	端	第17	1789041026129	両端	りょうたん	Hai đầu	Lưỡng Đoan	n2k-x-1789041026129	
+n2k-l17	端	第17	1789041038845	端数を切り捨てる	はすうをきりすてる	Làm tròn xuống (bỏ phần lẻ)	Đoan Số	n2k-x-1789041038845	
+n2k-l17	梅	第17	1789041059562	梅干し	うめぼし	Mơ muối	Mai	n2k-x-1789041059562	
+n2k-l17	梅	第17	1789041070696	梅酒を飲む	うめしゅをのむ	Uống rượu mơ	Mai Tửu	n2k-x-1789041070696	
+n2k-l17	梅	第17	1789041081146	梅雨	つゆ/ばいう	Mùa mưa (đọc: つゆ / ばいう)	Mai Vũ	n2k-x-1789041081146	several-readings
+n2k-l17	梅	第17	1789041096197	梅の花	うめのはな	Hoa mơ	Mai	n2k-x-1789041096197	
+n2k-l17	毒	第17	1789041120557	毒薬を飲む	どくやくをのむ	Uống thuốc độc	Độc Dược	n2k-x-1789041120557	
+n2k-l17	毒	第17	1789041166666	食中毒	しょくちゅうどく	Ngộ độc thực phẩm	Thực Trung Độc	n2k-x-1789041166666	
+n2k-l17	毒	第17	1789041177832	お気の毒に	おきのどくに	Thật tội nghiệp / Rất tiếc cho bạn	Độc	n2k-x-1789041177832	
+n2k-l17	毒	第17	1789041189260	消毒する	しょうどくする	Khử trùng, sát trùng	Tiêu Độc	n2k-x-1789041189260	
+n2k-l17	毒	第17	1789041201797	アルコール中毒	アルコールちゅうどく	Nghiện rượu	Trung Độc	n2k-x-1789041201797	
+n2k-l17	埋	第17	1789041231104	埋葬する	まいそうする	Chôn táng	Mai Táng	n2k-x-1789041231104	
+n2k-l17	埋	第17	1789041244168	席が埋まる	せきがうまる	Chỗ ngồi được lấp đầy	Mai	n2k-x-1789041244168	
+n2k-l17	埋	第17	1789041254880	隙間を埋める	すきまをうめる	Lấp khoảng trống/kẽ hở	Mai	n2k-x-1789041254880	
+n2k-l17	埋	第17	1789041267127	埋蔵金	まいぞうきん	Kho báu bị chôn giấu	Mai Tàng Kim	n2k-x-1789041267127	
+n2k-l17	埋	第17	1789041278221	体が土に埋もれる	からだがつちにうもれる	Cơ thể bị vùi trong đất	Mai	n2k-x-1789041278221	
+n2k-l17	裏	第17	1789041302123	裏面	りめん	Mặt sau	Lí Diện	n2k-x-1789041302123	
+n2k-l17	裏	第17	1789041314435	裏返す	うらがえす	Lật ngược lại	Lí	n2k-x-1789041314435	
+n2k-l17	裏	第17	1789041325660	裏切る	うらぎる	Phản bội	Lí	n2k-x-1789041325660	
+n2k-l17	裏	第17	1789041338357	表裏一体	ひょうりいったい	Hai mặt của một vấn đề	Biểu Lí Nhất Thể	n2k-x-1789041338357	
+n2k-l17	裏	第17	1789041350782	裏通り	うらどおり	Hẻm nhỏ, phố phụ	Lí	n2k-x-1789041350782	
+n2k-l17	裏	第17	1789041365161	裏の顔	うらのかお	Bộ mặt thật / Bề tối	Lí	n2k-x-1789041365161	
+n2k-l17	裏	第17	1789041383977	表と裏を間違える	おもてとうらをまちがえる	Nhầm lẫn mặt trước và mặt sau	Biểu - Lí	n2k-x-1789041383977	
+n2k-l17	省	第17	1789041407577	省略する	しょうりゃくする	Lược bớt, viết tắt	Tỉnh Lược	n2k-x-1789041407577	
+n2k-l17	省	第17	1789041419055	無駄を省く	むだをはぶく	Cắt giảm lãng phí	Tỉnh	n2k-x-1789041419055	
+n2k-l17	省	第17	1789041440212	反省する	はんせいする	Kiểm điểm, nhìn nhận lại	Phản Tỉnh	n2k-x-1789041440212	
+n2k-l17	省	第17	1789041451607	帰省する	きせいする	Về quê	Quy Tỉnh	n2k-x-1789041451607	
+n2k-l17	省	第17	1789041463702	自分の行いを省みる	じぶんのおこないをかえりみる	Nhìn nhận lại hành vi của bản thân	Tỉnh	n2k-x-1789041463702	
+n2k-l17	砂	第17	1789041489362	砂漠化する	さばくかする	Sa mạc hóa	Sa Mạc Hóa	n2k-x-1789041489362	
+n2k-l17	砂	第17	1789041498933	土砂崩れが起きる	どしゃくずれがおきる	Xảy ra sạt lở đất đá	Thổ Sa Sạt	n2k-x-1789041498933	
+n2k-l17	砂	第17	1789041511048	砂浜で遊ぶ	すなはまであそぶ	Chơi trên bãi cát	Sa Bang	n2k-x-1789041511048	
+n2k-l17	砂	第17	1789041521911	砂場で遊ぶ	すなばであそぶ	Chơi ở hố cát	Sa Tràng	n2k-x-1789041521911	
+n2k-l17	片	第17	1789041542424	片付ける	かたづける	Dọn dẹp	Phiến	n2k-x-1789041542424	
+n2k-l17	片	第17	1789041553281	破片	はへん	Mảnh vỡ	Phá Phiến	n2k-x-1789041553281	
+n2k-l17	片	第17	1789041564723	片側車線	かたがわせんせん	Làn đường một chiều	Phiến Trắc Xa Tuyến	n2k-x-1789041564723	
+n2k-l17	片	第17	1789041576751	片思い	かたおもい	Yêu đơn phương	Phiến	n2k-x-1789041576751	
+n2k-l17	片	第17	1789041586246	片方	かたほう	Một bên, một phía	Phiến Phương	n2k-x-1789041586246	
+n2k-l17	片	第17	1789041595693	片面	かためん	Một mặt	Phiến Diện	n2k-x-1789041595693	
+n2k-l17	版	第17	1789041615577	改訂版	かいていばん	Phiên bản sửa đổi/tái bản	Cải Đính Bản	n2k-x-1789041615577	
+n2k-l17	版	第17	1789041625837	出版する	しゅっぱんする	Xuất bản	Xuất Bản	n2k-x-1789041625837	
+n2k-l17	宙	第17	1789041648100	宇宙人	うちゅうじん	Người ngoài hành tinh	Vũ Trụ Nhân	n2k-x-1789041648100	
+n2k-l17	宙	第17	1789041660637	宙乗りする	ちゅうのりする	Nhào lộn / Bay trên không (kịch Kabuki)	Trụ	n2k-x-1789041660637	
+n2k-l17	宙	第17	1789041671697	宇宙飛行士	うちゅうひこうし	Phi hành gia	Vũ Trụ Phi Hành Sĩ	n2k-x-1789041671697	
+n2k-l17	届	第17	1789041694801	退職届	たいしょくとどけ	Đơn xin nghỉ việc	Thoái Chức Giới	n2k-x-1789041694801	
+n2k-l17	届	第17	1789041706943	荷物が届く	にもつがとどく	Hàng hóa đến nơi	Giới	n2k-x-1789041706943	
+n2k-l17	届	第17	1789041718459	落し物を届ける	おとしものをとどける	Nộp đồ nhặt được	Giới	n2k-x-1789041718459	
+n2k-l17	届	第17	1789041728683	家まで送り届ける	いえまでおくりとどける	Đưa/gửi về tận nhà	Giới	n2k-x-1789041728683	
+n2k-l17	印	第17	1789041752094	米印	こめじるし	Dấu hoa thị (※)	Mễ Án	n2k-x-1789041752094	
+n2k-l17	印	第17	1789041762735	目印になる	めじるしになる	Làm dấu hiệu / Cột mốc	Mục Án	n2k-x-1789041762735	
+n2k-l17	印	第17	1789041774207	印鑑を押す	いんかんをおす	Đóng dấu	Án Giám	n2k-x-1789041774207	
+n2k-l17	印	第17	1789041785119	印刷する	いんさつする	In ấn	Án Loát	n2k-x-1789041785119	
+n2k-l17	命	第17	1789041807661	生命が誕生する	せいめいがたんじょうする	Sinh mạng ra đời	Sinh Mệnh	n2k-x-1789041807661	
+n2k-l17	命	第17	1789041818656	運命的な出会い	うんめいてきなであい	Cuộc gặp gỡ định mệnh	Vận Mệnh	n2k-x-1789041818656	
+n2k-l17	命	第17	1789041829588	命令する	めいれいする	Ra lệnh	Mệnh Lệnh	n2k-x-1789041829588	
+n2k-l17	命	第17	1789041840179	命名する	めいめいする	Đặt tên	Mệnh Danh	n2k-x-1789041840179	
+n2k-l17	命	第17	1789041854861	父の命日	ちちのめいにち	Ngày giỗ của bố	Mệnh Nhật	n2k-x-1789041854861	
+n2k-l17	命	第17	1789041866151	寿命が短い	じゅみょうがみじかい	Tuổi thọ ngắn	Thọ Mệnh	n2k-x-1789041866151	
+n2k-l17	命	第17	1789041879196	目標に命中する	もくひょうにめいちゅうする	Trúng mục tiêu	Mệnh Trung	n2k-x-1789041879196	
+n2k-l17	命	第17	1789041890452	命を落とす	いのちをおとす	Mất mạng	Mệnh	n2k-x-1789041890452	
+n2k-l17	制	第17	1789041926409	制服を着る	せいふくをきる	Mặc đồng phục	Chế Phục	n2k-x-1789041926409	
+n2k-l17	制	第17	1789041935712	制限がある	せいげんがある	Có giới hạn	Chế Hạn	n2k-x-1789041935712	
+n2k-l17	制	第17	1789041945503	制度を設ける	せいどをもうける	Thiết lập chế độ / hệ thống	Chế Độ	n2k-x-1789041945503	
+n2k-l17	制	第17	1789041956918	交通規制を守る	こうつうきせいをまもる	Tuân thủ quy định giao thông	Quy Chế	n2k-x-1789041956918	
+n2k-l17	制	第17	1789041966576	強制する	きょうせいする	Cưỡng chế, bắt buộc	Cường Chế	n2k-x-1789041966576	
+n2k-l17	制	第17	1789041976741	制止する	せいしする	Cản trở, ngăn chặn	Chế Chỉ	n2k-x-1789041976741	
+n2k-l17	製	第17	1789042003220	複製する	ふくせいする	Phao chế, sao chép	Phức Chế	n2k-x-1789042003220	
+n2k-l17	製	第17	1789042013052	製造する	せいぞうする	Chế tạo, sản xuất	Chế Tạo	n2k-x-1789042013052	
+n2k-l17	製	第17	1789042022476	製作する	せいさくする	Chế tác, sản xuất (phim, tác phẩm)	Chế Tác	n2k-x-1789042022476	
+n2k-l17	製	第17	1789042034219	ベトナム製の服	ベトナムせいのふく	Quần áo sản xuất tại Việt Nam	Chế	n2k-x-1789042034219	
+n2k-l17	製	第17	1789042044944	新製品を開発する	しんせいひんをかいはつする	Phát triển sản phẩm mới	Chế Phẩm	n2k-x-1789042044944	
+n2k-l17	刻	第17	1789042065864	彫刻	ちょうこく	Điêu khắc	Điêu Khắc	n2k-x-1789042065864	
+n2k-l17	刻	第17	1789042078347	遅刻する	ちこくする	Đến trễ	Trì Khắc	n2k-x-1789042078347	
+n2k-l17	刻	第17	1789042088484	定刻に出発する	ていこくにしゅっぱつする	Khởi hành đúng giờ	Định Khắc	n2k-x-1789042088484	
+n2k-l17	刻	第17	1789042100284	深刻な問題	しんこくなもんだい	Vấn đề nghiêm trọng	Thâm Khắc	n2k-x-1789042100284	
+n2k-l17	刻	第17	1789042112876	胸に刻む	むねにきざむ	Khắc ghi trong lòng	Khắc	n2k-x-1789042112876	
+n2k-l17	刻	第17	1789042123415	野菜を刻む	やさいをきざむ	Thái/băm nhỏ rau	Khắc	n2k-x-1789042123415	
+n2k-l17	刻	第17	1789042134709	時刻表	じこくひょう	Bảng giờ tàu/xe	Thời Khắc Biểu	n2k-x-1789042134709	
+n2k-l17	核	第17	1789042153914	結核	けっかく	Bệnh lao	Kết Hạch	n2k-x-1789042153914	
+n2k-l17	核	第17	1789042163069	核兵器	かくへいき	Vũ khí hạt nhân	Hạch Binh Khí	n2k-x-1789042163069	
+n2k-l17	核	第17	1789042174851	核家族	かくかぞく	Gia đình hạt nhân	Hạch Gia Tộc	n2k-x-1789042174851	
+n2k-l17	核	第17	1789042185723	核心に迫る	かくしんにせまる	Tiếp cận trọng tâm / cốt lõi	Hạch Tâm	n2k-x-1789042185723	
+n2k-l17	核	第17	1789042198069	中核を担う	ちゅうかくをになう	Đảm nhận vai trò nòng cốt	Trung Hạch	n2k-x-1789042198069	
+n2k-l17	丘	第17	1789042218495	砂丘	さきゅう	Đồi cát	Sa Khâu	n2k-x-1789042218495	
+n2k-l17	浜	第17	1789042287541	砂浜で遊ぶ	すなはまであそぶ	Chơi trên bãi cát	Sa Banh	n2k-x-1789042287541	
+n2k-l17	浜	第17	1789042301997	浜辺でバーベキューをする	はまべでバーベキューをする	Nướng BBQ ở bờ biển	Banh Biên	n2k-x-1789042301997	
+n2k-l17	串	第17	1789042326349	串刺し	くしざし	Xiên bằng que	Xuyên Thích	n2k-x-1789042326349	
+n2k-l17	患	第17	1789042349744	急患	きゅうかん	Bệnh nhân cấp cứu	Cấp Hoàn	n2k-x-1789042349744	
+n2k-l17	患	第17	1789042360838	医者と患者	いしゃとかんじゃ	Bác sĩ và bệnh nhân	Hoạn Giả	n2k-x-1789042360838	
+n2k-l17	患	第17	1789042371610	病気を患う	びょうきをわずらう	Mắc bệnh	Hoạn	n2k-x-1789042371610	
+n2k-l17	患	第17	1789042381372	患部	かんぶ	Vùng bị tổn thương / vùng bệnh	Hoạn Bộ	n2k-x-1789042381372	
+n2k-l17	感	第17	1789042402222	感激する	かんげきする	Cảm kích, xúc động	Cảm Kích	n2k-x-1789042402222	
+n2k-l17	感	第17	1789042414507	歌詞に共感する	かしにきょうかんする	Đồng cảm với lời bài hát	Cảm	n2k-x-1789042414507	
+n2k-l17	感	第17	1789042434256	体に異変を感じる	からだにいへんをかんじる	Cảm thấy bất thường trong cơ thể	Cảm	n2k-x-1789042434256	
+n2k-l17	減	第17	1789042471178	おなかが減る	おなかがへる	Đói bụng	Giảm	n2k-x-1789042471178	
+n2k-l17	減	第17	1789042481068	消費税を減らす	しょうひぜいをへらす	Giảm thuế tiêu dùng	Giảm	n2k-x-1789042481068	
+n2k-l17	減	第17	1789042491938	数が減る	かずがへる	Số lượng giảm đi	Giảm	n2k-x-1789042491938	
+n2k-l17	減	第17	1789042501553	軽減する	けいげんする	Giảm nhẹ	Khinh Giảm	n2k-x-1789042501553	
+n2k-l17	減	第17	1789042514375	人口が減少する	じんこうがげんしょうする	Dân số giảm xuống	Giảm Thiểu	n2k-x-1789042514375	
+n2k-l18	刺	第18	1788166950752	刺激する	しげきする	Kích thích, cổ vũ	Thích Kích	n2k-x-1788166950752	
+n2k-l18	刺	第18	1788166960718	虫に刺される	むしにさされる	Bị côn trùng cắn/đốt	Thích	n2k-x-1788166960718	
+n2k-l18	刺	第18	1788166971385	とげが刺さる	とげがささる	Bị gai đâm	Thích	n2k-x-1788166971385	
+n2k-l18	刺	第18	1788166980951	針を刺す	はりをさす	Đâm/châm kim	Thích	n2k-x-1788166980951	
+n2k-l18	刺	第18	1788166990518	名刺	めいし	Danh thiếp	Danh Thích	n2k-x-1788166990518	
+n2k-l18	刺	第18	1788166999353	刺繍	ししゅう	Thêu thùa	Thích Thùa	n2k-x-1788166999353	
+n2k-l18	刺	第18	1788167051317	刺殺する	しさつする	Đâm chết	Thích Sát	n2k-x-1788167051317	
+n2k-l18	刺	第18	1788167063273	風刺画	ふうしが	Tranh biếm họa	Phong Thích Họa	n2k-x-1788167063273	
+n2k-l18	策	第18	1788167084099	対策を練る	たいさくをねる	Trau chuốt/nghiên cứu biện pháp	Đối Sách	n2k-x-1788167084099	
+n2k-l18	策	第18	1788167093977	政策を立てる	せいさくをたてる	Lập chính sách	Chánh Sách	n2k-x-1788167093977	
+n2k-l18	策	第18	1788167103824	策略をめぐらす	さくりゃくをめぐらす	Lập sách lược/mưu kế	Sách Lược	n2k-x-1788167103824	
+n2k-l18	養	第18	1788167127556	扶養する	ふようする	Phụ dưỡng, nuôi dưỡng	Phù Dưỡng	n2k-x-1788167127556	
+n2k-l18	養	第18	1788167137027	栄養がある	えいようがある	Có dinh dưỡng	Vinh Dưỡng	n2k-x-1788167137027	
+n2k-l18	養	第18	1788167146416	養殖業	ようしょくぎょう	Ngành nuôi trồng thủy sản	Dưỡng Thực Nghiệp	n2k-x-1788167146416	
+n2k-l18	養	第18	1788167155852	温泉で休養する	おんせんできゅうようする	Nghỉ dưỡng ở suối nước nóng	Hưu Dưỡng	n2k-x-1788167155852	
+n2k-l18	養	第18	1788167167565	医者を養成する	いしゃをようせいする	Đào tạo bác sĩ	Dưỡng Thành	n2k-x-1788167167565	
+n2k-l18	養	第18	1788167180073	家族を養う	かぞくをやしなう	Nuôi sống gia đình	Dưỡng	n2k-x-1788167180073	
+n2k-l18	養	第18	1788167189576	力を養う	ちからをやしなう	Bồi dưỡng lực lượng/sức lực	Dưỡng	n2k-x-1788167189576	
+n2k-l18	飾	第18	1788167212411	絵を飾る	えをかざる	Trang trí tranh	Sức	n2k-x-1788167212411	
+n2k-l18	飾	第18	1788167225125	修飾する	しゅうしょくする	Bổ nghĩa, trang trí	Tu Sức	n2k-x-1788167225125	
+n2k-l18	飾	第18	1788167236258	部屋を装飾する	へやをそうしょくする	Trang trí phòng	Trang Sức	n2k-x-1788167236258	
+n2k-l18	飾	第18	1788167249081	飾りをつける	かざりをつける	Gắn đồ trang trí	Sức	n2k-x-1788167249081	
+n2k-l18	飾	第18	1788167259126	服飾デザイナー	ふくしょくデザイナー	Nhà thiết kế thời trang	Phục Sức	n2k-x-1788167259126	
+n2k-l18	納	第18	1788167278332	納豆	なっとう	Đậu phụ lên men (Nattou)	Nạp Đậu	n2k-x-1788167278332	
+n2k-l18	納	第18	1788167289558	納得する	なっとくする	Tiếp thu, bị thuyết phục	Nạp Đắc	n2k-x-1788167289558	
+n2k-l18	納	第18	1788167297746	納品する	のうひんする	Giao hàng	Nạp Phẩm	n2k-x-1788167297746	
+n2k-l18	納	第18	1788167308797	収納する	しゅうのうする	Cất giữ, lưu trữ	Thu Nạp	n2k-x-1788167308797	
+n2k-l18	納	第18	1788167318496	税金を納める	ぜいきんをおさめる	Nộp thuế	Nạp	n2k-x-1788167318496	
+n2k-l18	柄	第18	1788167343612	人柄がいい	ひとがらがいい	Tính cách tốt	Nhân Bính	n2k-x-1788167343612	
+n2k-l18	柄	第18	1788167354911	家柄の違い	いえがらのちがい	Sự khác biệt gia cảnh	Gia Bính	n2k-x-1788167354911	
+n2k-l18	柄	第18	1788167367684	花柄の服	はながらのふく	Áo có hoa văn hoa	Hoa Bính	n2k-x-1788167367684	
+n2k-l18	柄	第18	1788167377860	傘の柄	かさのえ	Cán ô/dù	Bính	n2k-x-1788167377860	
+n2k-l18	握	第18	1788167397427	握手会に行く	あくしゅかいにいく	Đi buổi bắt tay (thần tượng)	Ác Thủ Hội	n2k-x-1788167397427	
+n2k-l18	握	第18	1788167418749	手を握る	てをにぎる	Nắm tay	Ác	n2k-x-1788167418749	
+n2k-l18	握	第18	1788167429627	握手をする	あくしゅをする	Bắt tay	Ác Thủ	n2k-x-1788167429627	
+n2k-l18	握	第18	1788167440983	把握する	はあくする	Nắm rõ, hiểu thấu	Bả Ác	n2k-x-1788167440983	
+n2k-l18	握	第18	1788167452848	握り寿司	にぎりずし	Cơm cuộn nắm tay (Nigiri Sushi)	Ác	n2k-x-1788167452848	
+n2k-l18	掛	第18	1788167473479	掛け算をする	かけざんをする	Làm phép tính nhân	Quải Toán	n2k-x-1788167473479	
+n2k-l18	掛	第18	1788167483562	声を掛ける	こえをかける	Bắt chuyện, gọi	Quải	n2k-x-1788167483562	
+n2k-l18	掛	第18	1788167494883	気掛かりなこと	きがかりなこと	Điều bận tâm, lo lắng	Quải	n2k-x-1788167494883	
+n2k-l18	掛	第18	1788167505300	どうぞお掛けください	どうぞおかけください	Xin mời ngồi	Quải	n2k-x-1788167505300	
+n2k-l18	掛	第18	1788167517627	のれんが掛かっている	のれんがかかっている	Tấm rèm đang treo	Quải	n2k-x-1788167517627	
+n2k-l18	拝	第18	1788167541442	拝啓	はいけい	Kính gửi (thư từ)	Bái Khải	n2k-x-1788167541442	
+n2k-l18	拝	第18	1788167551944	礼拝堂	れいはいどう	Nhà nguyện, nơi lễ bái	Lễ Bái Đường	n2k-x-1788167551944	
+n2k-l18	拝	第18	1788167562161	参拝する	さんぱいする	Đến viếng/bái lễ thần điện	Tham Bái	n2k-x-1788167562161	
+n2k-l18	拝	第18	1788167572680	拝見する	はいけんする	Xem/nhìn (khiêm nhường ngữ)	Bái Kiến	n2k-x-1788167572680	
+n2k-l18	拝	第18	1788167584282	お顔を拝む	おかおをおがむ	Chiêm ngưỡng khuôn mặt	Bái	n2k-x-1788167584282	
+n2k-l18	換	第18	1788167603429	乗り換える	のりかえる	Đổi xe/tàu	Hoán	n2k-x-1788167603429	
+n2k-l18	換	第18	1788167613301	指輪をお金に換える	ゆびわをおかねにかえる	Đổi nhẫn lấy tiền	Hoán	n2k-x-1788167613301	
+n2k-l18	換	第18	1788167623582	土地が金に換わる	とちがかねにかわる	Đất đổi thành tiền	Hoán	n2k-x-1788167623582	
+n2k-l18	換	第18	1788167632211	変換する	へんかんする	Chuyển đổi	Biến Hoán	n2k-x-1788167632211	
+n2k-l18	換	第18	1788167643483	気分転換	きぶんてんかん	Thay đổi không khí/giải tỏa tâm trạng	Khí Phân Chuyển Hoán	n2k-x-1788167643483	
+n2k-l18	換	第18	1788167653517	換気する	かんきする	Thông gió, trao đổi không khí	Hoán Khí	n2k-x-1788167653517	
+n2k-l18	換	第18	1788167665461	交換する	こうかんする	Trao đổi	Giao Hoán	n2k-x-1788167665461	
+n2k-l18	敬	第18	1788167684728	敬具	けいぐ	Kính thư (cuối thư)	Kính Cụ	n2k-x-1788167684728	
+n2k-l18	敬	第18	1788167693948	敬語を使う	けいごをつかう	Sử dụng kính ngữ	Kính Ngữ	n2k-x-1788167693948	
+n2k-l18	敬	第18	1788167703494	敬老の日	けいろうのひ	Ngày kính lão	Kính Lão	n2k-x-1788167703494	
+n2k-l18	敬	第18	1788167713216	尊敬する	そんけいする	Tôn kính, kính trọng	Tôn Kính	n2k-x-1788167713216	
+n2k-l18	敬	第18	1788167723079	先生を敬う	せんせいをおうやまう	Tôn kính thầy cô	Kính	n2k-x-1788167723079	
+n2k-l18	警	第18	1788167742519	警戒する	けいかいする	Cảnh giác, phòng ngừa	Cảnh Giới	n2k-x-1788167742519	
+n2k-l18	警	第18	1788167752283	警告する	けいこくする	Cảnh báo	Cảnh Cáo	n2k-x-1788167752283	
+n2k-l18	警	第18	1788167761272	警官に撃たれた	けいかんにうたれた	Bị cảnh sát bắn	Cảnh Quan	n2k-x-1788167761272	
+n2k-l18	警	第18	1788167773209	洪水警報	こうずいけいほう	Cảnh báo lũ lụt	Hồng Thủy Cảnh Báo	n2k-x-1788167773209	
+n2k-l18	警	第18	1788167782296	警備	けいび	Bảo vệ, cảnh vệ	Cảnh Bị	n2k-x-1788167782296	
+n2k-l18	輩	第18	1788167803293	先輩	せんぱい	Tiền bối, người đi trước	Tiền Bối	n2k-x-1788167803293	
+n2k-l18	輩	第18	1788167812243	後輩	こうはい	Hậu bối, người đi sau	Hậu Bối	n2k-x-1788167812243	
+n2k-l18	輩	第18	1788167822861	輩出する	はいしゅつする	Sơ chế/cho ra đời nhiều tài năng	Bối Xuất	n2k-x-1788167822861	
+n2k-l18	俳	第18	1788167842250	俳優	はいゆう	Diễn viên	Bài Ưu	n2k-x-1788167842250	
+n2k-l18	俳	第18	1788167851277	俳句	はいく	Thơ Haiku	Bài Cú	n2k-x-1788167851277	
+n2k-l18	歳	第18	1788167870524	何歳	なんさい	Mấy tuổi	Hà Tuệ	n2k-x-1788167870524	
+n2k-l18	歳	第18	1788167880698	二十歳	はたち	(cũng đọc にじゅっさい) 20 tuổi	Nhị Thập Tuệ	n2k-x-1788167880698	fixed
+n2k-l18	歳	第18	1788167892577	２年の歳月が流れた	２ねんのさいげつがながれた	2 năm thời gian trôi qua	Tuệ Nguyệt	n2k-x-1788167892577	
+n2k-l18	蔵	第18	1788167936063	冷蔵庫	れいぞうこ	Tủ lạnh	Lãnh Tàng Khố	n2k-x-1788167936063	
+n2k-l18	蔵	第18	1788167947218	貯蔵する	ちょぞうする	Tàng trữ, lưu trữ	Trữ Tàng	n2k-x-1788167947218	
+n2k-l18	蔵	第18	1788167956579	蔵書	ぞうしょ	Bộ sưu tập sách	Tàng Thư	n2k-x-1788167956579	
+n2k-l18	酢	第18	1788167976029	酢の物	すのもの	Món nộm/món trộn giấm	Tạc	n2k-x-1788167976029	
+n2k-l18	酢	第18	1788167984826	お酢	おす	Giấm ăn	Tạc	n2k-x-1788167984826	
+n2k-l18	酢	第18	1788167993908	酢飯	すめし	Cơm trộn giấm (làm sushi)	Tạc Phạn	n2k-x-1788167993908	
+n2k-l18	尊	第18	1788168017865	尊敬する	そんけいする	Tôn kính	Tôn Kính	n2k-x-1788168017865	
+n2k-l18	尊	第18	1788168028905	自尊心	じそんしん	Lòng tự tôn, tự trọng	Tự Tôn Tâm	n2k-x-1788168028905	
+n2k-l18	尊	第18	1788168038032	尊厳を守る	そんげんをまもる	Giữ gìn tôn nghiêm	Tôn Nghiêm	n2k-x-1788168038032	
+n2k-l18	尊	第18	1788168049326	尊い命	とうといいのち	Tính mạng quý giá	Tôn	n2k-x-1788168049326	
+n2k-l18	尊	第18	1788168067028	相手の意見を尊重する	あいてのいけんをそんちょうする	Tôn trọng ý kiến người khác	Tôn Trọng	n2k-x-1788168067028	
+n2k-l18	看	第18	1788168086293	看守	かんしゅ	Cai ngục, người canh giữ	Khán Thủ	n2k-x-1788168086293	
+n2k-l18	看	第18	1788168100399	看板を立てる	かんばんをたてる	Dựng bảng hiệu	Khán Bản	n2k-x-1788168100399	
+n2k-l18	看	第18	1788168109632	看護師	かんごし	Y sĩ, y tá	Khán Hộ Sư	n2k-x-1788168109632	
+n2k-l18	看	第18	1788168119328	看病をする	かんびょうをする	Chăm sóc bệnh nhân	Khán Bệnh	n2k-x-1788168119328	
+n2k-l18	漁	第18	1788168162896	漁船	ぎょせん	Thuyền đánh cá	Ngư Thuyền	n2k-x-1788168162896	
+n2k-l18	漁	第18	1788168174212	漁師	りょうし	Ngư dân	Ngư Sư	n2k-x-1788168174212	
+n2k-l18	漁	第18	1788168190247	漁をする	いざりをする	Hoặc りょうをする Đánh bắt cá		n2k-x-1788168190247	
+n2k-l18	漁	第18	1788168206998	漁業	ぎょぎょう	Ngư nghiệp, ngành đánh bắt	Ngư Nghiệp	n2k-x-1788168206998	
+n2k-l18	叫	第18	1788168227833	叫び声をあげる	さけびごえをあげる	Cất tiếng gào xé	Khiếu	n2k-x-1788168227833	
+n2k-l18	叫	第18	1788168237493	大声で叫ぶ	おおごえでさけぶ	Hét lớn tiếng	Khiếu	n2k-x-1788168237493	
+n2k-l18	叫	第18	1788168247518	絶叫する	ぜっきょうする	Thét lên sung sướng/sợ hãi	Tuyệt Khiếu	n2k-x-1788168247518	
+n2k-l18	双	第18	1788168266145	双子	ふたご	Sinh đôi	Song Tử	n2k-x-1788168266145	
+n2k-l18	双	第18	1788168279129	双方の考えが一致する	そうほうのかんがえがいっちする	Suy nghĩ hai bên thống nhất	Song Phương	n2k-x-1788168279129	
+n2k-l18	双	第18	1788168290838	一卵性双生児	いちらんせいそうせいじ	Cặp sinh đôi cùng trứng	Nhất Noãn Tính Song Sinh Nhi	n2k-x-1788168290838	
+n2k-l18	双	第18	1788168302000	双眼鏡	そうがんきょう	Kính hiển vi / Ống nhòm	Song Nhãn Kính	n2k-x-1788168302000	
+n2k-l18	祖	第18	1788168322759	祖母	そぼ	Bà nội/bà ngoại	Tổ Mẫu	n2k-x-1788168322759	
+n2k-l18	祖	第18	1788168331427	祖国	そこく	Tổ quốc	Tổ Quốc	n2k-x-1788168331427	
+n2k-l18	祖	第18	1788168341615	祖父母	そふぼ	Ông bà	Tổ Phụ Mẫu	n2k-x-1788168341615	
+n2k-l18	祖	第18	1788168353685	先祖代々語り継がれる	せんぞだいだいかたりつがれる	Được truyền tụng qua nhiều thế hệ tổ tiên	Tiền Tổ	n2k-x-1788168353685	
+n2k-l18	祖	第18	1788168362786	先祖	せんぞ	Tổ tiên	Tiền Tổ	n2k-x-1788168362786	
+n2k-l18	祖	第18	1788168373018	元祖	がんそ	Nguyên tổ, người sáng lập	Nguyên Tổ	n2k-x-1788168373018	
+n2k-l18	凍	第18	1788168454013	冷凍食品	れいとうしょくひん	Thực phẩm đông lạnh	Lãnh Đống Thực Phẩm	n2k-x-1788168454013	
+n2k-l18	凍	第18	1788168467979	路面が凍結する	ろめんがとうけつする	Bề mặt đường bị đóng băng	Đống Kết	n2k-x-1788168467979	
+n2k-l18	凍	第18	1788168490778	凍えるような寒さ	こごえるようなさむさ	Cái lạnh đóng băng	Đống	n2k-x-1788168490778	
+n2k-l18	凍	第18	1788168512212	池が凍る	いけがこおる	Mặt hồ đóng băng	Đống	n2k-x-1788168512212	
+n2k-l18	占	第18	1788168545378	占領する	せんりょうする	Chiếm đóng, chiếm lĩnh	Chiếm Lĩnh	n2k-x-1788168545378	
+n2k-l18	占	第18	1788168556260	独占する	どくせんする	Độc chiếm	Độc Chiếm	n2k-x-1788168556260	
+n2k-l18	占	第18	1788168565729	占有地	せんゆうち	Đất chiếm hữu	Chiếm Hữu Địa	n2k-x-1788168565729	
+n2k-l18	占	第18	1788168575717	将来を占う	しょうらいをうらなう	Bói tương lai	Chiếm	n2k-x-1788168575717	
+n2k-l18	占	第18	1788168586546	星占い	ほしうらない	Bói sao / Cung hoàng đạo	Chiếm	n2k-x-1788168586546	
+n2k-l18	占	第18	1788168598314	売上の七割を占める	うりあげのななわりをしめる	Chiếm 70% doanh thu	Chiếm	n2k-x-1788168598314	fixed
+n2k-l18	環	第18	1788168636600	循環する	じゅんかんする	Tuần hoàn	Tuần Hoàn	n2k-x-1788168636600	
+n2k-l18	環	第18	1788168646256	環状線	かんじょうせん	Tuyến đường vòng tròn	Hoàn Trạng Tuyến	n2k-x-1788168646256	
+n2k-l18	環	第18	1788168655466	環境汚染	かんきょうおせん	Ô nhiễm môi trường	Hoàn Cảnh Ô Nhiễm	n2k-x-1788168655466	
+n2k-l18	康	第18	1788168677846	健康	けんこう	Sức khỏe, khỏe mạnh	Khang Kiện	n2k-x-1788168677846	
+n2k-l18	康	第18	1788168688639	健康保険	けんこうほけん	Bảo hiểm y tế	Khang Kiện Bảo Hiểm	n2k-x-1788168688639	
+n2k-l18	渋	第18	1788168716927	渋柿	しぶがき	Quả hồng chát	Sáp Thị	n2k-x-1788168716927	
+n2k-l18	渋	第18	1788168727514	渋滞する	じゅうたいする	Tắc nghẽn (giao thông)	Sáp Trệ	n2k-x-1788168727514	
+n2k-l18	渋	第18	1788168736902	渋いお茶	しぶいおちゃ	Trà đậm/chát	Sáp	n2k-x-1788168736902	
+n2k-l18	渋	第18	1788168746712	返事を渋る	へんじをしぶる	Ngần ngừ/chần chừ trả lời	Sáp	n2k-x-1788168746712	

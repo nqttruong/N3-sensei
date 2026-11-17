@@ -23,7 +23,8 @@ fun locationLabel(location: ItemLocation): String = when (location.kind) {
         ?: stringResource(R.string.location_none)
     ItemLocation.Kind.KANJI -> location.courseLesson?.let {
         stringResource(R.string.location_in_course, stringResource(R.string.course_lesson_title, it), stringResource(R.string.totals_kanji))
-    } ?: stringResource(R.string.location_none)
+    } ?: location.levelLesson?.let { (level, number) -> stringResource(R.string.location_kanji_level, level, number) }
+        ?: stringResource(R.string.location_none)
     ItemLocation.Kind.GRAMMAR -> location.courseLesson?.let {
         stringResource(R.string.location_in_course, stringResource(R.string.course_lesson_title, it), stringResource(R.string.totals_grammar))
     } ?: stringResource(R.string.location_none)

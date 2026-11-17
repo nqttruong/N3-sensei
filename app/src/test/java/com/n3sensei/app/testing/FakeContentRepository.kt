@@ -78,9 +78,11 @@ class FakeContentRepository : ContentRepository {
         textOf: (T) -> List<String>,
     ): Flow<List<TrackedItem<T>>> {
         browseQueries += query
-        return kotlinx.coroutines.flow.combine(source, marked) { items, marks ->
+        return kotlinx.coroutines.flow.combine(source, marked, lessons) { items, marks, lessonList ->
+            val levelOf = lessonList.associate { it.id to it.jlptLevel }
             items.asSequence()
                 .filter { query.lessonId == null || lessonOf(it) == query.lessonId }
+                .filter { query.jlptLevel == null || levelOf[lessonOf(it)] == query.jlptLevel }
                 .filter { query.text.isBlank() || textOf(it).any { t -> query.text.trim() in t } }
                 .filter { !query.markedOnly || idOf(it) in marks }
                 .filter { query.status == null || query.status == LearningStatus.NEW }

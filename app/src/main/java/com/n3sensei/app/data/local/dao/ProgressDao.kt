@@ -14,6 +14,7 @@ import com.n3sensei.app.data.local.model.ItemStateRow
 import com.n3sensei.app.data.local.model.ProgressSummaryRow
 import com.n3sensei.app.data.local.model.RatingCountRow
 import com.n3sensei.app.data.local.model.TodayCountsRow
+import com.n3sensei.app.data.local.model.LessonCountRow
 import com.n3sensei.app.data.local.model.TypeCountRow
 import com.n3sensei.app.domain.model.ItemType
 import kotlinx.coroutines.flow.Flow
@@ -254,6 +255,31 @@ abstract class ProgressDao {
         """,
     )
     abstract fun observeDoneByType(dayStart: Long, dayEnd: Long): Flow<List<TypeCountRow>>
+
+    /**
+     * New kanji (never answered) of these lessons, the lower JLPT level first (N3 before N2),
+     * then pack, lesson and position: what a review session introduces when lessons are chosen.
+     */
+    @Query(
+        """
+        SELECT 'KANJI' AS item_type, k.id AS item_id FROM kanji k JOIN lessons l ON l.id = k.lesson_id
+        WHERE k.lesson_id IN (:lessonIds)
+            AND NOT EXISTS (SELECT 1 FROM learning_progress p WHERE p.item_type = 'KANJI' AND p.item_id = k.id)
+        ORDER BY l.jlpt_level DESC, l.pack_id, l.number, k.sort_order
+        LIMIT :limit
+        """,
+    )
+    abstract suspend fun getNewKanjiRefsInLessons(lessonIds: List<String>, limit: Int): List<ItemRefRow>
+
+    /** New kanji (never answered) per lesson; lessons with none are absent. */
+    @Query(
+        """
+        SELECT k.lesson_id AS lesson_id, COUNT(*) AS count FROM kanji k
+        WHERE NOT EXISTS (SELECT 1 FROM learning_progress p WHERE p.item_type = 'KANJI' AND p.item_id = k.id)
+        GROUP BY k.lesson_id
+        """,
+    )
+    abstract fun observeNewKanjiByLesson(): Flow<List<LessonCountRow>>
 
     /** [observeNewAvailable] broken down by type. */
     @Query(

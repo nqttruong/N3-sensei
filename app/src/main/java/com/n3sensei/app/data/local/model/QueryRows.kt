@@ -117,3 +117,8 @@ data class TodayCountsRow(
     @ColumnInfo(name = "new_answered") val newAnswered: Int,
     @ColumnInfo(name = "reviews_answered") val reviewsAnswered: Int,
 )
+
+data class LessonCountRow(
+    @ColumnInfo(name = "lesson_id") val lessonId: String,
+    val count: Int,
+)

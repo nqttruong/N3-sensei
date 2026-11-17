@@ -12,6 +12,7 @@ import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.model.ReviewRating
 import com.n3sensei.app.domain.model.SubmitOutcome
 import com.n3sensei.app.domain.srs.DailyLimits
+import com.n3sensei.app.domain.srs.KanjiReviewLessons
 import com.n3sensei.app.domain.srs.ReviewQueuePlanner
 import com.n3sensei.app.domain.srs.ReviewSettings
 import com.n3sensei.app.domain.srs.ReviewTime
@@ -22,6 +23,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -38,7 +40,8 @@ import java.time.ZoneId
 /**
  * Independent daily new-item caps on the real schema and scheduler: each type counted on its own,
  * enforced inside the answer's transaction (concurrent answers included), day by local midnight.
- * The simulation runs on the four packs shipped with the app (910 words, 420 kanji, 181 patterns).
+ * The simulation runs on the packs shipped with the app (910 words, 420 N3 kanji, 181 patterns;
+ * the 448 N2 kanji stay out, no N2 lesson being chosen for review by default).
  */
 @RunWith(AndroidJUnit4::class)
 class NewItemLimitsTest {
@@ -160,7 +163,12 @@ class NewItemLimitsTest {
             val json = context.assets.open(asset).use { it.readBytes().toString(Charsets.UTF_8) }
             assertEquals(asset, ImportOutcome.IMPORTED, ContentPackImporter(db.contentPackDao(), Clock.systemUTC()).import(json).outcome)
         }
-        assertEquals(listOf(910, 420, 181), listOf(db.countRows("vocabulary"), db.countRows("kanji"), db.countRows("grammar")))
+        // 420 N3 kanji + the 448 of Kanji N2, which review leaves out until N2 lessons are chosen.
+        assertEquals(listOf(910, 420 + 448, 181), listOf(db.countRows("vocabulary"), db.countRows("kanji"), db.countRows("grammar")))
+        // As in the app: new kanji only from the lessons chosen for review (defaults: every N3 lesson, no N2 lesson).
+        val lessons = OfflineContentRepository(db.contentDao(), db.contentPackDao()).observeLessons()
+        repository = OfflineProgressRepository(db.progressDao(), Clock.systemUTC(), lessons.map { KanjiReviewLessons().allowedLessons(it) })
+        submit = SubmitReviewUseCase(repository)
     }
 
     private data class Day(val day: Int, val new: Map<ItemType, Int>, val reviews: Int, val remaining: Map<ItemType, Int>)

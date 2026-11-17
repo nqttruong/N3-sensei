@@ -8,6 +8,7 @@ import com.n3sensei.app.domain.model.LessonSummary
 import com.n3sensei.app.domain.model.TrackedItem
 import com.n3sensei.app.domain.model.Vocabulary
 import com.n3sensei.app.domain.repository.ContentRepository
+import com.n3sensei.app.domain.srs.KanjiReviewLessons
 import com.n3sensei.app.domain.model.ItemQuery
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
@@ -87,9 +88,13 @@ class CourseBuilder(private val contentRepository: ContentRepository) {
     ) { lessons, kanji, vocabulary, grammar -> build(lessons, kanji, vocabulary, grammar) }
 
     companion object {
+        /** Level of the course (Học → Bài học); kanji of other levels are left out. */
+        const val COURSE_LEVEL = KanjiReviewLessons.COURSE_LEVEL
+
         /**
          * The learner's own words ("Từ của tôi") are not part of the course: they change at any
-         * time and would shift every lesson after them.
+         * time and would shift every lesson after them. Neither are kanji of another JLPT level
+         * than the course's (Kanji N2): they are studied by their own lessons in Học → Kanji.
          */
         fun build(
             lessons: List<LessonSummary>,
@@ -98,10 +103,12 @@ class CourseBuilder(private val contentRepository: ContentRepository) {
             grammar: List<TrackedItem<GrammarPoint>>,
         ): List<CourseLesson> {
             val words = vocabulary.filter { it.item.lessonId != UserWords.LESSON_ID }
+            val levels = lessons.associate { it.id to it.jlptLevel }
+            val courseKanji = kanji.filter { (levels[it.item.lessonId] ?: COURSE_LEVEL) == COURSE_LEVEL }
             val labels = CoursePlan.subgroupLabels(words.map { it.item.lessonId })
             val titles = lessons.associate { it.id to it.title }
             val labelled = words.mapIndexed { i, w -> Triple(labels[i], titles[w.item.lessonId].orEmpty(), w) }
-            return CoursePlan.lessons(kanji, labelled, grammar).mapIndexed { i, (k, v, g) ->
+            return CoursePlan.lessons(courseKanji, labelled, grammar).mapIndexed { i, (k, v, g) ->
                 val sections = mutableListOf<VocabularySection>()
                 v.forEach { (label, title, word) ->
                     val last = sections.lastOrNull()

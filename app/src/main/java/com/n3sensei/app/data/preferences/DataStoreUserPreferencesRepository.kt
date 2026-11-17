@@ -14,6 +14,7 @@ import com.n3sensei.app.domain.model.UserPreferences
 import com.n3sensei.app.domain.reminder.ReminderContent
 import com.n3sensei.app.domain.reminder.LessonSelection
 import com.n3sensei.app.domain.reminder.ReminderLessons
+import com.n3sensei.app.domain.srs.KanjiReviewLessons
 import com.n3sensei.app.domain.reminder.ReminderSettings
 import com.n3sensei.app.domain.widget.WidgetSettings
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
@@ -83,6 +84,7 @@ class DataStoreUserPreferencesRepository(
                     ladder = ReviewLadder.decodeOrDefault(prefs[Keys.REVIEW_INTERVALS]),
                     limits = readLimits(prefs),
                 ),
+                kanjiReviewLessons = readKanjiReviewLessons(prefs),
                 reminderSettings = readReminder(prefs),
                 widgetSettings = readWidget(prefs),
                 dailyStudyMinutes = prefs[Keys.DAILY_STUDY_MINUTES]?.takeIf { it in 1..600 } ?: UserPreferences.DEFAULT_DAILY_STUDY_MINUTES,
@@ -103,6 +105,31 @@ class DataStoreUserPreferencesRepository(
         val grammar = prefs[Keys.NEW_GRAMMAR_PER_DAY]?.takeIf { it in perType } ?: DailyLimits.DEFAULT_NEW_GRAMMAR
         val reviews = prefs[Keys.REVIEWS_PER_DAY]?.takeIf { it in 1..DailyLimits.MAX_REVIEWS } ?: DailyLimits.DEFAULT_REVIEWS
         return DailyLimits(vocabulary, kanji, grammar, reviews)
+    }
+
+    /**
+     * One key per JLPT level (`review_kanji_lessons_N2`…): absent = that level's default
+     * ([KanjiReviewLessons.default]), [ALL_LESSONS] = every lesson, otherwise the lesson ids.
+     */
+    private fun readKanjiReviewLessons(prefs: Preferences): KanjiReviewLessons = KanjiReviewLessons(
+        prefs.asMap().entries.mapNotNull { (key, value) ->
+            val level = key.name.removePrefix(KANJI_REVIEW_LESSONS_PREFIX).takeIf { key.name.startsWith(KANJI_REVIEW_LESSONS_PREFIX) && it.isNotEmpty() }
+            val keys = (value as? Set<*>)?.filterIsInstance<String>()?.toSet()
+            if (level == null || keys == null) null else level to (if (ALL_LESSONS in keys) LessonSelection.All else LessonSelection.Only(keys))
+        }.toMap(),
+    )
+
+    override suspend fun setKanjiReviewLessons(lessons: KanjiReviewLessons) {
+        dataStore.edit { prefs ->
+            lessons.byLevel.forEach { (level, selection) ->
+                val key = stringSetPreferencesKey(KANJI_REVIEW_LESSONS_PREFIX + level)
+                when {
+                    selection == KanjiReviewLessons.default(level) -> prefs.remove(key)
+                    selection is LessonSelection.Only -> prefs[key] = selection.keys
+                    else -> prefs[key] = setOf(ALL_LESSONS)
+                }
+            }
+        }
     }
 
     private fun readReminder(prefs: Preferences): ReminderSettings {
@@ -226,3 +253,9 @@ class DataStoreUserPreferencesRepository(
 
 /** Stored values above this (e.g. edited by hand) fall back to the default. */
 private const val MAX_REMINDERS_PER_DAY = 100
+
+/** Key of a JLPT level's kanji review lessons: this prefix + the level ("N2"). */
+private const val KANJI_REVIEW_LESSONS_PREFIX = "review_kanji_lessons_"
+
+/** Stored instead of lesson ids for "every lesson of the level" (ids never contain it). */
+private const val ALL_LESSONS = "*"

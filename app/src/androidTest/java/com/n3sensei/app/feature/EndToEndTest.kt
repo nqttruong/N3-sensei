@@ -305,7 +305,7 @@ class EndToEndTest {
         launch(seedContent = false, bundledContent = true).use {
             openTab(TopLevelDestination.LEARN)
             clickable(string(R.string.kanji_title)).performClick()
-            // The kanji pack comes first in curriculum order: its lesson 1 starts with 意.
+            // Học → Kanji opens on N3 (Kanji N2 is on its own tab): the N3 pack's lesson 1 starts with 意.
             waitForText("意")
             composeRule.onAllNodes(hasText("意") and hasClickAction()).onFirst().performClick()
             waitForText("Ý, ý nghĩ, tâm ý")
@@ -314,8 +314,8 @@ class EndToEndTest {
             waitForText("Chú ý")
             waitForText("Quyết tâm")
         }
-        // 27 kanji of the illustration pack + 393; the kanji words are kanji examples.
-        assertEquals(27 + 393, AppTestState.appContainer.database.countRows("kanji"))
+        // 27 kanji of the illustration pack + 393 of N3 + 448 of Kanji N2; the kanji words are kanji examples.
+        assertEquals(27 + 393 + 448, AppTestState.appContainer.database.countRows("kanji"))
         assertEquals(30 + 880, AppTestState.appContainer.database.countRows("vocabulary"))
     }
 

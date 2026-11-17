@@ -51,7 +51,7 @@ data class ReviewOverview(
     val dueByType: Map<ItemType, Int>,
     val overdue: Int,
     val today: TodayCounts,
-    /** Items never answered, before applying the daily new-item limit. */
+    /** Items never answered (kanji: only those of the lessons chosen for review), before applying the daily new-item limits. */
     val newAvailable: Int,
     val overdueByType: Map<ItemType, Int> = emptyMap(),
     /** Distinct items answered today (local day), new or review. */

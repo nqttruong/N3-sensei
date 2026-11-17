@@ -95,6 +95,8 @@ import com.n3sensei.app.feature.settings.ReminderLessonsScreen
 import com.n3sensei.app.feature.settings.ReminderLessonsViewModel
 import com.n3sensei.app.feature.settings.ReminderSettingsScreen
 import com.n3sensei.app.feature.settings.ReminderSettingsViewModel
+import com.n3sensei.app.feature.settings.KanjiReviewLessonsScreen
+import com.n3sensei.app.feature.settings.KanjiReviewLessonsViewModel
 import com.n3sensei.app.feature.settings.ReviewSettingsScreen
 import com.n3sensei.app.feature.settings.ReviewSettingsViewModel
 import com.n3sensei.app.feature.settings.SettingsScreen
@@ -142,7 +144,7 @@ fun N3SenseiNavHost(
     ) {
         composable<HomeRoute> {
             HomeScreen(
-                viewModel = appViewModel { DashboardViewModel(analyticsRepository, reviewSessionRepository, userPreferencesRepository, clock) },
+                viewModel = appViewModel { DashboardViewModel(analyticsRepository, reviewSessionRepository, userPreferencesRepository, clock, progressRepository) },
                 proverbViewModel = appViewModel { ProverbViewModel(proverbRepository, clock) },
                 onOpenReview = { navController.navigateToTopLevel(TopLevelDestination.REVIEW) },
                 onStartSession = { navController.navigate(ReviewSessionRoute()) },
@@ -504,7 +506,7 @@ fun N3SenseiNavHost(
         composable<StatsRoute> {
             StatsScreen(
                 viewModel = appViewModel { StatsViewModel(analyticsRepository, clock) },
-                dashboardViewModel = appViewModel { DashboardViewModel(analyticsRepository, reviewSessionRepository, userPreferencesRepository, clock) },
+                dashboardViewModel = appViewModel { DashboardViewModel(analyticsRepository, reviewSessionRepository, userPreferencesRepository, clock, progressRepository) },
                 onOpenReview = { navController.navigateToTopLevel(TopLevelDestination.REVIEW) },
                 onOpenList = { type, status -> navController.navigateToItemList(type, status) },
                 onOpenItem = { ref -> navController.navigateToItem(ref) },
@@ -540,7 +542,13 @@ fun N3SenseiNavHost(
             )
         }
         composable<ReviewSettingsRoute> {
-            ReviewSettingsScreen(viewModel = appViewModel { ReviewSettingsViewModel(userPreferencesRepository) })
+            ReviewSettingsScreen(
+                viewModel = appViewModel { ReviewSettingsViewModel(userPreferencesRepository) },
+                onChooseKanjiLessons = { navController.navigate(KanjiReviewLessonsRoute) },
+            )
+        }
+        composable<KanjiReviewLessonsRoute> {
+            KanjiReviewLessonsScreen(viewModel = appViewModel { KanjiReviewLessonsViewModel(userPreferencesRepository, contentRepository) })
         }
     }
 }

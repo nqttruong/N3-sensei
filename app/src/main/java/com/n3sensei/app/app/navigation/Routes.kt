@@ -160,6 +160,7 @@ data class ReviewResultRoute(
 @Serializable data object SettingsRoute
 
 @Serializable data object ReviewSettingsRoute
+@Serializable data object KanjiReviewLessonsRoute
 
 @Serializable data object ReminderSettingsRoute
 @Serializable data object WidgetSettingsRoute

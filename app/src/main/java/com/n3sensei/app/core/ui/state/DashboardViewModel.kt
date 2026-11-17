@@ -20,7 +20,9 @@ import com.n3sensei.app.domain.forecast.TrendPoint
 import com.n3sensei.app.domain.forecast.TrendUnit
 import com.n3sensei.app.domain.forecast.WorkloadForecaster
 import com.n3sensei.app.domain.model.ItemType
+import com.n3sensei.app.domain.model.ReviewOverview
 import com.n3sensei.app.domain.repository.AnalyticsRepository
+import com.n3sensei.app.domain.repository.ProgressRepository
 import com.n3sensei.app.domain.repository.UserPreferencesRepository
 import com.n3sensei.app.domain.srs.ReviewTime
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -31,6 +33,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import java.time.Clock
@@ -60,6 +64,11 @@ class DashboardViewModel(
     private val sessions: ReviewSessionRepository,
     private val preferences: UserPreferencesRepository,
     private val clock: Clock,
+    /**
+     * When given, new kanji count for the goal and forecasts only in the lessons chosen for
+     * review (as in Ôn tập); otherwise every new kanji counts.
+     */
+    private val progress: ProgressRepository? = null,
 ) : ViewModel() {
 
     private val _trendUnit = MutableStateFlow(TrendUnit.DAY)
@@ -87,13 +96,20 @@ class DashboardViewModel(
                     analytics.observePriorityItems(now, PRIORITY_LIMIT),
                 ) { activity, due, status, byType, priority -> Real(activity.newItems, activity.reviewAnswers, due, status, byType, priority) }
 
+                val newKanjiForReview = progress
+                    ?.observeReviewOverview(now, ReviewTime.startOfDay(now, zone), ReviewTime.startOfNextDay(now, zone))
+                    ?.map<ReviewOverview, Int?> { it.newByType[ItemType.KANJI] ?: 0 }
+                    ?: flowOf(null)
+
                 combine(
                     real,
                     analytics.observeTimeBuckets(bucketsFrom, todayTo),
                     analytics.observeSchedule(),
                     sessions.observeRecent(SESSION_LIMIT),
-                ) { r, buckets, schedule, recent ->
-                    val newAvailable = r.status.values.sumOf { it.new }
+                    newKanjiForReview,
+                ) { r, buckets, schedule, recent, newKanji ->
+                    // New items review can still introduce: kanji only from the lessons chosen for review.
+                    val newAvailable = r.status.entries.sumOf { (type, s) -> if (type == ItemType.KANJI && newKanji != null) newKanji else s.new }
                     val assumptions = ForecastAssumptions(settings.limits.newPerDayTotal, newAvailable)
                     val pace = LearningAnalytics.dailySeries(buckets, zone, today, ProgressEstimator.WINDOW_DAYS)
                     UiState.Success(

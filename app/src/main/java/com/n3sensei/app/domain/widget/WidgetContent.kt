@@ -7,6 +7,7 @@ import com.n3sensei.app.domain.model.ItemType
 import com.n3sensei.app.domain.practice.PracticeItem
 import com.n3sensei.app.domain.repository.ContentRepository
 import com.n3sensei.app.domain.repository.ProgressRepository
+import com.n3sensei.app.domain.srs.KanjiReviewLessons
 import kotlinx.coroutines.flow.first
 import java.time.Clock
 import kotlin.random.Random
@@ -108,7 +109,8 @@ class WidgetContentPicker(
     }
 
     private suspend fun vocabulary() = content.observeVocabularyItems(ItemQuery()).first().map { ItemRef(ItemType.VOCABULARY, it.item.id) }
-    private suspend fun kanji() = content.observeKanjiItems(ItemQuery()).first().map { ItemRef(ItemType.KANJI, it.item.id) }
+    // The course's kanji (N3), as before other levels existed; Kanji N2 is studied in Học → Kanji.
+    private suspend fun kanji() = content.observeKanjiItems(ItemQuery(jlptLevel = KanjiReviewLessons.COURSE_LEVEL)).first().map { ItemRef(ItemType.KANJI, it.item.id) }
     private suspend fun grammar() = content.observeGrammarItems(ItemQuery()).first().map { ItemRef(ItemType.GRAMMAR, it.item.id) }
 
     private companion object {

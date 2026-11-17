@@ -17,6 +17,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filterNotNull
@@ -50,9 +51,36 @@ abstract class ItemBrowserViewModel<T>(
     /** Current filters; [ItemQuery.text] is what the user typed (not yet debounced). */
     val filters: StateFlow<ItemQuery> = _filters.asStateFlow()
 
-    val lessons: StateFlow<List<LessonSummary>> = contentRepository.observeLessons()
+    private val lessonsWithItems: Flow<List<LessonSummary>> = contentRepository.observeLessons()
         .map { all -> if (userWordsOnly) emptyList() else all.filter { it.countOf(itemType) > 0 } }
+
+    /**
+     * JLPT levels of the lessons listed, lower level first ("N3", "N2"). With more than one, the
+     * list shows one level at a time (Học → Kanji: N3 / N2), never both mixed.
+     */
+    val levels: StateFlow<List<String>> = lessonsWithItems
+        .map { all -> all.map { it.jlptLevel }.distinct().sortedDescending() }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), emptyList())
+
+    /** The filters as applied: with several levels, the chosen one (or the lesson's, or the first). */
+    private val applied: Flow<ItemQuery> = combine(_filters, lessonsWithItems) { query, lessons ->
+        val levels = lessons.map { it.jlptLevel }.distinct().sortedDescending()
+        if (levels.size < 2) {
+            query
+        } else {
+            val level = query.jlptLevel ?: lessons.firstOrNull { it.id == query.lessonId }?.jlptLevel ?: levels.first()
+            query.copy(jlptLevel = level)
+        }
+    }
+
+    /** The level shown when there are several; null with a single level. */
+    val level: StateFlow<String?> = combine(applied, levels) { query, levels -> query.jlptLevel.takeIf { levels.size > 1 } }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), null)
+
+    /** Lesson chips: the lessons of the level shown. */
+    val lessons: StateFlow<List<LessonSummary>> = combine(lessonsWithItems, level) { all, level ->
+        if (level == null) all else all.filter { it.jlptLevel == level }
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), emptyList())
 
     /** Where every item is studied, for the location tag on each card. */
     val locations: StateFlow<ItemLocations> = itemLocations(viewModelScope, contentRepository)
@@ -61,7 +89,7 @@ abstract class ItemBrowserViewModel<T>(
     open val tags: StateFlow<List<Tag>> = MutableStateFlow(emptyList())
 
     val items: StateFlow<UiState<List<TrackedItem<T>>>> by lazy {
-        browseItems(_filters, ::observe)
+        browseItems(applied, ::observe)
             .stateIn(viewModelScope, SharingStarted.WhileSubscribed(STOP_TIMEOUT_MILLIS), UiState.Loading)
     }
 
@@ -69,6 +97,11 @@ abstract class ItemBrowserViewModel<T>(
 
     fun onQueryChange(text: String) = _filters.update { it.copy(text = text) }
     fun onLessonSelected(lessonId: String?) = _filters.update { it.copy(lessonId = lessonId) }
+
+    /** Shows another level; the lesson filter is cleared (its lessons are of the other level). */
+    fun onLevelSelected(level: String) = _filters.update {
+        if ((it.jlptLevel ?: this.level.value) == level) it else it.copy(jlptLevel = level, lessonId = null)
+    }
     fun onStatusSelected(status: LearningStatus?) = _filters.update { it.copy(status = status) }
     fun onMarkedOnlyChange(markedOnly: Boolean) = _filters.update { it.copy(markedOnly = markedOnly) }
     fun onTagSelected(tagId: String?) = _filters.update { it.copy(tagId = tagId) }

@@ -9,14 +9,18 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.PrimaryTabRow
+import androidx.compose.material3.Tab
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.liveRegion
@@ -35,12 +39,17 @@ import com.n3sensei.app.domain.model.LearningStatus
 import com.n3sensei.app.domain.model.TrackedItem
 import com.n3sensei.app.domain.repository.ContentRepository
 
+object ItemBrowserTags {
+    fun level(level: String) = "browse_level_$level"
+}
+
 /**
  * Search box, filter chips (lesson, status + marked, topic) and the live item list, with
  * empty / no-result states. Shared by the vocabulary, kanji and grammar lists.
  *
  * @param onPracticeMarked shown as a button while the "marked" filter is on and has items.
  */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun <T> ItemBrowser(
     viewModel: ItemBrowserViewModel<T>,
@@ -54,10 +63,25 @@ fun <T> ItemBrowser(
 ) {
     val filters by viewModel.filters.collectAsStateWithLifecycle()
     val lessons by viewModel.lessons.collectAsStateWithLifecycle()
+    val levels by viewModel.levels.collectAsStateWithLifecycle()
+    val level by viewModel.level.collectAsStateWithLifecycle()
     val tags by viewModel.tags.collectAsStateWithLifecycle()
     val state by viewModel.items.collectAsStateWithLifecycle()
 
     Column(modifier = modifier.fillMaxSize()) {
+        // Several JLPT levels (Học → Kanji: N3 / N2): one at a time, never mixed in one list.
+        if (levels.size > 1 && level != null) {
+            PrimaryTabRow(selectedTabIndex = levels.indexOf(level).coerceAtLeast(0)) {
+                levels.forEach { option ->
+                    Tab(
+                        selected = option == level,
+                        onClick = { viewModel.onLevelSelected(option) },
+                        text = { Text(stringResource(R.string.browse_level_tab, option)) },
+                        modifier = Modifier.testTag(ItemBrowserTags.level(option)),
+                    )
+                }
+            }
+        }
         SearchField(
             query = filters.text,
             onQueryChange = viewModel::onQueryChange,

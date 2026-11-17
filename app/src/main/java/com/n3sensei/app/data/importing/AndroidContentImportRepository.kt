@@ -77,8 +77,11 @@ class AndroidContentImportRepository(
         const val N3_GRAMMAR_PACK_ASSET = "content/n3-grammar.json"
         const val N3_KANJI_PACK_ASSET = "content/n3-kanji.json"
 
+        /** Kanji N2, built from the user's Anki deck by tools/content/n2_kanji (see docs/N2_KANJI.md). */
+        const val N2_KANJI_PACK_ASSET = "content/n2-kanji.json"
+
         /** Packs shipped with the app, installed in this order (see docs/CONTENT_FORMAT.md). */
-        val BUNDLED_PACK_ASSETS = listOf(BUNDLED_PACK_ASSET, MIMIKARA_PACK_ASSET, N3_GRAMMAR_PACK_ASSET, N3_KANJI_PACK_ASSET)
+        val BUNDLED_PACK_ASSETS = listOf(BUNDLED_PACK_ASSET, MIMIKARA_PACK_ASSET, N3_GRAMMAR_PACK_ASSET, N3_KANJI_PACK_ASSET, N2_KANJI_PACK_ASSET)
         private const val TAG = "ContentImport"
         private const val MAX_BYTES = 10 * 1024 * 1024
     }

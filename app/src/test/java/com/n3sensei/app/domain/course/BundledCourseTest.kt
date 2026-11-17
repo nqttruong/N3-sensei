@@ -33,14 +33,21 @@ class BundledCourseTest {
     private val words = bundles.flatMap { it.vocabulary }.sortedWith(compareBy({ order.getValue(it.lessonId) }, { it.sortOrder })).map { tracked(it.toDomain()) }
     private val grammar = bundles.flatMap { it.grammar }.sortedWith(compareBy({ order.getValue(it.lessonId) }, { it.sortOrder })).map { tracked(it.toDomain()) }
     private val course = CourseBuilder.build(lessons, kanji, words, grammar)
+    private val levelOf = lessons.associate { it.id to it.jlptLevel }
+
+    /** Học → Bài học is the N3 course: Kanji N2 has its own lessons in Học → Kanji. */
+    private val courseKanji = kanji.filter { levelOf.getValue(it.item.lessonId) == "N3" }
 
     @Test
     fun everyItemIsInExactlyOneLesson_inListOrder() {
-        assertEquals(kanji, course.flatMap { it.kanji })
+        assertEquals(courseKanji, course.flatMap { it.kanji })
         assertEquals(words, course.flatMap { it.words })
         assertEquals(grammar, course.flatMap { it.grammar })
         // 393 + 27 kanji, 880 + 30 words, 174 + 7 grammar points: words need the most lessons.
-        assertEquals(420, kanji.size)
+        assertEquals(420, courseKanji.size)
+        // The 448 N2 kanji are in no lesson of the course, which stays as it was.
+        assertEquals(448, kanji.size - courseKanji.size)
+        assertTrue(course.flatMap { it.kanji }.none { levelOf.getValue(it.item.lessonId) == "N2" })
         assertEquals(910, words.size)
         assertEquals(181, grammar.size)
         assertEquals(31, course.size)
@@ -97,7 +104,12 @@ class BundledCourseTest {
             words.map { com.n3sensei.app.domain.model.ItemRef(com.n3sensei.app.domain.model.ItemType.VOCABULARY, it.item.id) } +
             grammar.map { com.n3sensei.app.domain.model.ItemRef(com.n3sensei.app.domain.model.ItemType.GRAMMAR, it.item.id) }
         assertTrue(refs.none { locations.of(it).kind == ItemLocation.Kind.NONE })
-        assertTrue(refs.all { locations.of(it).courseLesson != null })
+        // Every N3 item is in a lesson of Học → Bài học; an N2 kanji is in its own N2 lesson.
+        val n2 = kanji.filter { levelOf.getValue(it.item.lessonId) == "N2" }
+            .map { com.n3sensei.app.domain.model.ItemRef(com.n3sensei.app.domain.model.ItemType.KANJI, it.item.id) }.toSet()
+        assertTrue(refs.filter { it !in n2 }.all { locations.of(it).courseLesson != null })
+        assertTrue(n2.all { locations.of(it).courseLesson == null && locations.of(it).levelLesson?.first == "N2" })
+        assertEquals("N2" to 1, locations.of(com.n3sensei.app.domain.model.ItemRef(com.n3sensei.app.domain.model.ItemType.KANJI, "n2k-k04e95")).levelLesson)
         val shared = words.filter { locations.sameWord(it.item.id).isNotEmpty() }
         assertTrue(shared.isNotEmpty())
         shared.forEach { w -> locations.sameWord(w.item.id).forEach { other -> assertTrue(locations.sameWord(other.vocabularyId).any { it.vocabularyId == w.item.id }) } }

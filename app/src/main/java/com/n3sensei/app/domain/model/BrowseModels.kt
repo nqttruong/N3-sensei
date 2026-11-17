@@ -60,4 +60,6 @@ data class ItemQuery(
      * a study session, a reminder or the widget, which leave saved words out.
      */
     val includeSaved: Boolean = false,
+    /** Only items of lessons of this JLPT level ("N3", "N2"); null: every level. Kanji lists only. */
+    val jlptLevel: String? = null,
 )

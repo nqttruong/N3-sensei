@@ -5,6 +5,7 @@ import com.n3sensei.app.N3SenseiApplication
 import com.n3sensei.app.app.di.DefaultAppContainer
 import com.n3sensei.app.domain.model.ThemeMode
 import com.n3sensei.app.domain.reminder.ReminderSettings
+import com.n3sensei.app.domain.srs.KanjiReviewLessons
 import com.n3sensei.app.domain.srs.ReviewSettings
 import kotlinx.coroutines.runBlocking
 import com.n3sensei.app.domain.translate.QuickTranslateSettings
@@ -40,6 +41,8 @@ object AppTestState {
             setThemeMode(ThemeMode.SYSTEM)
             setShowFurigana(true)
             setReviewSettings(ReviewSettings())
+            // Both levels back to their defaults (N3: every lesson, N2: none).
+            setKanjiReviewLessons(KanjiReviewLessons(mapOf("N3" to KanjiReviewLessons.default("N3"), "N2" to KanjiReviewLessons.default("N2"))))
             setReminderSettings(ReminderSettings())
             setQuickTranslateSettings(QuickTranslateSettings())
         }

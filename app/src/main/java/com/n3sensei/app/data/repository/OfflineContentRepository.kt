@@ -61,7 +61,7 @@ class OfflineContentRepository(
     override fun observeKanjiItems(query: ItemQuery): Flow<List<TrackedItem<Kanji>>> {
         val text = BrowseText.of(query)
         return contentDao.observeKanjiItems(
-            query.lessonId, query.status?.name, query.markedOnly, text.pattern, text.raw, text.limit,
+            query.lessonId, query.status?.name, query.markedOnly, text.pattern, text.raw, text.limit, query.jlptLevel,
         ).map { rows -> rows.map { it.toDomain() } }
     }
 

@@ -51,6 +51,7 @@ import com.n3sensei.app.domain.srs.ReviewLadder
 fun ReviewSettingsScreen(
     viewModel: ReviewSettingsViewModel,
     modifier: Modifier = Modifier,
+    onChooseKanjiLessons: () -> Unit = {},
 ) {
     val draft by viewModel.draft.collectAsStateWithLifecycle()
     val current = draft ?: return LoadingContent(modifier)
@@ -107,6 +108,16 @@ fun ReviewSettingsScreen(
         }
         TextButton(onClick = viewModel::resetNewPerDay, modifier = Modifier.testTag(ReviewSettingsTags.RESET_NEW)) {
             Text(stringResource(R.string.review_settings_new_items_reset, DailyLimits.DEFAULT_NEW_VOCABULARY, DailyLimits.DEFAULT_NEW_KANJI, DailyLimits.DEFAULT_NEW_GRAMMAR))
+        }
+
+        SectionHeader(stringResource(R.string.review_settings_kanji_lessons))
+        Text(
+            stringResource(R.string.review_settings_kanji_lessons_description),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        OutlinedButton(onClick = onChooseKanjiLessons, modifier = Modifier.testTag(ReviewSettingsTags.KANJI_LESSONS)) {
+            Text(stringResource(R.string.review_settings_kanji_lessons_choose))
         }
 
         SectionHeader(stringResource(R.string.review_settings_daily_goal))
@@ -192,5 +203,6 @@ private fun typeName(type: ItemType): String = stringResource(
 
 object ReviewSettingsTags {
     const val RESET_NEW = "review_settings_reset_new"
+    const val KANJI_LESSONS = "review_settings_kanji_lessons"
     fun newPerDay(type: ItemType) = "review_settings_new_${type.name}"
 }

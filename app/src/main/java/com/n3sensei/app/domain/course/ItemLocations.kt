@@ -16,7 +16,8 @@ import kotlinx.coroutines.flow.combine
 /**
  * Where an item is studied in the app, from the same lists the learner sees (not from ids):
  * - a word: its group of Học → Từ vựng ("1.2") and its lesson of Học → Bài học;
- * - a kanji or grammar point: its lesson of Học → Bài học;
+ * - a kanji or grammar point: its lesson of Học → Bài học; a kanji of another level (N2), which
+ *   is not in Học → Bài học: its lesson of Học → Kanji at that level ("Kanji N2 · Bài 1");
  * - the learner's own word: "Từ của tôi" (no lesson);
  * - anything not found in those lists: no lesson ([Kind.NONE]); never guessed.
  */
@@ -28,6 +29,8 @@ data class ItemLocation(
     val vocabularyGroup: String? = null,
     /** Title of the item's source lesson (its pack lesson), when known. */
     val sourceTitle: String? = null,
+    /** Kanji outside Học → Bài học: the JLPT level and number of its own lesson. */
+    val levelLesson: Pair<String, Int>? = null,
 ) {
     enum class Kind { VOCABULARY, KANJI, GRAMMAR, MY_WORDS, NONE }
 
@@ -81,6 +84,15 @@ class ItemLocations(
                         ItemLocation(ItemLocation.Kind.GRAMMAR, courseLesson = lesson.number, sourceTitle = titles[it.item.lessonId])
                 }
                 lesson.words.forEach { courseOfWord[it.item.id] = lesson.number }
+            }
+            // Kanji of another level (N2) are not in Học → Bài học: their own lesson at their level.
+            val lessonById = lessons.associateBy { it.id }
+            kanji.forEach {
+                val ref = ItemRef(ItemType.KANJI, it.item.id)
+                val lesson = lessonById[it.item.lessonId]
+                if (ref !in map && lesson != null && lesson.jlptLevel != CourseBuilder.COURSE_LEVEL) {
+                    map[ref] = ItemLocation(ItemLocation.Kind.KANJI, sourceTitle = lesson.title, levelLesson = lesson.jlptLevel to lesson.number)
+                }
             }
             VocabularyGroups.build(lessons, vocabulary).forEach { group ->
                 group.words.forEach {

@@ -65,7 +65,10 @@ interface ProgressRepository {
     /** Due items of one [type] only (its own schedule), oldest due first. */
     suspend fun getDueItemsOfType(now: Instant, type: ItemType, limit: Int): List<ItemRef>
 
-    /** Never-answered items of one [type], in course order. */
+    /**
+     * Never-answered items of one [type], in course order. Kanji: only from the lessons chosen for
+     * review (Cài đặt ôn tập → Bài Kanji), N3 before N2.
+     */
     suspend fun getNewItemsOfType(type: ItemType, limit: Int): List<ItemRef>
 
     /** Items of [type] whose last answer was "Quên", due or not yet; the due ones first. */

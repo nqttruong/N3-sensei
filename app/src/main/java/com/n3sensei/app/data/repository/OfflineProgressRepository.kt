@@ -19,6 +19,7 @@ import com.n3sensei.app.domain.srs.ScheduledReview
 import com.n3sensei.app.domain.srs.TodayCounts
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import java.time.Clock
 import java.time.Instant
@@ -26,6 +27,12 @@ import java.time.Instant
 class OfflineProgressRepository(
     private val progressDao: ProgressDao,
     private val clock: Clock,
+    /**
+     * Lessons review sessions take new kanji from (the learner's choice, see
+     * [com.n3sensei.app.domain.srs.KanjiReviewLessons]); null: every lesson. Only new kanji are
+     * concerned: kanji with progress stay due and reviewed whatever is chosen.
+     */
+    private val newKanjiLessons: Flow<Set<String>>? = null,
 ) : ProgressRepository {
 
     override fun observeItemState(item: ItemRef): Flow<ItemUserState> =
@@ -68,8 +75,24 @@ class OfflineProgressRepository(
     override suspend fun getDueItemsOfType(now: Instant, type: ItemType, limit: Int): List<ItemRef> =
         progressDao.getDueRefsOfType(now.toEpochMilli(), type, limit.coerceAtLeast(0)).map { ItemRef(it.itemType, it.itemId) }
 
-    override suspend fun getNewItemsOfType(type: ItemType, limit: Int): List<ItemRef> =
-        progressDao.getNewRefsOfType(type, limit.coerceAtLeast(0)).map { ItemRef(it.itemType, it.itemId) }
+    override suspend fun getNewItemsOfType(type: ItemType, limit: Int): List<ItemRef> {
+        val rows = if (type == ItemType.KANJI && newKanjiLessons != null) {
+            val lessons = newKanjiLessons.first()
+            if (lessons.isEmpty()) emptyList() else progressDao.getNewKanjiRefsInLessons(lessons.toList(), limit.coerceAtLeast(0))
+        } else {
+            progressDao.getNewRefsOfType(type, limit.coerceAtLeast(0))
+        }
+        return rows.map { ItemRef(it.itemType, it.itemId) }
+    }
+
+    /** New items by type; new kanji only from [newKanjiLessons]. */
+    private fun observeNewByType(): Flow<List<TypeCountRow>> {
+        val lessons = newKanjiLessons ?: return progressDao.observeNewByType()
+        return combine(progressDao.observeNewByType(), progressDao.observeNewKanjiByLesson(), lessons) { byType, kanji, allowed ->
+            byType.filter { it.itemType != ItemType.KANJI } +
+                TypeCountRow(ItemType.KANJI, kanji.filter { it.lessonId in allowed }.sumOf { it.count })
+        }
+    }
 
     override suspend fun getForgottenItemsOfType(type: ItemType, limit: Int): List<ItemRef> =
         progressDao.getForgottenRefsOfType(type, limit.coerceAtLeast(0)).map { ItemRef(it.itemType, it.itemId) }
@@ -82,7 +105,7 @@ class OfflineProgressRepository(
             progressDao.observeDueByType(now.toEpochMilli()),
             progressDao.observeOverdueByType(dayStart.toEpochMilli()),
             progressDao.observeTodayCounts(dayStart.toEpochMilli(), dayEnd.toEpochMilli()),
-            progressDao.observeNewByType(),
+            observeNewByType(),
         ) { due, overdue, today, new -> Triple(due to overdue, today, new) },
         progressDao.observeDoneByType(dayStart.toEpochMilli(), dayEnd.toEpochMilli()),
         progressDao.observeForgottenByType(),
