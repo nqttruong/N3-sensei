@@ -153,12 +153,16 @@ private fun PairedContent(state: AndroidSyncUiState, viewModel: AndroidSyncViewM
         enabled = !state.running, onClick = viewModel::pushReviews,
         modifier = Modifier.fillMaxWidth().testTag(JlptWebSyncTags.SYNC_NOW),
     ) { Text("Đồng bộ ngay") }
-    Text("JLPT review chờ gửi: ${state.pendingEvents}", style = MaterialTheme.typography.bodySmall)
+    Text("Lịch sử ôn tập chờ gửi: ${state.pendingHistory} lượt · JLPT review chờ gửi: ${state.pendingEvents}", style = MaterialTheme.typography.bodySmall)
+    if (state.skippedHistory > 0) {
+        Text("${state.skippedHistory} lượt ôn cũ không gửi được (thiếu mã định danh hợp lệ, ví dụ từ bản sao lưu cũ); chúng vẫn nằm trên điện thoại.", style = MaterialTheme.typography.bodySmall)
+    }
     Text("Đã tải ${state.downloadedCount} thay đổi · ${state.knowledgeCount} mục kiến thức", style = MaterialTheme.typography.bodySmall)
     Text(
         state.lastSuccessAt?.let { "Đồng bộ thành công gần nhất: ${formatTime(it)}" } ?: "Chưa đồng bộ lần nào.",
         style = MaterialTheme.typography.bodySmall,
     )
+    Text("Khi có mạng, ứng dụng tự đồng bộ khoảng 6 giờ một lần.", style = MaterialTheme.typography.bodySmall)
     state.lastError?.let { Text("Lỗi đồng bộ: $it", color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
     TextButton(onClick = viewModel::disconnect, enabled = !state.running) { Text("Ngắt kết nối") }
 }

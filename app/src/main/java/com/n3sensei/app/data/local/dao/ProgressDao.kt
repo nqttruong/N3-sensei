@@ -73,6 +73,10 @@ abstract class ProgressDao {
     @Query("SELECT * FROM review_records WHERE id > :afterId AND request_id IS NOT NULL ORDER BY id LIMIT :limit")
     abstract suspend fun syncEventsAfter(afterId: Long, limit: Int): List<ReviewRecordEntity>
 
+    /** Learner history not yet sent to JLPT AI Review (the upload queue is this cursor over review_records). */
+    @Query("SELECT COUNT(*) FROM review_records WHERE id > :afterId AND request_id IS NOT NULL")
+    abstract suspend fun countSyncEventsAfter(afterId: Long): Int
+
     /** Progress update and its history record succeed or fail together. */
     @Transaction
     open suspend fun recordReview(progress: LearningProgressEntity, record: ReviewRecordEntity): Long {

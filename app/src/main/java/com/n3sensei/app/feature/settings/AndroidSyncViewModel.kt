@@ -24,6 +24,8 @@ data class AndroidSyncUiState(
     val knowledgeCount: Int = 0,
     val pendingEvents: Int = 0,
     val lastError: String? = null,
+    val pendingHistory: Int = 0,
+    val skippedHistory: Int = 0,
     /** QR pairing in progress (code shown to the human) or just ended. */
     val qr: QrPairingProgress? = null,
 )
@@ -129,7 +131,8 @@ class AndroidSyncViewModel(private val syncRepository: SyncRepository) : ViewMod
             val detail = runCatching { syncRepository.status() }.getOrNull()
             _state.value = _state.value.copy(running = false, paired = syncRepository.isPaired(), status = message,
                 lastSuccessAt = detail?.lastSuccessAtMillis, downloadedCount = detail?.downloadedCount ?: 0,
-                knowledgeCount = detail?.knowledgeCount ?: 0, pendingEvents = detail?.pendingEvents ?: 0, lastError = detail?.lastError)
+                knowledgeCount = detail?.knowledgeCount ?: 0, pendingEvents = detail?.pendingEvents ?: 0, lastError = detail?.lastError,
+                pendingHistory = detail?.pendingHistory ?: 0, skippedHistory = detail?.skippedHistory ?: 0)
         }
     }
 
@@ -144,7 +147,8 @@ class AndroidSyncViewModel(private val syncRepository: SyncRepository) : ViewMod
             val detail = runCatching { syncRepository.status() }.getOrNull() ?: return@launch
             _state.value = _state.value.copy(lastSuccessAt = detail.lastSuccessAtMillis,
                 downloadedCount = detail.downloadedCount, knowledgeCount = detail.knowledgeCount,
-                pendingEvents = detail.pendingEvents, lastError = detail.lastError)
+                pendingEvents = detail.pendingEvents, lastError = detail.lastError,
+                pendingHistory = detail.pendingHistory, skippedHistory = detail.skippedHistory)
         }
     }
 

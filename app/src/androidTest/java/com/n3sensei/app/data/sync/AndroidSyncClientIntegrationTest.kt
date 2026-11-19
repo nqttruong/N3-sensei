@@ -15,6 +15,8 @@ import java.util.UUID
 
 @RunWith(AndroidJUnit4::class)
 class AndroidSyncClientIntegrationTest {
+    private object NoBackgroundSync : BackgroundSyncScheduler { override fun schedule() = Unit; override fun cancel() = Unit }
+
     private class FakeTransport(private val pages: MutableMap<Long, String>) : SyncTransport {
         val requests = mutableListOf<Pair<String, String>>()
         override fun request(url: String, method: String, pairingKey: String?, bearer: String?, body: String?, claimTicket: String?): String {
@@ -52,7 +54,7 @@ class AndroidSyncClientIntegrationTest {
             val now = System.currentTimeMillis()
             db.syncDao().addEvent(SyncedReviewEventEntity(UUID.randomUUID().toString(), "JLPT_REVIEW_ITEM", firstId,
                 "GOOD", now, 0, 4_320, now + 4_320 * 60_000L, now, null, 0, null))
-            val client = AndroidSyncClient(context, db, fake)
+            val client = AndroidSyncClient(context, db, fake, NoBackgroundSync)
             client.pair("https://sync.test", "pairing-key", "integration")
             client.syncNow()
             assertNotNull(db.syncDao().syncedExam("jlpt:$firstId"))
@@ -74,7 +76,7 @@ class AndroidSyncClientIntegrationTest {
         val id = UUID.randomUUID().toString()
         val invalid = """{"data":{"data":[{"cursor":1,"entity_type":"question","entity_id":"$id","operation":"insert","version":1,"changed_at":"2026-01-01T00:00:00Z","schema_version":"1.0","data":{"question_text":"missing fields"}}],"next_cursor":1,"has_more":false}}"""
         try {
-            val client = AndroidSyncClient(context, db, FakeTransport(mutableMapOf(0L to invalid)))
+            val client = AndroidSyncClient(context, db, backgroundSync = NoBackgroundSync, transport = FakeTransport(mutableMapOf(0L to invalid)))
             client.pair("https://sync.test", "pairing-key", "integration")
             runCatching { client.syncNow() }.onSuccess { error("Expected invalid content to fail") }
             assertEquals(0L, db.syncDao().checkpoint(SyncCheckpointEntity.CHECKPOINT_ID)?.cursor ?: 0L)
@@ -95,7 +97,7 @@ class AndroidSyncClientIntegrationTest {
             db.syncDao().putExam(com.n3sensei.app.data.local.entity.SyncedExamEntity(
                 "jlpt:$id", id, "Old exam", "grammar", "N3", null, null, "ready", false, 0,
             ))
-            val client = AndroidSyncClient(context, db, FakeTransport(mutableMapOf(0L to tombstonePage(id))))
+            val client = AndroidSyncClient(context, db, backgroundSync = NoBackgroundSync, transport = FakeTransport(mutableMapOf(0L to tombstonePage(id))))
             client.pair("https://sync.test", "pairing-key", "integration")
             client.syncNow()
             assertEquals(true, db.syncDao().syncedExam("jlpt:$id")!!.isDeleted)

@@ -38,6 +38,10 @@ data class SyncStatus(
     val knowledgeCount: Int,
     val pendingEvents: Int,
     val lastError: String?,
+    /** Android review history (vocabulary/kanji/grammar) waiting to be uploaded. */
+    val pendingHistory: Int = 0,
+    /** History rows the server cannot accept (e.g. restored without a UUID request id); never sent. */
+    val skippedHistory: Int = 0,
 )
 
 /** Server session states of QR v1 (`sync_qr_status_valid`). */

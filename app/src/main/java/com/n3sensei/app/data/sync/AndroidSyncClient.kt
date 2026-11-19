@@ -72,6 +72,7 @@ class AndroidSyncClient(
     context: Context,
     private val database: N3Database,
     private val transport: SyncTransport = HttpsSyncTransport(),
+    private val backgroundSync: BackgroundSyncScheduler = WorkManagerSyncScheduler(context.applicationContext),
     private val clock: () -> Instant = Instant::now,
     private val random: SecureRandom = SecureRandom(),
 ) : SyncRepository {
@@ -153,10 +154,11 @@ class AndroidSyncClient(
         val dataServer = preferences.getString(KEY_DATA_SERVER, null) ?: preferences.getString(KEY_SERVER, null)
         if (dataServer != base) {
             database.withTransaction { syncDao.putCheckpoint(SyncCheckpointEntity()) }
-            preferences.edit { putLong(KEY_LAST_REVIEW_ID, 0L) }
+            preferences.edit { putLong(KEY_LAST_REVIEW_ID, 0L).putInt(KEY_SKIPPED_HISTORY, 0) }
         }
         preferences.edit { putString(KEY_SERVER, base).putString(KEY_DATA_SERVER, base)
             .putString(KEY_TOKEN, encrypt(credential)) }
+        backgroundSync.schedule()
     }
 
     override suspend fun syncNow(): String = withContext(Dispatchers.IO) {
@@ -189,13 +191,16 @@ class AndroidSyncClient(
             if (server != null && token != null) request("$server/api/v1/sync/disconnect", "POST", bearer = token)
         } finally {
             preferences.edit { remove(KEY_TOKEN).remove(KEY_SERVER) }
+            backgroundSync.cancel()
         }
     }
 
     override suspend fun status(): SyncStatus {
         val checkpoint = syncDao.checkpoint(SyncCheckpointEntity.CHECKPOINT_ID)
         return SyncStatus(checkpoint?.lastSuccessAtEpochMillis, checkpoint?.downloadedCount ?: 0L,
-            syncDao.knowledgeCount(), syncDao.pendingCount(), checkpoint?.lastError)
+            syncDao.knowledgeCount(), syncDao.pendingCount(), checkpoint?.lastError,
+            pendingHistory = progressDao.countSyncEventsAfter(preferences.getLong(KEY_LAST_REVIEW_ID, 0L)),
+            skippedHistory = preferences.getInt(KEY_SKIPPED_HISTORY, 0))
     }
 
     override fun observeKnowledge(): Flow<List<JlptKnowledge>> = syncDao.observeKnowledgeItems().map { rows ->
@@ -327,20 +332,32 @@ class AndroidSyncClient(
                 throw error
             }
         }
-        // Existing vocabulary/kanji/grammar history is still uploaded idempotently via request_id.
+        // Vocabulary/kanji/grammar history: review_records after the stored cursor form the offline queue.
+        // Each record keeps its own UUID request_id, so a retried or repeated page is acknowledged as duplicate.
         var last = preferences.getLong(KEY_LAST_REVIEW_ID, 0L)
         while (true) {
-            val events = progressDao.syncEventsAfter(last, 100)
-            if (events.isEmpty()) break
-            val response = JSONObject(requestWithRetry("$server/api/v1/sync/push", "POST", token,
-                JSONObject().put("events", JSONArray().apply { events.forEach { put(it.toApiJson()) } }).toString())).getJSONObject("data")
-            require(response.getJSONArray("accepted").length() + response.getJSONArray("duplicates").length() == events.size) { "Server did not acknowledge all history events." }
-            last = events.last().id
-            preferences.edit { putLong(KEY_LAST_REVIEW_ID, last) }
-            uploaded += events.size
+            val records = progressDao.syncEventsAfter(last, HISTORY_PAGE)
+            if (records.isEmpty()) break
+            val (sendable, skipped) = records.partition { it.isAcceptedByServer() }
+            if (sendable.isNotEmpty()) {
+                val response = JSONObject(requestWithRetry("$server/api/v1/sync/push", "POST", token,
+                    JSONObject().put("events", JSONArray().apply { sendable.forEach { put(it.toApiJson()) } }).toString())).getJSONObject("data")
+                val acknowledged = (response.getJSONArray("accepted").strings() + response.getJSONArray("duplicates").strings())
+                    .map { it.lowercase() }.toSet()
+                require(acknowledged == sendable.map { it.requestId!!.lowercase() }.toSet()) { "Máy chủ chưa xác nhận toàn bộ lịch sử học; hàng đợi vẫn được giữ." }
+            }
+            last = records.last().id
+            preferences.edit { putLong(KEY_LAST_REVIEW_ID, last)
+                .putInt(KEY_SKIPPED_HISTORY, preferences.getInt(KEY_SKIPPED_HISTORY, 0) + skipped.size) }
+            uploaded += sendable.size
         }
         return uploaded
     }
+
+    /** Mirrors `AndroidReviewEventIn`: UUID request id, item id 1–200 chars, intervals 0–100 000 000 minutes. */
+    private fun com.n3sensei.app.data.local.entity.ReviewRecordEntity.isAcceptedByServer(): Boolean =
+        requestId?.let { id -> runCatching { UUID.fromString(id) }.isSuccess && id.length == 36 } == true &&
+            itemId.length in 1..200 && intervalBeforeMinutes in 0..MAX_INTERVAL && intervalAfterMinutes in 0..MAX_INTERVAL
 
     private fun SyncedReviewEventEntity.toApiJson() = JSONObject().put("request_id", requestId).put("item_type", itemType)
         .put("item_id", itemId).put("rating", rating).put("reviewed_at", Instant.ofEpochMilli(reviewedAtEpochMillis).toString())
@@ -433,7 +450,10 @@ class AndroidSyncClient(
         const val KEY_SERVER = "server_url"; const val KEY_TOKEN = "device_token"; const val KEY_LAST_REVIEW_ID = "last_review_record_id"
         /** The server whose data the checkpoint and history cursor refer to; kept after disconnect. */
         const val KEY_DATA_SERVER = "data_server_url"
+        const val KEY_SKIPPED_HISTORY = "skipped_history_count"
         const val KEY_QR_PENDING = "qr_pending"
+        const val HISTORY_PAGE = 100
+        const val MAX_INTERVAL = 100_000_000L
         val TICKET = Regex("^[a-f0-9]{64}$")
         val CODE = Regex("^[0-9]{6}$")
     }
