@@ -60,7 +60,8 @@ import kotlinx.serialization.Serializable
 @Serializable data object ContrastHomeRoute
 
 /** Contrast Lab library: search and filters over the published groups. */
-@Serializable data object ContrastLibraryRoute
+/** [type]: optional ContrastContentType name to open the library already filtered (Home category cards). */
+@Serializable data class ContrastLibraryRoute(val type: String? = null)
 
 /** Contrast Lab compare / learning screen of one group (read only). */
 @Serializable data class ContrastGroupRoute(val groupId: String)

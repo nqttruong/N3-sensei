@@ -92,7 +92,7 @@ class ContrastScreensTest {
         compose.onNodeWithText(string(R.string.contrast_confused_row, "〜ことになっている", "〜ことにしている", 2)).performScrollTo().assertIsDisplayed()
         compose.onNodeWithTag(ContrastTags.EXPLORE).performScrollTo().performClick()
         assertEquals(true, library)
-        compose.onAllNodesWithText(grammar.detail.group.itemLabels.joinToString(" / ")).onFirst().performClick()
+        compose.onAllNodesWithText(grammar.detail.group.itemLabels.joinToString(" / ")).onFirst().performScrollTo().performClick()
         assertEquals(grammar.detail.group.id, opened)
     }
 
@@ -132,7 +132,7 @@ class ContrastScreensTest {
     fun compare_grammar_allSections_examplesWithFurigana_andSourceLink() {
         var openedGrammar: String? = null
         compose.setContent { N3SenseiTheme { ContrastGroupContent(learning(grammar), SourceLinks({ openedGrammar = it }, {}, {}), {}) } }
-        compose.onAllNodesWithText("〜ことにしている").onFirst().assertIsDisplayed()
+        compose.onAllNodesWithText("〜ことにしている").onFirst().performScrollTo().assertIsDisplayed()
         compose.onNodeWithTag(ContrastTags.itemCard("ci-g-koto-ni-natteiru")).performScrollTo().assertIsDisplayed()
         compose.onNodeWithText(string(R.string.contrast_section_examples)).performScrollTo().assertIsDisplayed()
         // The example's Japanese is shown (the ruby text is drawn above it).

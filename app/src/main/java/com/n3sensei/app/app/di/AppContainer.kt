@@ -10,6 +10,7 @@ import com.n3sensei.app.data.backup.AndroidBackupRepository
 import com.n3sensei.app.data.importing.AndroidContentImportRepository
 import com.n3sensei.app.data.importing.ContentPackImporter
 import com.n3sensei.app.data.importing.ContrastContentImporter
+import com.n3sensei.app.data.importing.ContrastPreviewAssets
 import com.n3sensei.app.data.repository.OfflineContrastAnalyticsRepository
 import com.n3sensei.app.data.repository.OfflineContrastContentRepository
 import com.n3sensei.app.data.repository.OfflineContrastPracticeRepository
@@ -201,7 +202,7 @@ class DefaultAppContainer(context: Context) : AppContainer {
 
     /** Concrete type is internal so tests can switch off the bundled pack. */
     internal val androidContentImportRepository: AndroidContentImportRepository by lazy {
-        AndroidContentImportRepository(appContext, ContentPackImporter(database.contentPackDao(), clock), contrastImporter = ContrastContentImporter(database.contrastDao(), clock))
+        AndroidContentImportRepository(appContext, ContentPackImporter(database.contentPackDao(), clock), contrastImporter = ContrastContentImporter(database.contrastDao(), clock), contrastPreviewPaths = ContrastPreviewAssets.PATHS)
     }
 
     override val contentImportRepository: ContentImportRepository get() = androidContentImportRepository

@@ -42,6 +42,8 @@ data class ContrastHomeUiState(
     val confusions: List<ConfusionRow>,
     /** Questions left in the unfinished (ACTIVE, resumable) session; null when there is none. */
     val activeRemaining: Int? = null,
+    /** Published groups per category (Home category cards). */
+    val byType: Map<com.n3sensei.app.domain.contrast.ContrastContentType, Int> = emptyMap(),
 )
 
 /**
@@ -94,6 +96,7 @@ class ContrastHomeViewModel(
             dueGroups = due.take(MAX_DUE),
             confusions = confusions,
             activeRemaining = activeRemaining,
+            byType = rows.groupingBy { it.group.contentType }.eachCount(),
         )
     }
 

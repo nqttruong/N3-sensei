@@ -22,6 +22,11 @@ class AndroidContentImportRepository(
     /** Contrast Lab packs (M4); installed only after every source pack above installed without failure. */
     private val contrastImporter: ContrastContentImporter? = null,
     private val contrastAssetPaths: List<String> = CONTRAST_BUNDLED_PACK_ASSETS,
+    /**
+     * Debug-build preview pack of unreviewed drafts ([ContrastPreviewAssets]; empty in release). Used
+     * only while [contrastAssetPaths] (the reviewed packs) is empty.
+     */
+    private val contrastPreviewPaths: List<String> = emptyList(),
     private val readContrastAsset: (String) -> String? = { path -> context.assets.open(path).use { it.readBytes().toString(Charsets.UTF_8) } },
 ) : ContentImportRepository {
 
@@ -37,6 +42,10 @@ class AndroidContentImportRepository(
     /** Switched off by instrumented tests that need a database with only their own data. */
     @Volatile
     internal var bundledContentEnabled: Boolean = true
+
+    /** Switched off by instrumented tests that bring their own Contrast pack (debug builds only matter). */
+    @Volatile
+    internal var contrastPreviewEnabled: Boolean = true
 
     override suspend fun checkDocument(documentUri: String): ImportCheck {
         val bytes = withContext(Dispatchers.IO) {
@@ -80,13 +89,15 @@ class AndroidContentImportRepository(
      */
     private suspend fun installContrast(sourcesReady: Boolean) {
         val contrast = contrastImporter ?: return
-        if (contrastAssetPaths.isEmpty()) return
+        // A reviewed pack always wins; the debug preview is only a stand-in while none is shipped.
+        val paths = contrastAssetPaths.ifEmpty { if (contrastPreviewEnabled) contrastPreviewPaths else emptyList() }
+        if (paths.isEmpty()) return
         if (!sourcesReady) {
             Log.w(TAG, "Contrast packs not installed: a source pack failed")
             lastContrastReports = emptyList()
             return
         }
-        lastContrastReports = contrastAssetPaths.map { path ->
+        lastContrastReports = paths.map { path ->
             val text = withContext(Dispatchers.IO) {
                 try {
                     readContrastAsset(path)

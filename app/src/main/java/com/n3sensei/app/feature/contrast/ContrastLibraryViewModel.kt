@@ -52,7 +52,8 @@ class ContrastLibraryViewModel(
 
     private val getProgress = GetContrastProgress(content, practice, progress, config)
     private val query = MutableStateFlow(saved.get<String>(KEY_QUERY).orEmpty())
-    private val type = MutableStateFlow(saved.get<String>(KEY_TYPE)?.let(ContrastContentType::fromCode))
+    // The filter kept across process death wins; otherwise the category the screen was opened with (route argument).
+    private val type = MutableStateFlow((saved.get<String>(KEY_TYPE) ?: saved.get<String>(ROUTE_TYPE))?.let(ContrastContentType::fromCode))
     private val status = MutableStateFlow(saved.get<String>(KEY_STATUS)?.let { s -> LibraryStatus.entries.firstOrNull { it.name == s } })
     private val reload = MutableStateFlow(0)
 
@@ -111,6 +112,9 @@ class ContrastLibraryViewModel(
     private companion object {
         const val KEY_QUERY = "contrast_library_query"
         const val KEY_TYPE = "contrast_library_type"
+
+        /** Navigation argument of ContrastLibraryRoute(type). */
+        const val ROUTE_TYPE = "type"
         const val KEY_STATUS = "contrast_library_status"
     }
 }

@@ -1,19 +1,39 @@
 package com.n3sensei.app.feature.contrast
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.animateColorAsState
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.snap
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
@@ -21,11 +41,9 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -34,23 +52,30 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.scale
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.liveRegion
-import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.n3sensei.app.R
 import com.n3sensei.app.core.designsystem.component.FuriganaText
 import com.n3sensei.app.core.designsystem.component.InfoBanner
-import com.n3sensei.app.core.designsystem.component.N3Card
-import com.n3sensei.app.core.designsystem.component.N3ProgressBar
+import com.n3sensei.app.core.designsystem.theme.LocalReduceMotion
+import com.n3sensei.app.core.designsystem.theme.N3Motion
 import com.n3sensei.app.core.designsystem.theme.N3Spacing
+import com.n3sensei.app.core.designsystem.theme.japanese
+import com.n3sensei.app.core.designsystem.theme.japaneseText
 import com.n3sensei.app.core.ui.state.ErrorContent
 import com.n3sensei.app.core.ui.state.LoadingContent
 import com.n3sensei.app.core.ui.state.MessageContent
@@ -159,43 +184,81 @@ private fun QuestionScaffold(
 ) {
     val question = item.question
     val canSelect = feedback == null && !submitting
+    val reduce = LocalReduceMotion.current
     Column(Modifier.fillMaxSize()) {
         PracticeHeader(item, actions.exit)
-        Column(
-            Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal = N3Spacing.screen, vertical = N3Spacing.s),
-            verticalArrangement = Arrangement.spacedBy(N3Spacing.m),
-        ) {
-            Text(questionTypeLabel(question.type), style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
-            Text(question.instructionVi, style = MaterialTheme.typography.titleMedium, modifier = Modifier.semantics { heading() })
-            if (contentChanged) InfoBanner(stringResource(R.string.contrast_practice_content_changed))
-            when (question.type) {
-                ContrastQuestionType.MULTIPLE_CHOICE -> MultipleChoiceExercise(question, selected, feedback, canSelect, actions.select)
-                ContrastQuestionType.FILL_IN_THE_BLANK -> FillBlankExercise(question, selected, feedback, canSelect, actions.select)
-                ContrastQuestionType.ERROR_DETECTION -> ErrorDetectionExercise(question, selected, feedback, canSelect, actions.select)
-                ContrastQuestionType.CONTEXT_SELECTION -> ContextSelectionExercise(question, selected, feedback, canSelect, actions.select)
+        // The next question slides in; the previous one (and its answer) leaves with it.
+        AnimatedContent(
+            targetState = item,
+            contentKey = { "${it.question.id}#${it.done}" },
+            transitionSpec = {
+                if (reduce) {
+                    fadeIn(snap()) togetherWith fadeOut(snap())
+                } else {
+                    (fadeIn(tween(N3Motion.LONG, easing = N3Motion.EnterEasing)) + slideInHorizontally(tween(N3Motion.LONG, easing = N3Motion.EnterEasing)) { it / 8 }) togetherWith
+                        (fadeOut(tween(N3Motion.SHORT)) + slideOutHorizontally(tween(N3Motion.SHORT)) { -it / 12 })
+                }
+            },
+            modifier = Modifier.weight(1f).fillMaxWidth(),
+            label = "question",
+        ) { shown ->
+            // Selection and feedback always belong to the question on screen; during the swap the old one shows neither.
+            val current = shown.question.id == question.id && shown.done == item.done
+            val shownSelected = if (current) selected else null
+            val shownFeedback = if (current) feedback else null
+            val scroll = rememberScrollState()
+            // The explanation appears under the options: bring it into view (instantly with reduced motion).
+            LaunchedEffect(shownFeedback != null) {
+                if (shownFeedback != null) {
+                    kotlinx.coroutines.delay(if (reduce) 0 else N3Motion.MEDIUM.toLong())
+                    if (reduce) scroll.scrollTo(scroll.maxValue) else scroll.animateScrollTo(scroll.maxValue, tween(N3Motion.LONG, easing = N3Motion.StandardEasing))
+                }
             }
-            if (feedback != null) FeedbackPanel(item, feedback)
+            Column(
+                Modifier.fillMaxSize().verticalScroll(scroll).padding(horizontal = 16.dp, vertical = 12.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+            ) {
+                TonePill(questionTypeLabel(shown.question.type), ContrastTones.practice())
+                Text(shown.question.instructionVi, style = ContrastText.question, modifier = Modifier.semantics { heading() })
+                if (current && contentChanged) InfoBanner(stringResource(R.string.contrast_practice_content_changed))
+                val enabled = current && canSelect
+                when (shown.question.type) {
+                    ContrastQuestionType.MULTIPLE_CHOICE -> MultipleChoiceExercise(shown.question, shownSelected, shownFeedback, enabled, actions.select)
+                    ContrastQuestionType.FILL_IN_THE_BLANK -> FillBlankExercise(shown.question, shownSelected, shownFeedback, enabled, actions.select)
+                    ContrastQuestionType.ERROR_DETECTION -> ErrorDetectionExercise(shown.question, shownSelected, shownFeedback, enabled, actions.select)
+                    ContrastQuestionType.CONTEXT_SELECTION -> ContextSelectionExercise(shown.question, shownSelected, shownFeedback, enabled, actions.select)
+                }
+                AnimatedVisibility(
+                    visible = shownFeedback != null,
+                    enter = if (reduce) fadeIn(snap()) else fadeIn(tween(N3Motion.MEDIUM)) + expandVertically(tween(N3Motion.MEDIUM, easing = N3Motion.EnterEasing)),
+                    exit = fadeOut(snap()),
+                ) {
+                    shownFeedback?.let { FeedbackPanel(shown, it) }
+                }
+            }
         }
-        HorizontalDivider()
         PracticeActionsBar(selected, feedback, submitting, saveFailed, actions)
     }
 }
 
 @Composable
 private fun PracticeHeader(item: PracticeQuestion, onExit: () -> Unit) {
-    Column(Modifier.fillMaxWidth().padding(horizontal = N3Spacing.screen, vertical = N3Spacing.s), verticalArrangement = Arrangement.spacedBy(N3Spacing.xs)) {
+    val tone = ContrastTones.practice()
+    Column(Modifier.fillMaxWidth().padding(start = 16.dp, end = 8.dp, top = 8.dp, bottom = 4.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Column(Modifier.weight(1f)) {
-                Text(item.groupTitle, style = MaterialTheme.typography.titleSmall)
+                Text(japaneseText(item.groupTitle), style = ContrastText.label.copy(fontSize = 16.sp).japanese(), maxLines = 1, overflow = TextOverflow.Ellipsis)
                 Text(
                     stringResource(R.string.contrast_practice_progress, (item.done + 1).coerceAtMost(item.total), item.total),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    style = ContrastText.caption,
+                    color = tone.accent,
                 )
             }
-            TextButton(onClick = onExit, modifier = Modifier.testTag(PracticeTags.EXIT)) { Text(stringResource(R.string.contrast_practice_exit)) }
+            TextButton(onClick = onExit, modifier = Modifier.heightIn(min = 48.dp).testTag(PracticeTags.EXIT)) {
+                Text(stringResource(R.string.contrast_practice_exit), style = ContrastText.label.copy(fontSize = 15.sp), color = tone.accent)
+            }
         }
-        N3ProgressBar(progress = if (item.total == 0) 0f else item.done.toFloat() / item.total)
+        ToneBar(if (item.total == 0) 0f else item.done.toFloat() / item.total, tone, Modifier.padding(end = 8.dp))
     }
 }
 
@@ -212,10 +275,17 @@ private fun questionTypeLabel(type: ContrastQuestionType) = stringResource(
 // ---- The four exercise types ----
 
 @Composable
+private fun PromptCard(content: @Composable ColumnScope.() -> Unit) {
+    ContrastCard(contentPadding = PaddingValues(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp), content = content)
+}
+
+@Composable
 private fun MultipleChoiceExercise(question: ContrastQuestion, selected: String?, feedback: PracticeFeedback?, enabled: Boolean, onSelect: (String) -> Unit) {
     question.prompt?.let { prompt ->
-        FuriganaText(prompt.furigana ?: prompt.japanese, style = MaterialTheme.typography.titleLarge)
-        if (feedback != null) prompt.translationVi?.let { Text(it, style = MaterialTheme.typography.bodyMedium) }
+        PromptCard {
+            FuriganaText(prompt.furigana ?: prompt.japanese, style = ContrastText.exampleJp)
+            if (feedback != null) prompt.translationVi?.let { Text(it, style = ContrastText.bodySecondary, color = MaterialTheme.colorScheme.onSurfaceVariant) }
+        }
     }
     OptionList(question.options, selected, feedback, enabled, onSelect)
 }
@@ -225,18 +295,21 @@ private fun MultipleChoiceExercise(question: ContrastQuestion, selected: String?
 private fun FillBlankExercise(question: ContrastQuestion, selected: String?, feedback: PracticeFeedback?, enabled: Boolean, onSelect: (String) -> Unit) {
     val prompt = question.prompt
     if (prompt != null) {
-        val markup = prompt.furigana ?: prompt.japanese
-        val shown = (feedback?.correctOptionId ?: selected)?.let(question::option)
-        val blankAt = runCatching { Furigana.baseText(markup).indexOf(BLANK) }.getOrDefault(-1)
-        if (shown != null && blankAt >= 0) {
-            val inserted = shown.furigana ?: shown.text
-            val filled = markup.replaceFirst(BLANK, inserted)
-            val length = runCatching { Furigana.baseText(inserted).length }.getOrDefault(shown.text.length)
-            FuriganaText(filled, style = MaterialTheme.typography.titleLarge, highlight = listOf(blankAt until blankAt + length))
-        } else {
-            FuriganaText(markup, style = MaterialTheme.typography.titleLarge)
+        PromptCard {
+            val markup = prompt.furigana ?: prompt.japanese
+            val shown = (feedback?.correctOptionId ?: selected)?.let(question::option)
+            val blankAt = runCatching { Furigana.baseText(markup).indexOf(BLANK) }.getOrDefault(-1)
+            val highlightColor = if (feedback != null) ContrastTones.correct().accent else ContrastTones.practice().accent
+            if (shown != null && blankAt >= 0) {
+                val inserted = shown.furigana ?: shown.text
+                val filled = markup.replaceFirst(BLANK, inserted)
+                val length = runCatching { Furigana.baseText(inserted).length }.getOrDefault(shown.text.length)
+                FuriganaText(filled, style = ContrastText.exampleJp, highlight = listOf(blankAt until blankAt + length), highlightColor = highlightColor)
+            } else {
+                FuriganaText(markup, style = ContrastText.exampleJp)
+            }
+            if (feedback != null) prompt.translationVi?.let { Text(it, style = ContrastText.bodySecondary, color = MaterialTheme.colorScheme.onSurfaceVariant) }
         }
-        if (feedback != null) prompt.translationVi?.let { Text(it, style = MaterialTheme.typography.bodyMedium) }
     }
     OptionList(question.options, selected, feedback, enabled, onSelect)
 }
@@ -245,101 +318,135 @@ private fun FillBlankExercise(question: ContrastQuestion, selected: String?, fee
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun ErrorDetectionExercise(question: ContrastQuestion, selected: String?, feedback: PracticeFeedback?, enabled: Boolean, onSelect: (String) -> Unit) {
+    val practice = ContrastTones.practice()
+    val wrong = ContrastTones.incorrect()
     FlowRow(
         Modifier.fillMaxWidth().selectableGroup(),
-        horizontalArrangement = Arrangement.spacedBy(N3Spacing.xs),
-        verticalArrangement = Arrangement.spacedBy(N3Spacing.xs),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
         question.options.forEachIndexed { index, segment ->
             val isSelected = segment.id == selected
             val isWrongSegment = feedback != null && segment.id == feedback.correctOptionId
-            val colors = MaterialTheme.colorScheme
-            val border = when {
-                isWrongSegment -> BorderStroke(2.dp, colors.error)
-                isSelected -> BorderStroke(2.dp, colors.primary)
-                else -> BorderStroke(1.dp, colors.outlineVariant)
+            val tone = when {
+                isWrongSegment -> wrong
+                isSelected -> practice
+                else -> null
             }
+            val colors = MaterialTheme.colorScheme
             val description = stringResource(R.string.contrast_segment_description, index + 1, segment.text)
             val marker = when {
                 isWrongSegment -> stringResource(R.string.contrast_option_correct)
                 feedback != null && isSelected -> stringResource(R.string.contrast_option_chosen)
                 else -> null
             }
+            val scale by animateFloatAsState(if (isSelected && feedback == null && !LocalReduceMotion.current) 1.04f else 1f, spring(stiffness = 500f), label = "segment")
             Surface(
-                shape = MaterialTheme.shapes.small,
-                border = border,
-                color = if (isSelected) colors.secondaryContainer else colors.surface,
+                shape = RoundedCornerShape(14.dp),
+                border = BorderStroke(if (tone != null) 2.dp else 1.dp, tone?.accent ?: colors.outlineVariant),
+                color = tone?.container ?: colors.surfaceContainerLow,
                 modifier = Modifier
-                    .heightIn(min = 48.dp)
+                    .scale(scale)
+                    .heightIn(min = 56.dp)
                     .testTag(PracticeTags.segment(segment.id))
                     .selectable(selected = isSelected, enabled = enabled, role = Role.RadioButton, onClick = { onSelect(segment.id) })
                     .semantics { contentDescription = description; marker?.let { stateDescription = it } },
             ) {
-                Column(Modifier.padding(horizontal = N3Spacing.s, vertical = N3Spacing.xs)) {
-                    FuriganaText(segment.furigana ?: segment.text, style = MaterialTheme.typography.titleMedium)
-                    marker?.let { Text(it, style = MaterialTheme.typography.labelSmall, color = if (isWrongSegment) colors.error else colors.onSurfaceVariant) }
+                Column(Modifier.padding(horizontal = 12.dp, vertical = 8.dp)) {
+                    FuriganaText(segment.furigana ?: segment.text, style = ContrastText.answer.copy(fontSize = 22.sp, lineHeight = 32.sp), color = tone?.onContainer ?: Color.Unspecified)
+                    marker?.let { Text(it, style = ContrastText.label.copy(fontSize = 13.sp), color = tone?.accent ?: colors.onSurfaceVariant) }
                 }
             }
         }
     }
-    if (feedback != null) question.prompt?.translationVi?.let { Text(it, style = MaterialTheme.typography.bodyMedium) }
+    if (feedback != null) question.prompt?.translationVi?.let { Text(it, style = ContrastText.bodySecondary, color = MaterialTheme.colorScheme.onSurfaceVariant) }
 }
 
 /** The situation (and its Japanese lines, kept as written), then whole sentences to choose from. */
 @Composable
 private fun ContextSelectionExercise(question: ContrastQuestion, selected: String?, feedback: PracticeFeedback?, enabled: Boolean, onSelect: (String) -> Unit) {
     question.context?.let { context ->
-        N3Card(modifier = Modifier.testTag(PracticeTags.CONTEXT)) {
-            Text(context.descriptionVi, style = MaterialTheme.typography.bodyLarge)
+        ContrastCard(tone = ContrastTones.review(), modifier = Modifier.testTag(PracticeTags.CONTEXT)) {
+            Text(stringResource(R.string.contrast_ui_situation), style = ContrastText.label, color = ContrastTones.review().accent)
+            Text(context.descriptionVi, style = ContrastText.body)
             context.japanese?.let { japanese ->
                 val lines = (context.furigana ?: japanese).split('\n')
-                lines.forEach { line -> if (line.isNotBlank()) FuriganaText(line) }
+                lines.forEach { line -> if (line.isNotBlank()) FuriganaText(line, style = ContrastText.exampleJp.copy(fontSize = 20.sp, lineHeight = 32.sp)) }
             }
         }
     }
     OptionList(question.options, selected, feedback, enabled, onSelect)
 }
 
-/** Single-choice options; after the answer each one says (in words, not only colour) whether it was the answer or the choice. */
+/** True for a short option made of kanji only (e.g. 鳥, 成績): shown large so the shapes can be compared. */
+private fun isKanjiOption(option: ContrastOption): Boolean =
+    option.text.length <= 3 && option.text.all { Character.UnicodeScript.of(it.code) == Character.UnicodeScript.HAN }
+
+/**
+ * Single-choice answer cards. Selecting one tints and outlines it with a tiny scale; after the answer
+ * each card says in words and with an icon (not only colour) whether it was the answer or the choice.
+ */
 @Composable
 private fun OptionList(options: List<ContrastOption>, selected: String?, feedback: PracticeFeedback?, enabled: Boolean, onSelect: (String) -> Unit) {
-    Column(Modifier.selectableGroup(), verticalArrangement = Arrangement.spacedBy(N3Spacing.s)) {
-        options.forEach { option ->
+    val practice = ContrastTones.practice()
+    val right = ContrastTones.correct()
+    val wrong = ContrastTones.incorrect()
+    val reduce = LocalReduceMotion.current
+    val kanji = options.all(::isKanjiOption)
+    Column(Modifier.selectableGroup(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        options.forEachIndexed { index, option ->
             val isSelected = option.id == selected
             val isCorrect = feedback != null && option.id == feedback.correctOptionId
             val isWrongChoice = feedback != null && isSelected && !isCorrect
+            val tone = when {
+                isCorrect -> right
+                isWrongChoice -> wrong
+                isSelected -> practice
+                else -> null
+            }
             val colors = MaterialTheme.colorScheme
             val marker = when {
                 isCorrect -> stringResource(R.string.contrast_option_correct)
                 isWrongChoice -> stringResource(R.string.contrast_option_chosen)
                 else -> null
             }
+            val scale by animateFloatAsState(if (isSelected && feedback == null && !reduce) 1.02f else 1f, spring(stiffness = 500f), label = "option")
+            val container by animateColorAsState(tone?.container ?: colors.surfaceContainerLow, if (reduce) snap() else tween(N3Motion.MEDIUM), label = "optionBg")
+            val dim = feedback != null && tone == null
             Surface(
-                shape = MaterialTheme.shapes.medium,
-                border = when {
-                    isCorrect -> BorderStroke(2.dp, colors.primary)
-                    isWrongChoice -> BorderStroke(2.dp, colors.error)
-                    isSelected -> BorderStroke(2.dp, colors.primary)
-                    else -> BorderStroke(1.dp, colors.outlineVariant)
-                },
-                color = if (isSelected && feedback == null) colors.secondaryContainer else colors.surface,
+                shape = RoundedCornerShape(18.dp),
+                border = BorderStroke(if (tone != null) 2.dp else 1.dp, tone?.accent ?: colors.outlineVariant),
+                color = container,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .heightIn(min = 48.dp)
+                    .scale(scale)
+                    .heightIn(min = 64.dp)
                     .testTag(PracticeTags.option(option.id))
                     .selectable(selected = isSelected, enabled = enabled, role = Role.RadioButton, onClick = { onSelect(option.id) })
                     .semantics { marker?.let { stateDescription = it } },
             ) {
-                Row(Modifier.padding(N3Spacing.m), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(N3Spacing.s)) {
-                    RadioButton(selected = isSelected, onClick = null)
-                    Column(Modifier.weight(1f)) {
-                        FuriganaText(option.furigana ?: option.text)
-                        marker?.let {
-                            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(N3Spacing.xs)) {
-                                Icon(if (isCorrect) Icons.Filled.Check else Icons.Filled.Close, contentDescription = null, modifier = Modifier.size(16.dp), tint = if (isCorrect) colors.primary else colors.error)
-                                Text(it, style = MaterialTheme.typography.labelMedium, color = if (isCorrect) colors.primary else colors.error)
-                            }
+                Row(Modifier.padding(horizontal = 16.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
+                    Box(
+                        Modifier.size(36.dp).clip(CircleShape).background(tone?.accent ?: colors.surfaceContainerHighest),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        when {
+                            isCorrect -> Icon(Icons.Filled.Check, contentDescription = null, tint = colors.surface, modifier = Modifier.size(20.dp))
+                            isWrongChoice -> Icon(Icons.Filled.Close, contentDescription = null, tint = colors.surface, modifier = Modifier.size(20.dp))
+                            else -> Text(('A' + index).toString(), style = ContrastText.label, color = if (tone != null) colors.surface else colors.onSurfaceVariant)
                         }
+                    }
+                    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                        FuriganaText(
+                            option.furigana ?: option.text,
+                            style = if (kanji) ContrastText.answerKanji else ContrastText.answer,
+                            color = when {
+                                tone != null -> tone.onContainer
+                                dim -> colors.onSurfaceVariant
+                                else -> Color.Unspecified
+                            },
+                        )
+                        marker?.let { Text(it, style = ContrastText.label.copy(fontSize = 13.sp), color = tone?.accent ?: colors.onSurfaceVariant) }
                     }
                 }
             }
@@ -352,53 +459,69 @@ private fun OptionList(options: List<ContrastOption>, selected: String?, feedbac
 @Composable
 private fun FeedbackPanel(item: PracticeQuestion, feedback: PracticeFeedback) {
     val question = item.question
-    val colors = MaterialTheme.colorScheme
-    val (icon, title, tint) = when (feedback.outcome) {
-        AnswerOutcome.CORRECT -> Triple(Icons.Filled.Check, stringResource(R.string.contrast_feedback_correct), colors.primary)
-        AnswerOutcome.INCORRECT -> Triple(Icons.Filled.Close, stringResource(R.string.contrast_feedback_incorrect), colors.error)
-        AnswerOutcome.SKIPPED -> Triple(Icons.Filled.Info, stringResource(R.string.contrast_feedback_skipped), colors.onSurfaceVariant)
+    val (icon, title, tone) = when (feedback.outcome) {
+        AnswerOutcome.CORRECT -> Triple(Icons.Filled.Check, stringResource(R.string.contrast_feedback_correct), ContrastTones.correct())
+        AnswerOutcome.INCORRECT -> Triple(Icons.Filled.Close, stringResource(R.string.contrast_feedback_incorrect), ContrastTones.incorrect())
+        AnswerOutcome.SKIPPED -> Triple(Icons.Filled.Info, stringResource(R.string.contrast_feedback_skipped), ContrastTones.neutral())
     }
-    N3Card(modifier = Modifier.testTag(PracticeTags.FEEDBACK).semantics { liveRegion = LiveRegionMode.Polite }) {
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(N3Spacing.s)) {
-            Icon(icon, contentDescription = null, tint = tint)
-            Text(title, style = MaterialTheme.typography.titleMedium, color = tint, modifier = Modifier.semantics { heading() })
+    ContrastCard(tone = tone, modifier = Modifier.testTag(PracticeTags.FEEDBACK).semantics { liveRegion = LiveRegionMode.Polite }, verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Box(Modifier.size(40.dp).clip(CircleShape).background(tone.accent), contentAlignment = Alignment.Center) {
+                Icon(icon, contentDescription = null, tint = MaterialTheme.colorScheme.surface)
+            }
+            Text(title, style = ContrastText.section.copy(fontSize = 22.sp, lineHeight = 30.sp), color = tone.accent, modifier = Modifier.semantics { heading() })
         }
         val correct = question.option(feedback.correctOptionId)
-        if (correct != null) Text(stringResource(R.string.contrast_feedback_answer, correct.text), style = MaterialTheme.typography.bodyLarge)
+        if (correct != null) Text(japaneseText(stringResource(R.string.contrast_feedback_answer, correct.text)), style = ContrastText.answer.copy(fontSize = 19.sp))
         if (question.type == ContrastQuestionType.ERROR_DETECTION) {
-            question.correction?.let { Text(stringResource(R.string.contrast_feedback_correction, it.text), style = MaterialTheme.typography.bodyLarge) }
+            question.correction?.let { Text(japaneseText(stringResource(R.string.contrast_feedback_correction, it.text)), style = ContrastText.answer.copy(fontSize = 19.sp)) }
         }
-        Text(feedback.explanationVi, style = MaterialTheme.typography.bodyMedium)
-        feedback.chosenFeedbackVi?.let { Text(it, style = MaterialTheme.typography.bodyMedium, color = colors.onSurfaceVariant) }
+        Text(feedback.explanationVi, style = ContrastText.body)
+        feedback.chosenFeedbackVi?.let { Text(it, style = ContrastText.body, color = tone.onContainer.copy(alpha = 0.85f)) }
         feedback.confusion?.let { (expected, chosen) ->
             Text(
                 stringResource(R.string.contrast_feedback_confusion, item.itemLabels[expected] ?: expected, item.itemLabels[chosen] ?: chosen),
-                style = MaterialTheme.typography.bodyMedium,
+                style = ContrastText.body,
             )
         }
-        if (feedback.retryAdded) Text(stringResource(R.string.contrast_feedback_retry_added), style = MaterialTheme.typography.bodySmall, color = colors.onSurfaceVariant)
-        feedback.nextDueAt?.let { Text(stringResource(R.string.contrast_feedback_next_due, formatDate(it)), style = MaterialTheme.typography.bodySmall, color = colors.onSurfaceVariant) }
+        if (feedback.retryAdded) Text(stringResource(R.string.contrast_feedback_retry_added), style = ContrastText.caption)
+        feedback.nextDueAt?.let { Text(stringResource(R.string.contrast_feedback_next_due, formatDate(it)), style = ContrastText.caption) }
     }
 }
 
 @Composable
 private fun PracticeActionsBar(selected: String?, feedback: PracticeFeedback?, submitting: Boolean, saveFailed: Boolean, actions: PracticeActions) {
-    Column(Modifier.fillMaxWidth().padding(horizontal = N3Spacing.screen, vertical = N3Spacing.s), verticalArrangement = Arrangement.spacedBy(N3Spacing.s)) {
-        if (saveFailed) {
-            Text(stringResource(R.string.contrast_practice_save_failed), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.error, modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite })
-        }
-        when {
-            feedback != null -> Button(onClick = actions.next, modifier = Modifier.fillMaxWidth().testTag(PracticeTags.NEXT)) {
-                Text(stringResource(if (feedback.sessionCompleted) R.string.contrast_practice_finish else R.string.contrast_practice_next))
+    val practice = ContrastTones.practice()
+    Surface(color = MaterialTheme.colorScheme.surface, shadowElevation = 6.dp) {
+        Column(Modifier.fillMaxWidth().imePadding().padding(horizontal = 16.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            if (saveFailed) {
+                Text(stringResource(R.string.contrast_practice_save_failed), style = ContrastText.body, color = MaterialTheme.colorScheme.error, modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite })
             }
-            submitting -> Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(N3Spacing.s), modifier = Modifier.heightIn(min = 48.dp)) {
-                CircularProgressIndicator(modifier = Modifier.size(24.dp))
-                Text(stringResource(R.string.contrast_practice_saving))
-            }
-            else -> Row(horizontalArrangement = Arrangement.spacedBy(N3Spacing.s)) {
-                OutlinedButton(onClick = actions.skip, modifier = Modifier.weight(1f).testTag(PracticeTags.SKIP)) { Text(stringResource(R.string.contrast_practice_skip)) }
-                Button(onClick = actions.submit, enabled = selected != null, modifier = Modifier.weight(1f).testTag(PracticeTags.CHECK)) {
-                    Text(stringResource(R.string.contrast_practice_check))
+            when {
+                feedback != null -> GradientButton(
+                    stringResource(if (feedback.sessionCompleted) R.string.contrast_practice_finish else R.string.contrast_practice_next),
+                    if (feedback.outcome == AnswerOutcome.CORRECT) ContrastTones.correct() else practice,
+                    actions.next,
+                    Modifier.testTag(PracticeTags.NEXT),
+                )
+                submitting -> Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.heightIn(min = 56.dp)) {
+                    CircularProgressIndicator(modifier = Modifier.size(24.dp), color = practice.accent)
+                    Text(stringResource(R.string.contrast_practice_saving), style = ContrastText.body)
+                }
+                else -> Row(horizontalArrangement = Arrangement.spacedBy(12.dp), verticalAlignment = Alignment.CenterVertically) {
+                    OutlinedButton(
+                        onClick = actions.skip,
+                        shape = RoundedCornerShape(18.dp),
+                        border = BorderStroke(1.dp, practice.accent.copy(alpha = 0.5f)),
+                        modifier = Modifier.weight(1f).heightIn(min = 56.dp).testTag(PracticeTags.SKIP),
+                    ) { Text(stringResource(R.string.contrast_practice_skip), style = ContrastText.label.copy(fontSize = 17.sp), color = practice.accent) }
+                    GradientButton(
+                        stringResource(R.string.contrast_practice_check),
+                        practice,
+                        actions.submit,
+                        Modifier.weight(1.4f).testTag(PracticeTags.CHECK),
+                        enabled = selected != null,
+                    )
                 }
             }
         }

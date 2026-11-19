@@ -30,6 +30,8 @@ Ký hiệu: ✅ đạt, có bằng chứng · ⏳ chưa xong, cần chủ dự �
 | C4 | `build_pack.py --check … --strict` đạt, không còn cảnh báo chưa xác nhận | ✅ cho gói mẫu | Cần chạy lại trên gói phát hành thật, kèm `--previous` khi đã có bản trước |
 | C5 | Dấu vân tay nguồn (SHA-256) khớp gói nguồn đang phát hành | ✅ cho gói mẫu | `test_sample_fingerprints_match_the_real_source_packs` |
 
+Bản **debug** có gói xem trước `contrast-n3-preview` (69 nhóm chưa duyệt, có nhãn "NỘI DUNG THỬ NGHIỆM — CHƯA KIỂM DUYỆT") để thử toàn bộ Contrast Lab. Bản release không chứa gói này, đã kiểm trên APK release (không có asset, không có đường dẫn trong dex). Thiết bị debug từng cài gói xem trước phải xóa dữ liệu app trước khi thử gói đã duyệt có cùng id nhóm.
+
 Không được đổi `reviewer-01` thành tên người thật, không được đặt `licenseVerified: true` khi chưa có người duyệt và giấy phép thật.
 
 ## 3. Testing readiness

@@ -6,6 +6,7 @@ Docs: docs/CONTRAST_LAB_CONTENT_GENERATION_REPORT.md, docs/CONTRAST_LAB_TOOLING.
     python3 tools/content/contrast/drafts_tool.py generate     # authoring/*.py → drafts/<groupId>.json + release.json
     python3 tools/content/contrast/drafts_tool.py check        # validator (build mode) + editorial QA, on the drafts as they are
     python3 tools/content/contrast/drafts_tool.py test-pack OUT.json   # TEST-ONLY pack (never for the app's assets)
+    python3 tools/content/contrast/drafts_tool.py debug-preview        # DEBUG-BUILD preview pack (app/src/debug/assets only)
 
 The drafts are written with status AI_GENERATED: they are AI-written and nobody has reviewed them.
 A release pack is built only by build_pack.py --drafts …, which needs APPROVED drafts approved by a
@@ -299,24 +300,29 @@ def cmd_check(args) -> int:
     return 1 if errors or qa_errors or stale else 0
 
 
-def cmd_test_pack(args) -> int:
+PREVIEW_PACK_ID = "contrast-n3-preview"  # same constant as the app's ContrastPreview.PACK_ID
+PREVIEW_TITLE = "NỘI DUNG THỬ NGHIỆM — CHƯA KIỂM DUYỆT"
+
+
+def _unreviewed_pack(approved_by: str, pack_meta: dict) -> tuple[dict, int]:
+    """A pack the importer accepts, built from the drafts WITHOUT touching them: every group is set
+    PUBLISHED with approvedBy = [approved_by] (a label saying it is NOT reviewed) and the validator's
+    warnings listed, so it can be imported on a test device or a debug build. Never a release pack."""
     from validator import IMPORT, WARNING, validate
-    out = Path(args.output).resolve()
-    if (REPO / "app" / "src" / "main") in out.parents:
-        raise SystemExit("Gói TEST-ONLY không được ghi vào app/src/main (bản phát hành).")
     sources = load_sources()
-    drafts = read_drafts()
     groups = []
-    for g in drafts:
+    for g in read_drafts():
         g = dict(g)
         g["status"] = "PUBLISHED"
-        g["approval"] = {"authoredBy": "claude-ai-draft", "approvedBy": "chua-duyet-test-only", "approvedAt": UPDATED_AT,
+        g["approval"] = {"authoredBy": "claude-ai-draft", "approvedBy": approved_by, "approvedAt": UPDATED_AT,
                          "approvedRevision": g["revision"], "aiAssisted": True, "acknowledgedWarnings": []}
         groups.append(g)
     pack = assembled(groups, sources)
-    pack["pack"] = {**PACK_META, "title": "Contrast Lab N3 — CHƯA DUYỆT, CHỈ DÙNG CHO TEST"}
+    pack["pack"] = pack_meta
     schema = json.loads(SCHEMA.read_text(encoding="utf-8"))
     issues, _ = validate(pack, schema, IMPORT, sources, None)
+    if any(i["severity"] == "ERROR" for i in issues):
+        raise SystemExit("Bản nháp còn ERROR: chạy drafts_tool.py check trước.")
     by_group = defaultdict(list)
     for i in issues:
         if i["severity"] == WARNING and i.get("target"):
@@ -324,8 +330,32 @@ def cmd_test_pack(args) -> int:
             by_group[int(m.group(1))].append({"code": i["code"], "target": i["target"]})
     for idx, acks in by_group.items():
         pack["groups"][idx]["approval"]["acknowledgedWarnings"] = acks
+    return pack, sum(map(len, by_group.values()))
+
+
+def cmd_test_pack(args) -> int:
+    out = Path(args.output).resolve()
+    if (REPO / "app" / "src" / "main") in out.parents:
+        raise SystemExit("Gói TEST-ONLY không được ghi vào app/src/main (bản phát hành).")
+    pack, acks = _unreviewed_pack("chua-duyet-test-only", {**PACK_META, "title": "Contrast Lab N3 — CHƯA DUYỆT, CHỈ DÙNG CHO TEST"})
     out.write_text(dump(pack), encoding="utf-8")
-    print(f"Đã ghi gói TEST-ONLY ({len(groups)} nhóm, {sum(map(len, by_group.values()))} cảnh báo ghi nhận cho test) vào {out}")
+    print(f"Đã ghi gói TEST-ONLY ({len(pack['groups'])} nhóm, {acks} cảnh báo ghi nhận cho test) vào {out}")
+    return 0
+
+
+def cmd_debug_preview(args) -> int:
+    """The DEBUG-BUILD preview pack (app/src/debug/assets only): own pack id, title and approvedBy
+    labels that say it is unreviewed; the app shows it with a banner and never in a release APK."""
+    out = Path(args.output).resolve()
+    debug_assets = REPO / "app" / "src" / "debug" / "assets"
+    if debug_assets not in out.parents:
+        raise SystemExit("Gói xem trước chỉ được ghi vào app/src/debug/assets (không có trong bản release).")
+    meta = {**PACK_META, "id": PREVIEW_PACK_ID, "title": PREVIEW_TITLE,
+            "description": "Bản xem trước chỉ dành cho bản debug: các nhóm do AI soạn, đã qua kiểm tra kỹ thuật nhưng CHƯA được người duyệt kiểm tra. Không phát hành."}
+    pack, acks = _unreviewed_pack("chua-duyet-debug-preview", meta)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(dump(pack), encoding="utf-8")
+    print(f"Đã ghi gói XEM TRƯỚC DEBUG ({len(pack['groups'])} nhóm, {acks} cảnh báo chưa được người duyệt xác nhận) vào {out}")
     return 0
 
 
@@ -385,8 +415,10 @@ def main(argv=None) -> int:
     c.add_argument("--report")
     t = sub.add_parser("test-pack")
     t.add_argument("output")
+    dp = sub.add_parser("debug-preview")
+    dp.add_argument("output", nargs="?", default=str(REPO / "app" / "src" / "debug" / "assets" / "contrast-preview" / "contrast-n3-preview.json"))
     args = p.parse_args(argv)
-    return {"catalog": cmd_catalog, "generate": cmd_generate, "check": cmd_check, "test-pack": cmd_test_pack}[args.cmd](args)
+    return {"catalog": cmd_catalog, "generate": cmd_generate, "check": cmd_check, "test-pack": cmd_test_pack, "debug-preview": cmd_debug_preview}[args.cmd](args)
 
 
 if __name__ == "__main__":

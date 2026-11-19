@@ -24,14 +24,18 @@ object AppTestState {
     /**
      * @param bundledContent whether MainActivity may install the illustration pack; off by
      *   default so tests see only the data they set up.
+     * @param contrastPreview whether the debug-build Contrast preview pack (unreviewed drafts) may be
+     *   installed with the bundled content; off by default so Contrast tests see only their own pack.
      */
     fun reset(
         seedContent: Boolean,
         onboardingCompleted: Boolean = true,
         bundledContent: Boolean = false,
         seedCountsAsRealContent: Boolean = false,
+        contrastPreview: Boolean = false,
     ) = runBlocking {
         container.androidContentImportRepository.bundledContentEnabled = bundledContent
+        container.androidContentImportRepository.contrastPreviewEnabled = contrastPreview
         container.database.clearAllTables()
         // clearAllTables() ends with VACUUM, which rewrites the whole database into the WAL. Since
         // schema v16 an empty database is large enough for that WAL to pass Android's truncate size,

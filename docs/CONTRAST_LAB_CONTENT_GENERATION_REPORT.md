@@ -215,3 +215,43 @@ Lệnh: `python3 tools/content/contrast/drafts_tool.py catalog` (chỉ đọc, k
 - Độ phủ từ vựng còn thấp (5,9 %). Nhiều cặp Kanji hợp lệ đang để đợt sau (mục 2).
 - Thiếu `usage` ở 64 mục ngữ pháp nguồn và nghĩa Kanji chưa kiểm duyệt của nguồn. Đây là hạn chế của dữ liệu gốc, không thuộc nội dung Contrast.
 - Chưa thử TalkBack bằng tay với nội dung mới.
+
+## 10. Sự cố "Contrast Lab trống" và chế độ xem trước của bản debug (2026-11-18)
+
+**Nguyên nhân, có bằng chứng.** Thuộc loại C và D trong phân loại sự cố: nội dung đã có và đạt kiểm tra kỹ thuật, nhưng chưa được duyệt nên không có gói nào được đóng vào APK.
+- **69 bản nháp đều chưa duyệt.** `tools/content/contrast/drafts/` có 69 nhóm, tất cả `"status": "AI_GENERATED"`. Không có `reviewers.json`, không có `releases/`. `build_pack.py --drafts` từ chối với 69 STATUS_NOT_PUBLISHED.
+- **App không mang gói nào.** `AndroidContentImportRepository.CONTRAST_BUNDLED_PACK_ASSETS = emptyList()`, nên `installContrast()` thoát ngay và không gọi importer. `app/src/main/assets` không có tệp Contrast nào.
+- **Vì vậy Room trống và Home hiện câu báo trống.** Bảng `contrast_groups` không có dòng nào, `observeGroups()` trả danh sách rỗng, và Home hiện `contrast_empty`.
+- **Không phải lỗi bộ lọc hay lỗi import bị nuốt.** Importer không hề được gọi. Khi gói được cài, Home và Thư viện hiện đủ 69 nhóm (xem test bên dưới).
+
+**Khắc phục an toàn: chế độ xem trước chỉ dành cho bản debug.**
+- **Cách ly bằng source set:**
+  - `app/src/debug/assets/contrast-preview/contrast-n3-preview.json` do `drafts_tool.py debug-preview` sinh ra. Pack id `contrast-n3-preview`, tiêu đề "NỘI DUNG THỬ NGHIỆM — CHƯA KIỂM DUYỆT", `approvedBy: chua-duyet-debug-preview`.
+  - `src/debug/.../ContrastPreviewAssets.kt` khai báo đường dẫn; `src/release/...` khai báo danh sách rỗng.
+- **Quy tắc cài:** gói xem trước chỉ được cài khi chưa có gói đã duyệt nào trong `CONTRAST_BUNDLED_PACK_ASSETS`.
+- **Nhãn trên giao diện:** cả 8 màn Contrast hiện băng nhãn khi nội dung đến từ gói xem trước.
+- **Bản nháp giữ nguyên `AI_GENERATED`.** Không ai được ghi là người duyệt.
+
+**Kết quả đo:**
+- Room thật trên emulator: cài APK debug, xóa dữ liệu app trên emulator, mở app bình thường, rồi đọc database của app. Kết quả:
+  - `contrast_packs` có 1 dòng là `contrast-n3-preview`.
+  - `contrast_groups` có 22 ngữ pháp, 24 từ vựng, 23 Kanji.
+  - `contrast_questions` có 277 câu: MC 69, FILL 70, ERROR 69, CONTEXT 69.
+  - `contrast_examples` có 328 dòng.
+  - Không có dòng nào trong bảng dữ liệu học; `user_version` là 16.
+- APK release: không có asset `contrast-preview`, và đường dẫn của nó không xuất hiện trong dex. APK debug có cả hai.
+- **Test:**
+
+| Lệnh | Kết quả |
+|---|---|
+| `ContrastDebugPreviewTest` | 4/4 đạt: asset và nhãn có trong bản debug; cài 69 nhóm, không ghi dữ liệu học; cài lại thì UP_TO_DATE và giữ attempt; có gói đã duyệt thì không cài gói xem trước; tắt cờ thì không cài |
+| `ContrastDebugPreviewEndToEndTest` | Đạt: Home có 69 nhóm và băng nhãn, Thư viện tìm 鳥 ra 鳥 / 島, So sánh hiện mục và ví dụ, luyện tập (1 sai, 1 bỏ qua, còn lại đúng) tới Tổng kết; SRS cũ không đổi |
+| Toàn bộ test thiết bị | 466 test: 463 đạt, 1 thất bại, 2 bỏ qua |
+| Unit test | 597/597 |
+| Test Python | 25/25 |
+| `drafts_tool.py check` | 0 ERROR |
+| `lintDebug` | 0 lỗi, không cảnh báo nào trong mã Contrast |
+| `assembleDebug`, `assembleRelease` | Đạt |
+
+  Lỗi duy nhất của suite thiết bị là `HourPickerReachabilityTest`, có từ trước Contrast. 2 test ML Kit bỏ qua theo thiết kế.
+- **Lưu ý:** thiết bị debug đã cài gói xem trước phải xóa dữ liệu app trước khi thử một gói đã duyệt có cùng id nhóm.

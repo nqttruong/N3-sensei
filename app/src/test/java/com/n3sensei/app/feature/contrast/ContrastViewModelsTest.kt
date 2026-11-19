@@ -108,6 +108,20 @@ class ContrastViewModelsTest {
         assertTrue(failingVm.links.value.isEmpty())
     }
 
+    @Test
+    fun previewLabel_onlyForGroupsOfTheDebugPreviewPack() = runTest {
+        val reviewed = ContrastPreviewViewModel(content)
+        collect(reviewed.isPreview)
+        assertTrue(!reviewed.isPreview.value)
+        val previewPack = samplePack.copy(groups = samplePack.groups.map { g -> g.copy(detail = g.detail.copy(group = g.detail.group.copy(packId = com.n3sensei.app.domain.contrast.ContrastPreview.PACK_ID))) })
+        val preview = ContrastPreviewViewModel(FakeContrastContent(previewPack))
+        collect(preview.isPreview)
+        assertTrue(preview.isPreview.value)
+        val none = ContrastPreviewViewModel(emptyContent())
+        collect(none.isPreview)
+        assertTrue(!none.isPreview.value)
+    }
+
     // ---- Home ----
 
     @Test

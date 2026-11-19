@@ -1,9 +1,14 @@
 package com.n3sensei.app.app.navigation
 
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -11,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -52,6 +58,8 @@ import com.n3sensei.app.feature.contrast.ContrastLinksSection
 import com.n3sensei.app.feature.contrast.ContrastLinksViewModel
 import com.n3sensei.app.feature.contrast.ContrastPracticeScreen
 import com.n3sensei.app.feature.contrast.ContrastPracticeViewModel
+import com.n3sensei.app.feature.contrast.ContrastPreviewFrame
+import com.n3sensei.app.feature.contrast.ContrastPreviewViewModel
 import com.n3sensei.app.feature.contrast.ContrastProgressScreen
 import com.n3sensei.app.feature.contrast.ContrastProgressViewModel
 import com.n3sensei.app.feature.contrast.ContrastReviewScreen
@@ -150,6 +158,20 @@ fun N3SenseiNavHost(
     // tap feel slow. Only the fade is kept when the system asks for reduced motion.
     val reduceMotion = LocalReduceMotion.current
     val rise = if (reduceMotion) 0 else with(LocalDensity.current) { 24.dp.roundToPx() }
+    // Contrast Lab moves sideways (Home → Library → Compare → Practice → Summary), back goes the other way.
+    val slide = if (reduceMotion) 0 else with(LocalDensity.current) { 56.dp.roundToPx() }
+    val contrastEnter: AnimatedContentTransitionScope<NavBackStackEntry>.() -> EnterTransition = {
+        fadeIn(tween(CONTRAST_IN, easing = N3Motion.EnterEasing)) + slideInHorizontally(tween(CONTRAST_IN, easing = N3Motion.EnterEasing)) { slide }
+    }
+    val contrastExit: AnimatedContentTransitionScope<NavBackStackEntry>.() -> ExitTransition = {
+        fadeOut(tween(CONTRAST_OUT)) + slideOutHorizontally(tween(CONTRAST_OUT)) { -slide / 2 }
+    }
+    val contrastPopEnter: AnimatedContentTransitionScope<NavBackStackEntry>.() -> EnterTransition = {
+        fadeIn(tween(CONTRAST_IN, easing = N3Motion.EnterEasing)) + slideInHorizontally(tween(CONTRAST_IN, easing = N3Motion.EnterEasing)) { -slide / 2 }
+    }
+    val contrastPopExit: AnimatedContentTransitionScope<NavBackStackEntry>.() -> ExitTransition = {
+        fadeOut(tween(CONTRAST_OUT)) + slideOutHorizontally(tween(CONTRAST_OUT)) { slide }
+    }
     NavHost(
         navController = navController,
         startDestination = TopLevelDestination.START.route,
@@ -188,88 +210,113 @@ fun N3SenseiNavHost(
                     onOpenContrast = { navController.navigate(ContrastHomeRoute) },
                 )
             }
-            composable<ContrastHomeRoute> {
-                ContrastHomeScreen(
-                    viewModel = appViewModel { ContrastHomeViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, contrastAnalyticsRepository, clock) },
-                    onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
-                    onOpenLibrary = { navController.navigate(ContrastLibraryRoute) },
-                    onStartPractice = { navController.navigate(ContrastPracticeRoute()) },
-                    onResumePractice = { navController.navigate(ContrastPracticeRoute(resume = true)) },
-                    onOpenErrors = { navController.navigate(ContrastErrorsRoute) },
-                    onOpenReview = { navController.navigate(ContrastReviewRoute) },
-                    onOpenProgress = { navController.navigate(ContrastProgressRoute) },
-                )
+            composable<ContrastHomeRoute>(enterTransition = contrastEnter, exitTransition = contrastExit, popEnterTransition = contrastPopEnter, popExitTransition = contrastPopExit) {
+                ContrastPreviewFrame(appViewModel { ContrastPreviewViewModel(contrastContentRepository) }, showDetail = true) { m ->
+                    ContrastHomeScreen(
+                        viewModel = appViewModel { ContrastHomeViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, contrastAnalyticsRepository, clock) },
+                        onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
+                        onOpenLibrary = { navController.navigate(ContrastLibraryRoute()) },
+                        onStartPractice = { navController.navigate(ContrastPracticeRoute()) },
+                        onResumePractice = { navController.navigate(ContrastPracticeRoute(resume = true)) },
+                        onOpenErrors = { navController.navigate(ContrastErrorsRoute) },
+                        onOpenReview = { navController.navigate(ContrastReviewRoute) },
+                        onOpenProgress = { navController.navigate(ContrastProgressRoute) },
+                        modifier = m,
+                        onOpenCategory = { navController.navigate(ContrastLibraryRoute(it.name)) },
+                    )
+                }
             }
-            composable<ContrastErrorsRoute> {
+            composable<ContrastErrorsRoute>(enterTransition = contrastEnter, exitTransition = contrastExit, popEnterTransition = contrastPopEnter, popExitTransition = contrastPopExit) {
                 val retired = retiredGroupLabel()
-                ContrastErrorsScreen(
-                    viewModel = appSavedStateViewModel { saved -> ContrastErrorsViewModel(contrastContentRepository, contrastAnalyticsRepository, saved, retiredLabel = retired) },
-                    onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
-                )
+                ContrastPreviewFrame(appViewModel { ContrastPreviewViewModel(contrastContentRepository) }) { m ->
+                    ContrastErrorsScreen(
+                        viewModel = appSavedStateViewModel { saved -> ContrastErrorsViewModel(contrastContentRepository, contrastAnalyticsRepository, saved, retiredLabel = retired) },
+                        onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
+                        modifier = m,
+                    )
+                }
             }
-            composable<ContrastReviewRoute> {
+            composable<ContrastReviewRoute>(enterTransition = contrastEnter, exitTransition = contrastExit, popEnterTransition = contrastPopEnter, popExitTransition = contrastPopExit) {
                 val retired = retiredGroupLabel()
-                ContrastReviewScreen(
-                    viewModel = appViewModel {
-                        ContrastReviewViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, contrastAnalyticsRepository, clock, retiredLabel = retired)
-                    },
-                    // The M6 practice with due groups only: no second exercise screen.
-                    onStartReview = { navController.navigate(ContrastPracticeRoute(review = true)) },
-                    onResume = { navController.navigate(ContrastPracticeRoute(resume = true)) },
-                    onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
-                )
+                ContrastPreviewFrame(appViewModel { ContrastPreviewViewModel(contrastContentRepository) }) { m ->
+                    ContrastReviewScreen(
+                        viewModel = appViewModel {
+                            ContrastReviewViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, contrastAnalyticsRepository, clock, retiredLabel = retired)
+                        },
+                        // The M6 practice with due groups only: no second exercise screen.
+                        onStartReview = { navController.navigate(ContrastPracticeRoute(review = true)) },
+                        onResume = { navController.navigate(ContrastPracticeRoute(resume = true)) },
+                        onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
+                        modifier = m,
+                    )
+                }
             }
-            composable<ContrastProgressRoute> {
-                ContrastProgressScreen(
-                    viewModel = appViewModel {
-                        ContrastProgressViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, contrastAnalyticsRepository, clock)
-                    },
-                    onOpenReview = { navController.navigate(ContrastReviewRoute) },
-                    onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
-                )
+            composable<ContrastProgressRoute>(enterTransition = contrastEnter, exitTransition = contrastExit, popEnterTransition = contrastPopEnter, popExitTransition = contrastPopExit) {
+                ContrastPreviewFrame(appViewModel { ContrastPreviewViewModel(contrastContentRepository) }) { m ->
+                    ContrastProgressScreen(
+                        viewModel = appViewModel {
+                            ContrastProgressViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, contrastAnalyticsRepository, clock)
+                        },
+                        onOpenReview = { navController.navigate(ContrastReviewRoute) },
+                        onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
+                        modifier = m,
+                    )
+                }
             }
-            composable<ContrastLibraryRoute> {
-                ContrastLibraryScreen(
-                    viewModel = appSavedStateViewModel { saved ->
-                        ContrastLibraryViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, clock, saved)
-                    },
-                    onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
-                )
+            composable<ContrastLibraryRoute>(enterTransition = contrastEnter, exitTransition = contrastExit, popEnterTransition = contrastPopEnter, popExitTransition = contrastPopExit) {
+                ContrastPreviewFrame(appViewModel { ContrastPreviewViewModel(contrastContentRepository) }) { m ->
+                    ContrastLibraryScreen(
+                        viewModel = appSavedStateViewModel { saved ->
+                            ContrastLibraryViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, clock, saved)
+                        },
+                        onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) },
+                        modifier = m,
+                    )
+                }
             }
-            composable<ContrastGroupRoute> { entry ->
+            composable<ContrastGroupRoute>(enterTransition = contrastEnter, exitTransition = contrastExit, popEnterTransition = contrastPopEnter, popExitTransition = contrastPopExit) { entry ->
                 val groupId = entry.toRoute<ContrastGroupRoute>().groupId
-                ContrastGroupScreen(
-                    viewModel = appViewModel {
-                        ContrastLearningViewModel(groupId, contrastContentRepository, contrastSourceResolver, contrastPracticeRepository, contrastProgressRepository, clock)
-                    },
-                    links = SourceLinks(
-                        openGrammar = { navController.navigate(GrammarDetailRoute(it)) },
-                        openVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
-                        openKanji = { navController.navigate(KanjiDetailRoute(it)) },
-                    ),
-                    onPractice = { navController.navigate(ContrastPracticeRoute(groupId = it)) },
-                )
+                ContrastPreviewFrame(appViewModel { ContrastPreviewViewModel(contrastContentRepository) }) { m ->
+                    ContrastGroupScreen(
+                        viewModel = appViewModel {
+                            ContrastLearningViewModel(groupId, contrastContentRepository, contrastSourceResolver, contrastPracticeRepository, contrastProgressRepository, clock)
+                        },
+                        links = SourceLinks(
+                            openGrammar = { navController.navigate(GrammarDetailRoute(it)) },
+                            openVocabulary = { navController.navigate(VocabularyDetailRoute(it)) },
+                            openKanji = { navController.navigate(KanjiDetailRoute(it)) },
+                        ),
+                        onPractice = { navController.navigate(ContrastPracticeRoute(groupId = it)) },
+                        modifier = m,
+                    )
+                }
             }
-            composable<ContrastPracticeRoute> { entry ->
+            composable<ContrastPracticeRoute>(enterTransition = contrastEnter, exitTransition = contrastExit, popEnterTransition = contrastPopEnter, popExitTransition = contrastPopExit) { entry ->
                 val route = entry.toRoute<ContrastPracticeRoute>()
-                ContrastPracticeScreen(
-                    viewModel = appSavedStateViewModel { saved ->
-                        ContrastPracticeViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, clock, saved, route.groupId, route.resume, review = route.review)
-                    },
-                    // Leaving keeps the session (every answer is already stored); nothing is marked skipped.
-                    onExit = { navController.popBackStack() },
-                    onFinished = { sessionId ->
-                        navController.navigate(ContrastSummaryRoute(sessionId)) { popUpTo<ContrastPracticeRoute> { inclusive = true } }
-                    },
-                )
+                ContrastPreviewFrame(appViewModel { ContrastPreviewViewModel(contrastContentRepository) }) { m ->
+                    ContrastPracticeScreen(
+                        viewModel = appSavedStateViewModel { saved ->
+                            ContrastPracticeViewModel(contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, clock, saved, route.groupId, route.resume, review = route.review)
+                        },
+                        // Leaving keeps the session (every answer is already stored); nothing is marked skipped.
+                        onExit = { navController.popBackStack() },
+                        onFinished = { sessionId ->
+                            navController.navigate(ContrastSummaryRoute(sessionId)) { popUpTo<ContrastPracticeRoute> { inclusive = true } }
+                        },
+                        modifier = m,
+                    )
+                }
             }
-            composable<ContrastSummaryRoute> { entry ->
+            composable<ContrastSummaryRoute>(enterTransition = contrastEnter, exitTransition = contrastExit, popEnterTransition = contrastPopEnter, popExitTransition = contrastPopExit) { entry ->
                 val sessionId = entry.toRoute<ContrastSummaryRoute>().sessionId
-                ContrastSessionSummaryScreen(
-                    viewModel = appViewModel { ContrastSessionSummaryViewModel(sessionId, contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, clock) },
-                    onOpenHome = { navController.navigate(ContrastHomeRoute) { popUpTo<ContrastHomeRoute> { inclusive = true } } },
-                    onOpenLibrary = { navController.navigate(ContrastLibraryRoute) { popUpTo<ContrastHomeRoute>() } },
-                )
+                ContrastPreviewFrame(appViewModel { ContrastPreviewViewModel(contrastContentRepository) }) { m ->
+                    ContrastSessionSummaryScreen(
+                        viewModel = appViewModel { ContrastSessionSummaryViewModel(sessionId, contrastContentRepository, contrastPracticeRepository, contrastProgressRepository, clock) },
+                        onOpenHome = { navController.navigate(ContrastHomeRoute) { popUpTo<ContrastHomeRoute> { inclusive = true } } },
+                        onOpenLibrary = { navController.navigate(ContrastLibraryRoute()) { popUpTo<ContrastHomeRoute>() } },
+                        modifier = m,
+                    )
+                }
             }
             composable<ExamListRoute> {
                 ExamListScreen(
@@ -682,6 +729,9 @@ private fun ContrastLinks(navController: NavHostController, sources: ContrastSou
     val viewModel = appViewModel { ContrastLinksViewModel(contrastContentRepository) }
     ContrastLinksSection(viewModel, sources, title, onOpenGroup = { navController.navigate(ContrastGroupRoute(it)) })
 }
+
+private const val CONTRAST_IN = 260
+private const val CONTRAST_OUT = 180
 
 private fun PracticeResult.toRoute(practice: PracticeRoute) =
     PracticeResultRoute(

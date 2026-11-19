@@ -1137,6 +1137,25 @@
 
     <!-- Contrast Lab (M5) -->
     <string name="learn_contrast_title">Contrast Lab — Mới</string>
+    <string name="contrast_ui_home_kicker">Phân biệt kiến thức N3 dễ nhầm</string>
+    <string name="contrast_ui_home_title">Contrast Lab</string>
+    <string name="contrast_ui_explore_categories">Khám phá theo loại</string>
+    <string name="contrast_ui_groups_count">%1$d nhóm</string>
+    <string name="contrast_ui_due_today">%1$d nhóm đến hạn ôn</string>
+    <string name="contrast_ui_mastered_of">Nắm vững %1$d/%2$d nhóm</string>
+    <string name="contrast_ui_confusions_count">%1$d hướng hay nhầm</string>
+    <string name="contrast_ui_more_theory">Giải thích sâu hơn</string>
+    <string name="contrast_ui_mistakes_count">%1$d lỗi hay gặp — chạm để xem</string>
+    <string name="contrast_ui_situation">Tình huống</string>
+    <string name="contrast_ui_summary_title_great">Làm rất tốt!</string>
+    <string name="contrast_ui_summary_title_good">Tiến bộ rồi đấy</string>
+    <string name="contrast_ui_summary_title_keep">Ôn thêm một chút nhé</string>
+    <string name="contrast_ui_summary_title_none">Đã xong phiên</string>
+    <string name="contrast_ui_answers_count">%1$d câu</string>
+    <string name="contrast_ui_expanded">Đang mở</string>
+    <string name="contrast_ui_collapsed">Đang thu gọn</string>
+    <string name="contrast_preview_banner">NỘI DUNG THỬ NGHIỆM — CHƯA KIỂM DUYỆT</string>
+    <string name="contrast_preview_banner_detail">Chỉ có trong bản debug. Nội dung do AI soạn, đã qua kiểm tra kỹ thuật nhưng chưa được người duyệt kiểm tra; không phát hành.</string>
     <string name="contrast_links_lesson">Phân biệt kiến thức dễ nhầm</string>
     <string name="contrast_links_item">Xem các kiến thức dễ nhầm</string>
     <string name="learn_contrast_description">Phân biệt ngữ pháp, từ vựng và Kanji dễ nhầm</string>

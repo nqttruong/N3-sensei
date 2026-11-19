@@ -26,6 +26,12 @@ Tab Học (LearnHub) ── "Contrast Lab — Mới" (mục cuối danh sách, k
 - **Hiển thị:** một hàng chip cuộn ngang (`ContrastLinkTags`). Bấm vào mở màn So sánh.
 - **Hành vi:** không ghi gì. Khi không có gói được phát hành thì không hiện. Bài học vẫn theo CoursePlan, không đổi.
 
+### Nhãn nội dung thử nghiệm (bản debug)
+
+- Mọi màn Contrast (Home, Thư viện, So sánh, Luyện tập, Tổng kết, Phân tích lỗi, Ôn tập, Tiến độ) được bọc trong `ContrastPreviewFrame`.
+- Khi nội dung đã cài đến từ gói xem trước (`ContrastPreview.PACK_ID`), khung này hiện băng "NỘI DUNG THỬ NGHIỆM — CHƯA KIỂM DUYỆT" (`ContrastPreviewTags.BANNER`).
+- Bản release không có gói này nên không bao giờ hiện băng.
+
 ## 2. ViewModel và UI State
 
 Kiến trúc như phần còn lại của app: Screen → ViewModel → use case / repository → Room. Composable không truy cập DAO; ViewModel không giữ NavController. Mọi luồng được thu bằng `collectAsStateWithLifecycle`.

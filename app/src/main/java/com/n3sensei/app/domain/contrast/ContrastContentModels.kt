@@ -240,3 +240,13 @@ data class ContrastFilter(
     val contentType: ContrastContentType? = null,
     val jlptLevel: String? = null,
 )
+
+/**
+ * The debug-build preview pack of UNREVIEWED drafts (data.importing.ContrastPreviewAssets; absent from
+ * release builds). Groups of this pack are shown with "NỘI DUNG THỬ NGHIỆM — CHƯA KIỂM DUYỆT".
+ */
+object ContrastPreview {
+    const val PACK_ID = "contrast-n3-preview"
+
+    fun isPreview(group: ContrastGroup): Boolean = group.packId == PACK_ID
+}

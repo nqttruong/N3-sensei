@@ -58,7 +58,14 @@ python3 tools/content/contrast/drafts_tool.py catalog              # C1: catalog
 python3 tools/content/contrast/drafts_tool.py generate             # authoring → drafts/ + release.json (status AI_GENERATED)
 python3 tools/content/contrast/drafts_tool.py check [--report R]   # validator build + QA biên tập; bản nháp phải khớp nguồn soạn
 python3 tools/content/contrast/drafts_tool.py test-pack app/src/androidTest/assets/contrast/test-pack-n3-unreviewed.json
+python3 tools/content/contrast/drafts_tool.py debug-preview        # → app/src/debug/assets/contrast-preview/contrast-n3-preview.json
 ```
+
+**Gói xem trước của bản debug** (`debug-preview`):
+- Pack id `contrast-n3-preview`, tiêu đề "NỘI DUNG THỬ NGHIỆM — CHƯA KIỂM DUYỆT", `approvedBy: chua-duyet-debug-preview`.
+- Chỉ được ghi vào `app/src/debug/assets` và không sửa bản nháp nào.
+- App cài gói này chỉ ở bản debug (`src/debug/.../ContrastPreviewAssets.kt`; bản `src/release` khai báo danh sách rỗng), và chỉ khi `CONTRAST_BUNDLED_PACK_ASSETS` (gói đã duyệt) còn rỗng.
+- Sau khi sửa bản nháp, chạy lại `generate`, `check`, rồi `debug-preview`.
 
 - **QA biên tập**, ngoài 40 mã validation:
   - Không có Kanji nào nằm ngoài `{…|…}`.
