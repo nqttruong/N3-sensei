@@ -81,6 +81,9 @@ dependencies {
     // "Dịch nhanh": on-device translation (models downloaded once from Google, see docs/QUICK_TRANSLATE.md).
     implementation(libs.mlkit.translate)
     implementation(libs.kotlinx.coroutines.play.services)
+    // QR pairing with JLPT AI Review: Google code scanner UI from Play services. No CAMERA permission:
+    // the camera stays in Play services and only the decoded text returns to the app.
+    implementation(libs.play.services.code.scanner)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 

@@ -141,7 +141,7 @@ fun SettingsScreen(
             )
             HorizontalDivider()
 
-            AndroidSyncSettingsSection(syncViewModel)
+            JlptWebSyncSection(syncViewModel)
             JlptAiReviewSection(jlptAiReviewViewModel)
             HorizontalDivider()
 
@@ -237,41 +237,6 @@ fun SettingsScreen(
                 modifier = Modifier.padding(16.dp),
             )
         }
-    }
-}
-
-@Composable
-private fun AndroidSyncSettingsSection(viewModel: AndroidSyncViewModel) {
-    val syncState by viewModel.state.collectAsStateWithLifecycle()
-    var serverUrl by remember(syncState.serverUrl) { mutableStateOf(syncState.serverUrl) }
-    var pairingKey by remember { mutableStateOf("") }
-    SectionHeader("Đồng bộ JLPT AI Review", Modifier.padding(horizontal = 16.dp))
-    Column(Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
-        Text("Trạng thái: ${if (syncState.paired) "Đã ghép nối" else "Chưa ghép nối"}. Room giữ tiến độ SRS riêng trên thiết bị.", style = MaterialTheme.typography.bodySmall)
-        OutlinedTextField(serverUrl, { serverUrl = it }, label = { Text("URL máy chủ HTTPS") }, singleLine = true, readOnly = syncState.paired, modifier = Modifier.padding(top = 8.dp))
-        if (!syncState.paired) {
-            OutlinedTextField(pairingKey, { pairingKey = it }, label = { Text("Khóa ghép nối") }, singleLine = true)
-            Button(
-                enabled = !syncState.running && serverUrl.isNotBlank() && pairingKey.length >= 32,
-                onClick = {
-                    viewModel.pair(serverUrl, pairingKey, android.os.Build.MODEL)
-                    pairingKey = ""
-                },
-                modifier = Modifier.padding(top = 8.dp),
-            ) { Text("Ghép nối thiết bị") }
-        } else {
-            Button(
-                enabled = !syncState.running,
-                onClick = viewModel::pushReviews,
-                modifier = Modifier.padding(top = 8.dp),
-            ) { Text("Đồng bộ ngay") }
-            Text("${syncState.knowledgeCount} knowledge item đã tải · ${syncState.downloadedCount} thay đổi · ${syncState.pendingEvents} review event đang chờ gửi", modifier = Modifier.padding(top = 6.dp), style = MaterialTheme.typography.bodySmall)
-            syncState.lastSuccessAt?.let { Text("Đồng bộ thành công gần nhất: ${java.time.Instant.ofEpochMilli(it)}", style = MaterialTheme.typography.bodySmall) }
-            if (syncState.lastError != null) Text("Lỗi đồng bộ: ${syncState.lastError}", color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
-        androidx.compose.material3.TextButton(onClick = viewModel::disconnect, enabled = !syncState.running) { Text("Ngắt kết nối") }
-        }
-        if (syncState.running) CircularProgressIndicator(Modifier.padding(top = 8.dp).size(24.dp))
-        if (syncState.status.isNotBlank()) Text(syncState.status, modifier = Modifier.padding(top = 8.dp), style = MaterialTheme.typography.bodySmall)
     }
 }
 

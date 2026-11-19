@@ -17,7 +17,7 @@ import java.util.UUID
 class AndroidSyncClientIntegrationTest {
     private class FakeTransport(private val pages: MutableMap<Long, String>) : SyncTransport {
         val requests = mutableListOf<Pair<String, String>>()
-        override fun request(url: String, method: String, pairingKey: String?, bearer: String?, body: String?): String {
+        override fun request(url: String, method: String, pairingKey: String?, bearer: String?, body: String?, claimTicket: String?): String {
             requests += method to url
             if (url.endsWith("/pair")) return """{"data":{"device_id":"device","device_name":"test","access_token":"internal-device-token"}}"""
             if (url.contains("/changes?")) {

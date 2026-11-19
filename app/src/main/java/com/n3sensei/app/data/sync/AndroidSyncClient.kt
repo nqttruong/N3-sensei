@@ -4,12 +4,17 @@ import android.content.Context
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import android.util.Base64
+import androidx.core.content.edit
 import androidx.room.withTransaction
 import com.n3sensei.app.data.local.N3Database
 import com.n3sensei.app.data.local.dao.ProgressDao
 import com.n3sensei.app.data.local.entity.*
 import com.n3sensei.app.domain.repository.SyncRepository
 import com.n3sensei.app.domain.repository.SyncStatus
+import com.n3sensei.app.domain.repository.SyncHttpException
+import com.n3sensei.app.domain.repository.QrPairingProgress
+import com.n3sensei.app.domain.repository.QrPairingStatus
+import java.security.SecureRandom
 import com.n3sensei.app.domain.model.JlptKnowledge
 import com.n3sensei.app.domain.model.JlptQuestion
 import com.n3sensei.app.domain.model.JlptReviewItem
@@ -34,32 +39,42 @@ import java.util.UUID
 
 /** Explicit HTTPS sync. Remote state is confined to `synced_*`; legacy SRS tables are read-only. */
 fun interface SyncTransport {
-    fun request(url: String, method: String, pairingKey: String?, bearer: String?, body: String?): String
+    /** [claimTicket] is sent as `X-Claim-Ticket` (QR pairing). Non-2xx answers throw [SyncHttpException]. */
+    fun request(url: String, method: String, pairingKey: String?, bearer: String?, body: String?, claimTicket: String?): String
 }
 
 class HttpsSyncTransport : SyncTransport {
-    override fun request(url: String, method: String, pairingKey: String?, bearer: String?, body: String?): String {
+    override fun request(url: String, method: String, pairingKey: String?, bearer: String?, body: String?, claimTicket: String?): String {
         val connection = (URL(url).openConnection() as HttpURLConnection).apply {
             requestMethod = method; connectTimeout = 10_000; readTimeout = 20_000; doOutput = body != null
+            instanceFollowRedirects = false
             setRequestProperty("Accept", "application/json")
             if (body != null) setRequestProperty("Content-Type", "application/json")
             pairingKey?.let { setRequestProperty("X-Pairing-Key", it) }
             bearer?.let { setRequestProperty("Authorization", "Bearer $it") }
+            claimTicket?.let { setRequestProperty("X-Claim-Ticket", it) }
         }
         return try {
             if (body != null) connection.outputStream.use { it.write(body.toByteArray(Charsets.UTF_8)) }
             val code = connection.responseCode
-            if (code == 401 || code == 403) error("Thiết bị bị thu hồi hoặc xác thực hết hạn (HTTP $code). Ghép nối lại trong mạng HTTPS tin cậy.")
-            if (code == 429 || code >= 500) throw IOException("Temporary Sync API response HTTP $code.")
             val stream = if (code in 200..299) connection.inputStream else connection.errorStream
             val text = stream?.bufferedReader()?.use { it.readText() }.orEmpty()
-            check(code in 200..299) { "Sync API trả HTTP $code." }
+            if (code !in 200..299) {
+                val detail = runCatching { JSONObject(text).opt("detail") as? String }.getOrNull()?.take(200)
+                throw SyncHttpException(code, detail, connection.getHeaderField("Retry-After")?.toLongOrNull())
+            }
             text
         } finally { connection.disconnect() }
     }
 }
 
-class AndroidSyncClient(context: Context, private val database: N3Database, private val transport: SyncTransport = HttpsSyncTransport()) : SyncRepository {
+class AndroidSyncClient(
+    context: Context,
+    private val database: N3Database,
+    private val transport: SyncTransport = HttpsSyncTransport(),
+    private val clock: () -> Instant = Instant::now,
+    private val random: SecureRandom = SecureRandom(),
+) : SyncRepository {
     private val progressDao: ProgressDao = database.progressDao()
     private val syncDao = database.syncDao()
     private val preferences = context.applicationContext.getSharedPreferences("android_sync", Context.MODE_PRIVATE)
@@ -69,15 +84,79 @@ class AndroidSyncClient(context: Context, private val database: N3Database, priv
 
     override suspend fun pair(serverUrl: String, pairingKey: String, deviceName: String): String = withContext(Dispatchers.IO) {
         val base = normalizeBaseUrl(serverUrl)
-        val previousServer = preferences.getString(KEY_SERVER, null)
         val response = request("$base/api/v1/sync/pair", "POST", pairingKey = pairingKey,
             body = JSONObject().put("device_name", deviceName).toString())
         val data = JSONObject(response).getJSONObject("data")
-        if (previousServer != null && previousServer != base) {
-            database.withTransaction { syncDao.putCheckpoint(SyncCheckpointEntity()) }
-        }
-        preferences.edit().putString(KEY_SERVER, base).putString(KEY_TOKEN, encrypt(data.getString("access_token"))).apply()
+        storeDeviceCredential(base, data.getString("access_token"))
         "Đã ghép nối thiết bị ${data.getString("device_name")}. Hãy đồng bộ để tải nội dung."
+    }
+
+    override suspend fun startQrPairing(qrText: String, deviceName: String): QrPairingProgress = withContext(Dispatchers.IO) {
+        check(!isPaired()) { "Thiết bị đã ghép nối. Hãy ngắt kết nối trước khi ghép nối lại." }
+        val payload = QrPairingPayload.parse(qrText, clock()).getOrThrow()
+        val name = deviceName.trim().take(120)
+        require(name.isNotEmpty()) { "Tên thiết bị không được để trống." }
+        // The credential is generated and stored before the claim; a retry of the same session reuses it.
+        val pending = readPendingQr()?.takeIf { it.sessionId == payload.sessionId && it.serverUrl == payload.baseUrl }
+            ?: PendingQr(payload.sessionId, payload.baseUrl, name, newDeviceCredential(), null, null, payload.expiresAt.toEpochMilli())
+        writePendingQr(pending)
+        val claimed = try {
+            val data = JSONObject(request("${pending.serverUrl}/api/v1/sync/qr-sessions/${pending.sessionId}/claim", "POST",
+                body = JSONObject().put("challenge", payload.challenge).put("device_name", pending.deviceName)
+                    .put("device_credential", pending.credential).toString())).getJSONObject("data")
+            val ticket = data.getString("claim_ticket")
+            val code = data.getString("confirmation_code")
+            require(TICKET.matches(ticket) && CODE.matches(code)) { "Máy chủ trả dữ liệu ghép nối không hợp lệ." }
+            pending.copy(claimTicket = ticket, confirmationCode = code).also(::writePendingQr)
+        } catch (error: Exception) {
+            // A rejected claim (bad/used QR, other device) cannot succeed with this credential; a network error can.
+            if (error !is IOException || (error is SyncHttpException && !error.temporary)) clearPendingQr()
+            throw error
+        }
+        val ready = JSONObject(request("${claimed.serverUrl}/api/v1/sync/qr-sessions/${claimed.sessionId}/ready", "POST",
+            claimTicket = claimed.claimTicket)).getJSONObject("data")
+        handleSessionStatus(claimed, ready.getString("status"), ready)
+    }
+
+    override suspend fun checkQrPairing(): QrPairingProgress = withContext(Dispatchers.IO) {
+        val pending = readPendingQr() ?: error("Không có phiên ghép nối QR đang chờ.")
+        val ticket = pending.claimTicket ?: run { clearPendingQr(); error("Phiên QR chưa được nhận. Hãy quét lại mã.") }
+        val data = try {
+            JSONObject(request("${pending.serverUrl}/api/v1/sync/qr-sessions/${pending.sessionId}", "GET", claimTicket = ticket)).getJSONObject("data")
+        } catch (error: SyncHttpException) {
+            if (error.code == 401 || error.code == 404) clearPendingQr()
+            throw error
+        }
+        handleSessionStatus(pending, data.getString("status"), data)
+    }
+
+    override suspend fun cancelQrPairing() = withContext(Dispatchers.IO) { clearPendingQr() }
+
+    override fun pendingQrPairing(): QrPairingProgress? = readPendingQr()?.takeIf { it.claimTicket != null }?.toProgress(QrPairingStatus.AWAITING_CONFIRMATION)
+
+    private suspend fun handleSessionStatus(pending: PendingQr, rawStatus: String, data: JSONObject): QrPairingProgress {
+        val status = runCatching { QrPairingStatus.valueOf(rawStatus) }.getOrNull()
+            ?: error("Trạng thái phiên QR không mong đợi: ${rawStatus.take(40)}")
+        when {
+            status == QrPairingStatus.PAIRED -> {
+                require(!data.isNull("device_id")) { "Máy chủ báo PAIRED nhưng không có thiết bị." }
+                storeDeviceCredential(pending.serverUrl, pending.credential)
+                clearPendingQr()
+            }
+            status.terminal -> clearPendingQr()
+        }
+        return pending.toProgress(status)
+    }
+
+    /** Stores the bearer credential; a different server than the one Room mirrors starts a clean pull and re-upload. */
+    private suspend fun storeDeviceCredential(base: String, credential: String) {
+        val dataServer = preferences.getString(KEY_DATA_SERVER, null) ?: preferences.getString(KEY_SERVER, null)
+        if (dataServer != base) {
+            database.withTransaction { syncDao.putCheckpoint(SyncCheckpointEntity()) }
+            preferences.edit { putLong(KEY_LAST_REVIEW_ID, 0L) }
+        }
+        preferences.edit { putString(KEY_SERVER, base).putString(KEY_DATA_SERVER, base)
+            .putString(KEY_TOKEN, encrypt(credential)) }
     }
 
     override suspend fun syncNow(): String = withContext(Dispatchers.IO) {
@@ -109,7 +188,7 @@ class AndroidSyncClient(context: Context, private val database: N3Database, priv
         try {
             if (server != null && token != null) request("$server/api/v1/sync/disconnect", "POST", bearer = token)
         } finally {
-            preferences.edit().remove(KEY_TOKEN).remove(KEY_SERVER).apply()
+            preferences.edit { remove(KEY_TOKEN).remove(KEY_SERVER) }
         }
     }
 
@@ -257,7 +336,7 @@ class AndroidSyncClient(context: Context, private val database: N3Database, priv
                 JSONObject().put("events", JSONArray().apply { events.forEach { put(it.toApiJson()) } }).toString())).getJSONObject("data")
             require(response.getJSONArray("accepted").length() + response.getJSONArray("duplicates").length() == events.size) { "Server did not acknowledge all history events." }
             last = events.last().id
-            preferences.edit().putLong(KEY_LAST_REVIEW_ID, last).apply()
+            preferences.edit { putLong(KEY_LAST_REVIEW_ID, last) }
             uploaded += events.size
         }
         return uploaded
@@ -277,13 +356,46 @@ class AndroidSyncClient(context: Context, private val database: N3Database, priv
         var last: IOException? = null
         repeat(3) { attempt ->
             try { return request(url, method, bearer = token, body = body) }
-            catch (error: IOException) { last = error; if (attempt < 2) Thread.sleep(300L shl attempt) }
+            catch (error: IOException) {
+                if (error is SyncHttpException && !error.temporary) throw error
+                last = error; if (attempt < 2) Thread.sleep(300L shl attempt)
+            }
         }
         throw last ?: IOException("Network request failed")
     }
 
-    private fun request(url: String, method: String, pairingKey: String? = null, bearer: String? = null, body: String? = null): String =
-        transport.request(url, method, pairingKey, bearer, body)
+    private fun request(url: String, method: String, pairingKey: String? = null, bearer: String? = null, body: String? = null, claimTicket: String? = null): String =
+        transport.request(url, method, pairingKey, bearer, body, claimTicket)
+
+    /** 48 random bytes, URL-safe Base64 without padding: 64 characters of `[A-Za-z0-9_-]`. */
+    private fun newDeviceCredential(): String {
+        val bytes = ByteArray(48).also(random::nextBytes)
+        return Base64.encodeToString(bytes, Base64.URL_SAFE or Base64.NO_WRAP or Base64.NO_PADDING)
+    }
+
+    /** Pending QR state, encrypted with the Keystore key: the credential, ticket and code never sit in plain text. */
+    private data class PendingQr(
+        val sessionId: String, val serverUrl: String, val deviceName: String, val credential: String,
+        val claimTicket: String?, val confirmationCode: String?, val expiresAtMillis: Long,
+    ) {
+        fun toProgress(status: QrPairingStatus) = QrPairingProgress(sessionId, serverUrl, deviceName,
+            confirmationCode.takeUnless { status.terminal }, status, expiresAtMillis)
+        override fun toString() = "PendingQr(sessionId=$sessionId, serverUrl=$serverUrl)"
+    }
+    private fun writePendingQr(value: PendingQr) {
+        val json = JSONObject().put("session_id", value.sessionId).put("server", value.serverUrl).put("device_name", value.deviceName)
+            .put("credential", value.credential).put("ticket", value.claimTicket ?: JSONObject.NULL)
+            .put("code", value.confirmationCode ?: JSONObject.NULL).put("expires_at", value.expiresAtMillis)
+        preferences.edit(commit = true) { putString(KEY_QR_PENDING, encrypt(json.toString())) }
+    }
+    private fun readPendingQr(): PendingQr? = preferences.getString(KEY_QR_PENDING, null)?.let { stored ->
+        runCatching {
+            val json = JSONObject(decrypt(stored))
+            PendingQr(json.getString("session_id"), json.getString("server"), json.getString("device_name"), json.getString("credential"),
+                json.optNullableString("ticket"), json.optNullableString("code"), json.getLong("expires_at"))
+        }.getOrNull()
+    }
+    private fun clearPendingQr() { preferences.edit(commit = true) { remove(KEY_QR_PENDING) } }
 
     private fun normalizeBaseUrl(value: String): String {
         val normalized = value.trim().trimEnd('/')
@@ -319,5 +431,10 @@ class AndroidSyncClient(context: Context, private val database: N3Database, priv
         const val ANDROID_KEYSTORE = "AndroidKeyStore"; const val KEY_ALIAS = "n3_sensei_sync_device_token"
         const val TRANSFORMATION = "AES/GCM/NoPadding"; const val GCM_IV_LENGTH = 12; const val GCM_TAG_BITS = 128
         const val KEY_SERVER = "server_url"; const val KEY_TOKEN = "device_token"; const val KEY_LAST_REVIEW_ID = "last_review_record_id"
+        /** The server whose data the checkpoint and history cursor refer to; kept after disconnect. */
+        const val KEY_DATA_SERVER = "data_server_url"
+        const val KEY_QR_PENDING = "qr_pending"
+        val TICKET = Regex("^[a-f0-9]{64}$")
+        val CODE = Regex("^[0-9]{6}$")
     }
 }
